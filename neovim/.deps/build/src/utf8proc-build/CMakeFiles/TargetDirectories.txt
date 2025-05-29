@@ -1,0 +1,7 @@
+/home/dweller/neovim/.deps/build/src/utf8proc-build/CMakeFiles/utf8proc.dir
+/home/dweller/neovim/.deps/build/src/utf8proc-build/CMakeFiles/edit_cache.dir
+/home/dweller/neovim/.deps/build/src/utf8proc-build/CMakeFiles/rebuild_cache.dir
+/home/dweller/neovim/.deps/build/src/utf8proc-build/CMakeFiles/list_install_components.dir
+/home/dweller/neovim/.deps/build/src/utf8proc-build/CMakeFiles/install.dir
+/home/dweller/neovim/.deps/build/src/utf8proc-build/CMakeFiles/install/local.dir
+/home/dweller/neovim/.deps/build/src/utf8proc-build/CMakeFiles/install/strip.dir

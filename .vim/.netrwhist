@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =4
+let g:netrw_dirhist_4='/etc/apt/apt.conf.d'
+let g:netrw_dirhist_3='/cims/data/dtg/emp'
+let g:netrw_dirhist_2='/cims/data/dtg/tc'
+let g:netrw_dirhist_1='/etc/update-motd.d'

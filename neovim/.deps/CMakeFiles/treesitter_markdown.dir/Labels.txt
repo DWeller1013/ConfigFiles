@@ -1,0 +1,13 @@
+# Target labels
+ treesitter_markdown
+# Source files and their labels
+/home/dweller/neovim/.deps/CMakeFiles/treesitter_markdown
+/home/dweller/neovim/.deps/CMakeFiles/treesitter_markdown.rule
+/home/dweller/neovim/.deps/CMakeFiles/treesitter_markdown-complete.rule
+/home/dweller/neovim/.deps/build/src/treesitter_markdown-stamp/treesitter_markdown-build.rule
+/home/dweller/neovim/.deps/build/src/treesitter_markdown-stamp/treesitter_markdown-configure.rule
+/home/dweller/neovim/.deps/build/src/treesitter_markdown-stamp/treesitter_markdown-download.rule
+/home/dweller/neovim/.deps/build/src/treesitter_markdown-stamp/treesitter_markdown-install.rule
+/home/dweller/neovim/.deps/build/src/treesitter_markdown-stamp/treesitter_markdown-mkdir.rule
+/home/dweller/neovim/.deps/build/src/treesitter_markdown-stamp/treesitter_markdown-patch.rule
+/home/dweller/neovim/.deps/build/src/treesitter_markdown-stamp/treesitter_markdown-update.rule

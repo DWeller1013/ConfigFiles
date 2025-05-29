@@ -1,0 +1,8 @@
+/home/dweller/neovim/.deps/build/src/treesitter_markdown-build/CMakeFiles/markdown.dir
+/home/dweller/neovim/.deps/build/src/treesitter_markdown-build/CMakeFiles/markdown_inline.dir
+/home/dweller/neovim/.deps/build/src/treesitter_markdown-build/CMakeFiles/edit_cache.dir
+/home/dweller/neovim/.deps/build/src/treesitter_markdown-build/CMakeFiles/rebuild_cache.dir
+/home/dweller/neovim/.deps/build/src/treesitter_markdown-build/CMakeFiles/list_install_components.dir
+/home/dweller/neovim/.deps/build/src/treesitter_markdown-build/CMakeFiles/install.dir
+/home/dweller/neovim/.deps/build/src/treesitter_markdown-build/CMakeFiles/install/local.dir
+/home/dweller/neovim/.deps/build/src/treesitter_markdown-build/CMakeFiles/install/strip.dir

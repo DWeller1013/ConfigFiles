@@ -1,0 +1,4 @@
+/home/dweller/neovim/build/src/nvim/CMakeFiles/_CMakeLTOTest-C/bin/CMakeFiles/foo.dir
+/home/dweller/neovim/build/src/nvim/CMakeFiles/_CMakeLTOTest-C/bin/CMakeFiles/boo.dir
+/home/dweller/neovim/build/src/nvim/CMakeFiles/_CMakeLTOTest-C/bin/CMakeFiles/edit_cache.dir
+/home/dweller/neovim/build/src/nvim/CMakeFiles/_CMakeLTOTest-C/bin/CMakeFiles/rebuild_cache.dir

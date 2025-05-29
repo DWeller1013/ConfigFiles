@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/dweller/neovim/build/CMakeFiles/download_luals"
+		},
+		{
+			"file" : "/home/dweller/neovim/build/CMakeFiles/download_luals.rule"
+		},
+		{
+			"file" : "/home/dweller/neovim/build/CMakeFiles/download_luals-complete.rule"
+		},
+		{
+			"file" : "/home/dweller/neovim/build/build/src/download_luals-stamp/download_luals-build.rule"
+		},
+		{
+			"file" : "/home/dweller/neovim/build/build/src/download_luals-stamp/download_luals-configure.rule"
+		},
+		{
+			"file" : "/home/dweller/neovim/build/build/src/download_luals-stamp/download_luals-download.rule"
+		},
+		{
+			"file" : "/home/dweller/neovim/build/build/src/download_luals-stamp/download_luals-install.rule"
+		},
+		{
+			"file" : "/home/dweller/neovim/build/build/src/download_luals-stamp/download_luals-mkdir.rule"
+		},
+		{
+			"file" : "/home/dweller/neovim/build/build/src/download_luals-stamp/download_luals-patch.rule"
+		},
+		{
+			"file" : "/home/dweller/neovim/build/build/src/download_luals-stamp/download_luals-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"download_luals"
+		],
+		"name" : "download_luals"
+	}
+}

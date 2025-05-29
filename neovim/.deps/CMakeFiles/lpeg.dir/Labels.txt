@@ -1,0 +1,13 @@
+# Target labels
+ lpeg
+# Source files and their labels
+/home/dweller/neovim/.deps/CMakeFiles/lpeg
+/home/dweller/neovim/.deps/CMakeFiles/lpeg.rule
+/home/dweller/neovim/.deps/CMakeFiles/lpeg-complete.rule
+/home/dweller/neovim/.deps/build/src/lpeg-stamp/lpeg-build.rule
+/home/dweller/neovim/.deps/build/src/lpeg-stamp/lpeg-configure.rule
+/home/dweller/neovim/.deps/build/src/lpeg-stamp/lpeg-download.rule
+/home/dweller/neovim/.deps/build/src/lpeg-stamp/lpeg-install.rule
+/home/dweller/neovim/.deps/build/src/lpeg-stamp/lpeg-mkdir.rule
+/home/dweller/neovim/.deps/build/src/lpeg-stamp/lpeg-patch.rule
+/home/dweller/neovim/.deps/build/src/lpeg-stamp/lpeg-update.rule

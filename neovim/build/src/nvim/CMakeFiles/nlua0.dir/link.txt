@@ -1,0 +1,1 @@
+/usr/bin/cc -fPIC -O2 -g  -shared  -o ../../lib/libnlua0.so CMakeFiles/nlua0.dir/__/mpack/conv.c.o CMakeFiles/nlua0.dir/__/mpack/lmpack.c.o CMakeFiles/nlua0.dir/__/mpack/mpack_core.c.o CMakeFiles/nlua0.dir/__/mpack/object.c.o CMakeFiles/nlua0.dir/__/mpack/rpc.c.o CMakeFiles/nlua0.dir/__/nlua0.c.o  ../../../.deps/usr/lib/liblpeg.a 

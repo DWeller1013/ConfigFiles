@@ -1,0 +1,2 @@
+/home/dweller/neovim/.deps/usr/lib/nvim/parser/markdown.so
+/home/dweller/neovim/.deps/usr/lib/nvim/parser/markdown_inline.so

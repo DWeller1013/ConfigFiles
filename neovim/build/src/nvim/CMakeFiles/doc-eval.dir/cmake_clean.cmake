@@ -1,0 +1,42 @@
+file(REMOVE_RECURSE
+  "../../funcs_metadata.mpack"
+  "../../include/api/autocmd.h.generated.h"
+  "../../include/api/buffer.h.generated.h"
+  "../../include/api/command.h.generated.h"
+  "../../include/api/deprecated.h.generated.h"
+  "../../include/api/extmark.h.generated.h"
+  "../../include/api/options.h.generated.h"
+  "../../include/api/tabpage.h.generated.h"
+  "../../include/api/ui.h.generated.h"
+  "../../include/api/vim.h.generated.h"
+  "../../include/api/vimscript.h.generated.h"
+  "../../include/api/win_config.h.generated.h"
+  "../../include/api/window.h.generated.h"
+  "../../touches/doc-eval"
+  "../../ui_metadata.mpack"
+  "CMakeFiles/doc-eval"
+  "auto/api/autocmd.c.generated.h"
+  "auto/api/buffer.c.generated.h"
+  "auto/api/command.c.generated.h"
+  "auto/api/deprecated.c.generated.h"
+  "auto/api/extmark.c.generated.h"
+  "auto/api/options.c.generated.h"
+  "auto/api/private/api_metadata.generated.h"
+  "auto/api/private/dispatch_wrappers.generated.h"
+  "auto/api/tabpage.c.generated.h"
+  "auto/api/ui.c.generated.h"
+  "auto/api/vim.c.generated.h"
+  "auto/api/vimscript.c.generated.h"
+  "auto/api/win_config.c.generated.h"
+  "auto/api/window.c.generated.h"
+  "auto/keysets_defs.generated.h"
+  "auto/lua_api_c_bindings.generated.h"
+  "auto/ui_events_call.generated.h"
+  "auto/ui_events_client.generated.h"
+  "auto/ui_events_remote.generated.h"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang )
+  include(CMakeFiles/doc-eval.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

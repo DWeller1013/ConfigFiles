@@ -1,0 +1,30922 @@
+# 0 "/home/dweller/neovim/src/nvim/mbyte.c"
+# 0 "<built-in>"
+# 0 "<command-line>"
+# 1 "/usr/include/stdc-predef.h" 1 3 4
+# 0 "<command-line>" 2
+# 1 "/home/dweller/neovim/src/nvim/mbyte.c"
+# 25 "/home/dweller/neovim/src/nvim/mbyte.c"
+# 1 "/usr/include/assert.h" 1 3 4
+# 35 "/usr/include/assert.h" 3 4
+# 1 "/usr/include/features.h" 1 3 4
+# 392 "/usr/include/features.h" 3 4
+# 1 "/usr/include/features-time64.h" 1 3 4
+# 20 "/usr/include/features-time64.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/wordsize.h" 1 3 4
+# 21 "/usr/include/features-time64.h" 2 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/timesize.h" 1 3 4
+# 19 "/usr/include/x86_64-linux-gnu/bits/timesize.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/wordsize.h" 1 3 4
+# 20 "/usr/include/x86_64-linux-gnu/bits/timesize.h" 2 3 4
+# 22 "/usr/include/features-time64.h" 2 3 4
+# 393 "/usr/include/features.h" 2 3 4
+# 486 "/usr/include/features.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/sys/cdefs.h" 1 3 4
+# 559 "/usr/include/x86_64-linux-gnu/sys/cdefs.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/wordsize.h" 1 3 4
+# 560 "/usr/include/x86_64-linux-gnu/sys/cdefs.h" 2 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/long-double.h" 1 3 4
+# 561 "/usr/include/x86_64-linux-gnu/sys/cdefs.h" 2 3 4
+# 487 "/usr/include/features.h" 2 3 4
+# 510 "/usr/include/features.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/gnu/stubs.h" 1 3 4
+# 10 "/usr/include/x86_64-linux-gnu/gnu/stubs.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/gnu/stubs-64.h" 1 3 4
+# 11 "/usr/include/x86_64-linux-gnu/gnu/stubs.h" 2 3 4
+# 511 "/usr/include/features.h" 2 3 4
+# 36 "/usr/include/assert.h" 2 3 4
+# 66 "/usr/include/assert.h" 3 4
+
+
+
+
+# 69 "/usr/include/assert.h" 3 4
+extern void __assert_fail (const char *__assertion, const char *__file,
+      unsigned int __line, const char *__function)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__noreturn__));
+
+
+extern void __assert_perror_fail (int __errnum, const char *__file,
+      unsigned int __line, const char *__function)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__noreturn__));
+
+
+
+
+extern void __assert (const char *__assertion, const char *__file, int __line)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__noreturn__));
+
+
+
+# 26 "/home/dweller/neovim/src/nvim/mbyte.c" 2
+# 1 "/usr/include/ctype.h" 1 3 4
+# 26 "/usr/include/ctype.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/types.h" 1 3 4
+# 27 "/usr/include/x86_64-linux-gnu/bits/types.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/wordsize.h" 1 3 4
+# 28 "/usr/include/x86_64-linux-gnu/bits/types.h" 2 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/timesize.h" 1 3 4
+# 19 "/usr/include/x86_64-linux-gnu/bits/timesize.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/wordsize.h" 1 3 4
+# 20 "/usr/include/x86_64-linux-gnu/bits/timesize.h" 2 3 4
+# 29 "/usr/include/x86_64-linux-gnu/bits/types.h" 2 3 4
+
+
+typedef unsigned char __u_char;
+typedef unsigned short int __u_short;
+typedef unsigned int __u_int;
+typedef unsigned long int __u_long;
+
+
+typedef signed char __int8_t;
+typedef unsigned char __uint8_t;
+typedef signed short int __int16_t;
+typedef unsigned short int __uint16_t;
+typedef signed int __int32_t;
+typedef unsigned int __uint32_t;
+
+typedef signed long int __int64_t;
+typedef unsigned long int __uint64_t;
+
+
+
+
+
+
+typedef __int8_t __int_least8_t;
+typedef __uint8_t __uint_least8_t;
+typedef __int16_t __int_least16_t;
+typedef __uint16_t __uint_least16_t;
+typedef __int32_t __int_least32_t;
+typedef __uint32_t __uint_least32_t;
+typedef __int64_t __int_least64_t;
+typedef __uint64_t __uint_least64_t;
+
+
+
+typedef long int __quad_t;
+typedef unsigned long int __u_quad_t;
+
+
+
+
+
+
+
+typedef long int __intmax_t;
+typedef unsigned long int __uintmax_t;
+# 141 "/usr/include/x86_64-linux-gnu/bits/types.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/typesizes.h" 1 3 4
+# 142 "/usr/include/x86_64-linux-gnu/bits/types.h" 2 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/time64.h" 1 3 4
+# 143 "/usr/include/x86_64-linux-gnu/bits/types.h" 2 3 4
+
+
+typedef unsigned long int __dev_t;
+typedef unsigned int __uid_t;
+typedef unsigned int __gid_t;
+typedef unsigned long int __ino_t;
+typedef unsigned long int __ino64_t;
+typedef unsigned int __mode_t;
+typedef unsigned long int __nlink_t;
+typedef long int __off_t;
+typedef long int __off64_t;
+typedef int __pid_t;
+typedef struct { int __val[2]; } __fsid_t;
+typedef long int __clock_t;
+typedef unsigned long int __rlim_t;
+typedef unsigned long int __rlim64_t;
+typedef unsigned int __id_t;
+typedef long int __time_t;
+typedef unsigned int __useconds_t;
+typedef long int __suseconds_t;
+typedef long int __suseconds64_t;
+
+typedef int __daddr_t;
+typedef int __key_t;
+
+
+typedef int __clockid_t;
+
+
+typedef void * __timer_t;
+
+
+typedef long int __blksize_t;
+
+
+
+
+typedef long int __blkcnt_t;
+typedef long int __blkcnt64_t;
+
+
+typedef unsigned long int __fsblkcnt_t;
+typedef unsigned long int __fsblkcnt64_t;
+
+
+typedef unsigned long int __fsfilcnt_t;
+typedef unsigned long int __fsfilcnt64_t;
+
+
+typedef long int __fsword_t;
+
+typedef long int __ssize_t;
+
+
+typedef long int __syscall_slong_t;
+
+typedef unsigned long int __syscall_ulong_t;
+
+
+
+typedef __off64_t __loff_t;
+typedef char *__caddr_t;
+
+
+typedef long int __intptr_t;
+
+
+typedef unsigned int __socklen_t;
+
+
+
+
+typedef int __sig_atomic_t;
+# 27 "/usr/include/ctype.h" 2 3 4
+
+
+# 39 "/usr/include/ctype.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/endian.h" 1 3 4
+# 35 "/usr/include/x86_64-linux-gnu/bits/endian.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/endianness.h" 1 3 4
+# 36 "/usr/include/x86_64-linux-gnu/bits/endian.h" 2 3 4
+# 40 "/usr/include/ctype.h" 2 3 4
+
+
+
+
+
+
+enum
+{
+  _ISupper = ((0) < 8 ? ((1 << (0)) << 8) : ((1 << (0)) >> 8)),
+  _ISlower = ((1) < 8 ? ((1 << (1)) << 8) : ((1 << (1)) >> 8)),
+  _ISalpha = ((2) < 8 ? ((1 << (2)) << 8) : ((1 << (2)) >> 8)),
+  _ISdigit = ((3) < 8 ? ((1 << (3)) << 8) : ((1 << (3)) >> 8)),
+  _ISxdigit = ((4) < 8 ? ((1 << (4)) << 8) : ((1 << (4)) >> 8)),
+  _ISspace = ((5) < 8 ? ((1 << (5)) << 8) : ((1 << (5)) >> 8)),
+  _ISprint = ((6) < 8 ? ((1 << (6)) << 8) : ((1 << (6)) >> 8)),
+  _ISgraph = ((7) < 8 ? ((1 << (7)) << 8) : ((1 << (7)) >> 8)),
+  _ISblank = ((8) < 8 ? ((1 << (8)) << 8) : ((1 << (8)) >> 8)),
+  _IScntrl = ((9) < 8 ? ((1 << (9)) << 8) : ((1 << (9)) >> 8)),
+  _ISpunct = ((10) < 8 ? ((1 << (10)) << 8) : ((1 << (10)) >> 8)),
+  _ISalnum = ((11) < 8 ? ((1 << (11)) << 8) : ((1 << (11)) >> 8))
+};
+# 79 "/usr/include/ctype.h" 3 4
+extern const unsigned short int **__ctype_b_loc (void)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+extern const __int32_t **__ctype_tolower_loc (void)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+extern const __int32_t **__ctype_toupper_loc (void)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+# 108 "/usr/include/ctype.h" 3 4
+extern int isalnum (int) __attribute__ ((__nothrow__ , __leaf__));
+extern int isalpha (int) __attribute__ ((__nothrow__ , __leaf__));
+extern int iscntrl (int) __attribute__ ((__nothrow__ , __leaf__));
+extern int isdigit (int) __attribute__ ((__nothrow__ , __leaf__));
+extern int islower (int) __attribute__ ((__nothrow__ , __leaf__));
+extern int isgraph (int) __attribute__ ((__nothrow__ , __leaf__));
+extern int isprint (int) __attribute__ ((__nothrow__ , __leaf__));
+extern int ispunct (int) __attribute__ ((__nothrow__ , __leaf__));
+extern int isspace (int) __attribute__ ((__nothrow__ , __leaf__));
+extern int isupper (int) __attribute__ ((__nothrow__ , __leaf__));
+extern int isxdigit (int) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern int tolower (int __c) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern int toupper (int __c) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+extern int isblank (int) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+extern int isctype (int __c, int __mask) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+
+extern int isascii (int __c) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern int toascii (int __c) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern int _toupper (int) __attribute__ ((__nothrow__ , __leaf__));
+extern int _tolower (int) __attribute__ ((__nothrow__ , __leaf__));
+# 237 "/usr/include/ctype.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/types/locale_t.h" 1 3 4
+# 22 "/usr/include/x86_64-linux-gnu/bits/types/locale_t.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/types/__locale_t.h" 1 3 4
+# 27 "/usr/include/x86_64-linux-gnu/bits/types/__locale_t.h" 3 4
+struct __locale_struct
+{
+
+  struct __locale_data *__locales[13];
+
+
+  const unsigned short int *__ctype_b;
+  const int *__ctype_tolower;
+  const int *__ctype_toupper;
+
+
+  const char *__names[13];
+};
+
+typedef struct __locale_struct *__locale_t;
+# 23 "/usr/include/x86_64-linux-gnu/bits/types/locale_t.h" 2 3 4
+
+typedef __locale_t locale_t;
+# 238 "/usr/include/ctype.h" 2 3 4
+# 251 "/usr/include/ctype.h" 3 4
+extern int isalnum_l (int, locale_t) __attribute__ ((__nothrow__ , __leaf__));
+extern int isalpha_l (int, locale_t) __attribute__ ((__nothrow__ , __leaf__));
+extern int iscntrl_l (int, locale_t) __attribute__ ((__nothrow__ , __leaf__));
+extern int isdigit_l (int, locale_t) __attribute__ ((__nothrow__ , __leaf__));
+extern int islower_l (int, locale_t) __attribute__ ((__nothrow__ , __leaf__));
+extern int isgraph_l (int, locale_t) __attribute__ ((__nothrow__ , __leaf__));
+extern int isprint_l (int, locale_t) __attribute__ ((__nothrow__ , __leaf__));
+extern int ispunct_l (int, locale_t) __attribute__ ((__nothrow__ , __leaf__));
+extern int isspace_l (int, locale_t) __attribute__ ((__nothrow__ , __leaf__));
+extern int isupper_l (int, locale_t) __attribute__ ((__nothrow__ , __leaf__));
+extern int isxdigit_l (int, locale_t) __attribute__ ((__nothrow__ , __leaf__));
+
+extern int isblank_l (int, locale_t) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern int __tolower_l (int __c, locale_t __l) __attribute__ ((__nothrow__ , __leaf__));
+extern int tolower_l (int __c, locale_t __l) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern int __toupper_l (int __c, locale_t __l) __attribute__ ((__nothrow__ , __leaf__));
+extern int toupper_l (int __c, locale_t __l) __attribute__ ((__nothrow__ , __leaf__));
+# 327 "/usr/include/ctype.h" 3 4
+
+# 27 "/home/dweller/neovim/src/nvim/mbyte.c" 2
+# 1 "/usr/include/errno.h" 1 3 4
+# 28 "/usr/include/errno.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/errno.h" 1 3 4
+# 26 "/usr/include/x86_64-linux-gnu/bits/errno.h" 3 4
+# 1 "/usr/include/linux/errno.h" 1 3 4
+# 1 "/usr/include/x86_64-linux-gnu/asm/errno.h" 1 3 4
+# 1 "/usr/include/asm-generic/errno.h" 1 3 4
+
+
+
+
+# 1 "/usr/include/asm-generic/errno-base.h" 1 3 4
+# 6 "/usr/include/asm-generic/errno.h" 2 3 4
+# 2 "/usr/include/x86_64-linux-gnu/asm/errno.h" 2 3 4
+# 2 "/usr/include/linux/errno.h" 2 3 4
+# 27 "/usr/include/x86_64-linux-gnu/bits/errno.h" 2 3 4
+# 29 "/usr/include/errno.h" 2 3 4
+
+
+
+
+
+
+
+
+extern int *__errno_location (void) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+
+
+
+
+
+extern char *program_invocation_name;
+extern char *program_invocation_short_name;
+
+# 1 "/usr/include/x86_64-linux-gnu/bits/types/error_t.h" 1 3 4
+# 22 "/usr/include/x86_64-linux-gnu/bits/types/error_t.h" 3 4
+typedef int error_t;
+# 49 "/usr/include/errno.h" 2 3 4
+
+
+
+
+# 28 "/home/dweller/neovim/src/nvim/mbyte.c" 2
+# 1 "/usr/include/iconv.h" 1 3 4
+# 23 "/usr/include/iconv.h" 3 4
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h" 1 3 4
+# 209 "/usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h" 3 4
+typedef long unsigned int size_t;
+# 24 "/usr/include/iconv.h" 2 3 4
+
+
+
+
+
+typedef void *iconv_t;
+
+
+
+
+
+
+
+extern iconv_t iconv_open (const char *__tocode, const char *__fromcode);
+
+
+
+
+extern size_t iconv (iconv_t __cd, char **__restrict __inbuf,
+       size_t *__restrict __inbytesleft,
+       char **__restrict __outbuf,
+       size_t *__restrict __outbytesleft);
+
+
+
+
+
+extern int iconv_close (iconv_t __cd);
+
+
+# 29 "/home/dweller/neovim/src/nvim/mbyte.c" 2
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h" 1 3 4
+# 34 "/usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h" 3 4
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/11/include/syslimits.h" 1 3 4
+
+
+
+
+
+
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h" 1 3 4
+# 203 "/usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h" 3 4
+# 1 "/usr/include/limits.h" 1 3 4
+# 26 "/usr/include/limits.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/libc-header-start.h" 1 3 4
+# 27 "/usr/include/limits.h" 2 3 4
+# 195 "/usr/include/limits.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/posix1_lim.h" 1 3 4
+# 27 "/usr/include/x86_64-linux-gnu/bits/posix1_lim.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/wordsize.h" 1 3 4
+# 28 "/usr/include/x86_64-linux-gnu/bits/posix1_lim.h" 2 3 4
+# 161 "/usr/include/x86_64-linux-gnu/bits/posix1_lim.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/local_lim.h" 1 3 4
+# 38 "/usr/include/x86_64-linux-gnu/bits/local_lim.h" 3 4
+# 1 "/usr/include/linux/limits.h" 1 3 4
+# 39 "/usr/include/x86_64-linux-gnu/bits/local_lim.h" 2 3 4
+# 81 "/usr/include/x86_64-linux-gnu/bits/local_lim.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h" 1 3 4
+# 23 "/usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h" 3 4
+
+extern long int __sysconf (int __name) __attribute__ ((__nothrow__ , __leaf__));
+
+# 82 "/usr/include/x86_64-linux-gnu/bits/local_lim.h" 2 3 4
+# 162 "/usr/include/x86_64-linux-gnu/bits/posix1_lim.h" 2 3 4
+# 196 "/usr/include/limits.h" 2 3 4
+
+
+
+# 1 "/usr/include/x86_64-linux-gnu/bits/posix2_lim.h" 1 3 4
+# 200 "/usr/include/limits.h" 2 3 4
+
+
+
+# 1 "/usr/include/x86_64-linux-gnu/bits/xopen_lim.h" 1 3 4
+# 64 "/usr/include/x86_64-linux-gnu/bits/xopen_lim.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/uio_lim.h" 1 3 4
+# 65 "/usr/include/x86_64-linux-gnu/bits/xopen_lim.h" 2 3 4
+# 204 "/usr/include/limits.h" 2 3 4
+# 204 "/usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h" 2 3 4
+# 8 "/usr/lib/gcc/x86_64-linux-gnu/11/include/syslimits.h" 2 3 4
+# 35 "/usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h" 2 3 4
+# 30 "/home/dweller/neovim/src/nvim/mbyte.c" 2
+# 1 "/usr/include/locale.h" 1 3 4
+# 28 "/usr/include/locale.h" 3 4
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h" 1 3 4
+# 29 "/usr/include/locale.h" 2 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/locale.h" 1 3 4
+# 30 "/usr/include/locale.h" 2 3 4
+
+
+# 51 "/usr/include/locale.h" 3 4
+struct lconv
+{
+
+
+  char *decimal_point;
+  char *thousands_sep;
+
+
+
+
+
+  char *grouping;
+
+
+
+
+
+  char *int_curr_symbol;
+  char *currency_symbol;
+  char *mon_decimal_point;
+  char *mon_thousands_sep;
+  char *mon_grouping;
+  char *positive_sign;
+  char *negative_sign;
+  char int_frac_digits;
+  char frac_digits;
+
+  char p_cs_precedes;
+
+  char p_sep_by_space;
+
+  char n_cs_precedes;
+
+  char n_sep_by_space;
+
+
+
+
+
+
+  char p_sign_posn;
+  char n_sign_posn;
+
+
+  char int_p_cs_precedes;
+
+  char int_p_sep_by_space;
+
+  char int_n_cs_precedes;
+
+  char int_n_sep_by_space;
+
+
+
+
+
+
+  char int_p_sign_posn;
+  char int_n_sign_posn;
+# 118 "/usr/include/locale.h" 3 4
+};
+
+
+
+extern char *setlocale (int __category, const char *__locale) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern struct lconv *localeconv (void) __attribute__ ((__nothrow__ , __leaf__));
+# 141 "/usr/include/locale.h" 3 4
+extern locale_t newlocale (int __category_mask, const char *__locale,
+      locale_t __base) __attribute__ ((__nothrow__ , __leaf__));
+# 176 "/usr/include/locale.h" 3 4
+extern locale_t duplocale (locale_t __dataset) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern void freelocale (locale_t __dataset) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+
+extern locale_t uselocale (locale_t __dataset) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+
+
+
+# 31 "/home/dweller/neovim/src/nvim/mbyte.c" 2
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/11/include/stdbool.h" 1 3 4
+# 32 "/home/dweller/neovim/src/nvim/mbyte.c" 2
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h" 1 3 4
+# 143 "/usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h" 3 4
+typedef long int ptrdiff_t;
+# 321 "/usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h" 3 4
+typedef int wchar_t;
+# 415 "/usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h" 3 4
+typedef struct {
+  long long __max_align_ll __attribute__((__aligned__(__alignof__(long long))));
+  long double __max_align_ld __attribute__((__aligned__(__alignof__(long double))));
+# 426 "/usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h" 3 4
+} max_align_t;
+# 33 "/home/dweller/neovim/src/nvim/mbyte.c" 2
+# 1 "/usr/include/stdio.h" 1 3 4
+# 27 "/usr/include/stdio.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/libc-header-start.h" 1 3 4
+# 28 "/usr/include/stdio.h" 2 3 4
+
+
+
+
+
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h" 1 3 4
+# 34 "/usr/include/stdio.h" 2 3 4
+
+
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/11/include/stdarg.h" 1 3 4
+# 40 "/usr/lib/gcc/x86_64-linux-gnu/11/include/stdarg.h" 3 4
+typedef __builtin_va_list __gnuc_va_list;
+# 37 "/usr/include/stdio.h" 2 3 4
+
+
+# 1 "/usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h" 1 3 4
+
+
+
+
+# 1 "/usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h" 1 3 4
+# 13 "/usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h" 3 4
+typedef struct
+{
+  int __count;
+  union
+  {
+    unsigned int __wch;
+    char __wchb[4];
+  } __value;
+} __mbstate_t;
+# 6 "/usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h" 2 3 4
+
+
+
+
+typedef struct _G_fpos_t
+{
+  __off_t __pos;
+  __mbstate_t __state;
+} __fpos_t;
+# 40 "/usr/include/stdio.h" 2 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h" 1 3 4
+# 10 "/usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h" 3 4
+typedef struct _G_fpos64_t
+{
+  __off64_t __pos;
+  __mbstate_t __state;
+} __fpos64_t;
+# 41 "/usr/include/stdio.h" 2 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/types/__FILE.h" 1 3 4
+
+
+
+struct _IO_FILE;
+typedef struct _IO_FILE __FILE;
+# 42 "/usr/include/stdio.h" 2 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/types/FILE.h" 1 3 4
+
+
+
+struct _IO_FILE;
+
+
+typedef struct _IO_FILE FILE;
+# 43 "/usr/include/stdio.h" 2 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h" 1 3 4
+# 35 "/usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h" 3 4
+struct _IO_FILE;
+struct _IO_marker;
+struct _IO_codecvt;
+struct _IO_wide_data;
+
+
+
+
+typedef void _IO_lock_t;
+
+
+
+
+
+struct _IO_FILE
+{
+  int _flags;
+
+
+  char *_IO_read_ptr;
+  char *_IO_read_end;
+  char *_IO_read_base;
+  char *_IO_write_base;
+  char *_IO_write_ptr;
+  char *_IO_write_end;
+  char *_IO_buf_base;
+  char *_IO_buf_end;
+
+
+  char *_IO_save_base;
+  char *_IO_backup_base;
+  char *_IO_save_end;
+
+  struct _IO_marker *_markers;
+
+  struct _IO_FILE *_chain;
+
+  int _fileno;
+  int _flags2;
+  __off_t _old_offset;
+
+
+  unsigned short _cur_column;
+  signed char _vtable_offset;
+  char _shortbuf[1];
+
+  _IO_lock_t *_lock;
+
+
+
+
+
+
+
+  __off64_t _offset;
+
+  struct _IO_codecvt *_codecvt;
+  struct _IO_wide_data *_wide_data;
+  struct _IO_FILE *_freeres_list;
+  void *_freeres_buf;
+  size_t __pad5;
+  int _mode;
+
+  char _unused2[15 * sizeof (int) - 4 * sizeof (void *) - sizeof (size_t)];
+};
+# 44 "/usr/include/stdio.h" 2 3 4
+
+
+# 1 "/usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h" 1 3 4
+# 27 "/usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h" 3 4
+typedef __ssize_t cookie_read_function_t (void *__cookie, char *__buf,
+                                          size_t __nbytes);
+
+
+
+
+
+
+
+typedef __ssize_t cookie_write_function_t (void *__cookie, const char *__buf,
+                                           size_t __nbytes);
+
+
+
+
+
+
+
+typedef int cookie_seek_function_t (void *__cookie, __off64_t *__pos, int __w);
+
+
+typedef int cookie_close_function_t (void *__cookie);
+
+
+
+
+
+
+typedef struct _IO_cookie_io_functions_t
+{
+  cookie_read_function_t *read;
+  cookie_write_function_t *write;
+  cookie_seek_function_t *seek;
+  cookie_close_function_t *close;
+} cookie_io_functions_t;
+# 47 "/usr/include/stdio.h" 2 3 4
+
+
+
+
+
+typedef __gnuc_va_list va_list;
+# 63 "/usr/include/stdio.h" 3 4
+typedef __off_t off_t;
+
+
+
+
+
+
+typedef __off64_t off64_t;
+
+
+
+
+
+
+typedef __ssize_t ssize_t;
+
+
+
+
+
+
+typedef __fpos_t fpos_t;
+
+
+
+
+typedef __fpos64_t fpos64_t;
+# 133 "/usr/include/stdio.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/stdio_lim.h" 1 3 4
+# 134 "/usr/include/stdio.h" 2 3 4
+# 143 "/usr/include/stdio.h" 3 4
+extern FILE *stdin;
+extern FILE *stdout;
+extern FILE *stderr;
+
+
+
+
+
+
+extern int remove (const char *__filename) __attribute__ ((__nothrow__ , __leaf__));
+
+extern int rename (const char *__old, const char *__new) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern int renameat (int __oldfd, const char *__old, int __newfd,
+       const char *__new) __attribute__ ((__nothrow__ , __leaf__));
+# 170 "/usr/include/stdio.h" 3 4
+extern int renameat2 (int __oldfd, const char *__old, int __newfd,
+        const char *__new, unsigned int __flags) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+
+extern int fclose (FILE *__stream);
+# 188 "/usr/include/stdio.h" 3 4
+extern FILE *tmpfile (void)
+  __attribute__ ((__malloc__)) __attribute__ ((__malloc__ (fclose, 1))) ;
+# 200 "/usr/include/stdio.h" 3 4
+extern FILE *tmpfile64 (void)
+   __attribute__ ((__malloc__)) __attribute__ ((__malloc__ (fclose, 1))) ;
+
+
+
+extern char *tmpnam (char[20]) __attribute__ ((__nothrow__ , __leaf__)) ;
+
+
+
+
+extern char *tmpnam_r (char __s[20]) __attribute__ ((__nothrow__ , __leaf__)) ;
+# 222 "/usr/include/stdio.h" 3 4
+extern char *tempnam (const char *__dir, const char *__pfx)
+   __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__malloc__)) __attribute__ ((__malloc__ (__builtin_free, 1)));
+
+
+
+
+
+
+extern int fflush (FILE *__stream);
+# 239 "/usr/include/stdio.h" 3 4
+extern int fflush_unlocked (FILE *__stream);
+# 249 "/usr/include/stdio.h" 3 4
+extern int fcloseall (void);
+# 258 "/usr/include/stdio.h" 3 4
+extern FILE *fopen (const char *__restrict __filename,
+      const char *__restrict __modes)
+  __attribute__ ((__malloc__)) __attribute__ ((__malloc__ (fclose, 1))) ;
+
+
+
+
+extern FILE *freopen (const char *__restrict __filename,
+        const char *__restrict __modes,
+        FILE *__restrict __stream) ;
+# 283 "/usr/include/stdio.h" 3 4
+extern FILE *fopen64 (const char *__restrict __filename,
+        const char *__restrict __modes)
+  __attribute__ ((__malloc__)) __attribute__ ((__malloc__ (fclose, 1))) ;
+extern FILE *freopen64 (const char *__restrict __filename,
+   const char *__restrict __modes,
+   FILE *__restrict __stream) ;
+
+
+
+
+extern FILE *fdopen (int __fd, const char *__modes) __attribute__ ((__nothrow__ , __leaf__))
+  __attribute__ ((__malloc__)) __attribute__ ((__malloc__ (fclose, 1))) ;
+
+
+
+
+
+extern FILE *fopencookie (void *__restrict __magic_cookie,
+     const char *__restrict __modes,
+     cookie_io_functions_t __io_funcs) __attribute__ ((__nothrow__ , __leaf__))
+  __attribute__ ((__malloc__)) __attribute__ ((__malloc__ (fclose, 1))) ;
+
+
+
+
+extern FILE *fmemopen (void *__s, size_t __len, const char *__modes)
+  __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__malloc__)) __attribute__ ((__malloc__ (fclose, 1))) ;
+
+
+
+
+extern FILE *open_memstream (char **__bufloc, size_t *__sizeloc) __attribute__ ((__nothrow__ , __leaf__))
+  __attribute__ ((__malloc__)) __attribute__ ((__malloc__ (fclose, 1))) ;
+# 328 "/usr/include/stdio.h" 3 4
+extern void setbuf (FILE *__restrict __stream, char *__restrict __buf) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern int setvbuf (FILE *__restrict __stream, char *__restrict __buf,
+      int __modes, size_t __n) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+extern void setbuffer (FILE *__restrict __stream, char *__restrict __buf,
+         size_t __size) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern void setlinebuf (FILE *__stream) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+
+
+extern int fprintf (FILE *__restrict __stream,
+      const char *__restrict __format, ...);
+
+
+
+
+extern int printf (const char *__restrict __format, ...);
+
+extern int sprintf (char *__restrict __s,
+      const char *__restrict __format, ...) __attribute__ ((__nothrow__));
+
+
+
+
+
+extern int vfprintf (FILE *__restrict __s, const char *__restrict __format,
+       __gnuc_va_list __arg);
+
+
+
+
+extern int vprintf (const char *__restrict __format, __gnuc_va_list __arg);
+
+extern int vsprintf (char *__restrict __s, const char *__restrict __format,
+       __gnuc_va_list __arg) __attribute__ ((__nothrow__));
+
+
+
+extern int snprintf (char *__restrict __s, size_t __maxlen,
+       const char *__restrict __format, ...)
+     __attribute__ ((__nothrow__)) __attribute__ ((__format__ (__printf__, 3, 4)));
+
+extern int vsnprintf (char *__restrict __s, size_t __maxlen,
+        const char *__restrict __format, __gnuc_va_list __arg)
+     __attribute__ ((__nothrow__)) __attribute__ ((__format__ (__printf__, 3, 0)));
+
+
+
+
+
+extern int vasprintf (char **__restrict __ptr, const char *__restrict __f,
+        __gnuc_va_list __arg)
+     __attribute__ ((__nothrow__)) __attribute__ ((__format__ (__printf__, 2, 0))) ;
+extern int __asprintf (char **__restrict __ptr,
+         const char *__restrict __fmt, ...)
+     __attribute__ ((__nothrow__)) __attribute__ ((__format__ (__printf__, 2, 3))) ;
+extern int asprintf (char **__restrict __ptr,
+       const char *__restrict __fmt, ...)
+     __attribute__ ((__nothrow__)) __attribute__ ((__format__ (__printf__, 2, 3))) ;
+
+
+
+
+extern int vdprintf (int __fd, const char *__restrict __fmt,
+       __gnuc_va_list __arg)
+     __attribute__ ((__format__ (__printf__, 2, 0)));
+extern int dprintf (int __fd, const char *__restrict __fmt, ...)
+     __attribute__ ((__format__ (__printf__, 2, 3)));
+
+
+
+
+
+
+
+extern int fscanf (FILE *__restrict __stream,
+     const char *__restrict __format, ...) ;
+
+
+
+
+extern int scanf (const char *__restrict __format, ...) ;
+
+extern int sscanf (const char *__restrict __s,
+     const char *__restrict __format, ...) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+# 1 "/usr/include/x86_64-linux-gnu/bits/floatn.h" 1 3 4
+# 119 "/usr/include/x86_64-linux-gnu/bits/floatn.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/floatn-common.h" 1 3 4
+# 24 "/usr/include/x86_64-linux-gnu/bits/floatn-common.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/long-double.h" 1 3 4
+# 25 "/usr/include/x86_64-linux-gnu/bits/floatn-common.h" 2 3 4
+# 120 "/usr/include/x86_64-linux-gnu/bits/floatn.h" 2 3 4
+# 431 "/usr/include/stdio.h" 2 3 4
+
+
+
+extern int fscanf (FILE *__restrict __stream, const char *__restrict __format, ...) __asm__ ("" "__isoc99_fscanf")
+
+                               ;
+extern int scanf (const char *__restrict __format, ...) __asm__ ("" "__isoc99_scanf")
+                              ;
+extern int sscanf (const char *__restrict __s, const char *__restrict __format, ...) __asm__ ("" "__isoc99_sscanf") __attribute__ ((__nothrow__ , __leaf__))
+
+                      ;
+# 459 "/usr/include/stdio.h" 3 4
+extern int vfscanf (FILE *__restrict __s, const char *__restrict __format,
+      __gnuc_va_list __arg)
+     __attribute__ ((__format__ (__scanf__, 2, 0))) ;
+
+
+
+
+
+extern int vscanf (const char *__restrict __format, __gnuc_va_list __arg)
+     __attribute__ ((__format__ (__scanf__, 1, 0))) ;
+
+
+extern int vsscanf (const char *__restrict __s,
+      const char *__restrict __format, __gnuc_va_list __arg)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__format__ (__scanf__, 2, 0)));
+
+
+
+
+
+extern int vfscanf (FILE *__restrict __s, const char *__restrict __format, __gnuc_va_list __arg) __asm__ ("" "__isoc99_vfscanf")
+
+
+
+     __attribute__ ((__format__ (__scanf__, 2, 0))) ;
+extern int vscanf (const char *__restrict __format, __gnuc_va_list __arg) __asm__ ("" "__isoc99_vscanf")
+
+     __attribute__ ((__format__ (__scanf__, 1, 0))) ;
+extern int vsscanf (const char *__restrict __s, const char *__restrict __format, __gnuc_va_list __arg) __asm__ ("" "__isoc99_vsscanf") __attribute__ ((__nothrow__ , __leaf__))
+
+
+
+     __attribute__ ((__format__ (__scanf__, 2, 0)));
+# 513 "/usr/include/stdio.h" 3 4
+extern int fgetc (FILE *__stream);
+extern int getc (FILE *__stream);
+
+
+
+
+
+extern int getchar (void);
+
+
+
+
+
+
+extern int getc_unlocked (FILE *__stream);
+extern int getchar_unlocked (void);
+# 538 "/usr/include/stdio.h" 3 4
+extern int fgetc_unlocked (FILE *__stream);
+# 549 "/usr/include/stdio.h" 3 4
+extern int fputc (int __c, FILE *__stream);
+extern int putc (int __c, FILE *__stream);
+
+
+
+
+
+extern int putchar (int __c);
+# 565 "/usr/include/stdio.h" 3 4
+extern int fputc_unlocked (int __c, FILE *__stream);
+
+
+
+
+
+
+
+extern int putc_unlocked (int __c, FILE *__stream);
+extern int putchar_unlocked (int __c);
+
+
+
+
+
+
+extern int getw (FILE *__stream);
+
+
+extern int putw (int __w, FILE *__stream);
+
+
+
+
+
+
+
+extern char *fgets (char *__restrict __s, int __n, FILE *__restrict __stream)
+     __attribute__ ((__access__ (__write_only__, 1, 2)));
+# 615 "/usr/include/stdio.h" 3 4
+extern char *fgets_unlocked (char *__restrict __s, int __n,
+        FILE *__restrict __stream)
+    __attribute__ ((__access__ (__write_only__, 1, 2)));
+# 632 "/usr/include/stdio.h" 3 4
+extern __ssize_t __getdelim (char **__restrict __lineptr,
+                             size_t *__restrict __n, int __delimiter,
+                             FILE *__restrict __stream) ;
+extern __ssize_t getdelim (char **__restrict __lineptr,
+                           size_t *__restrict __n, int __delimiter,
+                           FILE *__restrict __stream) ;
+
+
+
+
+
+
+
+extern __ssize_t getline (char **__restrict __lineptr,
+                          size_t *__restrict __n,
+                          FILE *__restrict __stream) ;
+
+
+
+
+
+
+
+extern int fputs (const char *__restrict __s, FILE *__restrict __stream);
+
+
+
+
+
+extern int puts (const char *__s);
+
+
+
+
+
+
+extern int ungetc (int __c, FILE *__stream);
+
+
+
+
+
+
+extern size_t fread (void *__restrict __ptr, size_t __size,
+       size_t __n, FILE *__restrict __stream) ;
+
+
+
+
+extern size_t fwrite (const void *__restrict __ptr, size_t __size,
+        size_t __n, FILE *__restrict __s);
+# 691 "/usr/include/stdio.h" 3 4
+extern int fputs_unlocked (const char *__restrict __s,
+      FILE *__restrict __stream);
+# 702 "/usr/include/stdio.h" 3 4
+extern size_t fread_unlocked (void *__restrict __ptr, size_t __size,
+         size_t __n, FILE *__restrict __stream) ;
+extern size_t fwrite_unlocked (const void *__restrict __ptr, size_t __size,
+          size_t __n, FILE *__restrict __stream);
+
+
+
+
+
+
+
+extern int fseek (FILE *__stream, long int __off, int __whence);
+
+
+
+
+extern long int ftell (FILE *__stream) ;
+
+
+
+
+extern void rewind (FILE *__stream);
+# 736 "/usr/include/stdio.h" 3 4
+extern int fseeko (FILE *__stream, __off_t __off, int __whence);
+
+
+
+
+extern __off_t ftello (FILE *__stream) ;
+# 760 "/usr/include/stdio.h" 3 4
+extern int fgetpos (FILE *__restrict __stream, fpos_t *__restrict __pos);
+
+
+
+
+extern int fsetpos (FILE *__stream, const fpos_t *__pos);
+# 779 "/usr/include/stdio.h" 3 4
+extern int fseeko64 (FILE *__stream, __off64_t __off, int __whence);
+extern __off64_t ftello64 (FILE *__stream) ;
+extern int fgetpos64 (FILE *__restrict __stream, fpos64_t *__restrict __pos);
+extern int fsetpos64 (FILE *__stream, const fpos64_t *__pos);
+
+
+
+extern void clearerr (FILE *__stream) __attribute__ ((__nothrow__ , __leaf__));
+
+extern int feof (FILE *__stream) __attribute__ ((__nothrow__ , __leaf__)) ;
+
+extern int ferror (FILE *__stream) __attribute__ ((__nothrow__ , __leaf__)) ;
+
+
+
+extern void clearerr_unlocked (FILE *__stream) __attribute__ ((__nothrow__ , __leaf__));
+extern int feof_unlocked (FILE *__stream) __attribute__ ((__nothrow__ , __leaf__)) ;
+extern int ferror_unlocked (FILE *__stream) __attribute__ ((__nothrow__ , __leaf__)) ;
+
+
+
+
+
+
+
+extern void perror (const char *__s);
+
+
+
+
+extern int fileno (FILE *__stream) __attribute__ ((__nothrow__ , __leaf__)) ;
+
+
+
+
+extern int fileno_unlocked (FILE *__stream) __attribute__ ((__nothrow__ , __leaf__)) ;
+# 823 "/usr/include/stdio.h" 3 4
+extern int pclose (FILE *__stream);
+
+
+
+
+
+extern FILE *popen (const char *__command, const char *__modes)
+  __attribute__ ((__malloc__)) __attribute__ ((__malloc__ (pclose, 1))) ;
+
+
+
+
+
+
+extern char *ctermid (char *__s) __attribute__ ((__nothrow__ , __leaf__))
+  __attribute__ ((__access__ (__write_only__, 1)));
+
+
+
+
+
+extern char *cuserid (char *__s)
+  __attribute__ ((__access__ (__write_only__, 1)));
+
+
+
+
+struct obstack;
+
+
+extern int obstack_printf (struct obstack *__restrict __obstack,
+      const char *__restrict __format, ...)
+     __attribute__ ((__nothrow__)) __attribute__ ((__format__ (__printf__, 2, 3)));
+extern int obstack_vprintf (struct obstack *__restrict __obstack,
+       const char *__restrict __format,
+       __gnuc_va_list __args)
+     __attribute__ ((__nothrow__)) __attribute__ ((__format__ (__printf__, 2, 0)));
+
+
+
+
+
+
+
+extern void flockfile (FILE *__stream) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern int ftrylockfile (FILE *__stream) __attribute__ ((__nothrow__ , __leaf__)) ;
+
+
+extern void funlockfile (FILE *__stream) __attribute__ ((__nothrow__ , __leaf__));
+# 885 "/usr/include/stdio.h" 3 4
+extern int __uflow (FILE *);
+extern int __overflow (FILE *, int);
+# 902 "/usr/include/stdio.h" 3 4
+
+# 34 "/home/dweller/neovim/src/nvim/mbyte.c" 2
+# 1 "/usr/include/stdlib.h" 1 3 4
+# 26 "/usr/include/stdlib.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/libc-header-start.h" 1 3 4
+# 27 "/usr/include/stdlib.h" 2 3 4
+
+
+
+
+
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h" 1 3 4
+# 33 "/usr/include/stdlib.h" 2 3 4
+
+
+
+
+
+
+
+# 1 "/usr/include/x86_64-linux-gnu/bits/waitflags.h" 1 3 4
+# 41 "/usr/include/stdlib.h" 2 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/waitstatus.h" 1 3 4
+# 42 "/usr/include/stdlib.h" 2 3 4
+# 59 "/usr/include/stdlib.h" 3 4
+typedef struct
+  {
+    int quot;
+    int rem;
+  } div_t;
+
+
+
+typedef struct
+  {
+    long int quot;
+    long int rem;
+  } ldiv_t;
+
+
+
+
+
+__extension__ typedef struct
+  {
+    long long int quot;
+    long long int rem;
+  } lldiv_t;
+# 98 "/usr/include/stdlib.h" 3 4
+extern size_t __ctype_get_mb_cur_max (void) __attribute__ ((__nothrow__ , __leaf__)) ;
+
+
+
+extern double atof (const char *__nptr)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1))) ;
+
+extern int atoi (const char *__nptr)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1))) ;
+
+extern long int atol (const char *__nptr)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1))) ;
+
+
+
+__extension__ extern long long int atoll (const char *__nptr)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1))) ;
+
+
+
+extern double strtod (const char *__restrict __nptr,
+        char **__restrict __endptr)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+
+extern float strtof (const char *__restrict __nptr,
+       char **__restrict __endptr) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+extern long double strtold (const char *__restrict __nptr,
+       char **__restrict __endptr)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+# 141 "/usr/include/stdlib.h" 3 4
+extern _Float32 strtof32 (const char *__restrict __nptr,
+     char **__restrict __endptr)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+
+extern _Float64 strtof64 (const char *__restrict __nptr,
+     char **__restrict __endptr)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+
+extern _Float128 strtof128 (const char *__restrict __nptr,
+       char **__restrict __endptr)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+
+extern _Float32x strtof32x (const char *__restrict __nptr,
+       char **__restrict __endptr)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+
+extern _Float64x strtof64x (const char *__restrict __nptr,
+       char **__restrict __endptr)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+# 177 "/usr/include/stdlib.h" 3 4
+extern long int strtol (const char *__restrict __nptr,
+   char **__restrict __endptr, int __base)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+extern unsigned long int strtoul (const char *__restrict __nptr,
+      char **__restrict __endptr, int __base)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+
+__extension__
+extern long long int strtoq (const char *__restrict __nptr,
+        char **__restrict __endptr, int __base)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+__extension__
+extern unsigned long long int strtouq (const char *__restrict __nptr,
+           char **__restrict __endptr, int __base)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+
+
+__extension__
+extern long long int strtoll (const char *__restrict __nptr,
+         char **__restrict __endptr, int __base)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+__extension__
+extern unsigned long long int strtoull (const char *__restrict __nptr,
+     char **__restrict __endptr, int __base)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+
+
+extern int strfromd (char *__dest, size_t __size, const char *__format,
+       double __f)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (3)));
+
+extern int strfromf (char *__dest, size_t __size, const char *__format,
+       float __f)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (3)));
+
+extern int strfroml (char *__dest, size_t __size, const char *__format,
+       long double __f)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (3)));
+# 233 "/usr/include/stdlib.h" 3 4
+extern int strfromf32 (char *__dest, size_t __size, const char * __format,
+         _Float32 __f)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (3)));
+
+
+
+extern int strfromf64 (char *__dest, size_t __size, const char * __format,
+         _Float64 __f)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (3)));
+
+
+
+extern int strfromf128 (char *__dest, size_t __size, const char * __format,
+   _Float128 __f)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (3)));
+
+
+
+extern int strfromf32x (char *__dest, size_t __size, const char * __format,
+   _Float32x __f)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (3)));
+
+
+
+extern int strfromf64x (char *__dest, size_t __size, const char * __format,
+   _Float64x __f)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (3)));
+# 275 "/usr/include/stdlib.h" 3 4
+extern long int strtol_l (const char *__restrict __nptr,
+     char **__restrict __endptr, int __base,
+     locale_t __loc) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 4)));
+
+extern unsigned long int strtoul_l (const char *__restrict __nptr,
+        char **__restrict __endptr,
+        int __base, locale_t __loc)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 4)));
+
+__extension__
+extern long long int strtoll_l (const char *__restrict __nptr,
+    char **__restrict __endptr, int __base,
+    locale_t __loc)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 4)));
+
+__extension__
+extern unsigned long long int strtoull_l (const char *__restrict __nptr,
+       char **__restrict __endptr,
+       int __base, locale_t __loc)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 4)));
+
+extern double strtod_l (const char *__restrict __nptr,
+   char **__restrict __endptr, locale_t __loc)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 3)));
+
+extern float strtof_l (const char *__restrict __nptr,
+         char **__restrict __endptr, locale_t __loc)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 3)));
+
+extern long double strtold_l (const char *__restrict __nptr,
+         char **__restrict __endptr,
+         locale_t __loc)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 3)));
+# 317 "/usr/include/stdlib.h" 3 4
+extern _Float32 strtof32_l (const char *__restrict __nptr,
+       char **__restrict __endptr,
+       locale_t __loc)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 3)));
+
+
+
+extern _Float64 strtof64_l (const char *__restrict __nptr,
+       char **__restrict __endptr,
+       locale_t __loc)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 3)));
+
+
+
+extern _Float128 strtof128_l (const char *__restrict __nptr,
+         char **__restrict __endptr,
+         locale_t __loc)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 3)));
+
+
+
+extern _Float32x strtof32x_l (const char *__restrict __nptr,
+         char **__restrict __endptr,
+         locale_t __loc)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 3)));
+
+
+
+extern _Float64x strtof64x_l (const char *__restrict __nptr,
+         char **__restrict __endptr,
+         locale_t __loc)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 3)));
+# 386 "/usr/include/stdlib.h" 3 4
+extern char *l64a (long int __n) __attribute__ ((__nothrow__ , __leaf__)) ;
+
+
+extern long int a64l (const char *__s)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1))) ;
+
+
+
+
+# 1 "/usr/include/x86_64-linux-gnu/sys/types.h" 1 3 4
+# 27 "/usr/include/x86_64-linux-gnu/sys/types.h" 3 4
+
+
+
+
+
+
+typedef __u_char u_char;
+typedef __u_short u_short;
+typedef __u_int u_int;
+typedef __u_long u_long;
+typedef __quad_t quad_t;
+typedef __u_quad_t u_quad_t;
+typedef __fsid_t fsid_t;
+
+
+typedef __loff_t loff_t;
+
+
+
+
+typedef __ino_t ino_t;
+
+
+
+
+
+
+typedef __ino64_t ino64_t;
+
+
+
+
+typedef __dev_t dev_t;
+
+
+
+
+typedef __gid_t gid_t;
+
+
+
+
+typedef __mode_t mode_t;
+
+
+
+
+typedef __nlink_t nlink_t;
+
+
+
+
+typedef __uid_t uid_t;
+# 97 "/usr/include/x86_64-linux-gnu/sys/types.h" 3 4
+typedef __pid_t pid_t;
+
+
+
+
+
+typedef __id_t id_t;
+# 114 "/usr/include/x86_64-linux-gnu/sys/types.h" 3 4
+typedef __daddr_t daddr_t;
+typedef __caddr_t caddr_t;
+
+
+
+
+
+typedef __key_t key_t;
+
+
+
+
+# 1 "/usr/include/x86_64-linux-gnu/bits/types/clock_t.h" 1 3 4
+
+
+
+
+
+
+typedef __clock_t clock_t;
+# 127 "/usr/include/x86_64-linux-gnu/sys/types.h" 2 3 4
+
+# 1 "/usr/include/x86_64-linux-gnu/bits/types/clockid_t.h" 1 3 4
+
+
+
+
+
+
+typedef __clockid_t clockid_t;
+# 129 "/usr/include/x86_64-linux-gnu/sys/types.h" 2 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/types/time_t.h" 1 3 4
+# 10 "/usr/include/x86_64-linux-gnu/bits/types/time_t.h" 3 4
+typedef __time_t time_t;
+# 130 "/usr/include/x86_64-linux-gnu/sys/types.h" 2 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/types/timer_t.h" 1 3 4
+
+
+
+
+
+
+typedef __timer_t timer_t;
+# 131 "/usr/include/x86_64-linux-gnu/sys/types.h" 2 3 4
+
+
+
+typedef __useconds_t useconds_t;
+
+
+
+typedef __suseconds_t suseconds_t;
+
+
+
+
+
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h" 1 3 4
+# 145 "/usr/include/x86_64-linux-gnu/sys/types.h" 2 3 4
+
+
+
+typedef unsigned long int ulong;
+typedef unsigned short int ushort;
+typedef unsigned int uint;
+
+
+
+
+# 1 "/usr/include/x86_64-linux-gnu/bits/stdint-intn.h" 1 3 4
+# 24 "/usr/include/x86_64-linux-gnu/bits/stdint-intn.h" 3 4
+typedef __int8_t int8_t;
+typedef __int16_t int16_t;
+typedef __int32_t int32_t;
+typedef __int64_t int64_t;
+# 156 "/usr/include/x86_64-linux-gnu/sys/types.h" 2 3 4
+
+
+typedef __uint8_t u_int8_t;
+typedef __uint16_t u_int16_t;
+typedef __uint32_t u_int32_t;
+typedef __uint64_t u_int64_t;
+
+
+typedef int register_t __attribute__ ((__mode__ (__word__)));
+# 176 "/usr/include/x86_64-linux-gnu/sys/types.h" 3 4
+# 1 "/usr/include/endian.h" 1 3 4
+# 35 "/usr/include/endian.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/byteswap.h" 1 3 4
+# 33 "/usr/include/x86_64-linux-gnu/bits/byteswap.h" 3 4
+static __inline __uint16_t
+__bswap_16 (__uint16_t __bsx)
+{
+
+  return __builtin_bswap16 (__bsx);
+
+
+
+}
+
+
+
+
+
+
+static __inline __uint32_t
+__bswap_32 (__uint32_t __bsx)
+{
+
+  return __builtin_bswap32 (__bsx);
+
+
+
+}
+# 69 "/usr/include/x86_64-linux-gnu/bits/byteswap.h" 3 4
+__extension__ static __inline __uint64_t
+__bswap_64 (__uint64_t __bsx)
+{
+
+  return __builtin_bswap64 (__bsx);
+
+
+
+}
+# 36 "/usr/include/endian.h" 2 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/uintn-identity.h" 1 3 4
+# 32 "/usr/include/x86_64-linux-gnu/bits/uintn-identity.h" 3 4
+static __inline __uint16_t
+__uint16_identity (__uint16_t __x)
+{
+  return __x;
+}
+
+static __inline __uint32_t
+__uint32_identity (__uint32_t __x)
+{
+  return __x;
+}
+
+static __inline __uint64_t
+__uint64_identity (__uint64_t __x)
+{
+  return __x;
+}
+# 37 "/usr/include/endian.h" 2 3 4
+# 177 "/usr/include/x86_64-linux-gnu/sys/types.h" 2 3 4
+
+
+# 1 "/usr/include/x86_64-linux-gnu/sys/select.h" 1 3 4
+# 30 "/usr/include/x86_64-linux-gnu/sys/select.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/select.h" 1 3 4
+# 31 "/usr/include/x86_64-linux-gnu/sys/select.h" 2 3 4
+
+
+# 1 "/usr/include/x86_64-linux-gnu/bits/types/sigset_t.h" 1 3 4
+
+
+
+# 1 "/usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h" 1 3 4
+
+
+
+
+typedef struct
+{
+  unsigned long int __val[(1024 / (8 * sizeof (unsigned long int)))];
+} __sigset_t;
+# 5 "/usr/include/x86_64-linux-gnu/bits/types/sigset_t.h" 2 3 4
+
+
+typedef __sigset_t sigset_t;
+# 34 "/usr/include/x86_64-linux-gnu/sys/select.h" 2 3 4
+
+
+
+# 1 "/usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h" 1 3 4
+
+
+
+
+
+
+
+struct timeval
+{
+
+
+
+
+  __time_t tv_sec;
+  __suseconds_t tv_usec;
+
+};
+# 38 "/usr/include/x86_64-linux-gnu/sys/select.h" 2 3 4
+
+# 1 "/usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h" 1 3 4
+# 11 "/usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h" 3 4
+struct timespec
+{
+
+
+
+  __time_t tv_sec;
+
+
+
+
+  __syscall_slong_t tv_nsec;
+# 31 "/usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h" 3 4
+};
+# 40 "/usr/include/x86_64-linux-gnu/sys/select.h" 2 3 4
+# 49 "/usr/include/x86_64-linux-gnu/sys/select.h" 3 4
+typedef long int __fd_mask;
+# 59 "/usr/include/x86_64-linux-gnu/sys/select.h" 3 4
+typedef struct
+  {
+
+
+
+    __fd_mask fds_bits[1024 / (8 * (int) sizeof (__fd_mask))];
+
+
+
+
+
+  } fd_set;
+
+
+
+
+
+
+typedef __fd_mask fd_mask;
+# 91 "/usr/include/x86_64-linux-gnu/sys/select.h" 3 4
+
+# 102 "/usr/include/x86_64-linux-gnu/sys/select.h" 3 4
+extern int select (int __nfds, fd_set *__restrict __readfds,
+     fd_set *__restrict __writefds,
+     fd_set *__restrict __exceptfds,
+     struct timeval *__restrict __timeout);
+# 127 "/usr/include/x86_64-linux-gnu/sys/select.h" 3 4
+extern int pselect (int __nfds, fd_set *__restrict __readfds,
+      fd_set *__restrict __writefds,
+      fd_set *__restrict __exceptfds,
+      const struct timespec *__restrict __timeout,
+      const __sigset_t *__restrict __sigmask);
+# 153 "/usr/include/x86_64-linux-gnu/sys/select.h" 3 4
+
+# 180 "/usr/include/x86_64-linux-gnu/sys/types.h" 2 3 4
+
+
+
+
+
+typedef __blksize_t blksize_t;
+
+
+
+
+
+
+typedef __blkcnt_t blkcnt_t;
+
+
+
+typedef __fsblkcnt_t fsblkcnt_t;
+
+
+
+typedef __fsfilcnt_t fsfilcnt_t;
+# 219 "/usr/include/x86_64-linux-gnu/sys/types.h" 3 4
+typedef __blkcnt64_t blkcnt64_t;
+typedef __fsblkcnt64_t fsblkcnt64_t;
+typedef __fsfilcnt64_t fsfilcnt64_t;
+
+
+
+
+
+# 1 "/usr/include/x86_64-linux-gnu/bits/pthreadtypes.h" 1 3 4
+# 23 "/usr/include/x86_64-linux-gnu/bits/pthreadtypes.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/thread-shared-types.h" 1 3 4
+# 44 "/usr/include/x86_64-linux-gnu/bits/thread-shared-types.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h" 1 3 4
+# 21 "/usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/wordsize.h" 1 3 4
+# 22 "/usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h" 2 3 4
+# 45 "/usr/include/x86_64-linux-gnu/bits/thread-shared-types.h" 2 3 4
+
+# 1 "/usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h" 1 3 4
+# 25 "/usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h" 3 4
+typedef union
+{
+  __extension__ unsigned long long int __value64;
+  struct
+  {
+    unsigned int __low;
+    unsigned int __high;
+  } __value32;
+} __atomic_wide_counter;
+# 47 "/usr/include/x86_64-linux-gnu/bits/thread-shared-types.h" 2 3 4
+
+
+
+
+typedef struct __pthread_internal_list
+{
+  struct __pthread_internal_list *__prev;
+  struct __pthread_internal_list *__next;
+} __pthread_list_t;
+
+typedef struct __pthread_internal_slist
+{
+  struct __pthread_internal_slist *__next;
+} __pthread_slist_t;
+# 76 "/usr/include/x86_64-linux-gnu/bits/thread-shared-types.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/struct_mutex.h" 1 3 4
+# 22 "/usr/include/x86_64-linux-gnu/bits/struct_mutex.h" 3 4
+struct __pthread_mutex_s
+{
+  int __lock;
+  unsigned int __count;
+  int __owner;
+
+  unsigned int __nusers;
+
+
+
+  int __kind;
+
+  short __spins;
+  short __elision;
+  __pthread_list_t __list;
+# 53 "/usr/include/x86_64-linux-gnu/bits/struct_mutex.h" 3 4
+};
+# 77 "/usr/include/x86_64-linux-gnu/bits/thread-shared-types.h" 2 3 4
+# 89 "/usr/include/x86_64-linux-gnu/bits/thread-shared-types.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/struct_rwlock.h" 1 3 4
+# 23 "/usr/include/x86_64-linux-gnu/bits/struct_rwlock.h" 3 4
+struct __pthread_rwlock_arch_t
+{
+  unsigned int __readers;
+  unsigned int __writers;
+  unsigned int __wrphase_futex;
+  unsigned int __writers_futex;
+  unsigned int __pad3;
+  unsigned int __pad4;
+
+  int __cur_writer;
+  int __shared;
+  signed char __rwelision;
+
+
+
+
+  unsigned char __pad1[7];
+
+
+  unsigned long int __pad2;
+
+
+  unsigned int __flags;
+# 55 "/usr/include/x86_64-linux-gnu/bits/struct_rwlock.h" 3 4
+};
+# 90 "/usr/include/x86_64-linux-gnu/bits/thread-shared-types.h" 2 3 4
+
+
+
+
+struct __pthread_cond_s
+{
+  __atomic_wide_counter __wseq;
+  __atomic_wide_counter __g1_start;
+  unsigned int __g_refs[2] ;
+  unsigned int __g_size[2];
+  unsigned int __g1_orig_size;
+  unsigned int __wrefs;
+  unsigned int __g_signals[2];
+};
+
+typedef unsigned int __tss_t;
+typedef unsigned long int __thrd_t;
+
+typedef struct
+{
+  int __data ;
+} __once_flag;
+# 24 "/usr/include/x86_64-linux-gnu/bits/pthreadtypes.h" 2 3 4
+
+
+
+typedef unsigned long int pthread_t;
+
+
+
+
+typedef union
+{
+  char __size[4];
+  int __align;
+} pthread_mutexattr_t;
+
+
+
+
+typedef union
+{
+  char __size[4];
+  int __align;
+} pthread_condattr_t;
+
+
+
+typedef unsigned int pthread_key_t;
+
+
+
+typedef int pthread_once_t;
+
+
+union pthread_attr_t
+{
+  char __size[56];
+  long int __align;
+};
+
+typedef union pthread_attr_t pthread_attr_t;
+
+
+
+
+typedef union
+{
+  struct __pthread_mutex_s __data;
+  char __size[40];
+  long int __align;
+} pthread_mutex_t;
+
+
+typedef union
+{
+  struct __pthread_cond_s __data;
+  char __size[48];
+  __extension__ long long int __align;
+} pthread_cond_t;
+
+
+
+
+
+typedef union
+{
+  struct __pthread_rwlock_arch_t __data;
+  char __size[56];
+  long int __align;
+} pthread_rwlock_t;
+
+typedef union
+{
+  char __size[8];
+  long int __align;
+} pthread_rwlockattr_t;
+
+
+
+
+
+typedef volatile int pthread_spinlock_t;
+
+
+
+
+typedef union
+{
+  char __size[32];
+  long int __align;
+} pthread_barrier_t;
+
+typedef union
+{
+  char __size[4];
+  int __align;
+} pthread_barrierattr_t;
+# 228 "/usr/include/x86_64-linux-gnu/sys/types.h" 2 3 4
+
+
+
+# 396 "/usr/include/stdlib.h" 2 3 4
+
+
+
+
+
+
+extern long int random (void) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern void srandom (unsigned int __seed) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+extern char *initstate (unsigned int __seed, char *__statebuf,
+   size_t __statelen) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (2)));
+
+
+
+extern char *setstate (char *__statebuf) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+
+
+
+
+
+struct random_data
+  {
+    int32_t *fptr;
+    int32_t *rptr;
+    int32_t *state;
+    int rand_type;
+    int rand_deg;
+    int rand_sep;
+    int32_t *end_ptr;
+  };
+
+extern int random_r (struct random_data *__restrict __buf,
+       int32_t *__restrict __result) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+
+extern int srandom_r (unsigned int __seed, struct random_data *__buf)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (2)));
+
+extern int initstate_r (unsigned int __seed, char *__restrict __statebuf,
+   size_t __statelen,
+   struct random_data *__restrict __buf)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (2, 4)));
+
+extern int setstate_r (char *__restrict __statebuf,
+         struct random_data *__restrict __buf)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+
+
+
+extern int rand (void) __attribute__ ((__nothrow__ , __leaf__));
+
+extern void srand (unsigned int __seed) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern int rand_r (unsigned int *__seed) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+
+
+extern double drand48 (void) __attribute__ ((__nothrow__ , __leaf__));
+extern double erand48 (unsigned short int __xsubi[3]) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+extern long int lrand48 (void) __attribute__ ((__nothrow__ , __leaf__));
+extern long int nrand48 (unsigned short int __xsubi[3])
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+extern long int mrand48 (void) __attribute__ ((__nothrow__ , __leaf__));
+extern long int jrand48 (unsigned short int __xsubi[3])
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+extern void srand48 (long int __seedval) __attribute__ ((__nothrow__ , __leaf__));
+extern unsigned short int *seed48 (unsigned short int __seed16v[3])
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+extern void lcong48 (unsigned short int __param[7]) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+
+
+
+struct drand48_data
+  {
+    unsigned short int __x[3];
+    unsigned short int __old_x[3];
+    unsigned short int __c;
+    unsigned short int __init;
+    __extension__ unsigned long long int __a;
+
+  };
+
+
+extern int drand48_r (struct drand48_data *__restrict __buffer,
+        double *__restrict __result) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+extern int erand48_r (unsigned short int __xsubi[3],
+        struct drand48_data *__restrict __buffer,
+        double *__restrict __result) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern int lrand48_r (struct drand48_data *__restrict __buffer,
+        long int *__restrict __result)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+extern int nrand48_r (unsigned short int __xsubi[3],
+        struct drand48_data *__restrict __buffer,
+        long int *__restrict __result)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern int mrand48_r (struct drand48_data *__restrict __buffer,
+        long int *__restrict __result)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+extern int jrand48_r (unsigned short int __xsubi[3],
+        struct drand48_data *__restrict __buffer,
+        long int *__restrict __result)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern int srand48_r (long int __seedval, struct drand48_data *__buffer)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (2)));
+
+extern int seed48_r (unsigned short int __seed16v[3],
+       struct drand48_data *__buffer) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+
+extern int lcong48_r (unsigned short int __param[7],
+        struct drand48_data *__buffer)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+
+
+extern void *malloc (size_t __size) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__malloc__))
+     __attribute__ ((__alloc_size__ (1))) ;
+
+extern void *calloc (size_t __nmemb, size_t __size)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__malloc__)) __attribute__ ((__alloc_size__ (1, 2))) ;
+
+
+
+
+
+
+extern void *realloc (void *__ptr, size_t __size)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__warn_unused_result__)) __attribute__ ((__alloc_size__ (2)));
+
+
+extern void free (void *__ptr) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+
+
+extern void *reallocarray (void *__ptr, size_t __nmemb, size_t __size)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__warn_unused_result__))
+     __attribute__ ((__alloc_size__ (2, 3)))
+    __attribute__ ((__malloc__ (__builtin_free, 1)));
+
+
+extern void *reallocarray (void *__ptr, size_t __nmemb, size_t __size)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__malloc__ (reallocarray, 1)));
+
+
+
+# 1 "/usr/include/alloca.h" 1 3 4
+# 24 "/usr/include/alloca.h" 3 4
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h" 1 3 4
+# 25 "/usr/include/alloca.h" 2 3 4
+
+
+
+
+
+
+
+extern void *alloca (size_t __size) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+
+# 575 "/usr/include/stdlib.h" 2 3 4
+
+
+
+
+
+extern void *valloc (size_t __size) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__malloc__))
+     __attribute__ ((__alloc_size__ (1))) ;
+
+
+
+
+extern int posix_memalign (void **__memptr, size_t __alignment, size_t __size)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1))) ;
+
+
+
+
+extern void *aligned_alloc (size_t __alignment, size_t __size)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__malloc__)) __attribute__ ((__alloc_align__ (1)))
+     __attribute__ ((__alloc_size__ (2))) ;
+
+
+
+extern void abort (void) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__noreturn__));
+
+
+
+extern int atexit (void (*__func) (void)) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+
+
+
+
+
+extern int at_quick_exit (void (*__func) (void)) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+
+
+
+
+extern int on_exit (void (*__func) (int __status, void *__arg), void *__arg)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+
+
+
+extern void exit (int __status) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__noreturn__));
+
+
+
+
+
+extern void quick_exit (int __status) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__noreturn__));
+
+
+
+
+
+extern void _Exit (int __status) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__noreturn__));
+
+
+
+
+extern char *getenv (const char *__name) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1))) ;
+
+
+
+
+extern char *secure_getenv (const char *__name)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1))) ;
+
+
+
+
+
+
+extern int putenv (char *__string) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+
+
+
+extern int setenv (const char *__name, const char *__value, int __replace)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (2)));
+
+
+extern int unsetenv (const char *__name) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+
+
+
+
+extern int clearenv (void) __attribute__ ((__nothrow__ , __leaf__));
+# 682 "/usr/include/stdlib.h" 3 4
+extern char *mktemp (char *__template) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+# 695 "/usr/include/stdlib.h" 3 4
+extern int mkstemp (char *__template) __attribute__ ((__nonnull__ (1))) ;
+# 705 "/usr/include/stdlib.h" 3 4
+extern int mkstemp64 (char *__template) __attribute__ ((__nonnull__ (1))) ;
+# 717 "/usr/include/stdlib.h" 3 4
+extern int mkstemps (char *__template, int __suffixlen) __attribute__ ((__nonnull__ (1))) ;
+# 727 "/usr/include/stdlib.h" 3 4
+extern int mkstemps64 (char *__template, int __suffixlen)
+     __attribute__ ((__nonnull__ (1))) ;
+# 738 "/usr/include/stdlib.h" 3 4
+extern char *mkdtemp (char *__template) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1))) ;
+# 749 "/usr/include/stdlib.h" 3 4
+extern int mkostemp (char *__template, int __flags) __attribute__ ((__nonnull__ (1))) ;
+# 759 "/usr/include/stdlib.h" 3 4
+extern int mkostemp64 (char *__template, int __flags) __attribute__ ((__nonnull__ (1))) ;
+# 769 "/usr/include/stdlib.h" 3 4
+extern int mkostemps (char *__template, int __suffixlen, int __flags)
+     __attribute__ ((__nonnull__ (1))) ;
+# 781 "/usr/include/stdlib.h" 3 4
+extern int mkostemps64 (char *__template, int __suffixlen, int __flags)
+     __attribute__ ((__nonnull__ (1))) ;
+# 791 "/usr/include/stdlib.h" 3 4
+extern int system (const char *__command) ;
+
+
+
+
+
+extern char *canonicalize_file_name (const char *__name)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1))) __attribute__ ((__malloc__))
+     __attribute__ ((__malloc__ (__builtin_free, 1))) ;
+# 808 "/usr/include/stdlib.h" 3 4
+extern char *realpath (const char *__restrict __name,
+         char *__restrict __resolved) __attribute__ ((__nothrow__ , __leaf__)) ;
+
+
+
+
+
+
+typedef int (*__compar_fn_t) (const void *, const void *);
+
+
+typedef __compar_fn_t comparison_fn_t;
+
+
+
+typedef int (*__compar_d_fn_t) (const void *, const void *, void *);
+
+
+
+
+extern void *bsearch (const void *__key, const void *__base,
+        size_t __nmemb, size_t __size, __compar_fn_t __compar)
+     __attribute__ ((__nonnull__ (1, 2, 5))) ;
+
+
+
+
+
+
+
+extern void qsort (void *__base, size_t __nmemb, size_t __size,
+     __compar_fn_t __compar) __attribute__ ((__nonnull__ (1, 4)));
+
+extern void qsort_r (void *__base, size_t __nmemb, size_t __size,
+       __compar_d_fn_t __compar, void *__arg)
+  __attribute__ ((__nonnull__ (1, 4)));
+
+
+
+
+extern int abs (int __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)) ;
+extern long int labs (long int __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)) ;
+
+
+__extension__ extern long long int llabs (long long int __x)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)) ;
+
+
+
+
+
+
+extern div_t div (int __numer, int __denom)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)) ;
+extern ldiv_t ldiv (long int __numer, long int __denom)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)) ;
+
+
+__extension__ extern lldiv_t lldiv (long long int __numer,
+        long long int __denom)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)) ;
+# 880 "/usr/include/stdlib.h" 3 4
+extern char *ecvt (double __value, int __ndigit, int *__restrict __decpt,
+     int *__restrict __sign) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (3, 4))) ;
+
+
+
+
+extern char *fcvt (double __value, int __ndigit, int *__restrict __decpt,
+     int *__restrict __sign) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (3, 4))) ;
+
+
+
+
+extern char *gcvt (double __value, int __ndigit, char *__buf)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (3))) ;
+
+
+
+
+extern char *qecvt (long double __value, int __ndigit,
+      int *__restrict __decpt, int *__restrict __sign)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (3, 4))) ;
+extern char *qfcvt (long double __value, int __ndigit,
+      int *__restrict __decpt, int *__restrict __sign)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (3, 4))) ;
+extern char *qgcvt (long double __value, int __ndigit, char *__buf)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (3))) ;
+
+
+
+
+extern int ecvt_r (double __value, int __ndigit, int *__restrict __decpt,
+     int *__restrict __sign, char *__restrict __buf,
+     size_t __len) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (3, 4, 5)));
+extern int fcvt_r (double __value, int __ndigit, int *__restrict __decpt,
+     int *__restrict __sign, char *__restrict __buf,
+     size_t __len) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (3, 4, 5)));
+
+extern int qecvt_r (long double __value, int __ndigit,
+      int *__restrict __decpt, int *__restrict __sign,
+      char *__restrict __buf, size_t __len)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (3, 4, 5)));
+extern int qfcvt_r (long double __value, int __ndigit,
+      int *__restrict __decpt, int *__restrict __sign,
+      char *__restrict __buf, size_t __len)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (3, 4, 5)));
+
+
+
+
+
+extern int mblen (const char *__s, size_t __n) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern int mbtowc (wchar_t *__restrict __pwc,
+     const char *__restrict __s, size_t __n) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern int wctomb (char *__s, wchar_t __wchar) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern size_t mbstowcs (wchar_t *__restrict __pwcs,
+   const char *__restrict __s, size_t __n) __attribute__ ((__nothrow__ , __leaf__))
+    __attribute__ ((__access__ (__read_only__, 2)));
+
+extern size_t wcstombs (char *__restrict __s,
+   const wchar_t *__restrict __pwcs, size_t __n)
+     __attribute__ ((__nothrow__ , __leaf__))
+  __attribute__ ((__access__ (__write_only__, 1, 3)))
+  __attribute__ ((__access__ (__read_only__, 2)));
+
+
+
+
+
+
+extern int rpmatch (const char *__response) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1))) ;
+# 967 "/usr/include/stdlib.h" 3 4
+extern int getsubopt (char **__restrict __optionp,
+        char *const *__restrict __tokens,
+        char **__restrict __valuep)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2, 3))) ;
+
+
+
+
+
+
+
+extern int posix_openpt (int __oflag) ;
+
+
+
+
+
+
+
+extern int grantpt (int __fd) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern int unlockpt (int __fd) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+extern char *ptsname (int __fd) __attribute__ ((__nothrow__ , __leaf__)) ;
+
+
+
+
+
+
+extern int ptsname_r (int __fd, char *__buf, size_t __buflen)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (2))) __attribute__ ((__access__ (__write_only__, 2, 3)));
+
+
+extern int getpt (void);
+
+
+
+
+
+
+extern int getloadavg (double __loadavg[], int __nelem)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+# 1023 "/usr/include/stdlib.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/stdlib-float.h" 1 3 4
+# 1024 "/usr/include/stdlib.h" 2 3 4
+# 1035 "/usr/include/stdlib.h" 3 4
+
+# 35 "/home/dweller/neovim/src/nvim/mbyte.c" 2
+# 1 "/usr/include/string.h" 1 3 4
+# 26 "/usr/include/string.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/libc-header-start.h" 1 3 4
+# 27 "/usr/include/string.h" 2 3 4
+
+
+
+
+
+
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h" 1 3 4
+# 34 "/usr/include/string.h" 2 3 4
+# 43 "/usr/include/string.h" 3 4
+extern void *memcpy (void *__restrict __dest, const void *__restrict __src,
+       size_t __n) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern void *memmove (void *__dest, const void *__src, size_t __n)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+
+
+
+extern void *memccpy (void *__restrict __dest, const void *__restrict __src,
+        int __c, size_t __n)
+    __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2))) __attribute__ ((__access__ (__write_only__, 1, 4)));
+
+
+
+
+extern void *memset (void *__s, int __c, size_t __n) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+extern int memcmp (const void *__s1, const void *__s2, size_t __n)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+# 80 "/usr/include/string.h" 3 4
+extern int __memcmpeq (const void *__s1, const void *__s2, size_t __n)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+# 107 "/usr/include/string.h" 3 4
+extern void *memchr (const void *__s, int __c, size_t __n)
+      __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+# 120 "/usr/include/string.h" 3 4
+extern void *rawmemchr (const void *__s, int __c)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+# 133 "/usr/include/string.h" 3 4
+extern void *memrchr (const void *__s, int __c, size_t __n)
+      __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)))
+      __attribute__ ((__access__ (__read_only__, 1, 3)));
+
+
+
+
+
+extern char *strcpy (char *__restrict __dest, const char *__restrict __src)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+
+extern char *strncpy (char *__restrict __dest,
+        const char *__restrict __src, size_t __n)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern char *strcat (char *__restrict __dest, const char *__restrict __src)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+
+extern char *strncat (char *__restrict __dest, const char *__restrict __src,
+        size_t __n) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern int strcmp (const char *__s1, const char *__s2)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+
+extern int strncmp (const char *__s1, const char *__s2, size_t __n)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern int strcoll (const char *__s1, const char *__s2)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+
+extern size_t strxfrm (char *__restrict __dest,
+         const char *__restrict __src, size_t __n)
+    __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (2))) __attribute__ ((__access__ (__write_only__, 1, 3)));
+
+
+
+
+
+
+extern int strcoll_l (const char *__s1, const char *__s2, locale_t __l)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2, 3)));
+
+
+extern size_t strxfrm_l (char *__dest, const char *__src, size_t __n,
+    locale_t __l) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (2, 4)))
+     __attribute__ ((__access__ (__write_only__, 1, 3)));
+
+
+
+
+
+extern char *strdup (const char *__s)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__malloc__)) __attribute__ ((__nonnull__ (1)));
+
+
+
+
+
+
+extern char *strndup (const char *__string, size_t __n)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__malloc__)) __attribute__ ((__nonnull__ (1)));
+# 246 "/usr/include/string.h" 3 4
+extern char *strchr (const char *__s, int __c)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+# 273 "/usr/include/string.h" 3 4
+extern char *strrchr (const char *__s, int __c)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+# 286 "/usr/include/string.h" 3 4
+extern char *strchrnul (const char *__s, int __c)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+
+
+
+
+
+extern size_t strcspn (const char *__s, const char *__reject)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern size_t strspn (const char *__s, const char *__accept)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+# 323 "/usr/include/string.h" 3 4
+extern char *strpbrk (const char *__s, const char *__accept)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+# 350 "/usr/include/string.h" 3 4
+extern char *strstr (const char *__haystack, const char *__needle)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+
+
+extern char *strtok (char *__restrict __s, const char *__restrict __delim)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (2)));
+
+
+
+extern char *__strtok_r (char *__restrict __s,
+    const char *__restrict __delim,
+    char **__restrict __save_ptr)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (2, 3)));
+
+extern char *strtok_r (char *__restrict __s, const char *__restrict __delim,
+         char **__restrict __save_ptr)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (2, 3)));
+# 380 "/usr/include/string.h" 3 4
+extern char *strcasestr (const char *__haystack, const char *__needle)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+
+
+
+
+
+extern void *memmem (const void *__haystack, size_t __haystacklen,
+       const void *__needle, size_t __needlelen)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 3)))
+    __attribute__ ((__access__ (__read_only__, 1, 2)))
+    __attribute__ ((__access__ (__read_only__, 3, 4)));
+
+
+
+extern void *__mempcpy (void *__restrict __dest,
+   const void *__restrict __src, size_t __n)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+extern void *mempcpy (void *__restrict __dest,
+        const void *__restrict __src, size_t __n)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+
+
+extern size_t strlen (const char *__s)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+
+
+
+
+extern size_t strnlen (const char *__string, size_t __maxlen)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+
+
+
+
+extern char *strerror (int __errnum) __attribute__ ((__nothrow__ , __leaf__));
+# 444 "/usr/include/string.h" 3 4
+extern char *strerror_r (int __errnum, char *__buf, size_t __buflen)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (2))) __attribute__ ((__access__ (__write_only__, 2, 3)));
+
+
+
+
+extern const char *strerrordesc_np (int __err) __attribute__ ((__nothrow__ , __leaf__));
+
+extern const char *strerrorname_np (int __err) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+extern char *strerror_l (int __errnum, locale_t __l) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+# 1 "/usr/include/strings.h" 1 3 4
+# 23 "/usr/include/strings.h" 3 4
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h" 1 3 4
+# 24 "/usr/include/strings.h" 2 3 4
+
+
+
+
+
+
+
+
+
+
+extern int bcmp (const void *__s1, const void *__s2, size_t __n)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern void bcopy (const void *__src, void *__dest, size_t __n)
+  __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern void bzero (void *__s, size_t __n) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+# 68 "/usr/include/strings.h" 3 4
+extern char *index (const char *__s, int __c)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+# 96 "/usr/include/strings.h" 3 4
+extern char *rindex (const char *__s, int __c)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+
+
+
+
+
+
+extern int ffs (int __i) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+
+
+
+extern int ffsl (long int __l) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+__extension__ extern int ffsll (long long int __ll)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+
+extern int strcasecmp (const char *__s1, const char *__s2)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern int strncasecmp (const char *__s1, const char *__s2, size_t __n)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+
+
+
+
+extern int strcasecmp_l (const char *__s1, const char *__s2, locale_t __loc)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2, 3)));
+
+
+
+extern int strncasecmp_l (const char *__s1, const char *__s2,
+     size_t __n, locale_t __loc)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2, 4)));
+
+
+
+# 463 "/usr/include/string.h" 2 3 4
+
+
+
+extern void explicit_bzero (void *__s, size_t __n) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)))
+    __attribute__ ((__access__ (__write_only__, 1, 2)));
+
+
+
+extern char *strsep (char **__restrict __stringp,
+       const char *__restrict __delim)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+
+
+extern char *strsignal (int __sig) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern const char *sigabbrev_np (int __sig) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern const char *sigdescr_np (int __sig) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern char *__stpcpy (char *__restrict __dest, const char *__restrict __src)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+extern char *stpcpy (char *__restrict __dest, const char *__restrict __src)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+
+extern char *__stpncpy (char *__restrict __dest,
+   const char *__restrict __src, size_t __n)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+extern char *stpncpy (char *__restrict __dest,
+        const char *__restrict __src, size_t __n)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+
+
+extern int strverscmp (const char *__s1, const char *__s2)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern char *strfry (char *__string) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+extern void *memfrob (void *__s, size_t __n) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)))
+    __attribute__ ((__access__ (__read_write__, 1, 2)));
+# 527 "/usr/include/string.h" 3 4
+extern char *basename (const char *__filename) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+# 539 "/usr/include/string.h" 3 4
+
+# 36 "/home/dweller/neovim/src/nvim/mbyte.c" 2
+# 1 "/home/dweller/neovim/.deps/usr/include/utf8proc.h" 1
+# 108 "/home/dweller/neovim/.deps/usr/include/utf8proc.h"
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h" 1 3 4
+# 109 "/home/dweller/neovim/.deps/usr/include/utf8proc.h" 2
+
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/11/include/stdint.h" 1 3 4
+# 9 "/usr/lib/gcc/x86_64-linux-gnu/11/include/stdint.h" 3 4
+# 1 "/usr/include/stdint.h" 1 3 4
+# 26 "/usr/include/stdint.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/libc-header-start.h" 1 3 4
+# 27 "/usr/include/stdint.h" 2 3 4
+
+# 1 "/usr/include/x86_64-linux-gnu/bits/wchar.h" 1 3 4
+# 29 "/usr/include/stdint.h" 2 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/wordsize.h" 1 3 4
+# 30 "/usr/include/stdint.h" 2 3 4
+
+
+
+
+
+
+
+# 1 "/usr/include/x86_64-linux-gnu/bits/stdint-uintn.h" 1 3 4
+# 24 "/usr/include/x86_64-linux-gnu/bits/stdint-uintn.h" 3 4
+typedef __uint8_t uint8_t;
+typedef __uint16_t uint16_t;
+typedef __uint32_t uint32_t;
+typedef __uint64_t uint64_t;
+# 38 "/usr/include/stdint.h" 2 3 4
+
+
+
+
+
+typedef __int_least8_t int_least8_t;
+typedef __int_least16_t int_least16_t;
+typedef __int_least32_t int_least32_t;
+typedef __int_least64_t int_least64_t;
+
+
+typedef __uint_least8_t uint_least8_t;
+typedef __uint_least16_t uint_least16_t;
+typedef __uint_least32_t uint_least32_t;
+typedef __uint_least64_t uint_least64_t;
+
+
+
+
+
+typedef signed char int_fast8_t;
+
+typedef long int int_fast16_t;
+typedef long int int_fast32_t;
+typedef long int int_fast64_t;
+# 71 "/usr/include/stdint.h" 3 4
+typedef unsigned char uint_fast8_t;
+
+typedef unsigned long int uint_fast16_t;
+typedef unsigned long int uint_fast32_t;
+typedef unsigned long int uint_fast64_t;
+# 87 "/usr/include/stdint.h" 3 4
+typedef long int intptr_t;
+
+
+typedef unsigned long int uintptr_t;
+# 101 "/usr/include/stdint.h" 3 4
+typedef __intmax_t intmax_t;
+typedef __uintmax_t uintmax_t;
+# 10 "/usr/lib/gcc/x86_64-linux-gnu/11/include/stdint.h" 2 3 4
+# 111 "/home/dweller/neovim/.deps/usr/include/utf8proc.h" 2
+
+# 111 "/home/dweller/neovim/.deps/usr/include/utf8proc.h"
+typedef int8_t utf8proc_int8_t;
+typedef uint8_t utf8proc_uint8_t;
+typedef int16_t utf8proc_int16_t;
+typedef uint16_t utf8proc_uint16_t;
+typedef int32_t utf8proc_int32_t;
+typedef uint32_t utf8proc_uint32_t;
+typedef size_t utf8proc_size_t;
+typedef ptrdiff_t utf8proc_ssize_t;
+typedef 
+# 119 "/home/dweller/neovim/.deps/usr/include/utf8proc.h" 3 4
+       _Bool 
+# 119 "/home/dweller/neovim/.deps/usr/include/utf8proc.h"
+            utf8proc_bool;
+
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h" 1 3 4
+# 122 "/home/dweller/neovim/.deps/usr/include/utf8proc.h" 2
+# 146 "/home/dweller/neovim/.deps/usr/include/utf8proc.h"
+typedef enum {
+
+  UTF8PROC_NULLTERM = (1<<0),
+
+  UTF8PROC_STABLE = (1<<1),
+
+  UTF8PROC_COMPAT = (1<<2),
+
+  UTF8PROC_COMPOSE = (1<<3),
+
+  UTF8PROC_DECOMPOSE = (1<<4),
+
+  UTF8PROC_IGNORE = (1<<5),
+
+  UTF8PROC_REJECTNA = (1<<6),
+
+
+
+
+
+  UTF8PROC_NLF2LS = (1<<7),
+
+
+
+
+
+  UTF8PROC_NLF2PS = (1<<8),
+
+  UTF8PROC_NLF2LF = (UTF8PROC_NLF2LS | UTF8PROC_NLF2PS),
+
+
+
+
+
+
+
+  UTF8PROC_STRIPCC = (1<<9),
+
+
+
+
+  UTF8PROC_CASEFOLD = (1<<10),
+
+
+
+
+  UTF8PROC_CHARBOUND = (1<<11),
+
+
+
+
+
+
+
+  UTF8PROC_LUMP = (1<<12),
+
+
+
+
+
+
+  UTF8PROC_STRIPMARK = (1<<13),
+
+
+
+  UTF8PROC_STRIPNA = (1<<14),
+} utf8proc_option_t;
+# 233 "/home/dweller/neovim/.deps/usr/include/utf8proc.h"
+typedef utf8proc_int16_t utf8proc_propval_t;
+
+
+typedef struct utf8proc_property_struct {
+
+
+
+
+  utf8proc_propval_t category;
+  utf8proc_propval_t combining_class;
+
+
+
+
+  utf8proc_propval_t bidi_class;
+
+
+
+
+  utf8proc_propval_t decomp_type;
+  utf8proc_uint16_t decomp_seqindex;
+  utf8proc_uint16_t casefold_seqindex;
+  utf8proc_uint16_t uppercase_seqindex;
+  utf8proc_uint16_t lowercase_seqindex;
+  utf8proc_uint16_t titlecase_seqindex;
+# 292 "/home/dweller/neovim/.deps/usr/include/utf8proc.h"
+  utf8proc_uint16_t comb_index:10;
+  utf8proc_uint16_t comb_length:5;
+  utf8proc_uint16_t comb_issecond:1;
+  unsigned bidi_mirrored:1;
+  unsigned comp_exclusion:1;
+
+
+
+
+
+
+  unsigned ignorable:1;
+  unsigned control_boundary:1;
+
+  unsigned charwidth:2;
+
+  unsigned ambiguous_width:1;
+  unsigned pad:1;
+
+
+
+
+  unsigned boundclass:6;
+  unsigned indic_conjunct_break:2;
+} utf8proc_property_t;
+
+
+typedef enum {
+  UTF8PROC_CATEGORY_CN = 0,
+  UTF8PROC_CATEGORY_LU = 1,
+  UTF8PROC_CATEGORY_LL = 2,
+  UTF8PROC_CATEGORY_LT = 3,
+  UTF8PROC_CATEGORY_LM = 4,
+  UTF8PROC_CATEGORY_LO = 5,
+  UTF8PROC_CATEGORY_MN = 6,
+  UTF8PROC_CATEGORY_MC = 7,
+  UTF8PROC_CATEGORY_ME = 8,
+  UTF8PROC_CATEGORY_ND = 9,
+  UTF8PROC_CATEGORY_NL = 10,
+  UTF8PROC_CATEGORY_NO = 11,
+  UTF8PROC_CATEGORY_PC = 12,
+  UTF8PROC_CATEGORY_PD = 13,
+  UTF8PROC_CATEGORY_PS = 14,
+  UTF8PROC_CATEGORY_PE = 15,
+  UTF8PROC_CATEGORY_PI = 16,
+  UTF8PROC_CATEGORY_PF = 17,
+  UTF8PROC_CATEGORY_PO = 18,
+  UTF8PROC_CATEGORY_SM = 19,
+  UTF8PROC_CATEGORY_SC = 20,
+  UTF8PROC_CATEGORY_SK = 21,
+  UTF8PROC_CATEGORY_SO = 22,
+  UTF8PROC_CATEGORY_ZS = 23,
+  UTF8PROC_CATEGORY_ZL = 24,
+  UTF8PROC_CATEGORY_ZP = 25,
+  UTF8PROC_CATEGORY_CC = 26,
+  UTF8PROC_CATEGORY_CF = 27,
+  UTF8PROC_CATEGORY_CS = 28,
+  UTF8PROC_CATEGORY_CO = 29,
+} utf8proc_category_t;
+
+
+typedef enum {
+  UTF8PROC_BIDI_CLASS_L = 1,
+  UTF8PROC_BIDI_CLASS_LRE = 2,
+  UTF8PROC_BIDI_CLASS_LRO = 3,
+  UTF8PROC_BIDI_CLASS_R = 4,
+  UTF8PROC_BIDI_CLASS_AL = 5,
+  UTF8PROC_BIDI_CLASS_RLE = 6,
+  UTF8PROC_BIDI_CLASS_RLO = 7,
+  UTF8PROC_BIDI_CLASS_PDF = 8,
+  UTF8PROC_BIDI_CLASS_EN = 9,
+  UTF8PROC_BIDI_CLASS_ES = 10,
+  UTF8PROC_BIDI_CLASS_ET = 11,
+  UTF8PROC_BIDI_CLASS_AN = 12,
+  UTF8PROC_BIDI_CLASS_CS = 13,
+  UTF8PROC_BIDI_CLASS_NSM = 14,
+  UTF8PROC_BIDI_CLASS_BN = 15,
+  UTF8PROC_BIDI_CLASS_B = 16,
+  UTF8PROC_BIDI_CLASS_S = 17,
+  UTF8PROC_BIDI_CLASS_WS = 18,
+  UTF8PROC_BIDI_CLASS_ON = 19,
+  UTF8PROC_BIDI_CLASS_LRI = 20,
+  UTF8PROC_BIDI_CLASS_RLI = 21,
+  UTF8PROC_BIDI_CLASS_FSI = 22,
+  UTF8PROC_BIDI_CLASS_PDI = 23,
+} utf8proc_bidi_class_t;
+
+
+typedef enum {
+  UTF8PROC_DECOMP_TYPE_FONT = 1,
+  UTF8PROC_DECOMP_TYPE_NOBREAK = 2,
+  UTF8PROC_DECOMP_TYPE_INITIAL = 3,
+  UTF8PROC_DECOMP_TYPE_MEDIAL = 4,
+  UTF8PROC_DECOMP_TYPE_FINAL = 5,
+  UTF8PROC_DECOMP_TYPE_ISOLATED = 6,
+  UTF8PROC_DECOMP_TYPE_CIRCLE = 7,
+  UTF8PROC_DECOMP_TYPE_SUPER = 8,
+  UTF8PROC_DECOMP_TYPE_SUB = 9,
+  UTF8PROC_DECOMP_TYPE_VERTICAL = 10,
+  UTF8PROC_DECOMP_TYPE_WIDE = 11,
+  UTF8PROC_DECOMP_TYPE_NARROW = 12,
+  UTF8PROC_DECOMP_TYPE_SMALL = 13,
+  UTF8PROC_DECOMP_TYPE_SQUARE = 14,
+  UTF8PROC_DECOMP_TYPE_FRACTION = 15,
+  UTF8PROC_DECOMP_TYPE_COMPAT = 16,
+} utf8proc_decomp_type_t;
+
+
+typedef enum {
+  UTF8PROC_BOUNDCLASS_START = 0,
+  UTF8PROC_BOUNDCLASS_OTHER = 1,
+  UTF8PROC_BOUNDCLASS_CR = 2,
+  UTF8PROC_BOUNDCLASS_LF = 3,
+  UTF8PROC_BOUNDCLASS_CONTROL = 4,
+  UTF8PROC_BOUNDCLASS_EXTEND = 5,
+  UTF8PROC_BOUNDCLASS_L = 6,
+  UTF8PROC_BOUNDCLASS_V = 7,
+  UTF8PROC_BOUNDCLASS_T = 8,
+  UTF8PROC_BOUNDCLASS_LV = 9,
+  UTF8PROC_BOUNDCLASS_LVT = 10,
+  UTF8PROC_BOUNDCLASS_REGIONAL_INDICATOR = 11,
+  UTF8PROC_BOUNDCLASS_SPACINGMARK = 12,
+  UTF8PROC_BOUNDCLASS_PREPEND = 13,
+  UTF8PROC_BOUNDCLASS_ZWJ = 14,
+
+
+
+  UTF8PROC_BOUNDCLASS_E_BASE = 15,
+  UTF8PROC_BOUNDCLASS_E_MODIFIER = 16,
+  UTF8PROC_BOUNDCLASS_GLUE_AFTER_ZWJ = 17,
+  UTF8PROC_BOUNDCLASS_E_BASE_GAZ = 18,
+
+
+
+  UTF8PROC_BOUNDCLASS_EXTENDED_PICTOGRAPHIC = 19,
+  UTF8PROC_BOUNDCLASS_E_ZWG = 20,
+} utf8proc_boundclass_t;
+
+
+typedef enum {
+  UTF8PROC_INDIC_CONJUNCT_BREAK_NONE = 0,
+  UTF8PROC_INDIC_CONJUNCT_BREAK_LINKER = 1,
+  UTF8PROC_INDIC_CONJUNCT_BREAK_CONSONANT = 2,
+  UTF8PROC_INDIC_CONJUNCT_BREAK_EXTEND = 3,
+} utf8proc_indic_conjunct_break_t;
+
+
+
+
+
+
+typedef utf8proc_int32_t (*utf8proc_custom_func)(utf8proc_int32_t codepoint, void *data);
+
+
+
+
+
+__attribute__ ((visibility("default"))) extern const utf8proc_int8_t utf8proc_utf8class[256];
+
+
+
+
+
+
+__attribute__ ((visibility("default"))) const char *utf8proc_version(void);
+
+
+
+
+__attribute__ ((visibility("default"))) const char *utf8proc_unicode_version(void);
+
+
+
+
+
+__attribute__ ((visibility("default"))) const char *utf8proc_errmsg(utf8proc_ssize_t errcode);
+# 479 "/home/dweller/neovim/.deps/usr/include/utf8proc.h"
+__attribute__ ((visibility("default"))) utf8proc_ssize_t utf8proc_iterate(const utf8proc_uint8_t *str, utf8proc_ssize_t strlen, utf8proc_int32_t *codepoint_ref);
+
+
+
+
+
+
+
+__attribute__ ((visibility("default"))) utf8proc_bool utf8proc_codepoint_valid(utf8proc_int32_t codepoint);
+# 498 "/home/dweller/neovim/.deps/usr/include/utf8proc.h"
+__attribute__ ((visibility("default"))) utf8proc_ssize_t utf8proc_encode_char(utf8proc_int32_t codepoint, utf8proc_uint8_t *dst);
+# 512 "/home/dweller/neovim/.deps/usr/include/utf8proc.h"
+__attribute__ ((visibility("default"))) const utf8proc_property_t *utf8proc_get_property(utf8proc_int32_t codepoint);
+# 543 "/home/dweller/neovim/.deps/usr/include/utf8proc.h"
+__attribute__ ((visibility("default"))) utf8proc_ssize_t utf8proc_decompose_char(
+  utf8proc_int32_t codepoint, utf8proc_int32_t *dst, utf8proc_ssize_t bufsize,
+  utf8proc_option_t options, int *last_boundclass
+);
+# 565 "/home/dweller/neovim/.deps/usr/include/utf8proc.h"
+__attribute__ ((visibility("default"))) utf8proc_ssize_t utf8proc_decompose(
+  const utf8proc_uint8_t *str, utf8proc_ssize_t strlen,
+  utf8proc_int32_t *buffer, utf8proc_ssize_t bufsize, utf8proc_option_t options
+);
+
+
+
+
+
+
+
+__attribute__ ((visibility("default"))) utf8proc_ssize_t utf8proc_decompose_custom(
+  const utf8proc_uint8_t *str, utf8proc_ssize_t strlen,
+  utf8proc_int32_t *buffer, utf8proc_ssize_t bufsize, utf8proc_option_t options,
+  utf8proc_custom_func custom_func, void *custom_data
+);
+# 605 "/home/dweller/neovim/.deps/usr/include/utf8proc.h"
+__attribute__ ((visibility("default"))) utf8proc_ssize_t utf8proc_normalize_utf32(utf8proc_int32_t *buffer, utf8proc_ssize_t length, utf8proc_option_t options);
+# 635 "/home/dweller/neovim/.deps/usr/include/utf8proc.h"
+__attribute__ ((visibility("default"))) utf8proc_ssize_t utf8proc_reencode(utf8proc_int32_t *buffer, utf8proc_ssize_t length, utf8proc_option_t options);
+# 654 "/home/dweller/neovim/.deps/usr/include/utf8proc.h"
+__attribute__ ((visibility("default"))) utf8proc_bool utf8proc_grapheme_break_stateful(
+    utf8proc_int32_t codepoint1, utf8proc_int32_t codepoint2, utf8proc_int32_t *state);
+
+
+
+
+
+__attribute__ ((visibility("default"))) utf8proc_bool utf8proc_grapheme_break(
+    utf8proc_int32_t codepoint1, utf8proc_int32_t codepoint2);
+
+
+
+
+
+
+
+__attribute__ ((visibility("default"))) utf8proc_int32_t utf8proc_tolower(utf8proc_int32_t c);
+
+
+
+
+
+
+__attribute__ ((visibility("default"))) utf8proc_int32_t utf8proc_toupper(utf8proc_int32_t c);
+
+
+
+
+
+
+__attribute__ ((visibility("default"))) utf8proc_int32_t utf8proc_totitle(utf8proc_int32_t c);
+
+
+
+
+
+__attribute__ ((visibility("default"))) int utf8proc_islower(utf8proc_int32_t c);
+
+
+
+
+
+__attribute__ ((visibility("default"))) int utf8proc_isupper(utf8proc_int32_t c);
+# 706 "/home/dweller/neovim/.deps/usr/include/utf8proc.h"
+__attribute__ ((visibility("default"))) int utf8proc_charwidth(utf8proc_int32_t codepoint);
+
+
+
+
+
+
+
+__attribute__ ((visibility("default"))) utf8proc_bool utf8proc_charwidth_ambiguous(utf8proc_int32_t codepoint);
+
+
+
+
+
+__attribute__ ((visibility("default"))) utf8proc_category_t utf8proc_category(utf8proc_int32_t codepoint);
+
+
+
+
+
+__attribute__ ((visibility("default"))) const char *utf8proc_category_string(utf8proc_int32_t codepoint);
+# 747 "/home/dweller/neovim/.deps/usr/include/utf8proc.h"
+__attribute__ ((visibility("default"))) utf8proc_ssize_t utf8proc_map(
+  const utf8proc_uint8_t *str, utf8proc_ssize_t strlen, utf8proc_uint8_t **dstptr, utf8proc_option_t options
+);
+
+
+
+
+
+
+
+__attribute__ ((visibility("default"))) utf8proc_ssize_t utf8proc_map_custom(
+  const utf8proc_uint8_t *str, utf8proc_ssize_t strlen, utf8proc_uint8_t **dstptr, utf8proc_option_t options,
+  utf8proc_custom_func custom_func, void *custom_data
+);
+# 771 "/home/dweller/neovim/.deps/usr/include/utf8proc.h"
+__attribute__ ((visibility("default"))) utf8proc_uint8_t *utf8proc_NFD(const utf8proc_uint8_t *str);
+
+__attribute__ ((visibility("default"))) utf8proc_uint8_t *utf8proc_NFC(const utf8proc_uint8_t *str);
+
+__attribute__ ((visibility("default"))) utf8proc_uint8_t *utf8proc_NFKD(const utf8proc_uint8_t *str);
+
+__attribute__ ((visibility("default"))) utf8proc_uint8_t *utf8proc_NFKC(const utf8proc_uint8_t *str);
+
+
+
+
+__attribute__ ((visibility("default"))) utf8proc_uint8_t *utf8proc_NFKC_Casefold(const utf8proc_uint8_t *str);
+# 37 "/home/dweller/neovim/src/nvim/mbyte.c" 2
+# 1 "/home/dweller/neovim/.deps/usr/include/uv.h" 1
+# 56 "/home/dweller/neovim/.deps/usr/include/uv.h"
+# 1 "/home/dweller/neovim/.deps/usr/include/uv/errno.h" 1
+# 57 "/home/dweller/neovim/.deps/usr/include/uv.h" 2
+# 1 "/home/dweller/neovim/.deps/usr/include/uv/version.h" 1
+# 58 "/home/dweller/neovim/.deps/usr/include/uv.h" 2
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h" 1 3 4
+# 59 "/home/dweller/neovim/.deps/usr/include/uv.h" 2
+
+
+# 1 "/usr/include/math.h" 1 3 4
+# 27 "/usr/include/math.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/libc-header-start.h" 1 3 4
+# 28 "/usr/include/math.h" 2 3 4
+
+
+
+
+
+
+
+
+
+
+
+
+# 1 "/usr/include/x86_64-linux-gnu/bits/math-vector.h" 1 3 4
+# 25 "/usr/include/x86_64-linux-gnu/bits/math-vector.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h" 1 3 4
+# 26 "/usr/include/x86_64-linux-gnu/bits/math-vector.h" 2 3 4
+# 41 "/usr/include/math.h" 2 3 4
+# 152 "/usr/include/math.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/flt-eval-method.h" 1 3 4
+# 153 "/usr/include/math.h" 2 3 4
+# 163 "/usr/include/math.h" 3 4
+
+# 163 "/usr/include/math.h" 3 4
+typedef float float_t;
+typedef double double_t;
+# 204 "/usr/include/math.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/fp-logb.h" 1 3 4
+# 205 "/usr/include/math.h" 2 3 4
+# 247 "/usr/include/math.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/fp-fast.h" 1 3 4
+# 248 "/usr/include/math.h" 2 3 4
+
+
+
+enum
+  {
+    FP_INT_UPWARD =
+
+      0,
+    FP_INT_DOWNWARD =
+
+      1,
+    FP_INT_TOWARDZERO =
+
+      2,
+    FP_INT_TONEARESTFROMZERO =
+
+      3,
+    FP_INT_TONEAREST =
+
+      4,
+  };
+# 312 "/usr/include/math.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h" 1 3 4
+# 20 "/usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h" 3 4
+extern int __fpclassify (double __value) __attribute__ ((__nothrow__ , __leaf__))
+     __attribute__ ((__const__));
+
+
+extern int __signbit (double __value) __attribute__ ((__nothrow__ , __leaf__))
+     __attribute__ ((__const__));
+
+
+
+extern int __isinf (double __value) __attribute__ ((__nothrow__ , __leaf__))
+  __attribute__ ((__const__));
+
+
+extern int __finite (double __value) __attribute__ ((__nothrow__ , __leaf__))
+  __attribute__ ((__const__));
+
+
+extern int __isnan (double __value) __attribute__ ((__nothrow__ , __leaf__))
+  __attribute__ ((__const__));
+
+
+extern int __iseqsig (double __x, double __y) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern int __issignaling (double __value) __attribute__ ((__nothrow__ , __leaf__))
+     __attribute__ ((__const__));
+# 313 "/usr/include/math.h" 2 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 1 3 4
+# 53 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+ extern double acos (double __x) __attribute__ ((__nothrow__ , __leaf__)); extern double __acos (double __x) __attribute__ ((__nothrow__ , __leaf__));
+
+ extern double asin (double __x) __attribute__ ((__nothrow__ , __leaf__)); extern double __asin (double __x) __attribute__ ((__nothrow__ , __leaf__));
+
+ extern double atan (double __x) __attribute__ ((__nothrow__ , __leaf__)); extern double __atan (double __x) __attribute__ ((__nothrow__ , __leaf__));
+
+ extern double atan2 (double __y, double __x) __attribute__ ((__nothrow__ , __leaf__)); extern double __atan2 (double __y, double __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+ extern double cos (double __x) __attribute__ ((__nothrow__ , __leaf__)); extern double __cos (double __x) __attribute__ ((__nothrow__ , __leaf__));
+
+ extern double sin (double __x) __attribute__ ((__nothrow__ , __leaf__)); extern double __sin (double __x) __attribute__ ((__nothrow__ , __leaf__));
+
+ extern double tan (double __x) __attribute__ ((__nothrow__ , __leaf__)); extern double __tan (double __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+ extern double cosh (double __x) __attribute__ ((__nothrow__ , __leaf__)); extern double __cosh (double __x) __attribute__ ((__nothrow__ , __leaf__));
+
+ extern double sinh (double __x) __attribute__ ((__nothrow__ , __leaf__)); extern double __sinh (double __x) __attribute__ ((__nothrow__ , __leaf__));
+
+ extern double tanh (double __x) __attribute__ ((__nothrow__ , __leaf__)); extern double __tanh (double __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+ extern void sincos (double __x, double *__sinx, double *__cosx) __attribute__ ((__nothrow__ , __leaf__)); extern void __sincos (double __x, double *__sinx, double *__cosx) __attribute__ ((__nothrow__ , __leaf__))
+                                                        ;
+
+
+
+
+ extern double acosh (double __x) __attribute__ ((__nothrow__ , __leaf__)); extern double __acosh (double __x) __attribute__ ((__nothrow__ , __leaf__));
+
+ extern double asinh (double __x) __attribute__ ((__nothrow__ , __leaf__)); extern double __asinh (double __x) __attribute__ ((__nothrow__ , __leaf__));
+
+ extern double atanh (double __x) __attribute__ ((__nothrow__ , __leaf__)); extern double __atanh (double __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+ extern double exp (double __x) __attribute__ ((__nothrow__ , __leaf__)); extern double __exp (double __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern double frexp (double __x, int *__exponent) __attribute__ ((__nothrow__ , __leaf__)); extern double __frexp (double __x, int *__exponent) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern double ldexp (double __x, int __exponent) __attribute__ ((__nothrow__ , __leaf__)); extern double __ldexp (double __x, int __exponent) __attribute__ ((__nothrow__ , __leaf__));
+
+
+ extern double log (double __x) __attribute__ ((__nothrow__ , __leaf__)); extern double __log (double __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+ extern double log10 (double __x) __attribute__ ((__nothrow__ , __leaf__)); extern double __log10 (double __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern double modf (double __x, double *__iptr) __attribute__ ((__nothrow__ , __leaf__)); extern double __modf (double __x, double *__iptr) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (2)));
+
+
+
+ extern double exp10 (double __x) __attribute__ ((__nothrow__ , __leaf__)); extern double __exp10 (double __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+ extern double expm1 (double __x) __attribute__ ((__nothrow__ , __leaf__)); extern double __expm1 (double __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+ extern double log1p (double __x) __attribute__ ((__nothrow__ , __leaf__)); extern double __log1p (double __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern double logb (double __x) __attribute__ ((__nothrow__ , __leaf__)); extern double __logb (double __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+ extern double exp2 (double __x) __attribute__ ((__nothrow__ , __leaf__)); extern double __exp2 (double __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+ extern double log2 (double __x) __attribute__ ((__nothrow__ , __leaf__)); extern double __log2 (double __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+
+ extern double pow (double __x, double __y) __attribute__ ((__nothrow__ , __leaf__)); extern double __pow (double __x, double __y) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern double sqrt (double __x) __attribute__ ((__nothrow__ , __leaf__)); extern double __sqrt (double __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+ extern double hypot (double __x, double __y) __attribute__ ((__nothrow__ , __leaf__)); extern double __hypot (double __x, double __y) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+ extern double cbrt (double __x) __attribute__ ((__nothrow__ , __leaf__)); extern double __cbrt (double __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+
+extern double ceil (double __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern double __ceil (double __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern double fabs (double __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern double __fabs (double __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern double floor (double __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern double __floor (double __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern double fmod (double __x, double __y) __attribute__ ((__nothrow__ , __leaf__)); extern double __fmod (double __x, double __y) __attribute__ ((__nothrow__ , __leaf__));
+# 177 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+extern int isinf (double __value) __attribute__ ((__nothrow__ , __leaf__))
+  __attribute__ ((__const__));
+
+
+
+
+extern int finite (double __value) __attribute__ ((__nothrow__ , __leaf__))
+  __attribute__ ((__const__));
+
+
+extern double drem (double __x, double __y) __attribute__ ((__nothrow__ , __leaf__)); extern double __drem (double __x, double __y) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern double significand (double __x) __attribute__ ((__nothrow__ , __leaf__)); extern double __significand (double __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+
+extern double copysign (double __x, double __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern double __copysign (double __x, double __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+
+
+extern double nan (const char *__tagb) __attribute__ ((__nothrow__ , __leaf__)); extern double __nan (const char *__tagb) __attribute__ ((__nothrow__ , __leaf__));
+# 213 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+extern int isnan (double __value) __attribute__ ((__nothrow__ , __leaf__))
+  __attribute__ ((__const__));
+
+
+
+
+
+extern double j0 (double) __attribute__ ((__nothrow__ , __leaf__)); extern double __j0 (double) __attribute__ ((__nothrow__ , __leaf__));
+extern double j1 (double) __attribute__ ((__nothrow__ , __leaf__)); extern double __j1 (double) __attribute__ ((__nothrow__ , __leaf__));
+extern double jn (int, double) __attribute__ ((__nothrow__ , __leaf__)); extern double __jn (int, double) __attribute__ ((__nothrow__ , __leaf__));
+extern double y0 (double) __attribute__ ((__nothrow__ , __leaf__)); extern double __y0 (double) __attribute__ ((__nothrow__ , __leaf__));
+extern double y1 (double) __attribute__ ((__nothrow__ , __leaf__)); extern double __y1 (double) __attribute__ ((__nothrow__ , __leaf__));
+extern double yn (int, double) __attribute__ ((__nothrow__ , __leaf__)); extern double __yn (int, double) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+ extern double erf (double) __attribute__ ((__nothrow__ , __leaf__)); extern double __erf (double) __attribute__ ((__nothrow__ , __leaf__));
+ extern double erfc (double) __attribute__ ((__nothrow__ , __leaf__)); extern double __erfc (double) __attribute__ ((__nothrow__ , __leaf__));
+extern double lgamma (double) __attribute__ ((__nothrow__ , __leaf__)); extern double __lgamma (double) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+extern double tgamma (double) __attribute__ ((__nothrow__ , __leaf__)); extern double __tgamma (double) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+extern double gamma (double) __attribute__ ((__nothrow__ , __leaf__)); extern double __gamma (double) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+
+
+extern double lgamma_r (double, int *__signgamp) __attribute__ ((__nothrow__ , __leaf__)); extern double __lgamma_r (double, int *__signgamp) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+
+extern double rint (double __x) __attribute__ ((__nothrow__ , __leaf__)); extern double __rint (double __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern double nextafter (double __x, double __y) __attribute__ ((__nothrow__ , __leaf__)); extern double __nextafter (double __x, double __y) __attribute__ ((__nothrow__ , __leaf__));
+
+extern double nexttoward (double __x, long double __y) __attribute__ ((__nothrow__ , __leaf__)); extern double __nexttoward (double __x, long double __y) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+extern double nextdown (double __x) __attribute__ ((__nothrow__ , __leaf__)); extern double __nextdown (double __x) __attribute__ ((__nothrow__ , __leaf__));
+
+extern double nextup (double __x) __attribute__ ((__nothrow__ , __leaf__)); extern double __nextup (double __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern double remainder (double __x, double __y) __attribute__ ((__nothrow__ , __leaf__)); extern double __remainder (double __x, double __y) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern double scalbn (double __x, int __n) __attribute__ ((__nothrow__ , __leaf__)); extern double __scalbn (double __x, int __n) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern int ilogb (double __x) __attribute__ ((__nothrow__ , __leaf__)); extern int __ilogb (double __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+extern long int llogb (double __x) __attribute__ ((__nothrow__ , __leaf__)); extern long int __llogb (double __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+extern double scalbln (double __x, long int __n) __attribute__ ((__nothrow__ , __leaf__)); extern double __scalbln (double __x, long int __n) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern double nearbyint (double __x) __attribute__ ((__nothrow__ , __leaf__)); extern double __nearbyint (double __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern double round (double __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern double __round (double __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+
+extern double trunc (double __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern double __trunc (double __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+
+
+extern double remquo (double __x, double __y, int *__quo) __attribute__ ((__nothrow__ , __leaf__)); extern double __remquo (double __x, double __y, int *__quo) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+
+extern long int lrint (double __x) __attribute__ ((__nothrow__ , __leaf__)); extern long int __lrint (double __x) __attribute__ ((__nothrow__ , __leaf__));
+__extension__
+extern long long int llrint (double __x) __attribute__ ((__nothrow__ , __leaf__)); extern long long int __llrint (double __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern long int lround (double __x) __attribute__ ((__nothrow__ , __leaf__)); extern long int __lround (double __x) __attribute__ ((__nothrow__ , __leaf__));
+__extension__
+extern long long int llround (double __x) __attribute__ ((__nothrow__ , __leaf__)); extern long long int __llround (double __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern double fdim (double __x, double __y) __attribute__ ((__nothrow__ , __leaf__)); extern double __fdim (double __x, double __y) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern double fmax (double __x, double __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern double __fmax (double __x, double __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern double fmin (double __x, double __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern double __fmin (double __x, double __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+
+extern double fma (double __x, double __y, double __z) __attribute__ ((__nothrow__ , __leaf__)); extern double __fma (double __x, double __y, double __z) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+extern double roundeven (double __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern double __roundeven (double __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+
+extern __intmax_t fromfp (double __x, int __round, unsigned int __width) __attribute__ ((__nothrow__ , __leaf__)); extern __intmax_t __fromfp (double __x, int __round, unsigned int __width) __attribute__ ((__nothrow__ , __leaf__))
+                            ;
+
+
+
+extern __uintmax_t ufromfp (double __x, int __round, unsigned int __width) __attribute__ ((__nothrow__ , __leaf__)); extern __uintmax_t __ufromfp (double __x, int __round, unsigned int __width) __attribute__ ((__nothrow__ , __leaf__))
+                              ;
+
+
+
+
+extern __intmax_t fromfpx (double __x, int __round, unsigned int __width) __attribute__ ((__nothrow__ , __leaf__)); extern __intmax_t __fromfpx (double __x, int __round, unsigned int __width) __attribute__ ((__nothrow__ , __leaf__))
+                             ;
+
+
+
+
+extern __uintmax_t ufromfpx (double __x, int __round, unsigned int __width) __attribute__ ((__nothrow__ , __leaf__)); extern __uintmax_t __ufromfpx (double __x, int __round, unsigned int __width) __attribute__ ((__nothrow__ , __leaf__))
+                               ;
+
+
+extern int canonicalize (double *__cx, const double *__x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+
+extern double fmaxmag (double __x, double __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern double __fmaxmag (double __x, double __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern double fminmag (double __x, double __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern double __fminmag (double __x, double __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+
+
+extern double fmaximum (double __x, double __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern double __fmaximum (double __x, double __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern double fminimum (double __x, double __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern double __fminimum (double __x, double __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern double fmaximum_num (double __x, double __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern double __fmaximum_num (double __x, double __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern double fminimum_num (double __x, double __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern double __fminimum_num (double __x, double __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern double fmaximum_mag (double __x, double __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern double __fmaximum_mag (double __x, double __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern double fminimum_mag (double __x, double __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern double __fminimum_mag (double __x, double __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern double fmaximum_mag_num (double __x, double __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern double __fmaximum_mag_num (double __x, double __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern double fminimum_mag_num (double __x, double __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern double __fminimum_mag_num (double __x, double __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+
+
+extern int totalorder (const double *__x, const double *__y) __attribute__ ((__nothrow__ , __leaf__))
+
+     __attribute__ ((__pure__));
+
+
+extern int totalordermag (const double *__x, const double *__y) __attribute__ ((__nothrow__ , __leaf__))
+
+     __attribute__ ((__pure__));
+
+
+extern double getpayload (const double *__x) __attribute__ ((__nothrow__ , __leaf__)); extern double __getpayload (const double *__x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern int setpayload (double *__x, double __payload) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern int setpayloadsig (double *__x, double __payload) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+
+
+extern double scalb (double __x, double __n) __attribute__ ((__nothrow__ , __leaf__)); extern double __scalb (double __x, double __n) __attribute__ ((__nothrow__ , __leaf__));
+# 314 "/usr/include/math.h" 2 3 4
+# 329 "/usr/include/math.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h" 1 3 4
+# 20 "/usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h" 3 4
+extern int __fpclassifyf (float __value) __attribute__ ((__nothrow__ , __leaf__))
+     __attribute__ ((__const__));
+
+
+extern int __signbitf (float __value) __attribute__ ((__nothrow__ , __leaf__))
+     __attribute__ ((__const__));
+
+
+
+extern int __isinff (float __value) __attribute__ ((__nothrow__ , __leaf__))
+  __attribute__ ((__const__));
+
+
+extern int __finitef (float __value) __attribute__ ((__nothrow__ , __leaf__))
+  __attribute__ ((__const__));
+
+
+extern int __isnanf (float __value) __attribute__ ((__nothrow__ , __leaf__))
+  __attribute__ ((__const__));
+
+
+extern int __iseqsigf (float __x, float __y) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern int __issignalingf (float __value) __attribute__ ((__nothrow__ , __leaf__))
+     __attribute__ ((__const__));
+# 330 "/usr/include/math.h" 2 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 1 3 4
+# 53 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+ extern float acosf (float __x) __attribute__ ((__nothrow__ , __leaf__)); extern float __acosf (float __x) __attribute__ ((__nothrow__ , __leaf__));
+
+ extern float asinf (float __x) __attribute__ ((__nothrow__ , __leaf__)); extern float __asinf (float __x) __attribute__ ((__nothrow__ , __leaf__));
+
+ extern float atanf (float __x) __attribute__ ((__nothrow__ , __leaf__)); extern float __atanf (float __x) __attribute__ ((__nothrow__ , __leaf__));
+
+ extern float atan2f (float __y, float __x) __attribute__ ((__nothrow__ , __leaf__)); extern float __atan2f (float __y, float __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+ extern float cosf (float __x) __attribute__ ((__nothrow__ , __leaf__)); extern float __cosf (float __x) __attribute__ ((__nothrow__ , __leaf__));
+
+ extern float sinf (float __x) __attribute__ ((__nothrow__ , __leaf__)); extern float __sinf (float __x) __attribute__ ((__nothrow__ , __leaf__));
+
+ extern float tanf (float __x) __attribute__ ((__nothrow__ , __leaf__)); extern float __tanf (float __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+ extern float coshf (float __x) __attribute__ ((__nothrow__ , __leaf__)); extern float __coshf (float __x) __attribute__ ((__nothrow__ , __leaf__));
+
+ extern float sinhf (float __x) __attribute__ ((__nothrow__ , __leaf__)); extern float __sinhf (float __x) __attribute__ ((__nothrow__ , __leaf__));
+
+ extern float tanhf (float __x) __attribute__ ((__nothrow__ , __leaf__)); extern float __tanhf (float __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+ extern void sincosf (float __x, float *__sinx, float *__cosx) __attribute__ ((__nothrow__ , __leaf__)); extern void __sincosf (float __x, float *__sinx, float *__cosx) __attribute__ ((__nothrow__ , __leaf__))
+                                                        ;
+
+
+
+
+ extern float acoshf (float __x) __attribute__ ((__nothrow__ , __leaf__)); extern float __acoshf (float __x) __attribute__ ((__nothrow__ , __leaf__));
+
+ extern float asinhf (float __x) __attribute__ ((__nothrow__ , __leaf__)); extern float __asinhf (float __x) __attribute__ ((__nothrow__ , __leaf__));
+
+ extern float atanhf (float __x) __attribute__ ((__nothrow__ , __leaf__)); extern float __atanhf (float __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+ extern float expf (float __x) __attribute__ ((__nothrow__ , __leaf__)); extern float __expf (float __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern float frexpf (float __x, int *__exponent) __attribute__ ((__nothrow__ , __leaf__)); extern float __frexpf (float __x, int *__exponent) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern float ldexpf (float __x, int __exponent) __attribute__ ((__nothrow__ , __leaf__)); extern float __ldexpf (float __x, int __exponent) __attribute__ ((__nothrow__ , __leaf__));
+
+
+ extern float logf (float __x) __attribute__ ((__nothrow__ , __leaf__)); extern float __logf (float __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+ extern float log10f (float __x) __attribute__ ((__nothrow__ , __leaf__)); extern float __log10f (float __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern float modff (float __x, float *__iptr) __attribute__ ((__nothrow__ , __leaf__)); extern float __modff (float __x, float *__iptr) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (2)));
+
+
+
+ extern float exp10f (float __x) __attribute__ ((__nothrow__ , __leaf__)); extern float __exp10f (float __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+ extern float expm1f (float __x) __attribute__ ((__nothrow__ , __leaf__)); extern float __expm1f (float __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+ extern float log1pf (float __x) __attribute__ ((__nothrow__ , __leaf__)); extern float __log1pf (float __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern float logbf (float __x) __attribute__ ((__nothrow__ , __leaf__)); extern float __logbf (float __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+ extern float exp2f (float __x) __attribute__ ((__nothrow__ , __leaf__)); extern float __exp2f (float __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+ extern float log2f (float __x) __attribute__ ((__nothrow__ , __leaf__)); extern float __log2f (float __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+
+ extern float powf (float __x, float __y) __attribute__ ((__nothrow__ , __leaf__)); extern float __powf (float __x, float __y) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern float sqrtf (float __x) __attribute__ ((__nothrow__ , __leaf__)); extern float __sqrtf (float __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+ extern float hypotf (float __x, float __y) __attribute__ ((__nothrow__ , __leaf__)); extern float __hypotf (float __x, float __y) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+ extern float cbrtf (float __x) __attribute__ ((__nothrow__ , __leaf__)); extern float __cbrtf (float __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+
+extern float ceilf (float __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern float __ceilf (float __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern float fabsf (float __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern float __fabsf (float __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern float floorf (float __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern float __floorf (float __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern float fmodf (float __x, float __y) __attribute__ ((__nothrow__ , __leaf__)); extern float __fmodf (float __x, float __y) __attribute__ ((__nothrow__ , __leaf__));
+# 177 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+extern int isinff (float __value) __attribute__ ((__nothrow__ , __leaf__))
+  __attribute__ ((__const__));
+
+
+
+
+extern int finitef (float __value) __attribute__ ((__nothrow__ , __leaf__))
+  __attribute__ ((__const__));
+
+
+extern float dremf (float __x, float __y) __attribute__ ((__nothrow__ , __leaf__)); extern float __dremf (float __x, float __y) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern float significandf (float __x) __attribute__ ((__nothrow__ , __leaf__)); extern float __significandf (float __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+
+extern float copysignf (float __x, float __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern float __copysignf (float __x, float __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+
+
+extern float nanf (const char *__tagb) __attribute__ ((__nothrow__ , __leaf__)); extern float __nanf (const char *__tagb) __attribute__ ((__nothrow__ , __leaf__));
+# 213 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+extern int isnanf (float __value) __attribute__ ((__nothrow__ , __leaf__))
+  __attribute__ ((__const__));
+
+
+
+
+
+extern float j0f (float) __attribute__ ((__nothrow__ , __leaf__)); extern float __j0f (float) __attribute__ ((__nothrow__ , __leaf__));
+extern float j1f (float) __attribute__ ((__nothrow__ , __leaf__)); extern float __j1f (float) __attribute__ ((__nothrow__ , __leaf__));
+extern float jnf (int, float) __attribute__ ((__nothrow__ , __leaf__)); extern float __jnf (int, float) __attribute__ ((__nothrow__ , __leaf__));
+extern float y0f (float) __attribute__ ((__nothrow__ , __leaf__)); extern float __y0f (float) __attribute__ ((__nothrow__ , __leaf__));
+extern float y1f (float) __attribute__ ((__nothrow__ , __leaf__)); extern float __y1f (float) __attribute__ ((__nothrow__ , __leaf__));
+extern float ynf (int, float) __attribute__ ((__nothrow__ , __leaf__)); extern float __ynf (int, float) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+ extern float erff (float) __attribute__ ((__nothrow__ , __leaf__)); extern float __erff (float) __attribute__ ((__nothrow__ , __leaf__));
+ extern float erfcf (float) __attribute__ ((__nothrow__ , __leaf__)); extern float __erfcf (float) __attribute__ ((__nothrow__ , __leaf__));
+extern float lgammaf (float) __attribute__ ((__nothrow__ , __leaf__)); extern float __lgammaf (float) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+extern float tgammaf (float) __attribute__ ((__nothrow__ , __leaf__)); extern float __tgammaf (float) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+extern float gammaf (float) __attribute__ ((__nothrow__ , __leaf__)); extern float __gammaf (float) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+
+
+extern float lgammaf_r (float, int *__signgamp) __attribute__ ((__nothrow__ , __leaf__)); extern float __lgammaf_r (float, int *__signgamp) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+
+extern float rintf (float __x) __attribute__ ((__nothrow__ , __leaf__)); extern float __rintf (float __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern float nextafterf (float __x, float __y) __attribute__ ((__nothrow__ , __leaf__)); extern float __nextafterf (float __x, float __y) __attribute__ ((__nothrow__ , __leaf__));
+
+extern float nexttowardf (float __x, long double __y) __attribute__ ((__nothrow__ , __leaf__)); extern float __nexttowardf (float __x, long double __y) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+extern float nextdownf (float __x) __attribute__ ((__nothrow__ , __leaf__)); extern float __nextdownf (float __x) __attribute__ ((__nothrow__ , __leaf__));
+
+extern float nextupf (float __x) __attribute__ ((__nothrow__ , __leaf__)); extern float __nextupf (float __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern float remainderf (float __x, float __y) __attribute__ ((__nothrow__ , __leaf__)); extern float __remainderf (float __x, float __y) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern float scalbnf (float __x, int __n) __attribute__ ((__nothrow__ , __leaf__)); extern float __scalbnf (float __x, int __n) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern int ilogbf (float __x) __attribute__ ((__nothrow__ , __leaf__)); extern int __ilogbf (float __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+extern long int llogbf (float __x) __attribute__ ((__nothrow__ , __leaf__)); extern long int __llogbf (float __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+extern float scalblnf (float __x, long int __n) __attribute__ ((__nothrow__ , __leaf__)); extern float __scalblnf (float __x, long int __n) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern float nearbyintf (float __x) __attribute__ ((__nothrow__ , __leaf__)); extern float __nearbyintf (float __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern float roundf (float __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern float __roundf (float __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+
+extern float truncf (float __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern float __truncf (float __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+
+
+extern float remquof (float __x, float __y, int *__quo) __attribute__ ((__nothrow__ , __leaf__)); extern float __remquof (float __x, float __y, int *__quo) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+
+extern long int lrintf (float __x) __attribute__ ((__nothrow__ , __leaf__)); extern long int __lrintf (float __x) __attribute__ ((__nothrow__ , __leaf__));
+__extension__
+extern long long int llrintf (float __x) __attribute__ ((__nothrow__ , __leaf__)); extern long long int __llrintf (float __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern long int lroundf (float __x) __attribute__ ((__nothrow__ , __leaf__)); extern long int __lroundf (float __x) __attribute__ ((__nothrow__ , __leaf__));
+__extension__
+extern long long int llroundf (float __x) __attribute__ ((__nothrow__ , __leaf__)); extern long long int __llroundf (float __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern float fdimf (float __x, float __y) __attribute__ ((__nothrow__ , __leaf__)); extern float __fdimf (float __x, float __y) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern float fmaxf (float __x, float __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern float __fmaxf (float __x, float __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern float fminf (float __x, float __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern float __fminf (float __x, float __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+
+extern float fmaf (float __x, float __y, float __z) __attribute__ ((__nothrow__ , __leaf__)); extern float __fmaf (float __x, float __y, float __z) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+extern float roundevenf (float __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern float __roundevenf (float __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+
+extern __intmax_t fromfpf (float __x, int __round, unsigned int __width) __attribute__ ((__nothrow__ , __leaf__)); extern __intmax_t __fromfpf (float __x, int __round, unsigned int __width) __attribute__ ((__nothrow__ , __leaf__))
+                            ;
+
+
+
+extern __uintmax_t ufromfpf (float __x, int __round, unsigned int __width) __attribute__ ((__nothrow__ , __leaf__)); extern __uintmax_t __ufromfpf (float __x, int __round, unsigned int __width) __attribute__ ((__nothrow__ , __leaf__))
+                              ;
+
+
+
+
+extern __intmax_t fromfpxf (float __x, int __round, unsigned int __width) __attribute__ ((__nothrow__ , __leaf__)); extern __intmax_t __fromfpxf (float __x, int __round, unsigned int __width) __attribute__ ((__nothrow__ , __leaf__))
+                             ;
+
+
+
+
+extern __uintmax_t ufromfpxf (float __x, int __round, unsigned int __width) __attribute__ ((__nothrow__ , __leaf__)); extern __uintmax_t __ufromfpxf (float __x, int __round, unsigned int __width) __attribute__ ((__nothrow__ , __leaf__))
+                               ;
+
+
+extern int canonicalizef (float *__cx, const float *__x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+
+extern float fmaxmagf (float __x, float __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern float __fmaxmagf (float __x, float __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern float fminmagf (float __x, float __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern float __fminmagf (float __x, float __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+
+
+extern float fmaximumf (float __x, float __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern float __fmaximumf (float __x, float __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern float fminimumf (float __x, float __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern float __fminimumf (float __x, float __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern float fmaximum_numf (float __x, float __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern float __fmaximum_numf (float __x, float __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern float fminimum_numf (float __x, float __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern float __fminimum_numf (float __x, float __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern float fmaximum_magf (float __x, float __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern float __fmaximum_magf (float __x, float __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern float fminimum_magf (float __x, float __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern float __fminimum_magf (float __x, float __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern float fmaximum_mag_numf (float __x, float __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern float __fmaximum_mag_numf (float __x, float __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern float fminimum_mag_numf (float __x, float __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern float __fminimum_mag_numf (float __x, float __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+
+
+extern int totalorderf (const float *__x, const float *__y) __attribute__ ((__nothrow__ , __leaf__))
+
+     __attribute__ ((__pure__));
+
+
+extern int totalordermagf (const float *__x, const float *__y) __attribute__ ((__nothrow__ , __leaf__))
+
+     __attribute__ ((__pure__));
+
+
+extern float getpayloadf (const float *__x) __attribute__ ((__nothrow__ , __leaf__)); extern float __getpayloadf (const float *__x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern int setpayloadf (float *__x, float __payload) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern int setpayloadsigf (float *__x, float __payload) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+
+
+extern float scalbf (float __x, float __n) __attribute__ ((__nothrow__ , __leaf__)); extern float __scalbf (float __x, float __n) __attribute__ ((__nothrow__ , __leaf__));
+# 331 "/usr/include/math.h" 2 3 4
+# 398 "/usr/include/math.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h" 1 3 4
+# 20 "/usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h" 3 4
+extern int __fpclassifyl (long double __value) __attribute__ ((__nothrow__ , __leaf__))
+     __attribute__ ((__const__));
+
+
+extern int __signbitl (long double __value) __attribute__ ((__nothrow__ , __leaf__))
+     __attribute__ ((__const__));
+
+
+
+extern int __isinfl (long double __value) __attribute__ ((__nothrow__ , __leaf__))
+  __attribute__ ((__const__));
+
+
+extern int __finitel (long double __value) __attribute__ ((__nothrow__ , __leaf__))
+  __attribute__ ((__const__));
+
+
+extern int __isnanl (long double __value) __attribute__ ((__nothrow__ , __leaf__))
+  __attribute__ ((__const__));
+
+
+extern int __iseqsigl (long double __x, long double __y) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern int __issignalingl (long double __value) __attribute__ ((__nothrow__ , __leaf__))
+     __attribute__ ((__const__));
+# 399 "/usr/include/math.h" 2 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 1 3 4
+# 53 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+ extern long double acosl (long double __x) __attribute__ ((__nothrow__ , __leaf__)); extern long double __acosl (long double __x) __attribute__ ((__nothrow__ , __leaf__));
+
+ extern long double asinl (long double __x) __attribute__ ((__nothrow__ , __leaf__)); extern long double __asinl (long double __x) __attribute__ ((__nothrow__ , __leaf__));
+
+ extern long double atanl (long double __x) __attribute__ ((__nothrow__ , __leaf__)); extern long double __atanl (long double __x) __attribute__ ((__nothrow__ , __leaf__));
+
+ extern long double atan2l (long double __y, long double __x) __attribute__ ((__nothrow__ , __leaf__)); extern long double __atan2l (long double __y, long double __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+ extern long double cosl (long double __x) __attribute__ ((__nothrow__ , __leaf__)); extern long double __cosl (long double __x) __attribute__ ((__nothrow__ , __leaf__));
+
+ extern long double sinl (long double __x) __attribute__ ((__nothrow__ , __leaf__)); extern long double __sinl (long double __x) __attribute__ ((__nothrow__ , __leaf__));
+
+ extern long double tanl (long double __x) __attribute__ ((__nothrow__ , __leaf__)); extern long double __tanl (long double __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+ extern long double coshl (long double __x) __attribute__ ((__nothrow__ , __leaf__)); extern long double __coshl (long double __x) __attribute__ ((__nothrow__ , __leaf__));
+
+ extern long double sinhl (long double __x) __attribute__ ((__nothrow__ , __leaf__)); extern long double __sinhl (long double __x) __attribute__ ((__nothrow__ , __leaf__));
+
+ extern long double tanhl (long double __x) __attribute__ ((__nothrow__ , __leaf__)); extern long double __tanhl (long double __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+ extern void sincosl (long double __x, long double *__sinx, long double *__cosx) __attribute__ ((__nothrow__ , __leaf__)); extern void __sincosl (long double __x, long double *__sinx, long double *__cosx) __attribute__ ((__nothrow__ , __leaf__))
+                                                        ;
+
+
+
+
+ extern long double acoshl (long double __x) __attribute__ ((__nothrow__ , __leaf__)); extern long double __acoshl (long double __x) __attribute__ ((__nothrow__ , __leaf__));
+
+ extern long double asinhl (long double __x) __attribute__ ((__nothrow__ , __leaf__)); extern long double __asinhl (long double __x) __attribute__ ((__nothrow__ , __leaf__));
+
+ extern long double atanhl (long double __x) __attribute__ ((__nothrow__ , __leaf__)); extern long double __atanhl (long double __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+ extern long double expl (long double __x) __attribute__ ((__nothrow__ , __leaf__)); extern long double __expl (long double __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern long double frexpl (long double __x, int *__exponent) __attribute__ ((__nothrow__ , __leaf__)); extern long double __frexpl (long double __x, int *__exponent) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern long double ldexpl (long double __x, int __exponent) __attribute__ ((__nothrow__ , __leaf__)); extern long double __ldexpl (long double __x, int __exponent) __attribute__ ((__nothrow__ , __leaf__));
+
+
+ extern long double logl (long double __x) __attribute__ ((__nothrow__ , __leaf__)); extern long double __logl (long double __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+ extern long double log10l (long double __x) __attribute__ ((__nothrow__ , __leaf__)); extern long double __log10l (long double __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern long double modfl (long double __x, long double *__iptr) __attribute__ ((__nothrow__ , __leaf__)); extern long double __modfl (long double __x, long double *__iptr) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (2)));
+
+
+
+ extern long double exp10l (long double __x) __attribute__ ((__nothrow__ , __leaf__)); extern long double __exp10l (long double __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+ extern long double expm1l (long double __x) __attribute__ ((__nothrow__ , __leaf__)); extern long double __expm1l (long double __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+ extern long double log1pl (long double __x) __attribute__ ((__nothrow__ , __leaf__)); extern long double __log1pl (long double __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern long double logbl (long double __x) __attribute__ ((__nothrow__ , __leaf__)); extern long double __logbl (long double __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+ extern long double exp2l (long double __x) __attribute__ ((__nothrow__ , __leaf__)); extern long double __exp2l (long double __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+ extern long double log2l (long double __x) __attribute__ ((__nothrow__ , __leaf__)); extern long double __log2l (long double __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+
+ extern long double powl (long double __x, long double __y) __attribute__ ((__nothrow__ , __leaf__)); extern long double __powl (long double __x, long double __y) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern long double sqrtl (long double __x) __attribute__ ((__nothrow__ , __leaf__)); extern long double __sqrtl (long double __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+ extern long double hypotl (long double __x, long double __y) __attribute__ ((__nothrow__ , __leaf__)); extern long double __hypotl (long double __x, long double __y) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+ extern long double cbrtl (long double __x) __attribute__ ((__nothrow__ , __leaf__)); extern long double __cbrtl (long double __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+
+extern long double ceill (long double __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern long double __ceill (long double __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern long double fabsl (long double __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern long double __fabsl (long double __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern long double floorl (long double __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern long double __floorl (long double __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern long double fmodl (long double __x, long double __y) __attribute__ ((__nothrow__ , __leaf__)); extern long double __fmodl (long double __x, long double __y) __attribute__ ((__nothrow__ , __leaf__));
+# 177 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+extern int isinfl (long double __value) __attribute__ ((__nothrow__ , __leaf__))
+  __attribute__ ((__const__));
+
+
+
+
+extern int finitel (long double __value) __attribute__ ((__nothrow__ , __leaf__))
+  __attribute__ ((__const__));
+
+
+extern long double dreml (long double __x, long double __y) __attribute__ ((__nothrow__ , __leaf__)); extern long double __dreml (long double __x, long double __y) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern long double significandl (long double __x) __attribute__ ((__nothrow__ , __leaf__)); extern long double __significandl (long double __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+
+extern long double copysignl (long double __x, long double __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern long double __copysignl (long double __x, long double __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+
+
+extern long double nanl (const char *__tagb) __attribute__ ((__nothrow__ , __leaf__)); extern long double __nanl (const char *__tagb) __attribute__ ((__nothrow__ , __leaf__));
+# 213 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+extern int isnanl (long double __value) __attribute__ ((__nothrow__ , __leaf__))
+  __attribute__ ((__const__));
+
+
+
+
+
+extern long double j0l (long double) __attribute__ ((__nothrow__ , __leaf__)); extern long double __j0l (long double) __attribute__ ((__nothrow__ , __leaf__));
+extern long double j1l (long double) __attribute__ ((__nothrow__ , __leaf__)); extern long double __j1l (long double) __attribute__ ((__nothrow__ , __leaf__));
+extern long double jnl (int, long double) __attribute__ ((__nothrow__ , __leaf__)); extern long double __jnl (int, long double) __attribute__ ((__nothrow__ , __leaf__));
+extern long double y0l (long double) __attribute__ ((__nothrow__ , __leaf__)); extern long double __y0l (long double) __attribute__ ((__nothrow__ , __leaf__));
+extern long double y1l (long double) __attribute__ ((__nothrow__ , __leaf__)); extern long double __y1l (long double) __attribute__ ((__nothrow__ , __leaf__));
+extern long double ynl (int, long double) __attribute__ ((__nothrow__ , __leaf__)); extern long double __ynl (int, long double) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+ extern long double erfl (long double) __attribute__ ((__nothrow__ , __leaf__)); extern long double __erfl (long double) __attribute__ ((__nothrow__ , __leaf__));
+ extern long double erfcl (long double) __attribute__ ((__nothrow__ , __leaf__)); extern long double __erfcl (long double) __attribute__ ((__nothrow__ , __leaf__));
+extern long double lgammal (long double) __attribute__ ((__nothrow__ , __leaf__)); extern long double __lgammal (long double) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+extern long double tgammal (long double) __attribute__ ((__nothrow__ , __leaf__)); extern long double __tgammal (long double) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+extern long double gammal (long double) __attribute__ ((__nothrow__ , __leaf__)); extern long double __gammal (long double) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+
+
+extern long double lgammal_r (long double, int *__signgamp) __attribute__ ((__nothrow__ , __leaf__)); extern long double __lgammal_r (long double, int *__signgamp) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+
+extern long double rintl (long double __x) __attribute__ ((__nothrow__ , __leaf__)); extern long double __rintl (long double __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern long double nextafterl (long double __x, long double __y) __attribute__ ((__nothrow__ , __leaf__)); extern long double __nextafterl (long double __x, long double __y) __attribute__ ((__nothrow__ , __leaf__));
+
+extern long double nexttowardl (long double __x, long double __y) __attribute__ ((__nothrow__ , __leaf__)); extern long double __nexttowardl (long double __x, long double __y) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+extern long double nextdownl (long double __x) __attribute__ ((__nothrow__ , __leaf__)); extern long double __nextdownl (long double __x) __attribute__ ((__nothrow__ , __leaf__));
+
+extern long double nextupl (long double __x) __attribute__ ((__nothrow__ , __leaf__)); extern long double __nextupl (long double __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern long double remainderl (long double __x, long double __y) __attribute__ ((__nothrow__ , __leaf__)); extern long double __remainderl (long double __x, long double __y) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern long double scalbnl (long double __x, int __n) __attribute__ ((__nothrow__ , __leaf__)); extern long double __scalbnl (long double __x, int __n) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern int ilogbl (long double __x) __attribute__ ((__nothrow__ , __leaf__)); extern int __ilogbl (long double __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+extern long int llogbl (long double __x) __attribute__ ((__nothrow__ , __leaf__)); extern long int __llogbl (long double __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+extern long double scalblnl (long double __x, long int __n) __attribute__ ((__nothrow__ , __leaf__)); extern long double __scalblnl (long double __x, long int __n) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern long double nearbyintl (long double __x) __attribute__ ((__nothrow__ , __leaf__)); extern long double __nearbyintl (long double __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern long double roundl (long double __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern long double __roundl (long double __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+
+extern long double truncl (long double __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern long double __truncl (long double __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+
+
+extern long double remquol (long double __x, long double __y, int *__quo) __attribute__ ((__nothrow__ , __leaf__)); extern long double __remquol (long double __x, long double __y, int *__quo) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+
+extern long int lrintl (long double __x) __attribute__ ((__nothrow__ , __leaf__)); extern long int __lrintl (long double __x) __attribute__ ((__nothrow__ , __leaf__));
+__extension__
+extern long long int llrintl (long double __x) __attribute__ ((__nothrow__ , __leaf__)); extern long long int __llrintl (long double __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern long int lroundl (long double __x) __attribute__ ((__nothrow__ , __leaf__)); extern long int __lroundl (long double __x) __attribute__ ((__nothrow__ , __leaf__));
+__extension__
+extern long long int llroundl (long double __x) __attribute__ ((__nothrow__ , __leaf__)); extern long long int __llroundl (long double __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern long double fdiml (long double __x, long double __y) __attribute__ ((__nothrow__ , __leaf__)); extern long double __fdiml (long double __x, long double __y) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern long double fmaxl (long double __x, long double __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern long double __fmaxl (long double __x, long double __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern long double fminl (long double __x, long double __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern long double __fminl (long double __x, long double __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+
+extern long double fmal (long double __x, long double __y, long double __z) __attribute__ ((__nothrow__ , __leaf__)); extern long double __fmal (long double __x, long double __y, long double __z) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+extern long double roundevenl (long double __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern long double __roundevenl (long double __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+
+extern __intmax_t fromfpl (long double __x, int __round, unsigned int __width) __attribute__ ((__nothrow__ , __leaf__)); extern __intmax_t __fromfpl (long double __x, int __round, unsigned int __width) __attribute__ ((__nothrow__ , __leaf__))
+                            ;
+
+
+
+extern __uintmax_t ufromfpl (long double __x, int __round, unsigned int __width) __attribute__ ((__nothrow__ , __leaf__)); extern __uintmax_t __ufromfpl (long double __x, int __round, unsigned int __width) __attribute__ ((__nothrow__ , __leaf__))
+                              ;
+
+
+
+
+extern __intmax_t fromfpxl (long double __x, int __round, unsigned int __width) __attribute__ ((__nothrow__ , __leaf__)); extern __intmax_t __fromfpxl (long double __x, int __round, unsigned int __width) __attribute__ ((__nothrow__ , __leaf__))
+                             ;
+
+
+
+
+extern __uintmax_t ufromfpxl (long double __x, int __round, unsigned int __width) __attribute__ ((__nothrow__ , __leaf__)); extern __uintmax_t __ufromfpxl (long double __x, int __round, unsigned int __width) __attribute__ ((__nothrow__ , __leaf__))
+                               ;
+
+
+extern int canonicalizel (long double *__cx, const long double *__x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+
+extern long double fmaxmagl (long double __x, long double __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern long double __fmaxmagl (long double __x, long double __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern long double fminmagl (long double __x, long double __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern long double __fminmagl (long double __x, long double __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+
+
+extern long double fmaximuml (long double __x, long double __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern long double __fmaximuml (long double __x, long double __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern long double fminimuml (long double __x, long double __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern long double __fminimuml (long double __x, long double __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern long double fmaximum_numl (long double __x, long double __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern long double __fmaximum_numl (long double __x, long double __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern long double fminimum_numl (long double __x, long double __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern long double __fminimum_numl (long double __x, long double __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern long double fmaximum_magl (long double __x, long double __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern long double __fmaximum_magl (long double __x, long double __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern long double fminimum_magl (long double __x, long double __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern long double __fminimum_magl (long double __x, long double __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern long double fmaximum_mag_numl (long double __x, long double __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern long double __fmaximum_mag_numl (long double __x, long double __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern long double fminimum_mag_numl (long double __x, long double __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern long double __fminimum_mag_numl (long double __x, long double __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+
+
+extern int totalorderl (const long double *__x, const long double *__y) __attribute__ ((__nothrow__ , __leaf__))
+
+     __attribute__ ((__pure__));
+
+
+extern int totalordermagl (const long double *__x, const long double *__y) __attribute__ ((__nothrow__ , __leaf__))
+
+     __attribute__ ((__pure__));
+
+
+extern long double getpayloadl (const long double *__x) __attribute__ ((__nothrow__ , __leaf__)); extern long double __getpayloadl (const long double *__x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern int setpayloadl (long double *__x, long double __payload) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern int setpayloadsigl (long double *__x, long double __payload) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+
+
+extern long double scalbl (long double __x, long double __n) __attribute__ ((__nothrow__ , __leaf__)); extern long double __scalbl (long double __x, long double __n) __attribute__ ((__nothrow__ , __leaf__));
+# 400 "/usr/include/math.h" 2 3 4
+# 450 "/usr/include/math.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 1 3 4
+# 53 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+ extern _Float32 acosf32 (_Float32 __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32 __acosf32 (_Float32 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+ extern _Float32 asinf32 (_Float32 __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32 __asinf32 (_Float32 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+ extern _Float32 atanf32 (_Float32 __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32 __atanf32 (_Float32 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+ extern _Float32 atan2f32 (_Float32 __y, _Float32 __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32 __atan2f32 (_Float32 __y, _Float32 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+ extern _Float32 cosf32 (_Float32 __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32 __cosf32 (_Float32 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+ extern _Float32 sinf32 (_Float32 __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32 __sinf32 (_Float32 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+ extern _Float32 tanf32 (_Float32 __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32 __tanf32 (_Float32 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+ extern _Float32 coshf32 (_Float32 __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32 __coshf32 (_Float32 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+ extern _Float32 sinhf32 (_Float32 __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32 __sinhf32 (_Float32 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+ extern _Float32 tanhf32 (_Float32 __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32 __tanhf32 (_Float32 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+ extern void sincosf32 (_Float32 __x, _Float32 *__sinx, _Float32 *__cosx) __attribute__ ((__nothrow__ , __leaf__)); extern void __sincosf32 (_Float32 __x, _Float32 *__sinx, _Float32 *__cosx) __attribute__ ((__nothrow__ , __leaf__))
+                                                        ;
+
+
+
+
+ extern _Float32 acoshf32 (_Float32 __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32 __acoshf32 (_Float32 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+ extern _Float32 asinhf32 (_Float32 __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32 __asinhf32 (_Float32 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+ extern _Float32 atanhf32 (_Float32 __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32 __atanhf32 (_Float32 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+ extern _Float32 expf32 (_Float32 __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32 __expf32 (_Float32 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern _Float32 frexpf32 (_Float32 __x, int *__exponent) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32 __frexpf32 (_Float32 __x, int *__exponent) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern _Float32 ldexpf32 (_Float32 __x, int __exponent) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32 __ldexpf32 (_Float32 __x, int __exponent) __attribute__ ((__nothrow__ , __leaf__));
+
+
+ extern _Float32 logf32 (_Float32 __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32 __logf32 (_Float32 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+ extern _Float32 log10f32 (_Float32 __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32 __log10f32 (_Float32 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern _Float32 modff32 (_Float32 __x, _Float32 *__iptr) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32 __modff32 (_Float32 __x, _Float32 *__iptr) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (2)));
+
+
+
+ extern _Float32 exp10f32 (_Float32 __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32 __exp10f32 (_Float32 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+ extern _Float32 expm1f32 (_Float32 __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32 __expm1f32 (_Float32 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+ extern _Float32 log1pf32 (_Float32 __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32 __log1pf32 (_Float32 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern _Float32 logbf32 (_Float32 __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32 __logbf32 (_Float32 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+ extern _Float32 exp2f32 (_Float32 __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32 __exp2f32 (_Float32 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+ extern _Float32 log2f32 (_Float32 __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32 __log2f32 (_Float32 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+
+ extern _Float32 powf32 (_Float32 __x, _Float32 __y) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32 __powf32 (_Float32 __x, _Float32 __y) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern _Float32 sqrtf32 (_Float32 __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32 __sqrtf32 (_Float32 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+ extern _Float32 hypotf32 (_Float32 __x, _Float32 __y) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32 __hypotf32 (_Float32 __x, _Float32 __y) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+ extern _Float32 cbrtf32 (_Float32 __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32 __cbrtf32 (_Float32 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+
+extern _Float32 ceilf32 (_Float32 __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern _Float32 __ceilf32 (_Float32 __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern _Float32 fabsf32 (_Float32 __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern _Float32 __fabsf32 (_Float32 __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern _Float32 floorf32 (_Float32 __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern _Float32 __floorf32 (_Float32 __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern _Float32 fmodf32 (_Float32 __x, _Float32 __y) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32 __fmodf32 (_Float32 __x, _Float32 __y) __attribute__ ((__nothrow__ , __leaf__));
+# 198 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+extern _Float32 copysignf32 (_Float32 __x, _Float32 __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern _Float32 __copysignf32 (_Float32 __x, _Float32 __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+
+
+extern _Float32 nanf32 (const char *__tagb) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32 __nanf32 (const char *__tagb) __attribute__ ((__nothrow__ , __leaf__));
+# 220 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+extern _Float32 j0f32 (_Float32) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32 __j0f32 (_Float32) __attribute__ ((__nothrow__ , __leaf__));
+extern _Float32 j1f32 (_Float32) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32 __j1f32 (_Float32) __attribute__ ((__nothrow__ , __leaf__));
+extern _Float32 jnf32 (int, _Float32) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32 __jnf32 (int, _Float32) __attribute__ ((__nothrow__ , __leaf__));
+extern _Float32 y0f32 (_Float32) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32 __y0f32 (_Float32) __attribute__ ((__nothrow__ , __leaf__));
+extern _Float32 y1f32 (_Float32) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32 __y1f32 (_Float32) __attribute__ ((__nothrow__ , __leaf__));
+extern _Float32 ynf32 (int, _Float32) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32 __ynf32 (int, _Float32) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+ extern _Float32 erff32 (_Float32) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32 __erff32 (_Float32) __attribute__ ((__nothrow__ , __leaf__));
+ extern _Float32 erfcf32 (_Float32) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32 __erfcf32 (_Float32) __attribute__ ((__nothrow__ , __leaf__));
+extern _Float32 lgammaf32 (_Float32) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32 __lgammaf32 (_Float32) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+extern _Float32 tgammaf32 (_Float32) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32 __tgammaf32 (_Float32) __attribute__ ((__nothrow__ , __leaf__));
+# 252 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+extern _Float32 lgammaf32_r (_Float32, int *__signgamp) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32 __lgammaf32_r (_Float32, int *__signgamp) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+
+extern _Float32 rintf32 (_Float32 __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32 __rintf32 (_Float32 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern _Float32 nextafterf32 (_Float32 __x, _Float32 __y) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32 __nextafterf32 (_Float32 __x, _Float32 __y) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+
+extern _Float32 nextdownf32 (_Float32 __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32 __nextdownf32 (_Float32 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+extern _Float32 nextupf32 (_Float32 __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32 __nextupf32 (_Float32 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern _Float32 remainderf32 (_Float32 __x, _Float32 __y) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32 __remainderf32 (_Float32 __x, _Float32 __y) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern _Float32 scalbnf32 (_Float32 __x, int __n) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32 __scalbnf32 (_Float32 __x, int __n) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern int ilogbf32 (_Float32 __x) __attribute__ ((__nothrow__ , __leaf__)); extern int __ilogbf32 (_Float32 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+extern long int llogbf32 (_Float32 __x) __attribute__ ((__nothrow__ , __leaf__)); extern long int __llogbf32 (_Float32 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+extern _Float32 scalblnf32 (_Float32 __x, long int __n) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32 __scalblnf32 (_Float32 __x, long int __n) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern _Float32 nearbyintf32 (_Float32 __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32 __nearbyintf32 (_Float32 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern _Float32 roundf32 (_Float32 __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern _Float32 __roundf32 (_Float32 __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+
+extern _Float32 truncf32 (_Float32 __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern _Float32 __truncf32 (_Float32 __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+
+
+extern _Float32 remquof32 (_Float32 __x, _Float32 __y, int *__quo) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32 __remquof32 (_Float32 __x, _Float32 __y, int *__quo) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+
+extern long int lrintf32 (_Float32 __x) __attribute__ ((__nothrow__ , __leaf__)); extern long int __lrintf32 (_Float32 __x) __attribute__ ((__nothrow__ , __leaf__));
+__extension__
+extern long long int llrintf32 (_Float32 __x) __attribute__ ((__nothrow__ , __leaf__)); extern long long int __llrintf32 (_Float32 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern long int lroundf32 (_Float32 __x) __attribute__ ((__nothrow__ , __leaf__)); extern long int __lroundf32 (_Float32 __x) __attribute__ ((__nothrow__ , __leaf__));
+__extension__
+extern long long int llroundf32 (_Float32 __x) __attribute__ ((__nothrow__ , __leaf__)); extern long long int __llroundf32 (_Float32 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern _Float32 fdimf32 (_Float32 __x, _Float32 __y) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32 __fdimf32 (_Float32 __x, _Float32 __y) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern _Float32 fmaxf32 (_Float32 __x, _Float32 __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern _Float32 __fmaxf32 (_Float32 __x, _Float32 __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern _Float32 fminf32 (_Float32 __x, _Float32 __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern _Float32 __fminf32 (_Float32 __x, _Float32 __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+
+extern _Float32 fmaf32 (_Float32 __x, _Float32 __y, _Float32 __z) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32 __fmaf32 (_Float32 __x, _Float32 __y, _Float32 __z) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+extern _Float32 roundevenf32 (_Float32 __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern _Float32 __roundevenf32 (_Float32 __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+
+extern __intmax_t fromfpf32 (_Float32 __x, int __round, unsigned int __width) __attribute__ ((__nothrow__ , __leaf__)); extern __intmax_t __fromfpf32 (_Float32 __x, int __round, unsigned int __width) __attribute__ ((__nothrow__ , __leaf__))
+                            ;
+
+
+
+extern __uintmax_t ufromfpf32 (_Float32 __x, int __round, unsigned int __width) __attribute__ ((__nothrow__ , __leaf__)); extern __uintmax_t __ufromfpf32 (_Float32 __x, int __round, unsigned int __width) __attribute__ ((__nothrow__ , __leaf__))
+                              ;
+
+
+
+
+extern __intmax_t fromfpxf32 (_Float32 __x, int __round, unsigned int __width) __attribute__ ((__nothrow__ , __leaf__)); extern __intmax_t __fromfpxf32 (_Float32 __x, int __round, unsigned int __width) __attribute__ ((__nothrow__ , __leaf__))
+                             ;
+
+
+
+
+extern __uintmax_t ufromfpxf32 (_Float32 __x, int __round, unsigned int __width) __attribute__ ((__nothrow__ , __leaf__)); extern __uintmax_t __ufromfpxf32 (_Float32 __x, int __round, unsigned int __width) __attribute__ ((__nothrow__ , __leaf__))
+                               ;
+
+
+extern int canonicalizef32 (_Float32 *__cx, const _Float32 *__x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+
+extern _Float32 fmaxmagf32 (_Float32 __x, _Float32 __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern _Float32 __fmaxmagf32 (_Float32 __x, _Float32 __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern _Float32 fminmagf32 (_Float32 __x, _Float32 __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern _Float32 __fminmagf32 (_Float32 __x, _Float32 __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+
+
+extern _Float32 fmaximumf32 (_Float32 __x, _Float32 __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern _Float32 __fmaximumf32 (_Float32 __x, _Float32 __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern _Float32 fminimumf32 (_Float32 __x, _Float32 __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern _Float32 __fminimumf32 (_Float32 __x, _Float32 __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern _Float32 fmaximum_numf32 (_Float32 __x, _Float32 __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern _Float32 __fmaximum_numf32 (_Float32 __x, _Float32 __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern _Float32 fminimum_numf32 (_Float32 __x, _Float32 __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern _Float32 __fminimum_numf32 (_Float32 __x, _Float32 __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern _Float32 fmaximum_magf32 (_Float32 __x, _Float32 __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern _Float32 __fmaximum_magf32 (_Float32 __x, _Float32 __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern _Float32 fminimum_magf32 (_Float32 __x, _Float32 __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern _Float32 __fminimum_magf32 (_Float32 __x, _Float32 __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern _Float32 fmaximum_mag_numf32 (_Float32 __x, _Float32 __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern _Float32 __fmaximum_mag_numf32 (_Float32 __x, _Float32 __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern _Float32 fminimum_mag_numf32 (_Float32 __x, _Float32 __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern _Float32 __fminimum_mag_numf32 (_Float32 __x, _Float32 __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+
+
+extern int totalorderf32 (const _Float32 *__x, const _Float32 *__y) __attribute__ ((__nothrow__ , __leaf__))
+
+     __attribute__ ((__pure__));
+
+
+extern int totalordermagf32 (const _Float32 *__x, const _Float32 *__y) __attribute__ ((__nothrow__ , __leaf__))
+
+     __attribute__ ((__pure__));
+
+
+extern _Float32 getpayloadf32 (const _Float32 *__x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32 __getpayloadf32 (const _Float32 *__x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern int setpayloadf32 (_Float32 *__x, _Float32 __payload) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern int setpayloadsigf32 (_Float32 *__x, _Float32 __payload) __attribute__ ((__nothrow__ , __leaf__));
+# 451 "/usr/include/math.h" 2 3 4
+# 467 "/usr/include/math.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 1 3 4
+# 53 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+ extern _Float64 acosf64 (_Float64 __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64 __acosf64 (_Float64 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+ extern _Float64 asinf64 (_Float64 __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64 __asinf64 (_Float64 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+ extern _Float64 atanf64 (_Float64 __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64 __atanf64 (_Float64 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+ extern _Float64 atan2f64 (_Float64 __y, _Float64 __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64 __atan2f64 (_Float64 __y, _Float64 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+ extern _Float64 cosf64 (_Float64 __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64 __cosf64 (_Float64 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+ extern _Float64 sinf64 (_Float64 __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64 __sinf64 (_Float64 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+ extern _Float64 tanf64 (_Float64 __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64 __tanf64 (_Float64 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+ extern _Float64 coshf64 (_Float64 __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64 __coshf64 (_Float64 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+ extern _Float64 sinhf64 (_Float64 __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64 __sinhf64 (_Float64 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+ extern _Float64 tanhf64 (_Float64 __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64 __tanhf64 (_Float64 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+ extern void sincosf64 (_Float64 __x, _Float64 *__sinx, _Float64 *__cosx) __attribute__ ((__nothrow__ , __leaf__)); extern void __sincosf64 (_Float64 __x, _Float64 *__sinx, _Float64 *__cosx) __attribute__ ((__nothrow__ , __leaf__))
+                                                        ;
+
+
+
+
+ extern _Float64 acoshf64 (_Float64 __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64 __acoshf64 (_Float64 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+ extern _Float64 asinhf64 (_Float64 __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64 __asinhf64 (_Float64 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+ extern _Float64 atanhf64 (_Float64 __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64 __atanhf64 (_Float64 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+ extern _Float64 expf64 (_Float64 __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64 __expf64 (_Float64 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern _Float64 frexpf64 (_Float64 __x, int *__exponent) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64 __frexpf64 (_Float64 __x, int *__exponent) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern _Float64 ldexpf64 (_Float64 __x, int __exponent) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64 __ldexpf64 (_Float64 __x, int __exponent) __attribute__ ((__nothrow__ , __leaf__));
+
+
+ extern _Float64 logf64 (_Float64 __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64 __logf64 (_Float64 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+ extern _Float64 log10f64 (_Float64 __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64 __log10f64 (_Float64 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern _Float64 modff64 (_Float64 __x, _Float64 *__iptr) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64 __modff64 (_Float64 __x, _Float64 *__iptr) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (2)));
+
+
+
+ extern _Float64 exp10f64 (_Float64 __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64 __exp10f64 (_Float64 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+ extern _Float64 expm1f64 (_Float64 __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64 __expm1f64 (_Float64 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+ extern _Float64 log1pf64 (_Float64 __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64 __log1pf64 (_Float64 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern _Float64 logbf64 (_Float64 __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64 __logbf64 (_Float64 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+ extern _Float64 exp2f64 (_Float64 __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64 __exp2f64 (_Float64 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+ extern _Float64 log2f64 (_Float64 __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64 __log2f64 (_Float64 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+
+ extern _Float64 powf64 (_Float64 __x, _Float64 __y) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64 __powf64 (_Float64 __x, _Float64 __y) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern _Float64 sqrtf64 (_Float64 __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64 __sqrtf64 (_Float64 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+ extern _Float64 hypotf64 (_Float64 __x, _Float64 __y) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64 __hypotf64 (_Float64 __x, _Float64 __y) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+ extern _Float64 cbrtf64 (_Float64 __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64 __cbrtf64 (_Float64 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+
+extern _Float64 ceilf64 (_Float64 __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern _Float64 __ceilf64 (_Float64 __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern _Float64 fabsf64 (_Float64 __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern _Float64 __fabsf64 (_Float64 __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern _Float64 floorf64 (_Float64 __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern _Float64 __floorf64 (_Float64 __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern _Float64 fmodf64 (_Float64 __x, _Float64 __y) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64 __fmodf64 (_Float64 __x, _Float64 __y) __attribute__ ((__nothrow__ , __leaf__));
+# 198 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+extern _Float64 copysignf64 (_Float64 __x, _Float64 __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern _Float64 __copysignf64 (_Float64 __x, _Float64 __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+
+
+extern _Float64 nanf64 (const char *__tagb) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64 __nanf64 (const char *__tagb) __attribute__ ((__nothrow__ , __leaf__));
+# 220 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+extern _Float64 j0f64 (_Float64) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64 __j0f64 (_Float64) __attribute__ ((__nothrow__ , __leaf__));
+extern _Float64 j1f64 (_Float64) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64 __j1f64 (_Float64) __attribute__ ((__nothrow__ , __leaf__));
+extern _Float64 jnf64 (int, _Float64) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64 __jnf64 (int, _Float64) __attribute__ ((__nothrow__ , __leaf__));
+extern _Float64 y0f64 (_Float64) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64 __y0f64 (_Float64) __attribute__ ((__nothrow__ , __leaf__));
+extern _Float64 y1f64 (_Float64) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64 __y1f64 (_Float64) __attribute__ ((__nothrow__ , __leaf__));
+extern _Float64 ynf64 (int, _Float64) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64 __ynf64 (int, _Float64) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+ extern _Float64 erff64 (_Float64) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64 __erff64 (_Float64) __attribute__ ((__nothrow__ , __leaf__));
+ extern _Float64 erfcf64 (_Float64) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64 __erfcf64 (_Float64) __attribute__ ((__nothrow__ , __leaf__));
+extern _Float64 lgammaf64 (_Float64) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64 __lgammaf64 (_Float64) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+extern _Float64 tgammaf64 (_Float64) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64 __tgammaf64 (_Float64) __attribute__ ((__nothrow__ , __leaf__));
+# 252 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+extern _Float64 lgammaf64_r (_Float64, int *__signgamp) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64 __lgammaf64_r (_Float64, int *__signgamp) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+
+extern _Float64 rintf64 (_Float64 __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64 __rintf64 (_Float64 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern _Float64 nextafterf64 (_Float64 __x, _Float64 __y) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64 __nextafterf64 (_Float64 __x, _Float64 __y) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+
+extern _Float64 nextdownf64 (_Float64 __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64 __nextdownf64 (_Float64 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+extern _Float64 nextupf64 (_Float64 __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64 __nextupf64 (_Float64 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern _Float64 remainderf64 (_Float64 __x, _Float64 __y) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64 __remainderf64 (_Float64 __x, _Float64 __y) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern _Float64 scalbnf64 (_Float64 __x, int __n) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64 __scalbnf64 (_Float64 __x, int __n) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern int ilogbf64 (_Float64 __x) __attribute__ ((__nothrow__ , __leaf__)); extern int __ilogbf64 (_Float64 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+extern long int llogbf64 (_Float64 __x) __attribute__ ((__nothrow__ , __leaf__)); extern long int __llogbf64 (_Float64 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+extern _Float64 scalblnf64 (_Float64 __x, long int __n) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64 __scalblnf64 (_Float64 __x, long int __n) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern _Float64 nearbyintf64 (_Float64 __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64 __nearbyintf64 (_Float64 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern _Float64 roundf64 (_Float64 __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern _Float64 __roundf64 (_Float64 __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+
+extern _Float64 truncf64 (_Float64 __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern _Float64 __truncf64 (_Float64 __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+
+
+extern _Float64 remquof64 (_Float64 __x, _Float64 __y, int *__quo) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64 __remquof64 (_Float64 __x, _Float64 __y, int *__quo) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+
+extern long int lrintf64 (_Float64 __x) __attribute__ ((__nothrow__ , __leaf__)); extern long int __lrintf64 (_Float64 __x) __attribute__ ((__nothrow__ , __leaf__));
+__extension__
+extern long long int llrintf64 (_Float64 __x) __attribute__ ((__nothrow__ , __leaf__)); extern long long int __llrintf64 (_Float64 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern long int lroundf64 (_Float64 __x) __attribute__ ((__nothrow__ , __leaf__)); extern long int __lroundf64 (_Float64 __x) __attribute__ ((__nothrow__ , __leaf__));
+__extension__
+extern long long int llroundf64 (_Float64 __x) __attribute__ ((__nothrow__ , __leaf__)); extern long long int __llroundf64 (_Float64 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern _Float64 fdimf64 (_Float64 __x, _Float64 __y) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64 __fdimf64 (_Float64 __x, _Float64 __y) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern _Float64 fmaxf64 (_Float64 __x, _Float64 __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern _Float64 __fmaxf64 (_Float64 __x, _Float64 __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern _Float64 fminf64 (_Float64 __x, _Float64 __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern _Float64 __fminf64 (_Float64 __x, _Float64 __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+
+extern _Float64 fmaf64 (_Float64 __x, _Float64 __y, _Float64 __z) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64 __fmaf64 (_Float64 __x, _Float64 __y, _Float64 __z) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+extern _Float64 roundevenf64 (_Float64 __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern _Float64 __roundevenf64 (_Float64 __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+
+extern __intmax_t fromfpf64 (_Float64 __x, int __round, unsigned int __width) __attribute__ ((__nothrow__ , __leaf__)); extern __intmax_t __fromfpf64 (_Float64 __x, int __round, unsigned int __width) __attribute__ ((__nothrow__ , __leaf__))
+                            ;
+
+
+
+extern __uintmax_t ufromfpf64 (_Float64 __x, int __round, unsigned int __width) __attribute__ ((__nothrow__ , __leaf__)); extern __uintmax_t __ufromfpf64 (_Float64 __x, int __round, unsigned int __width) __attribute__ ((__nothrow__ , __leaf__))
+                              ;
+
+
+
+
+extern __intmax_t fromfpxf64 (_Float64 __x, int __round, unsigned int __width) __attribute__ ((__nothrow__ , __leaf__)); extern __intmax_t __fromfpxf64 (_Float64 __x, int __round, unsigned int __width) __attribute__ ((__nothrow__ , __leaf__))
+                             ;
+
+
+
+
+extern __uintmax_t ufromfpxf64 (_Float64 __x, int __round, unsigned int __width) __attribute__ ((__nothrow__ , __leaf__)); extern __uintmax_t __ufromfpxf64 (_Float64 __x, int __round, unsigned int __width) __attribute__ ((__nothrow__ , __leaf__))
+                               ;
+
+
+extern int canonicalizef64 (_Float64 *__cx, const _Float64 *__x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+
+extern _Float64 fmaxmagf64 (_Float64 __x, _Float64 __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern _Float64 __fmaxmagf64 (_Float64 __x, _Float64 __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern _Float64 fminmagf64 (_Float64 __x, _Float64 __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern _Float64 __fminmagf64 (_Float64 __x, _Float64 __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+
+
+extern _Float64 fmaximumf64 (_Float64 __x, _Float64 __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern _Float64 __fmaximumf64 (_Float64 __x, _Float64 __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern _Float64 fminimumf64 (_Float64 __x, _Float64 __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern _Float64 __fminimumf64 (_Float64 __x, _Float64 __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern _Float64 fmaximum_numf64 (_Float64 __x, _Float64 __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern _Float64 __fmaximum_numf64 (_Float64 __x, _Float64 __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern _Float64 fminimum_numf64 (_Float64 __x, _Float64 __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern _Float64 __fminimum_numf64 (_Float64 __x, _Float64 __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern _Float64 fmaximum_magf64 (_Float64 __x, _Float64 __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern _Float64 __fmaximum_magf64 (_Float64 __x, _Float64 __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern _Float64 fminimum_magf64 (_Float64 __x, _Float64 __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern _Float64 __fminimum_magf64 (_Float64 __x, _Float64 __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern _Float64 fmaximum_mag_numf64 (_Float64 __x, _Float64 __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern _Float64 __fmaximum_mag_numf64 (_Float64 __x, _Float64 __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern _Float64 fminimum_mag_numf64 (_Float64 __x, _Float64 __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern _Float64 __fminimum_mag_numf64 (_Float64 __x, _Float64 __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+
+
+extern int totalorderf64 (const _Float64 *__x, const _Float64 *__y) __attribute__ ((__nothrow__ , __leaf__))
+
+     __attribute__ ((__pure__));
+
+
+extern int totalordermagf64 (const _Float64 *__x, const _Float64 *__y) __attribute__ ((__nothrow__ , __leaf__))
+
+     __attribute__ ((__pure__));
+
+
+extern _Float64 getpayloadf64 (const _Float64 *__x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64 __getpayloadf64 (const _Float64 *__x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern int setpayloadf64 (_Float64 *__x, _Float64 __payload) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern int setpayloadsigf64 (_Float64 *__x, _Float64 __payload) __attribute__ ((__nothrow__ , __leaf__));
+# 468 "/usr/include/math.h" 2 3 4
+# 481 "/usr/include/math.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h" 1 3 4
+# 20 "/usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h" 3 4
+extern int __fpclassifyf128 (_Float128 __value) __attribute__ ((__nothrow__ , __leaf__))
+     __attribute__ ((__const__));
+
+
+extern int __signbitf128 (_Float128 __value) __attribute__ ((__nothrow__ , __leaf__))
+     __attribute__ ((__const__));
+
+
+
+extern int __isinff128 (_Float128 __value) __attribute__ ((__nothrow__ , __leaf__))
+  __attribute__ ((__const__));
+
+
+extern int __finitef128 (_Float128 __value) __attribute__ ((__nothrow__ , __leaf__))
+  __attribute__ ((__const__));
+
+
+extern int __isnanf128 (_Float128 __value) __attribute__ ((__nothrow__ , __leaf__))
+  __attribute__ ((__const__));
+
+
+extern int __iseqsigf128 (_Float128 __x, _Float128 __y) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern int __issignalingf128 (_Float128 __value) __attribute__ ((__nothrow__ , __leaf__))
+     __attribute__ ((__const__));
+# 482 "/usr/include/math.h" 2 3 4
+
+
+# 1 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 1 3 4
+# 53 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+ extern _Float128 acosf128 (_Float128 __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float128 __acosf128 (_Float128 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+ extern _Float128 asinf128 (_Float128 __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float128 __asinf128 (_Float128 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+ extern _Float128 atanf128 (_Float128 __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float128 __atanf128 (_Float128 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+ extern _Float128 atan2f128 (_Float128 __y, _Float128 __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float128 __atan2f128 (_Float128 __y, _Float128 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+ extern _Float128 cosf128 (_Float128 __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float128 __cosf128 (_Float128 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+ extern _Float128 sinf128 (_Float128 __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float128 __sinf128 (_Float128 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+ extern _Float128 tanf128 (_Float128 __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float128 __tanf128 (_Float128 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+ extern _Float128 coshf128 (_Float128 __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float128 __coshf128 (_Float128 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+ extern _Float128 sinhf128 (_Float128 __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float128 __sinhf128 (_Float128 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+ extern _Float128 tanhf128 (_Float128 __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float128 __tanhf128 (_Float128 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+ extern void sincosf128 (_Float128 __x, _Float128 *__sinx, _Float128 *__cosx) __attribute__ ((__nothrow__ , __leaf__)); extern void __sincosf128 (_Float128 __x, _Float128 *__sinx, _Float128 *__cosx) __attribute__ ((__nothrow__ , __leaf__))
+                                                        ;
+
+
+
+
+ extern _Float128 acoshf128 (_Float128 __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float128 __acoshf128 (_Float128 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+ extern _Float128 asinhf128 (_Float128 __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float128 __asinhf128 (_Float128 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+ extern _Float128 atanhf128 (_Float128 __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float128 __atanhf128 (_Float128 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+ extern _Float128 expf128 (_Float128 __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float128 __expf128 (_Float128 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern _Float128 frexpf128 (_Float128 __x, int *__exponent) __attribute__ ((__nothrow__ , __leaf__)); extern _Float128 __frexpf128 (_Float128 __x, int *__exponent) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern _Float128 ldexpf128 (_Float128 __x, int __exponent) __attribute__ ((__nothrow__ , __leaf__)); extern _Float128 __ldexpf128 (_Float128 __x, int __exponent) __attribute__ ((__nothrow__ , __leaf__));
+
+
+ extern _Float128 logf128 (_Float128 __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float128 __logf128 (_Float128 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+ extern _Float128 log10f128 (_Float128 __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float128 __log10f128 (_Float128 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern _Float128 modff128 (_Float128 __x, _Float128 *__iptr) __attribute__ ((__nothrow__ , __leaf__)); extern _Float128 __modff128 (_Float128 __x, _Float128 *__iptr) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (2)));
+
+
+
+ extern _Float128 exp10f128 (_Float128 __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float128 __exp10f128 (_Float128 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+ extern _Float128 expm1f128 (_Float128 __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float128 __expm1f128 (_Float128 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+ extern _Float128 log1pf128 (_Float128 __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float128 __log1pf128 (_Float128 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern _Float128 logbf128 (_Float128 __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float128 __logbf128 (_Float128 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+ extern _Float128 exp2f128 (_Float128 __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float128 __exp2f128 (_Float128 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+ extern _Float128 log2f128 (_Float128 __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float128 __log2f128 (_Float128 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+
+ extern _Float128 powf128 (_Float128 __x, _Float128 __y) __attribute__ ((__nothrow__ , __leaf__)); extern _Float128 __powf128 (_Float128 __x, _Float128 __y) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern _Float128 sqrtf128 (_Float128 __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float128 __sqrtf128 (_Float128 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+ extern _Float128 hypotf128 (_Float128 __x, _Float128 __y) __attribute__ ((__nothrow__ , __leaf__)); extern _Float128 __hypotf128 (_Float128 __x, _Float128 __y) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+ extern _Float128 cbrtf128 (_Float128 __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float128 __cbrtf128 (_Float128 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+
+extern _Float128 ceilf128 (_Float128 __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern _Float128 __ceilf128 (_Float128 __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern _Float128 fabsf128 (_Float128 __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern _Float128 __fabsf128 (_Float128 __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern _Float128 floorf128 (_Float128 __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern _Float128 __floorf128 (_Float128 __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern _Float128 fmodf128 (_Float128 __x, _Float128 __y) __attribute__ ((__nothrow__ , __leaf__)); extern _Float128 __fmodf128 (_Float128 __x, _Float128 __y) __attribute__ ((__nothrow__ , __leaf__));
+# 198 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+extern _Float128 copysignf128 (_Float128 __x, _Float128 __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern _Float128 __copysignf128 (_Float128 __x, _Float128 __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+
+
+extern _Float128 nanf128 (const char *__tagb) __attribute__ ((__nothrow__ , __leaf__)); extern _Float128 __nanf128 (const char *__tagb) __attribute__ ((__nothrow__ , __leaf__));
+# 220 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+extern _Float128 j0f128 (_Float128) __attribute__ ((__nothrow__ , __leaf__)); extern _Float128 __j0f128 (_Float128) __attribute__ ((__nothrow__ , __leaf__));
+extern _Float128 j1f128 (_Float128) __attribute__ ((__nothrow__ , __leaf__)); extern _Float128 __j1f128 (_Float128) __attribute__ ((__nothrow__ , __leaf__));
+extern _Float128 jnf128 (int, _Float128) __attribute__ ((__nothrow__ , __leaf__)); extern _Float128 __jnf128 (int, _Float128) __attribute__ ((__nothrow__ , __leaf__));
+extern _Float128 y0f128 (_Float128) __attribute__ ((__nothrow__ , __leaf__)); extern _Float128 __y0f128 (_Float128) __attribute__ ((__nothrow__ , __leaf__));
+extern _Float128 y1f128 (_Float128) __attribute__ ((__nothrow__ , __leaf__)); extern _Float128 __y1f128 (_Float128) __attribute__ ((__nothrow__ , __leaf__));
+extern _Float128 ynf128 (int, _Float128) __attribute__ ((__nothrow__ , __leaf__)); extern _Float128 __ynf128 (int, _Float128) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+ extern _Float128 erff128 (_Float128) __attribute__ ((__nothrow__ , __leaf__)); extern _Float128 __erff128 (_Float128) __attribute__ ((__nothrow__ , __leaf__));
+ extern _Float128 erfcf128 (_Float128) __attribute__ ((__nothrow__ , __leaf__)); extern _Float128 __erfcf128 (_Float128) __attribute__ ((__nothrow__ , __leaf__));
+extern _Float128 lgammaf128 (_Float128) __attribute__ ((__nothrow__ , __leaf__)); extern _Float128 __lgammaf128 (_Float128) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+extern _Float128 tgammaf128 (_Float128) __attribute__ ((__nothrow__ , __leaf__)); extern _Float128 __tgammaf128 (_Float128) __attribute__ ((__nothrow__ , __leaf__));
+# 252 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+extern _Float128 lgammaf128_r (_Float128, int *__signgamp) __attribute__ ((__nothrow__ , __leaf__)); extern _Float128 __lgammaf128_r (_Float128, int *__signgamp) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+
+extern _Float128 rintf128 (_Float128 __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float128 __rintf128 (_Float128 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern _Float128 nextafterf128 (_Float128 __x, _Float128 __y) __attribute__ ((__nothrow__ , __leaf__)); extern _Float128 __nextafterf128 (_Float128 __x, _Float128 __y) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+
+extern _Float128 nextdownf128 (_Float128 __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float128 __nextdownf128 (_Float128 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+extern _Float128 nextupf128 (_Float128 __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float128 __nextupf128 (_Float128 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern _Float128 remainderf128 (_Float128 __x, _Float128 __y) __attribute__ ((__nothrow__ , __leaf__)); extern _Float128 __remainderf128 (_Float128 __x, _Float128 __y) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern _Float128 scalbnf128 (_Float128 __x, int __n) __attribute__ ((__nothrow__ , __leaf__)); extern _Float128 __scalbnf128 (_Float128 __x, int __n) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern int ilogbf128 (_Float128 __x) __attribute__ ((__nothrow__ , __leaf__)); extern int __ilogbf128 (_Float128 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+extern long int llogbf128 (_Float128 __x) __attribute__ ((__nothrow__ , __leaf__)); extern long int __llogbf128 (_Float128 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+extern _Float128 scalblnf128 (_Float128 __x, long int __n) __attribute__ ((__nothrow__ , __leaf__)); extern _Float128 __scalblnf128 (_Float128 __x, long int __n) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern _Float128 nearbyintf128 (_Float128 __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float128 __nearbyintf128 (_Float128 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern _Float128 roundf128 (_Float128 __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern _Float128 __roundf128 (_Float128 __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+
+extern _Float128 truncf128 (_Float128 __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern _Float128 __truncf128 (_Float128 __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+
+
+extern _Float128 remquof128 (_Float128 __x, _Float128 __y, int *__quo) __attribute__ ((__nothrow__ , __leaf__)); extern _Float128 __remquof128 (_Float128 __x, _Float128 __y, int *__quo) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+
+extern long int lrintf128 (_Float128 __x) __attribute__ ((__nothrow__ , __leaf__)); extern long int __lrintf128 (_Float128 __x) __attribute__ ((__nothrow__ , __leaf__));
+__extension__
+extern long long int llrintf128 (_Float128 __x) __attribute__ ((__nothrow__ , __leaf__)); extern long long int __llrintf128 (_Float128 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern long int lroundf128 (_Float128 __x) __attribute__ ((__nothrow__ , __leaf__)); extern long int __lroundf128 (_Float128 __x) __attribute__ ((__nothrow__ , __leaf__));
+__extension__
+extern long long int llroundf128 (_Float128 __x) __attribute__ ((__nothrow__ , __leaf__)); extern long long int __llroundf128 (_Float128 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern _Float128 fdimf128 (_Float128 __x, _Float128 __y) __attribute__ ((__nothrow__ , __leaf__)); extern _Float128 __fdimf128 (_Float128 __x, _Float128 __y) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern _Float128 fmaxf128 (_Float128 __x, _Float128 __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern _Float128 __fmaxf128 (_Float128 __x, _Float128 __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern _Float128 fminf128 (_Float128 __x, _Float128 __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern _Float128 __fminf128 (_Float128 __x, _Float128 __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+
+extern _Float128 fmaf128 (_Float128 __x, _Float128 __y, _Float128 __z) __attribute__ ((__nothrow__ , __leaf__)); extern _Float128 __fmaf128 (_Float128 __x, _Float128 __y, _Float128 __z) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+extern _Float128 roundevenf128 (_Float128 __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern _Float128 __roundevenf128 (_Float128 __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+
+extern __intmax_t fromfpf128 (_Float128 __x, int __round, unsigned int __width) __attribute__ ((__nothrow__ , __leaf__)); extern __intmax_t __fromfpf128 (_Float128 __x, int __round, unsigned int __width) __attribute__ ((__nothrow__ , __leaf__))
+                            ;
+
+
+
+extern __uintmax_t ufromfpf128 (_Float128 __x, int __round, unsigned int __width) __attribute__ ((__nothrow__ , __leaf__)); extern __uintmax_t __ufromfpf128 (_Float128 __x, int __round, unsigned int __width) __attribute__ ((__nothrow__ , __leaf__))
+                              ;
+
+
+
+
+extern __intmax_t fromfpxf128 (_Float128 __x, int __round, unsigned int __width) __attribute__ ((__nothrow__ , __leaf__)); extern __intmax_t __fromfpxf128 (_Float128 __x, int __round, unsigned int __width) __attribute__ ((__nothrow__ , __leaf__))
+                             ;
+
+
+
+
+extern __uintmax_t ufromfpxf128 (_Float128 __x, int __round, unsigned int __width) __attribute__ ((__nothrow__ , __leaf__)); extern __uintmax_t __ufromfpxf128 (_Float128 __x, int __round, unsigned int __width) __attribute__ ((__nothrow__ , __leaf__))
+                               ;
+
+
+extern int canonicalizef128 (_Float128 *__cx, const _Float128 *__x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+
+extern _Float128 fmaxmagf128 (_Float128 __x, _Float128 __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern _Float128 __fmaxmagf128 (_Float128 __x, _Float128 __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern _Float128 fminmagf128 (_Float128 __x, _Float128 __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern _Float128 __fminmagf128 (_Float128 __x, _Float128 __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+
+
+extern _Float128 fmaximumf128 (_Float128 __x, _Float128 __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern _Float128 __fmaximumf128 (_Float128 __x, _Float128 __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern _Float128 fminimumf128 (_Float128 __x, _Float128 __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern _Float128 __fminimumf128 (_Float128 __x, _Float128 __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern _Float128 fmaximum_numf128 (_Float128 __x, _Float128 __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern _Float128 __fmaximum_numf128 (_Float128 __x, _Float128 __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern _Float128 fminimum_numf128 (_Float128 __x, _Float128 __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern _Float128 __fminimum_numf128 (_Float128 __x, _Float128 __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern _Float128 fmaximum_magf128 (_Float128 __x, _Float128 __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern _Float128 __fmaximum_magf128 (_Float128 __x, _Float128 __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern _Float128 fminimum_magf128 (_Float128 __x, _Float128 __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern _Float128 __fminimum_magf128 (_Float128 __x, _Float128 __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern _Float128 fmaximum_mag_numf128 (_Float128 __x, _Float128 __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern _Float128 __fmaximum_mag_numf128 (_Float128 __x, _Float128 __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern _Float128 fminimum_mag_numf128 (_Float128 __x, _Float128 __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern _Float128 __fminimum_mag_numf128 (_Float128 __x, _Float128 __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+
+
+extern int totalorderf128 (const _Float128 *__x, const _Float128 *__y) __attribute__ ((__nothrow__ , __leaf__))
+
+     __attribute__ ((__pure__));
+
+
+extern int totalordermagf128 (const _Float128 *__x, const _Float128 *__y) __attribute__ ((__nothrow__ , __leaf__))
+
+     __attribute__ ((__pure__));
+
+
+extern _Float128 getpayloadf128 (const _Float128 *__x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float128 __getpayloadf128 (const _Float128 *__x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern int setpayloadf128 (_Float128 *__x, _Float128 __payload) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern int setpayloadsigf128 (_Float128 *__x, _Float128 __payload) __attribute__ ((__nothrow__ , __leaf__));
+# 485 "/usr/include/math.h" 2 3 4
+# 501 "/usr/include/math.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 1 3 4
+# 53 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+ extern _Float32x acosf32x (_Float32x __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32x __acosf32x (_Float32x __x) __attribute__ ((__nothrow__ , __leaf__));
+
+ extern _Float32x asinf32x (_Float32x __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32x __asinf32x (_Float32x __x) __attribute__ ((__nothrow__ , __leaf__));
+
+ extern _Float32x atanf32x (_Float32x __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32x __atanf32x (_Float32x __x) __attribute__ ((__nothrow__ , __leaf__));
+
+ extern _Float32x atan2f32x (_Float32x __y, _Float32x __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32x __atan2f32x (_Float32x __y, _Float32x __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+ extern _Float32x cosf32x (_Float32x __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32x __cosf32x (_Float32x __x) __attribute__ ((__nothrow__ , __leaf__));
+
+ extern _Float32x sinf32x (_Float32x __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32x __sinf32x (_Float32x __x) __attribute__ ((__nothrow__ , __leaf__));
+
+ extern _Float32x tanf32x (_Float32x __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32x __tanf32x (_Float32x __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+ extern _Float32x coshf32x (_Float32x __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32x __coshf32x (_Float32x __x) __attribute__ ((__nothrow__ , __leaf__));
+
+ extern _Float32x sinhf32x (_Float32x __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32x __sinhf32x (_Float32x __x) __attribute__ ((__nothrow__ , __leaf__));
+
+ extern _Float32x tanhf32x (_Float32x __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32x __tanhf32x (_Float32x __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+ extern void sincosf32x (_Float32x __x, _Float32x *__sinx, _Float32x *__cosx) __attribute__ ((__nothrow__ , __leaf__)); extern void __sincosf32x (_Float32x __x, _Float32x *__sinx, _Float32x *__cosx) __attribute__ ((__nothrow__ , __leaf__))
+                                                        ;
+
+
+
+
+ extern _Float32x acoshf32x (_Float32x __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32x __acoshf32x (_Float32x __x) __attribute__ ((__nothrow__ , __leaf__));
+
+ extern _Float32x asinhf32x (_Float32x __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32x __asinhf32x (_Float32x __x) __attribute__ ((__nothrow__ , __leaf__));
+
+ extern _Float32x atanhf32x (_Float32x __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32x __atanhf32x (_Float32x __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+ extern _Float32x expf32x (_Float32x __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32x __expf32x (_Float32x __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern _Float32x frexpf32x (_Float32x __x, int *__exponent) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32x __frexpf32x (_Float32x __x, int *__exponent) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern _Float32x ldexpf32x (_Float32x __x, int __exponent) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32x __ldexpf32x (_Float32x __x, int __exponent) __attribute__ ((__nothrow__ , __leaf__));
+
+
+ extern _Float32x logf32x (_Float32x __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32x __logf32x (_Float32x __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+ extern _Float32x log10f32x (_Float32x __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32x __log10f32x (_Float32x __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern _Float32x modff32x (_Float32x __x, _Float32x *__iptr) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32x __modff32x (_Float32x __x, _Float32x *__iptr) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (2)));
+
+
+
+ extern _Float32x exp10f32x (_Float32x __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32x __exp10f32x (_Float32x __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+ extern _Float32x expm1f32x (_Float32x __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32x __expm1f32x (_Float32x __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+ extern _Float32x log1pf32x (_Float32x __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32x __log1pf32x (_Float32x __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern _Float32x logbf32x (_Float32x __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32x __logbf32x (_Float32x __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+ extern _Float32x exp2f32x (_Float32x __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32x __exp2f32x (_Float32x __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+ extern _Float32x log2f32x (_Float32x __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32x __log2f32x (_Float32x __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+
+ extern _Float32x powf32x (_Float32x __x, _Float32x __y) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32x __powf32x (_Float32x __x, _Float32x __y) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern _Float32x sqrtf32x (_Float32x __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32x __sqrtf32x (_Float32x __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+ extern _Float32x hypotf32x (_Float32x __x, _Float32x __y) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32x __hypotf32x (_Float32x __x, _Float32x __y) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+ extern _Float32x cbrtf32x (_Float32x __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32x __cbrtf32x (_Float32x __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+
+extern _Float32x ceilf32x (_Float32x __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern _Float32x __ceilf32x (_Float32x __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern _Float32x fabsf32x (_Float32x __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern _Float32x __fabsf32x (_Float32x __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern _Float32x floorf32x (_Float32x __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern _Float32x __floorf32x (_Float32x __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern _Float32x fmodf32x (_Float32x __x, _Float32x __y) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32x __fmodf32x (_Float32x __x, _Float32x __y) __attribute__ ((__nothrow__ , __leaf__));
+# 198 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+extern _Float32x copysignf32x (_Float32x __x, _Float32x __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern _Float32x __copysignf32x (_Float32x __x, _Float32x __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+
+
+extern _Float32x nanf32x (const char *__tagb) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32x __nanf32x (const char *__tagb) __attribute__ ((__nothrow__ , __leaf__));
+# 220 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+extern _Float32x j0f32x (_Float32x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32x __j0f32x (_Float32x) __attribute__ ((__nothrow__ , __leaf__));
+extern _Float32x j1f32x (_Float32x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32x __j1f32x (_Float32x) __attribute__ ((__nothrow__ , __leaf__));
+extern _Float32x jnf32x (int, _Float32x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32x __jnf32x (int, _Float32x) __attribute__ ((__nothrow__ , __leaf__));
+extern _Float32x y0f32x (_Float32x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32x __y0f32x (_Float32x) __attribute__ ((__nothrow__ , __leaf__));
+extern _Float32x y1f32x (_Float32x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32x __y1f32x (_Float32x) __attribute__ ((__nothrow__ , __leaf__));
+extern _Float32x ynf32x (int, _Float32x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32x __ynf32x (int, _Float32x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+ extern _Float32x erff32x (_Float32x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32x __erff32x (_Float32x) __attribute__ ((__nothrow__ , __leaf__));
+ extern _Float32x erfcf32x (_Float32x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32x __erfcf32x (_Float32x) __attribute__ ((__nothrow__ , __leaf__));
+extern _Float32x lgammaf32x (_Float32x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32x __lgammaf32x (_Float32x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+extern _Float32x tgammaf32x (_Float32x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32x __tgammaf32x (_Float32x) __attribute__ ((__nothrow__ , __leaf__));
+# 252 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+extern _Float32x lgammaf32x_r (_Float32x, int *__signgamp) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32x __lgammaf32x_r (_Float32x, int *__signgamp) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+
+extern _Float32x rintf32x (_Float32x __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32x __rintf32x (_Float32x __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern _Float32x nextafterf32x (_Float32x __x, _Float32x __y) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32x __nextafterf32x (_Float32x __x, _Float32x __y) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+
+extern _Float32x nextdownf32x (_Float32x __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32x __nextdownf32x (_Float32x __x) __attribute__ ((__nothrow__ , __leaf__));
+
+extern _Float32x nextupf32x (_Float32x __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32x __nextupf32x (_Float32x __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern _Float32x remainderf32x (_Float32x __x, _Float32x __y) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32x __remainderf32x (_Float32x __x, _Float32x __y) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern _Float32x scalbnf32x (_Float32x __x, int __n) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32x __scalbnf32x (_Float32x __x, int __n) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern int ilogbf32x (_Float32x __x) __attribute__ ((__nothrow__ , __leaf__)); extern int __ilogbf32x (_Float32x __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+extern long int llogbf32x (_Float32x __x) __attribute__ ((__nothrow__ , __leaf__)); extern long int __llogbf32x (_Float32x __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+extern _Float32x scalblnf32x (_Float32x __x, long int __n) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32x __scalblnf32x (_Float32x __x, long int __n) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern _Float32x nearbyintf32x (_Float32x __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32x __nearbyintf32x (_Float32x __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern _Float32x roundf32x (_Float32x __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern _Float32x __roundf32x (_Float32x __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+
+extern _Float32x truncf32x (_Float32x __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern _Float32x __truncf32x (_Float32x __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+
+
+extern _Float32x remquof32x (_Float32x __x, _Float32x __y, int *__quo) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32x __remquof32x (_Float32x __x, _Float32x __y, int *__quo) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+
+extern long int lrintf32x (_Float32x __x) __attribute__ ((__nothrow__ , __leaf__)); extern long int __lrintf32x (_Float32x __x) __attribute__ ((__nothrow__ , __leaf__));
+__extension__
+extern long long int llrintf32x (_Float32x __x) __attribute__ ((__nothrow__ , __leaf__)); extern long long int __llrintf32x (_Float32x __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern long int lroundf32x (_Float32x __x) __attribute__ ((__nothrow__ , __leaf__)); extern long int __lroundf32x (_Float32x __x) __attribute__ ((__nothrow__ , __leaf__));
+__extension__
+extern long long int llroundf32x (_Float32x __x) __attribute__ ((__nothrow__ , __leaf__)); extern long long int __llroundf32x (_Float32x __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern _Float32x fdimf32x (_Float32x __x, _Float32x __y) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32x __fdimf32x (_Float32x __x, _Float32x __y) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern _Float32x fmaxf32x (_Float32x __x, _Float32x __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern _Float32x __fmaxf32x (_Float32x __x, _Float32x __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern _Float32x fminf32x (_Float32x __x, _Float32x __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern _Float32x __fminf32x (_Float32x __x, _Float32x __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+
+extern _Float32x fmaf32x (_Float32x __x, _Float32x __y, _Float32x __z) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32x __fmaf32x (_Float32x __x, _Float32x __y, _Float32x __z) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+extern _Float32x roundevenf32x (_Float32x __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern _Float32x __roundevenf32x (_Float32x __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+
+extern __intmax_t fromfpf32x (_Float32x __x, int __round, unsigned int __width) __attribute__ ((__nothrow__ , __leaf__)); extern __intmax_t __fromfpf32x (_Float32x __x, int __round, unsigned int __width) __attribute__ ((__nothrow__ , __leaf__))
+                            ;
+
+
+
+extern __uintmax_t ufromfpf32x (_Float32x __x, int __round, unsigned int __width) __attribute__ ((__nothrow__ , __leaf__)); extern __uintmax_t __ufromfpf32x (_Float32x __x, int __round, unsigned int __width) __attribute__ ((__nothrow__ , __leaf__))
+                              ;
+
+
+
+
+extern __intmax_t fromfpxf32x (_Float32x __x, int __round, unsigned int __width) __attribute__ ((__nothrow__ , __leaf__)); extern __intmax_t __fromfpxf32x (_Float32x __x, int __round, unsigned int __width) __attribute__ ((__nothrow__ , __leaf__))
+                             ;
+
+
+
+
+extern __uintmax_t ufromfpxf32x (_Float32x __x, int __round, unsigned int __width) __attribute__ ((__nothrow__ , __leaf__)); extern __uintmax_t __ufromfpxf32x (_Float32x __x, int __round, unsigned int __width) __attribute__ ((__nothrow__ , __leaf__))
+                               ;
+
+
+extern int canonicalizef32x (_Float32x *__cx, const _Float32x *__x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+
+extern _Float32x fmaxmagf32x (_Float32x __x, _Float32x __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern _Float32x __fmaxmagf32x (_Float32x __x, _Float32x __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern _Float32x fminmagf32x (_Float32x __x, _Float32x __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern _Float32x __fminmagf32x (_Float32x __x, _Float32x __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+
+
+extern _Float32x fmaximumf32x (_Float32x __x, _Float32x __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern _Float32x __fmaximumf32x (_Float32x __x, _Float32x __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern _Float32x fminimumf32x (_Float32x __x, _Float32x __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern _Float32x __fminimumf32x (_Float32x __x, _Float32x __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern _Float32x fmaximum_numf32x (_Float32x __x, _Float32x __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern _Float32x __fmaximum_numf32x (_Float32x __x, _Float32x __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern _Float32x fminimum_numf32x (_Float32x __x, _Float32x __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern _Float32x __fminimum_numf32x (_Float32x __x, _Float32x __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern _Float32x fmaximum_magf32x (_Float32x __x, _Float32x __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern _Float32x __fmaximum_magf32x (_Float32x __x, _Float32x __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern _Float32x fminimum_magf32x (_Float32x __x, _Float32x __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern _Float32x __fminimum_magf32x (_Float32x __x, _Float32x __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern _Float32x fmaximum_mag_numf32x (_Float32x __x, _Float32x __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern _Float32x __fmaximum_mag_numf32x (_Float32x __x, _Float32x __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern _Float32x fminimum_mag_numf32x (_Float32x __x, _Float32x __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern _Float32x __fminimum_mag_numf32x (_Float32x __x, _Float32x __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+
+
+extern int totalorderf32x (const _Float32x *__x, const _Float32x *__y) __attribute__ ((__nothrow__ , __leaf__))
+
+     __attribute__ ((__pure__));
+
+
+extern int totalordermagf32x (const _Float32x *__x, const _Float32x *__y) __attribute__ ((__nothrow__ , __leaf__))
+
+     __attribute__ ((__pure__));
+
+
+extern _Float32x getpayloadf32x (const _Float32x *__x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float32x __getpayloadf32x (const _Float32x *__x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern int setpayloadf32x (_Float32x *__x, _Float32x __payload) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern int setpayloadsigf32x (_Float32x *__x, _Float32x __payload) __attribute__ ((__nothrow__ , __leaf__));
+# 502 "/usr/include/math.h" 2 3 4
+# 518 "/usr/include/math.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 1 3 4
+# 53 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+ extern _Float64x acosf64x (_Float64x __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64x __acosf64x (_Float64x __x) __attribute__ ((__nothrow__ , __leaf__));
+
+ extern _Float64x asinf64x (_Float64x __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64x __asinf64x (_Float64x __x) __attribute__ ((__nothrow__ , __leaf__));
+
+ extern _Float64x atanf64x (_Float64x __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64x __atanf64x (_Float64x __x) __attribute__ ((__nothrow__ , __leaf__));
+
+ extern _Float64x atan2f64x (_Float64x __y, _Float64x __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64x __atan2f64x (_Float64x __y, _Float64x __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+ extern _Float64x cosf64x (_Float64x __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64x __cosf64x (_Float64x __x) __attribute__ ((__nothrow__ , __leaf__));
+
+ extern _Float64x sinf64x (_Float64x __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64x __sinf64x (_Float64x __x) __attribute__ ((__nothrow__ , __leaf__));
+
+ extern _Float64x tanf64x (_Float64x __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64x __tanf64x (_Float64x __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+ extern _Float64x coshf64x (_Float64x __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64x __coshf64x (_Float64x __x) __attribute__ ((__nothrow__ , __leaf__));
+
+ extern _Float64x sinhf64x (_Float64x __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64x __sinhf64x (_Float64x __x) __attribute__ ((__nothrow__ , __leaf__));
+
+ extern _Float64x tanhf64x (_Float64x __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64x __tanhf64x (_Float64x __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+ extern void sincosf64x (_Float64x __x, _Float64x *__sinx, _Float64x *__cosx) __attribute__ ((__nothrow__ , __leaf__)); extern void __sincosf64x (_Float64x __x, _Float64x *__sinx, _Float64x *__cosx) __attribute__ ((__nothrow__ , __leaf__))
+                                                        ;
+
+
+
+
+ extern _Float64x acoshf64x (_Float64x __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64x __acoshf64x (_Float64x __x) __attribute__ ((__nothrow__ , __leaf__));
+
+ extern _Float64x asinhf64x (_Float64x __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64x __asinhf64x (_Float64x __x) __attribute__ ((__nothrow__ , __leaf__));
+
+ extern _Float64x atanhf64x (_Float64x __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64x __atanhf64x (_Float64x __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+ extern _Float64x expf64x (_Float64x __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64x __expf64x (_Float64x __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern _Float64x frexpf64x (_Float64x __x, int *__exponent) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64x __frexpf64x (_Float64x __x, int *__exponent) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern _Float64x ldexpf64x (_Float64x __x, int __exponent) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64x __ldexpf64x (_Float64x __x, int __exponent) __attribute__ ((__nothrow__ , __leaf__));
+
+
+ extern _Float64x logf64x (_Float64x __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64x __logf64x (_Float64x __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+ extern _Float64x log10f64x (_Float64x __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64x __log10f64x (_Float64x __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern _Float64x modff64x (_Float64x __x, _Float64x *__iptr) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64x __modff64x (_Float64x __x, _Float64x *__iptr) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (2)));
+
+
+
+ extern _Float64x exp10f64x (_Float64x __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64x __exp10f64x (_Float64x __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+ extern _Float64x expm1f64x (_Float64x __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64x __expm1f64x (_Float64x __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+ extern _Float64x log1pf64x (_Float64x __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64x __log1pf64x (_Float64x __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern _Float64x logbf64x (_Float64x __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64x __logbf64x (_Float64x __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+ extern _Float64x exp2f64x (_Float64x __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64x __exp2f64x (_Float64x __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+ extern _Float64x log2f64x (_Float64x __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64x __log2f64x (_Float64x __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+
+ extern _Float64x powf64x (_Float64x __x, _Float64x __y) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64x __powf64x (_Float64x __x, _Float64x __y) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern _Float64x sqrtf64x (_Float64x __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64x __sqrtf64x (_Float64x __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+ extern _Float64x hypotf64x (_Float64x __x, _Float64x __y) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64x __hypotf64x (_Float64x __x, _Float64x __y) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+ extern _Float64x cbrtf64x (_Float64x __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64x __cbrtf64x (_Float64x __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+
+extern _Float64x ceilf64x (_Float64x __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern _Float64x __ceilf64x (_Float64x __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern _Float64x fabsf64x (_Float64x __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern _Float64x __fabsf64x (_Float64x __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern _Float64x floorf64x (_Float64x __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern _Float64x __floorf64x (_Float64x __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern _Float64x fmodf64x (_Float64x __x, _Float64x __y) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64x __fmodf64x (_Float64x __x, _Float64x __y) __attribute__ ((__nothrow__ , __leaf__));
+# 198 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+extern _Float64x copysignf64x (_Float64x __x, _Float64x __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern _Float64x __copysignf64x (_Float64x __x, _Float64x __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+
+
+extern _Float64x nanf64x (const char *__tagb) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64x __nanf64x (const char *__tagb) __attribute__ ((__nothrow__ , __leaf__));
+# 220 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+extern _Float64x j0f64x (_Float64x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64x __j0f64x (_Float64x) __attribute__ ((__nothrow__ , __leaf__));
+extern _Float64x j1f64x (_Float64x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64x __j1f64x (_Float64x) __attribute__ ((__nothrow__ , __leaf__));
+extern _Float64x jnf64x (int, _Float64x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64x __jnf64x (int, _Float64x) __attribute__ ((__nothrow__ , __leaf__));
+extern _Float64x y0f64x (_Float64x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64x __y0f64x (_Float64x) __attribute__ ((__nothrow__ , __leaf__));
+extern _Float64x y1f64x (_Float64x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64x __y1f64x (_Float64x) __attribute__ ((__nothrow__ , __leaf__));
+extern _Float64x ynf64x (int, _Float64x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64x __ynf64x (int, _Float64x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+ extern _Float64x erff64x (_Float64x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64x __erff64x (_Float64x) __attribute__ ((__nothrow__ , __leaf__));
+ extern _Float64x erfcf64x (_Float64x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64x __erfcf64x (_Float64x) __attribute__ ((__nothrow__ , __leaf__));
+extern _Float64x lgammaf64x (_Float64x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64x __lgammaf64x (_Float64x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+extern _Float64x tgammaf64x (_Float64x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64x __tgammaf64x (_Float64x) __attribute__ ((__nothrow__ , __leaf__));
+# 252 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+extern _Float64x lgammaf64x_r (_Float64x, int *__signgamp) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64x __lgammaf64x_r (_Float64x, int *__signgamp) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+
+extern _Float64x rintf64x (_Float64x __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64x __rintf64x (_Float64x __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern _Float64x nextafterf64x (_Float64x __x, _Float64x __y) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64x __nextafterf64x (_Float64x __x, _Float64x __y) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+
+extern _Float64x nextdownf64x (_Float64x __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64x __nextdownf64x (_Float64x __x) __attribute__ ((__nothrow__ , __leaf__));
+
+extern _Float64x nextupf64x (_Float64x __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64x __nextupf64x (_Float64x __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern _Float64x remainderf64x (_Float64x __x, _Float64x __y) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64x __remainderf64x (_Float64x __x, _Float64x __y) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern _Float64x scalbnf64x (_Float64x __x, int __n) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64x __scalbnf64x (_Float64x __x, int __n) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern int ilogbf64x (_Float64x __x) __attribute__ ((__nothrow__ , __leaf__)); extern int __ilogbf64x (_Float64x __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+extern long int llogbf64x (_Float64x __x) __attribute__ ((__nothrow__ , __leaf__)); extern long int __llogbf64x (_Float64x __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+extern _Float64x scalblnf64x (_Float64x __x, long int __n) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64x __scalblnf64x (_Float64x __x, long int __n) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern _Float64x nearbyintf64x (_Float64x __x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64x __nearbyintf64x (_Float64x __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern _Float64x roundf64x (_Float64x __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern _Float64x __roundf64x (_Float64x __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+
+extern _Float64x truncf64x (_Float64x __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern _Float64x __truncf64x (_Float64x __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+
+
+extern _Float64x remquof64x (_Float64x __x, _Float64x __y, int *__quo) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64x __remquof64x (_Float64x __x, _Float64x __y, int *__quo) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+
+extern long int lrintf64x (_Float64x __x) __attribute__ ((__nothrow__ , __leaf__)); extern long int __lrintf64x (_Float64x __x) __attribute__ ((__nothrow__ , __leaf__));
+__extension__
+extern long long int llrintf64x (_Float64x __x) __attribute__ ((__nothrow__ , __leaf__)); extern long long int __llrintf64x (_Float64x __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern long int lroundf64x (_Float64x __x) __attribute__ ((__nothrow__ , __leaf__)); extern long int __lroundf64x (_Float64x __x) __attribute__ ((__nothrow__ , __leaf__));
+__extension__
+extern long long int llroundf64x (_Float64x __x) __attribute__ ((__nothrow__ , __leaf__)); extern long long int __llroundf64x (_Float64x __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern _Float64x fdimf64x (_Float64x __x, _Float64x __y) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64x __fdimf64x (_Float64x __x, _Float64x __y) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern _Float64x fmaxf64x (_Float64x __x, _Float64x __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern _Float64x __fmaxf64x (_Float64x __x, _Float64x __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern _Float64x fminf64x (_Float64x __x, _Float64x __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern _Float64x __fminf64x (_Float64x __x, _Float64x __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+
+extern _Float64x fmaf64x (_Float64x __x, _Float64x __y, _Float64x __z) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64x __fmaf64x (_Float64x __x, _Float64x __y, _Float64x __z) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+extern _Float64x roundevenf64x (_Float64x __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern _Float64x __roundevenf64x (_Float64x __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+
+extern __intmax_t fromfpf64x (_Float64x __x, int __round, unsigned int __width) __attribute__ ((__nothrow__ , __leaf__)); extern __intmax_t __fromfpf64x (_Float64x __x, int __round, unsigned int __width) __attribute__ ((__nothrow__ , __leaf__))
+                            ;
+
+
+
+extern __uintmax_t ufromfpf64x (_Float64x __x, int __round, unsigned int __width) __attribute__ ((__nothrow__ , __leaf__)); extern __uintmax_t __ufromfpf64x (_Float64x __x, int __round, unsigned int __width) __attribute__ ((__nothrow__ , __leaf__))
+                              ;
+
+
+
+
+extern __intmax_t fromfpxf64x (_Float64x __x, int __round, unsigned int __width) __attribute__ ((__nothrow__ , __leaf__)); extern __intmax_t __fromfpxf64x (_Float64x __x, int __round, unsigned int __width) __attribute__ ((__nothrow__ , __leaf__))
+                             ;
+
+
+
+
+extern __uintmax_t ufromfpxf64x (_Float64x __x, int __round, unsigned int __width) __attribute__ ((__nothrow__ , __leaf__)); extern __uintmax_t __ufromfpxf64x (_Float64x __x, int __round, unsigned int __width) __attribute__ ((__nothrow__ , __leaf__))
+                               ;
+
+
+extern int canonicalizef64x (_Float64x *__cx, const _Float64x *__x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+
+extern _Float64x fmaxmagf64x (_Float64x __x, _Float64x __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern _Float64x __fmaxmagf64x (_Float64x __x, _Float64x __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern _Float64x fminmagf64x (_Float64x __x, _Float64x __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern _Float64x __fminmagf64x (_Float64x __x, _Float64x __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+
+
+extern _Float64x fmaximumf64x (_Float64x __x, _Float64x __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern _Float64x __fmaximumf64x (_Float64x __x, _Float64x __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern _Float64x fminimumf64x (_Float64x __x, _Float64x __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern _Float64x __fminimumf64x (_Float64x __x, _Float64x __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern _Float64x fmaximum_numf64x (_Float64x __x, _Float64x __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern _Float64x __fmaximum_numf64x (_Float64x __x, _Float64x __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern _Float64x fminimum_numf64x (_Float64x __x, _Float64x __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern _Float64x __fminimum_numf64x (_Float64x __x, _Float64x __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern _Float64x fmaximum_magf64x (_Float64x __x, _Float64x __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern _Float64x __fmaximum_magf64x (_Float64x __x, _Float64x __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern _Float64x fminimum_magf64x (_Float64x __x, _Float64x __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern _Float64x __fminimum_magf64x (_Float64x __x, _Float64x __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern _Float64x fmaximum_mag_numf64x (_Float64x __x, _Float64x __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern _Float64x __fmaximum_mag_numf64x (_Float64x __x, _Float64x __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern _Float64x fminimum_mag_numf64x (_Float64x __x, _Float64x __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)); extern _Float64x __fminimum_mag_numf64x (_Float64x __x, _Float64x __y) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+
+
+extern int totalorderf64x (const _Float64x *__x, const _Float64x *__y) __attribute__ ((__nothrow__ , __leaf__))
+
+     __attribute__ ((__pure__));
+
+
+extern int totalordermagf64x (const _Float64x *__x, const _Float64x *__y) __attribute__ ((__nothrow__ , __leaf__))
+
+     __attribute__ ((__pure__));
+
+
+extern _Float64x getpayloadf64x (const _Float64x *__x) __attribute__ ((__nothrow__ , __leaf__)); extern _Float64x __getpayloadf64x (const _Float64x *__x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern int setpayloadf64x (_Float64x *__x, _Float64x __payload) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern int setpayloadsigf64x (_Float64x *__x, _Float64x __payload) __attribute__ ((__nothrow__ , __leaf__));
+# 519 "/usr/include/math.h" 2 3 4
+# 566 "/usr/include/math.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h" 1 3 4
+# 24 "/usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h" 3 4
+extern float fadd (double __x, double __y) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern float fdiv (double __x, double __y) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern float ffma (double __x, double __y, double __z) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern float fmul (double __x, double __y) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern float fsqrt (double __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern float fsub (double __x, double __y) __attribute__ ((__nothrow__ , __leaf__));
+# 567 "/usr/include/math.h" 2 3 4
+# 587 "/usr/include/math.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h" 1 3 4
+# 24 "/usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h" 3 4
+extern float faddl (long double __x, long double __y) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern float fdivl (long double __x, long double __y) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern float ffmal (long double __x, long double __y, long double __z) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern float fmull (long double __x, long double __y) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern float fsqrtl (long double __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern float fsubl (long double __x, long double __y) __attribute__ ((__nothrow__ , __leaf__));
+# 588 "/usr/include/math.h" 2 3 4
+# 616 "/usr/include/math.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h" 1 3 4
+# 24 "/usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h" 3 4
+extern double daddl (long double __x, long double __y) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern double ddivl (long double __x, long double __y) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern double dfmal (long double __x, long double __y, long double __z) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern double dmull (long double __x, long double __y) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern double dsqrtl (long double __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern double dsubl (long double __x, long double __y) __attribute__ ((__nothrow__ , __leaf__));
+# 617 "/usr/include/math.h" 2 3 4
+# 697 "/usr/include/math.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h" 1 3 4
+# 24 "/usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h" 3 4
+extern _Float32 f32addf32x (_Float32x __x, _Float32x __y) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern _Float32 f32divf32x (_Float32x __x, _Float32x __y) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern _Float32 f32fmaf32x (_Float32x __x, _Float32x __y, _Float32x __z) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern _Float32 f32mulf32x (_Float32x __x, _Float32x __y) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern _Float32 f32sqrtf32x (_Float32x __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern _Float32 f32subf32x (_Float32x __x, _Float32x __y) __attribute__ ((__nothrow__ , __leaf__));
+# 698 "/usr/include/math.h" 2 3 4
+# 707 "/usr/include/math.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h" 1 3 4
+# 24 "/usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h" 3 4
+extern _Float32 f32addf64 (_Float64 __x, _Float64 __y) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern _Float32 f32divf64 (_Float64 __x, _Float64 __y) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern _Float32 f32fmaf64 (_Float64 __x, _Float64 __y, _Float64 __z) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern _Float32 f32mulf64 (_Float64 __x, _Float64 __y) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern _Float32 f32sqrtf64 (_Float64 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern _Float32 f32subf64 (_Float64 __x, _Float64 __y) __attribute__ ((__nothrow__ , __leaf__));
+# 708 "/usr/include/math.h" 2 3 4
+# 717 "/usr/include/math.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h" 1 3 4
+# 24 "/usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h" 3 4
+extern _Float32 f32addf64x (_Float64x __x, _Float64x __y) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern _Float32 f32divf64x (_Float64x __x, _Float64x __y) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern _Float32 f32fmaf64x (_Float64x __x, _Float64x __y, _Float64x __z) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern _Float32 f32mulf64x (_Float64x __x, _Float64x __y) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern _Float32 f32sqrtf64x (_Float64x __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern _Float32 f32subf64x (_Float64x __x, _Float64x __y) __attribute__ ((__nothrow__ , __leaf__));
+# 718 "/usr/include/math.h" 2 3 4
+# 727 "/usr/include/math.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h" 1 3 4
+# 24 "/usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h" 3 4
+extern _Float32 f32addf128 (_Float128 __x, _Float128 __y) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern _Float32 f32divf128 (_Float128 __x, _Float128 __y) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern _Float32 f32fmaf128 (_Float128 __x, _Float128 __y, _Float128 __z) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern _Float32 f32mulf128 (_Float128 __x, _Float128 __y) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern _Float32 f32sqrtf128 (_Float128 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern _Float32 f32subf128 (_Float128 __x, _Float128 __y) __attribute__ ((__nothrow__ , __leaf__));
+# 728 "/usr/include/math.h" 2 3 4
+# 747 "/usr/include/math.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h" 1 3 4
+# 24 "/usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h" 3 4
+extern _Float32x f32xaddf64 (_Float64 __x, _Float64 __y) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern _Float32x f32xdivf64 (_Float64 __x, _Float64 __y) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern _Float32x f32xfmaf64 (_Float64 __x, _Float64 __y, _Float64 __z) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern _Float32x f32xmulf64 (_Float64 __x, _Float64 __y) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern _Float32x f32xsqrtf64 (_Float64 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern _Float32x f32xsubf64 (_Float64 __x, _Float64 __y) __attribute__ ((__nothrow__ , __leaf__));
+# 748 "/usr/include/math.h" 2 3 4
+# 757 "/usr/include/math.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h" 1 3 4
+# 24 "/usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h" 3 4
+extern _Float32x f32xaddf64x (_Float64x __x, _Float64x __y) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern _Float32x f32xdivf64x (_Float64x __x, _Float64x __y) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern _Float32x f32xfmaf64x (_Float64x __x, _Float64x __y, _Float64x __z) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern _Float32x f32xmulf64x (_Float64x __x, _Float64x __y) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern _Float32x f32xsqrtf64x (_Float64x __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern _Float32x f32xsubf64x (_Float64x __x, _Float64x __y) __attribute__ ((__nothrow__ , __leaf__));
+# 758 "/usr/include/math.h" 2 3 4
+# 767 "/usr/include/math.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h" 1 3 4
+# 24 "/usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h" 3 4
+extern _Float32x f32xaddf128 (_Float128 __x, _Float128 __y) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern _Float32x f32xdivf128 (_Float128 __x, _Float128 __y) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern _Float32x f32xfmaf128 (_Float128 __x, _Float128 __y, _Float128 __z) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern _Float32x f32xmulf128 (_Float128 __x, _Float128 __y) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern _Float32x f32xsqrtf128 (_Float128 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern _Float32x f32xsubf128 (_Float128 __x, _Float128 __y) __attribute__ ((__nothrow__ , __leaf__));
+# 768 "/usr/include/math.h" 2 3 4
+# 787 "/usr/include/math.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h" 1 3 4
+# 24 "/usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h" 3 4
+extern _Float64 f64addf64x (_Float64x __x, _Float64x __y) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern _Float64 f64divf64x (_Float64x __x, _Float64x __y) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern _Float64 f64fmaf64x (_Float64x __x, _Float64x __y, _Float64x __z) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern _Float64 f64mulf64x (_Float64x __x, _Float64x __y) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern _Float64 f64sqrtf64x (_Float64x __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern _Float64 f64subf64x (_Float64x __x, _Float64x __y) __attribute__ ((__nothrow__ , __leaf__));
+# 788 "/usr/include/math.h" 2 3 4
+# 797 "/usr/include/math.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h" 1 3 4
+# 24 "/usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h" 3 4
+extern _Float64 f64addf128 (_Float128 __x, _Float128 __y) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern _Float64 f64divf128 (_Float128 __x, _Float128 __y) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern _Float64 f64fmaf128 (_Float128 __x, _Float128 __y, _Float128 __z) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern _Float64 f64mulf128 (_Float128 __x, _Float128 __y) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern _Float64 f64sqrtf128 (_Float128 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern _Float64 f64subf128 (_Float128 __x, _Float128 __y) __attribute__ ((__nothrow__ , __leaf__));
+# 798 "/usr/include/math.h" 2 3 4
+# 817 "/usr/include/math.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h" 1 3 4
+# 24 "/usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h" 3 4
+extern _Float64x f64xaddf128 (_Float128 __x, _Float128 __y) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern _Float64x f64xdivf128 (_Float128 __x, _Float128 __y) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern _Float64x f64xfmaf128 (_Float128 __x, _Float128 __y, _Float128 __z) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern _Float64x f64xmulf128 (_Float128 __x, _Float128 __y) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern _Float64x f64xsqrtf128 (_Float128 __x) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern _Float64x f64xsubf128 (_Float128 __x, _Float128 __y) __attribute__ ((__nothrow__ , __leaf__));
+# 818 "/usr/include/math.h" 2 3 4
+# 854 "/usr/include/math.h" 3 4
+extern int signgam;
+# 934 "/usr/include/math.h" 3 4
+enum
+  {
+    FP_NAN =
+
+      0,
+    FP_INFINITE =
+
+      1,
+    FP_ZERO =
+
+      2,
+    FP_SUBNORMAL =
+
+      3,
+    FP_NORMAL =
+
+      4
+  };
+# 1054 "/usr/include/math.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/iscanonical.h" 1 3 4
+# 23 "/usr/include/x86_64-linux-gnu/bits/iscanonical.h" 3 4
+extern int __iscanonicall (long double __x)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+# 1055 "/usr/include/math.h" 2 3 4
+# 1423 "/usr/include/math.h" 3 4
+
+# 62 "/home/dweller/neovim/.deps/usr/include/uv.h" 2
+
+
+
+# 64 "/home/dweller/neovim/.deps/usr/include/uv.h"
+struct uv__queue {
+  struct uv__queue* next;
+  struct uv__queue* prev;
+};
+
+
+
+
+# 1 "/home/dweller/neovim/.deps/usr/include/uv/unix.h" 1
+# 26 "/home/dweller/neovim/.deps/usr/include/uv/unix.h"
+# 1 "/usr/include/x86_64-linux-gnu/sys/stat.h" 1 3 4
+# 99 "/usr/include/x86_64-linux-gnu/sys/stat.h" 3 4
+
+
+# 1 "/usr/include/x86_64-linux-gnu/bits/stat.h" 1 3 4
+# 25 "/usr/include/x86_64-linux-gnu/bits/stat.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/struct_stat.h" 1 3 4
+# 26 "/usr/include/x86_64-linux-gnu/bits/struct_stat.h" 3 4
+
+# 26 "/usr/include/x86_64-linux-gnu/bits/struct_stat.h" 3 4
+struct stat
+  {
+
+
+
+    __dev_t st_dev;
+
+
+
+
+    __ino_t st_ino;
+
+
+
+
+
+
+
+    __nlink_t st_nlink;
+    __mode_t st_mode;
+
+    __uid_t st_uid;
+    __gid_t st_gid;
+
+    int __pad0;
+
+    __dev_t st_rdev;
+
+
+
+
+    __off_t st_size;
+
+
+
+    __blksize_t st_blksize;
+
+    __blkcnt_t st_blocks;
+# 74 "/usr/include/x86_64-linux-gnu/bits/struct_stat.h" 3 4
+    struct timespec st_atim;
+    struct timespec st_mtim;
+    struct timespec st_ctim;
+# 89 "/usr/include/x86_64-linux-gnu/bits/struct_stat.h" 3 4
+    __syscall_slong_t __glibc_reserved[3];
+# 99 "/usr/include/x86_64-linux-gnu/bits/struct_stat.h" 3 4
+  };
+
+
+
+struct stat64
+  {
+
+
+
+    __dev_t st_dev;
+
+    __ino64_t st_ino;
+    __nlink_t st_nlink;
+    __mode_t st_mode;
+
+
+
+
+
+
+    __uid_t st_uid;
+    __gid_t st_gid;
+
+    int __pad0;
+    __dev_t st_rdev;
+    __off_t st_size;
+
+
+
+
+
+    __blksize_t st_blksize;
+    __blkcnt64_t st_blocks;
+
+
+
+
+
+
+
+    struct timespec st_atim;
+    struct timespec st_mtim;
+    struct timespec st_ctim;
+# 151 "/usr/include/x86_64-linux-gnu/bits/struct_stat.h" 3 4
+    __syscall_slong_t __glibc_reserved[3];
+
+
+
+
+  };
+# 26 "/usr/include/x86_64-linux-gnu/bits/stat.h" 2 3 4
+# 102 "/usr/include/x86_64-linux-gnu/sys/stat.h" 2 3 4
+# 205 "/usr/include/x86_64-linux-gnu/sys/stat.h" 3 4
+extern int stat (const char *__restrict __file,
+   struct stat *__restrict __buf) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+
+extern int fstat (int __fd, struct stat *__buf) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (2)));
+# 240 "/usr/include/x86_64-linux-gnu/sys/stat.h" 3 4
+extern int stat64 (const char *__restrict __file,
+     struct stat64 *__restrict __buf) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+extern int fstat64 (int __fd, struct stat64 *__buf) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (2)));
+# 264 "/usr/include/x86_64-linux-gnu/sys/stat.h" 3 4
+extern int fstatat (int __fd, const char *__restrict __file,
+      struct stat *__restrict __buf, int __flag)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (2, 3)));
+# 291 "/usr/include/x86_64-linux-gnu/sys/stat.h" 3 4
+extern int fstatat64 (int __fd, const char *__restrict __file,
+        struct stat64 *__restrict __buf, int __flag)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (2, 3)));
+# 313 "/usr/include/x86_64-linux-gnu/sys/stat.h" 3 4
+extern int lstat (const char *__restrict __file,
+    struct stat *__restrict __buf) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+# 338 "/usr/include/x86_64-linux-gnu/sys/stat.h" 3 4
+extern int lstat64 (const char *__restrict __file,
+      struct stat64 *__restrict __buf)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+# 352 "/usr/include/x86_64-linux-gnu/sys/stat.h" 3 4
+extern int chmod (const char *__file, __mode_t __mode)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+
+
+
+extern int lchmod (const char *__file, __mode_t __mode)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+
+
+extern int fchmod (int __fd, __mode_t __mode) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+extern int fchmodat (int __fd, const char *__file, __mode_t __mode,
+       int __flag)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (2))) ;
+
+
+
+
+
+
+extern __mode_t umask (__mode_t __mask) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+extern __mode_t getumask (void) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern int mkdir (const char *__path, __mode_t __mode)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+
+
+
+extern int mkdirat (int __fd, const char *__path, __mode_t __mode)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (2)));
+
+
+
+
+
+
+extern int mknod (const char *__path, __mode_t __mode, __dev_t __dev)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+
+
+
+extern int mknodat (int __fd, const char *__path, __mode_t __mode,
+      __dev_t __dev) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (2)));
+
+
+
+
+
+extern int mkfifo (const char *__path, __mode_t __mode)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+
+
+
+extern int mkfifoat (int __fd, const char *__path, __mode_t __mode)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (2)));
+
+
+
+
+
+
+extern int utimensat (int __fd, const char *__path,
+        const struct timespec __times[2],
+        int __flags)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (2)));
+# 452 "/usr/include/x86_64-linux-gnu/sys/stat.h" 3 4
+extern int futimens (int __fd, const struct timespec __times[2]) __attribute__ ((__nothrow__ , __leaf__));
+# 465 "/usr/include/x86_64-linux-gnu/sys/stat.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/statx.h" 1 3 4
+# 31 "/usr/include/x86_64-linux-gnu/bits/statx.h" 3 4
+# 1 "/usr/include/linux/stat.h" 1 3 4
+
+
+
+
+# 1 "/usr/include/linux/types.h" 1 3 4
+
+
+
+
+# 1 "/usr/include/x86_64-linux-gnu/asm/types.h" 1 3 4
+# 1 "/usr/include/asm-generic/types.h" 1 3 4
+
+
+
+
+
+
+# 1 "/usr/include/asm-generic/int-ll64.h" 1 3 4
+# 12 "/usr/include/asm-generic/int-ll64.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/asm/bitsperlong.h" 1 3 4
+# 11 "/usr/include/x86_64-linux-gnu/asm/bitsperlong.h" 3 4
+# 1 "/usr/include/asm-generic/bitsperlong.h" 1 3 4
+# 12 "/usr/include/x86_64-linux-gnu/asm/bitsperlong.h" 2 3 4
+# 13 "/usr/include/asm-generic/int-ll64.h" 2 3 4
+
+
+
+
+
+
+
+typedef __signed__ char __s8;
+typedef unsigned char __u8;
+
+typedef __signed__ short __s16;
+typedef unsigned short __u16;
+
+typedef __signed__ int __s32;
+typedef unsigned int __u32;
+
+
+__extension__ typedef __signed__ long long __s64;
+__extension__ typedef unsigned long long __u64;
+# 8 "/usr/include/asm-generic/types.h" 2 3 4
+# 2 "/usr/include/x86_64-linux-gnu/asm/types.h" 2 3 4
+# 6 "/usr/include/linux/types.h" 2 3 4
+
+
+
+# 1 "/usr/include/linux/posix_types.h" 1 3 4
+
+
+
+
+# 1 "/usr/include/linux/stddef.h" 1 3 4
+# 6 "/usr/include/linux/posix_types.h" 2 3 4
+# 25 "/usr/include/linux/posix_types.h" 3 4
+typedef struct {
+ unsigned long fds_bits[1024 / (8 * sizeof(long))];
+} __kernel_fd_set;
+
+
+typedef void (*__kernel_sighandler_t)(int);
+
+
+typedef int __kernel_key_t;
+typedef int __kernel_mqd_t;
+
+# 1 "/usr/include/x86_64-linux-gnu/asm/posix_types.h" 1 3 4
+
+
+
+
+
+
+# 1 "/usr/include/x86_64-linux-gnu/asm/posix_types_64.h" 1 3 4
+# 11 "/usr/include/x86_64-linux-gnu/asm/posix_types_64.h" 3 4
+typedef unsigned short __kernel_old_uid_t;
+typedef unsigned short __kernel_old_gid_t;
+
+
+typedef unsigned long __kernel_old_dev_t;
+
+
+# 1 "/usr/include/asm-generic/posix_types.h" 1 3 4
+# 15 "/usr/include/asm-generic/posix_types.h" 3 4
+typedef long __kernel_long_t;
+typedef unsigned long __kernel_ulong_t;
+
+
+
+typedef __kernel_ulong_t __kernel_ino_t;
+
+
+
+typedef unsigned int __kernel_mode_t;
+
+
+
+typedef int __kernel_pid_t;
+
+
+
+typedef int __kernel_ipc_pid_t;
+
+
+
+typedef unsigned int __kernel_uid_t;
+typedef unsigned int __kernel_gid_t;
+
+
+
+typedef __kernel_long_t __kernel_suseconds_t;
+
+
+
+typedef int __kernel_daddr_t;
+
+
+
+typedef unsigned int __kernel_uid32_t;
+typedef unsigned int __kernel_gid32_t;
+# 72 "/usr/include/asm-generic/posix_types.h" 3 4
+typedef __kernel_ulong_t __kernel_size_t;
+typedef __kernel_long_t __kernel_ssize_t;
+typedef __kernel_long_t __kernel_ptrdiff_t;
+
+
+
+
+typedef struct {
+ int val[2];
+} __kernel_fsid_t;
+
+
+
+
+
+typedef __kernel_long_t __kernel_off_t;
+typedef long long __kernel_loff_t;
+typedef __kernel_long_t __kernel_old_time_t;
+typedef __kernel_long_t __kernel_time_t;
+typedef long long __kernel_time64_t;
+typedef __kernel_long_t __kernel_clock_t;
+typedef int __kernel_timer_t;
+typedef int __kernel_clockid_t;
+typedef char * __kernel_caddr_t;
+typedef unsigned short __kernel_uid16_t;
+typedef unsigned short __kernel_gid16_t;
+# 19 "/usr/include/x86_64-linux-gnu/asm/posix_types_64.h" 2 3 4
+# 8 "/usr/include/x86_64-linux-gnu/asm/posix_types.h" 2 3 4
+# 37 "/usr/include/linux/posix_types.h" 2 3 4
+# 10 "/usr/include/linux/types.h" 2 3 4
+# 24 "/usr/include/linux/types.h" 3 4
+typedef __u16 __le16;
+typedef __u16 __be16;
+typedef __u32 __le32;
+typedef __u32 __be32;
+typedef __u64 __le64;
+typedef __u64 __be64;
+
+typedef __u16 __sum16;
+typedef __u32 __wsum;
+# 47 "/usr/include/linux/types.h" 3 4
+typedef unsigned __poll_t;
+# 6 "/usr/include/linux/stat.h" 2 3 4
+# 56 "/usr/include/linux/stat.h" 3 4
+struct statx_timestamp {
+ __s64 tv_sec;
+ __u32 tv_nsec;
+ __s32 __reserved;
+};
+# 99 "/usr/include/linux/stat.h" 3 4
+struct statx {
+
+ __u32 stx_mask;
+ __u32 stx_blksize;
+ __u64 stx_attributes;
+
+ __u32 stx_nlink;
+ __u32 stx_uid;
+ __u32 stx_gid;
+ __u16 stx_mode;
+ __u16 __spare0[1];
+
+ __u64 stx_ino;
+ __u64 stx_size;
+ __u64 stx_blocks;
+ __u64 stx_attributes_mask;
+
+ struct statx_timestamp stx_atime;
+ struct statx_timestamp stx_btime;
+ struct statx_timestamp stx_ctime;
+ struct statx_timestamp stx_mtime;
+
+ __u32 stx_rdev_major;
+ __u32 stx_rdev_minor;
+ __u32 stx_dev_major;
+ __u32 stx_dev_minor;
+
+ __u64 stx_mnt_id;
+ __u64 __spare2;
+
+ __u64 __spare3[12];
+
+};
+# 32 "/usr/include/x86_64-linux-gnu/bits/statx.h" 2 3 4
+
+
+
+
+
+
+
+# 1 "/usr/include/x86_64-linux-gnu/bits/statx-generic.h" 1 3 4
+# 25 "/usr/include/x86_64-linux-gnu/bits/statx-generic.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/types/struct_statx_timestamp.h" 1 3 4
+# 26 "/usr/include/x86_64-linux-gnu/bits/statx-generic.h" 2 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/types/struct_statx.h" 1 3 4
+# 27 "/usr/include/x86_64-linux-gnu/bits/statx-generic.h" 2 3 4
+# 57 "/usr/include/x86_64-linux-gnu/bits/statx-generic.h" 3 4
+
+
+
+int statx (int __dirfd, const char *__restrict __path, int __flags,
+           unsigned int __mask, struct statx *__restrict __buf)
+  __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (2, 5)));
+
+
+# 40 "/usr/include/x86_64-linux-gnu/bits/statx.h" 2 3 4
+# 466 "/usr/include/x86_64-linux-gnu/sys/stat.h" 2 3 4
+
+
+
+# 27 "/home/dweller/neovim/.deps/usr/include/uv/unix.h" 2
+# 1 "/usr/include/fcntl.h" 1 3 4
+# 28 "/usr/include/fcntl.h" 3 4
+
+
+
+
+
+
+
+# 1 "/usr/include/x86_64-linux-gnu/bits/fcntl.h" 1 3 4
+# 35 "/usr/include/x86_64-linux-gnu/bits/fcntl.h" 3 4
+struct flock
+  {
+    short int l_type;
+    short int l_whence;
+
+    __off_t l_start;
+    __off_t l_len;
+
+
+
+
+    __pid_t l_pid;
+  };
+
+
+struct flock64
+  {
+    short int l_type;
+    short int l_whence;
+    __off64_t l_start;
+    __off64_t l_len;
+    __pid_t l_pid;
+  };
+
+
+
+# 1 "/usr/include/x86_64-linux-gnu/bits/fcntl-linux.h" 1 3 4
+# 38 "/usr/include/x86_64-linux-gnu/bits/fcntl-linux.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/types/struct_iovec.h" 1 3 4
+# 23 "/usr/include/x86_64-linux-gnu/bits/types/struct_iovec.h" 3 4
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h" 1 3 4
+# 24 "/usr/include/x86_64-linux-gnu/bits/types/struct_iovec.h" 2 3 4
+
+
+struct iovec
+  {
+    void *iov_base;
+    size_t iov_len;
+  };
+# 39 "/usr/include/x86_64-linux-gnu/bits/fcntl-linux.h" 2 3 4
+# 265 "/usr/include/x86_64-linux-gnu/bits/fcntl-linux.h" 3 4
+enum __pid_type
+  {
+    F_OWNER_TID = 0,
+    F_OWNER_PID,
+    F_OWNER_PGRP,
+    F_OWNER_GID = F_OWNER_PGRP
+  };
+
+
+struct f_owner_ex
+  {
+    enum __pid_type type;
+    __pid_t pid;
+  };
+# 354 "/usr/include/x86_64-linux-gnu/bits/fcntl-linux.h" 3 4
+# 1 "/usr/include/linux/falloc.h" 1 3 4
+# 355 "/usr/include/x86_64-linux-gnu/bits/fcntl-linux.h" 2 3 4
+
+
+
+struct file_handle
+{
+  unsigned int handle_bytes;
+  int handle_type;
+
+  unsigned char f_handle[0];
+};
+# 393 "/usr/include/x86_64-linux-gnu/bits/fcntl-linux.h" 3 4
+
+
+
+
+
+extern __ssize_t readahead (int __fd, __off64_t __offset, size_t __count)
+    __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+
+extern int sync_file_range (int __fd, __off64_t __offset, __off64_t __count,
+       unsigned int __flags);
+
+
+
+
+
+
+extern __ssize_t vmsplice (int __fdout, const struct iovec *__iov,
+      size_t __count, unsigned int __flags);
+
+
+
+
+
+extern __ssize_t splice (int __fdin, __off64_t *__offin, int __fdout,
+    __off64_t *__offout, size_t __len,
+    unsigned int __flags);
+
+
+
+
+
+extern __ssize_t tee (int __fdin, int __fdout, size_t __len,
+        unsigned int __flags);
+
+
+
+
+
+
+extern int fallocate (int __fd, int __mode, __off_t __offset, __off_t __len);
+# 448 "/usr/include/x86_64-linux-gnu/bits/fcntl-linux.h" 3 4
+extern int fallocate64 (int __fd, int __mode, __off64_t __offset,
+   __off64_t __len);
+
+
+
+
+extern int name_to_handle_at (int __dfd, const char *__name,
+         struct file_handle *__handle, int *__mnt_id,
+         int __flags) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+extern int open_by_handle_at (int __mountdirfd, struct file_handle *__handle,
+         int __flags);
+
+
+
+
+# 62 "/usr/include/x86_64-linux-gnu/bits/fcntl.h" 2 3 4
+# 36 "/usr/include/fcntl.h" 2 3 4
+# 78 "/usr/include/fcntl.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/stat.h" 1 3 4
+# 79 "/usr/include/fcntl.h" 2 3 4
+# 149 "/usr/include/fcntl.h" 3 4
+extern int fcntl (int __fd, int __cmd, ...);
+# 158 "/usr/include/fcntl.h" 3 4
+extern int fcntl64 (int __fd, int __cmd, ...);
+# 181 "/usr/include/fcntl.h" 3 4
+extern int open (const char *__file, int __oflag, ...) __attribute__ ((__nonnull__ (1)));
+# 191 "/usr/include/fcntl.h" 3 4
+extern int open64 (const char *__file, int __oflag, ...) __attribute__ ((__nonnull__ (1)));
+# 205 "/usr/include/fcntl.h" 3 4
+extern int openat (int __fd, const char *__file, int __oflag, ...)
+     __attribute__ ((__nonnull__ (2)));
+# 216 "/usr/include/fcntl.h" 3 4
+extern int openat64 (int __fd, const char *__file, int __oflag, ...)
+     __attribute__ ((__nonnull__ (2)));
+# 227 "/usr/include/fcntl.h" 3 4
+extern int creat (const char *__file, mode_t __mode) __attribute__ ((__nonnull__ (1)));
+# 237 "/usr/include/fcntl.h" 3 4
+extern int creat64 (const char *__file, mode_t __mode) __attribute__ ((__nonnull__ (1)));
+# 256 "/usr/include/fcntl.h" 3 4
+extern int lockf (int __fd, int __cmd, off_t __len);
+# 265 "/usr/include/fcntl.h" 3 4
+extern int lockf64 (int __fd, int __cmd, off64_t __len);
+
+
+
+
+
+
+
+extern int posix_fadvise (int __fd, off_t __offset, off_t __len,
+     int __advise) __attribute__ ((__nothrow__ , __leaf__));
+# 285 "/usr/include/fcntl.h" 3 4
+extern int posix_fadvise64 (int __fd, off64_t __offset, off64_t __len,
+       int __advise) __attribute__ ((__nothrow__ , __leaf__));
+# 295 "/usr/include/fcntl.h" 3 4
+extern int posix_fallocate (int __fd, off_t __offset, off_t __len);
+# 306 "/usr/include/fcntl.h" 3 4
+extern int posix_fallocate64 (int __fd, off64_t __offset, off64_t __len);
+# 317 "/usr/include/fcntl.h" 3 4
+
+# 28 "/home/dweller/neovim/.deps/usr/include/uv/unix.h" 2
+# 1 "/usr/include/dirent.h" 1 3 4
+# 27 "/usr/include/dirent.h" 3 4
+
+# 61 "/usr/include/dirent.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/dirent.h" 1 3 4
+# 22 "/usr/include/x86_64-linux-gnu/bits/dirent.h" 3 4
+struct dirent
+  {
+
+    __ino_t d_ino;
+    __off_t d_off;
+
+
+
+
+    unsigned short int d_reclen;
+    unsigned char d_type;
+    char d_name[256];
+  };
+
+
+struct dirent64
+  {
+    __ino64_t d_ino;
+    __off64_t d_off;
+    unsigned short int d_reclen;
+    unsigned char d_type;
+    char d_name[256];
+  };
+# 62 "/usr/include/dirent.h" 2 3 4
+# 97 "/usr/include/dirent.h" 3 4
+enum
+  {
+    DT_UNKNOWN = 0,
+
+    DT_FIFO = 1,
+
+    DT_CHR = 2,
+
+    DT_DIR = 4,
+
+    DT_BLK = 6,
+
+    DT_REG = 8,
+
+    DT_LNK = 10,
+
+    DT_SOCK = 12,
+
+    DT_WHT = 14
+
+  };
+# 127 "/usr/include/dirent.h" 3 4
+typedef struct __dirstream DIR;
+
+
+
+
+
+
+extern DIR *opendir (const char *__name) __attribute__ ((__nonnull__ (1)));
+
+
+
+
+
+
+extern DIR *fdopendir (int __fd);
+
+
+
+
+
+
+
+extern int closedir (DIR *__dirp) __attribute__ ((__nonnull__ (1)));
+# 162 "/usr/include/dirent.h" 3 4
+extern struct dirent *readdir (DIR *__dirp) __attribute__ ((__nonnull__ (1)));
+# 173 "/usr/include/dirent.h" 3 4
+extern struct dirent64 *readdir64 (DIR *__dirp) __attribute__ ((__nonnull__ (1)));
+# 183 "/usr/include/dirent.h" 3 4
+extern int readdir_r (DIR *__restrict __dirp,
+        struct dirent *__restrict __entry,
+        struct dirent **__restrict __result)
+     __attribute__ ((__nonnull__ (1, 2, 3))) __attribute__ ((__deprecated__));
+# 201 "/usr/include/dirent.h" 3 4
+extern int readdir64_r (DIR *__restrict __dirp,
+   struct dirent64 *__restrict __entry,
+   struct dirent64 **__restrict __result)
+  __attribute__ ((__nonnull__ (1, 2, 3))) __attribute__ ((__deprecated__));
+
+
+
+
+extern void rewinddir (DIR *__dirp) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+
+
+
+extern void seekdir (DIR *__dirp, long int __pos) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+extern long int telldir (DIR *__dirp) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+
+
+
+extern int dirfd (DIR *__dirp) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+# 245 "/usr/include/dirent.h" 3 4
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h" 1 3 4
+# 246 "/usr/include/dirent.h" 2 3 4
+# 255 "/usr/include/dirent.h" 3 4
+extern int scandir (const char *__restrict __dir,
+      struct dirent ***__restrict __namelist,
+      int (*__selector) (const struct dirent *),
+      int (*__cmp) (const struct dirent **,
+      const struct dirent **))
+     __attribute__ ((__nonnull__ (1, 2)));
+# 278 "/usr/include/dirent.h" 3 4
+extern int scandir64 (const char *__restrict __dir,
+        struct dirent64 ***__restrict __namelist,
+        int (*__selector) (const struct dirent64 *),
+        int (*__cmp) (const struct dirent64 **,
+        const struct dirent64 **))
+     __attribute__ ((__nonnull__ (1, 2)));
+# 293 "/usr/include/dirent.h" 3 4
+extern int scandirat (int __dfd, const char *__restrict __dir,
+        struct dirent ***__restrict __namelist,
+        int (*__selector) (const struct dirent *),
+        int (*__cmp) (const struct dirent **,
+        const struct dirent **))
+     __attribute__ ((__nonnull__ (2, 3)));
+# 315 "/usr/include/dirent.h" 3 4
+extern int scandirat64 (int __dfd, const char *__restrict __dir,
+   struct dirent64 ***__restrict __namelist,
+   int (*__selector) (const struct dirent64 *),
+   int (*__cmp) (const struct dirent64 **,
+          const struct dirent64 **))
+     __attribute__ ((__nonnull__ (2, 3)));
+
+
+
+
+extern int alphasort (const struct dirent **__e1,
+        const struct dirent **__e2)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+# 340 "/usr/include/dirent.h" 3 4
+extern int alphasort64 (const struct dirent64 **__e1,
+   const struct dirent64 **__e2)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+# 353 "/usr/include/dirent.h" 3 4
+extern __ssize_t getdirentries (int __fd, char *__restrict __buf,
+    size_t __nbytes,
+    __off_t *__restrict __basep)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (2, 4)));
+# 370 "/usr/include/dirent.h" 3 4
+extern __ssize_t getdirentries64 (int __fd, char *__restrict __buf,
+      size_t __nbytes,
+      __off64_t *__restrict __basep)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (2, 4)));
+
+
+
+
+
+
+extern int versionsort (const struct dirent **__e1,
+   const struct dirent **__e2)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+# 396 "/usr/include/dirent.h" 3 4
+extern int versionsort64 (const struct dirent64 **__e1,
+     const struct dirent64 **__e2)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+
+
+
+# 1 "/usr/include/x86_64-linux-gnu/bits/dirent_ext.h" 1 3 4
+# 23 "/usr/include/x86_64-linux-gnu/bits/dirent_ext.h" 3 4
+
+
+
+
+
+
+extern __ssize_t getdents64 (int __fd, void *__buffer, size_t __length)
+  __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (2)));
+
+
+
+# 405 "/usr/include/dirent.h" 2 3 4
+# 29 "/home/dweller/neovim/.deps/usr/include/uv/unix.h" 2
+
+# 1 "/usr/include/x86_64-linux-gnu/sys/socket.h" 1 3 4
+# 24 "/usr/include/x86_64-linux-gnu/sys/socket.h" 3 4
+
+
+
+
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h" 1 3 4
+# 29 "/usr/include/x86_64-linux-gnu/sys/socket.h" 2 3 4
+
+
+
+
+# 1 "/usr/include/x86_64-linux-gnu/bits/socket.h" 1 3 4
+# 27 "/usr/include/x86_64-linux-gnu/bits/socket.h" 3 4
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h" 1 3 4
+# 28 "/usr/include/x86_64-linux-gnu/bits/socket.h" 2 3 4
+
+
+
+
+
+typedef __socklen_t socklen_t;
+
+
+
+
+# 1 "/usr/include/x86_64-linux-gnu/bits/socket_type.h" 1 3 4
+# 24 "/usr/include/x86_64-linux-gnu/bits/socket_type.h" 3 4
+enum __socket_type
+{
+  SOCK_STREAM = 1,
+
+
+  SOCK_DGRAM = 2,
+
+
+  SOCK_RAW = 3,
+
+  SOCK_RDM = 4,
+
+  SOCK_SEQPACKET = 5,
+
+
+  SOCK_DCCP = 6,
+
+  SOCK_PACKET = 10,
+
+
+
+
+
+
+
+  SOCK_CLOEXEC = 02000000,
+
+
+  SOCK_NONBLOCK = 00004000
+
+
+};
+# 39 "/usr/include/x86_64-linux-gnu/bits/socket.h" 2 3 4
+# 177 "/usr/include/x86_64-linux-gnu/bits/socket.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/sockaddr.h" 1 3 4
+# 28 "/usr/include/x86_64-linux-gnu/bits/sockaddr.h" 3 4
+typedef unsigned short int sa_family_t;
+# 178 "/usr/include/x86_64-linux-gnu/bits/socket.h" 2 3 4
+
+
+struct sockaddr
+  {
+    sa_family_t sa_family;
+    char sa_data[14];
+  };
+# 193 "/usr/include/x86_64-linux-gnu/bits/socket.h" 3 4
+struct sockaddr_storage
+  {
+    sa_family_t ss_family;
+    char __ss_padding[(128 - (sizeof (unsigned short int)) - sizeof (unsigned long int))];
+    unsigned long int __ss_align;
+  };
+
+
+
+enum
+  {
+    MSG_OOB = 0x01,
+
+    MSG_PEEK = 0x02,
+
+    MSG_DONTROUTE = 0x04,
+
+
+
+    MSG_TRYHARD = MSG_DONTROUTE,
+
+
+    MSG_CTRUNC = 0x08,
+
+    MSG_PROXY = 0x10,
+
+    MSG_TRUNC = 0x20,
+
+    MSG_DONTWAIT = 0x40,
+
+    MSG_EOR = 0x80,
+
+    MSG_WAITALL = 0x100,
+
+    MSG_FIN = 0x200,
+
+    MSG_SYN = 0x400,
+
+    MSG_CONFIRM = 0x800,
+
+    MSG_RST = 0x1000,
+
+    MSG_ERRQUEUE = 0x2000,
+
+    MSG_NOSIGNAL = 0x4000,
+
+    MSG_MORE = 0x8000,
+
+    MSG_WAITFORONE = 0x10000,
+
+    MSG_BATCH = 0x40000,
+
+    MSG_ZEROCOPY = 0x4000000,
+
+    MSG_FASTOPEN = 0x20000000,
+
+
+    MSG_CMSG_CLOEXEC = 0x40000000
+
+
+
+  };
+
+
+
+
+struct msghdr
+  {
+    void *msg_name;
+    socklen_t msg_namelen;
+
+    struct iovec *msg_iov;
+    size_t msg_iovlen;
+
+    void *msg_control;
+    size_t msg_controllen;
+
+
+
+
+    int msg_flags;
+  };
+
+
+struct cmsghdr
+  {
+    size_t cmsg_len;
+
+
+
+
+    int cmsg_level;
+    int cmsg_type;
+
+    __extension__ unsigned char __cmsg_data [];
+
+  };
+# 307 "/usr/include/x86_64-linux-gnu/bits/socket.h" 3 4
+extern struct cmsghdr *__cmsg_nxthdr (struct msghdr *__mhdr,
+          struct cmsghdr *__cmsg) __attribute__ ((__nothrow__ , __leaf__));
+# 334 "/usr/include/x86_64-linux-gnu/bits/socket.h" 3 4
+enum
+  {
+    SCM_RIGHTS = 0x01
+
+
+    , SCM_CREDENTIALS = 0x02
+
+
+  };
+
+
+
+struct ucred
+{
+  pid_t pid;
+  uid_t uid;
+  gid_t gid;
+};
+
+
+
+
+# 1 "/usr/include/x86_64-linux-gnu/asm/socket.h" 1 3 4
+# 1 "/usr/include/asm-generic/socket.h" 1 3 4
+
+
+
+
+
+# 1 "/usr/include/x86_64-linux-gnu/asm/sockios.h" 1 3 4
+# 1 "/usr/include/asm-generic/sockios.h" 1 3 4
+# 2 "/usr/include/x86_64-linux-gnu/asm/sockios.h" 2 3 4
+# 7 "/usr/include/asm-generic/socket.h" 2 3 4
+# 2 "/usr/include/x86_64-linux-gnu/asm/socket.h" 2 3 4
+# 357 "/usr/include/x86_64-linux-gnu/bits/socket.h" 2 3 4
+
+
+
+
+
+
+struct linger
+  {
+    int l_onoff;
+    int l_linger;
+  };
+# 34 "/usr/include/x86_64-linux-gnu/sys/socket.h" 2 3 4
+
+
+# 1 "/usr/include/x86_64-linux-gnu/bits/types/struct_osockaddr.h" 1 3 4
+
+
+
+
+
+struct osockaddr
+{
+  unsigned short int sa_family;
+  unsigned char sa_data[14];
+};
+# 37 "/usr/include/x86_64-linux-gnu/sys/socket.h" 2 3 4
+
+
+
+
+enum
+{
+  SHUT_RD = 0,
+
+  SHUT_WR,
+
+  SHUT_RDWR
+
+};
+# 79 "/usr/include/x86_64-linux-gnu/sys/socket.h" 3 4
+typedef union { struct sockaddr *__restrict __sockaddr__; struct sockaddr_at *__restrict __sockaddr_at__; struct sockaddr_ax25 *__restrict __sockaddr_ax25__; struct sockaddr_dl *__restrict __sockaddr_dl__; struct sockaddr_eon *__restrict __sockaddr_eon__; struct sockaddr_in *__restrict __sockaddr_in__; struct sockaddr_in6 *__restrict __sockaddr_in6__; struct sockaddr_inarp *__restrict __sockaddr_inarp__; struct sockaddr_ipx *__restrict __sockaddr_ipx__; struct sockaddr_iso *__restrict __sockaddr_iso__; struct sockaddr_ns *__restrict __sockaddr_ns__; struct sockaddr_un *__restrict __sockaddr_un__; struct sockaddr_x25 *__restrict __sockaddr_x25__;
+       } __SOCKADDR_ARG __attribute__ ((__transparent_union__));
+
+
+typedef union { const struct sockaddr *__restrict __sockaddr__; const struct sockaddr_at *__restrict __sockaddr_at__; const struct sockaddr_ax25 *__restrict __sockaddr_ax25__; const struct sockaddr_dl *__restrict __sockaddr_dl__; const struct sockaddr_eon *__restrict __sockaddr_eon__; const struct sockaddr_in *__restrict __sockaddr_in__; const struct sockaddr_in6 *__restrict __sockaddr_in6__; const struct sockaddr_inarp *__restrict __sockaddr_inarp__; const struct sockaddr_ipx *__restrict __sockaddr_ipx__; const struct sockaddr_iso *__restrict __sockaddr_iso__; const struct sockaddr_ns *__restrict __sockaddr_ns__; const struct sockaddr_un *__restrict __sockaddr_un__; const struct sockaddr_x25 *__restrict __sockaddr_x25__;
+       } __CONST_SOCKADDR_ARG __attribute__ ((__transparent_union__));
+
+
+
+
+
+struct mmsghdr
+  {
+    struct msghdr msg_hdr;
+    unsigned int msg_len;
+
+  };
+
+
+
+
+
+
+extern int socket (int __domain, int __type, int __protocol) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+extern int socketpair (int __domain, int __type, int __protocol,
+         int __fds[2]) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern int bind (int __fd, __CONST_SOCKADDR_ARG __addr, socklen_t __len)
+     __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern int getsockname (int __fd, __SOCKADDR_ARG __addr,
+   socklen_t *__restrict __len) __attribute__ ((__nothrow__ , __leaf__));
+# 126 "/usr/include/x86_64-linux-gnu/sys/socket.h" 3 4
+extern int connect (int __fd, __CONST_SOCKADDR_ARG __addr, socklen_t __len);
+
+
+
+extern int getpeername (int __fd, __SOCKADDR_ARG __addr,
+   socklen_t *__restrict __len) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+
+extern ssize_t send (int __fd, const void *__buf, size_t __n, int __flags);
+
+
+
+
+
+
+extern ssize_t recv (int __fd, void *__buf, size_t __n, int __flags);
+
+
+
+
+
+
+extern ssize_t sendto (int __fd, const void *__buf, size_t __n,
+         int __flags, __CONST_SOCKADDR_ARG __addr,
+         socklen_t __addr_len);
+# 163 "/usr/include/x86_64-linux-gnu/sys/socket.h" 3 4
+extern ssize_t recvfrom (int __fd, void *__restrict __buf, size_t __n,
+    int __flags, __SOCKADDR_ARG __addr,
+    socklen_t *__restrict __addr_len);
+# 174 "/usr/include/x86_64-linux-gnu/sys/socket.h" 3 4
+extern ssize_t sendmsg (int __fd, const struct msghdr *__message,
+   int __flags);
+# 195 "/usr/include/x86_64-linux-gnu/sys/socket.h" 3 4
+extern int sendmmsg (int __fd, struct mmsghdr *__vmessages,
+       unsigned int __vlen, int __flags);
+# 216 "/usr/include/x86_64-linux-gnu/sys/socket.h" 3 4
+extern ssize_t recvmsg (int __fd, struct msghdr *__message, int __flags);
+# 235 "/usr/include/x86_64-linux-gnu/sys/socket.h" 3 4
+extern int recvmmsg (int __fd, struct mmsghdr *__vmessages,
+       unsigned int __vlen, int __flags,
+       struct timespec *__tmo);
+# 255 "/usr/include/x86_64-linux-gnu/sys/socket.h" 3 4
+extern int getsockopt (int __fd, int __level, int __optname,
+         void *__restrict __optval,
+         socklen_t *__restrict __optlen) __attribute__ ((__nothrow__ , __leaf__));
+# 277 "/usr/include/x86_64-linux-gnu/sys/socket.h" 3 4
+extern int setsockopt (int __fd, int __level, int __optname,
+         const void *__optval, socklen_t __optlen) __attribute__ ((__nothrow__ , __leaf__));
+# 296 "/usr/include/x86_64-linux-gnu/sys/socket.h" 3 4
+extern int listen (int __fd, int __n) __attribute__ ((__nothrow__ , __leaf__));
+# 306 "/usr/include/x86_64-linux-gnu/sys/socket.h" 3 4
+extern int accept (int __fd, __SOCKADDR_ARG __addr,
+     socklen_t *__restrict __addr_len);
+
+
+
+
+
+
+extern int accept4 (int __fd, __SOCKADDR_ARG __addr,
+      socklen_t *__restrict __addr_len, int __flags);
+# 324 "/usr/include/x86_64-linux-gnu/sys/socket.h" 3 4
+extern int shutdown (int __fd, int __how) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+extern int sockatmark (int __fd) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+
+
+extern int isfdtype (int __fd, int __fdtype) __attribute__ ((__nothrow__ , __leaf__));
+# 346 "/usr/include/x86_64-linux-gnu/sys/socket.h" 3 4
+
+# 31 "/home/dweller/neovim/.deps/usr/include/uv/unix.h" 2
+# 1 "/usr/include/netinet/in.h" 1 3 4
+# 27 "/usr/include/netinet/in.h" 3 4
+
+
+
+typedef uint32_t in_addr_t;
+struct in_addr
+  {
+    in_addr_t s_addr;
+  };
+
+
+# 1 "/usr/include/x86_64-linux-gnu/bits/in.h" 1 3 4
+# 143 "/usr/include/x86_64-linux-gnu/bits/in.h" 3 4
+struct ip_opts
+  {
+    struct in_addr ip_dst;
+    char ip_opts[40];
+  };
+
+
+struct ip_mreqn
+  {
+    struct in_addr imr_multiaddr;
+    struct in_addr imr_address;
+    int imr_ifindex;
+  };
+
+
+struct in_pktinfo
+  {
+    int ipi_ifindex;
+    struct in_addr ipi_spec_dst;
+    struct in_addr ipi_addr;
+  };
+# 38 "/usr/include/netinet/in.h" 2 3 4
+
+
+enum
+  {
+    IPPROTO_IP = 0,
+
+    IPPROTO_ICMP = 1,
+
+    IPPROTO_IGMP = 2,
+
+    IPPROTO_IPIP = 4,
+
+    IPPROTO_TCP = 6,
+
+    IPPROTO_EGP = 8,
+
+    IPPROTO_PUP = 12,
+
+    IPPROTO_UDP = 17,
+
+    IPPROTO_IDP = 22,
+
+    IPPROTO_TP = 29,
+
+    IPPROTO_DCCP = 33,
+
+    IPPROTO_IPV6 = 41,
+
+    IPPROTO_RSVP = 46,
+
+    IPPROTO_GRE = 47,
+
+    IPPROTO_ESP = 50,
+
+    IPPROTO_AH = 51,
+
+    IPPROTO_MTP = 92,
+
+    IPPROTO_BEETPH = 94,
+
+    IPPROTO_ENCAP = 98,
+
+    IPPROTO_PIM = 103,
+
+    IPPROTO_COMP = 108,
+
+    IPPROTO_SCTP = 132,
+
+    IPPROTO_UDPLITE = 136,
+
+    IPPROTO_MPLS = 137,
+
+    IPPROTO_ETHERNET = 143,
+
+    IPPROTO_RAW = 255,
+
+    IPPROTO_MPTCP = 262,
+
+    IPPROTO_MAX
+  };
+
+
+
+
+
+enum
+  {
+    IPPROTO_HOPOPTS = 0,
+
+    IPPROTO_ROUTING = 43,
+
+    IPPROTO_FRAGMENT = 44,
+
+    IPPROTO_ICMPV6 = 58,
+
+    IPPROTO_NONE = 59,
+
+    IPPROTO_DSTOPTS = 60,
+
+    IPPROTO_MH = 135
+
+  };
+
+
+
+typedef uint16_t in_port_t;
+
+
+enum
+  {
+    IPPORT_ECHO = 7,
+    IPPORT_DISCARD = 9,
+    IPPORT_SYSTAT = 11,
+    IPPORT_DAYTIME = 13,
+    IPPORT_NETSTAT = 15,
+    IPPORT_FTP = 21,
+    IPPORT_TELNET = 23,
+    IPPORT_SMTP = 25,
+    IPPORT_TIMESERVER = 37,
+    IPPORT_NAMESERVER = 42,
+    IPPORT_WHOIS = 43,
+    IPPORT_MTP = 57,
+
+    IPPORT_TFTP = 69,
+    IPPORT_RJE = 77,
+    IPPORT_FINGER = 79,
+    IPPORT_TTYLINK = 87,
+    IPPORT_SUPDUP = 95,
+
+
+    IPPORT_EXECSERVER = 512,
+    IPPORT_LOGINSERVER = 513,
+    IPPORT_CMDSERVER = 514,
+    IPPORT_EFSSERVER = 520,
+
+
+    IPPORT_BIFFUDP = 512,
+    IPPORT_WHOSERVER = 513,
+    IPPORT_ROUTESERVER = 520,
+
+
+    IPPORT_RESERVED = 1024,
+
+
+    IPPORT_USERRESERVED = 5000
+  };
+# 219 "/usr/include/netinet/in.h" 3 4
+struct in6_addr
+  {
+    union
+      {
+ uint8_t __u6_addr8[16];
+ uint16_t __u6_addr16[8];
+ uint32_t __u6_addr32[4];
+      } __in6_u;
+
+
+
+
+
+  };
+
+
+extern const struct in6_addr in6addr_any;
+extern const struct in6_addr in6addr_loopback;
+# 245 "/usr/include/netinet/in.h" 3 4
+struct sockaddr_in
+  {
+    sa_family_t sin_family;
+    in_port_t sin_port;
+    struct in_addr sin_addr;
+
+
+    unsigned char sin_zero[sizeof (struct sockaddr)
+      - (sizeof (unsigned short int))
+      - sizeof (in_port_t)
+      - sizeof (struct in_addr)];
+  };
+
+
+
+struct sockaddr_in6
+  {
+    sa_family_t sin6_family;
+    in_port_t sin6_port;
+    uint32_t sin6_flowinfo;
+    struct in6_addr sin6_addr;
+    uint32_t sin6_scope_id;
+  };
+
+
+
+
+struct ip_mreq
+  {
+
+    struct in_addr imr_multiaddr;
+
+
+    struct in_addr imr_interface;
+  };
+
+struct ip_mreq_source
+  {
+
+    struct in_addr imr_multiaddr;
+
+
+    struct in_addr imr_interface;
+
+
+    struct in_addr imr_sourceaddr;
+  };
+
+
+
+
+struct ipv6_mreq
+  {
+
+    struct in6_addr ipv6mr_multiaddr;
+
+
+    unsigned int ipv6mr_interface;
+  };
+
+
+
+
+struct group_req
+  {
+
+    uint32_t gr_interface;
+
+
+    struct sockaddr_storage gr_group;
+  };
+
+struct group_source_req
+  {
+
+    uint32_t gsr_interface;
+
+
+    struct sockaddr_storage gsr_group;
+
+
+    struct sockaddr_storage gsr_source;
+  };
+
+
+
+struct ip_msfilter
+  {
+
+    struct in_addr imsf_multiaddr;
+
+
+    struct in_addr imsf_interface;
+
+
+    uint32_t imsf_fmode;
+
+
+    uint32_t imsf_numsrc;
+
+    struct in_addr imsf_slist[1];
+  };
+
+
+
+
+
+struct group_filter
+  {
+
+    uint32_t gf_interface;
+
+
+    struct sockaddr_storage gf_group;
+
+
+    uint32_t gf_fmode;
+
+
+    uint32_t gf_numsrc;
+
+    struct sockaddr_storage gf_slist[1];
+};
+# 382 "/usr/include/netinet/in.h" 3 4
+extern uint32_t ntohl (uint32_t __netlong) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+extern uint16_t ntohs (uint16_t __netshort)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+extern uint32_t htonl (uint32_t __hostlong)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+extern uint16_t htons (uint16_t __hostshort)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+
+
+# 1 "/usr/include/x86_64-linux-gnu/bits/byteswap.h" 1 3 4
+# 394 "/usr/include/netinet/in.h" 2 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/uintn-identity.h" 1 3 4
+# 395 "/usr/include/netinet/in.h" 2 3 4
+# 510 "/usr/include/netinet/in.h" 3 4
+extern int bindresvport (int __sockfd, struct sockaddr_in *__sock_in) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern int bindresvport6 (int __sockfd, struct sockaddr_in6 *__sock_in)
+     __attribute__ ((__nothrow__ , __leaf__));
+# 540 "/usr/include/netinet/in.h" 3 4
+struct cmsghdr;
+
+
+
+struct in6_pktinfo
+  {
+    struct in6_addr ipi6_addr;
+    unsigned int ipi6_ifindex;
+  };
+
+
+struct ip6_mtuinfo
+  {
+    struct sockaddr_in6 ip6m_addr;
+    uint32_t ip6m_mtu;
+  };
+
+
+
+extern int inet6_option_space (int __nbytes)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__deprecated__));
+extern int inet6_option_init (void *__bp, struct cmsghdr **__cmsgp,
+         int __type) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__deprecated__));
+extern int inet6_option_append (struct cmsghdr *__cmsg,
+    const uint8_t *__typep, int __multx,
+    int __plusy) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__deprecated__));
+extern uint8_t *inet6_option_alloc (struct cmsghdr *__cmsg, int __datalen,
+        int __multx, int __plusy)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__deprecated__));
+extern int inet6_option_next (const struct cmsghdr *__cmsg,
+         uint8_t **__tptrp)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__deprecated__));
+extern int inet6_option_find (const struct cmsghdr *__cmsg,
+         uint8_t **__tptrp, int __type)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__deprecated__));
+
+
+
+extern int inet6_opt_init (void *__extbuf, socklen_t __extlen) __attribute__ ((__nothrow__ , __leaf__));
+extern int inet6_opt_append (void *__extbuf, socklen_t __extlen, int __offset,
+        uint8_t __type, socklen_t __len, uint8_t __align,
+        void **__databufp) __attribute__ ((__nothrow__ , __leaf__));
+extern int inet6_opt_finish (void *__extbuf, socklen_t __extlen, int __offset)
+     __attribute__ ((__nothrow__ , __leaf__));
+extern int inet6_opt_set_val (void *__databuf, int __offset, void *__val,
+         socklen_t __vallen) __attribute__ ((__nothrow__ , __leaf__));
+extern int inet6_opt_next (void *__extbuf, socklen_t __extlen, int __offset,
+      uint8_t *__typep, socklen_t *__lenp,
+      void **__databufp) __attribute__ ((__nothrow__ , __leaf__));
+extern int inet6_opt_find (void *__extbuf, socklen_t __extlen, int __offset,
+      uint8_t __type, socklen_t *__lenp,
+      void **__databufp) __attribute__ ((__nothrow__ , __leaf__));
+extern int inet6_opt_get_val (void *__databuf, int __offset, void *__val,
+         socklen_t __vallen) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern socklen_t inet6_rth_space (int __type, int __segments) __attribute__ ((__nothrow__ , __leaf__));
+extern void *inet6_rth_init (void *__bp, socklen_t __bp_len, int __type,
+        int __segments) __attribute__ ((__nothrow__ , __leaf__));
+extern int inet6_rth_add (void *__bp, const struct in6_addr *__addr) __attribute__ ((__nothrow__ , __leaf__));
+extern int inet6_rth_reverse (const void *__in, void *__out) __attribute__ ((__nothrow__ , __leaf__));
+extern int inet6_rth_segments (const void *__bp) __attribute__ ((__nothrow__ , __leaf__));
+extern struct in6_addr *inet6_rth_getaddr (const void *__bp, int __index)
+     __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+extern int getipv4sourcefilter (int __s, struct in_addr __interface_addr,
+    struct in_addr __group, uint32_t *__fmode,
+    uint32_t *__numsrc, struct in_addr *__slist)
+     __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern int setipv4sourcefilter (int __s, struct in_addr __interface_addr,
+    struct in_addr __group, uint32_t __fmode,
+    uint32_t __numsrc,
+    const struct in_addr *__slist)
+     __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern int getsourcefilter (int __s, uint32_t __interface_addr,
+       const struct sockaddr *__group,
+       socklen_t __grouplen, uint32_t *__fmode,
+       uint32_t *__numsrc,
+       struct sockaddr_storage *__slist) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern int setsourcefilter (int __s, uint32_t __interface_addr,
+       const struct sockaddr *__group,
+       socklen_t __grouplen, uint32_t __fmode,
+       uint32_t __numsrc,
+       const struct sockaddr_storage *__slist) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+# 32 "/home/dweller/neovim/.deps/usr/include/uv/unix.h" 2
+# 1 "/usr/include/netinet/tcp.h" 1 3 4
+# 93 "/usr/include/netinet/tcp.h" 3 4
+typedef uint32_t tcp_seq;
+
+
+
+
+struct tcphdr
+  {
+    __extension__ union
+    {
+      struct
+      {
+ uint16_t th_sport;
+ uint16_t th_dport;
+ tcp_seq th_seq;
+ tcp_seq th_ack;
+
+ uint8_t th_x2:4;
+ uint8_t th_off:4;
+
+
+
+
+
+ uint8_t th_flags;
+
+
+
+
+
+
+ uint16_t th_win;
+ uint16_t th_sum;
+ uint16_t th_urp;
+      };
+      struct
+      {
+ uint16_t source;
+ uint16_t dest;
+ uint32_t seq;
+ uint32_t ack_seq;
+
+ uint16_t res1:4;
+ uint16_t doff:4;
+ uint16_t fin:1;
+ uint16_t syn:1;
+ uint16_t rst:1;
+ uint16_t psh:1;
+ uint16_t ack:1;
+ uint16_t urg:1;
+ uint16_t res2:2;
+# 156 "/usr/include/netinet/tcp.h" 3 4
+ uint16_t window;
+ uint16_t check;
+ uint16_t urg_ptr;
+      };
+    };
+};
+
+enum
+{
+  TCP_ESTABLISHED = 1,
+  TCP_SYN_SENT,
+  TCP_SYN_RECV,
+  TCP_FIN_WAIT1,
+  TCP_FIN_WAIT2,
+  TCP_TIME_WAIT,
+  TCP_CLOSE,
+  TCP_CLOSE_WAIT,
+  TCP_LAST_ACK,
+  TCP_LISTEN,
+  TCP_CLOSING
+};
+# 217 "/usr/include/netinet/tcp.h" 3 4
+enum tcp_ca_state
+{
+  TCP_CA_Open = 0,
+  TCP_CA_Disorder = 1,
+  TCP_CA_CWR = 2,
+  TCP_CA_Recovery = 3,
+  TCP_CA_Loss = 4
+};
+
+struct tcp_info
+{
+  uint8_t tcpi_state;
+  uint8_t tcpi_ca_state;
+  uint8_t tcpi_retransmits;
+  uint8_t tcpi_probes;
+  uint8_t tcpi_backoff;
+  uint8_t tcpi_options;
+  uint8_t tcpi_snd_wscale : 4, tcpi_rcv_wscale : 4;
+
+  uint32_t tcpi_rto;
+  uint32_t tcpi_ato;
+  uint32_t tcpi_snd_mss;
+  uint32_t tcpi_rcv_mss;
+
+  uint32_t tcpi_unacked;
+  uint32_t tcpi_sacked;
+  uint32_t tcpi_lost;
+  uint32_t tcpi_retrans;
+  uint32_t tcpi_fackets;
+
+
+  uint32_t tcpi_last_data_sent;
+  uint32_t tcpi_last_ack_sent;
+  uint32_t tcpi_last_data_recv;
+  uint32_t tcpi_last_ack_recv;
+
+
+  uint32_t tcpi_pmtu;
+  uint32_t tcpi_rcv_ssthresh;
+  uint32_t tcpi_rtt;
+  uint32_t tcpi_rttvar;
+  uint32_t tcpi_snd_ssthresh;
+  uint32_t tcpi_snd_cwnd;
+  uint32_t tcpi_advmss;
+  uint32_t tcpi_reordering;
+
+  uint32_t tcpi_rcv_rtt;
+  uint32_t tcpi_rcv_space;
+
+  uint32_t tcpi_total_retrans;
+};
+# 276 "/usr/include/netinet/tcp.h" 3 4
+struct tcp_md5sig
+{
+  struct sockaddr_storage tcpm_addr;
+  uint8_t tcpm_flags;
+  uint8_t tcpm_prefixlen;
+  uint16_t tcpm_keylen;
+  uint32_t __tcpm_pad;
+  uint8_t tcpm_key[80];
+};
+
+
+struct tcp_repair_opt
+{
+  uint32_t opt_code;
+  uint32_t opt_val;
+};
+
+
+enum
+{
+  TCP_NO_QUEUE,
+  TCP_RECV_QUEUE,
+  TCP_SEND_QUEUE,
+  TCP_QUEUES_NR,
+};
+# 319 "/usr/include/netinet/tcp.h" 3 4
+struct tcp_cookie_transactions
+{
+  uint16_t tcpct_flags;
+  uint8_t __tcpct_pad1;
+  uint8_t tcpct_cookie_desired;
+  uint16_t tcpct_s_data_desired;
+  uint16_t tcpct_used;
+  uint8_t tcpct_value[536U];
+};
+
+
+struct tcp_repair_window
+{
+  uint32_t snd_wl1;
+  uint32_t snd_wnd;
+  uint32_t max_window;
+  uint32_t rcv_wnd;
+  uint32_t rcv_wup;
+};
+
+
+struct tcp_zerocopy_receive
+{
+  uint64_t address;
+  uint32_t length;
+  uint32_t recv_skip_hint;
+};
+# 33 "/home/dweller/neovim/.deps/usr/include/uv/unix.h" 2
+# 1 "/usr/include/arpa/inet.h" 1 3 4
+# 30 "/usr/include/arpa/inet.h" 3 4
+
+
+
+
+extern in_addr_t inet_addr (const char *__cp) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern in_addr_t inet_lnaof (struct in_addr __in) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern struct in_addr inet_makeaddr (in_addr_t __net, in_addr_t __host)
+     __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern in_addr_t inet_netof (struct in_addr __in) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern in_addr_t inet_network (const char *__cp) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern char *inet_ntoa (struct in_addr __in) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+extern int inet_pton (int __af, const char *__restrict __cp,
+        void *__restrict __buf) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+extern const char *inet_ntop (int __af, const void *__restrict __cp,
+         char *__restrict __buf, socklen_t __len)
+     __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+
+extern int inet_aton (const char *__cp, struct in_addr *__inp) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern char *inet_neta (in_addr_t __net, char *__buf, size_t __len) __attribute__ ((__nothrow__ , __leaf__))
+  __attribute__ ((__deprecated__ ("Use inet_ntop instead")));
+
+
+
+
+extern char *inet_net_ntop (int __af, const void *__cp, int __bits,
+       char *__buf, size_t __len) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+extern int inet_net_pton (int __af, const char *__cp,
+     void *__buf, size_t __len) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+extern unsigned int inet_nsap_addr (const char *__cp,
+        unsigned char *__buf, int __len) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern char *inet_nsap_ntoa (int __len, const unsigned char *__cp,
+        char *__buf) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+# 34 "/home/dweller/neovim/.deps/usr/include/uv/unix.h" 2
+# 1 "/usr/include/netdb.h" 1 3 4
+# 32 "/usr/include/netdb.h" 3 4
+# 1 "/usr/include/rpc/netdb.h" 1 3 4
+# 42 "/usr/include/rpc/netdb.h" 3 4
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h" 1 3 4
+# 43 "/usr/include/rpc/netdb.h" 2 3 4
+
+
+
+struct rpcent
+{
+  char *r_name;
+  char **r_aliases;
+  int r_number;
+};
+
+extern void setrpcent (int __stayopen) __attribute__ ((__nothrow__ , __leaf__));
+extern void endrpcent (void) __attribute__ ((__nothrow__ , __leaf__));
+extern struct rpcent *getrpcbyname (const char *__name) __attribute__ ((__nothrow__ , __leaf__));
+extern struct rpcent *getrpcbynumber (int __number) __attribute__ ((__nothrow__ , __leaf__));
+extern struct rpcent *getrpcent (void) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern int getrpcbyname_r (const char *__name, struct rpcent *__result_buf,
+      char *__buffer, size_t __buflen,
+      struct rpcent **__result) __attribute__ ((__nothrow__ , __leaf__));
+
+extern int getrpcbynumber_r (int __number, struct rpcent *__result_buf,
+        char *__buffer, size_t __buflen,
+        struct rpcent **__result) __attribute__ ((__nothrow__ , __leaf__));
+
+extern int getrpcent_r (struct rpcent *__result_buf, char *__buffer,
+   size_t __buflen, struct rpcent **__result) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+# 33 "/usr/include/netdb.h" 2 3 4
+
+
+
+# 1 "/usr/include/x86_64-linux-gnu/bits/types/sigevent_t.h" 1 3 4
+
+
+
+# 1 "/usr/include/x86_64-linux-gnu/bits/wordsize.h" 1 3 4
+# 5 "/usr/include/x86_64-linux-gnu/bits/types/sigevent_t.h" 2 3 4
+
+# 1 "/usr/include/x86_64-linux-gnu/bits/types/__sigval_t.h" 1 3 4
+# 24 "/usr/include/x86_64-linux-gnu/bits/types/__sigval_t.h" 3 4
+union sigval
+{
+  int sival_int;
+  void *sival_ptr;
+};
+
+typedef union sigval __sigval_t;
+# 7 "/usr/include/x86_64-linux-gnu/bits/types/sigevent_t.h" 2 3 4
+# 22 "/usr/include/x86_64-linux-gnu/bits/types/sigevent_t.h" 3 4
+typedef struct sigevent
+  {
+    __sigval_t sigev_value;
+    int sigev_signo;
+    int sigev_notify;
+
+    union
+      {
+ int _pad[((64 / sizeof (int)) - 4)];
+
+
+
+ __pid_t _tid;
+
+ struct
+   {
+     void (*_function) (__sigval_t);
+     pthread_attr_t *_attribute;
+   } _sigev_thread;
+      } _sigev_un;
+  } sigevent_t;
+# 37 "/usr/include/netdb.h" 2 3 4
+
+
+
+# 1 "/usr/include/x86_64-linux-gnu/bits/netdb.h" 1 3 4
+# 26 "/usr/include/x86_64-linux-gnu/bits/netdb.h" 3 4
+struct netent
+{
+  char *n_name;
+  char **n_aliases;
+  int n_addrtype;
+  uint32_t n_net;
+};
+# 41 "/usr/include/netdb.h" 2 3 4
+# 51 "/usr/include/netdb.h" 3 4
+
+
+
+
+
+
+
+
+extern int *__h_errno_location (void) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+# 90 "/usr/include/netdb.h" 3 4
+extern void herror (const char *__str) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern const char *hstrerror (int __err_num) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+struct hostent
+{
+  char *h_name;
+  char **h_aliases;
+  int h_addrtype;
+  int h_length;
+  char **h_addr_list;
+
+
+
+};
+
+
+
+
+
+
+extern void sethostent (int __stay_open);
+
+
+
+
+
+extern void endhostent (void);
+
+
+
+
+
+
+extern struct hostent *gethostent (void);
+
+
+
+
+
+
+extern struct hostent *gethostbyaddr (const void *__addr, __socklen_t __len,
+          int __type);
+
+
+
+
+
+extern struct hostent *gethostbyname (const char *__name);
+# 153 "/usr/include/netdb.h" 3 4
+extern struct hostent *gethostbyname2 (const char *__name, int __af);
+# 165 "/usr/include/netdb.h" 3 4
+extern int gethostent_r (struct hostent *__restrict __result_buf,
+    char *__restrict __buf, size_t __buflen,
+    struct hostent **__restrict __result,
+    int *__restrict __h_errnop);
+
+extern int gethostbyaddr_r (const void *__restrict __addr, __socklen_t __len,
+       int __type,
+       struct hostent *__restrict __result_buf,
+       char *__restrict __buf, size_t __buflen,
+       struct hostent **__restrict __result,
+       int *__restrict __h_errnop);
+
+extern int gethostbyname_r (const char *__restrict __name,
+       struct hostent *__restrict __result_buf,
+       char *__restrict __buf, size_t __buflen,
+       struct hostent **__restrict __result,
+       int *__restrict __h_errnop);
+
+extern int gethostbyname2_r (const char *__restrict __name, int __af,
+        struct hostent *__restrict __result_buf,
+        char *__restrict __buf, size_t __buflen,
+        struct hostent **__restrict __result,
+        int *__restrict __h_errnop);
+# 196 "/usr/include/netdb.h" 3 4
+extern void setnetent (int __stay_open);
+
+
+
+
+
+extern void endnetent (void);
+
+
+
+
+
+
+extern struct netent *getnetent (void);
+
+
+
+
+
+
+extern struct netent *getnetbyaddr (uint32_t __net, int __type);
+
+
+
+
+
+extern struct netent *getnetbyname (const char *__name);
+# 235 "/usr/include/netdb.h" 3 4
+extern int getnetent_r (struct netent *__restrict __result_buf,
+   char *__restrict __buf, size_t __buflen,
+   struct netent **__restrict __result,
+   int *__restrict __h_errnop);
+
+extern int getnetbyaddr_r (uint32_t __net, int __type,
+      struct netent *__restrict __result_buf,
+      char *__restrict __buf, size_t __buflen,
+      struct netent **__restrict __result,
+      int *__restrict __h_errnop);
+
+extern int getnetbyname_r (const char *__restrict __name,
+      struct netent *__restrict __result_buf,
+      char *__restrict __buf, size_t __buflen,
+      struct netent **__restrict __result,
+      int *__restrict __h_errnop);
+
+
+
+
+struct servent
+{
+  char *s_name;
+  char **s_aliases;
+  int s_port;
+  char *s_proto;
+};
+
+
+
+
+
+
+extern void setservent (int __stay_open);
+
+
+
+
+
+extern void endservent (void);
+
+
+
+
+
+
+extern struct servent *getservent (void);
+
+
+
+
+
+
+extern struct servent *getservbyname (const char *__name, const char *__proto);
+
+
+
+
+
+
+extern struct servent *getservbyport (int __port, const char *__proto);
+# 306 "/usr/include/netdb.h" 3 4
+extern int getservent_r (struct servent *__restrict __result_buf,
+    char *__restrict __buf, size_t __buflen,
+    struct servent **__restrict __result);
+
+extern int getservbyname_r (const char *__restrict __name,
+       const char *__restrict __proto,
+       struct servent *__restrict __result_buf,
+       char *__restrict __buf, size_t __buflen,
+       struct servent **__restrict __result);
+
+extern int getservbyport_r (int __port, const char *__restrict __proto,
+       struct servent *__restrict __result_buf,
+       char *__restrict __buf, size_t __buflen,
+       struct servent **__restrict __result);
+
+
+
+
+struct protoent
+{
+  char *p_name;
+  char **p_aliases;
+  int p_proto;
+};
+
+
+
+
+
+
+extern void setprotoent (int __stay_open);
+
+
+
+
+
+extern void endprotoent (void);
+
+
+
+
+
+
+extern struct protoent *getprotoent (void);
+
+
+
+
+
+extern struct protoent *getprotobyname (const char *__name);
+
+
+
+
+
+extern struct protoent *getprotobynumber (int __proto);
+# 372 "/usr/include/netdb.h" 3 4
+extern int getprotoent_r (struct protoent *__restrict __result_buf,
+     char *__restrict __buf, size_t __buflen,
+     struct protoent **__restrict __result);
+
+extern int getprotobyname_r (const char *__restrict __name,
+        struct protoent *__restrict __result_buf,
+        char *__restrict __buf, size_t __buflen,
+        struct protoent **__restrict __result);
+
+extern int getprotobynumber_r (int __proto,
+          struct protoent *__restrict __result_buf,
+          char *__restrict __buf, size_t __buflen,
+          struct protoent **__restrict __result);
+# 393 "/usr/include/netdb.h" 3 4
+extern int setnetgrent (const char *__netgroup);
+
+
+
+
+
+
+
+extern void endnetgrent (void);
+# 410 "/usr/include/netdb.h" 3 4
+extern int getnetgrent (char **__restrict __hostp,
+   char **__restrict __userp,
+   char **__restrict __domainp);
+# 421 "/usr/include/netdb.h" 3 4
+extern int innetgr (const char *__netgroup, const char *__host,
+      const char *__user, const char *__domain);
+
+
+
+
+
+
+
+extern int getnetgrent_r (char **__restrict __hostp,
+     char **__restrict __userp,
+     char **__restrict __domainp,
+     char *__restrict __buffer, size_t __buflen);
+# 449 "/usr/include/netdb.h" 3 4
+extern int rcmd (char **__restrict __ahost, unsigned short int __rport,
+   const char *__restrict __locuser,
+   const char *__restrict __remuser,
+   const char *__restrict __cmd, int *__restrict __fd2p);
+# 461 "/usr/include/netdb.h" 3 4
+extern int rcmd_af (char **__restrict __ahost, unsigned short int __rport,
+      const char *__restrict __locuser,
+      const char *__restrict __remuser,
+      const char *__restrict __cmd, int *__restrict __fd2p,
+      sa_family_t __af);
+# 477 "/usr/include/netdb.h" 3 4
+extern int rexec (char **__restrict __ahost, int __rport,
+    const char *__restrict __name,
+    const char *__restrict __pass,
+    const char *__restrict __cmd, int *__restrict __fd2p);
+# 489 "/usr/include/netdb.h" 3 4
+extern int rexec_af (char **__restrict __ahost, int __rport,
+       const char *__restrict __name,
+       const char *__restrict __pass,
+       const char *__restrict __cmd, int *__restrict __fd2p,
+       sa_family_t __af);
+# 503 "/usr/include/netdb.h" 3 4
+extern int ruserok (const char *__rhost, int __suser,
+      const char *__remuser, const char *__locuser);
+# 513 "/usr/include/netdb.h" 3 4
+extern int ruserok_af (const char *__rhost, int __suser,
+         const char *__remuser, const char *__locuser,
+         sa_family_t __af);
+# 526 "/usr/include/netdb.h" 3 4
+extern int iruserok (uint32_t __raddr, int __suser,
+       const char *__remuser, const char *__locuser);
+# 537 "/usr/include/netdb.h" 3 4
+extern int iruserok_af (const void *__raddr, int __suser,
+   const char *__remuser, const char *__locuser,
+   sa_family_t __af);
+# 549 "/usr/include/netdb.h" 3 4
+extern int rresvport (int *__alport);
+# 558 "/usr/include/netdb.h" 3 4
+extern int rresvport_af (int *__alport, sa_family_t __af);
+
+
+
+
+
+
+struct addrinfo
+{
+  int ai_flags;
+  int ai_family;
+  int ai_socktype;
+  int ai_protocol;
+  socklen_t ai_addrlen;
+  struct sockaddr *ai_addr;
+  char *ai_canonname;
+  struct addrinfo *ai_next;
+};
+
+
+
+struct gaicb
+{
+  const char *ar_name;
+  const char *ar_service;
+  const struct addrinfo *ar_request;
+  struct addrinfo *ar_result;
+
+  int __return;
+  int __glibc_reserved[5];
+};
+# 660 "/usr/include/netdb.h" 3 4
+extern int getaddrinfo (const char *__restrict __name,
+   const char *__restrict __service,
+   const struct addrinfo *__restrict __req,
+   struct addrinfo **__restrict __pai);
+
+
+extern void freeaddrinfo (struct addrinfo *__ai) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern const char *gai_strerror (int __ecode) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+extern int getnameinfo (const struct sockaddr *__restrict __sa,
+   socklen_t __salen, char *__restrict __host,
+   socklen_t __hostlen, char *__restrict __serv,
+   socklen_t __servlen, int __flags);
+# 690 "/usr/include/netdb.h" 3 4
+extern int getaddrinfo_a (int __mode, struct gaicb *__list[__restrict],
+     int __ent, struct sigevent *__restrict __sig);
+# 701 "/usr/include/netdb.h" 3 4
+extern int gai_suspend (const struct gaicb *const __list[], int __ent,
+   const struct timespec *__timeout);
+# 716 "/usr/include/netdb.h" 3 4
+extern int gai_error (struct gaicb *__req) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern int gai_cancel (struct gaicb *__gaicbp) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+# 35 "/home/dweller/neovim/.deps/usr/include/uv/unix.h" 2
+
+# 1 "/usr/include/termios.h" 1 3 4
+# 35 "/usr/include/termios.h" 3 4
+
+
+
+
+# 1 "/usr/include/x86_64-linux-gnu/bits/termios.h" 1 3 4
+# 23 "/usr/include/x86_64-linux-gnu/bits/termios.h" 3 4
+typedef unsigned char cc_t;
+typedef unsigned int speed_t;
+typedef unsigned int tcflag_t;
+
+# 1 "/usr/include/x86_64-linux-gnu/bits/termios-struct.h" 1 3 4
+# 24 "/usr/include/x86_64-linux-gnu/bits/termios-struct.h" 3 4
+struct termios
+  {
+    tcflag_t c_iflag;
+    tcflag_t c_oflag;
+    tcflag_t c_cflag;
+    tcflag_t c_lflag;
+    cc_t c_line;
+    cc_t c_cc[32];
+    speed_t c_ispeed;
+    speed_t c_ospeed;
+
+
+  };
+# 28 "/usr/include/x86_64-linux-gnu/bits/termios.h" 2 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/termios-c_cc.h" 1 3 4
+# 29 "/usr/include/x86_64-linux-gnu/bits/termios.h" 2 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/termios-c_iflag.h" 1 3 4
+# 30 "/usr/include/x86_64-linux-gnu/bits/termios.h" 2 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/termios-c_oflag.h" 1 3 4
+# 31 "/usr/include/x86_64-linux-gnu/bits/termios.h" 2 3 4
+# 53 "/usr/include/x86_64-linux-gnu/bits/termios.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/termios-baud.h" 1 3 4
+# 54 "/usr/include/x86_64-linux-gnu/bits/termios.h" 2 3 4
+
+# 1 "/usr/include/x86_64-linux-gnu/bits/termios-c_cflag.h" 1 3 4
+# 56 "/usr/include/x86_64-linux-gnu/bits/termios.h" 2 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/termios-c_lflag.h" 1 3 4
+# 57 "/usr/include/x86_64-linux-gnu/bits/termios.h" 2 3 4
+# 74 "/usr/include/x86_64-linux-gnu/bits/termios.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/termios-tcflow.h" 1 3 4
+# 75 "/usr/include/x86_64-linux-gnu/bits/termios.h" 2 3 4
+
+# 1 "/usr/include/x86_64-linux-gnu/bits/termios-misc.h" 1 3 4
+# 77 "/usr/include/x86_64-linux-gnu/bits/termios.h" 2 3 4
+# 40 "/usr/include/termios.h" 2 3 4
+# 48 "/usr/include/termios.h" 3 4
+extern speed_t cfgetospeed (const struct termios *__termios_p) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern speed_t cfgetispeed (const struct termios *__termios_p) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern int cfsetospeed (struct termios *__termios_p, speed_t __speed) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern int cfsetispeed (struct termios *__termios_p, speed_t __speed) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern int cfsetspeed (struct termios *__termios_p, speed_t __speed) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+extern int tcgetattr (int __fd, struct termios *__termios_p) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern int tcsetattr (int __fd, int __optional_actions,
+        const struct termios *__termios_p) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+extern void cfmakeraw (struct termios *__termios_p) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern int tcsendbreak (int __fd, int __duration) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+extern int tcdrain (int __fd);
+
+
+
+extern int tcflush (int __fd, int __queue_selector) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern int tcflow (int __fd, int __action) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+extern __pid_t tcgetsid (int __fd) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+# 1 "/usr/include/x86_64-linux-gnu/sys/ttydefaults.h" 1 3 4
+# 105 "/usr/include/termios.h" 2 3 4
+
+
+
+# 37 "/home/dweller/neovim/.deps/usr/include/uv/unix.h" 2
+# 1 "/usr/include/pwd.h" 1 3 4
+# 27 "/usr/include/pwd.h" 3 4
+
+
+
+
+
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h" 1 3 4
+# 33 "/usr/include/pwd.h" 2 3 4
+# 49 "/usr/include/pwd.h" 3 4
+struct passwd
+{
+  char *pw_name;
+  char *pw_passwd;
+
+  __uid_t pw_uid;
+  __gid_t pw_gid;
+  char *pw_gecos;
+  char *pw_dir;
+  char *pw_shell;
+};
+# 72 "/usr/include/pwd.h" 3 4
+extern void setpwent (void);
+
+
+
+
+
+extern void endpwent (void);
+
+
+
+
+
+extern struct passwd *getpwent (void);
+# 94 "/usr/include/pwd.h" 3 4
+extern struct passwd *fgetpwent (FILE *__stream) __attribute__ ((__nonnull__ (1)));
+
+
+
+
+
+
+
+extern int putpwent (const struct passwd *__restrict __p,
+       FILE *__restrict __f);
+
+
+
+
+
+
+extern struct passwd *getpwuid (__uid_t __uid);
+
+
+
+
+
+extern struct passwd *getpwnam (const char *__name) __attribute__ ((__nonnull__ (1)));
+# 139 "/usr/include/pwd.h" 3 4
+extern int getpwent_r (struct passwd *__restrict __resultbuf,
+         char *__restrict __buffer, size_t __buflen,
+         struct passwd **__restrict __result)
+    __attribute__ ((__nonnull__ (1, 2, 4)))
+    __attribute__ ((__access__ (__write_only__, 2, 3)));
+
+
+extern int getpwuid_r (__uid_t __uid,
+         struct passwd *__restrict __resultbuf,
+         char *__restrict __buffer, size_t __buflen,
+         struct passwd **__restrict __result)
+    __attribute__ ((__nonnull__ (2, 3, 5)))
+    __attribute__ ((__access__ (__write_only__, 3, 4)));
+
+extern int getpwnam_r (const char *__restrict __name,
+         struct passwd *__restrict __resultbuf,
+         char *__restrict __buffer, size_t __buflen,
+         struct passwd **__restrict __result)
+    __attribute__ ((__nonnull__ (1, 2, 3, 5)))
+    __attribute__ ((__access__ (__write_only__, 3, 4)));
+# 169 "/usr/include/pwd.h" 3 4
+extern int fgetpwent_r (FILE *__restrict __stream,
+   struct passwd *__restrict __resultbuf,
+   char *__restrict __buffer, size_t __buflen,
+   struct passwd **__restrict __result)
+    __attribute__ ((__nonnull__ (1, 2, 3, 5)))
+    __attribute__ ((__access__ (__write_only__, 3, 4)));
+# 188 "/usr/include/pwd.h" 3 4
+extern int getpw (__uid_t __uid, char *__buffer);
+
+
+
+# 38 "/home/dweller/neovim/.deps/usr/include/uv/unix.h" 2
+
+
+# 1 "/usr/include/semaphore.h" 1 3 4
+# 28 "/usr/include/semaphore.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/semaphore.h" 1 3 4
+# 23 "/usr/include/x86_64-linux-gnu/bits/semaphore.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/wordsize.h" 1 3 4
+# 24 "/usr/include/x86_64-linux-gnu/bits/semaphore.h" 2 3 4
+# 35 "/usr/include/x86_64-linux-gnu/bits/semaphore.h" 3 4
+typedef union
+{
+  char __size[32];
+  long int __align;
+} sem_t;
+# 29 "/usr/include/semaphore.h" 2 3 4
+
+
+
+
+
+
+extern int sem_init (sem_t *__sem, int __pshared, unsigned int __value)
+  __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+extern int sem_destroy (sem_t *__sem) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+extern sem_t *sem_open (const char *__name, int __oflag, ...)
+  __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+extern int sem_close (sem_t *__sem) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+extern int sem_unlink (const char *__name) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+
+
+
+extern int sem_wait (sem_t *__sem) __attribute__ ((__nonnull__ (1)));
+
+
+
+
+
+
+
+extern int sem_timedwait (sem_t *__restrict __sem,
+     const struct timespec *__restrict __abstime)
+  __attribute__ ((__nonnull__ (1, 2)));
+# 81 "/usr/include/semaphore.h" 3 4
+extern int sem_clockwait (sem_t *__restrict __sem,
+     clockid_t clock,
+     const struct timespec *__restrict __abstime)
+  __attribute__ ((__nonnull__ (1, 3)));
+# 100 "/usr/include/semaphore.h" 3 4
+extern int sem_trywait (sem_t *__sem) __attribute__ ((__nothrow__)) __attribute__ ((__nonnull__ (1)));
+
+
+extern int sem_post (sem_t *__sem) __attribute__ ((__nothrow__)) __attribute__ ((__nonnull__ (1)));
+
+
+extern int sem_getvalue (sem_t *__restrict __sem, int *__restrict __sval)
+  __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+
+# 41 "/home/dweller/neovim/.deps/usr/include/uv/unix.h" 2
+# 1 "/usr/include/x86_64-linux-gnu/sys/param.h" 1 3 4
+# 23 "/usr/include/x86_64-linux-gnu/sys/param.h" 3 4
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h" 1 3 4
+# 24 "/usr/include/x86_64-linux-gnu/sys/param.h" 2 3 4
+
+
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h" 1 3 4
+# 27 "/usr/include/x86_64-linux-gnu/sys/param.h" 2 3 4
+
+# 1 "/usr/include/signal.h" 1 3 4
+# 27 "/usr/include/signal.h" 3 4
+
+
+
+# 1 "/usr/include/x86_64-linux-gnu/bits/signum-generic.h" 1 3 4
+# 76 "/usr/include/x86_64-linux-gnu/bits/signum-generic.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/signum-arch.h" 1 3 4
+# 77 "/usr/include/x86_64-linux-gnu/bits/signum-generic.h" 2 3 4
+# 31 "/usr/include/signal.h" 2 3 4
+
+# 1 "/usr/include/x86_64-linux-gnu/bits/types/sig_atomic_t.h" 1 3 4
+
+
+
+
+
+
+
+typedef __sig_atomic_t sig_atomic_t;
+# 33 "/usr/include/signal.h" 2 3 4
+# 57 "/usr/include/signal.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/types/siginfo_t.h" 1 3 4
+
+
+
+# 1 "/usr/include/x86_64-linux-gnu/bits/wordsize.h" 1 3 4
+# 5 "/usr/include/x86_64-linux-gnu/bits/types/siginfo_t.h" 2 3 4
+# 16 "/usr/include/x86_64-linux-gnu/bits/types/siginfo_t.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/siginfo-arch.h" 1 3 4
+# 17 "/usr/include/x86_64-linux-gnu/bits/types/siginfo_t.h" 2 3 4
+# 36 "/usr/include/x86_64-linux-gnu/bits/types/siginfo_t.h" 3 4
+typedef struct
+  {
+    int si_signo;
+
+    int si_errno;
+
+    int si_code;
+
+
+
+
+
+    int __pad0;
+
+
+    union
+      {
+ int _pad[((128 / sizeof (int)) - 4)];
+
+
+ struct
+   {
+     __pid_t si_pid;
+     __uid_t si_uid;
+   } _kill;
+
+
+ struct
+   {
+     int si_tid;
+     int si_overrun;
+     __sigval_t si_sigval;
+   } _timer;
+
+
+ struct
+   {
+     __pid_t si_pid;
+     __uid_t si_uid;
+     __sigval_t si_sigval;
+   } _rt;
+
+
+ struct
+   {
+     __pid_t si_pid;
+     __uid_t si_uid;
+     int si_status;
+     __clock_t si_utime;
+     __clock_t si_stime;
+   } _sigchld;
+
+
+ struct
+   {
+     void *si_addr;
+    
+     short int si_addr_lsb;
+     union
+       {
+
+  struct
+    {
+      void *_lower;
+      void *_upper;
+    } _addr_bnd;
+
+  __uint32_t _pkey;
+       } _bounds;
+   } _sigfault;
+
+
+ struct
+   {
+     long int si_band;
+     int si_fd;
+   } _sigpoll;
+
+
+
+ struct
+   {
+     void *_call_addr;
+     int _syscall;
+     unsigned int _arch;
+   } _sigsys;
+
+      } _sifields;
+  } siginfo_t ;
+# 58 "/usr/include/signal.h" 2 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/siginfo-consts.h" 1 3 4
+# 35 "/usr/include/x86_64-linux-gnu/bits/siginfo-consts.h" 3 4
+enum
+{
+  SI_ASYNCNL = -60,
+  SI_DETHREAD = -7,
+
+  SI_TKILL,
+  SI_SIGIO,
+
+  SI_ASYNCIO,
+  SI_MESGQ,
+  SI_TIMER,
+
+
+
+
+
+  SI_QUEUE,
+  SI_USER,
+  SI_KERNEL = 0x80
+# 66 "/usr/include/x86_64-linux-gnu/bits/siginfo-consts.h" 3 4
+};
+
+
+
+
+enum
+{
+  ILL_ILLOPC = 1,
+
+  ILL_ILLOPN,
+
+  ILL_ILLADR,
+
+  ILL_ILLTRP,
+
+  ILL_PRVOPC,
+
+  ILL_PRVREG,
+
+  ILL_COPROC,
+
+  ILL_BADSTK,
+
+  ILL_BADIADDR
+
+};
+
+
+enum
+{
+  FPE_INTDIV = 1,
+
+  FPE_INTOVF,
+
+  FPE_FLTDIV,
+
+  FPE_FLTOVF,
+
+  FPE_FLTUND,
+
+  FPE_FLTRES,
+
+  FPE_FLTINV,
+
+  FPE_FLTSUB,
+
+  FPE_FLTUNK = 14,
+
+  FPE_CONDTRAP
+
+};
+
+
+enum
+{
+  SEGV_MAPERR = 1,
+
+  SEGV_ACCERR,
+
+  SEGV_BNDERR,
+
+  SEGV_PKUERR,
+
+  SEGV_ACCADI,
+
+  SEGV_ADIDERR,
+
+  SEGV_ADIPERR,
+
+  SEGV_MTEAERR,
+
+  SEGV_MTESERR
+
+};
+
+
+enum
+{
+  BUS_ADRALN = 1,
+
+  BUS_ADRERR,
+
+  BUS_OBJERR,
+
+  BUS_MCEERR_AR,
+
+  BUS_MCEERR_AO
+
+};
+
+
+
+
+enum
+{
+  TRAP_BRKPT = 1,
+
+  TRAP_TRACE,
+
+  TRAP_BRANCH,
+
+  TRAP_HWBKPT,
+
+  TRAP_UNK
+
+};
+
+
+
+
+enum
+{
+  CLD_EXITED = 1,
+
+  CLD_KILLED,
+
+  CLD_DUMPED,
+
+  CLD_TRAPPED,
+
+  CLD_STOPPED,
+
+  CLD_CONTINUED
+
+};
+
+
+enum
+{
+  POLL_IN = 1,
+
+  POLL_OUT,
+
+  POLL_MSG,
+
+  POLL_ERR,
+
+  POLL_PRI,
+
+  POLL_HUP
+
+};
+
+
+
+
+
+# 1 "/usr/include/x86_64-linux-gnu/bits/siginfo-consts-arch.h" 1 3 4
+# 214 "/usr/include/x86_64-linux-gnu/bits/siginfo-consts.h" 2 3 4
+# 59 "/usr/include/signal.h" 2 3 4
+
+
+
+# 1 "/usr/include/x86_64-linux-gnu/bits/types/sigval_t.h" 1 3 4
+# 16 "/usr/include/x86_64-linux-gnu/bits/types/sigval_t.h" 3 4
+typedef __sigval_t sigval_t;
+# 63 "/usr/include/signal.h" 2 3 4
+
+
+
+
+# 1 "/usr/include/x86_64-linux-gnu/bits/sigevent-consts.h" 1 3 4
+# 27 "/usr/include/x86_64-linux-gnu/bits/sigevent-consts.h" 3 4
+enum
+{
+  SIGEV_SIGNAL = 0,
+
+  SIGEV_NONE,
+
+  SIGEV_THREAD,
+
+
+  SIGEV_THREAD_ID = 4
+
+
+};
+# 68 "/usr/include/signal.h" 2 3 4
+
+
+
+
+typedef void (*__sighandler_t) (int);
+
+
+
+
+extern __sighandler_t __sysv_signal (int __sig, __sighandler_t __handler)
+     __attribute__ ((__nothrow__ , __leaf__));
+
+extern __sighandler_t sysv_signal (int __sig, __sighandler_t __handler)
+     __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+
+extern __sighandler_t signal (int __sig, __sighandler_t __handler)
+     __attribute__ ((__nothrow__ , __leaf__));
+# 112 "/usr/include/signal.h" 3 4
+extern int kill (__pid_t __pid, int __sig) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+
+extern int killpg (__pid_t __pgrp, int __sig) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern int raise (int __sig) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern __sighandler_t ssignal (int __sig, __sighandler_t __handler)
+     __attribute__ ((__nothrow__ , __leaf__));
+extern int gsignal (int __sig) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+extern void psignal (int __sig, const char *__s);
+
+
+extern void psiginfo (const siginfo_t *__pinfo, const char *__s);
+# 151 "/usr/include/signal.h" 3 4
+extern int sigpause (int __sig) __asm__ ("__xpg_sigpause")
+  __attribute__ ((__deprecated__ ("Use the sigsuspend function instead")));
+# 173 "/usr/include/signal.h" 3 4
+extern int sigblock (int __mask) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__deprecated__));
+
+
+extern int sigsetmask (int __mask) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__deprecated__));
+
+
+extern int siggetmask (void) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__deprecated__));
+# 188 "/usr/include/signal.h" 3 4
+typedef __sighandler_t sighandler_t;
+
+
+
+
+typedef __sighandler_t sig_t;
+
+
+
+
+
+extern int sigemptyset (sigset_t *__set) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+extern int sigfillset (sigset_t *__set) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+extern int sigaddset (sigset_t *__set, int __signo) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+extern int sigdelset (sigset_t *__set, int __signo) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+extern int sigismember (const sigset_t *__set, int __signo)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+
+extern int sigisemptyset (const sigset_t *__set) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+extern int sigandset (sigset_t *__set, const sigset_t *__left,
+        const sigset_t *__right) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2, 3)));
+
+
+extern int sigorset (sigset_t *__set, const sigset_t *__left,
+       const sigset_t *__right) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2, 3)));
+
+
+
+
+# 1 "/usr/include/x86_64-linux-gnu/bits/sigaction.h" 1 3 4
+# 27 "/usr/include/x86_64-linux-gnu/bits/sigaction.h" 3 4
+struct sigaction
+  {
+
+
+    union
+      {
+
+ __sighandler_t sa_handler;
+
+ void (*sa_sigaction) (int, siginfo_t *, void *);
+      }
+    __sigaction_handler;
+
+
+
+
+
+
+
+    __sigset_t sa_mask;
+
+
+    int sa_flags;
+
+
+    void (*sa_restorer) (void);
+  };
+# 230 "/usr/include/signal.h" 2 3 4
+
+
+extern int sigprocmask (int __how, const sigset_t *__restrict __set,
+   sigset_t *__restrict __oset) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+
+extern int sigsuspend (const sigset_t *__set) __attribute__ ((__nonnull__ (1)));
+
+
+extern int sigaction (int __sig, const struct sigaction *__restrict __act,
+        struct sigaction *__restrict __oact) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern int sigpending (sigset_t *__set) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+
+
+
+
+
+extern int sigwait (const sigset_t *__restrict __set, int *__restrict __sig)
+     __attribute__ ((__nonnull__ (1, 2)));
+
+
+
+
+
+
+
+extern int sigwaitinfo (const sigset_t *__restrict __set,
+   siginfo_t *__restrict __info) __attribute__ ((__nonnull__ (1)));
+
+
+
+
+
+
+
+extern int sigtimedwait (const sigset_t *__restrict __set,
+    siginfo_t *__restrict __info,
+    const struct timespec *__restrict __timeout)
+     __attribute__ ((__nonnull__ (1)));
+# 292 "/usr/include/signal.h" 3 4
+extern int sigqueue (__pid_t __pid, int __sig, const union sigval __val)
+     __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+
+
+# 1 "/usr/include/x86_64-linux-gnu/bits/sigcontext.h" 1 3 4
+# 31 "/usr/include/x86_64-linux-gnu/bits/sigcontext.h" 3 4
+struct _fpx_sw_bytes
+{
+  __uint32_t magic1;
+  __uint32_t extended_size;
+  __uint64_t xstate_bv;
+  __uint32_t xstate_size;
+  __uint32_t __glibc_reserved1[7];
+};
+
+struct _fpreg
+{
+  unsigned short significand[4];
+  unsigned short exponent;
+};
+
+struct _fpxreg
+{
+  unsigned short significand[4];
+  unsigned short exponent;
+  unsigned short __glibc_reserved1[3];
+};
+
+struct _xmmreg
+{
+  __uint32_t element[4];
+};
+# 123 "/usr/include/x86_64-linux-gnu/bits/sigcontext.h" 3 4
+struct _fpstate
+{
+
+  __uint16_t cwd;
+  __uint16_t swd;
+  __uint16_t ftw;
+  __uint16_t fop;
+  __uint64_t rip;
+  __uint64_t rdp;
+  __uint32_t mxcsr;
+  __uint32_t mxcr_mask;
+  struct _fpxreg _st[8];
+  struct _xmmreg _xmm[16];
+  __uint32_t __glibc_reserved1[24];
+};
+
+struct sigcontext
+{
+  __uint64_t r8;
+  __uint64_t r9;
+  __uint64_t r10;
+  __uint64_t r11;
+  __uint64_t r12;
+  __uint64_t r13;
+  __uint64_t r14;
+  __uint64_t r15;
+  __uint64_t rdi;
+  __uint64_t rsi;
+  __uint64_t rbp;
+  __uint64_t rbx;
+  __uint64_t rdx;
+  __uint64_t rax;
+  __uint64_t rcx;
+  __uint64_t rsp;
+  __uint64_t rip;
+  __uint64_t eflags;
+  unsigned short cs;
+  unsigned short gs;
+  unsigned short fs;
+  unsigned short __pad0;
+  __uint64_t err;
+  __uint64_t trapno;
+  __uint64_t oldmask;
+  __uint64_t cr2;
+  __extension__ union
+    {
+      struct _fpstate * fpstate;
+      __uint64_t __fpstate_word;
+    };
+  __uint64_t __reserved1 [8];
+};
+
+
+
+struct _xsave_hdr
+{
+  __uint64_t xstate_bv;
+  __uint64_t __glibc_reserved1[2];
+  __uint64_t __glibc_reserved2[5];
+};
+
+struct _ymmh_state
+{
+  __uint32_t ymmh_space[64];
+};
+
+struct _xstate
+{
+  struct _fpstate fpstate;
+  struct _xsave_hdr xstate_hdr;
+  struct _ymmh_state ymmh;
+};
+# 302 "/usr/include/signal.h" 2 3 4
+
+
+extern int sigreturn (struct sigcontext *__scp) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h" 1 3 4
+# 312 "/usr/include/signal.h" 2 3 4
+
+# 1 "/usr/include/x86_64-linux-gnu/bits/types/stack_t.h" 1 3 4
+# 23 "/usr/include/x86_64-linux-gnu/bits/types/stack_t.h" 3 4
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h" 1 3 4
+# 24 "/usr/include/x86_64-linux-gnu/bits/types/stack_t.h" 2 3 4
+
+
+typedef struct
+  {
+    void *ss_sp;
+    int ss_flags;
+    size_t ss_size;
+  } stack_t;
+# 314 "/usr/include/signal.h" 2 3 4
+
+
+# 1 "/usr/include/x86_64-linux-gnu/sys/ucontext.h" 1 3 4
+# 37 "/usr/include/x86_64-linux-gnu/sys/ucontext.h" 3 4
+__extension__ typedef long long int greg_t;
+# 46 "/usr/include/x86_64-linux-gnu/sys/ucontext.h" 3 4
+typedef greg_t gregset_t[23];
+
+
+
+enum
+{
+  REG_R8 = 0,
+
+  REG_R9,
+
+  REG_R10,
+
+  REG_R11,
+
+  REG_R12,
+
+  REG_R13,
+
+  REG_R14,
+
+  REG_R15,
+
+  REG_RDI,
+
+  REG_RSI,
+
+  REG_RBP,
+
+  REG_RBX,
+
+  REG_RDX,
+
+  REG_RAX,
+
+  REG_RCX,
+
+  REG_RSP,
+
+  REG_RIP,
+
+  REG_EFL,
+
+  REG_CSGSFS,
+
+  REG_ERR,
+
+  REG_TRAPNO,
+
+  REG_OLDMASK,
+
+  REG_CR2
+
+};
+
+
+struct _libc_fpxreg
+{
+  unsigned short int significand[4];
+  unsigned short int exponent;
+  unsigned short int __glibc_reserved1[3];
+};
+
+struct _libc_xmmreg
+{
+  __uint32_t element[4];
+};
+
+struct _libc_fpstate
+{
+
+  __uint16_t cwd;
+  __uint16_t swd;
+  __uint16_t ftw;
+  __uint16_t fop;
+  __uint64_t rip;
+  __uint64_t rdp;
+  __uint32_t mxcsr;
+  __uint32_t mxcr_mask;
+  struct _libc_fpxreg _st[8];
+  struct _libc_xmmreg _xmm[16];
+  __uint32_t __glibc_reserved1[24];
+};
+
+
+typedef struct _libc_fpstate *fpregset_t;
+
+
+typedef struct
+  {
+    gregset_t gregs;
+
+    fpregset_t fpregs;
+    __extension__ unsigned long long __reserved1 [8];
+} mcontext_t;
+
+
+typedef struct ucontext_t
+  {
+    unsigned long int uc_flags;
+    struct ucontext_t *uc_link;
+    stack_t uc_stack;
+    mcontext_t uc_mcontext;
+    sigset_t uc_sigmask;
+    struct _libc_fpstate __fpregs_mem;
+    __extension__ unsigned long long int __ssp[4];
+  } ucontext_t;
+# 317 "/usr/include/signal.h" 2 3 4
+
+
+
+
+
+
+
+extern int siginterrupt (int __sig, int __interrupt) __attribute__ ((__nothrow__ , __leaf__))
+  __attribute__ ((__deprecated__ ("Use sigaction with SA_RESTART instead")));
+
+# 1 "/usr/include/x86_64-linux-gnu/bits/sigstack.h" 1 3 4
+# 328 "/usr/include/signal.h" 2 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/sigstksz.h" 1 3 4
+# 24 "/usr/include/x86_64-linux-gnu/bits/sigstksz.h" 3 4
+# 1 "/usr/include/unistd.h" 1 3 4
+# 27 "/usr/include/unistd.h" 3 4
+
+# 202 "/usr/include/unistd.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/posix_opt.h" 1 3 4
+# 203 "/usr/include/unistd.h" 2 3 4
+
+
+
+# 1 "/usr/include/x86_64-linux-gnu/bits/environments.h" 1 3 4
+# 22 "/usr/include/x86_64-linux-gnu/bits/environments.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/wordsize.h" 1 3 4
+# 23 "/usr/include/x86_64-linux-gnu/bits/environments.h" 2 3 4
+# 207 "/usr/include/unistd.h" 2 3 4
+# 226 "/usr/include/unistd.h" 3 4
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h" 1 3 4
+# 227 "/usr/include/unistd.h" 2 3 4
+# 287 "/usr/include/unistd.h" 3 4
+extern int access (const char *__name, int __type) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+
+
+extern int euidaccess (const char *__name, int __type)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+extern int eaccess (const char *__name, int __type)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+extern int execveat (int __fd, const char *__path, char *const __argv[],
+                     char *const __envp[], int __flags)
+    __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (2, 3)));
+
+
+
+
+
+
+extern int faccessat (int __fd, const char *__file, int __type, int __flag)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (2))) ;
+# 339 "/usr/include/unistd.h" 3 4
+extern __off_t lseek (int __fd, __off_t __offset, int __whence) __attribute__ ((__nothrow__ , __leaf__));
+# 350 "/usr/include/unistd.h" 3 4
+extern __off64_t lseek64 (int __fd, __off64_t __offset, int __whence)
+     __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+
+extern int close (int __fd);
+
+
+
+
+extern void closefrom (int __lowfd) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+
+
+extern ssize_t read (int __fd, void *__buf, size_t __nbytes)
+    __attribute__ ((__access__ (__write_only__, 2, 3)));
+
+
+
+
+
+extern ssize_t write (int __fd, const void *__buf, size_t __n)
+    __attribute__ ((__access__ (__read_only__, 2, 3)));
+# 389 "/usr/include/unistd.h" 3 4
+extern ssize_t pread (int __fd, void *__buf, size_t __nbytes,
+        __off_t __offset)
+    __attribute__ ((__access__ (__write_only__, 2, 3)));
+
+
+
+
+
+
+extern ssize_t pwrite (int __fd, const void *__buf, size_t __n,
+         __off_t __offset)
+    __attribute__ ((__access__ (__read_only__, 2, 3)));
+# 422 "/usr/include/unistd.h" 3 4
+extern ssize_t pread64 (int __fd, void *__buf, size_t __nbytes,
+   __off64_t __offset)
+    __attribute__ ((__access__ (__write_only__, 2, 3)));
+
+
+extern ssize_t pwrite64 (int __fd, const void *__buf, size_t __n,
+    __off64_t __offset)
+    __attribute__ ((__access__ (__read_only__, 2, 3)));
+
+
+
+
+
+
+
+extern int pipe (int __pipedes[2]) __attribute__ ((__nothrow__ , __leaf__)) ;
+
+
+
+
+extern int pipe2 (int __pipedes[2], int __flags) __attribute__ ((__nothrow__ , __leaf__)) ;
+# 452 "/usr/include/unistd.h" 3 4
+extern unsigned int alarm (unsigned int __seconds) __attribute__ ((__nothrow__ , __leaf__));
+# 464 "/usr/include/unistd.h" 3 4
+extern unsigned int sleep (unsigned int __seconds);
+
+
+
+
+
+
+
+extern __useconds_t ualarm (__useconds_t __value, __useconds_t __interval)
+     __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+
+extern int usleep (__useconds_t __useconds);
+# 489 "/usr/include/unistd.h" 3 4
+extern int pause (void);
+
+
+
+extern int chown (const char *__file, __uid_t __owner, __gid_t __group)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1))) ;
+
+
+
+extern int fchown (int __fd, __uid_t __owner, __gid_t __group) __attribute__ ((__nothrow__ , __leaf__)) ;
+
+
+
+
+extern int lchown (const char *__file, __uid_t __owner, __gid_t __group)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1))) ;
+
+
+
+
+
+
+extern int fchownat (int __fd, const char *__file, __uid_t __owner,
+       __gid_t __group, int __flag)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (2))) ;
+
+
+
+extern int chdir (const char *__path) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1))) ;
+
+
+
+extern int fchdir (int __fd) __attribute__ ((__nothrow__ , __leaf__)) ;
+# 531 "/usr/include/unistd.h" 3 4
+extern char *getcwd (char *__buf, size_t __size) __attribute__ ((__nothrow__ , __leaf__)) ;
+
+
+
+
+
+extern char *get_current_dir_name (void) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+
+
+extern char *getwd (char *__buf)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1))) __attribute__ ((__deprecated__))
+    __attribute__ ((__access__ (__write_only__, 1)));
+
+
+
+
+extern int dup (int __fd) __attribute__ ((__nothrow__ , __leaf__)) ;
+
+
+extern int dup2 (int __fd, int __fd2) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+extern int dup3 (int __fd, int __fd2, int __flags) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern char **__environ;
+
+extern char **environ;
+
+
+
+
+
+extern int execve (const char *__path, char *const __argv[],
+     char *const __envp[]) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+
+
+extern int fexecve (int __fd, char *const __argv[], char *const __envp[])
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (2)));
+
+
+
+
+extern int execv (const char *__path, char *const __argv[])
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+
+extern int execle (const char *__path, const char *__arg, ...)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+
+extern int execl (const char *__path, const char *__arg, ...)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+
+extern int execvp (const char *__file, char *const __argv[])
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+
+
+extern int execlp (const char *__file, const char *__arg, ...)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+
+
+extern int execvpe (const char *__file, char *const __argv[],
+      char *const __envp[])
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+
+
+
+extern int nice (int __inc) __attribute__ ((__nothrow__ , __leaf__)) ;
+
+
+
+
+extern void _exit (int __status) __attribute__ ((__noreturn__));
+
+
+
+
+
+# 1 "/usr/include/x86_64-linux-gnu/bits/confname.h" 1 3 4
+# 24 "/usr/include/x86_64-linux-gnu/bits/confname.h" 3 4
+enum
+  {
+    _PC_LINK_MAX,
+
+    _PC_MAX_CANON,
+
+    _PC_MAX_INPUT,
+
+    _PC_NAME_MAX,
+
+    _PC_PATH_MAX,
+
+    _PC_PIPE_BUF,
+
+    _PC_CHOWN_RESTRICTED,
+
+    _PC_NO_TRUNC,
+
+    _PC_VDISABLE,
+
+    _PC_SYNC_IO,
+
+    _PC_ASYNC_IO,
+
+    _PC_PRIO_IO,
+
+    _PC_SOCK_MAXBUF,
+
+    _PC_FILESIZEBITS,
+
+    _PC_REC_INCR_XFER_SIZE,
+
+    _PC_REC_MAX_XFER_SIZE,
+
+    _PC_REC_MIN_XFER_SIZE,
+
+    _PC_REC_XFER_ALIGN,
+
+    _PC_ALLOC_SIZE_MIN,
+
+    _PC_SYMLINK_MAX,
+
+    _PC_2_SYMLINKS
+
+  };
+
+
+enum
+  {
+    _SC_ARG_MAX,
+
+    _SC_CHILD_MAX,
+
+    _SC_CLK_TCK,
+
+    _SC_NGROUPS_MAX,
+
+    _SC_OPEN_MAX,
+
+    _SC_STREAM_MAX,
+
+    _SC_TZNAME_MAX,
+
+    _SC_JOB_CONTROL,
+
+    _SC_SAVED_IDS,
+
+    _SC_REALTIME_SIGNALS,
+
+    _SC_PRIORITY_SCHEDULING,
+
+    _SC_TIMERS,
+
+    _SC_ASYNCHRONOUS_IO,
+
+    _SC_PRIORITIZED_IO,
+
+    _SC_SYNCHRONIZED_IO,
+
+    _SC_FSYNC,
+
+    _SC_MAPPED_FILES,
+
+    _SC_MEMLOCK,
+
+    _SC_MEMLOCK_RANGE,
+
+    _SC_MEMORY_PROTECTION,
+
+    _SC_MESSAGE_PASSING,
+
+    _SC_SEMAPHORES,
+
+    _SC_SHARED_MEMORY_OBJECTS,
+
+    _SC_AIO_LISTIO_MAX,
+
+    _SC_AIO_MAX,
+
+    _SC_AIO_PRIO_DELTA_MAX,
+
+    _SC_DELAYTIMER_MAX,
+
+    _SC_MQ_OPEN_MAX,
+
+    _SC_MQ_PRIO_MAX,
+
+    _SC_VERSION,
+
+    _SC_PAGESIZE,
+
+
+    _SC_RTSIG_MAX,
+
+    _SC_SEM_NSEMS_MAX,
+
+    _SC_SEM_VALUE_MAX,
+
+    _SC_SIGQUEUE_MAX,
+
+    _SC_TIMER_MAX,
+
+
+
+
+    _SC_BC_BASE_MAX,
+
+    _SC_BC_DIM_MAX,
+
+    _SC_BC_SCALE_MAX,
+
+    _SC_BC_STRING_MAX,
+
+    _SC_COLL_WEIGHTS_MAX,
+
+    _SC_EQUIV_CLASS_MAX,
+
+    _SC_EXPR_NEST_MAX,
+
+    _SC_LINE_MAX,
+
+    _SC_RE_DUP_MAX,
+
+    _SC_CHARCLASS_NAME_MAX,
+
+
+    _SC_2_VERSION,
+
+    _SC_2_C_BIND,
+
+    _SC_2_C_DEV,
+
+    _SC_2_FORT_DEV,
+
+    _SC_2_FORT_RUN,
+
+    _SC_2_SW_DEV,
+
+    _SC_2_LOCALEDEF,
+
+
+    _SC_PII,
+
+    _SC_PII_XTI,
+
+    _SC_PII_SOCKET,
+
+    _SC_PII_INTERNET,
+
+    _SC_PII_OSI,
+
+    _SC_POLL,
+
+    _SC_SELECT,
+
+    _SC_UIO_MAXIOV,
+
+    _SC_IOV_MAX = _SC_UIO_MAXIOV,
+
+    _SC_PII_INTERNET_STREAM,
+
+    _SC_PII_INTERNET_DGRAM,
+
+    _SC_PII_OSI_COTS,
+
+    _SC_PII_OSI_CLTS,
+
+    _SC_PII_OSI_M,
+
+    _SC_T_IOV_MAX,
+
+
+
+    _SC_THREADS,
+
+    _SC_THREAD_SAFE_FUNCTIONS,
+
+    _SC_GETGR_R_SIZE_MAX,
+
+    _SC_GETPW_R_SIZE_MAX,
+
+    _SC_LOGIN_NAME_MAX,
+
+    _SC_TTY_NAME_MAX,
+
+    _SC_THREAD_DESTRUCTOR_ITERATIONS,
+
+    _SC_THREAD_KEYS_MAX,
+
+    _SC_THREAD_STACK_MIN,
+
+    _SC_THREAD_THREADS_MAX,
+
+    _SC_THREAD_ATTR_STACKADDR,
+
+    _SC_THREAD_ATTR_STACKSIZE,
+
+    _SC_THREAD_PRIORITY_SCHEDULING,
+
+    _SC_THREAD_PRIO_INHERIT,
+
+    _SC_THREAD_PRIO_PROTECT,
+
+    _SC_THREAD_PROCESS_SHARED,
+
+
+    _SC_NPROCESSORS_CONF,
+
+    _SC_NPROCESSORS_ONLN,
+
+    _SC_PHYS_PAGES,
+
+    _SC_AVPHYS_PAGES,
+
+    _SC_ATEXIT_MAX,
+
+    _SC_PASS_MAX,
+
+
+    _SC_XOPEN_VERSION,
+
+    _SC_XOPEN_XCU_VERSION,
+
+    _SC_XOPEN_UNIX,
+
+    _SC_XOPEN_CRYPT,
+
+    _SC_XOPEN_ENH_I18N,
+
+    _SC_XOPEN_SHM,
+
+
+    _SC_2_CHAR_TERM,
+
+    _SC_2_C_VERSION,
+
+    _SC_2_UPE,
+
+
+    _SC_XOPEN_XPG2,
+
+    _SC_XOPEN_XPG3,
+
+    _SC_XOPEN_XPG4,
+
+
+    _SC_CHAR_BIT,
+
+    _SC_CHAR_MAX,
+
+    _SC_CHAR_MIN,
+
+    _SC_INT_MAX,
+
+    _SC_INT_MIN,
+
+    _SC_LONG_BIT,
+
+    _SC_WORD_BIT,
+
+    _SC_MB_LEN_MAX,
+
+    _SC_NZERO,
+
+    _SC_SSIZE_MAX,
+
+    _SC_SCHAR_MAX,
+
+    _SC_SCHAR_MIN,
+
+    _SC_SHRT_MAX,
+
+    _SC_SHRT_MIN,
+
+    _SC_UCHAR_MAX,
+
+    _SC_UINT_MAX,
+
+    _SC_ULONG_MAX,
+
+    _SC_USHRT_MAX,
+
+
+    _SC_NL_ARGMAX,
+
+    _SC_NL_LANGMAX,
+
+    _SC_NL_MSGMAX,
+
+    _SC_NL_NMAX,
+
+    _SC_NL_SETMAX,
+
+    _SC_NL_TEXTMAX,
+
+
+    _SC_XBS5_ILP32_OFF32,
+
+    _SC_XBS5_ILP32_OFFBIG,
+
+    _SC_XBS5_LP64_OFF64,
+
+    _SC_XBS5_LPBIG_OFFBIG,
+
+
+    _SC_XOPEN_LEGACY,
+
+    _SC_XOPEN_REALTIME,
+
+    _SC_XOPEN_REALTIME_THREADS,
+
+
+    _SC_ADVISORY_INFO,
+
+    _SC_BARRIERS,
+
+    _SC_BASE,
+
+    _SC_C_LANG_SUPPORT,
+
+    _SC_C_LANG_SUPPORT_R,
+
+    _SC_CLOCK_SELECTION,
+
+    _SC_CPUTIME,
+
+    _SC_THREAD_CPUTIME,
+
+    _SC_DEVICE_IO,
+
+    _SC_DEVICE_SPECIFIC,
+
+    _SC_DEVICE_SPECIFIC_R,
+
+    _SC_FD_MGMT,
+
+    _SC_FIFO,
+
+    _SC_PIPE,
+
+    _SC_FILE_ATTRIBUTES,
+
+    _SC_FILE_LOCKING,
+
+    _SC_FILE_SYSTEM,
+
+    _SC_MONOTONIC_CLOCK,
+
+    _SC_MULTI_PROCESS,
+
+    _SC_SINGLE_PROCESS,
+
+    _SC_NETWORKING,
+
+    _SC_READER_WRITER_LOCKS,
+
+    _SC_SPIN_LOCKS,
+
+    _SC_REGEXP,
+
+    _SC_REGEX_VERSION,
+
+    _SC_SHELL,
+
+    _SC_SIGNALS,
+
+    _SC_SPAWN,
+
+    _SC_SPORADIC_SERVER,
+
+    _SC_THREAD_SPORADIC_SERVER,
+
+    _SC_SYSTEM_DATABASE,
+
+    _SC_SYSTEM_DATABASE_R,
+
+    _SC_TIMEOUTS,
+
+    _SC_TYPED_MEMORY_OBJECTS,
+
+    _SC_USER_GROUPS,
+
+    _SC_USER_GROUPS_R,
+
+    _SC_2_PBS,
+
+    _SC_2_PBS_ACCOUNTING,
+
+    _SC_2_PBS_LOCATE,
+
+    _SC_2_PBS_MESSAGE,
+
+    _SC_2_PBS_TRACK,
+
+    _SC_SYMLOOP_MAX,
+
+    _SC_STREAMS,
+
+    _SC_2_PBS_CHECKPOINT,
+
+
+    _SC_V6_ILP32_OFF32,
+
+    _SC_V6_ILP32_OFFBIG,
+
+    _SC_V6_LP64_OFF64,
+
+    _SC_V6_LPBIG_OFFBIG,
+
+
+    _SC_HOST_NAME_MAX,
+
+    _SC_TRACE,
+
+    _SC_TRACE_EVENT_FILTER,
+
+    _SC_TRACE_INHERIT,
+
+    _SC_TRACE_LOG,
+
+
+    _SC_LEVEL1_ICACHE_SIZE,
+
+    _SC_LEVEL1_ICACHE_ASSOC,
+
+    _SC_LEVEL1_ICACHE_LINESIZE,
+
+    _SC_LEVEL1_DCACHE_SIZE,
+
+    _SC_LEVEL1_DCACHE_ASSOC,
+
+    _SC_LEVEL1_DCACHE_LINESIZE,
+
+    _SC_LEVEL2_CACHE_SIZE,
+
+    _SC_LEVEL2_CACHE_ASSOC,
+
+    _SC_LEVEL2_CACHE_LINESIZE,
+
+    _SC_LEVEL3_CACHE_SIZE,
+
+    _SC_LEVEL3_CACHE_ASSOC,
+
+    _SC_LEVEL3_CACHE_LINESIZE,
+
+    _SC_LEVEL4_CACHE_SIZE,
+
+    _SC_LEVEL4_CACHE_ASSOC,
+
+    _SC_LEVEL4_CACHE_LINESIZE,
+
+
+
+    _SC_IPV6 = _SC_LEVEL1_ICACHE_SIZE + 50,
+
+    _SC_RAW_SOCKETS,
+
+
+    _SC_V7_ILP32_OFF32,
+
+    _SC_V7_ILP32_OFFBIG,
+
+    _SC_V7_LP64_OFF64,
+
+    _SC_V7_LPBIG_OFFBIG,
+
+
+    _SC_SS_REPL_MAX,
+
+
+    _SC_TRACE_EVENT_NAME_MAX,
+
+    _SC_TRACE_NAME_MAX,
+
+    _SC_TRACE_SYS_MAX,
+
+    _SC_TRACE_USER_EVENT_MAX,
+
+
+    _SC_XOPEN_STREAMS,
+
+
+    _SC_THREAD_ROBUST_PRIO_INHERIT,
+
+    _SC_THREAD_ROBUST_PRIO_PROTECT,
+
+
+    _SC_MINSIGSTKSZ,
+
+
+    _SC_SIGSTKSZ
+
+  };
+
+
+enum
+  {
+    _CS_PATH,
+
+
+    _CS_V6_WIDTH_RESTRICTED_ENVS,
+
+
+
+    _CS_GNU_LIBC_VERSION,
+
+    _CS_GNU_LIBPTHREAD_VERSION,
+
+
+    _CS_V5_WIDTH_RESTRICTED_ENVS,
+
+
+
+    _CS_V7_WIDTH_RESTRICTED_ENVS,
+
+
+
+    _CS_LFS_CFLAGS = 1000,
+
+    _CS_LFS_LDFLAGS,
+
+    _CS_LFS_LIBS,
+
+    _CS_LFS_LINTFLAGS,
+
+    _CS_LFS64_CFLAGS,
+
+    _CS_LFS64_LDFLAGS,
+
+    _CS_LFS64_LIBS,
+
+    _CS_LFS64_LINTFLAGS,
+
+
+    _CS_XBS5_ILP32_OFF32_CFLAGS = 1100,
+
+    _CS_XBS5_ILP32_OFF32_LDFLAGS,
+
+    _CS_XBS5_ILP32_OFF32_LIBS,
+
+    _CS_XBS5_ILP32_OFF32_LINTFLAGS,
+
+    _CS_XBS5_ILP32_OFFBIG_CFLAGS,
+
+    _CS_XBS5_ILP32_OFFBIG_LDFLAGS,
+
+    _CS_XBS5_ILP32_OFFBIG_LIBS,
+
+    _CS_XBS5_ILP32_OFFBIG_LINTFLAGS,
+
+    _CS_XBS5_LP64_OFF64_CFLAGS,
+
+    _CS_XBS5_LP64_OFF64_LDFLAGS,
+
+    _CS_XBS5_LP64_OFF64_LIBS,
+
+    _CS_XBS5_LP64_OFF64_LINTFLAGS,
+
+    _CS_XBS5_LPBIG_OFFBIG_CFLAGS,
+
+    _CS_XBS5_LPBIG_OFFBIG_LDFLAGS,
+
+    _CS_XBS5_LPBIG_OFFBIG_LIBS,
+
+    _CS_XBS5_LPBIG_OFFBIG_LINTFLAGS,
+
+
+    _CS_POSIX_V6_ILP32_OFF32_CFLAGS,
+
+    _CS_POSIX_V6_ILP32_OFF32_LDFLAGS,
+
+    _CS_POSIX_V6_ILP32_OFF32_LIBS,
+
+    _CS_POSIX_V6_ILP32_OFF32_LINTFLAGS,
+
+    _CS_POSIX_V6_ILP32_OFFBIG_CFLAGS,
+
+    _CS_POSIX_V6_ILP32_OFFBIG_LDFLAGS,
+
+    _CS_POSIX_V6_ILP32_OFFBIG_LIBS,
+
+    _CS_POSIX_V6_ILP32_OFFBIG_LINTFLAGS,
+
+    _CS_POSIX_V6_LP64_OFF64_CFLAGS,
+
+    _CS_POSIX_V6_LP64_OFF64_LDFLAGS,
+
+    _CS_POSIX_V6_LP64_OFF64_LIBS,
+
+    _CS_POSIX_V6_LP64_OFF64_LINTFLAGS,
+
+    _CS_POSIX_V6_LPBIG_OFFBIG_CFLAGS,
+
+    _CS_POSIX_V6_LPBIG_OFFBIG_LDFLAGS,
+
+    _CS_POSIX_V6_LPBIG_OFFBIG_LIBS,
+
+    _CS_POSIX_V6_LPBIG_OFFBIG_LINTFLAGS,
+
+
+    _CS_POSIX_V7_ILP32_OFF32_CFLAGS,
+
+    _CS_POSIX_V7_ILP32_OFF32_LDFLAGS,
+
+    _CS_POSIX_V7_ILP32_OFF32_LIBS,
+
+    _CS_POSIX_V7_ILP32_OFF32_LINTFLAGS,
+
+    _CS_POSIX_V7_ILP32_OFFBIG_CFLAGS,
+
+    _CS_POSIX_V7_ILP32_OFFBIG_LDFLAGS,
+
+    _CS_POSIX_V7_ILP32_OFFBIG_LIBS,
+
+    _CS_POSIX_V7_ILP32_OFFBIG_LINTFLAGS,
+
+    _CS_POSIX_V7_LP64_OFF64_CFLAGS,
+
+    _CS_POSIX_V7_LP64_OFF64_LDFLAGS,
+
+    _CS_POSIX_V7_LP64_OFF64_LIBS,
+
+    _CS_POSIX_V7_LP64_OFF64_LINTFLAGS,
+
+    _CS_POSIX_V7_LPBIG_OFFBIG_CFLAGS,
+
+    _CS_POSIX_V7_LPBIG_OFFBIG_LDFLAGS,
+
+    _CS_POSIX_V7_LPBIG_OFFBIG_LIBS,
+
+    _CS_POSIX_V7_LPBIG_OFFBIG_LINTFLAGS,
+
+
+    _CS_V6_ENV,
+
+    _CS_V7_ENV
+
+  };
+# 631 "/usr/include/unistd.h" 2 3 4
+
+
+extern long int pathconf (const char *__path, int __name)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+extern long int fpathconf (int __fd, int __name) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern long int sysconf (int __name) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern size_t confstr (int __name, char *__buf, size_t __len) __attribute__ ((__nothrow__ , __leaf__))
+    __attribute__ ((__access__ (__write_only__, 2, 3)));
+
+
+
+
+extern __pid_t getpid (void) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern __pid_t getppid (void) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern __pid_t getpgrp (void) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern __pid_t __getpgid (__pid_t __pid) __attribute__ ((__nothrow__ , __leaf__));
+
+extern __pid_t getpgid (__pid_t __pid) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+
+extern int setpgid (__pid_t __pid, __pid_t __pgid) __attribute__ ((__nothrow__ , __leaf__));
+# 682 "/usr/include/unistd.h" 3 4
+extern int setpgrp (void) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+
+extern __pid_t setsid (void) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern __pid_t getsid (__pid_t __pid) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern __uid_t getuid (void) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern __uid_t geteuid (void) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern __gid_t getgid (void) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern __gid_t getegid (void) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+extern int getgroups (int __size, __gid_t __list[]) __attribute__ ((__nothrow__ , __leaf__))
+    __attribute__ ((__access__ (__write_only__, 2, 1)));
+
+
+extern int group_member (__gid_t __gid) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+
+extern int setuid (__uid_t __uid) __attribute__ ((__nothrow__ , __leaf__)) ;
+
+
+
+
+extern int setreuid (__uid_t __ruid, __uid_t __euid) __attribute__ ((__nothrow__ , __leaf__)) ;
+
+
+
+
+extern int seteuid (__uid_t __uid) __attribute__ ((__nothrow__ , __leaf__)) ;
+
+
+
+
+
+
+extern int setgid (__gid_t __gid) __attribute__ ((__nothrow__ , __leaf__)) ;
+
+
+
+
+extern int setregid (__gid_t __rgid, __gid_t __egid) __attribute__ ((__nothrow__ , __leaf__)) ;
+
+
+
+
+extern int setegid (__gid_t __gid) __attribute__ ((__nothrow__ , __leaf__)) ;
+
+
+
+
+
+extern int getresuid (__uid_t *__ruid, __uid_t *__euid, __uid_t *__suid)
+     __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern int getresgid (__gid_t *__rgid, __gid_t *__egid, __gid_t *__sgid)
+     __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern int setresuid (__uid_t __ruid, __uid_t __euid, __uid_t __suid)
+     __attribute__ ((__nothrow__ , __leaf__)) ;
+
+
+
+extern int setresgid (__gid_t __rgid, __gid_t __egid, __gid_t __sgid)
+     __attribute__ ((__nothrow__ , __leaf__)) ;
+
+
+
+
+
+
+extern __pid_t fork (void) __attribute__ ((__nothrow__));
+
+
+
+
+
+
+
+extern __pid_t vfork (void) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+
+extern __pid_t _Fork (void) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+extern char *ttyname (int __fd) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern int ttyname_r (int __fd, char *__buf, size_t __buflen)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (2)))
+     __attribute__ ((__access__ (__write_only__, 2, 3)));
+
+
+
+extern int isatty (int __fd) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+extern int ttyslot (void) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+extern int link (const char *__from, const char *__to)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2))) ;
+
+
+
+
+extern int linkat (int __fromfd, const char *__from, int __tofd,
+     const char *__to, int __flags)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (2, 4))) ;
+
+
+
+
+extern int symlink (const char *__from, const char *__to)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2))) ;
+
+
+
+
+extern ssize_t readlink (const char *__restrict __path,
+    char *__restrict __buf, size_t __len)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)))
+     __attribute__ ((__access__ (__write_only__, 2, 3)));
+
+
+
+
+
+extern int symlinkat (const char *__from, int __tofd,
+        const char *__to) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 3))) ;
+
+
+extern ssize_t readlinkat (int __fd, const char *__restrict __path,
+      char *__restrict __buf, size_t __len)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (2, 3)))
+     __attribute__ ((__access__ (__write_only__, 3, 4)));
+
+
+
+extern int unlink (const char *__name) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+
+extern int unlinkat (int __fd, const char *__name, int __flag)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (2)));
+
+
+
+extern int rmdir (const char *__path) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+
+extern __pid_t tcgetpgrp (int __fd) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern int tcsetpgrp (int __fd, __pid_t __pgrp_id) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+
+extern char *getlogin (void);
+
+
+
+
+
+
+
+extern int getlogin_r (char *__name, size_t __name_len) __attribute__ ((__nonnull__ (1)))
+    __attribute__ ((__access__ (__write_only__, 1, 2)));
+
+
+
+
+extern int setlogin (const char *__name) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+
+
+
+
+
+# 1 "/usr/include/x86_64-linux-gnu/bits/getopt_posix.h" 1 3 4
+# 27 "/usr/include/x86_64-linux-gnu/bits/getopt_posix.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/getopt_core.h" 1 3 4
+# 28 "/usr/include/x86_64-linux-gnu/bits/getopt_core.h" 3 4
+
+
+
+
+
+
+
+
+extern char *optarg;
+# 50 "/usr/include/x86_64-linux-gnu/bits/getopt_core.h" 3 4
+extern int optind;
+
+
+
+
+extern int opterr;
+
+
+
+extern int optopt;
+# 91 "/usr/include/x86_64-linux-gnu/bits/getopt_core.h" 3 4
+extern int getopt (int ___argc, char *const *___argv, const char *__shortopts)
+       __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (2, 3)));
+
+
+# 28 "/usr/include/x86_64-linux-gnu/bits/getopt_posix.h" 2 3 4
+
+
+# 49 "/usr/include/x86_64-linux-gnu/bits/getopt_posix.h" 3 4
+
+# 904 "/usr/include/unistd.h" 2 3 4
+
+
+
+
+
+
+
+extern int gethostname (char *__name, size_t __len) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)))
+    __attribute__ ((__access__ (__write_only__, 1, 2)));
+
+
+
+
+
+
+extern int sethostname (const char *__name, size_t __len)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1))) __attribute__ ((__access__ (__read_only__, 1, 2)));
+
+
+
+extern int sethostid (long int __id) __attribute__ ((__nothrow__ , __leaf__)) ;
+
+
+
+
+
+extern int getdomainname (char *__name, size_t __len)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)))
+     __attribute__ ((__access__ (__write_only__, 1, 2)));
+extern int setdomainname (const char *__name, size_t __len)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1))) __attribute__ ((__access__ (__read_only__, 1, 2)));
+
+
+
+
+extern int vhangup (void) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern int revoke (const char *__file) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1))) ;
+
+
+
+
+
+
+
+extern int profil (unsigned short int *__sample_buffer, size_t __size,
+     size_t __offset, unsigned int __scale)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+
+
+
+extern int acct (const char *__name) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern char *getusershell (void) __attribute__ ((__nothrow__ , __leaf__));
+extern void endusershell (void) __attribute__ ((__nothrow__ , __leaf__));
+extern void setusershell (void) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+extern int daemon (int __nochdir, int __noclose) __attribute__ ((__nothrow__ , __leaf__)) ;
+
+
+
+
+
+
+extern int chroot (const char *__path) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1))) ;
+
+
+
+extern char *getpass (const char *__prompt) __attribute__ ((__nonnull__ (1)));
+
+
+
+
+
+
+
+extern int fsync (int __fd);
+
+
+
+
+
+extern int syncfs (int __fd) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+
+extern long int gethostid (void);
+
+
+extern void sync (void) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+extern int getpagesize (void) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+
+
+extern int getdtablesize (void) __attribute__ ((__nothrow__ , __leaf__));
+# 1026 "/usr/include/unistd.h" 3 4
+extern int truncate (const char *__file, __off_t __length)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1))) ;
+# 1038 "/usr/include/unistd.h" 3 4
+extern int truncate64 (const char *__file, __off64_t __length)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1))) ;
+# 1049 "/usr/include/unistd.h" 3 4
+extern int ftruncate (int __fd, __off_t __length) __attribute__ ((__nothrow__ , __leaf__)) ;
+# 1059 "/usr/include/unistd.h" 3 4
+extern int ftruncate64 (int __fd, __off64_t __length) __attribute__ ((__nothrow__ , __leaf__)) ;
+# 1070 "/usr/include/unistd.h" 3 4
+extern int brk (void *__addr) __attribute__ ((__nothrow__ , __leaf__)) ;
+
+
+
+
+
+extern void *sbrk (intptr_t __delta) __attribute__ ((__nothrow__ , __leaf__));
+# 1091 "/usr/include/unistd.h" 3 4
+extern long int syscall (long int __sysno, ...) __attribute__ ((__nothrow__ , __leaf__));
+# 1142 "/usr/include/unistd.h" 3 4
+ssize_t copy_file_range (int __infd, __off64_t *__pinoff,
+    int __outfd, __off64_t *__poutoff,
+    size_t __length, unsigned int __flags);
+
+
+
+
+
+extern int fdatasync (int __fildes);
+# 1159 "/usr/include/unistd.h" 3 4
+extern char *crypt (const char *__key, const char *__salt)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+
+
+
+
+
+extern void swab (const void *__restrict __from, void *__restrict __to,
+    ssize_t __n) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)))
+    __attribute__ ((__access__ (__read_only__, 1, 3)))
+    __attribute__ ((__access__ (__write_only__, 2, 3)));
+# 1198 "/usr/include/unistd.h" 3 4
+int getentropy (void *__buffer, size_t __length)
+    __attribute__ ((__access__ (__write_only__, 1, 2)));
+# 1208 "/usr/include/unistd.h" 3 4
+extern int close_range (unsigned int __fd, unsigned int __max_fd,
+   int __flags) __attribute__ ((__nothrow__ , __leaf__));
+# 1218 "/usr/include/unistd.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/unistd_ext.h" 1 3 4
+# 34 "/usr/include/x86_64-linux-gnu/bits/unistd_ext.h" 3 4
+extern __pid_t gettid (void) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+# 1 "/usr/include/linux/close_range.h" 1 3 4
+# 39 "/usr/include/x86_64-linux-gnu/bits/unistd_ext.h" 2 3 4
+# 1219 "/usr/include/unistd.h" 2 3 4
+
+
+# 25 "/usr/include/x86_64-linux-gnu/bits/sigstksz.h" 2 3 4
+# 329 "/usr/include/signal.h" 2 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/ss_flags.h" 1 3 4
+# 27 "/usr/include/x86_64-linux-gnu/bits/ss_flags.h" 3 4
+enum
+{
+  SS_ONSTACK = 1,
+
+  SS_DISABLE
+
+};
+# 330 "/usr/include/signal.h" 2 3 4
+
+
+
+extern int sigaltstack (const stack_t *__restrict __ss,
+   stack_t *__restrict __oss) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+# 1 "/usr/include/x86_64-linux-gnu/bits/types/struct_sigstack.h" 1 3 4
+# 23 "/usr/include/x86_64-linux-gnu/bits/types/struct_sigstack.h" 3 4
+struct sigstack
+  {
+    void *ss_sp;
+    int ss_onstack;
+  };
+# 340 "/usr/include/signal.h" 2 3 4
+
+
+
+
+
+
+
+extern int sigstack (struct sigstack *__ss, struct sigstack *__oss)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__deprecated__));
+
+
+
+
+
+
+extern int sighold (int __sig) __attribute__ ((__nothrow__ , __leaf__))
+  __attribute__ ((__deprecated__ ("Use the sigprocmask function instead")));
+
+
+extern int sigrelse (int __sig) __attribute__ ((__nothrow__ , __leaf__))
+  __attribute__ ((__deprecated__ ("Use the sigprocmask function instead")));
+
+
+extern int sigignore (int __sig) __attribute__ ((__nothrow__ , __leaf__))
+  __attribute__ ((__deprecated__ ("Use the signal function instead")));
+
+
+extern __sighandler_t sigset (int __sig, __sighandler_t __disp) __attribute__ ((__nothrow__ , __leaf__))
+  __attribute__ ((__deprecated__ ("Use the signal and sigprocmask functions instead")))
+                                                        ;
+
+
+
+
+
+
+# 1 "/usr/include/x86_64-linux-gnu/bits/sigthread.h" 1 3 4
+# 31 "/usr/include/x86_64-linux-gnu/bits/sigthread.h" 3 4
+extern int pthread_sigmask (int __how,
+       const __sigset_t *__restrict __newmask,
+       __sigset_t *__restrict __oldmask)__attribute__ ((__nothrow__ , __leaf__));
+
+
+extern int pthread_kill (pthread_t __threadid, int __signo) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern int pthread_sigqueue (pthread_t __threadid, int __signo,
+        const union sigval __value) __attribute__ ((__nothrow__ , __leaf__));
+# 377 "/usr/include/signal.h" 2 3 4
+
+
+
+
+
+
+extern int __libc_current_sigrtmin (void) __attribute__ ((__nothrow__ , __leaf__));
+
+extern int __libc_current_sigrtmax (void) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+# 1 "/usr/include/x86_64-linux-gnu/bits/signal_ext.h" 1 3 4
+# 29 "/usr/include/x86_64-linux-gnu/bits/signal_ext.h" 3 4
+extern int tgkill (__pid_t __tgid, __pid_t __tid, int __signal);
+# 392 "/usr/include/signal.h" 2 3 4
+
+
+# 29 "/usr/include/x86_64-linux-gnu/sys/param.h" 2 3 4
+
+
+# 1 "/usr/include/x86_64-linux-gnu/bits/param.h" 1 3 4
+# 28 "/usr/include/x86_64-linux-gnu/bits/param.h" 3 4
+# 1 "/usr/include/linux/param.h" 1 3 4
+
+
+
+
+# 1 "/usr/include/x86_64-linux-gnu/asm/param.h" 1 3 4
+# 1 "/usr/include/asm-generic/param.h" 1 3 4
+# 2 "/usr/include/x86_64-linux-gnu/asm/param.h" 2 3 4
+# 6 "/usr/include/linux/param.h" 2 3 4
+# 29 "/usr/include/x86_64-linux-gnu/bits/param.h" 2 3 4
+# 32 "/usr/include/x86_64-linux-gnu/sys/param.h" 2 3 4
+# 42 "/home/dweller/neovim/.deps/usr/include/uv/unix.h" 2
+
+# 1 "/usr/include/pthread.h" 1 3 4
+# 22 "/usr/include/pthread.h" 3 4
+# 1 "/usr/include/sched.h" 1 3 4
+# 29 "/usr/include/sched.h" 3 4
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h" 1 3 4
+# 30 "/usr/include/sched.h" 2 3 4
+# 43 "/usr/include/sched.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/sched.h" 1 3 4
+# 76 "/usr/include/x86_64-linux-gnu/bits/sched.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/types/struct_sched_param.h" 1 3 4
+# 23 "/usr/include/x86_64-linux-gnu/bits/types/struct_sched_param.h" 3 4
+struct sched_param
+{
+  int sched_priority;
+};
+# 77 "/usr/include/x86_64-linux-gnu/bits/sched.h" 2 3 4
+
+
+
+
+
+extern int clone (int (*__fn) (void *__arg), void *__child_stack,
+    int __flags, void *__arg, ...) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern int unshare (int __flags) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern int sched_getcpu (void) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern int getcpu (unsigned int *, unsigned int *) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern int setns (int __fd, int __nstype) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+# 44 "/usr/include/sched.h" 2 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/cpu-set.h" 1 3 4
+# 32 "/usr/include/x86_64-linux-gnu/bits/cpu-set.h" 3 4
+typedef unsigned long int __cpu_mask;
+
+
+
+
+
+
+typedef struct
+{
+  __cpu_mask __bits[1024 / (8 * sizeof (__cpu_mask))];
+} cpu_set_t;
+# 115 "/usr/include/x86_64-linux-gnu/bits/cpu-set.h" 3 4
+
+
+extern int __sched_cpucount (size_t __setsize, const cpu_set_t *__setp)
+     __attribute__ ((__nothrow__ , __leaf__));
+extern cpu_set_t *__sched_cpualloc (size_t __count) __attribute__ ((__nothrow__ , __leaf__)) ;
+extern void __sched_cpufree (cpu_set_t *__set) __attribute__ ((__nothrow__ , __leaf__));
+
+
+# 45 "/usr/include/sched.h" 2 3 4
+
+
+
+
+
+
+
+
+
+extern int sched_setparam (__pid_t __pid, const struct sched_param *__param)
+     __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern int sched_getparam (__pid_t __pid, struct sched_param *__param) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern int sched_setscheduler (__pid_t __pid, int __policy,
+          const struct sched_param *__param) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern int sched_getscheduler (__pid_t __pid) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern int sched_yield (void) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern int sched_get_priority_max (int __algorithm) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern int sched_get_priority_min (int __algorithm) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern int sched_rr_get_interval (__pid_t __pid, struct timespec *__t) __attribute__ ((__nothrow__ , __leaf__));
+# 130 "/usr/include/sched.h" 3 4
+extern int sched_setaffinity (__pid_t __pid, size_t __cpusetsize,
+         const cpu_set_t *__cpuset) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern int sched_getaffinity (__pid_t __pid, size_t __cpusetsize,
+         cpu_set_t *__cpuset) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+# 23 "/usr/include/pthread.h" 2 3 4
+# 1 "/usr/include/time.h" 1 3 4
+# 29 "/usr/include/time.h" 3 4
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h" 1 3 4
+# 30 "/usr/include/time.h" 2 3 4
+
+
+
+# 1 "/usr/include/x86_64-linux-gnu/bits/time.h" 1 3 4
+# 73 "/usr/include/x86_64-linux-gnu/bits/time.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/timex.h" 1 3 4
+# 26 "/usr/include/x86_64-linux-gnu/bits/timex.h" 3 4
+struct timex
+{
+# 58 "/usr/include/x86_64-linux-gnu/bits/timex.h" 3 4
+  unsigned int modes;
+  __syscall_slong_t offset;
+  __syscall_slong_t freq;
+  __syscall_slong_t maxerror;
+  __syscall_slong_t esterror;
+  int status;
+  __syscall_slong_t constant;
+  __syscall_slong_t precision;
+  __syscall_slong_t tolerance;
+  struct timeval time;
+  __syscall_slong_t tick;
+  __syscall_slong_t ppsfreq;
+  __syscall_slong_t jitter;
+  int shift;
+  __syscall_slong_t stabil;
+  __syscall_slong_t jitcnt;
+  __syscall_slong_t calcnt;
+  __syscall_slong_t errcnt;
+  __syscall_slong_t stbcnt;
+
+  int tai;
+
+
+  int :32; int :32; int :32; int :32;
+  int :32; int :32; int :32; int :32;
+  int :32; int :32; int :32;
+
+};
+# 74 "/usr/include/x86_64-linux-gnu/bits/time.h" 2 3 4
+
+
+
+
+extern int clock_adjtime (__clockid_t __clock_id, struct timex *__utx) __attribute__ ((__nothrow__ , __leaf__));
+# 90 "/usr/include/x86_64-linux-gnu/bits/time.h" 3 4
+
+# 34 "/usr/include/time.h" 2 3 4
+
+
+
+
+
+# 1 "/usr/include/x86_64-linux-gnu/bits/types/struct_tm.h" 1 3 4
+
+
+
+
+
+
+struct tm
+{
+  int tm_sec;
+  int tm_min;
+  int tm_hour;
+  int tm_mday;
+  int tm_mon;
+  int tm_year;
+  int tm_wday;
+  int tm_yday;
+  int tm_isdst;
+
+
+  long int tm_gmtoff;
+  const char *tm_zone;
+
+
+
+
+};
+# 40 "/usr/include/time.h" 2 3 4
+# 48 "/usr/include/time.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h" 1 3 4
+
+
+
+
+
+
+
+struct itimerspec
+  {
+    struct timespec it_interval;
+    struct timespec it_value;
+  };
+# 49 "/usr/include/time.h" 2 3 4
+struct sigevent;
+# 68 "/usr/include/time.h" 3 4
+
+
+
+
+extern clock_t clock (void) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern time_t time (time_t *__timer) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern double difftime (time_t __time1, time_t __time0)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern time_t mktime (struct tm *__tp) __attribute__ ((__nothrow__ , __leaf__));
+# 100 "/usr/include/time.h" 3 4
+extern size_t strftime (char *__restrict __s, size_t __maxsize,
+   const char *__restrict __format,
+   const struct tm *__restrict __tp) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+extern char *strptime (const char *__restrict __s,
+         const char *__restrict __fmt, struct tm *__tp)
+     __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+
+extern size_t strftime_l (char *__restrict __s, size_t __maxsize,
+     const char *__restrict __format,
+     const struct tm *__restrict __tp,
+     locale_t __loc) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern char *strptime_l (const char *__restrict __s,
+    const char *__restrict __fmt, struct tm *__tp,
+    locale_t __loc) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+
+extern struct tm *gmtime (const time_t *__timer) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern struct tm *localtime (const time_t *__timer) __attribute__ ((__nothrow__ , __leaf__));
+# 154 "/usr/include/time.h" 3 4
+extern struct tm *gmtime_r (const time_t *__restrict __timer,
+       struct tm *__restrict __tp) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern struct tm *localtime_r (const time_t *__restrict __timer,
+          struct tm *__restrict __tp) __attribute__ ((__nothrow__ , __leaf__));
+# 179 "/usr/include/time.h" 3 4
+extern char *asctime (const struct tm *__tp) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern char *ctime (const time_t *__timer) __attribute__ ((__nothrow__ , __leaf__));
+# 197 "/usr/include/time.h" 3 4
+extern char *asctime_r (const struct tm *__restrict __tp,
+   char *__restrict __buf) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern char *ctime_r (const time_t *__restrict __timer,
+        char *__restrict __buf) __attribute__ ((__nothrow__ , __leaf__));
+# 217 "/usr/include/time.h" 3 4
+extern char *__tzname[2];
+extern int __daylight;
+extern long int __timezone;
+
+
+
+
+extern char *tzname[2];
+
+
+
+extern void tzset (void) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern int daylight;
+extern long int timezone;
+# 249 "/usr/include/time.h" 3 4
+extern time_t timegm (struct tm *__tp) __attribute__ ((__nothrow__ , __leaf__));
+
+extern time_t timelocal (struct tm *__tp) __attribute__ ((__nothrow__ , __leaf__));
+# 262 "/usr/include/time.h" 3 4
+extern int dysize (int __year) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+# 272 "/usr/include/time.h" 3 4
+extern int nanosleep (const struct timespec *__requested_time,
+        struct timespec *__remaining);
+
+
+extern int clock_getres (clockid_t __clock_id, struct timespec *__res) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern int clock_gettime (clockid_t __clock_id, struct timespec *__tp) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern int clock_settime (clockid_t __clock_id, const struct timespec *__tp)
+     __attribute__ ((__nothrow__ , __leaf__));
+# 311 "/usr/include/time.h" 3 4
+extern int clock_nanosleep (clockid_t __clock_id, int __flags,
+       const struct timespec *__req,
+       struct timespec *__rem);
+# 326 "/usr/include/time.h" 3 4
+extern int clock_getcpuclockid (pid_t __pid, clockid_t *__clock_id) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+extern int timer_create (clockid_t __clock_id,
+    struct sigevent *__restrict __evp,
+    timer_t *__restrict __timerid) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern int timer_delete (timer_t __timerid) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern int timer_settime (timer_t __timerid, int __flags,
+     const struct itimerspec *__restrict __value,
+     struct itimerspec *__restrict __ovalue) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern int timer_gettime (timer_t __timerid, struct itimerspec *__value)
+     __attribute__ ((__nothrow__ , __leaf__));
+# 364 "/usr/include/time.h" 3 4
+extern int timer_getoverrun (timer_t __timerid) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+
+extern int timespec_get (struct timespec *__ts, int __base)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+# 387 "/usr/include/time.h" 3 4
+extern int timespec_getres (struct timespec *__ts, int __base)
+     __attribute__ ((__nothrow__ , __leaf__));
+# 413 "/usr/include/time.h" 3 4
+extern int getdate_err;
+# 422 "/usr/include/time.h" 3 4
+extern struct tm *getdate (const char *__string);
+# 436 "/usr/include/time.h" 3 4
+extern int getdate_r (const char *__restrict __string,
+        struct tm *__restrict __resbufp);
+
+
+
+# 24 "/usr/include/pthread.h" 2 3 4
+
+
+
+# 1 "/usr/include/x86_64-linux-gnu/bits/setjmp.h" 1 3 4
+# 26 "/usr/include/x86_64-linux-gnu/bits/setjmp.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/wordsize.h" 1 3 4
+# 27 "/usr/include/x86_64-linux-gnu/bits/setjmp.h" 2 3 4
+
+
+
+
+typedef long int __jmp_buf[8];
+# 28 "/usr/include/pthread.h" 2 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/wordsize.h" 1 3 4
+# 29 "/usr/include/pthread.h" 2 3 4
+
+
+# 1 "/usr/include/x86_64-linux-gnu/bits/types/struct___jmp_buf_tag.h" 1 3 4
+# 26 "/usr/include/x86_64-linux-gnu/bits/types/struct___jmp_buf_tag.h" 3 4
+struct __jmp_buf_tag
+  {
+
+
+
+
+    __jmp_buf __jmpbuf;
+    int __mask_was_saved;
+    __sigset_t __saved_mask;
+  };
+# 32 "/usr/include/pthread.h" 2 3 4
+
+
+
+
+
+enum
+{
+  PTHREAD_CREATE_JOINABLE,
+
+  PTHREAD_CREATE_DETACHED
+
+};
+
+
+
+enum
+{
+  PTHREAD_MUTEX_TIMED_NP,
+  PTHREAD_MUTEX_RECURSIVE_NP,
+  PTHREAD_MUTEX_ERRORCHECK_NP,
+  PTHREAD_MUTEX_ADAPTIVE_NP
+
+  ,
+  PTHREAD_MUTEX_NORMAL = PTHREAD_MUTEX_TIMED_NP,
+  PTHREAD_MUTEX_RECURSIVE = PTHREAD_MUTEX_RECURSIVE_NP,
+  PTHREAD_MUTEX_ERRORCHECK = PTHREAD_MUTEX_ERRORCHECK_NP,
+  PTHREAD_MUTEX_DEFAULT = PTHREAD_MUTEX_NORMAL
+
+
+
+  , PTHREAD_MUTEX_FAST_NP = PTHREAD_MUTEX_TIMED_NP
+
+};
+
+
+
+
+enum
+{
+  PTHREAD_MUTEX_STALLED,
+  PTHREAD_MUTEX_STALLED_NP = PTHREAD_MUTEX_STALLED,
+  PTHREAD_MUTEX_ROBUST,
+  PTHREAD_MUTEX_ROBUST_NP = PTHREAD_MUTEX_ROBUST
+};
+
+
+
+
+
+enum
+{
+  PTHREAD_PRIO_NONE,
+  PTHREAD_PRIO_INHERIT,
+  PTHREAD_PRIO_PROTECT
+};
+# 104 "/usr/include/pthread.h" 3 4
+enum
+{
+  PTHREAD_RWLOCK_PREFER_READER_NP,
+  PTHREAD_RWLOCK_PREFER_WRITER_NP,
+  PTHREAD_RWLOCK_PREFER_WRITER_NONRECURSIVE_NP,
+  PTHREAD_RWLOCK_DEFAULT_NP = PTHREAD_RWLOCK_PREFER_READER_NP
+};
+# 124 "/usr/include/pthread.h" 3 4
+enum
+{
+  PTHREAD_INHERIT_SCHED,
+
+  PTHREAD_EXPLICIT_SCHED
+
+};
+
+
+
+enum
+{
+  PTHREAD_SCOPE_SYSTEM,
+
+  PTHREAD_SCOPE_PROCESS
+
+};
+
+
+
+enum
+{
+  PTHREAD_PROCESS_PRIVATE,
+
+  PTHREAD_PROCESS_SHARED
+
+};
+# 159 "/usr/include/pthread.h" 3 4
+struct _pthread_cleanup_buffer
+{
+  void (*__routine) (void *);
+  void *__arg;
+  int __canceltype;
+  struct _pthread_cleanup_buffer *__prev;
+};
+
+
+enum
+{
+  PTHREAD_CANCEL_ENABLE,
+
+  PTHREAD_CANCEL_DISABLE
+
+};
+enum
+{
+  PTHREAD_CANCEL_DEFERRED,
+
+  PTHREAD_CANCEL_ASYNCHRONOUS
+
+};
+# 197 "/usr/include/pthread.h" 3 4
+
+
+
+
+
+extern int pthread_create (pthread_t *__restrict __newthread,
+      const pthread_attr_t *__restrict __attr,
+      void *(*__start_routine) (void *),
+      void *__restrict __arg) __attribute__ ((__nothrow__)) __attribute__ ((__nonnull__ (1, 3)));
+
+
+
+
+
+extern void pthread_exit (void *__retval) __attribute__ ((__noreturn__));
+
+
+
+
+
+
+
+extern int pthread_join (pthread_t __th, void **__thread_return);
+
+
+
+
+extern int pthread_tryjoin_np (pthread_t __th, void **__thread_return) __attribute__ ((__nothrow__ , __leaf__));
+# 233 "/usr/include/pthread.h" 3 4
+extern int pthread_timedjoin_np (pthread_t __th, void **__thread_return,
+     const struct timespec *__abstime);
+# 243 "/usr/include/pthread.h" 3 4
+extern int pthread_clockjoin_np (pthread_t __th, void **__thread_return,
+                                 clockid_t __clockid,
+     const struct timespec *__abstime);
+# 269 "/usr/include/pthread.h" 3 4
+extern int pthread_detach (pthread_t __th) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern pthread_t pthread_self (void) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern int pthread_equal (pthread_t __thread1, pthread_t __thread2)
+  __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+
+
+
+
+
+extern int pthread_attr_init (pthread_attr_t *__attr) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+extern int pthread_attr_destroy (pthread_attr_t *__attr)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+extern int pthread_attr_getdetachstate (const pthread_attr_t *__attr,
+     int *__detachstate)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern int pthread_attr_setdetachstate (pthread_attr_t *__attr,
+     int __detachstate)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+
+extern int pthread_attr_getguardsize (const pthread_attr_t *__attr,
+          size_t *__guardsize)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern int pthread_attr_setguardsize (pthread_attr_t *__attr,
+          size_t __guardsize)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+
+extern int pthread_attr_getschedparam (const pthread_attr_t *__restrict __attr,
+           struct sched_param *__restrict __param)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern int pthread_attr_setschedparam (pthread_attr_t *__restrict __attr,
+           const struct sched_param *__restrict
+           __param) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern int pthread_attr_getschedpolicy (const pthread_attr_t *__restrict
+     __attr, int *__restrict __policy)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern int pthread_attr_setschedpolicy (pthread_attr_t *__attr, int __policy)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+extern int pthread_attr_getinheritsched (const pthread_attr_t *__restrict
+      __attr, int *__restrict __inherit)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern int pthread_attr_setinheritsched (pthread_attr_t *__attr,
+      int __inherit)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+
+extern int pthread_attr_getscope (const pthread_attr_t *__restrict __attr,
+      int *__restrict __scope)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern int pthread_attr_setscope (pthread_attr_t *__attr, int __scope)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+extern int pthread_attr_getstackaddr (const pthread_attr_t *__restrict
+          __attr, void **__restrict __stackaddr)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2))) __attribute__ ((__deprecated__));
+
+
+
+
+
+extern int pthread_attr_setstackaddr (pthread_attr_t *__attr,
+          void *__stackaddr)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1))) __attribute__ ((__deprecated__));
+
+
+extern int pthread_attr_getstacksize (const pthread_attr_t *__restrict
+          __attr, size_t *__restrict __stacksize)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+
+
+extern int pthread_attr_setstacksize (pthread_attr_t *__attr,
+          size_t __stacksize)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+
+extern int pthread_attr_getstack (const pthread_attr_t *__restrict __attr,
+      void **__restrict __stackaddr,
+      size_t *__restrict __stacksize)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2, 3)));
+
+
+
+
+extern int pthread_attr_setstack (pthread_attr_t *__attr, void *__stackaddr,
+      size_t __stacksize) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+
+
+
+extern int pthread_attr_setaffinity_np (pthread_attr_t *__attr,
+     size_t __cpusetsize,
+     const cpu_set_t *__cpuset)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 3)));
+
+
+
+extern int pthread_attr_getaffinity_np (const pthread_attr_t *__attr,
+     size_t __cpusetsize,
+     cpu_set_t *__cpuset)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 3)));
+
+
+extern int pthread_getattr_default_np (pthread_attr_t *__attr)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+extern int pthread_attr_setsigmask_np (pthread_attr_t *__attr,
+           const __sigset_t *sigmask);
+
+
+
+
+extern int pthread_attr_getsigmask_np (const pthread_attr_t *__attr,
+           __sigset_t *sigmask);
+
+
+
+
+
+
+
+extern int pthread_setattr_default_np (const pthread_attr_t *__attr)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+
+
+extern int pthread_getattr_np (pthread_t __th, pthread_attr_t *__attr)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (2)));
+
+
+
+
+
+
+
+extern int pthread_setschedparam (pthread_t __target_thread, int __policy,
+      const struct sched_param *__param)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (3)));
+
+
+extern int pthread_getschedparam (pthread_t __target_thread,
+      int *__restrict __policy,
+      struct sched_param *__restrict __param)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (2, 3)));
+
+
+extern int pthread_setschedprio (pthread_t __target_thread, int __prio)
+     __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+extern int pthread_getname_np (pthread_t __target_thread, char *__buf,
+          size_t __buflen)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (2)));
+
+
+extern int pthread_setname_np (pthread_t __target_thread, const char *__name)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (2)));
+
+
+
+
+
+extern int pthread_getconcurrency (void) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern int pthread_setconcurrency (int __level) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern int pthread_yield (void) __attribute__ ((__nothrow__ , __leaf__));
+
+extern int pthread_yield (void) __asm__ ("" "sched_yield") __attribute__ ((__nothrow__ , __leaf__))
+  __attribute__ ((__deprecated__ ("pthread_yield is deprecated, use sched_yield instead")))
+                                                      ;
+
+
+
+
+
+
+
+extern int pthread_setaffinity_np (pthread_t __th, size_t __cpusetsize,
+       const cpu_set_t *__cpuset)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (3)));
+
+
+extern int pthread_getaffinity_np (pthread_t __th, size_t __cpusetsize,
+       cpu_set_t *__cpuset)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (3)));
+# 509 "/usr/include/pthread.h" 3 4
+extern int pthread_once (pthread_once_t *__once_control,
+    void (*__init_routine) (void)) __attribute__ ((__nonnull__ (1, 2)));
+# 521 "/usr/include/pthread.h" 3 4
+extern int pthread_setcancelstate (int __state, int *__oldstate);
+
+
+
+extern int pthread_setcanceltype (int __type, int *__oldtype);
+
+
+extern int pthread_cancel (pthread_t __th);
+
+
+
+
+extern void pthread_testcancel (void);
+
+
+
+
+struct __cancel_jmp_buf_tag
+{
+  __jmp_buf __cancel_jmp_buf;
+  int __mask_was_saved;
+};
+
+typedef struct
+{
+  struct __cancel_jmp_buf_tag __cancel_jmp_buf[1];
+  void *__pad[4];
+} __pthread_unwind_buf_t __attribute__ ((__aligned__));
+# 557 "/usr/include/pthread.h" 3 4
+struct __pthread_cleanup_frame
+{
+  void (*__cancel_routine) (void *);
+  void *__cancel_arg;
+  int __do_it;
+  int __cancel_type;
+};
+# 697 "/usr/include/pthread.h" 3 4
+extern void __pthread_register_cancel (__pthread_unwind_buf_t *__buf)
+     ;
+# 709 "/usr/include/pthread.h" 3 4
+extern void __pthread_unregister_cancel (__pthread_unwind_buf_t *__buf)
+  ;
+# 732 "/usr/include/pthread.h" 3 4
+extern void __pthread_register_cancel_defer (__pthread_unwind_buf_t *__buf)
+     ;
+# 745 "/usr/include/pthread.h" 3 4
+extern void __pthread_unregister_cancel_restore (__pthread_unwind_buf_t *__buf)
+  ;
+
+
+
+extern void __pthread_unwind_next (__pthread_unwind_buf_t *__buf)
+     __attribute__ ((__noreturn__))
+
+     __attribute__ ((__weak__))
+
+     ;
+# 766 "/usr/include/pthread.h" 3 4
+extern int __sigsetjmp_cancel (struct __cancel_jmp_buf_tag __env[1], int __savemask) __asm__ ("" "__sigsetjmp") __attribute__ ((__nothrow__))
+
+
+                     __attribute__ ((__returns_twice__));
+# 781 "/usr/include/pthread.h" 3 4
+extern int pthread_mutex_init (pthread_mutex_t *__mutex,
+          const pthread_mutexattr_t *__mutexattr)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+extern int pthread_mutex_destroy (pthread_mutex_t *__mutex)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+extern int pthread_mutex_trylock (pthread_mutex_t *__mutex)
+     __attribute__ ((__nothrow__)) __attribute__ ((__nonnull__ (1)));
+
+
+extern int pthread_mutex_lock (pthread_mutex_t *__mutex)
+     __attribute__ ((__nothrow__)) __attribute__ ((__nonnull__ (1)));
+
+
+
+
+extern int pthread_mutex_timedlock (pthread_mutex_t *__restrict __mutex,
+        const struct timespec *__restrict
+        __abstime) __attribute__ ((__nothrow__)) __attribute__ ((__nonnull__ (1, 2)));
+# 817 "/usr/include/pthread.h" 3 4
+extern int pthread_mutex_clocklock (pthread_mutex_t *__restrict __mutex,
+        clockid_t __clockid,
+        const struct timespec *__restrict
+        __abstime) __attribute__ ((__nothrow__)) __attribute__ ((__nonnull__ (1, 3)));
+# 835 "/usr/include/pthread.h" 3 4
+extern int pthread_mutex_unlock (pthread_mutex_t *__mutex)
+     __attribute__ ((__nothrow__)) __attribute__ ((__nonnull__ (1)));
+
+
+
+extern int pthread_mutex_getprioceiling (const pthread_mutex_t *
+      __restrict __mutex,
+      int *__restrict __prioceiling)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+
+extern int pthread_mutex_setprioceiling (pthread_mutex_t *__restrict __mutex,
+      int __prioceiling,
+      int *__restrict __old_ceiling)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 3)));
+
+
+
+
+extern int pthread_mutex_consistent (pthread_mutex_t *__mutex)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+extern int pthread_mutex_consistent_np (pthread_mutex_t *) __asm__ ("" "pthread_mutex_consistent") __attribute__ ((__nothrow__ , __leaf__))
+                                __attribute__ ((__nonnull__ (1)))
+  __attribute__ ((__deprecated__ ("pthread_mutex_consistent_np is deprecated, use pthread_mutex_consistent")))
+                                                                         ;
+# 874 "/usr/include/pthread.h" 3 4
+extern int pthread_mutexattr_init (pthread_mutexattr_t *__attr)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+extern int pthread_mutexattr_destroy (pthread_mutexattr_t *__attr)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+extern int pthread_mutexattr_getpshared (const pthread_mutexattr_t *
+      __restrict __attr,
+      int *__restrict __pshared)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern int pthread_mutexattr_setpshared (pthread_mutexattr_t *__attr,
+      int __pshared)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+
+extern int pthread_mutexattr_gettype (const pthread_mutexattr_t *__restrict
+          __attr, int *__restrict __kind)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+
+
+extern int pthread_mutexattr_settype (pthread_mutexattr_t *__attr, int __kind)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+
+extern int pthread_mutexattr_getprotocol (const pthread_mutexattr_t *
+       __restrict __attr,
+       int *__restrict __protocol)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+
+extern int pthread_mutexattr_setprotocol (pthread_mutexattr_t *__attr,
+       int __protocol)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+extern int pthread_mutexattr_getprioceiling (const pthread_mutexattr_t *
+          __restrict __attr,
+          int *__restrict __prioceiling)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern int pthread_mutexattr_setprioceiling (pthread_mutexattr_t *__attr,
+          int __prioceiling)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+
+extern int pthread_mutexattr_getrobust (const pthread_mutexattr_t *__attr,
+     int *__robustness)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern int pthread_mutexattr_getrobust_np (pthread_mutexattr_t *, int *) __asm__ ("" "pthread_mutexattr_getrobust") __attribute__ ((__nothrow__ , __leaf__))
+
+                                   __attribute__ ((__nonnull__ (1)))
+  __attribute__ ((__deprecated__ ("pthread_mutexattr_getrobust_np is deprecated, use pthread_mutexattr_getrobust")))
+                                                                               ;
+
+
+
+
+
+
+extern int pthread_mutexattr_setrobust (pthread_mutexattr_t *__attr,
+     int __robustness)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+extern int pthread_mutexattr_setrobust_np (pthread_mutexattr_t *, int) __asm__ ("" "pthread_mutexattr_setrobust") __attribute__ ((__nothrow__ , __leaf__))
+
+                                   __attribute__ ((__nonnull__ (1)))
+  __attribute__ ((__deprecated__ ("pthread_mutexattr_setrobust_np is deprecated, use pthread_mutexattr_setrobust")))
+                                                                               ;
+# 967 "/usr/include/pthread.h" 3 4
+extern int pthread_rwlock_init (pthread_rwlock_t *__restrict __rwlock,
+    const pthread_rwlockattr_t *__restrict
+    __attr) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+extern int pthread_rwlock_destroy (pthread_rwlock_t *__rwlock)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+extern int pthread_rwlock_rdlock (pthread_rwlock_t *__rwlock)
+     __attribute__ ((__nothrow__)) __attribute__ ((__nonnull__ (1)));
+
+
+extern int pthread_rwlock_tryrdlock (pthread_rwlock_t *__rwlock)
+  __attribute__ ((__nothrow__)) __attribute__ ((__nonnull__ (1)));
+
+
+
+
+extern int pthread_rwlock_timedrdlock (pthread_rwlock_t *__restrict __rwlock,
+           const struct timespec *__restrict
+           __abstime) __attribute__ ((__nothrow__)) __attribute__ ((__nonnull__ (1, 2)));
+# 1004 "/usr/include/pthread.h" 3 4
+extern int pthread_rwlock_clockrdlock (pthread_rwlock_t *__restrict __rwlock,
+           clockid_t __clockid,
+           const struct timespec *__restrict
+           __abstime) __attribute__ ((__nothrow__)) __attribute__ ((__nonnull__ (1, 3)));
+# 1023 "/usr/include/pthread.h" 3 4
+extern int pthread_rwlock_wrlock (pthread_rwlock_t *__rwlock)
+     __attribute__ ((__nothrow__)) __attribute__ ((__nonnull__ (1)));
+
+
+extern int pthread_rwlock_trywrlock (pthread_rwlock_t *__rwlock)
+     __attribute__ ((__nothrow__)) __attribute__ ((__nonnull__ (1)));
+
+
+
+
+extern int pthread_rwlock_timedwrlock (pthread_rwlock_t *__restrict __rwlock,
+           const struct timespec *__restrict
+           __abstime) __attribute__ ((__nothrow__)) __attribute__ ((__nonnull__ (1, 2)));
+# 1051 "/usr/include/pthread.h" 3 4
+extern int pthread_rwlock_clockwrlock (pthread_rwlock_t *__restrict __rwlock,
+           clockid_t __clockid,
+           const struct timespec *__restrict
+           __abstime) __attribute__ ((__nothrow__)) __attribute__ ((__nonnull__ (1, 3)));
+# 1071 "/usr/include/pthread.h" 3 4
+extern int pthread_rwlock_unlock (pthread_rwlock_t *__rwlock)
+     __attribute__ ((__nothrow__)) __attribute__ ((__nonnull__ (1)));
+
+
+
+
+
+extern int pthread_rwlockattr_init (pthread_rwlockattr_t *__attr)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+extern int pthread_rwlockattr_destroy (pthread_rwlockattr_t *__attr)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+extern int pthread_rwlockattr_getpshared (const pthread_rwlockattr_t *
+       __restrict __attr,
+       int *__restrict __pshared)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern int pthread_rwlockattr_setpshared (pthread_rwlockattr_t *__attr,
+       int __pshared)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+extern int pthread_rwlockattr_getkind_np (const pthread_rwlockattr_t *
+       __restrict __attr,
+       int *__restrict __pref)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern int pthread_rwlockattr_setkind_np (pthread_rwlockattr_t *__attr,
+       int __pref) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+
+
+
+
+
+extern int pthread_cond_init (pthread_cond_t *__restrict __cond,
+         const pthread_condattr_t *__restrict __cond_attr)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+extern int pthread_cond_destroy (pthread_cond_t *__cond)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+extern int pthread_cond_signal (pthread_cond_t *__cond)
+     __attribute__ ((__nothrow__)) __attribute__ ((__nonnull__ (1)));
+
+
+extern int pthread_cond_broadcast (pthread_cond_t *__cond)
+     __attribute__ ((__nothrow__)) __attribute__ ((__nonnull__ (1)));
+
+
+
+
+
+
+extern int pthread_cond_wait (pthread_cond_t *__restrict __cond,
+         pthread_mutex_t *__restrict __mutex)
+     __attribute__ ((__nonnull__ (1, 2)));
+# 1145 "/usr/include/pthread.h" 3 4
+extern int pthread_cond_timedwait (pthread_cond_t *__restrict __cond,
+       pthread_mutex_t *__restrict __mutex,
+       const struct timespec *__restrict __abstime)
+     __attribute__ ((__nonnull__ (1, 2, 3)));
+# 1171 "/usr/include/pthread.h" 3 4
+extern int pthread_cond_clockwait (pthread_cond_t *__restrict __cond,
+       pthread_mutex_t *__restrict __mutex,
+       __clockid_t __clock_id,
+       const struct timespec *__restrict __abstime)
+     __attribute__ ((__nonnull__ (1, 2, 4)));
+# 1194 "/usr/include/pthread.h" 3 4
+extern int pthread_condattr_init (pthread_condattr_t *__attr)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+extern int pthread_condattr_destroy (pthread_condattr_t *__attr)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+extern int pthread_condattr_getpshared (const pthread_condattr_t *
+     __restrict __attr,
+     int *__restrict __pshared)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern int pthread_condattr_setpshared (pthread_condattr_t *__attr,
+     int __pshared) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+
+extern int pthread_condattr_getclock (const pthread_condattr_t *
+          __restrict __attr,
+          __clockid_t *__restrict __clock_id)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern int pthread_condattr_setclock (pthread_condattr_t *__attr,
+          __clockid_t __clock_id)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+# 1230 "/usr/include/pthread.h" 3 4
+extern int pthread_spin_init (pthread_spinlock_t *__lock, int __pshared)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+extern int pthread_spin_destroy (pthread_spinlock_t *__lock)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+extern int pthread_spin_lock (pthread_spinlock_t *__lock)
+     __attribute__ ((__nothrow__)) __attribute__ ((__nonnull__ (1)));
+
+
+extern int pthread_spin_trylock (pthread_spinlock_t *__lock)
+     __attribute__ ((__nothrow__)) __attribute__ ((__nonnull__ (1)));
+
+
+extern int pthread_spin_unlock (pthread_spinlock_t *__lock)
+     __attribute__ ((__nothrow__)) __attribute__ ((__nonnull__ (1)));
+
+
+
+
+
+
+extern int pthread_barrier_init (pthread_barrier_t *__restrict __barrier,
+     const pthread_barrierattr_t *__restrict
+     __attr, unsigned int __count)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+extern int pthread_barrier_destroy (pthread_barrier_t *__barrier)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+extern int pthread_barrier_wait (pthread_barrier_t *__barrier)
+     __attribute__ ((__nothrow__)) __attribute__ ((__nonnull__ (1)));
+
+
+
+extern int pthread_barrierattr_init (pthread_barrierattr_t *__attr)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+extern int pthread_barrierattr_destroy (pthread_barrierattr_t *__attr)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+extern int pthread_barrierattr_getpshared (const pthread_barrierattr_t *
+        __restrict __attr,
+        int *__restrict __pshared)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern int pthread_barrierattr_setpshared (pthread_barrierattr_t *__attr,
+        int __pshared)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+# 1297 "/usr/include/pthread.h" 3 4
+extern int pthread_key_create (pthread_key_t *__key,
+          void (*__destr_function) (void *))
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+extern int pthread_key_delete (pthread_key_t __key) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern void *pthread_getspecific (pthread_key_t __key) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern int pthread_setspecific (pthread_key_t __key,
+    const void *__pointer)
+  __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__access__ (__none__, 2)));
+
+
+
+
+extern int pthread_getcpuclockid (pthread_t __thread_id,
+      __clockid_t *__clock_id)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (2)));
+# 1332 "/usr/include/pthread.h" 3 4
+extern int pthread_atfork (void (*__prepare) (void),
+      void (*__parent) (void),
+      void (*__child) (void)) __attribute__ ((__nothrow__ , __leaf__));
+# 1346 "/usr/include/pthread.h" 3 4
+
+# 44 "/home/dweller/neovim/.deps/usr/include/uv/unix.h" 2
+
+
+# 1 "/home/dweller/neovim/.deps/usr/include/uv/threadpool.h" 1
+# 30 "/home/dweller/neovim/.deps/usr/include/uv/threadpool.h"
+
+# 30 "/home/dweller/neovim/.deps/usr/include/uv/threadpool.h"
+struct uv__work {
+  void (*work)(struct uv__work *w);
+  void (*done)(struct uv__work *w, int status);
+  struct uv_loop_s* loop;
+  struct uv__queue wq;
+};
+# 47 "/home/dweller/neovim/.deps/usr/include/uv/unix.h" 2
+
+
+# 1 "/home/dweller/neovim/.deps/usr/include/uv/linux.h" 1
+# 50 "/home/dweller/neovim/.deps/usr/include/uv/unix.h" 2
+# 85 "/home/dweller/neovim/.deps/usr/include/uv/unix.h"
+struct uv__io_s;
+struct uv_loop_s;
+
+typedef void (*uv__io_cb)(struct uv_loop_s* loop,
+                          struct uv__io_s* w,
+                          unsigned int events);
+typedef struct uv__io_s uv__io_t;
+
+struct uv__io_s {
+  uv__io_cb cb;
+  struct uv__queue pending_queue;
+  struct uv__queue watcher_queue;
+  unsigned int pevents;
+  unsigned int events;
+  int fd;
+ 
+};
+# 120 "/home/dweller/neovim/.deps/usr/include/uv/unix.h"
+typedef struct uv_buf_t {
+  char* base;
+  size_t len;
+} uv_buf_t;
+
+typedef int uv_file;
+typedef int uv_os_sock_t;
+typedef int uv_os_fd_t;
+typedef pid_t uv_pid_t;
+
+
+
+typedef pthread_once_t uv_once_t;
+typedef pthread_t uv_thread_t;
+typedef pthread_mutex_t uv_mutex_t;
+typedef pthread_rwlock_t uv_rwlock_t;
+typedef sem_t uv_sem_t;
+typedef pthread_cond_t uv_cond_t;
+typedef pthread_key_t uv_key_t;
+# 161 "/home/dweller/neovim/.deps/usr/include/uv/unix.h"
+typedef pthread_barrier_t uv_barrier_t;
+
+
+
+typedef gid_t uv_gid_t;
+typedef uid_t uv_uid_t;
+
+typedef struct dirent uv__dirent_t;
+# 215 "/home/dweller/neovim/.deps/usr/include/uv/unix.h"
+typedef struct {
+  void* handle;
+  char* errmsg;
+} uv_lib_t;
+# 73 "/home/dweller/neovim/.deps/usr/include/uv.h" 2
+# 193 "/home/dweller/neovim/.deps/usr/include/uv.h"
+typedef enum {
+
+  UV_E2BIG = (-(
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h" 3 4
+ 7
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h"
+ )), UV_EACCES = (-(
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h" 3 4
+ 13
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h"
+ )), UV_EADDRINUSE = (-(
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h" 3 4
+ 98
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h"
+ )), UV_EADDRNOTAVAIL = (-(
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h" 3 4
+ 99
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h"
+ )), UV_EAFNOSUPPORT = (-(
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h" 3 4
+ 97
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h"
+ )), UV_EAGAIN = (-(
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h" 3 4
+ 11
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h"
+ )), UV_EAI_ADDRFAMILY = (-3000), UV_EAI_AGAIN = (-3001), UV_EAI_BADFLAGS = (-3002), UV_EAI_BADHINTS = (-3013), UV_EAI_CANCELED = (-3003), UV_EAI_FAIL = (-3004), UV_EAI_FAMILY = (-3005), UV_EAI_MEMORY = (-3006), UV_EAI_NODATA = (-3007), UV_EAI_NONAME = (-3008), UV_EAI_OVERFLOW = (-3009), UV_EAI_PROTOCOL = (-3014), UV_EAI_SERVICE = (-3010), UV_EAI_SOCKTYPE = (-3011), UV_EALREADY = (-(
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h" 3 4
+ 114
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h"
+ )), UV_EBADF = (-(
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h" 3 4
+ 9
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h"
+ )), UV_EBUSY = (-(
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h" 3 4
+ 16
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h"
+ )), UV_ECANCELED = (-(
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h" 3 4
+ 125
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h"
+ )), UV_ECHARSET = (-4080), UV_ECONNABORTED = (-(
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h" 3 4
+ 103
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h"
+ )), UV_ECONNREFUSED = (-(
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h" 3 4
+ 111
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h"
+ )), UV_ECONNRESET = (-(
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h" 3 4
+ 104
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h"
+ )), UV_EDESTADDRREQ = (-(
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h" 3 4
+ 89
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h"
+ )), UV_EEXIST = (-(
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h" 3 4
+ 17
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h"
+ )), UV_EFAULT = (-(
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h" 3 4
+ 14
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h"
+ )), UV_EFBIG = (-(
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h" 3 4
+ 27
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h"
+ )), UV_EHOSTUNREACH = (-(
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h" 3 4
+ 113
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h"
+ )), UV_EINTR = (-(
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h" 3 4
+ 4
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h"
+ )), UV_EINVAL = (-(
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h" 3 4
+ 22
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h"
+ )), UV_EIO = (-(
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h" 3 4
+ 5
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h"
+ )), UV_EISCONN = (-(
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h" 3 4
+ 106
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h"
+ )), UV_EISDIR = (-(
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h" 3 4
+ 21
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h"
+ )), UV_ELOOP = (-(
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h" 3 4
+ 40
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h"
+ )), UV_EMFILE = (-(
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h" 3 4
+ 24
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h"
+ )), UV_EMSGSIZE = (-(
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h" 3 4
+ 90
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h"
+ )), UV_ENAMETOOLONG = (-(
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h" 3 4
+ 36
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h"
+ )), UV_ENETDOWN = (-(
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h" 3 4
+ 100
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h"
+ )), UV_ENETUNREACH = (-(
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h" 3 4
+ 101
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h"
+ )), UV_ENFILE = (-(
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h" 3 4
+ 23
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h"
+ )), UV_ENOBUFS = (-(
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h" 3 4
+ 105
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h"
+ )), UV_ENODEV = (-(
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h" 3 4
+ 19
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h"
+ )), UV_ENOENT = (-(
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h" 3 4
+ 2
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h"
+ )), UV_ENOMEM = (-(
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h" 3 4
+ 12
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h"
+ )), UV_ENONET = (-(
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h" 3 4
+ 64
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h"
+ )), UV_ENOPROTOOPT = (-(
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h" 3 4
+ 92
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h"
+ )), UV_ENOSPC = (-(
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h" 3 4
+ 28
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h"
+ )), UV_ENOSYS = (-(
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h" 3 4
+ 38
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h"
+ )), UV_ENOTCONN = (-(
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h" 3 4
+ 107
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h"
+ )), UV_ENOTDIR = (-(
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h" 3 4
+ 20
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h"
+ )), UV_ENOTEMPTY = (-(
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h" 3 4
+ 39
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h"
+ )), UV_ENOTSOCK = (-(
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h" 3 4
+ 88
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h"
+ )), UV_ENOTSUP = (-(
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h" 3 4
+ 95
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h"
+ )), UV_EOVERFLOW = (-(
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h" 3 4
+ 75
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h"
+ )), UV_EPERM = (-(
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h" 3 4
+ 1
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h"
+ )), UV_EPIPE = (-(
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h" 3 4
+ 32
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h"
+ )), UV_EPROTO = (-(
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h" 3 4
+ 71
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h"
+ )), UV_EPROTONOSUPPORT = (-(
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h" 3 4
+ 93
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h"
+ )), UV_EPROTOTYPE = (-(
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h" 3 4
+ 91
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h"
+ )), UV_ERANGE = (-(
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h" 3 4
+ 34
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h"
+ )), UV_EROFS = (-(
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h" 3 4
+ 30
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h"
+ )), UV_ESHUTDOWN = (-(
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h" 3 4
+ 108
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h"
+ )), UV_ESPIPE = (-(
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h" 3 4
+ 29
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h"
+ )), UV_ESRCH = (-(
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h" 3 4
+ 3
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h"
+ )), UV_ETIMEDOUT = (-(
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h" 3 4
+ 110
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h"
+ )), UV_ETXTBSY = (-(
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h" 3 4
+ 26
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h"
+ )), UV_EXDEV = (-(
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h" 3 4
+ 18
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h"
+ )), UV_UNKNOWN = (-4094), UV_EOF = (-4095), UV_ENXIO = (-(
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h" 3 4
+ 6
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h"
+ )), UV_EMLINK = (-(
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h" 3 4
+ 31
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h"
+ )), UV_EHOSTDOWN = (-(
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h" 3 4
+ 112
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h"
+ )), UV_EREMOTEIO = (-(
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h" 3 4
+ 121
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h"
+ )), UV_ENOTTY = (-(
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h" 3 4
+ 25
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h"
+ )), UV_EFTYPE = (-4028), UV_EILSEQ = (-(
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h" 3 4
+ 84
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h"
+ )), UV_ESOCKTNOSUPPORT = (-(
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h" 3 4
+ 94
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h"
+ )), UV_ENODATA = (-(
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h" 3 4
+ 61
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h"
+ )), UV_EUNATCH = (-(
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h" 3 4
+ 49
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h"
+ )), UV_ENOEXEC = (-(
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h" 3 4
+ 8
+# 195 "/home/dweller/neovim/.deps/usr/include/uv.h"
+ )),
+
+  UV_ERRNO_MAX = (-4095) - 1
+} uv_errno_t;
+
+typedef enum {
+  UV_UNKNOWN_HANDLE = 0,
+
+  UV_ASYNC, UV_CHECK, UV_FS_EVENT, UV_FS_POLL, UV_HANDLE, UV_IDLE, UV_NAMED_PIPE, UV_POLL, UV_PREPARE, UV_PROCESS, UV_STREAM, UV_TCP, UV_TIMER, UV_TTY, UV_UDP, UV_SIGNAL,
+
+  UV_FILE,
+  UV_HANDLE_TYPE_MAX
+} uv_handle_type;
+
+typedef enum {
+  UV_UNKNOWN_REQ = 0,
+
+  UV_REQ, UV_CONNECT, UV_WRITE, UV_SHUTDOWN, UV_UDP_SEND, UV_FS, UV_WORK, UV_GETADDRINFO, UV_GETNAMEINFO, UV_RANDOM,
+
+ 
+  UV_REQ_TYPE_MAX
+} uv_req_type;
+
+
+
+typedef struct uv_loop_s uv_loop_t;
+typedef struct uv_handle_s uv_handle_t;
+typedef struct uv_dir_s uv_dir_t;
+typedef struct uv_stream_s uv_stream_t;
+typedef struct uv_tcp_s uv_tcp_t;
+typedef struct uv_udp_s uv_udp_t;
+typedef struct uv_pipe_s uv_pipe_t;
+typedef struct uv_tty_s uv_tty_t;
+typedef struct uv_poll_s uv_poll_t;
+typedef struct uv_timer_s uv_timer_t;
+typedef struct uv_prepare_s uv_prepare_t;
+typedef struct uv_check_s uv_check_t;
+typedef struct uv_idle_s uv_idle_t;
+typedef struct uv_async_s uv_async_t;
+typedef struct uv_process_s uv_process_t;
+typedef struct uv_fs_event_s uv_fs_event_t;
+typedef struct uv_fs_poll_s uv_fs_poll_t;
+typedef struct uv_signal_s uv_signal_t;
+
+
+typedef struct uv_req_s uv_req_t;
+typedef struct uv_getaddrinfo_s uv_getaddrinfo_t;
+typedef struct uv_getnameinfo_s uv_getnameinfo_t;
+typedef struct uv_shutdown_s uv_shutdown_t;
+typedef struct uv_write_s uv_write_t;
+typedef struct uv_connect_s uv_connect_t;
+typedef struct uv_udp_send_s uv_udp_send_t;
+typedef struct uv_fs_s uv_fs_t;
+typedef struct uv_work_s uv_work_t;
+typedef struct uv_random_s uv_random_t;
+
+
+typedef struct uv_env_item_s uv_env_item_t;
+typedef struct uv_cpu_info_s uv_cpu_info_t;
+typedef struct uv_interface_address_s uv_interface_address_t;
+typedef struct uv_dirent_s uv_dirent_t;
+typedef struct uv_passwd_s uv_passwd_t;
+typedef struct uv_group_s uv_group_t;
+typedef struct uv_utsname_s uv_utsname_t;
+typedef struct uv_statfs_s uv_statfs_t;
+
+typedef struct uv_metrics_s uv_metrics_t;
+
+typedef enum {
+  UV_LOOP_BLOCK_SIGNAL = 0,
+  UV_METRICS_IDLE_TIME,
+  UV_LOOP_USE_IO_URING_SQPOLL
+
+} uv_loop_option;
+
+typedef enum {
+  UV_RUN_DEFAULT = 0,
+  UV_RUN_ONCE,
+  UV_RUN_NOWAIT
+} uv_run_mode;
+
+
+__attribute__((visibility("default"))) unsigned int uv_version(void);
+__attribute__((visibility("default"))) const char* uv_version_string(void);
+
+typedef void* (*uv_malloc_func)(size_t size);
+typedef void* (*uv_realloc_func)(void* ptr, size_t size);
+typedef void* (*uv_calloc_func)(size_t count, size_t size);
+typedef void (*uv_free_func)(void* ptr);
+
+__attribute__((visibility("default"))) void uv_library_shutdown(void);
+
+__attribute__((visibility("default"))) int uv_replace_allocator(uv_malloc_func malloc_func,
+                                   uv_realloc_func realloc_func,
+                                   uv_calloc_func calloc_func,
+                                   uv_free_func free_func);
+
+__attribute__((visibility("default"))) uv_loop_t* uv_default_loop(void);
+__attribute__((visibility("default"))) int uv_loop_init(uv_loop_t* loop);
+__attribute__((visibility("default"))) int uv_loop_close(uv_loop_t* loop);
+
+
+
+
+
+__attribute__((visibility("default"))) uv_loop_t* uv_loop_new(void);
+
+
+
+
+
+__attribute__((visibility("default"))) void uv_loop_delete(uv_loop_t*);
+__attribute__((visibility("default"))) size_t uv_loop_size(void);
+__attribute__((visibility("default"))) int uv_loop_alive(const uv_loop_t* loop);
+__attribute__((visibility("default"))) int uv_loop_configure(uv_loop_t* loop, uv_loop_option option, ...);
+__attribute__((visibility("default"))) int uv_loop_fork(uv_loop_t* loop);
+
+__attribute__((visibility("default"))) int uv_run(uv_loop_t*, uv_run_mode mode);
+__attribute__((visibility("default"))) void uv_stop(uv_loop_t*);
+
+__attribute__((visibility("default"))) void uv_ref(uv_handle_t*);
+__attribute__((visibility("default"))) void uv_unref(uv_handle_t*);
+__attribute__((visibility("default"))) int uv_has_ref(const uv_handle_t*);
+
+__attribute__((visibility("default"))) void uv_update_time(uv_loop_t*);
+__attribute__((visibility("default"))) uint64_t uv_now(const uv_loop_t*);
+
+__attribute__((visibility("default"))) int uv_backend_fd(const uv_loop_t*);
+__attribute__((visibility("default"))) int uv_backend_timeout(const uv_loop_t*);
+
+typedef void (*uv_alloc_cb)(uv_handle_t* handle,
+                            size_t suggested_size,
+                            uv_buf_t* buf);
+typedef void (*uv_read_cb)(uv_stream_t* stream,
+                           ssize_t nread,
+                           const uv_buf_t* buf);
+typedef void (*uv_write_cb)(uv_write_t* req, int status);
+typedef void (*uv_connect_cb)(uv_connect_t* req, int status);
+typedef void (*uv_shutdown_cb)(uv_shutdown_t* req, int status);
+typedef void (*uv_connection_cb)(uv_stream_t* server, int status);
+typedef void (*uv_close_cb)(uv_handle_t* handle);
+typedef void (*uv_poll_cb)(uv_poll_t* handle, int status, int events);
+typedef void (*uv_timer_cb)(uv_timer_t* handle);
+typedef void (*uv_async_cb)(uv_async_t* handle);
+typedef void (*uv_prepare_cb)(uv_prepare_t* handle);
+typedef void (*uv_check_cb)(uv_check_t* handle);
+typedef void (*uv_idle_cb)(uv_idle_t* handle);
+typedef void (*uv_exit_cb)(uv_process_t*, int64_t exit_status, int term_signal);
+typedef void (*uv_walk_cb)(uv_handle_t* handle, void* arg);
+typedef void (*uv_fs_cb)(uv_fs_t* req);
+typedef void (*uv_work_cb)(uv_work_t* req);
+typedef void (*uv_after_work_cb)(uv_work_t* req, int status);
+typedef void (*uv_getaddrinfo_cb)(uv_getaddrinfo_t* req,
+                                  int status,
+                                  struct addrinfo* res);
+typedef void (*uv_getnameinfo_cb)(uv_getnameinfo_t* req,
+                                  int status,
+                                  const char* hostname,
+                                  const char* service);
+typedef void (*uv_random_cb)(uv_random_t* req,
+                             int status,
+                             void* buf,
+                             size_t buflen);
+
+typedef enum {
+  UV_CLOCK_MONOTONIC,
+  UV_CLOCK_REALTIME
+} uv_clock_id;
+
+
+typedef struct {
+  long tv_sec;
+  long tv_nsec;
+} uv_timespec_t;
+
+typedef struct {
+  int64_t tv_sec;
+  int32_t tv_nsec;
+} uv_timespec64_t;
+
+
+typedef struct {
+  long tv_sec;
+  long tv_usec;
+} uv_timeval_t;
+
+typedef struct {
+  int64_t tv_sec;
+  int32_t tv_usec;
+} uv_timeval64_t;
+
+typedef struct {
+  uint64_t st_dev;
+  uint64_t st_mode;
+  uint64_t st_nlink;
+  uint64_t st_uid;
+  uint64_t st_gid;
+  uint64_t st_rdev;
+  uint64_t st_ino;
+  uint64_t st_size;
+  uint64_t st_blksize;
+  uint64_t st_blocks;
+  uint64_t st_flags;
+  uint64_t st_gen;
+  uv_timespec_t st_atim;
+  uv_timespec_t st_mtim;
+  uv_timespec_t st_ctim;
+  uv_timespec_t st_birthtim;
+} uv_stat_t;
+
+
+typedef void (*uv_fs_event_cb)(uv_fs_event_t* handle,
+                               const char* filename,
+                               int events,
+                               int status);
+
+typedef void (*uv_fs_poll_cb)(uv_fs_poll_t* handle,
+                              int status,
+                              const uv_stat_t* prev,
+                              const uv_stat_t* curr);
+
+typedef void (*uv_signal_cb)(uv_signal_t* handle, int signum);
+
+
+typedef enum {
+  UV_LEAVE_GROUP = 0,
+  UV_JOIN_GROUP
+} uv_membership;
+
+
+__attribute__((visibility("default"))) int uv_translate_sys_error(int sys_errno);
+
+__attribute__((visibility("default"))) const char* uv_strerror(int err);
+__attribute__((visibility("default"))) char* uv_strerror_r(int err, char* buf, size_t buflen);
+
+__attribute__((visibility("default"))) const char* uv_err_name(int err);
+__attribute__((visibility("default"))) char* uv_err_name_r(int err, char* buf, size_t buflen);
+# 444 "/home/dweller/neovim/.deps/usr/include/uv.h"
+struct uv_req_s {
+  void* data; uv_req_type type; void* reserved[6];
+};
+
+
+
+
+
+
+__attribute__((visibility("default"))) int uv_shutdown(uv_shutdown_t* req,
+                          uv_stream_t* handle,
+                          uv_shutdown_cb cb);
+
+struct uv_shutdown_s {
+  void* data; uv_req_type type; void* reserved[6];
+  uv_stream_t* handle;
+  uv_shutdown_cb cb;
+ 
+};
+# 481 "/home/dweller/neovim/.deps/usr/include/uv.h"
+struct uv_handle_s {
+  void* data; uv_loop_t* loop; uv_handle_type type; uv_close_cb close_cb; struct uv__queue handle_queue; union { int fd; void* reserved[4]; } u; uv_handle_t* next_closing; unsigned int flags;
+};
+
+__attribute__((visibility("default"))) size_t uv_handle_size(uv_handle_type type);
+__attribute__((visibility("default"))) uv_handle_type uv_handle_get_type(const uv_handle_t* handle);
+__attribute__((visibility("default"))) const char* uv_handle_type_name(uv_handle_type type);
+__attribute__((visibility("default"))) void* uv_handle_get_data(const uv_handle_t* handle);
+__attribute__((visibility("default"))) uv_loop_t* uv_handle_get_loop(const uv_handle_t* handle);
+__attribute__((visibility("default"))) void uv_handle_set_data(uv_handle_t* handle, void* data);
+
+__attribute__((visibility("default"))) size_t uv_req_size(uv_req_type type);
+__attribute__((visibility("default"))) void* uv_req_get_data(const uv_req_t* req);
+__attribute__((visibility("default"))) void uv_req_set_data(uv_req_t* req, void* data);
+__attribute__((visibility("default"))) uv_req_type uv_req_get_type(const uv_req_t* req);
+__attribute__((visibility("default"))) const char* uv_req_type_name(uv_req_type type);
+
+__attribute__((visibility("default"))) int uv_is_active(const uv_handle_t* handle);
+
+__attribute__((visibility("default"))) void uv_walk(uv_loop_t* loop, uv_walk_cb walk_cb, void* arg);
+
+
+__attribute__((visibility("default"))) void uv_print_all_handles(uv_loop_t* loop, FILE* stream);
+__attribute__((visibility("default"))) void uv_print_active_handles(uv_loop_t* loop, FILE* stream);
+
+__attribute__((visibility("default"))) void uv_close(uv_handle_t* handle, uv_close_cb close_cb);
+
+__attribute__((visibility("default"))) int uv_send_buffer_size(uv_handle_t* handle, int* value);
+__attribute__((visibility("default"))) int uv_recv_buffer_size(uv_handle_t* handle, int* value);
+
+__attribute__((visibility("default"))) int uv_fileno(const uv_handle_t* handle, uv_os_fd_t* fd);
+
+__attribute__((visibility("default"))) uv_buf_t uv_buf_init(char* base, unsigned int len);
+
+__attribute__((visibility("default"))) int uv_pipe(uv_file fds[2], int read_flags, int write_flags);
+__attribute__((visibility("default"))) int uv_socketpair(int type,
+                            int protocol,
+                            uv_os_sock_t socket_vector[2],
+                            int flags0,
+                            int flags1);
+# 537 "/home/dweller/neovim/.deps/usr/include/uv.h"
+struct uv_stream_s {
+  void* data; uv_loop_t* loop; uv_handle_type type; uv_close_cb close_cb; struct uv__queue handle_queue; union { int fd; void* reserved[4]; } u; uv_handle_t* next_closing; unsigned int flags;
+  size_t write_queue_size; uv_alloc_cb alloc_cb; uv_read_cb read_cb; uv_connect_t *connect_req; uv_shutdown_t *shutdown_req; uv__io_t io_watcher; struct uv__queue write_queue; struct uv__queue write_completed_queue; uv_connection_cb connection_cb; int delayed_error; int accepted_fd; void* queued_fds;
+};
+
+__attribute__((visibility("default"))) size_t uv_stream_get_write_queue_size(const uv_stream_t* stream);
+
+__attribute__((visibility("default"))) int uv_listen(uv_stream_t* stream, int backlog, uv_connection_cb cb);
+__attribute__((visibility("default"))) int uv_accept(uv_stream_t* server, uv_stream_t* client);
+
+__attribute__((visibility("default"))) int uv_read_start(uv_stream_t*,
+                            uv_alloc_cb alloc_cb,
+                            uv_read_cb read_cb);
+__attribute__((visibility("default"))) int uv_read_stop(uv_stream_t*);
+
+__attribute__((visibility("default"))) int uv_write(uv_write_t* req,
+                       uv_stream_t* handle,
+                       const uv_buf_t bufs[],
+                       unsigned int nbufs,
+                       uv_write_cb cb);
+__attribute__((visibility("default"))) int uv_write2(uv_write_t* req,
+                        uv_stream_t* handle,
+                        const uv_buf_t bufs[],
+                        unsigned int nbufs,
+                        uv_stream_t* send_handle,
+                        uv_write_cb cb);
+__attribute__((visibility("default"))) int uv_try_write(uv_stream_t* handle,
+                           const uv_buf_t bufs[],
+                           unsigned int nbufs);
+__attribute__((visibility("default"))) int uv_try_write2(uv_stream_t* handle,
+                            const uv_buf_t bufs[],
+                            unsigned int nbufs,
+                            uv_stream_t* send_handle);
+
+
+struct uv_write_s {
+  void* data; uv_req_type type; void* reserved[6];
+  uv_write_cb cb;
+  uv_stream_t* send_handle;
+  uv_stream_t* handle;
+  struct uv__queue queue; unsigned int write_index; uv_buf_t* bufs; unsigned int nbufs; int error; uv_buf_t bufsml[4];
+};
+
+
+__attribute__((visibility("default"))) int uv_is_readable(const uv_stream_t* handle);
+__attribute__((visibility("default"))) int uv_is_writable(const uv_stream_t* handle);
+
+__attribute__((visibility("default"))) int uv_stream_set_blocking(uv_stream_t* handle, int blocking);
+
+__attribute__((visibility("default"))) int uv_is_closing(const uv_handle_t* handle);
+
+
+
+
+
+
+
+struct uv_tcp_s {
+  void* data; uv_loop_t* loop; uv_handle_type type; uv_close_cb close_cb; struct uv__queue handle_queue; union { int fd; void* reserved[4]; } u; uv_handle_t* next_closing; unsigned int flags;
+  size_t write_queue_size; uv_alloc_cb alloc_cb; uv_read_cb read_cb; uv_connect_t *connect_req; uv_shutdown_t *shutdown_req; uv__io_t io_watcher; struct uv__queue write_queue; struct uv__queue write_completed_queue; uv_connection_cb connection_cb; int delayed_error; int accepted_fd; void* queued_fds;
+ 
+};
+
+__attribute__((visibility("default"))) int uv_tcp_init(uv_loop_t*, uv_tcp_t* handle);
+__attribute__((visibility("default"))) int uv_tcp_init_ex(uv_loop_t*, uv_tcp_t* handle, unsigned int flags);
+__attribute__((visibility("default"))) int uv_tcp_open(uv_tcp_t* handle, uv_os_sock_t sock);
+__attribute__((visibility("default"))) int uv_tcp_nodelay(uv_tcp_t* handle, int enable);
+__attribute__((visibility("default"))) int uv_tcp_keepalive(uv_tcp_t* handle,
+                               int enable,
+                               unsigned int delay);
+__attribute__((visibility("default"))) int uv_tcp_simultaneous_accepts(uv_tcp_t* handle, int enable);
+
+enum uv_tcp_flags {
+
+  UV_TCP_IPV6ONLY = 1,
+# 622 "/home/dweller/neovim/.deps/usr/include/uv.h"
+  UV_TCP_REUSEPORT = 2,
+};
+
+__attribute__((visibility("default"))) int uv_tcp_bind(uv_tcp_t* handle,
+                          const struct sockaddr* addr,
+                          unsigned int flags);
+__attribute__((visibility("default"))) int uv_tcp_getsockname(const uv_tcp_t* handle,
+                                 struct sockaddr* name,
+                                 int* namelen);
+__attribute__((visibility("default"))) int uv_tcp_getpeername(const uv_tcp_t* handle,
+                                 struct sockaddr* name,
+                                 int* namelen);
+__attribute__((visibility("default"))) int uv_tcp_close_reset(uv_tcp_t* handle, uv_close_cb close_cb);
+__attribute__((visibility("default"))) int uv_tcp_connect(uv_connect_t* req,
+                             uv_tcp_t* handle,
+                             const struct sockaddr* addr,
+                             uv_connect_cb cb);
+
+
+struct uv_connect_s {
+  void* data; uv_req_type type; void* reserved[6];
+  uv_connect_cb cb;
+  uv_stream_t* handle;
+  struct uv__queue queue;
+};
+
+
+
+
+
+
+enum uv_udp_flags {
+
+  UV_UDP_IPV6ONLY = 1,
+
+
+
+
+  UV_UDP_PARTIAL = 2,
+# 672 "/home/dweller/neovim/.deps/usr/include/uv.h"
+  UV_UDP_REUSEADDR = 4,
+
+
+
+
+  UV_UDP_MMSG_CHUNK = 8,
+
+
+
+
+
+  UV_UDP_MMSG_FREE = 16,
+
+
+
+
+
+
+
+  UV_UDP_LINUX_RECVERR = 32,
+# 703 "/home/dweller/neovim/.deps/usr/include/uv.h"
+  UV_UDP_REUSEPORT = 64,
+
+
+
+  UV_UDP_RECVMMSG = 256
+};
+
+typedef void (*uv_udp_send_cb)(uv_udp_send_t* req, int status);
+typedef void (*uv_udp_recv_cb)(uv_udp_t* handle,
+                               ssize_t nread,
+                               const uv_buf_t* buf,
+                               const struct sockaddr* addr,
+                               unsigned flags);
+
+
+struct uv_udp_s {
+  void* data; uv_loop_t* loop; uv_handle_type type; uv_close_cb close_cb; struct uv__queue handle_queue; union { int fd; void* reserved[4]; } u; uv_handle_t* next_closing; unsigned int flags;
+
+
+
+
+
+  size_t send_queue_size;
+
+
+
+  size_t send_queue_count;
+  uv_alloc_cb alloc_cb; uv_udp_recv_cb recv_cb; uv__io_t io_watcher; struct uv__queue write_queue; struct uv__queue write_completed_queue;
+};
+
+
+struct uv_udp_send_s {
+  void* data; uv_req_type type; void* reserved[6];
+  uv_udp_t* handle;
+  uv_udp_send_cb cb;
+  struct uv__queue queue; union { struct sockaddr addr; struct sockaddr_storage storage; } u; unsigned int nbufs; uv_buf_t* bufs; ssize_t status; uv_udp_send_cb send_cb; uv_buf_t bufsml[4];
+};
+
+__attribute__((visibility("default"))) int uv_udp_init(uv_loop_t*, uv_udp_t* handle);
+__attribute__((visibility("default"))) int uv_udp_init_ex(uv_loop_t*, uv_udp_t* handle, unsigned int flags);
+__attribute__((visibility("default"))) int uv_udp_open(uv_udp_t* handle, uv_os_sock_t sock);
+__attribute__((visibility("default"))) int uv_udp_bind(uv_udp_t* handle,
+                          const struct sockaddr* addr,
+                          unsigned int flags);
+__attribute__((visibility("default"))) int uv_udp_connect(uv_udp_t* handle, const struct sockaddr* addr);
+
+__attribute__((visibility("default"))) int uv_udp_getpeername(const uv_udp_t* handle,
+                                 struct sockaddr* name,
+                                 int* namelen);
+__attribute__((visibility("default"))) int uv_udp_getsockname(const uv_udp_t* handle,
+                                 struct sockaddr* name,
+                                 int* namelen);
+__attribute__((visibility("default"))) int uv_udp_set_membership(uv_udp_t* handle,
+                                    const char* multicast_addr,
+                                    const char* interface_addr,
+                                    uv_membership membership);
+__attribute__((visibility("default"))) int uv_udp_set_source_membership(uv_udp_t* handle,
+                                           const char* multicast_addr,
+                                           const char* interface_addr,
+                                           const char* source_addr,
+                                           uv_membership membership);
+__attribute__((visibility("default"))) int uv_udp_set_multicast_loop(uv_udp_t* handle, int on);
+__attribute__((visibility("default"))) int uv_udp_set_multicast_ttl(uv_udp_t* handle, int ttl);
+__attribute__((visibility("default"))) int uv_udp_set_multicast_interface(uv_udp_t* handle,
+                                             const char* interface_addr);
+__attribute__((visibility("default"))) int uv_udp_set_broadcast(uv_udp_t* handle, int on);
+__attribute__((visibility("default"))) int uv_udp_set_ttl(uv_udp_t* handle, int ttl);
+__attribute__((visibility("default"))) int uv_udp_send(uv_udp_send_t* req,
+                          uv_udp_t* handle,
+                          const uv_buf_t bufs[],
+                          unsigned int nbufs,
+                          const struct sockaddr* addr,
+                          uv_udp_send_cb send_cb);
+__attribute__((visibility("default"))) int uv_udp_try_send(uv_udp_t* handle,
+                              const uv_buf_t bufs[],
+                              unsigned int nbufs,
+                              const struct sockaddr* addr);
+__attribute__((visibility("default"))) int uv_udp_try_send2(uv_udp_t* handle,
+                               unsigned int count,
+                               uv_buf_t* bufs[ ],
+                               unsigned int nbufs[ ],
+                               struct sockaddr* addrs[ ],
+                               unsigned int flags);
+__attribute__((visibility("default"))) int uv_udp_recv_start(uv_udp_t* handle,
+                                uv_alloc_cb alloc_cb,
+                                uv_udp_recv_cb recv_cb);
+__attribute__((visibility("default"))) int uv_udp_using_recvmmsg(const uv_udp_t* handle);
+__attribute__((visibility("default"))) int uv_udp_recv_stop(uv_udp_t* handle);
+__attribute__((visibility("default"))) size_t uv_udp_get_send_queue_size(const uv_udp_t* handle);
+__attribute__((visibility("default"))) size_t uv_udp_get_send_queue_count(const uv_udp_t* handle);
+
+
+
+
+
+
+
+struct uv_tty_s {
+  void* data; uv_loop_t* loop; uv_handle_type type; uv_close_cb close_cb; struct uv__queue handle_queue; union { int fd; void* reserved[4]; } u; uv_handle_t* next_closing; unsigned int flags;
+  size_t write_queue_size; uv_alloc_cb alloc_cb; uv_read_cb read_cb; uv_connect_t *connect_req; uv_shutdown_t *shutdown_req; uv__io_t io_watcher; struct uv__queue write_queue; struct uv__queue write_completed_queue; uv_connection_cb connection_cb; int delayed_error; int accepted_fd; void* queued_fds;
+  struct termios orig_termios; int mode;
+};
+
+typedef enum {
+
+  UV_TTY_MODE_NORMAL,
+
+
+
+
+  UV_TTY_MODE_RAW,
+
+  UV_TTY_MODE_IO,
+
+  UV_TTY_MODE_RAW_VT
+} uv_tty_mode_t;
+
+typedef enum {
+
+
+
+
+  UV_TTY_SUPPORTED,
+
+
+
+  UV_TTY_UNSUPPORTED
+} uv_tty_vtermstate_t;
+
+
+__attribute__((visibility("default"))) int uv_tty_init(uv_loop_t*, uv_tty_t*, uv_file fd, int readable);
+__attribute__((visibility("default"))) int uv_tty_set_mode(uv_tty_t*, uv_tty_mode_t mode);
+__attribute__((visibility("default"))) int uv_tty_reset_mode(void);
+__attribute__((visibility("default"))) int uv_tty_get_winsize(uv_tty_t*, int* width, int* height);
+__attribute__((visibility("default"))) void uv_tty_set_vterm_state(uv_tty_vtermstate_t state);
+__attribute__((visibility("default"))) int uv_tty_get_vterm_state(uv_tty_vtermstate_t* state);
+# 850 "/home/dweller/neovim/.deps/usr/include/uv.h"
+__attribute__((visibility("default"))) uv_handle_type uv_guess_handle(uv_file file);
+
+enum {
+  UV_PIPE_NO_TRUNCATE = 1u << 0
+};
+
+
+
+
+
+
+
+struct uv_pipe_s {
+  void* data; uv_loop_t* loop; uv_handle_type type; uv_close_cb close_cb; struct uv__queue handle_queue; union { int fd; void* reserved[4]; } u; uv_handle_t* next_closing; unsigned int flags;
+  size_t write_queue_size; uv_alloc_cb alloc_cb; uv_read_cb read_cb; uv_connect_t *connect_req; uv_shutdown_t *shutdown_req; uv__io_t io_watcher; struct uv__queue write_queue; struct uv__queue write_completed_queue; uv_connection_cb connection_cb; int delayed_error; int accepted_fd; void* queued_fds;
+  int ipc;
+  const char* pipe_fname;
+};
+
+__attribute__((visibility("default"))) int uv_pipe_init(uv_loop_t*, uv_pipe_t* handle, int ipc);
+__attribute__((visibility("default"))) int uv_pipe_open(uv_pipe_t*, uv_file file);
+__attribute__((visibility("default"))) int uv_pipe_bind(uv_pipe_t* handle, const char* name);
+__attribute__((visibility("default"))) int uv_pipe_bind2(uv_pipe_t* handle,
+                            const char* name,
+                            size_t namelen,
+                            unsigned int flags);
+__attribute__((visibility("default"))) void uv_pipe_connect(uv_connect_t* req,
+                               uv_pipe_t* handle,
+                               const char* name,
+                               uv_connect_cb cb);
+__attribute__((visibility("default"))) int uv_pipe_connect2(uv_connect_t* req,
+                               uv_pipe_t* handle,
+                               const char* name,
+                               size_t namelen,
+                               unsigned int flags,
+                               uv_connect_cb cb);
+__attribute__((visibility("default"))) int uv_pipe_getsockname(const uv_pipe_t* handle,
+                                  char* buffer,
+                                  size_t* size);
+__attribute__((visibility("default"))) int uv_pipe_getpeername(const uv_pipe_t* handle,
+                                  char* buffer,
+                                  size_t* size);
+__attribute__((visibility("default"))) void uv_pipe_pending_instances(uv_pipe_t* handle, int count);
+__attribute__((visibility("default"))) int uv_pipe_pending_count(uv_pipe_t* handle);
+__attribute__((visibility("default"))) uv_handle_type uv_pipe_pending_type(uv_pipe_t* handle);
+__attribute__((visibility("default"))) int uv_pipe_chmod(uv_pipe_t* handle, int flags);
+
+
+struct uv_poll_s {
+  void* data; uv_loop_t* loop; uv_handle_type type; uv_close_cb close_cb; struct uv__queue handle_queue; union { int fd; void* reserved[4]; } u; uv_handle_t* next_closing; unsigned int flags;
+  uv_poll_cb poll_cb;
+  uv__io_t io_watcher;
+};
+
+enum uv_poll_event {
+  UV_READABLE = 1,
+  UV_WRITABLE = 2,
+  UV_DISCONNECT = 4,
+  UV_PRIORITIZED = 8
+};
+
+__attribute__((visibility("default"))) int uv_poll_init(uv_loop_t* loop, uv_poll_t* handle, int fd);
+__attribute__((visibility("default"))) int uv_poll_init_socket(uv_loop_t* loop,
+                                  uv_poll_t* handle,
+                                  uv_os_sock_t socket);
+__attribute__((visibility("default"))) int uv_poll_start(uv_poll_t* handle, int events, uv_poll_cb cb);
+__attribute__((visibility("default"))) int uv_poll_stop(uv_poll_t* handle);
+
+
+struct uv_prepare_s {
+  void* data; uv_loop_t* loop; uv_handle_type type; uv_close_cb close_cb; struct uv__queue handle_queue; union { int fd; void* reserved[4]; } u; uv_handle_t* next_closing; unsigned int flags;
+  uv_prepare_cb prepare_cb; struct uv__queue queue;
+};
+
+__attribute__((visibility("default"))) int uv_prepare_init(uv_loop_t*, uv_prepare_t* prepare);
+__attribute__((visibility("default"))) int uv_prepare_start(uv_prepare_t* prepare, uv_prepare_cb cb);
+__attribute__((visibility("default"))) int uv_prepare_stop(uv_prepare_t* prepare);
+
+
+struct uv_check_s {
+  void* data; uv_loop_t* loop; uv_handle_type type; uv_close_cb close_cb; struct uv__queue handle_queue; union { int fd; void* reserved[4]; } u; uv_handle_t* next_closing; unsigned int flags;
+  uv_check_cb check_cb; struct uv__queue queue;
+};
+
+__attribute__((visibility("default"))) int uv_check_init(uv_loop_t*, uv_check_t* check);
+__attribute__((visibility("default"))) int uv_check_start(uv_check_t* check, uv_check_cb cb);
+__attribute__((visibility("default"))) int uv_check_stop(uv_check_t* check);
+
+
+struct uv_idle_s {
+  void* data; uv_loop_t* loop; uv_handle_type type; uv_close_cb close_cb; struct uv__queue handle_queue; union { int fd; void* reserved[4]; } u; uv_handle_t* next_closing; unsigned int flags;
+  uv_idle_cb idle_cb; struct uv__queue queue;
+};
+
+__attribute__((visibility("default"))) int uv_idle_init(uv_loop_t*, uv_idle_t* idle);
+__attribute__((visibility("default"))) int uv_idle_start(uv_idle_t* idle, uv_idle_cb cb);
+__attribute__((visibility("default"))) int uv_idle_stop(uv_idle_t* idle);
+
+
+struct uv_async_s {
+  void* data; uv_loop_t* loop; uv_handle_type type; uv_close_cb close_cb; struct uv__queue handle_queue; union { int fd; void* reserved[4]; } u; uv_handle_t* next_closing; unsigned int flags;
+  uv_async_cb async_cb; struct uv__queue queue; int pending;
+};
+
+__attribute__((visibility("default"))) int uv_async_init(uv_loop_t*,
+                            uv_async_t* async,
+                            uv_async_cb async_cb);
+__attribute__((visibility("default"))) int uv_async_send(uv_async_t* async);
+
+
+
+
+
+
+
+struct uv_timer_s {
+  void* data; uv_loop_t* loop; uv_handle_type type; uv_close_cb close_cb; struct uv__queue handle_queue; union { int fd; void* reserved[4]; } u; uv_handle_t* next_closing; unsigned int flags;
+  uv_timer_cb timer_cb; union { void* heap[3]; struct uv__queue queue; } node; uint64_t timeout; uint64_t repeat; uint64_t start_id;
+};
+
+__attribute__((visibility("default"))) int uv_timer_init(uv_loop_t*, uv_timer_t* handle);
+__attribute__((visibility("default"))) int uv_timer_start(uv_timer_t* handle,
+                             uv_timer_cb cb,
+                             uint64_t timeout,
+                             uint64_t repeat);
+__attribute__((visibility("default"))) int uv_timer_stop(uv_timer_t* handle);
+__attribute__((visibility("default"))) int uv_timer_again(uv_timer_t* handle);
+__attribute__((visibility("default"))) void uv_timer_set_repeat(uv_timer_t* handle, uint64_t repeat);
+__attribute__((visibility("default"))) uint64_t uv_timer_get_repeat(const uv_timer_t* handle);
+__attribute__((visibility("default"))) uint64_t uv_timer_get_due_in(const uv_timer_t* handle);
+
+
+
+
+
+
+
+struct uv_getaddrinfo_s {
+  void* data; uv_req_type type; void* reserved[6];
+
+  uv_loop_t* loop;
+
+  struct uv__work work_req; uv_getaddrinfo_cb cb; struct addrinfo* hints; char* hostname; char* service; struct addrinfo* addrinfo; int retcode;
+};
+
+
+__attribute__((visibility("default"))) int uv_getaddrinfo(uv_loop_t* loop,
+                             uv_getaddrinfo_t* req,
+                             uv_getaddrinfo_cb getaddrinfo_cb,
+                             const char* node,
+                             const char* service,
+                             const struct addrinfo* hints);
+__attribute__((visibility("default"))) void uv_freeaddrinfo(struct addrinfo* ai);
+
+
+
+
+
+
+
+struct uv_getnameinfo_s {
+  void* data; uv_req_type type; void* reserved[6];
+
+  uv_loop_t* loop;
+
+  struct uv__work work_req; uv_getnameinfo_cb getnameinfo_cb; struct sockaddr_storage storage; int flags; char host[
+# 1015 "/home/dweller/neovim/.deps/usr/include/uv.h" 3 4
+ 1025
+# 1015 "/home/dweller/neovim/.deps/usr/include/uv.h"
+ ]; char service[
+# 1015 "/home/dweller/neovim/.deps/usr/include/uv.h" 3 4
+ 32
+# 1015 "/home/dweller/neovim/.deps/usr/include/uv.h"
+ ]; int retcode;
+};
+
+__attribute__((visibility("default"))) int uv_getnameinfo(uv_loop_t* loop,
+                             uv_getnameinfo_t* req,
+                             uv_getnameinfo_cb getnameinfo_cb,
+                             const struct sockaddr* addr,
+                             int flags);
+
+
+
+typedef enum {
+  UV_IGNORE = 0x00,
+  UV_CREATE_PIPE = 0x01,
+  UV_INHERIT_FD = 0x02,
+  UV_INHERIT_STREAM = 0x04,
+
+
+
+
+
+
+  UV_READABLE_PIPE = 0x10,
+  UV_WRITABLE_PIPE = 0x20,
+
+
+
+
+
+
+
+  UV_NONBLOCK_PIPE = 0x40,
+  UV_OVERLAPPED_PIPE = 0x40
+} uv_stdio_flags;
+
+typedef struct uv_stdio_container_s {
+  uv_stdio_flags flags;
+
+  union {
+    uv_stream_t* stream;
+    int fd;
+  } data;
+} uv_stdio_container_t;
+
+typedef struct uv_process_options_s {
+  uv_exit_cb exit_cb;
+  const char* file;
+
+
+
+
+
+
+  char** args;
+
+
+
+
+  char** env;
+
+
+
+
+  const char* cwd;
+
+
+
+
+  unsigned int flags;
+# 1093 "/home/dweller/neovim/.deps/usr/include/uv.h"
+  int stdio_count;
+  uv_stdio_container_t* stdio;
+
+
+
+
+
+  uv_uid_t uid;
+  uv_gid_t gid;
+} uv_process_options_t;
+
+
+
+
+enum uv_process_flags {
+
+
+
+
+
+  UV_PROCESS_SETUID = (1 << 0),
+
+
+
+
+
+  UV_PROCESS_SETGID = (1 << 1),
+
+
+
+
+
+  UV_PROCESS_WINDOWS_VERBATIM_ARGUMENTS = (1 << 2),
+
+
+
+
+
+
+
+  UV_PROCESS_DETACHED = (1 << 3),
+
+
+
+
+  UV_PROCESS_WINDOWS_HIDE = (1 << 4),
+
+
+
+
+
+  UV_PROCESS_WINDOWS_HIDE_CONSOLE = (1 << 5),
+
+
+
+
+
+  UV_PROCESS_WINDOWS_HIDE_GUI = (1 << 6),
+
+
+
+
+
+
+  UV_PROCESS_WINDOWS_FILE_PATH_EXACT_NAME = (1 << 7)
+};
+
+
+
+
+struct uv_process_s {
+  void* data; uv_loop_t* loop; uv_handle_type type; uv_close_cb close_cb; struct uv__queue handle_queue; union { int fd; void* reserved[4]; } u; uv_handle_t* next_closing; unsigned int flags;
+  uv_exit_cb exit_cb;
+  int pid;
+  struct uv__queue queue; int status;
+};
+
+__attribute__((visibility("default"))) int uv_spawn(uv_loop_t* loop,
+                       uv_process_t* handle,
+                       const uv_process_options_t* options);
+__attribute__((visibility("default"))) int uv_process_kill(uv_process_t*, int signum);
+__attribute__((visibility("default"))) int uv_kill(int pid, int signum);
+__attribute__((visibility("default"))) uv_pid_t uv_process_get_pid(const uv_process_t*);
+
+
+
+
+
+struct uv_work_s {
+  void* data; uv_req_type type; void* reserved[6];
+  uv_loop_t* loop;
+  uv_work_cb work_cb;
+  uv_after_work_cb after_work_cb;
+  struct uv__work work_req;
+};
+
+__attribute__((visibility("default"))) int uv_queue_work(uv_loop_t* loop,
+                            uv_work_t* req,
+                            uv_work_cb work_cb,
+                            uv_after_work_cb after_work_cb);
+
+__attribute__((visibility("default"))) int uv_cancel(uv_req_t* req);
+
+
+struct uv_cpu_times_s {
+  uint64_t user;
+  uint64_t nice;
+  uint64_t sys;
+  uint64_t idle;
+  uint64_t irq;
+};
+
+struct uv_cpu_info_s {
+  char* model;
+  int speed;
+  struct uv_cpu_times_s cpu_times;
+};
+
+struct uv_interface_address_s {
+  char* name;
+  char phys_addr[6];
+  int is_internal;
+  union {
+    struct sockaddr_in address4;
+    struct sockaddr_in6 address6;
+  } address;
+  union {
+    struct sockaddr_in netmask4;
+    struct sockaddr_in6 netmask6;
+  } netmask;
+};
+
+struct uv_passwd_s {
+  char* username;
+  unsigned long uid;
+  unsigned long gid;
+  char* shell;
+  char* homedir;
+};
+
+struct uv_group_s {
+  char* groupname;
+  unsigned long gid;
+  char** members;
+};
+
+struct uv_utsname_s {
+  char sysname[256];
+  char release[256];
+  char version[256];
+  char machine[256];
+
+
+
+};
+
+struct uv_statfs_s {
+  uint64_t f_type;
+  uint64_t f_bsize;
+  uint64_t f_blocks;
+  uint64_t f_bfree;
+  uint64_t f_bavail;
+  uint64_t f_files;
+  uint64_t f_ffree;
+  uint64_t f_spare[4];
+};
+
+typedef enum {
+  UV_DIRENT_UNKNOWN,
+  UV_DIRENT_FILE,
+  UV_DIRENT_DIR,
+  UV_DIRENT_LINK,
+  UV_DIRENT_FIFO,
+  UV_DIRENT_SOCKET,
+  UV_DIRENT_CHAR,
+  UV_DIRENT_BLOCK
+} uv_dirent_type_t;
+
+struct uv_dirent_s {
+  const char* name;
+  uv_dirent_type_t type;
+};
+
+__attribute__((visibility("default"))) char** uv_setup_args(int argc, char** argv);
+__attribute__((visibility("default"))) int uv_get_process_title(char* buffer, size_t size);
+__attribute__((visibility("default"))) int uv_set_process_title(const char* title);
+__attribute__((visibility("default"))) int uv_resident_set_memory(size_t* rss);
+__attribute__((visibility("default"))) int uv_uptime(double* uptime);
+__attribute__((visibility("default"))) uv_os_fd_t uv_get_osfhandle(int fd);
+__attribute__((visibility("default"))) int uv_open_osfhandle(uv_os_fd_t os_fd);
+
+typedef struct {
+   uv_timeval_t ru_utime;
+   uv_timeval_t ru_stime;
+   uint64_t ru_maxrss;
+   uint64_t ru_ixrss;
+   uint64_t ru_idrss;
+   uint64_t ru_isrss;
+   uint64_t ru_minflt;
+   uint64_t ru_majflt;
+   uint64_t ru_nswap;
+   uint64_t ru_inblock;
+   uint64_t ru_oublock;
+   uint64_t ru_msgsnd;
+   uint64_t ru_msgrcv;
+   uint64_t ru_nsignals;
+   uint64_t ru_nvcsw;
+   uint64_t ru_nivcsw;
+} uv_rusage_t;
+
+__attribute__((visibility("default"))) int uv_getrusage(uv_rusage_t* rusage);
+__attribute__((visibility("default"))) int uv_getrusage_thread(uv_rusage_t* rusage);
+
+__attribute__((visibility("default"))) int uv_os_homedir(char* buffer, size_t* size);
+__attribute__((visibility("default"))) int uv_os_tmpdir(char* buffer, size_t* size);
+__attribute__((visibility("default"))) int uv_os_get_passwd(uv_passwd_t* pwd);
+__attribute__((visibility("default"))) void uv_os_free_passwd(uv_passwd_t* pwd);
+__attribute__((visibility("default"))) int uv_os_get_passwd2(uv_passwd_t* pwd, uv_uid_t uid);
+__attribute__((visibility("default"))) int uv_os_get_group(uv_group_t* grp, uv_uid_t gid);
+__attribute__((visibility("default"))) void uv_os_free_group(uv_group_t* grp);
+__attribute__((visibility("default"))) uv_pid_t uv_os_getpid(void);
+__attribute__((visibility("default"))) uv_pid_t uv_os_getppid(void);
+# 1333 "/home/dweller/neovim/.deps/usr/include/uv.h"
+__attribute__((visibility("default"))) int uv_os_getpriority(uv_pid_t pid, int* priority);
+__attribute__((visibility("default"))) int uv_os_setpriority(uv_pid_t pid, int priority);
+
+enum {
+  UV_THREAD_PRIORITY_HIGHEST = 2,
+  UV_THREAD_PRIORITY_ABOVE_NORMAL = 1,
+  UV_THREAD_PRIORITY_NORMAL = 0,
+  UV_THREAD_PRIORITY_BELOW_NORMAL = -1,
+  UV_THREAD_PRIORITY_LOWEST = -2,
+};
+
+__attribute__((visibility("default"))) int uv_thread_getpriority(uv_thread_t tid, int* priority);
+__attribute__((visibility("default"))) int uv_thread_setpriority(uv_thread_t tid, int priority);
+
+__attribute__((visibility("default"))) unsigned int uv_available_parallelism(void);
+__attribute__((visibility("default"))) int uv_cpu_info(uv_cpu_info_t** cpu_infos, int* count);
+__attribute__((visibility("default"))) void uv_free_cpu_info(uv_cpu_info_t* cpu_infos, int count);
+__attribute__((visibility("default"))) int uv_cpumask_size(void);
+
+__attribute__((visibility("default"))) int uv_interface_addresses(uv_interface_address_t** addresses,
+                                     int* count);
+__attribute__((visibility("default"))) void uv_free_interface_addresses(uv_interface_address_t* addresses,
+                                           int count);
+
+struct uv_env_item_s {
+  char* name;
+  char* value;
+};
+
+__attribute__((visibility("default"))) int uv_os_environ(uv_env_item_t** envitems, int* count);
+__attribute__((visibility("default"))) void uv_os_free_environ(uv_env_item_t* envitems, int count);
+__attribute__((visibility("default"))) int uv_os_getenv(const char* name, char* buffer, size_t* size);
+__attribute__((visibility("default"))) int uv_os_setenv(const char* name, const char* value);
+__attribute__((visibility("default"))) int uv_os_unsetenv(const char* name);
+# 1379 "/home/dweller/neovim/.deps/usr/include/uv.h"
+__attribute__((visibility("default"))) int uv_os_gethostname(char* buffer, size_t* size);
+
+__attribute__((visibility("default"))) int uv_os_uname(uv_utsname_t* buffer);
+
+struct uv_metrics_s {
+  uint64_t loop_count;
+  uint64_t events;
+  uint64_t events_waiting;
+
+  uint64_t* reserved[13];
+};
+
+__attribute__((visibility("default"))) int uv_metrics_info(uv_loop_t* loop, uv_metrics_t* metrics);
+__attribute__((visibility("default"))) uint64_t uv_metrics_idle_time(uv_loop_t* loop);
+
+typedef enum {
+  UV_FS_UNKNOWN = -1,
+  UV_FS_CUSTOM,
+  UV_FS_OPEN,
+  UV_FS_CLOSE,
+  UV_FS_READ,
+  UV_FS_WRITE,
+  UV_FS_SENDFILE,
+  UV_FS_STAT,
+  UV_FS_LSTAT,
+  UV_FS_FSTAT,
+  UV_FS_FTRUNCATE,
+  UV_FS_UTIME,
+  UV_FS_FUTIME,
+  UV_FS_ACCESS,
+  UV_FS_CHMOD,
+  UV_FS_FCHMOD,
+  UV_FS_FSYNC,
+  UV_FS_FDATASYNC,
+  UV_FS_UNLINK,
+  UV_FS_RMDIR,
+  UV_FS_MKDIR,
+  UV_FS_MKDTEMP,
+  UV_FS_RENAME,
+  UV_FS_SCANDIR,
+  UV_FS_LINK,
+  UV_FS_SYMLINK,
+  UV_FS_READLINK,
+  UV_FS_CHOWN,
+  UV_FS_FCHOWN,
+  UV_FS_REALPATH,
+  UV_FS_COPYFILE,
+  UV_FS_LCHOWN,
+  UV_FS_OPENDIR,
+  UV_FS_READDIR,
+  UV_FS_CLOSEDIR,
+  UV_FS_STATFS,
+  UV_FS_MKSTEMP,
+  UV_FS_LUTIME
+} uv_fs_type;
+
+struct uv_dir_s {
+  uv_dirent_t* dirents;
+  size_t nentries;
+  void* reserved[4];
+  DIR* dir;
+};
+
+
+struct uv_fs_s {
+  void* data; uv_req_type type; void* reserved[6];
+  uv_fs_type fs_type;
+  uv_loop_t* loop;
+  uv_fs_cb cb;
+  ssize_t result;
+  void* ptr;
+  const char* path;
+  uv_stat_t statbuf;
+  const char *new_path; uv_file file; int flags; mode_t mode; unsigned int nbufs; uv_buf_t* bufs; off_t off; uv_uid_t uid; uv_gid_t gid; double atime; double mtime; struct uv__work work_req; uv_buf_t bufsml[4];
+};
+
+__attribute__((visibility("default"))) uv_fs_type uv_fs_get_type(const uv_fs_t*);
+__attribute__((visibility("default"))) ssize_t uv_fs_get_result(const uv_fs_t*);
+__attribute__((visibility("default"))) int uv_fs_get_system_error(const uv_fs_t*);
+__attribute__((visibility("default"))) void* uv_fs_get_ptr(const uv_fs_t*);
+__attribute__((visibility("default"))) const char* uv_fs_get_path(const uv_fs_t*);
+__attribute__((visibility("default"))) uv_stat_t* uv_fs_get_statbuf(uv_fs_t*);
+
+__attribute__((visibility("default"))) void uv_fs_req_cleanup(uv_fs_t* req);
+__attribute__((visibility("default"))) int uv_fs_close(uv_loop_t* loop,
+                          uv_fs_t* req,
+                          uv_file file,
+                          uv_fs_cb cb);
+__attribute__((visibility("default"))) int uv_fs_open(uv_loop_t* loop,
+                         uv_fs_t* req,
+                         const char* path,
+                         int flags,
+                         int mode,
+                         uv_fs_cb cb);
+__attribute__((visibility("default"))) int uv_fs_read(uv_loop_t* loop,
+                         uv_fs_t* req,
+                         uv_file file,
+                         const uv_buf_t bufs[],
+                         unsigned int nbufs,
+                         int64_t offset,
+                         uv_fs_cb cb);
+__attribute__((visibility("default"))) int uv_fs_unlink(uv_loop_t* loop,
+                           uv_fs_t* req,
+                           const char* path,
+                           uv_fs_cb cb);
+__attribute__((visibility("default"))) int uv_fs_write(uv_loop_t* loop,
+                          uv_fs_t* req,
+                          uv_file file,
+                          const uv_buf_t bufs[],
+                          unsigned int nbufs,
+                          int64_t offset,
+                          uv_fs_cb cb);
+# 1509 "/home/dweller/neovim/.deps/usr/include/uv.h"
+__attribute__((visibility("default"))) int uv_fs_copyfile(uv_loop_t* loop,
+                             uv_fs_t* req,
+                             const char* path,
+                             const char* new_path,
+                             int flags,
+                             uv_fs_cb cb);
+__attribute__((visibility("default"))) int uv_fs_mkdir(uv_loop_t* loop,
+                          uv_fs_t* req,
+                          const char* path,
+                          int mode,
+                          uv_fs_cb cb);
+__attribute__((visibility("default"))) int uv_fs_mkdtemp(uv_loop_t* loop,
+                            uv_fs_t* req,
+                            const char* tpl,
+                            uv_fs_cb cb);
+__attribute__((visibility("default"))) int uv_fs_mkstemp(uv_loop_t* loop,
+                            uv_fs_t* req,
+                            const char* tpl,
+                            uv_fs_cb cb);
+__attribute__((visibility("default"))) int uv_fs_rmdir(uv_loop_t* loop,
+                          uv_fs_t* req,
+                          const char* path,
+                          uv_fs_cb cb);
+__attribute__((visibility("default"))) int uv_fs_scandir(uv_loop_t* loop,
+                            uv_fs_t* req,
+                            const char* path,
+                            int flags,
+                            uv_fs_cb cb);
+__attribute__((visibility("default"))) int uv_fs_scandir_next(uv_fs_t* req,
+                                 uv_dirent_t* ent);
+__attribute__((visibility("default"))) int uv_fs_opendir(uv_loop_t* loop,
+                            uv_fs_t* req,
+                            const char* path,
+                            uv_fs_cb cb);
+__attribute__((visibility("default"))) int uv_fs_readdir(uv_loop_t* loop,
+                            uv_fs_t* req,
+                            uv_dir_t* dir,
+                            uv_fs_cb cb);
+__attribute__((visibility("default"))) int uv_fs_closedir(uv_loop_t* loop,
+                             uv_fs_t* req,
+                             uv_dir_t* dir,
+                             uv_fs_cb cb);
+__attribute__((visibility("default"))) int uv_fs_stat(uv_loop_t* loop,
+                         uv_fs_t* req,
+                         const char* path,
+                         uv_fs_cb cb);
+__attribute__((visibility("default"))) int uv_fs_fstat(uv_loop_t* loop,
+                          uv_fs_t* req,
+                          uv_file file,
+                          uv_fs_cb cb);
+__attribute__((visibility("default"))) int uv_fs_rename(uv_loop_t* loop,
+                           uv_fs_t* req,
+                           const char* path,
+                           const char* new_path,
+                           uv_fs_cb cb);
+__attribute__((visibility("default"))) int uv_fs_fsync(uv_loop_t* loop,
+                          uv_fs_t* req,
+                          uv_file file,
+                          uv_fs_cb cb);
+__attribute__((visibility("default"))) int uv_fs_fdatasync(uv_loop_t* loop,
+                              uv_fs_t* req,
+                              uv_file file,
+                              uv_fs_cb cb);
+__attribute__((visibility("default"))) int uv_fs_ftruncate(uv_loop_t* loop,
+                              uv_fs_t* req,
+                              uv_file file,
+                              int64_t offset,
+                              uv_fs_cb cb);
+__attribute__((visibility("default"))) int uv_fs_sendfile(uv_loop_t* loop,
+                             uv_fs_t* req,
+                             uv_file out_fd,
+                             uv_file in_fd,
+                             int64_t in_offset,
+                             size_t length,
+                             uv_fs_cb cb);
+__attribute__((visibility("default"))) int uv_fs_access(uv_loop_t* loop,
+                           uv_fs_t* req,
+                           const char* path,
+                           int mode,
+                           uv_fs_cb cb);
+__attribute__((visibility("default"))) int uv_fs_chmod(uv_loop_t* loop,
+                          uv_fs_t* req,
+                          const char* path,
+                          int mode,
+                          uv_fs_cb cb);
+
+
+__attribute__((visibility("default"))) int uv_fs_utime(uv_loop_t* loop,
+                          uv_fs_t* req,
+                          const char* path,
+                          double atime,
+                          double mtime,
+                          uv_fs_cb cb);
+__attribute__((visibility("default"))) int uv_fs_futime(uv_loop_t* loop,
+                           uv_fs_t* req,
+                           uv_file file,
+                           double atime,
+                           double mtime,
+                           uv_fs_cb cb);
+__attribute__((visibility("default"))) int uv_fs_lutime(uv_loop_t* loop,
+                           uv_fs_t* req,
+                           const char* path,
+                           double atime,
+                           double mtime,
+                           uv_fs_cb cb);
+__attribute__((visibility("default"))) int uv_fs_lstat(uv_loop_t* loop,
+                          uv_fs_t* req,
+                          const char* path,
+                          uv_fs_cb cb);
+__attribute__((visibility("default"))) int uv_fs_link(uv_loop_t* loop,
+                         uv_fs_t* req,
+                         const char* path,
+                         const char* new_path,
+                         uv_fs_cb cb);
+# 1636 "/home/dweller/neovim/.deps/usr/include/uv.h"
+__attribute__((visibility("default"))) int uv_fs_symlink(uv_loop_t* loop,
+                            uv_fs_t* req,
+                            const char* path,
+                            const char* new_path,
+                            int flags,
+                            uv_fs_cb cb);
+__attribute__((visibility("default"))) int uv_fs_readlink(uv_loop_t* loop,
+                             uv_fs_t* req,
+                             const char* path,
+                             uv_fs_cb cb);
+__attribute__((visibility("default"))) int uv_fs_realpath(uv_loop_t* loop,
+                             uv_fs_t* req,
+                             const char* path,
+                             uv_fs_cb cb);
+__attribute__((visibility("default"))) int uv_fs_fchmod(uv_loop_t* loop,
+                           uv_fs_t* req,
+                           uv_file file,
+                           int mode,
+                           uv_fs_cb cb);
+__attribute__((visibility("default"))) int uv_fs_chown(uv_loop_t* loop,
+                          uv_fs_t* req,
+                          const char* path,
+                          uv_uid_t uid,
+                          uv_gid_t gid,
+                          uv_fs_cb cb);
+__attribute__((visibility("default"))) int uv_fs_fchown(uv_loop_t* loop,
+                           uv_fs_t* req,
+                           uv_file file,
+                           uv_uid_t uid,
+                           uv_gid_t gid,
+                           uv_fs_cb cb);
+__attribute__((visibility("default"))) int uv_fs_lchown(uv_loop_t* loop,
+                           uv_fs_t* req,
+                           const char* path,
+                           uv_uid_t uid,
+                           uv_gid_t gid,
+                           uv_fs_cb cb);
+__attribute__((visibility("default"))) int uv_fs_statfs(uv_loop_t* loop,
+                           uv_fs_t* req,
+                           const char* path,
+                           uv_fs_cb cb);
+
+
+enum uv_fs_event {
+  UV_RENAME = 1,
+  UV_CHANGE = 2
+};
+
+
+struct uv_fs_event_s {
+  void* data; uv_loop_t* loop; uv_handle_type type; uv_close_cb close_cb; struct uv__queue handle_queue; union { int fd; void* reserved[4]; } u; uv_handle_t* next_closing; unsigned int flags;
+
+  char* path;
+  uv_fs_event_cb cb; struct uv__queue watchers; int wd;
+};
+
+
+
+
+
+struct uv_fs_poll_s {
+  void* data; uv_loop_t* loop; uv_handle_type type; uv_close_cb close_cb; struct uv__queue handle_queue; union { int fd; void* reserved[4]; } u; uv_handle_t* next_closing; unsigned int flags;
+
+  void* poll_ctx;
+};
+
+__attribute__((visibility("default"))) int uv_fs_poll_init(uv_loop_t* loop, uv_fs_poll_t* handle);
+__attribute__((visibility("default"))) int uv_fs_poll_start(uv_fs_poll_t* handle,
+                               uv_fs_poll_cb poll_cb,
+                               const char* path,
+                               unsigned int interval);
+__attribute__((visibility("default"))) int uv_fs_poll_stop(uv_fs_poll_t* handle);
+__attribute__((visibility("default"))) int uv_fs_poll_getpath(uv_fs_poll_t* handle,
+                                 char* buffer,
+                                 size_t* size);
+
+
+struct uv_signal_s {
+  void* data; uv_loop_t* loop; uv_handle_type type; uv_close_cb close_cb; struct uv__queue handle_queue; union { int fd; void* reserved[4]; } u; uv_handle_t* next_closing; unsigned int flags;
+  uv_signal_cb signal_cb;
+  int signum;
+  struct { struct uv_signal_s* rbe_left; struct uv_signal_s* rbe_right; struct uv_signal_s* rbe_parent; int rbe_color; } tree_entry; unsigned int caught_signals; unsigned int dispatched_signals;
+};
+
+__attribute__((visibility("default"))) int uv_signal_init(uv_loop_t* loop, uv_signal_t* handle);
+__attribute__((visibility("default"))) int uv_signal_start(uv_signal_t* handle,
+                              uv_signal_cb signal_cb,
+                              int signum);
+__attribute__((visibility("default"))) int uv_signal_start_oneshot(uv_signal_t* handle,
+                                      uv_signal_cb signal_cb,
+                                      int signum);
+__attribute__((visibility("default"))) int uv_signal_stop(uv_signal_t* handle);
+
+__attribute__((visibility("default"))) void uv_loadavg(double avg[3]);
+
+
+
+
+
+enum uv_fs_event_flags {
+
+
+
+
+
+
+
+  UV_FS_EVENT_WATCH_ENTRY = 1,
+# 1752 "/home/dweller/neovim/.deps/usr/include/uv.h"
+  UV_FS_EVENT_STAT = 2,
+
+
+
+
+
+
+  UV_FS_EVENT_RECURSIVE = 4
+};
+
+
+__attribute__((visibility("default"))) int uv_fs_event_init(uv_loop_t* loop, uv_fs_event_t* handle);
+__attribute__((visibility("default"))) int uv_fs_event_start(uv_fs_event_t* handle,
+                                uv_fs_event_cb cb,
+                                const char* path,
+                                unsigned int flags);
+__attribute__((visibility("default"))) int uv_fs_event_stop(uv_fs_event_t* handle);
+__attribute__((visibility("default"))) int uv_fs_event_getpath(uv_fs_event_t* handle,
+                                  char* buffer,
+                                  size_t* size);
+
+__attribute__((visibility("default"))) int uv_ip4_addr(const char* ip, int port, struct sockaddr_in* addr);
+__attribute__((visibility("default"))) int uv_ip6_addr(const char* ip, int port, struct sockaddr_in6* addr);
+
+__attribute__((visibility("default"))) int uv_ip4_name(const struct sockaddr_in* src, char* dst, size_t size);
+__attribute__((visibility("default"))) int uv_ip6_name(const struct sockaddr_in6* src, char* dst, size_t size);
+__attribute__((visibility("default"))) int uv_ip_name(const struct sockaddr* src, char* dst, size_t size);
+
+__attribute__((visibility("default"))) int uv_inet_ntop(int af, const void* src, char* dst, size_t size);
+__attribute__((visibility("default"))) int uv_inet_pton(int af, const char* src, void* dst);
+
+
+struct uv_random_s {
+  void* data; uv_req_type type; void* reserved[6];
+
+  uv_loop_t* loop;
+
+  int status;
+  void* buf;
+  size_t buflen;
+  uv_random_cb cb;
+  struct uv__work work_req;
+};
+
+__attribute__((visibility("default"))) int uv_random(uv_loop_t* loop,
+                        uv_random_t* req,
+                        void *buf,
+                        size_t buflen,
+                        unsigned flags,
+                        uv_random_cb cb);
+# 1811 "/home/dweller/neovim/.deps/usr/include/uv.h"
+__attribute__((visibility("default"))) int uv_if_indextoname(unsigned int ifindex,
+                                char* buffer,
+                                size_t* size);
+__attribute__((visibility("default"))) int uv_if_indextoiid(unsigned int ifindex,
+                               char* buffer,
+                               size_t* size);
+
+__attribute__((visibility("default"))) int uv_exepath(char* buffer, size_t* size);
+
+__attribute__((visibility("default"))) int uv_cwd(char* buffer, size_t* size);
+
+__attribute__((visibility("default"))) int uv_chdir(const char* dir);
+
+__attribute__((visibility("default"))) uint64_t uv_get_free_memory(void);
+__attribute__((visibility("default"))) uint64_t uv_get_total_memory(void);
+__attribute__((visibility("default"))) uint64_t uv_get_constrained_memory(void);
+__attribute__((visibility("default"))) uint64_t uv_get_available_memory(void);
+
+__attribute__((visibility("default"))) int uv_clock_gettime(uv_clock_id clock_id, uv_timespec64_t* ts);
+__attribute__((visibility("default"))) uint64_t uv_hrtime(void);
+__attribute__((visibility("default"))) void uv_sleep(unsigned int msec);
+
+__attribute__((visibility("default"))) void uv_disable_stdio_inheritance(void);
+
+__attribute__((visibility("default"))) int uv_dlopen(const char* filename, uv_lib_t* lib);
+__attribute__((visibility("default"))) void uv_dlclose(uv_lib_t* lib);
+__attribute__((visibility("default"))) int uv_dlsym(uv_lib_t* lib, const char* name, void** ptr);
+__attribute__((visibility("default"))) const char* uv_dlerror(const uv_lib_t* lib);
+
+__attribute__((visibility("default"))) int uv_mutex_init(uv_mutex_t* handle);
+__attribute__((visibility("default"))) int uv_mutex_init_recursive(uv_mutex_t* handle);
+__attribute__((visibility("default"))) void uv_mutex_destroy(uv_mutex_t* handle);
+__attribute__((visibility("default"))) void uv_mutex_lock(uv_mutex_t* handle);
+__attribute__((visibility("default"))) int uv_mutex_trylock(uv_mutex_t* handle);
+__attribute__((visibility("default"))) void uv_mutex_unlock(uv_mutex_t* handle);
+
+__attribute__((visibility("default"))) int uv_rwlock_init(uv_rwlock_t* rwlock);
+__attribute__((visibility("default"))) void uv_rwlock_destroy(uv_rwlock_t* rwlock);
+__attribute__((visibility("default"))) void uv_rwlock_rdlock(uv_rwlock_t* rwlock);
+__attribute__((visibility("default"))) int uv_rwlock_tryrdlock(uv_rwlock_t* rwlock);
+__attribute__((visibility("default"))) void uv_rwlock_rdunlock(uv_rwlock_t* rwlock);
+__attribute__((visibility("default"))) void uv_rwlock_wrlock(uv_rwlock_t* rwlock);
+__attribute__((visibility("default"))) int uv_rwlock_trywrlock(uv_rwlock_t* rwlock);
+__attribute__((visibility("default"))) void uv_rwlock_wrunlock(uv_rwlock_t* rwlock);
+
+__attribute__((visibility("default"))) int uv_sem_init(uv_sem_t* sem, unsigned int value);
+__attribute__((visibility("default"))) void uv_sem_destroy(uv_sem_t* sem);
+__attribute__((visibility("default"))) void uv_sem_post(uv_sem_t* sem);
+__attribute__((visibility("default"))) void uv_sem_wait(uv_sem_t* sem);
+__attribute__((visibility("default"))) int uv_sem_trywait(uv_sem_t* sem);
+
+__attribute__((visibility("default"))) int uv_cond_init(uv_cond_t* cond);
+__attribute__((visibility("default"))) void uv_cond_destroy(uv_cond_t* cond);
+__attribute__((visibility("default"))) void uv_cond_signal(uv_cond_t* cond);
+__attribute__((visibility("default"))) void uv_cond_broadcast(uv_cond_t* cond);
+
+__attribute__((visibility("default"))) int uv_barrier_init(uv_barrier_t* barrier, unsigned int count);
+__attribute__((visibility("default"))) void uv_barrier_destroy(uv_barrier_t* barrier);
+__attribute__((visibility("default"))) int uv_barrier_wait(uv_barrier_t* barrier);
+
+__attribute__((visibility("default"))) void uv_cond_wait(uv_cond_t* cond, uv_mutex_t* mutex);
+__attribute__((visibility("default"))) int uv_cond_timedwait(uv_cond_t* cond,
+                                uv_mutex_t* mutex,
+                                uint64_t timeout);
+
+__attribute__((visibility("default"))) void uv_once(uv_once_t* guard, void (*callback)(void));
+
+__attribute__((visibility("default"))) int uv_key_create(uv_key_t* key);
+__attribute__((visibility("default"))) void uv_key_delete(uv_key_t* key);
+__attribute__((visibility("default"))) void* uv_key_get(uv_key_t* key);
+__attribute__((visibility("default"))) void uv_key_set(uv_key_t* key, void* value);
+
+__attribute__((visibility("default"))) int uv_gettimeofday(uv_timeval64_t* tv);
+
+typedef void (*uv_thread_cb)(void* arg);
+
+__attribute__((visibility("default"))) int uv_thread_create(uv_thread_t* tid, uv_thread_cb entry, void* arg);
+__attribute__((visibility("default"))) int uv_thread_detach(uv_thread_t* tid);
+
+typedef enum {
+  UV_THREAD_NO_FLAGS = 0x00,
+  UV_THREAD_HAS_STACK_SIZE = 0x01
+} uv_thread_create_flags;
+
+struct uv_thread_options_s {
+  unsigned int flags;
+  size_t stack_size;
+
+};
+
+typedef struct uv_thread_options_s uv_thread_options_t;
+
+__attribute__((visibility("default"))) int uv_thread_create_ex(uv_thread_t* tid,
+                                  const uv_thread_options_t* params,
+                                  uv_thread_cb entry,
+                                  void* arg);
+__attribute__((visibility("default"))) int uv_thread_setaffinity(uv_thread_t* tid,
+                                    char* cpumask,
+                                    char* oldmask,
+                                    size_t mask_size);
+__attribute__((visibility("default"))) int uv_thread_getaffinity(uv_thread_t* tid,
+                                    char* cpumask,
+                                    size_t mask_size);
+__attribute__((visibility("default"))) int uv_thread_getcpu(void);
+__attribute__((visibility("default"))) uv_thread_t uv_thread_self(void);
+__attribute__((visibility("default"))) int uv_thread_join(uv_thread_t *tid);
+__attribute__((visibility("default"))) int uv_thread_equal(const uv_thread_t* t1, const uv_thread_t* t2);
+__attribute__((visibility("default"))) int uv_thread_setname(const char* name);
+__attribute__((visibility("default"))) int uv_thread_getname(uv_thread_t* tid, char* name, size_t size);
+
+
+
+
+union uv_any_handle {
+  uv_async_t async; uv_check_t check; uv_fs_event_t fs_event; uv_fs_poll_t fs_poll; uv_handle_t handle; uv_idle_t idle; uv_pipe_t pipe; uv_poll_t poll; uv_prepare_t prepare; uv_process_t process; uv_stream_t stream; uv_tcp_t tcp; uv_timer_t timer; uv_tty_t tty; uv_udp_t udp; uv_signal_t signal;
+};
+
+union uv_any_req {
+  uv_req_t req; uv_connect_t connect; uv_write_t write; uv_shutdown_t shutdown; uv_udp_send_t udp_send; uv_fs_t fs; uv_work_t work; uv_getaddrinfo_t getaddrinfo; uv_getnameinfo_t getnameinfo; uv_random_t random;
+};
+
+
+
+struct uv_loop_s {
+
+  void* data;
+
+  unsigned int active_handles;
+  struct uv__queue handle_queue;
+  union {
+    void* unused;
+    unsigned int count;
+  } active_reqs;
+
+  void* internal_fields;
+
+  unsigned int stop_flag;
+  unsigned long flags; int backend_fd; struct uv__queue pending_queue; struct uv__queue watcher_queue; uv__io_t** watchers; unsigned int nwatchers; unsigned int nfds; struct uv__queue wq; uv_mutex_t wq_mutex; uv_async_t wq_async; uv_rwlock_t cloexec_lock; uv_handle_t* closing_handles; struct uv__queue process_handles; struct uv__queue prepare_handles; struct uv__queue check_handles; struct uv__queue idle_handles; struct uv__queue async_handles; void (*async_unused)(void); uv__io_t async_io_watcher; int async_wfd; struct { void* min; unsigned int nelts; } timer_heap; uint64_t timer_counter; uint64_t time; int signal_pipefd[2]; uv__io_t signal_io_watcher; uv_signal_t child_watcher; int emfile_fd; uv__io_t inotify_read_watcher; void* inotify_watchers; int inotify_fd;
+};
+
+__attribute__((visibility("default"))) void* uv_loop_get_data(const uv_loop_t*);
+__attribute__((visibility("default"))) void uv_loop_set_data(uv_loop_t*, void* data);
+
+
+__attribute__((visibility("default"))) size_t uv_utf16_length_as_wtf8(const uint16_t* utf16,
+                                         ssize_t utf16_len);
+__attribute__((visibility("default"))) int uv_utf16_to_wtf8(const uint16_t* utf16,
+                               ssize_t utf16_len,
+                               char** wtf8_ptr,
+                               size_t* wtf8_len_ptr);
+__attribute__((visibility("default"))) ssize_t uv_wtf8_length_as_utf16(const char* wtf8);
+__attribute__((visibility("default"))) void uv_wtf8_to_utf16(const char* wtf8,
+                                uint16_t* utf16,
+                                size_t utf16_len);
+# 38 "/home/dweller/neovim/src/nvim/mbyte.c" 2
+# 1 "/usr/include/wctype.h" 1 3 4
+# 28 "/usr/include/wctype.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/types/wint_t.h" 1 3 4
+# 20 "/usr/include/x86_64-linux-gnu/bits/types/wint_t.h" 3 4
+
+# 20 "/usr/include/x86_64-linux-gnu/bits/types/wint_t.h" 3 4
+typedef unsigned int wint_t;
+# 29 "/usr/include/wctype.h" 2 3 4
+# 38 "/usr/include/wctype.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/wctype-wchar.h" 1 3 4
+# 38 "/usr/include/x86_64-linux-gnu/bits/wctype-wchar.h" 3 4
+typedef unsigned long int wctype_t;
+# 56 "/usr/include/x86_64-linux-gnu/bits/wctype-wchar.h" 3 4
+enum
+{
+  __ISwupper = 0,
+  __ISwlower = 1,
+  __ISwalpha = 2,
+  __ISwdigit = 3,
+  __ISwxdigit = 4,
+  __ISwspace = 5,
+  __ISwprint = 6,
+  __ISwgraph = 7,
+  __ISwblank = 8,
+  __ISwcntrl = 9,
+  __ISwpunct = 10,
+  __ISwalnum = 11,
+
+  _ISwupper = ((__ISwupper) < 8 ? (int) ((1UL << (__ISwupper)) << 24) : ((__ISwupper) < 16 ? (int) ((1UL << (__ISwupper)) << 8) : ((__ISwupper) < 24 ? (int) ((1UL << (__ISwupper)) >> 8) : (int) ((1UL << (__ISwupper)) >> 24)))),
+  _ISwlower = ((__ISwlower) < 8 ? (int) ((1UL << (__ISwlower)) << 24) : ((__ISwlower) < 16 ? (int) ((1UL << (__ISwlower)) << 8) : ((__ISwlower) < 24 ? (int) ((1UL << (__ISwlower)) >> 8) : (int) ((1UL << (__ISwlower)) >> 24)))),
+  _ISwalpha = ((__ISwalpha) < 8 ? (int) ((1UL << (__ISwalpha)) << 24) : ((__ISwalpha) < 16 ? (int) ((1UL << (__ISwalpha)) << 8) : ((__ISwalpha) < 24 ? (int) ((1UL << (__ISwalpha)) >> 8) : (int) ((1UL << (__ISwalpha)) >> 24)))),
+  _ISwdigit = ((__ISwdigit) < 8 ? (int) ((1UL << (__ISwdigit)) << 24) : ((__ISwdigit) < 16 ? (int) ((1UL << (__ISwdigit)) << 8) : ((__ISwdigit) < 24 ? (int) ((1UL << (__ISwdigit)) >> 8) : (int) ((1UL << (__ISwdigit)) >> 24)))),
+  _ISwxdigit = ((__ISwxdigit) < 8 ? (int) ((1UL << (__ISwxdigit)) << 24) : ((__ISwxdigit) < 16 ? (int) ((1UL << (__ISwxdigit)) << 8) : ((__ISwxdigit) < 24 ? (int) ((1UL << (__ISwxdigit)) >> 8) : (int) ((1UL << (__ISwxdigit)) >> 24)))),
+  _ISwspace = ((__ISwspace) < 8 ? (int) ((1UL << (__ISwspace)) << 24) : ((__ISwspace) < 16 ? (int) ((1UL << (__ISwspace)) << 8) : ((__ISwspace) < 24 ? (int) ((1UL << (__ISwspace)) >> 8) : (int) ((1UL << (__ISwspace)) >> 24)))),
+  _ISwprint = ((__ISwprint) < 8 ? (int) ((1UL << (__ISwprint)) << 24) : ((__ISwprint) < 16 ? (int) ((1UL << (__ISwprint)) << 8) : ((__ISwprint) < 24 ? (int) ((1UL << (__ISwprint)) >> 8) : (int) ((1UL << (__ISwprint)) >> 24)))),
+  _ISwgraph = ((__ISwgraph) < 8 ? (int) ((1UL << (__ISwgraph)) << 24) : ((__ISwgraph) < 16 ? (int) ((1UL << (__ISwgraph)) << 8) : ((__ISwgraph) < 24 ? (int) ((1UL << (__ISwgraph)) >> 8) : (int) ((1UL << (__ISwgraph)) >> 24)))),
+  _ISwblank = ((__ISwblank) < 8 ? (int) ((1UL << (__ISwblank)) << 24) : ((__ISwblank) < 16 ? (int) ((1UL << (__ISwblank)) << 8) : ((__ISwblank) < 24 ? (int) ((1UL << (__ISwblank)) >> 8) : (int) ((1UL << (__ISwblank)) >> 24)))),
+  _ISwcntrl = ((__ISwcntrl) < 8 ? (int) ((1UL << (__ISwcntrl)) << 24) : ((__ISwcntrl) < 16 ? (int) ((1UL << (__ISwcntrl)) << 8) : ((__ISwcntrl) < 24 ? (int) ((1UL << (__ISwcntrl)) >> 8) : (int) ((1UL << (__ISwcntrl)) >> 24)))),
+  _ISwpunct = ((__ISwpunct) < 8 ? (int) ((1UL << (__ISwpunct)) << 24) : ((__ISwpunct) < 16 ? (int) ((1UL << (__ISwpunct)) << 8) : ((__ISwpunct) < 24 ? (int) ((1UL << (__ISwpunct)) >> 8) : (int) ((1UL << (__ISwpunct)) >> 24)))),
+  _ISwalnum = ((__ISwalnum) < 8 ? (int) ((1UL << (__ISwalnum)) << 24) : ((__ISwalnum) < 16 ? (int) ((1UL << (__ISwalnum)) << 8) : ((__ISwalnum) < 24 ? (int) ((1UL << (__ISwalnum)) >> 8) : (int) ((1UL << (__ISwalnum)) >> 24))))
+};
+
+
+
+
+
+
+
+
+
+
+
+extern int iswalnum (wint_t __wc) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+extern int iswalpha (wint_t __wc) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern int iswcntrl (wint_t __wc) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern int iswdigit (wint_t __wc) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern int iswgraph (wint_t __wc) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+extern int iswlower (wint_t __wc) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern int iswprint (wint_t __wc) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+extern int iswpunct (wint_t __wc) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+extern int iswspace (wint_t __wc) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+extern int iswupper (wint_t __wc) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+extern int iswxdigit (wint_t __wc) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+extern int iswblank (wint_t __wc) __attribute__ ((__nothrow__ , __leaf__));
+# 155 "/usr/include/x86_64-linux-gnu/bits/wctype-wchar.h" 3 4
+extern wctype_t wctype (const char *__property) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern int iswctype (wint_t __wc, wctype_t __desc) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+
+extern wint_t towlower (wint_t __wc) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern wint_t towupper (wint_t __wc) __attribute__ ((__nothrow__ , __leaf__));
+
+
+# 39 "/usr/include/wctype.h" 2 3 4
+
+
+
+
+
+
+
+
+
+typedef const __int32_t *wctrans_t;
+
+
+
+extern wctrans_t wctrans (const char *__property) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern wint_t towctrans (wint_t __wc, wctrans_t __desc) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+
+
+extern int iswalnum_l (wint_t __wc, locale_t __locale) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+extern int iswalpha_l (wint_t __wc, locale_t __locale) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern int iswcntrl_l (wint_t __wc, locale_t __locale) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern int iswdigit_l (wint_t __wc, locale_t __locale) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern int iswgraph_l (wint_t __wc, locale_t __locale) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+extern int iswlower_l (wint_t __wc, locale_t __locale) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern int iswprint_l (wint_t __wc, locale_t __locale) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+extern int iswpunct_l (wint_t __wc, locale_t __locale) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+extern int iswspace_l (wint_t __wc, locale_t __locale) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+extern int iswupper_l (wint_t __wc, locale_t __locale) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+extern int iswxdigit_l (wint_t __wc, locale_t __locale) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+extern int iswblank_l (wint_t __wc, locale_t __locale) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern wctype_t wctype_l (const char *__property, locale_t __locale)
+     __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern int iswctype_l (wint_t __wc, wctype_t __desc, locale_t __locale)
+     __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+
+extern wint_t towlower_l (wint_t __wc, locale_t __locale) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern wint_t towupper_l (wint_t __wc, locale_t __locale) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern wctrans_t wctrans_l (const char *__property, locale_t __locale)
+     __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern wint_t towctrans_l (wint_t __wc, wctrans_t __desc,
+      locale_t __locale) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+# 39 "/home/dweller/neovim/src/nvim/mbyte.c" 2
+
+# 1 "/home/dweller/neovim/build/cmake.config/auto/config.h" 1
+       
+# 41 "/home/dweller/neovim/src/nvim/mbyte.c" 2
+# 1 "/home/dweller/neovim/src/nvim/arabic.h" 1
+       
+# 42 "/home/dweller/neovim/src/nvim/mbyte.c" 2
+# 1 "/home/dweller/neovim/src/nvim/ascii_defs.h" 1
+       
+
+
+
+# 1 "/home/dweller/neovim/src/nvim/os/os_defs.h" 1
+       
+# 20 "/home/dweller/neovim/src/nvim/os/os_defs.h"
+# 1 "/home/dweller/neovim/src/nvim/os/unix_defs.h" 1
+       
+# 21 "/home/dweller/neovim/src/nvim/os/os_defs.h" 2
+# 133 "/home/dweller/neovim/src/nvim/os/os_defs.h"
+
+# 133 "/home/dweller/neovim/src/nvim/os/os_defs.h"
+typedef off_t off_T;
+# 6 "/home/dweller/neovim/src/nvim/ascii_defs.h" 2
+# 91 "/home/dweller/neovim/src/nvim/ascii_defs.h"
+static inline 
+# 91 "/home/dweller/neovim/src/nvim/ascii_defs.h" 3 4
+             _Bool 
+# 91 "/home/dweller/neovim/src/nvim/ascii_defs.h"
+                  ascii_iswhite(int c)
+  FUNC_ATTR_CONST FUNC_ATTR_ALWAYS_INLINE
+{
+  return c == ' ' || c == '\t';
+}
+
+
+
+
+static inline 
+# 100 "/home/dweller/neovim/src/nvim/ascii_defs.h" 3 4
+             _Bool 
+# 100 "/home/dweller/neovim/src/nvim/ascii_defs.h"
+                  ascii_iswhite_or_nul(int c)
+  FUNC_ATTR_CONST FUNC_ATTR_ALWAYS_INLINE
+{
+  return ascii_iswhite(c) || c == '\000';
+}
+
+
+
+
+static inline 
+# 109 "/home/dweller/neovim/src/nvim/ascii_defs.h" 3 4
+             _Bool 
+# 109 "/home/dweller/neovim/src/nvim/ascii_defs.h"
+                  ascii_iswhite_nl_or_nul(int c)
+  FUNC_ATTR_CONST FUNC_ATTR_ALWAYS_INLINE
+{
+  return ascii_iswhite(c) || c == '\n' || c == '\000';
+}
+# 124 "/home/dweller/neovim/src/nvim/ascii_defs.h"
+static inline 
+# 124 "/home/dweller/neovim/src/nvim/ascii_defs.h" 3 4
+             _Bool 
+# 124 "/home/dweller/neovim/src/nvim/ascii_defs.h"
+                  ascii_isdigit(int c)
+  FUNC_ATTR_CONST FUNC_ATTR_ALWAYS_INLINE
+{
+  return c >= '0' && c <= '9';
+}
+
+
+
+
+static inline 
+# 133 "/home/dweller/neovim/src/nvim/ascii_defs.h" 3 4
+             _Bool 
+# 133 "/home/dweller/neovim/src/nvim/ascii_defs.h"
+                  ascii_isxdigit(int c)
+  FUNC_ATTR_CONST FUNC_ATTR_ALWAYS_INLINE
+{
+  return (c >= '0' && c <= '9')
+         || (c >= 'a' && c <= 'f')
+         || (c >= 'A' && c <= 'F');
+}
+
+
+
+
+static inline 
+# 144 "/home/dweller/neovim/src/nvim/ascii_defs.h" 3 4
+             _Bool 
+# 144 "/home/dweller/neovim/src/nvim/ascii_defs.h"
+                  ascii_isident(int c)
+  FUNC_ATTR_CONST FUNC_ATTR_ALWAYS_INLINE
+{
+  return ASCII_ISALNUM(c) || c == '_';
+}
+
+
+
+
+static inline 
+# 153 "/home/dweller/neovim/src/nvim/ascii_defs.h" 3 4
+             _Bool 
+# 153 "/home/dweller/neovim/src/nvim/ascii_defs.h"
+                  ascii_isbdigit(int c)
+  FUNC_ATTR_CONST FUNC_ATTR_ALWAYS_INLINE
+{
+  return (c == '0' || c == '1');
+}
+
+
+
+
+static inline 
+# 162 "/home/dweller/neovim/src/nvim/ascii_defs.h" 3 4
+             _Bool 
+# 162 "/home/dweller/neovim/src/nvim/ascii_defs.h"
+                  ascii_isodigit(int c)
+  FUNC_ATTR_CONST FUNC_ATTR_ALWAYS_INLINE
+{
+  return (c >= '0' && c <= '7');
+}
+
+
+
+
+
+static inline 
+# 172 "/home/dweller/neovim/src/nvim/ascii_defs.h" 3 4
+             _Bool 
+# 172 "/home/dweller/neovim/src/nvim/ascii_defs.h"
+                  ascii_isspace(int c)
+  FUNC_ATTR_CONST FUNC_ATTR_ALWAYS_INLINE
+{
+  return (c >= 9 && c <= 13) || c == ' ';
+}
+# 43 "/home/dweller/neovim/src/nvim/mbyte.c" 2
+# 1 "/home/dweller/neovim/src/nvim/buffer_defs.h" 1
+       
+
+
+
+
+
+# 1 "/home/dweller/neovim/src/nvim/arglist_defs.h" 1
+       
+
+# 1 "/home/dweller/neovim/src/nvim/garray_defs.h" 1
+       
+
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h" 1 3 4
+# 4 "/home/dweller/neovim/src/nvim/garray_defs.h" 2
+
+
+
+
+typedef struct {
+  int ga_len;
+  int ga_maxlen;
+  int ga_itemsize;
+  int ga_growsize;
+  void *ga_data;
+} garray_T;
+# 4 "/home/dweller/neovim/src/nvim/arglist_defs.h" 2
+
+
+
+typedef struct {
+  garray_T al_ga;
+  int al_refcount;
+  int id;
+} alist_T;
+
+
+
+
+typedef struct {
+  char *ae_fname;
+  int ae_fnum;
+} aentry_T;
+# 8 "/home/dweller/neovim/src/nvim/buffer_defs.h" 2
+# 1 "/home/dweller/neovim/src/nvim/grid_defs.h" 1
+       
+
+
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h" 1 3 4
+# 5 "/home/dweller/neovim/src/nvim/grid_defs.h" 2
+
+
+# 1 "/home/dweller/neovim/src/nvim/pos_defs.h" 1
+       
+
+# 1 "/usr/include/inttypes.h" 1 3 4
+# 34 "/usr/include/inttypes.h" 3 4
+
+# 34 "/usr/include/inttypes.h" 3 4
+typedef int __gwchar_t;
+# 266 "/usr/include/inttypes.h" 3 4
+
+
+
+
+
+typedef struct
+  {
+    long int quot;
+    long int rem;
+  } imaxdiv_t;
+# 290 "/usr/include/inttypes.h" 3 4
+extern intmax_t imaxabs (intmax_t __n) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern imaxdiv_t imaxdiv (intmax_t __numer, intmax_t __denom)
+      __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern intmax_t strtoimax (const char *__restrict __nptr,
+      char **__restrict __endptr, int __base) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern uintmax_t strtoumax (const char *__restrict __nptr,
+       char ** __restrict __endptr, int __base) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern intmax_t wcstoimax (const __gwchar_t *__restrict __nptr,
+      __gwchar_t **__restrict __endptr, int __base)
+     __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern uintmax_t wcstoumax (const __gwchar_t *__restrict __nptr,
+       __gwchar_t ** __restrict __endptr, int __base)
+     __attribute__ ((__nothrow__ , __leaf__));
+
+
+# 4 "/home/dweller/neovim/src/nvim/pos_defs.h" 2
+
+
+
+# 6 "/home/dweller/neovim/src/nvim/pos_defs.h"
+typedef int32_t linenr_T;
+
+
+
+
+typedef int colnr_T;
+
+
+
+enum { MAXLNUM = 0x7fffffff, };
+
+
+
+enum { MAXCOL = 0x7fffffff, };
+
+enum { MINLNUM = 1, };
+
+enum { MINCOL = 1, };
+
+
+typedef struct {
+  linenr_T lnum;
+  colnr_T col;
+  colnr_T coladd;
+} pos_T;
+
+
+typedef struct {
+  linenr_T lnum;
+  colnr_T col;
+} lpos_T;
+# 8 "/home/dweller/neovim/src/nvim/grid_defs.h" 2
+# 1 "/home/dweller/neovim/src/nvim/types_defs.h" 1
+       
+
+
+
+# 1 "/home/dweller/neovim/src/klib/kvec.h" 1
+# 43 "/home/dweller/neovim/src/klib/kvec.h"
+# 1 "/home/dweller/neovim/src/nvim/memory.h" 1
+       
+
+
+
+
+
+
+
+# 1 "/home/dweller/neovim/src/nvim/macros_defs.h" 1
+       
+# 10 "/home/dweller/neovim/src/nvim/memory.h" 2
+# 1 "/home/dweller/neovim/src/nvim/memory_defs.h" 1
+       
+
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h" 1 3 4
+# 4 "/home/dweller/neovim/src/nvim/memory_defs.h" 2
+
+typedef struct consumed_blk {
+  struct consumed_blk *prev;
+} *ArenaMem;
+
+typedef struct {
+  char *cur_blk;
+  size_t pos, size;
+} Arena;
+# 11 "/home/dweller/neovim/src/nvim/memory.h" 2
+
+
+typedef void *(*MemMalloc)(size_t);
+
+
+typedef void (*MemFree)(void *);
+
+
+typedef void *(*MemCalloc)(size_t, size_t);
+
+
+typedef void *(*MemRealloc)(void *, size_t);
+# 43 "/home/dweller/neovim/src/nvim/memory.h"
+extern size_t arena_alloc_count ;
+# 44 "/home/dweller/neovim/src/klib/kvec.h" 2
+# 172 "/home/dweller/neovim/src/klib/kvec.h"
+static inline void *_memcpy_free(void *restrict dest, void *restrict src, size_t size)
+  REAL_FATTR_NONNULL_ALL REAL_FATTR_NONNULL_RET REAL_FATTR_ALWAYS_INLINE;
+
+
+static inline void *_memcpy_free(void *const restrict dest, void *const restrict src,
+                                 const size_t size)
+{
+  memcpy(dest, src, size);
+  do { void **ptr_ = (void **)&(src); xfree(*ptr_); *ptr_ = 
+# 180 "/home/dweller/neovim/src/klib/kvec.h" 3 4
+ ((void *)0)
+# 180 "/home/dweller/neovim/src/klib/kvec.h"
+ ; (void)(*ptr_); } while (0);
+  return dest;
+}
+# 6 "/home/dweller/neovim/src/nvim/types_defs.h" 2
+
+
+typedef void *vim_acl_T;
+
+
+
+typedef uint32_t schar_T;
+typedef int32_t sattr_T;
+
+typedef int32_t sscratch_T;
+
+
+
+
+
+
+typedef int handle_T;
+
+
+
+
+typedef int LuaRef;
+
+
+typedef double float_T;
+
+typedef struct MsgpackRpcRequestHandler MsgpackRpcRequestHandler;
+
+typedef union {
+  float_T (*float_func)(float_T);
+  const MsgpackRpcRequestHandler *api_handler;
+  void *null;
+} EvalFuncData;
+
+typedef handle_T NS;
+
+typedef uint64_t proftime_T;
+
+typedef enum {
+  kNone = -1,
+  kFalse = 0,
+  kTrue = 1,
+} TriState;
+
+
+
+
+
+
+typedef int64_t OptInt;
+
+enum { SIGN_WIDTH = 2, };
+
+typedef struct file_buffer buf_T;
+typedef struct loop Loop;
+typedef struct regprog regprog_T;
+typedef struct syn_state synstate_T;
+typedef struct terminal Terminal;
+typedef struct window_S win_T;
+
+typedef struct {
+  uint32_t nitems;
+  uint32_t nbytes;
+  char data[];
+} AdditionalData;
+
+typedef struct { size_t size; size_t capacity; char *items; } StringBuilder;
+# 9 "/home/dweller/neovim/src/nvim/grid_defs.h" 2
+
+enum {
+  kZIndexDefaultGrid = 0,
+  kZIndexFloatDefault = 50,
+  kZIndexPopupMenu = 100,
+  kZIndexMessages = 200,
+  kZIndexCmdlinePopupMenu = 250,
+};
+# 44 "/home/dweller/neovim/src/nvim/grid_defs.h"
+typedef struct ScreenGrid ScreenGrid;
+struct ScreenGrid {
+  handle_T handle;
+
+  schar_T *chars;
+  sattr_T *attrs;
+  colnr_T *vcols;
+  size_t *line_offset;
+
+
+
+  int *dirty_col;
+
+
+  int rows;
+  int cols;
+
+
+  
+# 62 "/home/dweller/neovim/src/nvim/grid_defs.h" 3 4
+ _Bool 
+# 62 "/home/dweller/neovim/src/nvim/grid_defs.h"
+      valid;
+
+
+
+  
+# 66 "/home/dweller/neovim/src/nvim/grid_defs.h" 3 4
+ _Bool 
+# 66 "/home/dweller/neovim/src/nvim/grid_defs.h"
+      throttled;
+
+
+  
+# 69 "/home/dweller/neovim/src/nvim/grid_defs.h" 3 4
+ _Bool 
+# 69 "/home/dweller/neovim/src/nvim/grid_defs.h"
+      blending;
+
+
+  
+# 72 "/home/dweller/neovim/src/nvim/grid_defs.h" 3 4
+ _Bool 
+# 72 "/home/dweller/neovim/src/nvim/grid_defs.h"
+      mouse_enabled;
+
+
+  int zindex;
+
+
+
+
+
+  int comp_row;
+  int comp_col;
+
+
+
+
+  int comp_width;
+  int comp_height;
+
+
+
+  size_t comp_index;
+
+
+
+  
+# 96 "/home/dweller/neovim/src/nvim/grid_defs.h" 3 4
+ _Bool 
+# 96 "/home/dweller/neovim/src/nvim/grid_defs.h"
+      comp_disabled;
+
+
+  
+# 99 "/home/dweller/neovim/src/nvim/grid_defs.h" 3 4
+ _Bool 
+# 99 "/home/dweller/neovim/src/nvim/grid_defs.h"
+      pending_comp_index_update;
+};
+
+
+
+
+
+
+typedef struct {
+  ScreenGrid *target;
+  int row_offset;
+  int col_offset;
+} GridView;
+
+typedef struct {
+  int args[3];
+  int icell;
+  int ncells;
+  int coloff;
+  int cur_attr;
+  int clear_width;
+  
+# 120 "/home/dweller/neovim/src/nvim/grid_defs.h" 3 4
+ _Bool 
+# 120 "/home/dweller/neovim/src/nvim/grid_defs.h"
+      wrap;
+} GridLineEvent;
+# 9 "/home/dweller/neovim/src/nvim/buffer_defs.h" 2
+# 1 "/home/dweller/neovim/src/nvim/mapping_defs.h" 1
+       
+
+
+
+# 1 "/home/dweller/neovim/src/nvim/eval/typval_defs.h" 1
+       
+
+
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h" 1 3 4
+# 5 "/home/dweller/neovim/src/nvim/eval/typval_defs.h" 2
+
+
+
+# 1 "/home/dweller/neovim/src/nvim/hashtab_defs.h" 1
+       
+
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h" 1 3 4
+# 4 "/home/dweller/neovim/src/nvim/hashtab_defs.h" 2
+
+
+typedef size_t hash_T;
+# 24 "/home/dweller/neovim/src/nvim/hashtab_defs.h"
+typedef struct {
+
+  hash_T hi_hash;
+
+
+
+
+
+
+
+  char *hi_key;
+} hashitem_T;
+
+enum {
+
+
+
+
+  HT_INIT_SIZE = 16,
+};
+
+
+
+
+
+
+
+typedef struct {
+  hash_T ht_mask;
+
+  size_t ht_used;
+  size_t ht_filled;
+  int ht_changed;
+  int ht_locked;
+  hashitem_T *ht_array;
+
+  hashitem_T ht_smallarray[HT_INIT_SIZE];
+} hashtab_T;
+# 9 "/home/dweller/neovim/src/nvim/eval/typval_defs.h" 2
+# 1 "/home/dweller/neovim/src/nvim/lib/queue_defs.h" 1
+# 20 "/home/dweller/neovim/src/nvim/lib/queue_defs.h"
+       
+
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h" 1 3 4
+# 23 "/home/dweller/neovim/src/nvim/lib/queue_defs.h" 2
+
+typedef struct queue {
+  struct queue *next;
+  struct queue *prev;
+} QUEUE;
+# 49 "/home/dweller/neovim/src/nvim/lib/queue_defs.h"
+static inline int QUEUE_EMPTY(const QUEUE *const q)
+  FUNC_ATTR_ALWAYS_INLINE FUNC_ATTR_PURE FUNC_ATTR_WARN_UNUSED_RESULT
+{
+  return q == q->next;
+}
+
+
+
+static inline void QUEUE_INIT(QUEUE *const q)
+  FUNC_ATTR_ALWAYS_INLINE
+{
+  q->next = q;
+  q->prev = q;
+}
+
+static inline void QUEUE_ADD(QUEUE *const h, QUEUE *const n)
+  FUNC_ATTR_ALWAYS_INLINE
+{
+  h->prev->next = n->next;
+  n->next->prev = h->prev;
+  h->prev = n->prev;
+  h->prev->next = h;
+}
+
+static inline void QUEUE_INSERT_HEAD(QUEUE *const h, QUEUE *const q)
+  FUNC_ATTR_ALWAYS_INLINE
+{
+  q->next = h->next;
+  q->prev = h;
+  q->next->prev = q;
+  h->next = q;
+}
+
+static inline void QUEUE_INSERT_TAIL(QUEUE *const h, QUEUE *const q)
+  FUNC_ATTR_ALWAYS_INLINE
+{
+  q->next = h;
+  q->prev = h->prev;
+  q->prev->next = q;
+  h->prev = q;
+}
+
+static inline void QUEUE_REMOVE(QUEUE *const q)
+  FUNC_ATTR_ALWAYS_INLINE
+{
+  q->prev->next = q->next;
+  q->next->prev = q->prev;
+}
+# 10 "/home/dweller/neovim/src/nvim/eval/typval_defs.h" 2
+
+
+
+
+typedef int64_t varnumber_T;
+typedef uint64_t uvarnumber_T;
+
+enum {
+
+  DO_NOT_FREE_CNT = (0x7fffffff / 2),
+};
+
+
+enum ListLenSpecials {
+
+
+
+
+  kListLenUnknown = -1,
+
+
+
+
+
+  kListLenShouldKnow = -2,
+
+
+
+  kListLenMayKnow = -3,
+};
+# 51 "/home/dweller/neovim/src/nvim/eval/typval_defs.h"
+typedef struct listvar_S list_T;
+typedef struct dictvar_S dict_T;
+typedef struct partial_S partial_T;
+typedef struct blobvar_S blob_T;
+
+typedef struct ufunc ufunc_T;
+
+typedef enum {
+  kCallbackNone = 0,
+  kCallbackFuncref,
+  kCallbackPartial,
+  kCallbackLua,
+} CallbackType;
+
+typedef struct {
+  union {
+    char *funcref;
+    partial_T *partial;
+    LuaRef luaref;
+  } data;
+  CallbackType type;
+} Callback;
+
+
+
+
+
+typedef struct {
+  Callback callback;
+  char *key_pattern;
+  size_t key_pattern_len;
+  QUEUE node;
+  
+# 83 "/home/dweller/neovim/src/nvim/eval/typval_defs.h" 3 4
+ _Bool 
+# 83 "/home/dweller/neovim/src/nvim/eval/typval_defs.h"
+      busy;
+  
+# 84 "/home/dweller/neovim/src/nvim/eval/typval_defs.h" 3 4
+ _Bool 
+# 84 "/home/dweller/neovim/src/nvim/eval/typval_defs.h"
+      needs_free;
+} DictWatcher;
+
+
+typedef enum {
+  kBoolVarFalse,
+  kBoolVarTrue,
+} BoolVarValue;
+
+
+typedef enum {
+  kSpecialVarNull,
+} SpecialVarValue;
+
+
+typedef enum {
+  VAR_UNLOCKED = 0,
+  VAR_LOCKED = 1,
+  VAR_FIXED = 2,
+} VarLockStatus;
+
+
+typedef enum {
+  VAR_UNKNOWN = 0,
+  VAR_NUMBER,
+  VAR_STRING,
+  VAR_FUNC,
+  VAR_LIST,
+  VAR_DICT,
+  VAR_FLOAT,
+  VAR_BOOL,
+  VAR_SPECIAL,
+  VAR_PARTIAL,
+  VAR_BLOB,
+} VarType;
+
+
+enum {
+  VAR_TYPE_NUMBER = 0,
+  VAR_TYPE_STRING = 1,
+  VAR_TYPE_FUNC = 2,
+  VAR_TYPE_LIST = 3,
+  VAR_TYPE_DICT = 4,
+  VAR_TYPE_FLOAT = 5,
+  VAR_TYPE_BOOL = 6,
+  VAR_TYPE_SPECIAL = 7,
+  VAR_TYPE_BLOB = 10,
+};
+
+
+typedef struct {
+  VarType v_type;
+  VarLockStatus v_lock;
+  union typval_vval_union {
+    varnumber_T v_number;
+    BoolVarValue v_bool;
+    SpecialVarValue v_special;
+    float_T v_float;
+    char *v_string;
+    list_T *v_list;
+    dict_T *v_dict;
+    partial_T *v_partial;
+    blob_T *v_blob;
+  } vval;
+} typval_T;
+# 157 "/home/dweller/neovim/src/nvim/eval/typval_defs.h"
+typedef enum {
+  VAR_NO_SCOPE = 0,
+  VAR_SCOPE = 1,
+  VAR_DEF_SCOPE = 2,
+
+} ScopeType;
+
+
+typedef struct listitem_S listitem_T;
+
+struct listitem_S {
+  listitem_T *li_next;
+  listitem_T *li_prev;
+  typval_T li_tv;
+};
+
+
+typedef struct listwatch_S listwatch_T;
+
+struct listwatch_S {
+  listitem_T *lw_item;
+  listwatch_T *lw_next;
+};
+
+
+
+struct listvar_S {
+  listitem_T *lv_first;
+  listitem_T *lv_last;
+  listwatch_T *lv_watch;
+  listitem_T *lv_idx_item;
+  list_T *lv_copylist;
+  list_T *lv_used_next;
+  list_T *lv_used_prev;
+  int lv_refcount;
+  int lv_len;
+  int lv_idx;
+  int lv_copyID;
+  VarLockStatus lv_lock;
+
+  LuaRef lua_table_ref;
+};
+
+
+typedef struct {
+  list_T sl_list;
+  listitem_T sl_items[10];
+} staticList10_T;
+# 233 "/home/dweller/neovim/src/nvim/eval/typval_defs.h"
+typedef struct { typval_T di_tv; uint8_t di_flags; char di_key[1]; } ScopeDictDictItem;
+
+
+
+
+
+
+typedef struct { typval_T di_tv; uint8_t di_flags; char di_key[]; } dictitem_T;
+
+
+typedef enum {
+  DI_FLAGS_RO = 1,
+  DI_FLAGS_RO_SBX = 2,
+  DI_FLAGS_FIX = 4,
+  DI_FLAGS_LOCK = 8,
+  DI_FLAGS_ALLOC = 16,
+} DictItemFlags;
+
+
+struct dictvar_S {
+  VarLockStatus dv_lock;
+  ScopeType dv_scope;
+
+  int dv_refcount;
+  int dv_copyID;
+  hashtab_T dv_hashtab;
+  dict_T *dv_copydict;
+  dict_T *dv_used_next;
+  dict_T *dv_used_prev;
+  QUEUE watchers;
+
+  LuaRef lua_table_ref;
+};
+
+
+struct blobvar_S {
+  garray_T bv_ga;
+  int bv_refcount;
+  VarLockStatus bv_lock;
+};
+
+
+typedef int scid_T;
+# 285 "/home/dweller/neovim/src/nvim/eval/typval_defs.h"
+typedef struct {
+  scid_T sc_sid;
+  int sc_seq;
+  linenr_T sc_lnum;
+  uint64_t sc_chan;
+} sctx_T;
+
+enum { MAX_FUNC_ARGS = 20, };
+enum { VAR_SHORT_LEN = 20, };
+enum { FIXVAR_CNT = 12, };
+
+
+typedef struct funccall_S funccall_T;
+
+struct funccall_S {
+  ufunc_T *fc_func;
+  int fc_linenr;
+  int fc_returned;
+  struct { typval_T di_tv; uint8_t di_flags; char di_key[VAR_SHORT_LEN + 1]; } fc_fixvar[FIXVAR_CNT];
+  dict_T fc_l_vars;
+  ScopeDictDictItem fc_l_vars_var;
+  dict_T fc_l_avars;
+  ScopeDictDictItem fc_l_avars_var;
+  list_T fc_l_varlist;
+  listitem_T fc_l_listitems[MAX_FUNC_ARGS];
+  typval_T *fc_rettv;
+  linenr_T fc_breakpoint;
+  int fc_dbg_tick;
+  int fc_level;
+  garray_T fc_defer;
+  proftime_T fc_prof_child;
+  funccall_T *fc_caller;
+
+  int fc_refcount;
+  int fc_copyID;
+  garray_T fc_ufuncs;
+};
+
+
+struct ufunc {
+  int uf_varargs;
+  int uf_flags;
+  int uf_calls;
+  
+# 328 "/home/dweller/neovim/src/nvim/eval/typval_defs.h" 3 4
+ _Bool 
+# 328 "/home/dweller/neovim/src/nvim/eval/typval_defs.h"
+      uf_cleared;
+  garray_T uf_args;
+  garray_T uf_def_args;
+  garray_T uf_lines;
+  int uf_profiling;
+  int uf_prof_initialized;
+  LuaRef uf_luaref;
+
+  int uf_tm_count;
+  proftime_T uf_tm_total;
+  proftime_T uf_tm_self;
+  proftime_T uf_tm_children;
+
+  int *uf_tml_count;
+  proftime_T *uf_tml_total;
+  proftime_T *uf_tml_self;
+  proftime_T uf_tml_start;
+  proftime_T uf_tml_children;
+  proftime_T uf_tml_wait;
+  int uf_tml_idx;
+  int uf_tml_execed;
+  sctx_T uf_script_ctx;
+
+  int uf_refcount;
+  funccall_T *uf_scoped;
+  char *uf_name_exp;
+
+  size_t uf_namelen;
+  char uf_name[];
+
+
+};
+
+struct partial_S {
+  int pt_refcount;
+  int pt_copyID;
+  char *pt_name;
+  ufunc_T *pt_func;
+  
+# 366 "/home/dweller/neovim/src/nvim/eval/typval_defs.h" 3 4
+ _Bool 
+# 366 "/home/dweller/neovim/src/nvim/eval/typval_defs.h"
+      pt_auto;
+
+  int pt_argc;
+  typval_T *pt_argv;
+  dict_T *pt_dict;
+};
+
+
+typedef struct ht_stack_S {
+  hashtab_T *ht;
+  struct ht_stack_S *prev;
+} ht_stack_T;
+
+
+typedef struct list_stack_S {
+  list_T *list;
+  struct list_stack_S *prev;
+} list_stack_T;
+# 6 "/home/dweller/neovim/src/nvim/mapping_defs.h" 2
+
+enum { MAXMAPLEN = 50, };
+
+
+typedef struct mapblock mapblock_T;
+struct mapblock {
+  mapblock_T *m_next;
+  mapblock_T *m_alt;
+
+
+  char *m_keys;
+  char *m_str;
+  char *m_orig_str;
+  LuaRef m_luaref;
+  int m_keylen;
+  int m_mode;
+  int m_simplified;
+  int m_noremap;
+  char m_silent;
+  char m_nowait;
+  char m_expr;
+  sctx_T m_script_ctx;
+  char *m_desc;
+  
+# 29 "/home/dweller/neovim/src/nvim/mapping_defs.h" 3 4
+ _Bool 
+# 29 "/home/dweller/neovim/src/nvim/mapping_defs.h"
+      m_replace_keycodes;
+};
+# 10 "/home/dweller/neovim/src/nvim/buffer_defs.h" 2
+# 1 "/home/dweller/neovim/src/nvim/marktree_defs.h" 1
+       
+
+
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h" 1 3 4
+# 5 "/home/dweller/neovim/src/nvim/marktree_defs.h" 2
+
+
+# 1 "/home/dweller/neovim/src/nvim/decoration_defs.h" 1
+       
+
+
+
+
+# 1 "/home/dweller/neovim/src/nvim/api/private/defs.h" 1
+       
+# 30 "/home/dweller/neovim/src/nvim/api/private/defs.h"
+typedef enum {
+  kErrorTypeNone = -1,
+  kErrorTypeException,
+  kErrorTypeValidation,
+} ErrorType;
+
+typedef enum {
+  kMessageTypeUnknown = -1,
+
+  kMessageTypeRequest = 0,
+  kMessageTypeResponse = 1,
+  kMessageTypeNotification = 2,
+  kMessageTypeRedrawEvent = 3,
+} MessageType;
+# 59 "/home/dweller/neovim/src/nvim/api/private/defs.h"
+static inline 
+# 59 "/home/dweller/neovim/src/nvim/api/private/defs.h" 3 4
+             _Bool 
+# 59 "/home/dweller/neovim/src/nvim/api/private/defs.h"
+                  is_internal_call(const uint64_t channel_id)
+  FUNC_ATTR_ALWAYS_INLINE FUNC_ATTR_CONST
+{
+  return !!(channel_id & (((uint64_t)1) << (sizeof(uint64_t) * 8 - 1)));
+}
+
+typedef struct {
+  ErrorType type;
+  char *msg;
+} Error;
+
+typedef 
+# 70 "/home/dweller/neovim/src/nvim/api/private/defs.h" 3 4
+       _Bool 
+# 70 "/home/dweller/neovim/src/nvim/api/private/defs.h"
+            Boolean;
+typedef int64_t Integer;
+typedef double Float;
+
+
+
+
+
+
+
+typedef struct {
+  char *data;
+  size_t size;
+} String;
+
+typedef handle_T Buffer;
+typedef handle_T Window;
+typedef handle_T Tabpage;
+
+typedef struct object Object;
+typedef struct { size_t size; size_t capacity; Object *items; } Array;
+
+typedef struct key_value_pair KeyValuePair;
+typedef struct { size_t size; size_t capacity; KeyValuePair *items; } Dict;
+
+typedef struct { size_t size; size_t capacity; String *items; } StringArray;
+
+typedef enum {
+  kObjectTypeNil = 0,
+  kObjectTypeBoolean,
+  kObjectTypeInteger,
+  kObjectTypeFloat,
+  kObjectTypeString,
+  kObjectTypeArray,
+  kObjectTypeDict,
+  kObjectTypeLuaRef,
+
+  kObjectTypeBuffer,
+  kObjectTypeWindow,
+  kObjectTypeTabpage,
+} ObjectType;
+
+typedef enum {
+  kUnpackTypeStringArray = -1,
+} UnpackType;
+# 124 "/home/dweller/neovim/src/nvim/api/private/defs.h"
+struct object {
+  ObjectType type;
+  union {
+    Boolean boolean;
+    Integer integer;
+    Float floating;
+    String string;
+    Array array;
+    Dict dict;
+    LuaRef luaref;
+  } data;
+};
+
+struct key_value_pair {
+  String key;
+  Object value;
+};
+
+typedef uint64_t OptionalKeys;
+typedef Integer HLGroupID;
+
+
+typedef struct {
+  OptionalKeys is_set_;
+} OptKeySet;
+
+typedef struct {
+  char *str;
+  size_t ptr_off;
+  int type;
+  int opt_index;
+  
+# 155 "/home/dweller/neovim/src/nvim/api/private/defs.h" 3 4
+ _Bool 
+# 155 "/home/dweller/neovim/src/nvim/api/private/defs.h"
+      is_hlgroup;
+} KeySetLink;
+
+typedef KeySetLink *(*FieldHashfn)(const char *str, size_t len);
+# 7 "/home/dweller/neovim/src/nvim/decoration_defs.h" 2
+
+
+
+
+typedef struct {
+  char *text;
+  int hl_id;
+} VirtTextChunk;
+
+typedef struct { size_t size; size_t capacity; VirtTextChunk *items; } VirtText;
+
+
+
+typedef enum {
+  kVPosEndOfLine,
+  kVPosEndOfLineRightAlign,
+  kVPosInline,
+  kVPosOverlay,
+  kVPosRightAlign,
+  kVPosWinCol,
+} VirtTextPos;
+
+
+enum {
+  kVLLeftcol = 1,
+  kVLScroll = 2,
+
+};
+
+typedef struct { size_t size; size_t capacity; struct virt_line { VirtText line; int flags; } *items; } VirtLines;
+
+typedef uint16_t DecorPriority;
+
+
+
+typedef enum {
+  kHlModeUnknown,
+  kHlModeReplace,
+  kHlModeCombine,
+  kHlModeBlend,
+} HlMode;
+
+enum {
+  kSHIsSign = 1,
+  kSHHlEol = 2,
+  kSHUIWatched = 4,
+  kSHUIWatchedOverlay = 8,
+  kSHSpellOn = 16,
+  kSHSpellOff = 32,
+  kSHConceal = 64,
+  kSHConcealLines = 128,
+};
+
+typedef struct {
+  uint16_t flags;
+  DecorPriority priority;
+  int hl_id;
+  schar_T conceal_char;
+} DecorHighlightInline;
+
+
+
+typedef struct {
+  uint16_t flags;
+  DecorPriority priority;
+  int hl_id;
+  schar_T text[SIGN_WIDTH];
+
+
+  char *sign_name;
+  int sign_add_id;
+  int number_hl_id;
+  int line_hl_id;
+  int cursorline_hl_id;
+  uint32_t next;
+  const char *url;
+} DecorSignHighlight;
+
+
+
+
+enum {
+  kVTIsLines = 1,
+  kVTHide = 2,
+  kVTLinesAbove = 4,
+  kVTRepeatLinebreak = 8,
+};
+
+typedef struct DecorVirtText DecorVirtText;
+struct DecorVirtText {
+  uint8_t flags;
+  uint8_t hl_mode;
+  DecorPriority priority;
+  int width;
+  int col;
+  VirtTextPos pos;
+
+  union {
+    VirtText virt_text;
+    VirtLines virt_lines;
+  } data;
+  DecorVirtText *next;
+};
+
+
+
+
+
+typedef struct {
+  uint32_t sh_idx;
+  DecorVirtText *vt;
+} DecorExt;
+
+
+typedef union {
+  DecorHighlightInline hl;
+  DecorExt ext;
+} DecorInlineData;
+
+
+
+
+
+typedef struct {
+  
+# 131 "/home/dweller/neovim/src/nvim/decoration_defs.h" 3 4
+ _Bool 
+# 131 "/home/dweller/neovim/src/nvim/decoration_defs.h"
+      ext;
+  DecorInlineData data;
+} DecorInline;
+
+
+
+
+typedef struct {
+  NS ns_id;
+
+  enum {
+    kDecorProviderActive = 1,
+    kDecorProviderWinDisabled = 2,
+    kDecorProviderRedrawDisabled = 3,
+    kDecorProviderDisabled = 4,
+  } state;
+
+  LuaRef redraw_start;
+  LuaRef redraw_buf;
+  LuaRef redraw_win;
+  LuaRef redraw_line;
+  LuaRef redraw_end;
+  LuaRef hl_def;
+  LuaRef spell_nav;
+  LuaRef conceal_line;
+  int hl_valid;
+  
+# 157 "/home/dweller/neovim/src/nvim/decoration_defs.h" 3 4
+ _Bool 
+# 157 "/home/dweller/neovim/src/nvim/decoration_defs.h"
+      hl_cached;
+
+  uint8_t error_count;
+} DecorProvider;
+# 8 "/home/dweller/neovim/src/nvim/marktree_defs.h" 2
+# 1 "/home/dweller/neovim/src/nvim/map_defs.h" 1
+       
+
+
+
+
+
+
+# 1 "/home/dweller/neovim/src/nvim/assert_defs.h" 1
+       
+
+
+# 1 "/home/dweller/neovim/src/nvim/log.h" 1
+       
+# 21 "/home/dweller/neovim/src/nvim/log.h"
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/11/include/sanitizer/asan_interface.h" 1 3 4
+# 16 "/usr/lib/gcc/x86_64-linux-gnu/11/include/sanitizer/asan_interface.h" 3 4
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/11/include/sanitizer/common_interface_defs.h" 1 3 4
+# 15 "/usr/lib/gcc/x86_64-linux-gnu/11/include/sanitizer/common_interface_defs.h" 3 4
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h" 1 3 4
+# 16 "/usr/lib/gcc/x86_64-linux-gnu/11/include/sanitizer/common_interface_defs.h" 2 3 4
+# 27 "/usr/lib/gcc/x86_64-linux-gnu/11/include/sanitizer/common_interface_defs.h" 3 4
+
+# 27 "/usr/lib/gcc/x86_64-linux-gnu/11/include/sanitizer/common_interface_defs.h" 3 4
+typedef struct {
+
+  int coverage_sandboxed;
+
+
+
+  intptr_t coverage_fd;
+
+
+
+
+  unsigned int coverage_max_block_size;
+} __sanitizer_sandbox_arguments;
+
+
+void __sanitizer_set_report_path(const char *path);
+
+
+void __sanitizer_set_report_fd(void *fd);
+
+
+
+
+void __sanitizer_sandbox_on_notify(__sanitizer_sandbox_arguments *args);
+
+
+
+
+void __sanitizer_report_error_summary(const char *error_summary);
+# 66 "/usr/lib/gcc/x86_64-linux-gnu/11/include/sanitizer/common_interface_defs.h" 3 4
+uint16_t __sanitizer_unaligned_load16(const void *p);
+
+
+
+
+
+
+uint32_t __sanitizer_unaligned_load32(const void *p);
+
+
+
+
+
+
+uint64_t __sanitizer_unaligned_load64(const void *p);
+
+
+
+
+
+void __sanitizer_unaligned_store16(void *p, uint16_t x);
+
+
+
+
+
+void __sanitizer_unaligned_store32(void *p, uint32_t x);
+
+
+
+
+
+void __sanitizer_unaligned_store64(void *p, uint64_t x);
+
+
+
+
+int __sanitizer_acquire_crash_state();
+# 154 "/usr/lib/gcc/x86_64-linux-gnu/11/include/sanitizer/common_interface_defs.h" 3 4
+void __sanitizer_annotate_contiguous_container(const void *beg,
+                                               const void *end,
+                                               const void *old_mid,
+                                               const void *new_mid);
+# 175 "/usr/lib/gcc/x86_64-linux-gnu/11/include/sanitizer/common_interface_defs.h" 3 4
+int __sanitizer_verify_contiguous_container(const void *beg, const void *mid,
+                                            const void *end);
+# 188 "/usr/lib/gcc/x86_64-linux-gnu/11/include/sanitizer/common_interface_defs.h" 3 4
+const void *__sanitizer_contiguous_container_find_bad_address(const void *beg,
+                                                              const void *mid,
+                                                              const void *end);
+
+
+
+void __sanitizer_print_stack_trace(void);
+# 206 "/usr/lib/gcc/x86_64-linux-gnu/11/include/sanitizer/common_interface_defs.h" 3 4
+void __sanitizer_symbolize_pc(void *pc, const char *fmt, char *out_buf,
+                              size_t out_buf_size);
+
+void __sanitizer_symbolize_global(void *data_ptr, const char *fmt,
+                                  char *out_buf, size_t out_buf_size);
+
+
+
+
+
+
+void __sanitizer_set_death_callback(void (*callback)(void));
+# 234 "/usr/lib/gcc/x86_64-linux-gnu/11/include/sanitizer/common_interface_defs.h" 3 4
+void __sanitizer_weak_hook_memcmp(void *called_pc, const void *s1,
+                                  const void *s2, size_t n, int result);
+# 244 "/usr/lib/gcc/x86_64-linux-gnu/11/include/sanitizer/common_interface_defs.h" 3 4
+void __sanitizer_weak_hook_strncmp(void *called_pc, const char *s1,
+                                  const char *s2, size_t n, int result);
+# 254 "/usr/lib/gcc/x86_64-linux-gnu/11/include/sanitizer/common_interface_defs.h" 3 4
+void __sanitizer_weak_hook_strncasecmp(void *called_pc, const char *s1,
+                                       const char *s2, size_t n, int result);
+
+
+
+
+
+
+
+void __sanitizer_weak_hook_strcmp(void *called_pc, const char *s1,
+                                  const char *s2, int result);
+
+
+
+
+
+
+
+void __sanitizer_weak_hook_strcasecmp(void *called_pc, const char *s1,
+                                      const char *s2, int result);
+
+
+
+
+
+
+
+void __sanitizer_weak_hook_strstr(void *called_pc, const char *s1,
+                                  const char *s2, char *result);
+
+void __sanitizer_weak_hook_strcasestr(void *called_pc, const char *s1,
+                                      const char *s2, char *result);
+
+void __sanitizer_weak_hook_memmem(void *called_pc,
+                                  const void *s1, size_t len1,
+                                  const void *s2, size_t len2, void *result);
+
+
+
+
+
+
+void __sanitizer_print_memory_profile(size_t top_percent,
+                                      size_t max_number_of_contexts);
+# 326 "/usr/lib/gcc/x86_64-linux-gnu/11/include/sanitizer/common_interface_defs.h" 3 4
+void __sanitizer_start_switch_fiber(void **fake_stack_save,
+                                    const void *bottom, size_t size);
+# 340 "/usr/lib/gcc/x86_64-linux-gnu/11/include/sanitizer/common_interface_defs.h" 3 4
+void __sanitizer_finish_switch_fiber(void *fake_stack_save,
+                                     const void **bottom_old,
+                                     size_t *size_old);
+
+
+
+int __sanitizer_get_module_and_offset_for_pc(void *pc, char *module_path,
+                                             size_t module_path_len,
+                                             void **pc_offset);
+# 17 "/usr/lib/gcc/x86_64-linux-gnu/11/include/sanitizer/asan_interface.h" 2 3 4
+# 34 "/usr/lib/gcc/x86_64-linux-gnu/11/include/sanitizer/asan_interface.h" 3 4
+void __asan_poison_memory_region(void const volatile *addr, size_t size);
+# 48 "/usr/lib/gcc/x86_64-linux-gnu/11/include/sanitizer/asan_interface.h" 3 4
+void __asan_unpoison_memory_region(void const volatile *addr, size_t size);
+# 88 "/usr/lib/gcc/x86_64-linux-gnu/11/include/sanitizer/asan_interface.h" 3 4
+int __asan_address_is_poisoned(void const volatile *addr);
+# 98 "/usr/lib/gcc/x86_64-linux-gnu/11/include/sanitizer/asan_interface.h" 3 4
+void *__asan_region_is_poisoned(void *beg, size_t size);
+
+
+
+
+
+
+void __asan_describe_address(void *addr);
+# 114 "/usr/lib/gcc/x86_64-linux-gnu/11/include/sanitizer/asan_interface.h" 3 4
+int __asan_report_present(void);
+# 123 "/usr/lib/gcc/x86_64-linux-gnu/11/include/sanitizer/asan_interface.h" 3 4
+void *__asan_get_report_pc(void);
+# 132 "/usr/lib/gcc/x86_64-linux-gnu/11/include/sanitizer/asan_interface.h" 3 4
+void *__asan_get_report_bp(void);
+# 141 "/usr/lib/gcc/x86_64-linux-gnu/11/include/sanitizer/asan_interface.h" 3 4
+void *__asan_get_report_sp(void);
+# 150 "/usr/lib/gcc/x86_64-linux-gnu/11/include/sanitizer/asan_interface.h" 3 4
+void *__asan_get_report_address(void);
+
+
+
+
+
+
+
+int __asan_get_report_access_type(void);
+
+
+
+
+
+
+
+size_t __asan_get_report_access_size(void);
+
+
+
+
+
+
+
+const char *__asan_get_report_description(void);
+# 195 "/usr/lib/gcc/x86_64-linux-gnu/11/include/sanitizer/asan_interface.h" 3 4
+const char *__asan_locate_address(void *addr, char *name, size_t name_size,
+                                  void **region_address, size_t *region_size);
+# 210 "/usr/lib/gcc/x86_64-linux-gnu/11/include/sanitizer/asan_interface.h" 3 4
+size_t __asan_get_alloc_stack(void *addr, void **trace, size_t size,
+                              int *thread_id);
+# 225 "/usr/lib/gcc/x86_64-linux-gnu/11/include/sanitizer/asan_interface.h" 3 4
+size_t __asan_get_free_stack(void *addr, void **trace, size_t size,
+                             int *thread_id);
+
+
+
+
+
+
+void __asan_get_shadow_mapping(size_t *shadow_scale, size_t *shadow_offset);
+# 245 "/usr/lib/gcc/x86_64-linux-gnu/11/include/sanitizer/asan_interface.h" 3 4
+void __asan_report_error(void *pc, void *bp, void *sp,
+                         void *addr, int is_write, size_t access_size);
+
+
+void __asan_set_death_callback(void (*callback)(void));
+
+
+
+
+
+
+void __asan_set_error_report_callback(void (*callback)(const char *));
+
+
+
+
+
+
+void __asan_on_error(void);
+
+
+
+void __asan_print_accumulated_stats(void);
+# 276 "/usr/lib/gcc/x86_64-linux-gnu/11/include/sanitizer/asan_interface.h" 3 4
+const char* __asan_default_options(void);
+# 288 "/usr/lib/gcc/x86_64-linux-gnu/11/include/sanitizer/asan_interface.h" 3 4
+void *__asan_get_current_fake_stack(void);
+# 308 "/usr/lib/gcc/x86_64-linux-gnu/11/include/sanitizer/asan_interface.h" 3 4
+void *__asan_addr_is_in_fake_stack(void *fake_stack, void *addr, void **beg,
+                                   void **end);
+
+
+
+
+
+
+void __asan_handle_no_return(void);
+
+
+
+int __asan_update_allocation_context(void* addr);
+# 22 "/home/dweller/neovim/src/nvim/log.h" 2
+# 5 "/home/dweller/neovim/src/nvim/assert_defs.h" 2
+# 9 "/home/dweller/neovim/src/nvim/map_defs.h" 2
+# 1 "/home/dweller/neovim/src/nvim/highlight_defs.h" 1
+       
+
+
+
+
+
+
+
+# 8 "/home/dweller/neovim/src/nvim/highlight_defs.h"
+typedef int32_t RgbValue;
+
+
+
+
+typedef enum {
+  HL_INVERSE = 0x01,
+  HL_BOLD = 0x02,
+  HL_ITALIC = 0x04,
+
+  HL_UNDERLINE_MASK = 0x38,
+  HL_UNDERLINE = 0x08,
+  HL_UNDERCURL = 0x10,
+  HL_UNDERDOUBLE = 0x18,
+  HL_UNDERDOTTED = 0x20,
+  HL_UNDERDASHED = 0x28,
+
+  HL_STANDOUT = 0x0040,
+  HL_STRIKETHROUGH = 0x0080,
+  HL_ALTFONT = 0x0100,
+
+  HL_NOCOMBINE = 0x0400,
+  HL_BG_INDEXED = 0x0800,
+  HL_FG_INDEXED = 0x1000,
+  HL_DEFAULT = 0x2000,
+  HL_GLOBAL = 0x4000,
+} HlAttrFlags;
+
+
+
+typedef struct {
+  int16_t rgb_ae_attr, cterm_ae_attr;
+  RgbValue rgb_fg_color, rgb_bg_color, rgb_sp_color;
+  int16_t cterm_fg_color, cterm_bg_color;
+  int32_t hl_blend;
+  int32_t url;
+} HlAttrs;
+# 60 "/home/dweller/neovim/src/nvim/highlight_defs.h"
+typedef enum {
+  HLF_NONE = 0,
+  HLF_8,
+
+  HLF_EOB,
+  HLF_TERM,
+  HLF_AT,
+  HLF_D,
+  HLF_E,
+  HLF_I,
+  HLF_L,
+  HLF_LC,
+  HLF_M,
+  HLF_CM,
+  HLF_N,
+  HLF_LNA,
+  HLF_LNB,
+  HLF_CLN,
+  HLF_CLS,
+  HLF_CLF,
+  HLF_R,
+  HLF_S,
+  HLF_SNC,
+  HLF_C,
+  HLF_VSP,
+  HLF_T,
+  HLF_V,
+  HLF_VNC,
+  HLF_W,
+  HLF_WM,
+  HLF_FL,
+  HLF_FC,
+  HLF_ADD,
+  HLF_CHD,
+  HLF_DED,
+  HLF_TXD,
+  HLF_TXA,
+  HLF_SC,
+  HLF_CONCEAL,
+  HLF_SPB,
+  HLF_SPC,
+  HLF_SPR,
+  HLF_SPL,
+  HLF_PNI,
+  HLF_PSI,
+  HLF_PMNI,
+  HLF_PMSI,
+  HLF_PNK,
+  HLF_PSK,
+  HLF_PNX,
+  HLF_PSX,
+  HLF_PSB,
+  HLF_PST,
+  HLF_TP,
+  HLF_TPS,
+  HLF_TPF,
+  HLF_CUC,
+  HLF_CUL,
+  HLF_MC,
+  HLF_QFL,
+  HLF_0,
+  HLF_INACTIVE,
+  HLF_MSGSEP,
+  HLF_NFLOAT,
+  HLF_MSG,
+  HLF_BORDER,
+  HLF_WBR,
+  HLF_WBRNC,
+  HLF_CU,
+  HLF_BTITLE,
+  HLF_BFOOTER,
+  HLF_TS,
+  HLF_TSNC,
+  HLF_SE,
+  HLF_SO,
+  HLF_COUNT,
+} hlf_T;
+
+typedef enum {
+  kHlUnknown,
+  kHlUI,
+  kHlSyntax,
+  kHlTerminal,
+  kHlCombine,
+  kHlBlend,
+  kHlBlendThrough,
+  kHlInvalid,
+} HlKind;
+
+typedef struct {
+  HlAttrs attr;
+  HlKind kind;
+  int id1;
+  int id2;
+  int winid;
+} HlEntry;
+
+typedef struct {
+  int ns_id;
+  int syn_id;
+} ColorKey;
+
+
+typedef struct {
+  int attr_id;
+  int link_id;
+  int version;
+  
+# 167 "/home/dweller/neovim/src/nvim/highlight_defs.h" 3 4
+ _Bool 
+# 167 "/home/dweller/neovim/src/nvim/highlight_defs.h"
+      is_default;
+  
+# 168 "/home/dweller/neovim/src/nvim/highlight_defs.h" 3 4
+ _Bool 
+# 168 "/home/dweller/neovim/src/nvim/highlight_defs.h"
+      link_global;
+} ColorItem;
+
+
+
+enum { HLATTRS_DICT_SIZE = 16, };
+# 10 "/home/dweller/neovim/src/nvim/map_defs.h" 2
+
+
+
+
+
+
+
+typedef const char *cstr_t;
+typedef void *ptr_t;
+
+
+
+static inline uint32_t hash_String(String s)
+{
+  uint32_t h = 0;
+  for (size_t i = 0; i < s.size; i++) {
+    h = (h << 5) - h + (uint8_t)s.data[i];
+  }
+  return h;
+}
+
+static inline 
+# 31 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+             _Bool 
+# 31 "/home/dweller/neovim/src/nvim/map_defs.h"
+                  equal_String(String a, String b)
+{
+  if (a.size != b.size) {
+    return 
+# 34 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+          0
+# 34 "/home/dweller/neovim/src/nvim/map_defs.h"
+               ;
+  }
+
+  return (a.size == 0) || (memcmp(a.data, b.data, a.size) == 0);
+}
+
+
+
+
+
+static const int value_init_int = 0;
+static const ptr_t value_init_ptr_t = 
+# 45 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+                                     ((void *)0)
+# 45 "/home/dweller/neovim/src/nvim/map_defs.h"
+                                         ;
+static const ssize_t value_init_ssize_t = -1;
+static const uint32_t value_init_uint32_t = 0;
+static const uint64_t value_init_uint64_t = 0;
+static const int64_t value_init_int64_t = 0;
+static const String value_init_String = { .data = 
+# 50 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+                                       ((void *)0)
+# 50 "/home/dweller/neovim/src/nvim/map_defs.h"
+                                       , .size = 0 };
+static const ColorItem value_init_ColorItem = { .attr_id = -1, .link_id = -1, .version = -1, .is_default = 
+# 51 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+                                             0
+# 51 "/home/dweller/neovim/src/nvim/map_defs.h"
+                                             , .link_global = 
+# 51 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+                                             0 
+# 51 "/home/dweller/neovim/src/nvim/map_defs.h"
+                                             };
+
+
+
+typedef struct {
+  uint32_t n_buckets;
+  uint32_t size;
+  uint32_t n_occupied;
+  uint32_t upper_bound;
+  uint32_t n_keys;
+  uint32_t keys_capacity;
+  uint32_t *hash;
+} MapHash;
+# 75 "/home/dweller/neovim/src/nvim/map_defs.h"
+typedef enum {
+  kMHExisting = 0,
+  kMHNewKeyDidFit,
+  kMHNewKeyRealloc,
+} MHPutStatus;
+
+void mh_clear(MapHash *h);
+void mh_realloc(MapHash *h, uint32_t n_min_buckets);
+# 144 "/home/dweller/neovim/src/nvim/map_defs.h"
+typedef struct { MapHash h; char *keys; } Set_glyph; uint32_t mh_find_bucket_glyph(Set_glyph *set, String key, 
+# 144 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+_Bool 
+# 144 "/home/dweller/neovim/src/nvim/map_defs.h"
+put); uint32_t mh_get_glyph(Set_glyph *set, String key); void mh_rehash_glyph(Set_glyph *set); uint32_t mh_put_glyph(Set_glyph *set, String key, MHPutStatus *new);
+typedef struct { MapHash h; int *keys; } Set_int; uint32_t mh_find_bucket_int(Set_int *set, int key, 
+# 145 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+_Bool 
+# 145 "/home/dweller/neovim/src/nvim/map_defs.h"
+put); uint32_t mh_get_int(Set_int *set, int key); void mh_rehash_int(Set_int *set); uint32_t mh_put_int(Set_int *set, int key, MHPutStatus *new); uint32_t mh_delete_int(Set_int *set, int *key); static inline 
+# 145 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+_Bool 
+# 145 "/home/dweller/neovim/src/nvim/map_defs.h"
+set_put_int(Set_int *set, int key, int **key_alloc) { MHPutStatus status; uint32_t k = mh_put_int(set, key, &status); if (key_alloc) { *key_alloc = &set->keys[k]; } return status != kMHExisting; } static inline int set_del_int(Set_int *set, int key) { mh_delete_int(set, &key); return key; } static inline 
+# 145 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+_Bool 
+# 145 "/home/dweller/neovim/src/nvim/map_defs.h"
+set_has_int(Set_int *set, int key) { return mh_get_int(set, key) != 
+# 145 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+(4294967295U)
+# 145 "/home/dweller/neovim/src/nvim/map_defs.h"
+; }
+typedef struct { MapHash h; cstr_t *keys; } Set_cstr_t; uint32_t mh_find_bucket_cstr_t(Set_cstr_t *set, cstr_t key, 
+# 146 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+_Bool 
+# 146 "/home/dweller/neovim/src/nvim/map_defs.h"
+put); uint32_t mh_get_cstr_t(Set_cstr_t *set, cstr_t key); void mh_rehash_cstr_t(Set_cstr_t *set); uint32_t mh_put_cstr_t(Set_cstr_t *set, cstr_t key, MHPutStatus *new); uint32_t mh_delete_cstr_t(Set_cstr_t *set, cstr_t *key); static inline 
+# 146 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+_Bool 
+# 146 "/home/dweller/neovim/src/nvim/map_defs.h"
+set_put_cstr_t(Set_cstr_t *set, cstr_t key, cstr_t **key_alloc) { MHPutStatus status; uint32_t k = mh_put_cstr_t(set, key, &status); if (key_alloc) { *key_alloc = &set->keys[k]; } return status != kMHExisting; } static inline cstr_t set_del_cstr_t(Set_cstr_t *set, cstr_t key) { mh_delete_cstr_t(set, &key); return key; } static inline 
+# 146 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+_Bool 
+# 146 "/home/dweller/neovim/src/nvim/map_defs.h"
+set_has_cstr_t(Set_cstr_t *set, cstr_t key) { return mh_get_cstr_t(set, key) != 
+# 146 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+(4294967295U)
+# 146 "/home/dweller/neovim/src/nvim/map_defs.h"
+; }
+typedef struct { MapHash h; ptr_t *keys; } Set_ptr_t; uint32_t mh_find_bucket_ptr_t(Set_ptr_t *set, ptr_t key, 
+# 147 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+_Bool 
+# 147 "/home/dweller/neovim/src/nvim/map_defs.h"
+put); uint32_t mh_get_ptr_t(Set_ptr_t *set, ptr_t key); void mh_rehash_ptr_t(Set_ptr_t *set); uint32_t mh_put_ptr_t(Set_ptr_t *set, ptr_t key, MHPutStatus *new); uint32_t mh_delete_ptr_t(Set_ptr_t *set, ptr_t *key); static inline 
+# 147 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+_Bool 
+# 147 "/home/dweller/neovim/src/nvim/map_defs.h"
+set_put_ptr_t(Set_ptr_t *set, ptr_t key, ptr_t **key_alloc) { MHPutStatus status; uint32_t k = mh_put_ptr_t(set, key, &status); if (key_alloc) { *key_alloc = &set->keys[k]; } return status != kMHExisting; } static inline ptr_t set_del_ptr_t(Set_ptr_t *set, ptr_t key) { mh_delete_ptr_t(set, &key); return key; } static inline 
+# 147 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+_Bool 
+# 147 "/home/dweller/neovim/src/nvim/map_defs.h"
+set_has_ptr_t(Set_ptr_t *set, ptr_t key) { return mh_get_ptr_t(set, key) != 
+# 147 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+(4294967295U)
+# 147 "/home/dweller/neovim/src/nvim/map_defs.h"
+; }
+typedef struct { MapHash h; uint64_t *keys; } Set_uint64_t; uint32_t mh_find_bucket_uint64_t(Set_uint64_t *set, uint64_t key, 
+# 148 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+_Bool 
+# 148 "/home/dweller/neovim/src/nvim/map_defs.h"
+put); uint32_t mh_get_uint64_t(Set_uint64_t *set, uint64_t key); void mh_rehash_uint64_t(Set_uint64_t *set); uint32_t mh_put_uint64_t(Set_uint64_t *set, uint64_t key, MHPutStatus *new); uint32_t mh_delete_uint64_t(Set_uint64_t *set, uint64_t *key); static inline 
+# 148 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+_Bool 
+# 148 "/home/dweller/neovim/src/nvim/map_defs.h"
+set_put_uint64_t(Set_uint64_t *set, uint64_t key, uint64_t **key_alloc) { MHPutStatus status; uint32_t k = mh_put_uint64_t(set, key, &status); if (key_alloc) { *key_alloc = &set->keys[k]; } return status != kMHExisting; } static inline uint64_t set_del_uint64_t(Set_uint64_t *set, uint64_t key) { mh_delete_uint64_t(set, &key); return key; } static inline 
+# 148 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+_Bool 
+# 148 "/home/dweller/neovim/src/nvim/map_defs.h"
+set_has_uint64_t(Set_uint64_t *set, uint64_t key) { return mh_get_uint64_t(set, key) != 
+# 148 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+(4294967295U)
+# 148 "/home/dweller/neovim/src/nvim/map_defs.h"
+; }
+typedef struct { MapHash h; int64_t *keys; } Set_int64_t; uint32_t mh_find_bucket_int64_t(Set_int64_t *set, int64_t key, 
+# 149 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+_Bool 
+# 149 "/home/dweller/neovim/src/nvim/map_defs.h"
+put); uint32_t mh_get_int64_t(Set_int64_t *set, int64_t key); void mh_rehash_int64_t(Set_int64_t *set); uint32_t mh_put_int64_t(Set_int64_t *set, int64_t key, MHPutStatus *new); uint32_t mh_delete_int64_t(Set_int64_t *set, int64_t *key); static inline 
+# 149 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+_Bool 
+# 149 "/home/dweller/neovim/src/nvim/map_defs.h"
+set_put_int64_t(Set_int64_t *set, int64_t key, int64_t **key_alloc) { MHPutStatus status; uint32_t k = mh_put_int64_t(set, key, &status); if (key_alloc) { *key_alloc = &set->keys[k]; } return status != kMHExisting; } static inline int64_t set_del_int64_t(Set_int64_t *set, int64_t key) { mh_delete_int64_t(set, &key); return key; } static inline 
+# 149 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+_Bool 
+# 149 "/home/dweller/neovim/src/nvim/map_defs.h"
+set_has_int64_t(Set_int64_t *set, int64_t key) { return mh_get_int64_t(set, key) != 
+# 149 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+(4294967295U)
+# 149 "/home/dweller/neovim/src/nvim/map_defs.h"
+; }
+typedef struct { MapHash h; uint32_t *keys; } Set_uint32_t; uint32_t mh_find_bucket_uint32_t(Set_uint32_t *set, uint32_t key, 
+# 150 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+_Bool 
+# 150 "/home/dweller/neovim/src/nvim/map_defs.h"
+put); uint32_t mh_get_uint32_t(Set_uint32_t *set, uint32_t key); void mh_rehash_uint32_t(Set_uint32_t *set); uint32_t mh_put_uint32_t(Set_uint32_t *set, uint32_t key, MHPutStatus *new); uint32_t mh_delete_uint32_t(Set_uint32_t *set, uint32_t *key); static inline 
+# 150 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+_Bool 
+# 150 "/home/dweller/neovim/src/nvim/map_defs.h"
+set_put_uint32_t(Set_uint32_t *set, uint32_t key, uint32_t **key_alloc) { MHPutStatus status; uint32_t k = mh_put_uint32_t(set, key, &status); if (key_alloc) { *key_alloc = &set->keys[k]; } return status != kMHExisting; } static inline uint32_t set_del_uint32_t(Set_uint32_t *set, uint32_t key) { mh_delete_uint32_t(set, &key); return key; } static inline 
+# 150 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+_Bool 
+# 150 "/home/dweller/neovim/src/nvim/map_defs.h"
+set_has_uint32_t(Set_uint32_t *set, uint32_t key) { return mh_get_uint32_t(set, key) != 
+# 150 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+(4294967295U)
+# 150 "/home/dweller/neovim/src/nvim/map_defs.h"
+; }
+typedef struct { MapHash h; String *keys; } Set_String; uint32_t mh_find_bucket_String(Set_String *set, String key, 
+# 151 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+_Bool 
+# 151 "/home/dweller/neovim/src/nvim/map_defs.h"
+put); uint32_t mh_get_String(Set_String *set, String key); void mh_rehash_String(Set_String *set); uint32_t mh_put_String(Set_String *set, String key, MHPutStatus *new); uint32_t mh_delete_String(Set_String *set, String *key); static inline 
+# 151 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+_Bool 
+# 151 "/home/dweller/neovim/src/nvim/map_defs.h"
+set_put_String(Set_String *set, String key, String **key_alloc) { MHPutStatus status; uint32_t k = mh_put_String(set, key, &status); if (key_alloc) { *key_alloc = &set->keys[k]; } return status != kMHExisting; } static inline String set_del_String(Set_String *set, String key) { mh_delete_String(set, &key); return key; } static inline 
+# 151 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+_Bool 
+# 151 "/home/dweller/neovim/src/nvim/map_defs.h"
+set_has_String(Set_String *set, String key) { return mh_get_String(set, key) != 
+# 151 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+(4294967295U)
+# 151 "/home/dweller/neovim/src/nvim/map_defs.h"
+; }
+typedef struct { MapHash h; HlEntry *keys; } Set_HlEntry; uint32_t mh_find_bucket_HlEntry(Set_HlEntry *set, HlEntry key, 
+# 152 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+_Bool 
+# 152 "/home/dweller/neovim/src/nvim/map_defs.h"
+put); uint32_t mh_get_HlEntry(Set_HlEntry *set, HlEntry key); void mh_rehash_HlEntry(Set_HlEntry *set); uint32_t mh_put_HlEntry(Set_HlEntry *set, HlEntry key, MHPutStatus *new); uint32_t mh_delete_HlEntry(Set_HlEntry *set, HlEntry *key); static inline 
+# 152 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+_Bool 
+# 152 "/home/dweller/neovim/src/nvim/map_defs.h"
+set_put_HlEntry(Set_HlEntry *set, HlEntry key, HlEntry **key_alloc) { MHPutStatus status; uint32_t k = mh_put_HlEntry(set, key, &status); if (key_alloc) { *key_alloc = &set->keys[k]; } return status != kMHExisting; } static inline HlEntry set_del_HlEntry(Set_HlEntry *set, HlEntry key) { mh_delete_HlEntry(set, &key); return key; } static inline 
+# 152 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+_Bool 
+# 152 "/home/dweller/neovim/src/nvim/map_defs.h"
+set_has_HlEntry(Set_HlEntry *set, HlEntry key) { return mh_get_HlEntry(set, key) != 
+# 152 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+(4294967295U)
+# 152 "/home/dweller/neovim/src/nvim/map_defs.h"
+; }
+typedef struct { MapHash h; ColorKey *keys; } Set_ColorKey; uint32_t mh_find_bucket_ColorKey(Set_ColorKey *set, ColorKey key, 
+# 153 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+_Bool 
+# 153 "/home/dweller/neovim/src/nvim/map_defs.h"
+put); uint32_t mh_get_ColorKey(Set_ColorKey *set, ColorKey key); void mh_rehash_ColorKey(Set_ColorKey *set); uint32_t mh_put_ColorKey(Set_ColorKey *set, ColorKey key, MHPutStatus *new); uint32_t mh_delete_ColorKey(Set_ColorKey *set, ColorKey *key); static inline 
+# 153 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+_Bool 
+# 153 "/home/dweller/neovim/src/nvim/map_defs.h"
+set_put_ColorKey(Set_ColorKey *set, ColorKey key, ColorKey **key_alloc) { MHPutStatus status; uint32_t k = mh_put_ColorKey(set, key, &status); if (key_alloc) { *key_alloc = &set->keys[k]; } return status != kMHExisting; } static inline ColorKey set_del_ColorKey(Set_ColorKey *set, ColorKey key) { mh_delete_ColorKey(set, &key); return key; } static inline 
+# 153 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+_Bool 
+# 153 "/home/dweller/neovim/src/nvim/map_defs.h"
+set_has_ColorKey(Set_ColorKey *set, ColorKey key) { return mh_get_ColorKey(set, key) != 
+# 153 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+(4294967295U)
+# 153 "/home/dweller/neovim/src/nvim/map_defs.h"
+; }
+
+typedef struct { Set_int set; int *values; } Map_intint; static inline int map_get_intint(Map_intint *map, int key) { uint32_t k = mh_get_int(&map->set, key); return k == 
+# 155 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+(4294967295U) 
+# 155 "/home/dweller/neovim/src/nvim/map_defs.h"
+? value_init_int : map->values[k]; } int *map_ref_intint(Map_intint *map, int key, int **key_alloc); int *map_put_ref_intint(Map_intint *map, int key, int **key_alloc, 
+# 155 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+_Bool 
+# 155 "/home/dweller/neovim/src/nvim/map_defs.h"
+*new_item); static inline void map_put_intint(Map_intint *map, int key, int value) { int *val = map_put_ref_intint(map, key, 
+# 155 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+((void *)0)
+# 155 "/home/dweller/neovim/src/nvim/map_defs.h"
+, 
+# 155 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+((void *)0)
+# 155 "/home/dweller/neovim/src/nvim/map_defs.h"
+); *val = value; } int map_del_intint(Map_intint *map, int key, int *key_alloc);
+typedef struct { Set_int set; ptr_t *values; } Map_intptr_t; static inline ptr_t map_get_intptr_t(Map_intptr_t *map, int key) { uint32_t k = mh_get_int(&map->set, key); return k == 
+# 156 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+(4294967295U) 
+# 156 "/home/dweller/neovim/src/nvim/map_defs.h"
+? value_init_ptr_t : map->values[k]; } ptr_t *map_ref_intptr_t(Map_intptr_t *map, int key, int **key_alloc); ptr_t *map_put_ref_intptr_t(Map_intptr_t *map, int key, int **key_alloc, 
+# 156 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+_Bool 
+# 156 "/home/dweller/neovim/src/nvim/map_defs.h"
+*new_item); static inline void map_put_intptr_t(Map_intptr_t *map, int key, ptr_t value) { ptr_t *val = map_put_ref_intptr_t(map, key, 
+# 156 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+((void *)0)
+# 156 "/home/dweller/neovim/src/nvim/map_defs.h"
+, 
+# 156 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+((void *)0)
+# 156 "/home/dweller/neovim/src/nvim/map_defs.h"
+); *val = value; } ptr_t map_del_intptr_t(Map_intptr_t *map, int key, int *key_alloc);
+typedef struct { Set_cstr_t set; ptr_t *values; } Map_cstr_tptr_t; static inline ptr_t map_get_cstr_tptr_t(Map_cstr_tptr_t *map, cstr_t key) { uint32_t k = mh_get_cstr_t(&map->set, key); return k == 
+# 157 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+(4294967295U) 
+# 157 "/home/dweller/neovim/src/nvim/map_defs.h"
+? value_init_ptr_t : map->values[k]; } ptr_t *map_ref_cstr_tptr_t(Map_cstr_tptr_t *map, cstr_t key, cstr_t **key_alloc); ptr_t *map_put_ref_cstr_tptr_t(Map_cstr_tptr_t *map, cstr_t key, cstr_t **key_alloc, 
+# 157 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+_Bool 
+# 157 "/home/dweller/neovim/src/nvim/map_defs.h"
+*new_item); static inline void map_put_cstr_tptr_t(Map_cstr_tptr_t *map, cstr_t key, ptr_t value) { ptr_t *val = map_put_ref_cstr_tptr_t(map, key, 
+# 157 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+((void *)0)
+# 157 "/home/dweller/neovim/src/nvim/map_defs.h"
+, 
+# 157 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+((void *)0)
+# 157 "/home/dweller/neovim/src/nvim/map_defs.h"
+); *val = value; } ptr_t map_del_cstr_tptr_t(Map_cstr_tptr_t *map, cstr_t key, cstr_t *key_alloc);
+typedef struct { Set_cstr_t set; int *values; } Map_cstr_tint; static inline int map_get_cstr_tint(Map_cstr_tint *map, cstr_t key) { uint32_t k = mh_get_cstr_t(&map->set, key); return k == 
+# 158 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+(4294967295U) 
+# 158 "/home/dweller/neovim/src/nvim/map_defs.h"
+? value_init_int : map->values[k]; } int *map_ref_cstr_tint(Map_cstr_tint *map, cstr_t key, cstr_t **key_alloc); int *map_put_ref_cstr_tint(Map_cstr_tint *map, cstr_t key, cstr_t **key_alloc, 
+# 158 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+_Bool 
+# 158 "/home/dweller/neovim/src/nvim/map_defs.h"
+*new_item); static inline void map_put_cstr_tint(Map_cstr_tint *map, cstr_t key, int value) { int *val = map_put_ref_cstr_tint(map, key, 
+# 158 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+((void *)0)
+# 158 "/home/dweller/neovim/src/nvim/map_defs.h"
+, 
+# 158 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+((void *)0)
+# 158 "/home/dweller/neovim/src/nvim/map_defs.h"
+); *val = value; } int map_del_cstr_tint(Map_cstr_tint *map, cstr_t key, cstr_t *key_alloc);
+typedef struct { Set_ptr_t set; ptr_t *values; } Map_ptr_tptr_t; static inline ptr_t map_get_ptr_tptr_t(Map_ptr_tptr_t *map, ptr_t key) { uint32_t k = mh_get_ptr_t(&map->set, key); return k == 
+# 159 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+(4294967295U) 
+# 159 "/home/dweller/neovim/src/nvim/map_defs.h"
+? value_init_ptr_t : map->values[k]; } ptr_t *map_ref_ptr_tptr_t(Map_ptr_tptr_t *map, ptr_t key, ptr_t **key_alloc); ptr_t *map_put_ref_ptr_tptr_t(Map_ptr_tptr_t *map, ptr_t key, ptr_t **key_alloc, 
+# 159 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+_Bool 
+# 159 "/home/dweller/neovim/src/nvim/map_defs.h"
+*new_item); static inline void map_put_ptr_tptr_t(Map_ptr_tptr_t *map, ptr_t key, ptr_t value) { ptr_t *val = map_put_ref_ptr_tptr_t(map, key, 
+# 159 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+((void *)0)
+# 159 "/home/dweller/neovim/src/nvim/map_defs.h"
+, 
+# 159 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+((void *)0)
+# 159 "/home/dweller/neovim/src/nvim/map_defs.h"
+); *val = value; } ptr_t map_del_ptr_tptr_t(Map_ptr_tptr_t *map, ptr_t key, ptr_t *key_alloc);
+typedef struct { Set_uint32_t set; ptr_t *values; } Map_uint32_tptr_t; static inline ptr_t map_get_uint32_tptr_t(Map_uint32_tptr_t *map, uint32_t key) { uint32_t k = mh_get_uint32_t(&map->set, key); return k == 
+# 160 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+(4294967295U) 
+# 160 "/home/dweller/neovim/src/nvim/map_defs.h"
+? value_init_ptr_t : map->values[k]; } ptr_t *map_ref_uint32_tptr_t(Map_uint32_tptr_t *map, uint32_t key, uint32_t **key_alloc); ptr_t *map_put_ref_uint32_tptr_t(Map_uint32_tptr_t *map, uint32_t key, uint32_t **key_alloc, 
+# 160 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+_Bool 
+# 160 "/home/dweller/neovim/src/nvim/map_defs.h"
+*new_item); static inline void map_put_uint32_tptr_t(Map_uint32_tptr_t *map, uint32_t key, ptr_t value) { ptr_t *val = map_put_ref_uint32_tptr_t(map, key, 
+# 160 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+((void *)0)
+# 160 "/home/dweller/neovim/src/nvim/map_defs.h"
+, 
+# 160 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+((void *)0)
+# 160 "/home/dweller/neovim/src/nvim/map_defs.h"
+); *val = value; } ptr_t map_del_uint32_tptr_t(Map_uint32_tptr_t *map, uint32_t key, uint32_t *key_alloc);
+typedef struct { Set_uint64_t set; ptr_t *values; } Map_uint64_tptr_t; static inline ptr_t map_get_uint64_tptr_t(Map_uint64_tptr_t *map, uint64_t key) { uint32_t k = mh_get_uint64_t(&map->set, key); return k == 
+# 161 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+(4294967295U) 
+# 161 "/home/dweller/neovim/src/nvim/map_defs.h"
+? value_init_ptr_t : map->values[k]; } ptr_t *map_ref_uint64_tptr_t(Map_uint64_tptr_t *map, uint64_t key, uint64_t **key_alloc); ptr_t *map_put_ref_uint64_tptr_t(Map_uint64_tptr_t *map, uint64_t key, uint64_t **key_alloc, 
+# 161 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+_Bool 
+# 161 "/home/dweller/neovim/src/nvim/map_defs.h"
+*new_item); static inline void map_put_uint64_tptr_t(Map_uint64_tptr_t *map, uint64_t key, ptr_t value) { ptr_t *val = map_put_ref_uint64_tptr_t(map, key, 
+# 161 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+((void *)0)
+# 161 "/home/dweller/neovim/src/nvim/map_defs.h"
+, 
+# 161 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+((void *)0)
+# 161 "/home/dweller/neovim/src/nvim/map_defs.h"
+); *val = value; } ptr_t map_del_uint64_tptr_t(Map_uint64_tptr_t *map, uint64_t key, uint64_t *key_alloc);
+typedef struct { Set_uint64_t set; ssize_t *values; } Map_uint64_tssize_t; static inline ssize_t map_get_uint64_tssize_t(Map_uint64_tssize_t *map, uint64_t key) { uint32_t k = mh_get_uint64_t(&map->set, key); return k == 
+# 162 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+(4294967295U) 
+# 162 "/home/dweller/neovim/src/nvim/map_defs.h"
+? value_init_ssize_t : map->values[k]; } ssize_t *map_ref_uint64_tssize_t(Map_uint64_tssize_t *map, uint64_t key, uint64_t **key_alloc); ssize_t *map_put_ref_uint64_tssize_t(Map_uint64_tssize_t *map, uint64_t key, uint64_t **key_alloc, 
+# 162 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+_Bool 
+# 162 "/home/dweller/neovim/src/nvim/map_defs.h"
+*new_item); static inline void map_put_uint64_tssize_t(Map_uint64_tssize_t *map, uint64_t key, ssize_t value) { ssize_t *val = map_put_ref_uint64_tssize_t(map, key, 
+# 162 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+((void *)0)
+# 162 "/home/dweller/neovim/src/nvim/map_defs.h"
+, 
+# 162 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+((void *)0)
+# 162 "/home/dweller/neovim/src/nvim/map_defs.h"
+); *val = value; } ssize_t map_del_uint64_tssize_t(Map_uint64_tssize_t *map, uint64_t key, uint64_t *key_alloc);
+typedef struct { Set_uint64_t set; uint64_t *values; } Map_uint64_tuint64_t; static inline uint64_t map_get_uint64_tuint64_t(Map_uint64_tuint64_t *map, uint64_t key) { uint32_t k = mh_get_uint64_t(&map->set, key); return k == 
+# 163 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+(4294967295U) 
+# 163 "/home/dweller/neovim/src/nvim/map_defs.h"
+? value_init_uint64_t : map->values[k]; } uint64_t *map_ref_uint64_tuint64_t(Map_uint64_tuint64_t *map, uint64_t key, uint64_t **key_alloc); uint64_t *map_put_ref_uint64_tuint64_t(Map_uint64_tuint64_t *map, uint64_t key, uint64_t **key_alloc, 
+# 163 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+_Bool 
+# 163 "/home/dweller/neovim/src/nvim/map_defs.h"
+*new_item); static inline void map_put_uint64_tuint64_t(Map_uint64_tuint64_t *map, uint64_t key, uint64_t value) { uint64_t *val = map_put_ref_uint64_tuint64_t(map, key, 
+# 163 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+((void *)0)
+# 163 "/home/dweller/neovim/src/nvim/map_defs.h"
+, 
+# 163 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+((void *)0)
+# 163 "/home/dweller/neovim/src/nvim/map_defs.h"
+); *val = value; } uint64_t map_del_uint64_tuint64_t(Map_uint64_tuint64_t *map, uint64_t key, uint64_t *key_alloc);
+typedef struct { Set_int64_t set; int64_t *values; } Map_int64_tint64_t; static inline int64_t map_get_int64_tint64_t(Map_int64_tint64_t *map, int64_t key) { uint32_t k = mh_get_int64_t(&map->set, key); return k == 
+# 164 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+(4294967295U) 
+# 164 "/home/dweller/neovim/src/nvim/map_defs.h"
+? value_init_int64_t : map->values[k]; } int64_t *map_ref_int64_tint64_t(Map_int64_tint64_t *map, int64_t key, int64_t **key_alloc); int64_t *map_put_ref_int64_tint64_t(Map_int64_tint64_t *map, int64_t key, int64_t **key_alloc, 
+# 164 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+_Bool 
+# 164 "/home/dweller/neovim/src/nvim/map_defs.h"
+*new_item); static inline void map_put_int64_tint64_t(Map_int64_tint64_t *map, int64_t key, int64_t value) { int64_t *val = map_put_ref_int64_tint64_t(map, key, 
+# 164 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+((void *)0)
+# 164 "/home/dweller/neovim/src/nvim/map_defs.h"
+, 
+# 164 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+((void *)0)
+# 164 "/home/dweller/neovim/src/nvim/map_defs.h"
+); *val = value; } int64_t map_del_int64_tint64_t(Map_int64_tint64_t *map, int64_t key, int64_t *key_alloc);
+typedef struct { Set_int64_t set; ptr_t *values; } Map_int64_tptr_t; static inline ptr_t map_get_int64_tptr_t(Map_int64_tptr_t *map, int64_t key) { uint32_t k = mh_get_int64_t(&map->set, key); return k == 
+# 165 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+(4294967295U) 
+# 165 "/home/dweller/neovim/src/nvim/map_defs.h"
+? value_init_ptr_t : map->values[k]; } ptr_t *map_ref_int64_tptr_t(Map_int64_tptr_t *map, int64_t key, int64_t **key_alloc); ptr_t *map_put_ref_int64_tptr_t(Map_int64_tptr_t *map, int64_t key, int64_t **key_alloc, 
+# 165 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+_Bool 
+# 165 "/home/dweller/neovim/src/nvim/map_defs.h"
+*new_item); static inline void map_put_int64_tptr_t(Map_int64_tptr_t *map, int64_t key, ptr_t value) { ptr_t *val = map_put_ref_int64_tptr_t(map, key, 
+# 165 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+((void *)0)
+# 165 "/home/dweller/neovim/src/nvim/map_defs.h"
+, 
+# 165 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+((void *)0)
+# 165 "/home/dweller/neovim/src/nvim/map_defs.h"
+); *val = value; } ptr_t map_del_int64_tptr_t(Map_int64_tptr_t *map, int64_t key, int64_t *key_alloc);
+typedef struct { Set_uint32_t set; uint32_t *values; } Map_uint32_tuint32_t; static inline uint32_t map_get_uint32_tuint32_t(Map_uint32_tuint32_t *map, uint32_t key) { uint32_t k = mh_get_uint32_t(&map->set, key); return k == 
+# 166 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+(4294967295U) 
+# 166 "/home/dweller/neovim/src/nvim/map_defs.h"
+? value_init_uint32_t : map->values[k]; } uint32_t *map_ref_uint32_tuint32_t(Map_uint32_tuint32_t *map, uint32_t key, uint32_t **key_alloc); uint32_t *map_put_ref_uint32_tuint32_t(Map_uint32_tuint32_t *map, uint32_t key, uint32_t **key_alloc, 
+# 166 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+_Bool 
+# 166 "/home/dweller/neovim/src/nvim/map_defs.h"
+*new_item); static inline void map_put_uint32_tuint32_t(Map_uint32_tuint32_t *map, uint32_t key, uint32_t value) { uint32_t *val = map_put_ref_uint32_tuint32_t(map, key, 
+# 166 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+((void *)0)
+# 166 "/home/dweller/neovim/src/nvim/map_defs.h"
+, 
+# 166 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+((void *)0)
+# 166 "/home/dweller/neovim/src/nvim/map_defs.h"
+); *val = value; } uint32_t map_del_uint32_tuint32_t(Map_uint32_tuint32_t *map, uint32_t key, uint32_t *key_alloc);
+typedef struct { Set_String set; int *values; } Map_Stringint; static inline int map_get_Stringint(Map_Stringint *map, String key) { uint32_t k = mh_get_String(&map->set, key); return k == 
+# 167 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+(4294967295U) 
+# 167 "/home/dweller/neovim/src/nvim/map_defs.h"
+? value_init_int : map->values[k]; } int *map_ref_Stringint(Map_Stringint *map, String key, String **key_alloc); int *map_put_ref_Stringint(Map_Stringint *map, String key, String **key_alloc, 
+# 167 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+_Bool 
+# 167 "/home/dweller/neovim/src/nvim/map_defs.h"
+*new_item); static inline void map_put_Stringint(Map_Stringint *map, String key, int value) { int *val = map_put_ref_Stringint(map, key, 
+# 167 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+((void *)0)
+# 167 "/home/dweller/neovim/src/nvim/map_defs.h"
+, 
+# 167 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+((void *)0)
+# 167 "/home/dweller/neovim/src/nvim/map_defs.h"
+); *val = value; } int map_del_Stringint(Map_Stringint *map, String key, String *key_alloc);
+typedef struct { Set_int set; String *values; } Map_intString; static inline String map_get_intString(Map_intString *map, int key) { uint32_t k = mh_get_int(&map->set, key); return k == 
+# 168 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+(4294967295U) 
+# 168 "/home/dweller/neovim/src/nvim/map_defs.h"
+? value_init_String : map->values[k]; } String *map_ref_intString(Map_intString *map, int key, int **key_alloc); String *map_put_ref_intString(Map_intString *map, int key, int **key_alloc, 
+# 168 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+_Bool 
+# 168 "/home/dweller/neovim/src/nvim/map_defs.h"
+*new_item); static inline void map_put_intString(Map_intString *map, int key, String value) { String *val = map_put_ref_intString(map, key, 
+# 168 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+((void *)0)
+# 168 "/home/dweller/neovim/src/nvim/map_defs.h"
+, 
+# 168 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+((void *)0)
+# 168 "/home/dweller/neovim/src/nvim/map_defs.h"
+); *val = value; } String map_del_intString(Map_intString *map, int key, int *key_alloc);
+typedef struct { Set_ColorKey set; ColorItem *values; } Map_ColorKeyColorItem; static inline ColorItem map_get_ColorKeyColorItem(Map_ColorKeyColorItem *map, ColorKey key) { uint32_t k = mh_get_ColorKey(&map->set, key); return k == 
+# 169 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+(4294967295U) 
+# 169 "/home/dweller/neovim/src/nvim/map_defs.h"
+? value_init_ColorItem : map->values[k]; } ColorItem *map_ref_ColorKeyColorItem(Map_ColorKeyColorItem *map, ColorKey key, ColorKey **key_alloc); ColorItem *map_put_ref_ColorKeyColorItem(Map_ColorKeyColorItem *map, ColorKey key, ColorKey **key_alloc, 
+# 169 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+_Bool 
+# 169 "/home/dweller/neovim/src/nvim/map_defs.h"
+*new_item); static inline void map_put_ColorKeyColorItem(Map_ColorKeyColorItem *map, ColorKey key, ColorItem value) { ColorItem *val = map_put_ref_ColorKeyColorItem(map, key, 
+# 169 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+((void *)0)
+# 169 "/home/dweller/neovim/src/nvim/map_defs.h"
+, 
+# 169 "/home/dweller/neovim/src/nvim/map_defs.h" 3 4
+((void *)0)
+# 169 "/home/dweller/neovim/src/nvim/map_defs.h"
+); *val = value; } ColorItem map_del_ColorKeyColorItem(Map_ColorKeyColorItem *map, ColorKey key, ColorKey *key_alloc);
+# 236 "/home/dweller/neovim/src/nvim/map_defs.h"
+void pmap_del2(Map_cstr_tptr_t *map, const char *key);
+# 9 "/home/dweller/neovim/src/nvim/marktree_defs.h" 2
+
+enum {
+  MT_MAX_DEPTH = 20,
+  MT_BRANCH_FACTOR = 10,
+
+
+
+  MT_LOG2_BRANCH = 5,
+};
+
+typedef struct {
+  int32_t row;
+  int32_t col;
+} MTPos;
+
+
+typedef enum {
+  kMTMetaInline,
+  kMTMetaLines,
+  kMTMetaSignHL,
+  kMTMetaSignText,
+  kMTMetaConcealLines,
+  kMTMetaCount,
+} MetaIndex;
+
+
+
+
+typedef const uint32_t *MetaFilter;
+
+typedef struct mtnode_s MTNode;
+
+typedef struct {
+  MTPos pos;
+  int lvl;
+  MTNode *x;
+  int i;
+  struct {
+    int oldcol;
+    int i;
+  } s[MT_MAX_DEPTH];
+
+  size_t intersect_idx;
+  MTPos intersect_pos;
+  MTPos intersect_pos_x;
+} MarkTreeIter;
+# 64 "/home/dweller/neovim/src/nvim/marktree_defs.h"
+typedef struct {
+  MTPos pos;
+  uint32_t ns;
+  uint32_t id;
+  uint16_t flags;
+  DecorInlineData decor_data;
+} MTKey;
+
+typedef struct {
+  MTKey start;
+  MTPos end_pos;
+  
+# 75 "/home/dweller/neovim/src/nvim/marktree_defs.h" 3 4
+ _Bool 
+# 75 "/home/dweller/neovim/src/nvim/marktree_defs.h"
+      end_right_gravity;
+} MTPair;
+
+typedef struct { size_t size; size_t capacity; uint64_t *items; uint64_t init_array[4]; } Intersection;
+
+
+
+struct mtnode_inner_s {
+  MTNode *i_ptr[2 * MT_BRANCH_FACTOR];
+  uint32_t i_meta[2 * MT_BRANCH_FACTOR][kMTMetaCount];
+};
+
+struct mtnode_s {
+  int32_t n;
+  int16_t level;
+  int16_t p_idx;
+  Intersection intersect;
+  MTNode *parent;
+  MTKey key[2 * MT_BRANCH_FACTOR - 1];
+  struct mtnode_inner_s s[];
+};
+
+typedef struct {
+  MTNode *root;
+  uint32_t meta_root[kMTMetaCount];
+  size_t n_keys, n_nodes;
+  Map_uint64_tptr_t id2node[1];
+} MarkTree;
+# 11 "/home/dweller/neovim/src/nvim/buffer_defs.h" 2
+# 1 "/home/dweller/neovim/src/nvim/memline_defs.h" 1
+       
+
+# 1 "/home/dweller/neovim/src/nvim/memfile_defs.h" 1
+       
+# 14 "/home/dweller/neovim/src/nvim/memfile_defs.h"
+typedef int64_t blocknr_T;
+# 27 "/home/dweller/neovim/src/nvim/memfile_defs.h"
+typedef struct {
+  blocknr_T bh_bnum;
+
+  void *bh_data;
+  unsigned bh_page_count;
+
+
+
+  unsigned bh_flags;
+} bhdr_T;
+
+typedef enum {
+  MF_DIRTY_NO = 0,
+  MF_DIRTY_YES,
+  MF_DIRTY_YES_NOSYNC,
+} mfdirty_T;
+
+
+typedef struct {
+  char *mf_fname;
+  char *mf_ffname;
+  int mf_fd;
+  int mf_flags;
+  
+# 50 "/home/dweller/neovim/src/nvim/memfile_defs.h" 3 4
+ _Bool 
+# 50 "/home/dweller/neovim/src/nvim/memfile_defs.h"
+      mf_reopen;
+  bhdr_T *mf_free_first;
+
+
+
+  Map_int64_tptr_t mf_hash;
+
+
+
+
+  Map_int64_tint64_t mf_trans;
+
+  blocknr_T mf_blocknr_max;
+  blocknr_T mf_blocknr_min;
+  blocknr_T mf_neg_count;
+  blocknr_T mf_infile_count;
+  unsigned mf_page_size;
+  mfdirty_T mf_dirty;
+} memfile_T;
+# 4 "/home/dweller/neovim/src/nvim/memline_defs.h" 2
+
+
+
+
+
+
+
+typedef struct {
+  blocknr_T ip_bnum;
+  linenr_T ip_low;
+  linenr_T ip_high;
+  int ip_index;
+} infoptr_T;
+
+typedef struct {
+  int mlcs_numlines;
+  int mlcs_totalsize;
+} chunksize_T;
+# 43 "/home/dweller/neovim/src/nvim/memline_defs.h"
+typedef struct {
+  linenr_T ml_line_count;
+
+  memfile_T *ml_mfp;
+
+  infoptr_T *ml_stack;
+  int ml_stack_top;
+  int ml_stack_size;
+
+
+
+
+
+
+  int ml_flags;
+
+  colnr_T ml_line_len;
+  linenr_T ml_line_lnum;
+  char *ml_line_ptr;
+  size_t ml_line_offset;
+  int ml_line_offset_ff;
+
+  bhdr_T *ml_locked;
+  linenr_T ml_locked_low;
+  linenr_T ml_locked_high;
+  int ml_locked_lineadd;
+  chunksize_T *ml_chunksize;
+  int ml_numchunks;
+  int ml_usedchunks;
+} memline_T;
+# 12 "/home/dweller/neovim/src/nvim/buffer_defs.h" 2
+# 1 "/home/dweller/neovim/src/nvim/option_defs.h" 1
+       
+
+
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h" 1 3 4
+# 5 "/home/dweller/neovim/src/nvim/option_defs.h" 2
+
+
+# 1 "/home/dweller/neovim/src/nvim/cmdexpand_defs.h" 1
+       
+
+
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h" 1 3 4
+# 5 "/home/dweller/neovim/src/nvim/cmdexpand_defs.h" 2
+
+
+
+typedef enum {
+  XP_PREFIX_NONE,
+  XP_PREFIX_NO,
+  XP_PREFIX_INV,
+} xp_prefix_T;
+
+enum { EXPAND_BUF_LEN = 256, };
+
+
+typedef struct {
+  char *xp_pattern;
+
+  int xp_context;
+  size_t xp_pattern_len;
+  xp_prefix_T xp_prefix;
+  char *xp_arg;
+  LuaRef xp_luaref;
+  sctx_T xp_script_ctx;
+  int xp_backslash;
+
+  
+# 28 "/home/dweller/neovim/src/nvim/cmdexpand_defs.h" 3 4
+ _Bool 
+# 28 "/home/dweller/neovim/src/nvim/cmdexpand_defs.h"
+      xp_shell;
+
+
+  int xp_numfiles;
+  int xp_col;
+  int xp_selected;
+  char *xp_orig;
+  char **xp_files;
+  char *xp_line;
+  char xp_buf[EXPAND_BUF_LEN];
+} expand_T;
+
+
+enum {
+  XP_BS_NONE = 0,
+  XP_BS_ONE = 0x1,
+  XP_BS_THREE = 0x2,
+  XP_BS_COMMA = 0x4,
+};
+
+
+enum {
+  EXPAND_UNSUCCESSFUL = -2,
+  EXPAND_OK = -1,
+  EXPAND_NOTHING = 0,
+  EXPAND_COMMANDS,
+  EXPAND_FILES,
+  EXPAND_DIRECTORIES,
+  EXPAND_SETTINGS,
+  EXPAND_BOOL_SETTINGS,
+  EXPAND_TAGS,
+  EXPAND_OLD_SETTING,
+  EXPAND_HELP,
+  EXPAND_BUFFERS,
+  EXPAND_EVENTS,
+  EXPAND_MENUS,
+  EXPAND_SYNTAX,
+  EXPAND_HIGHLIGHT,
+  EXPAND_AUGROUP,
+  EXPAND_USER_VARS,
+  EXPAND_MAPPINGS,
+  EXPAND_TAGS_LISTFILES,
+  EXPAND_FUNCTIONS,
+  EXPAND_USER_FUNC,
+  EXPAND_EXPRESSION,
+  EXPAND_MENUNAMES,
+  EXPAND_USER_COMMANDS,
+  EXPAND_USER_CMD_FLAGS,
+  EXPAND_USER_NARGS,
+  EXPAND_USER_COMPLETE,
+  EXPAND_ENV_VARS,
+  EXPAND_LANGUAGE,
+  EXPAND_COLORS,
+  EXPAND_COMPILER,
+  EXPAND_USER_DEFINED,
+  EXPAND_USER_LIST,
+  EXPAND_USER_LUA,
+  EXPAND_SHELLCMD,
+  EXPAND_SIGN,
+  EXPAND_PROFILE,
+  EXPAND_FILETYPE,
+  EXPAND_FILES_IN_PATH,
+  EXPAND_OWNSYNTAX,
+  EXPAND_LOCALES,
+  EXPAND_HISTORY,
+  EXPAND_USER,
+  EXPAND_SYNTIME,
+  EXPAND_USER_ADDR_TYPE,
+  EXPAND_PACKADD,
+  EXPAND_MESSAGES,
+  EXPAND_MAPCLEAR,
+  EXPAND_ARGLIST,
+  EXPAND_DIFF_BUFFERS,
+  EXPAND_BREAKPOINT,
+  EXPAND_SCRIPTNAMES,
+  EXPAND_RUNTIME,
+  EXPAND_STRING_SETTING,
+  EXPAND_SETTING_SUBTRACT,
+  EXPAND_ARGOPT,
+  EXPAND_KEYMAP,
+  EXPAND_DIRS_IN_CDPATH,
+  EXPAND_SHELLCMDLINE,
+  EXPAND_FINDFUNC,
+  EXPAND_FILETYPECMD,
+  EXPAND_CHECKHEALTH,
+  EXPAND_LUA,
+};
+
+
+typedef char *(*CompleteListItemGetter)(expand_T *, int);
+# 8 "/home/dweller/neovim/src/nvim/option_defs.h" 2
+# 1 "/home/dweller/neovim/src/nvim/regexp_defs.h" 1
+# 10 "/home/dweller/neovim/src/nvim/regexp_defs.h"
+       
+
+
+
+
+
+
+
+enum {
+
+
+
+
+  NSUBEXP = 10,
+};
+
+typedef struct regengine regengine_T;
+
+
+
+
+
+
+
+typedef struct {
+  regprog_T *regprog;
+  lpos_T startpos[NSUBEXP];
+  lpos_T endpos[NSUBEXP];
+
+  colnr_T rmm_matchcol;
+  int rmm_ic;
+  colnr_T rmm_maxcol;
+} regmmatch_T;
+
+
+typedef enum {
+  OPTION_MAGIC_NOT_SET,
+  OPTION_MAGIC_ON,
+  OPTION_MAGIC_OFF,
+} optmagic_T;
+
+
+
+
+
+typedef enum {
+  MAGIC_NONE = 1,
+  MAGIC_OFF = 2,
+  MAGIC_ON = 3,
+  MAGIC_ALL = 4,
+} magic_T;
+
+
+
+
+typedef struct {
+  regprog_T *regprog;
+  char *startp[NSUBEXP];
+  char *endp[NSUBEXP];
+
+  colnr_T rm_matchcol;
+  
+# 71 "/home/dweller/neovim/src/nvim/regexp_defs.h" 3 4
+ _Bool 
+# 71 "/home/dweller/neovim/src/nvim/regexp_defs.h"
+      rm_ic;
+} regmatch_T;
+
+
+
+
+typedef struct {
+  int16_t refcnt;
+  uint8_t *matches[NSUBEXP];
+} reg_extmatch_T;
+
+
+enum {
+  REGSUB_COPY = 1,
+  REGSUB_MAGIC = 2,
+  REGSUB_BACKSLASH = 4,
+};
+# 9 "/home/dweller/neovim/src/nvim/option_defs.h" 2
+
+
+
+
+
+
+typedef enum {
+  kOptFlagExpand = 1 << 0,
+
+  kOptFlagNoDefExp = 1 << 1,
+  kOptFlagNoDefault = 1 << 2,
+  kOptFlagWasSet = 1 << 3,
+  kOptFlagNoMkrc = 1 << 4,
+  kOptFlagUIOption = 1 << 5,
+  kOptFlagRedrTabl = 1 << 6,
+  kOptFlagRedrStat = 1 << 7,
+  kOptFlagRedrWin = 1 << 8,
+  kOptFlagRedrBuf = 1 << 9,
+  kOptFlagRedrAll = kOptFlagRedrBuf | kOptFlagRedrWin,
+  kOptFlagRedrClear = kOptFlagRedrAll | kOptFlagRedrStat,
+  kOptFlagComma = 1 << 10,
+  kOptFlagOneComma = (1 << 11) | kOptFlagComma,
+  kOptFlagNoDup = 1 << 12,
+  kOptFlagFlagList = 1 << 13,
+  kOptFlagSecure = 1 << 14,
+  kOptFlagGettext = 1 << 15,
+  kOptFlagNoGlob = 1 << 16,
+  kOptFlagNFname = 1 << 17,
+  kOptFlagInsecure = 1 << 18,
+  kOptFlagPriMkrc = 1 << 19,
+  kOptFlagNoML = 1 << 20,
+  kOptFlagCurswant = 1 << 21,
+  kOptFlagNDname = 1 << 22,
+  kOptFlagHLOnly = 1 << 23,
+  kOptFlagMLE = 1 << 24,
+  kOptFlagFunc = 1 << 25,
+  kOptFlagColon = 1 << 26,
+} OptFlags;
+
+
+
+
+typedef enum {
+  kOptValTypeNil = -1,
+  kOptValTypeBoolean,
+  kOptValTypeNumber,
+  kOptValTypeString,
+} OptValType;
+
+
+typedef enum {
+  kOptScopeGlobal = 0,
+  kOptScopeWin,
+  kOptScopeBuf,
+} OptScope;
+
+
+typedef uint8_t OptScopeFlags;
+
+typedef union {
+
+  TriState boolean;
+  OptInt number;
+  String string;
+} OptValData;
+
+
+typedef struct {
+  OptValType type;
+  OptValData data;
+} OptVal;
+
+
+typedef enum {
+  OP_NONE = 0,
+  OP_ADDING,
+  OP_PREPENDING,
+  OP_REMOVING,
+} set_op_T;
+
+
+
+typedef struct {
+
+
+  void *os_varp;
+  OptIndex os_idx;
+  int os_flags;
+
+
+  OptValData os_oldval;
+
+  OptValData os_newval;
+
+
+
+  
+# 105 "/home/dweller/neovim/src/nvim/option_defs.h" 3 4
+ _Bool 
+# 105 "/home/dweller/neovim/src/nvim/option_defs.h"
+      os_value_checked;
+
+  
+# 107 "/home/dweller/neovim/src/nvim/option_defs.h" 3 4
+ _Bool 
+# 107 "/home/dweller/neovim/src/nvim/option_defs.h"
+      os_value_changed;
+
+
+
+
+  
+# 112 "/home/dweller/neovim/src/nvim/option_defs.h" 3 4
+ _Bool 
+# 112 "/home/dweller/neovim/src/nvim/option_defs.h"
+      os_restore_chartab;
+
+
+
+
+  char *os_errbuf;
+
+  size_t os_errbuflen;
+
+  void *os_win;
+  void *os_buf;
+} optset_T;
+
+
+
+
+
+
+typedef const char *(*opt_did_set_cb_T)(optset_T *args);
+
+
+
+typedef struct {
+
+  char *oe_varp;
+  OptIndex oe_idx;
+
+  char *oe_opt_value;
+
+
+  
+# 142 "/home/dweller/neovim/src/nvim/option_defs.h" 3 4
+ _Bool 
+# 142 "/home/dweller/neovim/src/nvim/option_defs.h"
+      oe_append;
+
+  
+# 144 "/home/dweller/neovim/src/nvim/option_defs.h" 3 4
+ _Bool 
+# 144 "/home/dweller/neovim/src/nvim/option_defs.h"
+      oe_include_orig_val;
+
+
+  regmatch_T *oe_regmatch;
+
+  expand_T *oe_xp;
+
+
+
+
+  char *oe_set_arg;
+} optexpand_T;
+# 167 "/home/dweller/neovim/src/nvim/option_defs.h"
+typedef int (*opt_expand_cb_T)(optexpand_T *args, int *numMatches, char ***matches);
+
+typedef struct {
+  char *fullname;
+  char *shortname;
+  uint32_t flags;
+  OptValType type;
+  OptScopeFlags scope_flags;
+  void *var;
+
+
+  unsigned *flags_var;
+  ssize_t scope_idx[(kOptScopeBuf + 1)];
+  
+# 180 "/home/dweller/neovim/src/nvim/option_defs.h" 3 4
+ _Bool 
+# 180 "/home/dweller/neovim/src/nvim/option_defs.h"
+      immutable;
+
+  const char **values;
+  const size_t values_len;
+
+
+
+  opt_did_set_cb_T opt_did_set_cb;
+
+
+
+  opt_expand_cb_T opt_expand_cb;
+
+  OptVal def_val;
+  sctx_T script_ctx;
+} vimoption_T;
+# 13 "/home/dweller/neovim/src/nvim/buffer_defs.h" 2
+# 1 "/home/dweller/neovim/src/nvim/os/fs_defs.h" 1
+       
+
+
+
+
+typedef struct {
+  uv_stat_t stat;
+} FileInfo;
+
+
+typedef struct {
+  uint64_t inode;
+  uint64_t device_id;
+} FileID;
+
+
+
+typedef struct {
+  uv_fs_t request;
+  uv_dirent_t ent;
+} Directory;
+# 14 "/home/dweller/neovim/src/nvim/buffer_defs.h" 2
+# 1 "/home/dweller/neovim/src/nvim/statusline_defs.h" 1
+       
+
+
+
+# 1 "/home/dweller/neovim/src/nvim/fold_defs.h" 1
+       
+
+
+
+
+
+typedef struct {
+  linenr_T fi_lnum;
+  int fi_level;
+
+  int fi_low_level;
+  linenr_T fi_lines;
+} foldinfo_T;
+
+enum { FOLD_TEXT_LEN = 51, };
+# 6 "/home/dweller/neovim/src/nvim/statusline_defs.h" 2
+# 1 "/home/dweller/neovim/src/nvim/sign_defs.h" 1
+       
+
+
+
+
+
+typedef struct {
+  schar_T text[SIGN_WIDTH];
+  int hl_id;
+} SignTextAttrs;
+
+
+typedef struct {
+  char *sn_name;
+  char *sn_icon;
+  schar_T sn_text[SIGN_WIDTH];
+  int sn_line_hl;
+  int sn_text_hl;
+  int sn_cul_hl;
+  int sn_num_hl;
+  int sn_priority;
+} sign_T;
+
+typedef struct {
+  DecorSignHighlight *sh;
+  uint32_t id;
+} SignItem;
+
+enum { SIGN_SHOW_MAX = 9, };
+enum { SIGN_DEF_PRIO = 10, };
+# 7 "/home/dweller/neovim/src/nvim/statusline_defs.h" 2
+
+
+typedef enum {
+  STL_FILEPATH = 'f',
+  STL_FULLPATH = 'F',
+  STL_FILENAME = 't',
+  STL_COLUMN = 'c',
+  STL_VIRTCOL = 'v',
+  STL_VIRTCOL_ALT = 'V',
+  STL_LINE = 'l',
+  STL_NUMLINES = 'L',
+  STL_BUFNO = 'n',
+  STL_KEYMAP = 'k',
+  STL_OFFSET = 'o',
+  STL_OFFSET_X = 'O',
+  STL_BYTEVAL = 'b',
+  STL_BYTEVAL_X = 'B',
+  STL_ROFLAG = 'r',
+  STL_ROFLAG_ALT = 'R',
+  STL_HELPFLAG = 'h',
+  STL_HELPFLAG_ALT = 'H',
+  STL_FILETYPE = 'y',
+  STL_FILETYPE_ALT = 'Y',
+  STL_PREVIEWFLAG = 'w',
+  STL_PREVIEWFLAG_ALT = 'W',
+  STL_MODIFIED = 'm',
+  STL_MODIFIED_ALT = 'M',
+  STL_QUICKFIX = 'q',
+  STL_PERCENTAGE = 'p',
+  STL_ALTPERCENT = 'P',
+  STL_ARGLISTSTAT = 'a',
+  STL_PAGENUM = 'N',
+  STL_SHOWCMD = 'S',
+  STL_FOLDCOL = 'C',
+  STL_SIGNCOL = 's',
+  STL_VIM_EXPR = '{',
+  STL_SEPARATE = '=',
+  STL_TRUNCMARK = '<',
+  STL_USER_HL = '*',
+  STL_HIGHLIGHT = '#',
+  STL_TABPAGENR = 'T',
+  STL_TABCLOSENR = 'X',
+  STL_CLICK_FUNC = '@',
+} StlFlag;
+
+
+typedef struct {
+  enum {
+    kStlClickDisabled = 0,
+    kStlClickTabSwitch,
+    kStlClickTabClose,
+    kStlClickFuncRun,
+  } type;
+  int tabnr;
+  char *func;
+} StlClickDefinition;
+
+
+typedef struct {
+  StlClickDefinition def;
+  const char *start;
+} StlClickRecord;
+
+
+typedef struct stl_hlrec stl_hlrec_t;
+struct stl_hlrec {
+  char *start;
+  int userhl;
+  StlFlag item;
+};
+
+
+typedef struct stl_item stl_item_t;
+struct stl_item {
+  char *start;
+  char *cmd;
+  int minwid;
+  int maxwid;
+  enum {
+    Normal,
+    Empty,
+    Group,
+    Separate,
+    Highlight,
+    HighlightSign,
+    HighlightFold,
+    TabPage,
+    ClickFunc,
+    Trunc,
+  } type;
+};
+
+
+typedef struct {
+  int width;
+  int sign_cul_id;
+  
+# 103 "/home/dweller/neovim/src/nvim/statusline_defs.h" 3 4
+ _Bool 
+# 103 "/home/dweller/neovim/src/nvim/statusline_defs.h"
+      draw;
+  stl_hlrec_t *hlrec;
+  foldinfo_T foldinfo;
+  colnr_T fold_vcol[9];
+  SignTextAttrs *sattrs;
+} statuscol_T;
+# 15 "/home/dweller/neovim/src/nvim/buffer_defs.h" 2
+# 1 "/home/dweller/neovim/src/nvim/undo_defs.h" 1
+       
+
+
+
+# 1 "/home/dweller/neovim/src/nvim/extmark_defs.h" 1
+       
+
+
+
+
+typedef ptrdiff_t bcount_t;
+
+typedef struct undo_object ExtmarkUndoObject;
+typedef struct { size_t size; size_t capacity; ExtmarkUndoObject *items; } extmark_undo_vec_t;
+
+
+
+typedef enum {
+  kExtmarkNOOP,
+  kExtmarkUndo,
+  kExtmarkNoUndo,
+  kExtmarkUndoNoRedo,
+} ExtmarkOp;
+# 6 "/home/dweller/neovim/src/nvim/undo_defs.h" 2
+# 1 "/home/dweller/neovim/src/nvim/mark_defs.h" 1
+       
+
+
+
+# 1 "/home/dweller/neovim/src/nvim/func_attr.h" 1
+# 6 "/home/dweller/neovim/src/nvim/mark_defs.h" 2
+# 1 "/home/dweller/neovim/src/nvim/os/time_defs.h" 1
+       
+
+
+typedef uint64_t Timestamp;
+# 7 "/home/dweller/neovim/src/nvim/mark_defs.h" 2
+# 18 "/home/dweller/neovim/src/nvim/mark_defs.h"
+typedef enum {
+  kMarkMoveSuccess = 1,
+  kMarkMoveFailed = 2,
+  kMarkSwitchedBuf = 4,
+  kMarkChangedCol = 8,
+  kMarkChangedLine = 16,
+  kMarkChangedCursor = 32,
+  kMarkChangedView = 64,
+} MarkMoveRes;
+
+
+typedef enum {
+  kMarkBeginLine = 1,
+  kMarkContext = 2,
+  KMarkNoContext = 4,
+  kMarkSetView = 8,
+  kMarkJumpList = 16,
+} MarkMove;
+
+
+typedef enum {
+  kMarkBufLocal,
+  kMarkAll,
+  kMarkAllNoResolve,
+} MarkGet;
+# 69 "/home/dweller/neovim/src/nvim/mark_defs.h"
+typedef struct {
+  linenr_T topline_offset;
+
+} fmarkv_T;
+
+
+
+
+typedef struct {
+  pos_T mark;
+  int fnum;
+  Timestamp timestamp;
+  fmarkv_T view;
+  AdditionalData *additional_data;
+} fmark_T;
+
+
+
+
+typedef struct {
+  fmark_T fmark;
+  char *fname;
+} xfmark_T;
+
+
+
+
+static inline 
+# 96 "/home/dweller/neovim/src/nvim/mark_defs.h" 3 4
+             _Bool 
+# 96 "/home/dweller/neovim/src/nvim/mark_defs.h"
+                  lt(pos_T a, pos_T b)
+  FUNC_ATTR_CONST FUNC_ATTR_ALWAYS_INLINE
+{
+  if (a.lnum != b.lnum) {
+    return a.lnum < b.lnum;
+  } else if (a.col != b.col) {
+    return a.col < b.col;
+  } else {
+    return a.coladd < b.coladd;
+  }
+}
+
+static inline 
+# 108 "/home/dweller/neovim/src/nvim/mark_defs.h" 3 4
+             _Bool 
+# 108 "/home/dweller/neovim/src/nvim/mark_defs.h"
+                  equalpos(pos_T a, pos_T b)
+  FUNC_ATTR_CONST FUNC_ATTR_ALWAYS_INLINE
+{
+  return (a.lnum == b.lnum) && (a.col == b.col) && (a.coladd == b.coladd);
+}
+
+static inline 
+# 114 "/home/dweller/neovim/src/nvim/mark_defs.h" 3 4
+             _Bool 
+# 114 "/home/dweller/neovim/src/nvim/mark_defs.h"
+                  ltoreq(pos_T a, pos_T b)
+  FUNC_ATTR_CONST FUNC_ATTR_ALWAYS_INLINE
+{
+  return lt(a, b) || equalpos(a, b);
+}
+
+static inline void clearpos(pos_T *a)
+  FUNC_ATTR_ALWAYS_INLINE
+{
+  a->lnum = 0;
+  a->col = 0;
+  a->coladd = 0;
+}
+# 7 "/home/dweller/neovim/src/nvim/undo_defs.h" 2
+
+enum { UNDO_HASH_SIZE = 32, };
+
+typedef struct u_header u_header_T;
+
+
+typedef struct {
+  pos_T vi_start;
+  pos_T vi_end;
+  int vi_mode;
+  colnr_T vi_curswant;
+} visualinfo_T;
+
+typedef struct u_entry u_entry_T;
+struct u_entry {
+  u_entry_T *ue_next;
+  linenr_T ue_top;
+  linenr_T ue_bot;
+  linenr_T ue_lcount;
+  char **ue_array;
+  linenr_T ue_size;
+
+
+
+};
+
+struct u_header {
+
+
+  union {
+    u_header_T *ptr;
+    int seq;
+  } uh_next;
+  union {
+    u_header_T *ptr;
+    int seq;
+  } uh_prev;
+  union {
+    u_header_T *ptr;
+    int seq;
+  } uh_alt_next;
+  union {
+    u_header_T *ptr;
+    int seq;
+  } uh_alt_prev;
+  int uh_seq;
+  int uh_walk;
+  u_entry_T *uh_entry;
+  u_entry_T *uh_getbot_entry;
+  pos_T uh_cursor;
+  colnr_T uh_cursor_vcol;
+  int uh_flags;
+  fmark_T uh_namedm[('z' - 'a' + 1)];
+  extmark_undo_vec_t uh_extmark;
+  visualinfo_T uh_visual;
+  time_t uh_time;
+  int uh_save_nr;
+
+
+
+
+};
+
+
+enum {
+  UH_CHANGED = 0x01,
+  UH_EMPTYBUF = 0x02,
+  UH_RELOAD = 0x04,
+};
+# 16 "/home/dweller/neovim/src/nvim/buffer_defs.h" 2
+
+
+
+typedef struct {
+  buf_T *br_buf;
+  int br_fnum;
+  int br_buf_free_count;
+} bufref_T;
+# 73 "/home/dweller/neovim/src/nvim/buffer_defs.h"
+typedef struct wininfo_S WinInfo;
+typedef struct frame_S frame_T;
+typedef uint64_t disptick_T;
+
+
+typedef struct {
+  char *tagname;
+  fmark_T fmark;
+  int cur_match;
+  int cur_fnum;
+  char *user_data;
+} taggy_T;
+
+
+
+
+typedef struct {
+  int wo_arab;
+
+  int wo_bri;
+
+  char *wo_briopt;
+
+  int wo_diff;
+
+  char *wo_fdc;
+
+  char *wo_eiw;
+
+  char *wo_fdc_save;
+
+  int wo_fen;
+
+  int wo_fen_save;
+
+
+  char *wo_fdi;
+
+  OptInt wo_fdl;
+
+  OptInt wo_fdl_save;
+
+
+  char *wo_fdm;
+
+  char *wo_fdm_save;
+
+  OptInt wo_fml;
+
+  OptInt wo_fdn;
+
+  char *wo_fde;
+
+  char *wo_fdt;
+
+  char *wo_fmr;
+
+  int wo_lbr;
+
+  int wo_list;
+
+  int wo_nu;
+
+  int wo_rnu;
+
+  char *wo_ve;
+
+  unsigned wo_ve_flags;
+
+  OptInt wo_nuw;
+
+  int wo_wfb;
+
+  int wo_wfh;
+
+  int wo_wfw;
+
+  int wo_pvw;
+
+  OptInt wo_lhi;
+
+  int wo_rl;
+
+  char *wo_rlc;
+
+  OptInt wo_scr;
+
+  int wo_sms;
+
+  int wo_spell;
+
+  int wo_cuc;
+
+  int wo_cul;
+
+  char *wo_culopt;
+
+  char *wo_cc;
+
+  char *wo_sbr;
+
+  char *wo_stc;
+
+  char *wo_stl;
+
+  char *wo_wbr;
+
+  int wo_scb;
+
+  int wo_diff_saved;
+
+  int wo_scb_save;
+
+  int wo_wrap;
+
+  int wo_wrap_save;
+
+  char *wo_cocu;
+
+  OptInt wo_cole;
+
+  int wo_crb;
+
+  int wo_crb_save;
+
+  char *wo_scl;
+
+  OptInt wo_siso;
+
+  OptInt wo_so;
+
+  char *wo_winhl;
+
+  char *wo_lcs;
+
+  char *wo_fcs;
+
+  OptInt wo_winbl;
+
+
+  sctx_T wo_script_ctx[kWinOptCount];
+
+} winopt_T;
+# 225 "/home/dweller/neovim/src/nvim/buffer_defs.h"
+struct wininfo_S {
+  win_T *wi_win;
+  fmark_T wi_mark;
+  
+# 228 "/home/dweller/neovim/src/nvim/buffer_defs.h" 3 4
+ _Bool 
+# 228 "/home/dweller/neovim/src/nvim/buffer_defs.h"
+      wi_optset;
+  winopt_T wi_opt;
+  
+# 230 "/home/dweller/neovim/src/nvim/buffer_defs.h" 3 4
+ _Bool 
+# 230 "/home/dweller/neovim/src/nvim/buffer_defs.h"
+      wi_fold_manual;
+  garray_T wi_folds;
+  int wi_changelistidx;
+};
+# 253 "/home/dweller/neovim/src/nvim/buffer_defs.h"
+typedef struct qf_info_S qf_info_T;
+
+
+typedef struct {
+  proftime_T total;
+  proftime_T slowest;
+  int count;
+  int match;
+} syn_time_T;
+
+
+
+typedef struct {
+  hashtab_T b_keywtab;
+  hashtab_T b_keywtab_ic;
+  
+# 268 "/home/dweller/neovim/src/nvim/buffer_defs.h" 3 4
+ _Bool 
+# 268 "/home/dweller/neovim/src/nvim/buffer_defs.h"
+      b_syn_error;
+  
+# 269 "/home/dweller/neovim/src/nvim/buffer_defs.h" 3 4
+ _Bool 
+# 269 "/home/dweller/neovim/src/nvim/buffer_defs.h"
+      b_syn_slow;
+  int b_syn_ic;
+  int b_syn_foldlevel;
+  int b_syn_spell;
+  garray_T b_syn_patterns;
+  garray_T b_syn_clusters;
+  int b_spell_cluster_id;
+  int b_nospell_cluster_id;
+  int b_syn_containedin;
+
+  int b_syn_sync_flags;
+  int16_t b_syn_sync_id;
+  linenr_T b_syn_sync_minlines;
+  linenr_T b_syn_sync_maxlines;
+  linenr_T b_syn_sync_linebreaks;
+  char *b_syn_linecont_pat;
+  regprog_T *b_syn_linecont_prog;
+  syn_time_T b_syn_linecont_time;
+  int b_syn_linecont_ic;
+  int b_syn_topgrp;
+  int b_syn_conceal;
+  int b_syn_folditems;
+# 304 "/home/dweller/neovim/src/nvim/buffer_defs.h"
+  synstate_T *b_sst_array;
+  int b_sst_len;
+  synstate_T *b_sst_first;
+  synstate_T *b_sst_firstfree;
+  int b_sst_freecount;
+  linenr_T b_sst_check_lnum;
+  disptick_T b_sst_lasttick;
+
+
+  garray_T b_langp;
+  
+# 314 "/home/dweller/neovim/src/nvim/buffer_defs.h" 3 4
+ _Bool 
+# 314 "/home/dweller/neovim/src/nvim/buffer_defs.h"
+      b_spell_ismw[256];
+  char *b_spell_ismw_mb;
+  char *b_p_spc;
+  regprog_T *b_cap_prog;
+  char *b_p_spf;
+  char *b_p_spl;
+  char *b_p_spo;
+  unsigned b_p_spo_flags;
+  int b_cjk;
+  uint8_t b_syn_chartab[32];
+  char *b_syn_isk;
+} synblock_T;
+
+
+
+
+typedef struct { typval_T di_tv; uint8_t di_flags; char di_key[sizeof("changedtick")]; } ChangedtickDictItem;
+
+typedef struct {
+  LuaRef on_lines;
+  LuaRef on_bytes;
+  LuaRef on_changedtick;
+  LuaRef on_detach;
+  LuaRef on_reload;
+  
+# 338 "/home/dweller/neovim/src/nvim/buffer_defs.h" 3 4
+ _Bool 
+# 338 "/home/dweller/neovim/src/nvim/buffer_defs.h"
+      utf_sizes;
+  
+# 339 "/home/dweller/neovim/src/nvim/buffer_defs.h" 3 4
+ _Bool 
+# 339 "/home/dweller/neovim/src/nvim/buffer_defs.h"
+      preview;
+} BufUpdateCallbacks;
+# 356 "/home/dweller/neovim/src/nvim/buffer_defs.h"
+struct file_buffer {
+  handle_T handle;
+
+
+  memline_T b_ml;
+
+  buf_T *b_next;
+  buf_T *b_prev;
+
+  int b_nwindows;
+
+  int b_flags;
+  int b_locked;
+
+  int b_locked_split;
+
+  int b_ro_locked;
+
+
+
+
+
+
+  char *b_ffname;
+  char *b_sfname;
+
+  char *b_fname;
+
+
+  
+# 385 "/home/dweller/neovim/src/nvim/buffer_defs.h" 3 4
+ _Bool 
+# 385 "/home/dweller/neovim/src/nvim/buffer_defs.h"
+      file_id_valid;
+  FileID file_id;
+
+  int b_changed;
+
+  
+# 390 "/home/dweller/neovim/src/nvim/buffer_defs.h" 3 4
+ _Bool 
+# 390 "/home/dweller/neovim/src/nvim/buffer_defs.h"
+      b_changed_invalid;
+
+
+
+
+
+
+  ChangedtickDictItem changedtick_di;
+
+  varnumber_T b_last_changedtick;
+
+  varnumber_T b_last_changedtick_i;
+  varnumber_T b_last_changedtick_pum;
+
+  
+# 404 "/home/dweller/neovim/src/nvim/buffer_defs.h" 3 4
+ _Bool 
+# 404 "/home/dweller/neovim/src/nvim/buffer_defs.h"
+      b_saving;
+
+
+
+
+  
+# 409 "/home/dweller/neovim/src/nvim/buffer_defs.h" 3 4
+ _Bool 
+# 409 "/home/dweller/neovim/src/nvim/buffer_defs.h"
+      b_mod_set;
+
+  linenr_T b_mod_top;
+  linenr_T b_mod_bot;
+
+  linenr_T b_mod_xlines;
+
+  struct { size_t size; size_t capacity; WinInfo * *items; } b_wininfo;
+  disptick_T b_mod_tick_syn;
+  disptick_T b_mod_tick_decor;
+
+  int64_t b_mtime;
+  int64_t b_mtime_ns;
+  int64_t b_mtime_read;
+  int64_t b_mtime_read_ns;
+  uint64_t b_orig_size;
+  int b_orig_mode;
+  time_t b_last_used;
+
+
+  fmark_T b_namedm[('z' - 'a' + 1)];
+
+
+  visualinfo_T b_visual;
+  int b_visual_mode_eval;
+
+  fmark_T b_last_cursor;
+
+  fmark_T b_last_insert;
+  fmark_T b_last_change;
+
+
+  fmark_T b_changelist[100];
+  int b_changelistlen;
+  
+# 443 "/home/dweller/neovim/src/nvim/buffer_defs.h" 3 4
+ _Bool 
+# 443 "/home/dweller/neovim/src/nvim/buffer_defs.h"
+      b_new_change;
+
+
+
+  uint64_t b_chartab[4];
+
+
+  mapblock_T *(b_maphash[256]);
+
+
+  mapblock_T *b_first_abbr;
+
+  garray_T b_ucmds;
+
+  pos_T b_op_start;
+  pos_T b_op_start_orig;
+  pos_T b_op_end;
+
+  
+# 461 "/home/dweller/neovim/src/nvim/buffer_defs.h" 3 4
+ _Bool 
+# 461 "/home/dweller/neovim/src/nvim/buffer_defs.h"
+      b_marks_read;
+
+  
+# 463 "/home/dweller/neovim/src/nvim/buffer_defs.h" 3 4
+ _Bool 
+# 463 "/home/dweller/neovim/src/nvim/buffer_defs.h"
+      b_modified_was_set;
+  
+# 464 "/home/dweller/neovim/src/nvim/buffer_defs.h" 3 4
+ _Bool 
+# 464 "/home/dweller/neovim/src/nvim/buffer_defs.h"
+      b_did_filetype;
+  
+# 465 "/home/dweller/neovim/src/nvim/buffer_defs.h" 3 4
+ _Bool 
+# 465 "/home/dweller/neovim/src/nvim/buffer_defs.h"
+      b_keep_filetype;
+# 474 "/home/dweller/neovim/src/nvim/buffer_defs.h"
+  
+# 474 "/home/dweller/neovim/src/nvim/buffer_defs.h" 3 4
+ _Bool 
+# 474 "/home/dweller/neovim/src/nvim/buffer_defs.h"
+      b_au_did_filetype;
+
+
+  u_header_T *b_u_oldhead;
+  u_header_T *b_u_newhead;
+
+  u_header_T *b_u_curhead;
+  int b_u_numhead;
+  
+# 482 "/home/dweller/neovim/src/nvim/buffer_defs.h" 3 4
+ _Bool 
+# 482 "/home/dweller/neovim/src/nvim/buffer_defs.h"
+      b_u_synced;
+  int b_u_seq_last;
+  int b_u_save_nr_last;
+  int b_u_seq_cur;
+  time_t b_u_time_cur;
+  int b_u_save_nr_cur;
+
+
+  char *b_u_line_ptr;
+  linenr_T b_u_line_lnum;
+  colnr_T b_u_line_colnr;
+
+  
+# 494 "/home/dweller/neovim/src/nvim/buffer_defs.h" 3 4
+ _Bool 
+# 494 "/home/dweller/neovim/src/nvim/buffer_defs.h"
+      b_scanned;
+
+
+  OptInt b_p_iminsert;
+  OptInt b_p_imsearch;
+
+
+
+
+
+  int16_t b_kmap_state;
+
+
+  garray_T b_kmap_ga;
+
+
+
+
+  
+# 512 "/home/dweller/neovim/src/nvim/buffer_defs.h" 3 4
+ _Bool 
+# 512 "/home/dweller/neovim/src/nvim/buffer_defs.h"
+      b_p_initialized;
+
+  sctx_T b_p_script_ctx[kBufOptCount];
+
+  int b_p_ai;
+  int b_p_ai_nopaste;
+  char *b_p_bkc;
+  unsigned b_bkc_flags;
+  int b_p_ci;
+  int b_p_bin;
+  int b_p_bomb;
+  char *b_p_bh;
+  char *b_p_bt;
+  int b_has_qf_entry;
+  int b_p_bl;
+  OptInt b_p_channel;
+  int b_p_cin;
+  char *b_p_cino;
+  char *b_p_cink;
+  char *b_p_cinw;
+  char *b_p_cinsd;
+  char *b_p_com;
+  char *b_p_cms;
+  char *b_p_cot;
+  unsigned b_cot_flags;
+  char *b_p_cpt;
+
+
+
+  char *b_p_cfu;
+  Callback b_cfu_cb;
+  char *b_p_ofu;
+  Callback b_ofu_cb;
+  char *b_p_tfu;
+  Callback b_tfu_cb;
+  char *b_p_ffu;
+  Callback b_ffu_cb;
+  int b_p_eof;
+  int b_p_eol;
+  int b_p_fixeol;
+  int b_p_et;
+  int b_p_et_nobin;
+  int b_p_et_nopaste;
+  char *b_p_fenc;
+  char *b_p_ff;
+  char *b_p_ft;
+  char *b_p_fo;
+  char *b_p_flp;
+  int b_p_inf;
+  char *b_p_ise;
+  char *b_p_isk;
+  char *b_p_def;
+  char *b_p_inc;
+  char *b_p_inex;
+  uint32_t b_p_inex_flags;
+  char *b_p_inde;
+  uint32_t b_p_inde_flags;
+  char *b_p_indk;
+  char *b_p_fp;
+  char *b_p_fex;
+  uint32_t b_p_fex_flags;
+  char *b_p_kp;
+  int b_p_lisp;
+  char *b_p_lop;
+  char *b_p_menc;
+  char *b_p_mps;
+  int b_p_ml;
+  int b_p_ml_nobin;
+  int b_p_ma;
+  char *b_p_nf;
+  int b_p_pi;
+  char *b_p_qe;
+  int b_p_ro;
+  OptInt b_p_sw;
+  OptInt b_p_scbk;
+  int b_p_si;
+  OptInt b_p_sts;
+  OptInt b_p_sts_nopaste;
+  char *b_p_sua;
+  int b_p_swf;
+  OptInt b_p_smc;
+  char *b_p_syn;
+  OptInt b_p_ts;
+  OptInt b_p_tw;
+  OptInt b_p_tw_nobin;
+  OptInt b_p_tw_nopaste;
+  OptInt b_p_wm;
+  OptInt b_p_wm_nobin;
+  OptInt b_p_wm_nopaste;
+  char *b_p_vsts;
+  colnr_T *b_p_vsts_array;
+  char *b_p_vsts_nopaste;
+  char *b_p_vts;
+  colnr_T *b_p_vts_array;
+  char *b_p_keymap;
+
+
+  char *b_p_gefm;
+  char *b_p_gp;
+  char *b_p_mp;
+  char *b_p_efm;
+  char *b_p_ep;
+  char *b_p_path;
+  int b_p_ar;
+  char *b_p_tags;
+  char *b_p_tc;
+  unsigned b_tc_flags;
+  char *b_p_dict;
+  char *b_p_tsr;
+  char *b_p_tsrfu;
+  Callback b_tsrfu_cb;
+  OptInt b_p_ul;
+  int b_p_udf;
+  char *b_p_lw;
+
+
+
+
+  int b_ind_level;
+  int b_ind_open_imag;
+  int b_ind_no_brace;
+  int b_ind_first_open;
+  int b_ind_open_extra;
+  int b_ind_close_extra;
+  int b_ind_open_left_imag;
+  int b_ind_jump_label;
+  int b_ind_case;
+  int b_ind_case_code;
+  int b_ind_case_break;
+  int b_ind_param;
+  int b_ind_func_type;
+  int b_ind_comment;
+  int b_ind_in_comment;
+  int b_ind_in_comment2;
+  int b_ind_cpp_baseclass;
+  int b_ind_continuation;
+  int b_ind_unclosed;
+  int b_ind_unclosed2;
+  int b_ind_unclosed_noignore;
+  int b_ind_unclosed_wrapped;
+  int b_ind_unclosed_whiteok;
+  int b_ind_matching_paren;
+  int b_ind_paren_prev;
+  int b_ind_maxparen;
+  int b_ind_maxcomment;
+  int b_ind_scopedecl;
+  int b_ind_scopedecl_code;
+  int b_ind_java;
+  int b_ind_js;
+  int b_ind_keep_case_label;
+  int b_ind_hash_comment;
+  int b_ind_cpp_namespace;
+  int b_ind_if_for_while;
+  int b_ind_cpp_extern_c;
+  int b_ind_pragma;
+
+  linenr_T b_no_eol_lnum;
+
+
+  int b_start_eof;
+  int b_start_eol;
+  int b_start_ffc;
+  char *b_start_fenc;
+  int b_bad_char;
+  int b_start_bomb;
+
+  ScopeDictDictItem b_bufvar;
+  dict_T *b_vars;
+
+
+
+
+  
+# 684 "/home/dweller/neovim/src/nvim/buffer_defs.h" 3 4
+ _Bool 
+# 684 "/home/dweller/neovim/src/nvim/buffer_defs.h"
+      b_may_swap;
+  
+# 685 "/home/dweller/neovim/src/nvim/buffer_defs.h" 3 4
+ _Bool 
+# 685 "/home/dweller/neovim/src/nvim/buffer_defs.h"
+      b_did_warn;
+
+
+
+
+
+
+  
+# 692 "/home/dweller/neovim/src/nvim/buffer_defs.h" 3 4
+ _Bool 
+# 692 "/home/dweller/neovim/src/nvim/buffer_defs.h"
+      b_help;
+
+  
+# 694 "/home/dweller/neovim/src/nvim/buffer_defs.h" 3 4
+ _Bool 
+# 694 "/home/dweller/neovim/src/nvim/buffer_defs.h"
+      b_spell;
+
+
+  char *b_prompt_text;
+  Callback b_prompt_callback;
+  Callback b_prompt_interrupt;
+  int b_prompt_insert;
+
+
+  synblock_T b_s;
+
+
+
+  struct {
+    int max;
+    int last_max;
+    int count[SIGN_SHOW_MAX];
+    
+# 711 "/home/dweller/neovim/src/nvim/buffer_defs.h" 3 4
+   _Bool 
+# 711 "/home/dweller/neovim/src/nvim/buffer_defs.h"
+        autom;
+
+
+  } b_signcols;
+
+  Terminal *terminal;
+
+  AdditionalData *additional_data;
+
+  int b_mapped_ctrl_c;
+
+  MarkTree b_marktree[1];
+  Map_uint32_tuint32_t b_extmark_ns[1];
+
+
+
+
+  int b_prev_line_count;
+
+
+
+  struct { size_t size; size_t capacity; uint64_t *items; } update_channels;
+
+  struct { size_t size; size_t capacity; BufUpdateCallbacks *items; } update_callbacks;
+
+
+  
+# 737 "/home/dweller/neovim/src/nvim/buffer_defs.h" 3 4
+ _Bool 
+# 737 "/home/dweller/neovim/src/nvim/buffer_defs.h"
+      update_need_codepoints;
+
+
+
+
+
+  size_t deleted_bytes;
+  size_t deleted_bytes2;
+  size_t deleted_codepoints;
+  size_t deleted_codeunits;
+
+
+  int flush_count;
+};
+# 770 "/home/dweller/neovim/src/nvim/buffer_defs.h"
+typedef struct diffblock_S diff_T;
+struct diffblock_S {
+  diff_T *df_next;
+  linenr_T df_lnum[8];
+  linenr_T df_count[8];
+  
+# 775 "/home/dweller/neovim/src/nvim/buffer_defs.h" 3 4
+ _Bool 
+# 775 "/home/dweller/neovim/src/nvim/buffer_defs.h"
+      is_linematched;
+
+
+  
+# 778 "/home/dweller/neovim/src/nvim/buffer_defs.h" 3 4
+ _Bool 
+# 778 "/home/dweller/neovim/src/nvim/buffer_defs.h"
+      has_changes;
+  garray_T df_changes;
+};
+
+
+
+
+
+typedef struct diffline_change_S diffline_change_T;
+struct diffline_change_S {
+  colnr_T dc_start[8];
+  colnr_T dc_end[8];
+  int dc_start_lnum_off[8];
+  int dc_end_lnum_off[8];
+};
+
+
+
+typedef struct diffline_S diffline_T;
+struct diffline_S {
+  diffline_change_T *changes;
+  int num_changes;
+  int bufidx;
+  int lineoff;
+};
+# 812 "/home/dweller/neovim/src/nvim/buffer_defs.h"
+typedef struct tabpage_S tabpage_T;
+struct tabpage_S {
+  handle_T handle;
+  tabpage_T *tp_next;
+  frame_T *tp_topframe;
+  win_T *tp_curwin;
+  win_T *tp_prevwin;
+  win_T *tp_firstwin;
+  win_T *tp_lastwin;
+  int64_t tp_old_Rows_avail;
+  int64_t tp_old_Columns;
+
+  OptInt tp_ch_used;
+
+  diff_T *tp_first_diff;
+  buf_T *(tp_diffbuf[8]);
+  int tp_diff_invalid;
+  int tp_diff_update;
+  frame_T *(tp_snapshot[2]);
+  ScopeDictDictItem tp_winvar;
+  dict_T *tp_vars;
+  char *tp_localdir;
+  char *tp_prevdir;
+};
+# 847 "/home/dweller/neovim/src/nvim/buffer_defs.h"
+typedef struct {
+  linenr_T wl_lnum;
+  uint16_t wl_size;
+  
+# 850 "/home/dweller/neovim/src/nvim/buffer_defs.h" 3 4
+ _Bool 
+# 850 "/home/dweller/neovim/src/nvim/buffer_defs.h"
+      wl_valid;
+  
+# 851 "/home/dweller/neovim/src/nvim/buffer_defs.h" 3 4
+ _Bool 
+# 851 "/home/dweller/neovim/src/nvim/buffer_defs.h"
+      wl_folded;
+  linenr_T wl_foldend;
+  linenr_T wl_lastlnum;
+} wline_T;
+
+
+
+struct frame_S {
+  char fr_layout;
+  int fr_width;
+  int fr_newwidth;
+  int fr_height;
+  int fr_newheight;
+  frame_T *fr_parent;
+  frame_T *fr_next;
+
+  frame_T *fr_prev;
+
+
+  frame_T *fr_child;
+  win_T *fr_win;
+
+};
+# 883 "/home/dweller/neovim/src/nvim/buffer_defs.h"
+typedef struct {
+  regmmatch_T rm;
+
+  buf_T *buf;
+  linenr_T lnum;
+  int attr;
+  int attr_cur;
+  linenr_T first_lnum;
+  colnr_T startcol;
+  colnr_T endcol;
+  
+# 893 "/home/dweller/neovim/src/nvim/buffer_defs.h" 3 4
+ _Bool 
+# 893 "/home/dweller/neovim/src/nvim/buffer_defs.h"
+      is_addpos;
+  
+# 894 "/home/dweller/neovim/src/nvim/buffer_defs.h" 3 4
+ _Bool 
+# 894 "/home/dweller/neovim/src/nvim/buffer_defs.h"
+      has_cursor;
+  proftime_T tm;
+} match_T;
+
+
+typedef struct {
+  linenr_T lnum;
+  colnr_T col;
+  int len;
+} llpos_T;
+
+
+
+typedef struct matchitem matchitem_T;
+struct matchitem {
+  matchitem_T *mit_next;
+  int mit_id;
+  int mit_priority;
+
+
+
+  char *mit_pattern;
+  regmmatch_T mit_match;
+
+  llpos_T *mit_pos_array;
+  int mit_pos_count;
+  int mit_pos_cur;
+  linenr_T mit_toplnum;
+  linenr_T mit_botlnum;
+
+  match_T mit_hl;
+  int mit_hlg_id;
+  int mit_conceal_char;
+};
+
+typedef int FloatAnchor;
+
+enum {
+  kFloatAnchorEast = 1,
+  kFloatAnchorSouth = 2,
+};
+
+
+typedef enum {
+  kFloatRelativeEditor = 0,
+  kFloatRelativeWindow = 1,
+  kFloatRelativeCursor = 2,
+  kFloatRelativeMouse = 3,
+  kFloatRelativeTabline = 4,
+  kFloatRelativeLaststatus = 5,
+} FloatRelative;
+
+
+typedef enum {
+  kWinSplitLeft = 0,
+  kWinSplitRight = 1,
+  kWinSplitAbove = 2,
+  kWinSplitBelow = 3,
+} WinSplit;
+
+typedef enum {
+  kWinStyleUnused = 0,
+  kWinStyleMinimal,
+} WinStyle;
+
+typedef enum {
+  kAlignLeft = 0,
+  kAlignCenter = 1,
+  kAlignRight = 2,
+} AlignTextPos;
+
+typedef enum {
+  kBorderTextTitle = 0,
+  kBorderTextFooter = 1,
+} BorderTextType;
+
+
+typedef struct {
+  Window window;
+  lpos_T bufpos;
+  int height, width;
+  double row, col;
+  FloatAnchor anchor;
+  FloatRelative relative;
+  
+# 978 "/home/dweller/neovim/src/nvim/buffer_defs.h" 3 4
+ _Bool 
+# 978 "/home/dweller/neovim/src/nvim/buffer_defs.h"
+      external;
+  
+# 979 "/home/dweller/neovim/src/nvim/buffer_defs.h" 3 4
+ _Bool 
+# 979 "/home/dweller/neovim/src/nvim/buffer_defs.h"
+      focusable;
+  
+# 980 "/home/dweller/neovim/src/nvim/buffer_defs.h" 3 4
+ _Bool 
+# 980 "/home/dweller/neovim/src/nvim/buffer_defs.h"
+      mouse;
+  WinSplit split;
+  int zindex;
+  WinStyle style;
+  
+# 984 "/home/dweller/neovim/src/nvim/buffer_defs.h" 3 4
+ _Bool 
+# 984 "/home/dweller/neovim/src/nvim/buffer_defs.h"
+      border;
+  
+# 985 "/home/dweller/neovim/src/nvim/buffer_defs.h" 3 4
+ _Bool 
+# 985 "/home/dweller/neovim/src/nvim/buffer_defs.h"
+      shadow;
+  char border_chars[8][32];
+  int border_hl_ids[8];
+  int border_attr[8];
+  
+# 989 "/home/dweller/neovim/src/nvim/buffer_defs.h" 3 4
+ _Bool 
+# 989 "/home/dweller/neovim/src/nvim/buffer_defs.h"
+      title;
+  AlignTextPos title_pos;
+  VirtText title_chunks;
+  int title_width;
+  
+# 993 "/home/dweller/neovim/src/nvim/buffer_defs.h" 3 4
+ _Bool 
+# 993 "/home/dweller/neovim/src/nvim/buffer_defs.h"
+      footer;
+  AlignTextPos footer_pos;
+  VirtText footer_chunks;
+  int footer_width;
+  
+# 997 "/home/dweller/neovim/src/nvim/buffer_defs.h" 3 4
+ _Bool 
+# 997 "/home/dweller/neovim/src/nvim/buffer_defs.h"
+      noautocmd;
+  
+# 998 "/home/dweller/neovim/src/nvim/buffer_defs.h" 3 4
+ _Bool 
+# 998 "/home/dweller/neovim/src/nvim/buffer_defs.h"
+      fixed;
+  
+# 999 "/home/dweller/neovim/src/nvim/buffer_defs.h" 3 4
+ _Bool 
+# 999 "/home/dweller/neovim/src/nvim/buffer_defs.h"
+      hide;
+  int _cmdline_offset;
+} WinConfig;
+# 1019 "/home/dweller/neovim/src/nvim/buffer_defs.h"
+typedef struct {
+  int w_topline_save;
+  int w_topline_corr;
+  pos_T w_cursor_save;
+  pos_T w_cursor_corr;
+} pos_save_T;
+
+
+typedef struct {
+  schar_T eol;
+  schar_T ext;
+  schar_T prec;
+  schar_T nbsp;
+  schar_T space;
+  schar_T tab1;
+  schar_T tab2;
+  schar_T tab3;
+  schar_T lead;
+  schar_T trail;
+  schar_T *multispace;
+  schar_T *leadmultispace;
+  schar_T conceal;
+} lcs_chars_T;
+
+
+typedef struct {
+  schar_T stl;
+  schar_T stlnc;
+  schar_T wbr;
+  schar_T horiz;
+  schar_T horizup;
+  schar_T horizdown;
+  schar_T vert;
+  schar_T vertleft;
+  schar_T vertright;
+  schar_T verthoriz;
+  schar_T fold;
+  schar_T foldopen;
+  schar_T foldclosed;
+  schar_T foldsep;
+  schar_T diff;
+  schar_T msgsep;
+  schar_T eob;
+  schar_T lastline;
+  schar_T trunc;
+  schar_T truncrl;
+} fcs_chars_T;
+
+
+
+
+struct window_S {
+  handle_T handle;
+
+  buf_T *w_buffer;
+
+
+  synblock_T *w_s;
+
+  int w_ns_hl;
+  int w_ns_hl_winhl;
+  int w_ns_hl_active;
+  int *w_ns_hl_attr;
+
+  Set_uint32_t w_ns_set;
+
+  int w_hl_id_normal;
+  int w_hl_attr_normal;
+  int w_hl_attr_normalnc;
+
+  int w_hl_needs_update;
+
+  win_T *w_prev;
+  win_T *w_next;
+  
+# 1093 "/home/dweller/neovim/src/nvim/buffer_defs.h" 3 4
+ _Bool 
+# 1093 "/home/dweller/neovim/src/nvim/buffer_defs.h"
+      w_locked;
+
+  frame_T *w_frame;
+
+  pos_T w_cursor;
+
+  colnr_T w_curswant;
+
+
+
+  int w_set_curswant;
+
+
+
+  linenr_T w_cursorline;
+
+
+  linenr_T w_last_cursorline;
+
+
+  char w_old_visual_mode;
+  linenr_T w_old_cursor_lnum;
+  colnr_T w_old_cursor_fcol;
+  colnr_T w_old_cursor_lcol;
+  linenr_T w_old_visual_lnum;
+  colnr_T w_old_visual_col;
+  colnr_T w_old_curswant;
+
+  linenr_T w_last_cursor_lnum_rnu;
+
+
+  lcs_chars_T w_p_lcs_chars;
+
+
+  fcs_chars_T w_p_fcs_chars;
+
+
+
+  linenr_T w_topline;
+
+  char w_topline_was_set;
+
+  int w_topfill;
+  int w_old_topfill;
+  
+# 1137 "/home/dweller/neovim/src/nvim/buffer_defs.h" 3 4
+ _Bool 
+# 1137 "/home/dweller/neovim/src/nvim/buffer_defs.h"
+      w_botfill;
+
+  
+# 1139 "/home/dweller/neovim/src/nvim/buffer_defs.h" 3 4
+ _Bool 
+# 1139 "/home/dweller/neovim/src/nvim/buffer_defs.h"
+      w_old_botfill;
+  colnr_T w_leftcol;
+
+
+  colnr_T w_skipcol;
+
+
+
+
+  linenr_T w_last_topline;
+  int w_last_topfill;
+  colnr_T w_last_leftcol;
+  colnr_T w_last_skipcol;
+  int w_last_width;
+  int w_last_height;
+
+
+
+
+
+  int w_winrow;
+  int w_height;
+
+  int w_prev_winrow;
+  int w_prev_height;
+  int w_status_height;
+  int w_winbar_height;
+  int w_wincol;
+  int w_width;
+  int w_hsep_height;
+  int w_vsep_width;
+  pos_save_T w_save_cursor;
+  
+# 1171 "/home/dweller/neovim/src/nvim/buffer_defs.h" 3 4
+ _Bool 
+# 1171 "/home/dweller/neovim/src/nvim/buffer_defs.h"
+      w_do_win_fix_cursor;
+
+  int w_winrow_off;
+  int w_wincol_off;
+
+
+
+
+  int w_view_height;
+  int w_view_width;
+
+  int w_height_request;
+  int w_width_request;
+
+  int w_border_adj[4];
+
+  int w_height_outer;
+  int w_width_outer;
+
+
+
+
+
+
+
+  int w_valid;
+  pos_T w_valid_cursor;
+  colnr_T w_valid_leftcol;
+  colnr_T w_valid_skipcol;
+
+  
+# 1201 "/home/dweller/neovim/src/nvim/buffer_defs.h" 3 4
+ _Bool 
+# 1201 "/home/dweller/neovim/src/nvim/buffer_defs.h"
+      w_viewport_invalid;
+  linenr_T w_viewport_last_topline;
+  linenr_T w_viewport_last_botline;
+  linenr_T w_viewport_last_topfill;
+  linenr_T w_viewport_last_skipcol;
+
+
+
+  int w_cline_height;
+  
+# 1210 "/home/dweller/neovim/src/nvim/buffer_defs.h" 3 4
+ _Bool 
+# 1210 "/home/dweller/neovim/src/nvim/buffer_defs.h"
+      w_cline_folded;
+
+  int w_cline_row;
+
+  colnr_T w_virtcol;
+# 1224 "/home/dweller/neovim/src/nvim/buffer_defs.h"
+  int w_wrow, w_wcol;
+
+  linenr_T w_botline;
+
+  int w_empty_rows;
+  int w_filler_rows;
+# 1240 "/home/dweller/neovim/src/nvim/buffer_defs.h"
+  int w_lines_valid;
+  wline_T *w_lines;
+  int w_lines_size;
+
+  garray_T w_folds;
+  
+# 1245 "/home/dweller/neovim/src/nvim/buffer_defs.h" 3 4
+ _Bool 
+# 1245 "/home/dweller/neovim/src/nvim/buffer_defs.h"
+      w_fold_manual;
+
+  
+# 1247 "/home/dweller/neovim/src/nvim/buffer_defs.h" 3 4
+ _Bool 
+# 1247 "/home/dweller/neovim/src/nvim/buffer_defs.h"
+      w_foldinvalid;
+
+  int w_nrwidth;
+
+  int w_scwidth;
+  int w_minscwidth;
+  int w_maxscwidth;
+
+
+
+  int w_redr_type;
+  int w_upd_rows;
+
+  linenr_T w_redraw_top;
+  linenr_T w_redraw_bot;
+  
+# 1262 "/home/dweller/neovim/src/nvim/buffer_defs.h" 3 4
+ _Bool 
+# 1262 "/home/dweller/neovim/src/nvim/buffer_defs.h"
+      w_redr_status;
+  
+# 1263 "/home/dweller/neovim/src/nvim/buffer_defs.h" 3 4
+ _Bool 
+# 1263 "/home/dweller/neovim/src/nvim/buffer_defs.h"
+      w_redr_border;
+  
+# 1264 "/home/dweller/neovim/src/nvim/buffer_defs.h" 3 4
+ _Bool 
+# 1264 "/home/dweller/neovim/src/nvim/buffer_defs.h"
+      w_redr_statuscol;
+
+
+  pos_T w_stl_cursor;
+  colnr_T w_stl_virtcol;
+  linenr_T w_stl_topline;
+  linenr_T w_stl_line_count;
+  int w_stl_topfill;
+  char w_stl_empty;
+  int w_stl_recording;
+  int w_stl_state;
+  int w_stl_visual_mode;
+
+  int w_alt_fnum;
+
+  alist_T *w_alist;
+  int w_arg_idx;
+
+  int w_arg_idx_invalid;
+
+  char *w_localdir;
+  char *w_prevdir;
+
+
+
+
+
+  winopt_T w_onebuf_opt;
+  winopt_T w_allbuf_opt;
+
+
+
+
+  uint32_t w_p_stl_flags;
+  uint32_t w_p_wbr_flags;
+  uint32_t w_p_fde_flags;
+  uint32_t w_p_fdt_flags;
+  int *w_p_cc_cols;
+  uint8_t w_p_culopt_flags;
+
+  int w_briopt_min;
+  int w_briopt_shift;
+  
+# 1306 "/home/dweller/neovim/src/nvim/buffer_defs.h" 3 4
+ _Bool 
+# 1306 "/home/dweller/neovim/src/nvim/buffer_defs.h"
+      w_briopt_sbr;
+  int w_briopt_list;
+  int w_briopt_vcol;
+
+  int w_scbind_pos;
+
+  ScopeDictDictItem w_winvar;
+  dict_T *w_vars;
+
+
+
+
+  pos_T w_pcmark;
+  pos_T w_prev_pcmark;
+
+
+  xfmark_T w_jumplist[100];
+  int w_jumplistlen;
+  int w_jumplistidx;
+
+  int w_changelistidx;
+
+  matchitem_T *w_match_head;
+  int w_next_match_id;
+
+
+
+
+
+  taggy_T w_tagstack[20];
+  int w_tagstackidx;
+  int w_tagstacklen;
+
+  GridView w_grid;
+  ScreenGrid w_grid_alloc;
+  
+# 1341 "/home/dweller/neovim/src/nvim/buffer_defs.h" 3 4
+ _Bool 
+# 1341 "/home/dweller/neovim/src/nvim/buffer_defs.h"
+      w_pos_changed;
+  
+# 1342 "/home/dweller/neovim/src/nvim/buffer_defs.h" 3 4
+ _Bool 
+# 1342 "/home/dweller/neovim/src/nvim/buffer_defs.h"
+      w_floating;
+  
+# 1343 "/home/dweller/neovim/src/nvim/buffer_defs.h" 3 4
+ _Bool 
+# 1343 "/home/dweller/neovim/src/nvim/buffer_defs.h"
+      w_float_is_info;
+  WinConfig w_config;
+
+
+
+
+
+  int w_fraction;
+  int w_prev_fraction_row;
+
+  linenr_T w_nrwidth_line_count;
+  linenr_T w_statuscol_line_count;
+  int w_nrwidth_width;
+
+  qf_info_T *w_llist;
+
+
+  qf_info_T *w_llist_ref;
+
+  StlClickDefinition *w_status_click_defs;
+  size_t w_status_click_defs_size;
+  StlClickDefinition *w_winbar_click_defs;
+  size_t w_winbar_click_defs_size;
+  StlClickDefinition *w_statuscol_click_defs;
+  size_t w_statuscol_click_defs_size;
+};
+# 44 "/home/dweller/neovim/src/nvim/mbyte.c" 2
+# 1 "/home/dweller/neovim/src/nvim/charset.h" 1
+       
+
+
+
+
+# 1 "/home/dweller/neovim/src/nvim/option_vars.h" 1
+       
+# 152 "/home/dweller/neovim/src/nvim/option_vars.h"
+enum {
+  SHM_RO = 'r',
+  SHM_MOD = 'm',
+  SHM_LINES = 'l',
+  SHM_WRI = 'w',
+  SHM_ABBREVIATIONS = 'a',
+  SHM_WRITE = 'W',
+  SHM_TRUNC = 't',
+  SHM_TRUNCALL = 'T',
+  SHM_OVER = 'o',
+  SHM_OVERALL = 'O',
+  SHM_SEARCH = 's',
+  SHM_ATTENTION = 'A',
+  SHM_INTRO = 'I',
+  SHM_COMPLETIONMENU = 'c',
+  SHM_COMPLETIONSCAN = 'C',
+  SHM_RECORDING = 'q',
+  SHM_FILEINFO = 'F',
+  SHM_SEARCHCOUNT = 'S',
+};
+# 246 "/home/dweller/neovim/src/nvim/option_vars.h"
+extern char empty_string_option[] ;
+
+
+
+extern char *p_ambw;
+extern int p_acd;
+extern int p_ai;
+extern int p_bin;
+extern int p_bomb;
+extern int p_bl;
+extern int p_cin;
+extern OptInt p_channel;
+extern char *p_cink;
+extern char *p_cinsd;
+extern char *p_cinw;
+extern char *p_cfu;
+extern char *p_ofu;
+extern char *p_tsrfu;
+extern int p_ci;
+extern int p_ar;
+extern int p_aw;
+extern int p_awa;
+extern char *p_bs;
+extern char *p_bg;
+extern int p_bk;
+extern char *p_bkc;
+extern unsigned bkc_flags;
+extern char *p_bdir;
+extern char *p_bex;
+extern char *p_bo;
+extern char breakat_flags[256];
+extern unsigned bo_flags;
+extern char *p_bsk;
+extern char *p_breakat;
+extern char *p_bh;
+extern char *p_bt;
+extern char *p_cmp;
+extern unsigned cmp_flags;
+extern char *p_enc;
+extern int p_deco;
+extern char *p_ccv;
+extern char *p_cino;
+extern char *p_cedit;
+extern char *p_cb;
+extern unsigned cb_flags;
+extern OptInt p_cwh;
+extern OptInt p_ch;
+extern char *p_cms;
+extern char *p_cpt;
+extern OptInt p_columns;
+extern int p_confirm;
+extern char *p_cfc;
+extern unsigned cfc_flags;
+extern char *p_cia;
+extern unsigned cia_flags;
+extern char *p_cot;
+extern unsigned cot_flags;
+
+
+
+extern OptInt p_pb;
+extern OptInt p_ph;
+extern OptInt p_pw;
+extern OptInt p_pmw;
+extern char *p_com;
+extern char *p_cpo;
+extern char *p_debug;
+extern char *p_def;
+extern char *p_inc;
+extern char *p_dip;
+extern char *p_dex;
+extern char *p_dict;
+extern int p_dg;
+extern char *p_dir;
+extern char *p_dy;
+extern unsigned dy_flags;
+extern char *p_ead;
+extern int p_emoji;
+extern int p_ea;
+extern char *p_ep;
+extern int p_eb;
+extern char *p_ef;
+extern char *p_efm;
+extern char *p_gefm;
+extern char *p_gp;
+extern int p_eof;
+extern int p_eol;
+extern char *p_ei;
+extern int p_et;
+extern int p_exrc;
+extern char *p_fenc;
+extern char *p_fencs;
+extern char *p_ff;
+extern char *p_ffs;
+extern int p_fic;
+extern char *p_ft;
+extern char *p_fcs;
+extern char *p_ffu;
+extern int p_fixeol;
+extern char *p_fcl;
+extern OptInt p_fdls;
+extern char *p_fdo;
+extern unsigned fdo_flags;
+extern char *p_fex;
+extern char *p_flp;
+extern char *p_fo;
+extern char *p_fp;
+extern int p_fs;
+extern int p_gd;
+extern char *p_guicursor;
+extern char *p_guifont;
+extern char *p_guifontwide;
+extern char *p_hf;
+extern OptInt p_hh;
+extern char *p_hlg;
+extern int p_hid;
+extern char *p_hl;
+extern int p_hls;
+extern OptInt p_hi;
+extern int p_arshape;
+extern int p_icon;
+extern char *p_iconstring;
+extern int p_ic;
+extern OptInt p_iminsert;
+extern OptInt p_imsearch;
+extern int p_inf;
+extern char *p_inex;
+extern int p_is;
+extern char *p_inde;
+extern char *p_indk;
+extern char *p_icm;
+extern char *p_ise;
+extern char *p_isf;
+extern char *p_isi;
+extern char *p_isk;
+extern char *p_isp;
+extern int p_js;
+extern char *p_jop;
+extern unsigned jop_flags;
+extern char *p_keymap;
+extern char *p_kp;
+extern char *p_km;
+extern char *p_langmap;
+extern int p_lnr;
+extern int p_lrm;
+extern char *p_lm;
+extern OptInt p_lines;
+extern OptInt p_linespace;
+extern int p_lisp;
+extern char *p_lop;
+extern char *p_lispwords;
+extern OptInt p_ls;
+extern OptInt p_stal;
+extern char *p_lcs;
+extern int p_lz;
+extern int p_lpl;
+extern int p_magic;
+extern char *p_menc;
+extern char *p_mef;
+extern char *p_mp;
+extern char *p_mps;
+extern OptInt p_mat;
+extern OptInt p_mco;
+extern OptInt p_mfd;
+extern OptInt p_mmd;
+extern OptInt p_mmp;
+extern OptInt p_mis;
+extern char *p_mopt;
+extern char *p_msm;
+extern int p_ml;
+extern int p_mle;
+extern OptInt p_mls;
+extern int p_ma;
+extern int p_mod;
+extern char *p_mouse;
+extern char *p_mousem;
+extern int p_mousemev;
+extern int p_mousef;
+extern int p_mh;
+extern char *p_mousescroll;
+extern OptInt p_mousescroll_vert ;
+extern OptInt p_mousescroll_hor ;
+extern OptInt p_mouset;
+extern int p_more;
+extern char *p_nf;
+extern char *p_opfunc;
+extern char *p_para;
+extern int p_paste;
+extern char *p_pex;
+extern char *p_pm;
+extern char *p_path;
+extern char *p_cdpath;
+extern int p_pi;
+extern OptInt p_pyx;
+extern char *p_qe;
+extern int p_ro;
+extern char *p_rdb;
+extern unsigned rdb_flags;
+extern OptInt p_rdt;
+extern OptInt p_re;
+extern OptInt p_report;
+extern OptInt p_pvh;
+extern OptInt p_chi;
+extern int p_ari;
+extern int p_ri;
+extern int p_ru;
+extern char *p_ruf;
+extern char *p_pp;
+extern char *p_qftf;
+extern char *p_rtp;
+extern OptInt p_scbk;
+extern OptInt p_sj;
+extern OptInt p_so;
+extern char *p_sbo;
+extern char *p_sections;
+extern int p_secure;
+extern char *p_sel;
+extern char *p_slm;
+extern char *p_ssop;
+extern unsigned ssop_flags;
+extern char *p_sh;
+extern char *p_shcf;
+extern char *p_sp;
+extern char *p_shq;
+extern char *p_sxq;
+extern char *p_sxe;
+extern char *p_srr;
+extern int p_stmp;
+
+
+
+extern char *p_stl;
+extern char *p_wbr;
+extern int p_sr;
+extern OptInt p_sw;
+extern char *p_shm;
+extern char *p_sbr;
+extern int p_sc;
+extern char *p_sloc;
+extern int p_sft;
+extern int p_sm;
+extern int p_smd;
+extern OptInt p_ss;
+extern OptInt p_siso;
+extern int p_scs;
+extern int p_si;
+extern int p_sta;
+extern OptInt p_sts;
+extern int p_sb;
+extern char *p_sua;
+extern int p_swf;
+extern OptInt p_smc;
+extern OptInt p_tpm;
+extern char *p_tal;
+extern char *p_tpf;
+extern unsigned tpf_flags;
+extern char *p_tfu;
+extern char *p_spc;
+extern char *p_spf;
+extern char *p_spl;
+extern char *p_spo;
+extern unsigned spo_flags;
+extern char *p_sps;
+extern int p_spr;
+extern int p_sol;
+extern char *p_su;
+extern char *p_swb;
+extern unsigned swb_flags;
+extern char *p_spk;
+extern char *p_syn;
+extern char *p_tcl;
+extern unsigned tcl_flags;
+extern OptInt p_ts;
+extern int p_tbs;
+extern char *p_tc;
+extern unsigned tc_flags;
+extern OptInt p_tl;
+extern int p_tr;
+extern char *p_tags;
+extern int p_tgst;
+extern int p_tbidi;
+extern OptInt p_tw;
+extern int p_to;
+extern int p_timeout;
+extern OptInt p_tm;
+extern int p_title;
+extern OptInt p_titlelen;
+extern char *p_titleold;
+extern char *p_titlestring;
+extern char *p_tsr;
+extern int p_tgc;
+extern int p_ttimeout;
+extern OptInt p_ttm;
+extern char *p_udir;
+extern int p_udf;
+extern OptInt p_ul;
+extern OptInt p_ur;
+extern OptInt p_uc;
+extern OptInt p_ut;
+extern char *p_shada;
+extern char *p_shadafile;
+extern int p_termsync;
+extern char *p_vsts;
+extern char *p_vts;
+extern char *p_vdir;
+extern char *p_vop;
+extern unsigned vop_flags;
+extern int p_vb;
+extern char *p_ve;
+extern unsigned ve_flags;
+extern OptInt p_verbose;
+
+
+
+extern char *p_vfile;
+
+extern int p_warn;
+extern char *p_wop;
+extern unsigned wop_flags;
+extern OptInt p_window;
+extern char *p_wak;
+extern char *p_wig;
+extern char *p_ww;
+extern OptInt p_wc;
+extern OptInt p_wcm;
+extern int p_wic;
+extern char *p_wim;
+extern int p_wmnu;
+extern char *p_winborder;
+extern OptInt p_wh;
+extern OptInt p_wmh;
+extern OptInt p_wmw;
+extern OptInt p_wiw;
+extern OptInt p_wm;
+extern int p_ws;
+extern int p_write;
+extern int p_wa;
+extern int p_wb;
+extern OptInt p_wd;
+extern int p_cdh;
+# 7 "/home/dweller/neovim/src/nvim/charset.h" 2
+# 1 "/home/dweller/neovim/src/nvim/strings.h" 1
+       
+
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/11/include/stdarg.h" 1 3 4
+# 4 "/home/dweller/neovim/src/nvim/strings.h" 2
+# 16 "/home/dweller/neovim/src/nvim/strings.h"
+typedef struct {
+  int key;
+  char *value;
+  size_t length;
+} keyvalue_T;
+# 38 "/home/dweller/neovim/src/nvim/strings.h"
+static inline char *strappend(char *const dst, const char *const src)
+  FUNC_ATTR_ALWAYS_INLINE FUNC_ATTR_NONNULL_ALL
+    FUNC_ATTR_NONNULL_RET FUNC_ATTR_WARN_UNUSED_RESULT
+{
+  const size_t src_len = strlen(src);
+  return (char *)memmove(dst, src, src_len) + src_len;
+}
+# 8 "/home/dweller/neovim/src/nvim/charset.h" 2
+
+
+typedef enum {
+  STR2NR_DEC = 0,
+  STR2NR_BIN = (1 << 0),
+  STR2NR_OCT = (1 << 1),
+  STR2NR_HEX = (1 << 2),
+  STR2NR_OOCT = (1 << 3),
+
+
+
+
+
+
+
+  STR2NR_FORCE = (1 << 7),
+
+  STR2NR_ALL = STR2NR_BIN | STR2NR_OCT | STR2NR_HEX | STR2NR_OOCT,
+
+  STR2NR_NO_OCT = STR2NR_BIN | STR2NR_HEX | STR2NR_OOCT,
+  STR2NR_QUOTE = (1 << 4),
+} ChStr2NrFlags;
+# 38 "/home/dweller/neovim/src/nvim/charset.h"
+static inline 
+# 38 "/home/dweller/neovim/src/nvim/charset.h" 3 4
+             _Bool 
+# 38 "/home/dweller/neovim/src/nvim/charset.h"
+                  vim_isbreak(int c)
+  FUNC_ATTR_CONST FUNC_ATTR_ALWAYS_INLINE
+{
+  return breakat_flags[(uint8_t)c];
+}
+# 45 "/home/dweller/neovim/src/nvim/mbyte.c" 2
+
+# 1 "/home/dweller/neovim/src/nvim/cursor.h" 1
+       
+# 47 "/home/dweller/neovim/src/nvim/mbyte.c" 2
+# 1 "/home/dweller/neovim/src/nvim/drawscreen.h" 1
+       
+# 11 "/home/dweller/neovim/src/nvim/drawscreen.h"
+enum {
+  UPD_VALID = 10,
+  UPD_INVERTED = 20,
+  UPD_INVERTED_ALL = 25,
+  UPD_REDRAW_TOP = 30,
+  UPD_SOME_VALID = 35,
+  UPD_NOT_VALID = 40,
+  UPD_CLEAR = 50,
+};
+
+
+
+extern 
+# 23 "/home/dweller/neovim/src/nvim/drawscreen.h" 3 4
+      _Bool 
+# 23 "/home/dweller/neovim/src/nvim/drawscreen.h"
+           updating_screen ;
+
+
+
+extern 
+# 27 "/home/dweller/neovim/src/nvim/drawscreen.h" 3 4
+      _Bool 
+# 27 "/home/dweller/neovim/src/nvim/drawscreen.h"
+           redraw_not_allowed ;
+
+
+extern match_T screen_search_hl ;
+
+
+extern linenr_T search_hl_has_cursor_lnum ;
+# 48 "/home/dweller/neovim/src/nvim/mbyte.c" 2
+# 1 "/home/dweller/neovim/src/nvim/errors.h" 1
+       
+
+# 1 "/home/dweller/neovim/src/nvim/gettext_defs.h" 1
+       
+
+
+# 1 "/usr/include/libintl.h" 1 3 4
+# 34 "/usr/include/libintl.h" 3 4
+
+
+
+
+
+
+# 39 "/usr/include/libintl.h" 3 4
+extern char *gettext (const char *__msgid)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__format_arg__ (1)));
+
+
+
+extern char *dgettext (const char *__domainname, const char *__msgid)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__format_arg__ (2)));
+extern char *__dgettext (const char *__domainname, const char *__msgid)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__format_arg__ (2)));
+
+
+
+extern char *dcgettext (const char *__domainname,
+   const char *__msgid, int __category)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__format_arg__ (2)));
+extern char *__dcgettext (const char *__domainname,
+     const char *__msgid, int __category)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__format_arg__ (2)));
+
+
+
+
+extern char *ngettext (const char *__msgid1, const char *__msgid2,
+         unsigned long int __n)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__format_arg__ (1))) __attribute__ ((__format_arg__ (2)));
+
+
+
+extern char *dngettext (const char *__domainname, const char *__msgid1,
+   const char *__msgid2, unsigned long int __n)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__format_arg__ (2))) __attribute__ ((__format_arg__ (3)));
+
+
+
+extern char *dcngettext (const char *__domainname, const char *__msgid1,
+    const char *__msgid2, unsigned long int __n,
+    int __category)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__format_arg__ (2))) __attribute__ ((__format_arg__ (3)));
+
+
+
+
+
+extern char *textdomain (const char *__domainname) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern char *bindtextdomain (const char *__domainname,
+        const char *__dirname) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern char *bind_textdomain_codeset (const char *__domainname,
+          const char *__codeset) __attribute__ ((__nothrow__ , __leaf__));
+# 121 "/usr/include/libintl.h" 3 4
+
+# 5 "/home/dweller/neovim/src/nvim/gettext_defs.h" 2
+# 4 "/home/dweller/neovim/src/nvim/errors.h" 2
+
+
+
+
+
+
+
+# 10 "/home/dweller/neovim/src/nvim/errors.h"
+extern const char e_abort[] ;
+extern const char e_afterinit[] ;
+extern const char e_api_spawn_failed[] ;
+extern const char e_argreq[] ;
+extern const char e_backslash[] ;
+extern const char e_cmdwin[] ;
+extern const char e_curdir[] ;
+extern const char e_invalid_buffer_name_str[] ;
+extern const char e_command_too_recursive[] ;
+extern const char e_buffer_is_not_loaded[] ;
+extern const char e_endif[] ;
+extern const char e_endtry[] ;
+extern const char e_endwhile[] ;
+extern const char e_endfor[] ;
+extern const char e_while[] ;
+extern const char e_for[] ;
+extern const char e_exists[] ;
+extern const char e_failed[] ;
+extern const char e_internal[] ;
+extern const char e_intern2[] ;
+extern const char e_interr[] ;
+extern const char e_invarg[] ;
+extern const char e_invarg2[] ;
+extern const char e_invargval[] ;
+extern const char e_invargNval[] ;
+extern const char e_duparg2[] ;
+extern const char e_invexpr2[] ;
+extern const char e_invrange[] ;
+extern const char e_invcmd[] ;
+extern const char e_isadir2[] ;
+extern const char e_no_spell[] ;
+extern const char e_invchan[] ;
+extern const char e_invchanjob[] ;
+extern const char e_jobtblfull[] ;
+extern const char e_jobspawn[] ;
+extern const char e_channotpty[] ;
+extern const char e_stdiochan2[] ;
+extern const char e_invstream[] ;
+extern const char e_invstreamrpc[] ;
+extern const char e_streamkey[] ;
+extern const char e_libcall[] ;
+extern const char e_fsync[] ;
+extern const char e_mkdir[] ;
+extern const char e_markinval[] ;
+extern const char e_marknotset[] ;
+extern const char e_modifiable[] ;
+extern const char e_nesting[] ;
+extern const char e_noalt[] ;
+extern const char e_noabbr[] ;
+extern const char e_nobang[] ;
+extern const char e_nogroup[] ;
+extern const char e_noinstext[] ;
+extern const char e_nolastcmd[] ;
+extern const char e_nomap[] ;
+extern const char e_nomatch[] ;
+extern const char e_nomatch2[] ;
+extern const char e_noname[] ;
+extern const char e_nopresub[] ;
+extern const char e_noprev[] ;
+extern const char e_noprevre[] ;
+extern const char e_norange[] ;
+extern const char e_noroom[] ;
+extern const char e_notmp[] ;
+extern const char e_notopen[] ;
+extern const char e_notopen_2[] ;
+extern const char e_notread[] ;
+extern const char e_null[] ;
+extern const char e_number_exp[] ;
+extern const char e_openerrf[] ;
+extern const char e_outofmem[] ;
+extern const char e_patnotf[] ;
+extern const char e_patnotf2[] ;
+extern const char e_positive[] ;
+extern const char e_prev_dir[] ;
+
+extern const char e_no_errors[] ;
+extern const char e_loclist[] ;
+extern const char e_re_damg[] ;
+extern const char e_re_corr[] ;
+extern const char e_readonly[] ;
+extern const char e_letwrong[] ;
+extern const char e_illvar[] ;
+extern const char e_cannot_mod[] ;
+extern const char e_readonlyvar[] ;
+extern const char e_stringreq[] ;
+extern const char e_dictreq[] ;
+extern const char e_blobidx[] ;
+extern const char e_invalblob[] ;
+extern const char e_toomanyarg[] ;
+extern const char e_toofewarg[] ;
+extern const char e_dictkey[] ;
+extern const char e_dictkey_len[] ;
+extern const char e_listreq[] ;
+extern const char e_listblobreq[] ;
+extern const char e_listdictarg[] ;
+extern const char e_listdictblobarg[] ;
+extern const char e_readerrf[] ;
+extern const char e_sandbox[] ;
+extern const char e_secure[] ;
+extern const char e_textlock[] ;
+extern const char e_screenmode[] ;
+extern const char e_scroll[] ;
+extern const char e_shellempty[] ;
+extern const char e_signdata[] ;
+extern const char e_swapclose[] ;
+extern const char e_toocompl[] ;
+extern const char e_longname[] ;
+extern const char e_toomsbra[] ;
+extern const char e_toomany[] ;
+extern const char e_trailing[] ;
+extern const char e_trailing_arg[] ;
+extern const char e_umark[] ;
+extern const char e_wildexpand[] ;
+extern const char e_winheight[] ;
+extern const char e_winwidth[] ;
+extern const char e_write[] ;
+extern const char e_zerocount[] ;
+extern const char e_usingsid[] ;
+extern const char e_missingparen[] ;
+extern const char e_empty_buffer[] ;
+extern const char e_nobufnr[] ;
+
+extern const char e_unknown_function_str[] ;
+extern const char e_str_not_inside_function[] ;
+
+extern const char e_invalpat[] ;
+extern const char e_bufloaded[] ;
+extern const char e_notset[] ;
+extern const char e_invalidreg[] ;
+extern const char e_dirnotf[] ;
+extern const char e_au_recursive[] ;
+extern const char e_menu_only_exists_in_another_mode[]
+;
+extern const char e_autocmd_close[] ;
+extern const char e_listarg[] ;
+extern const char e_unsupportedoption[] ;
+extern const char e_fnametoolong[] ;
+extern const char e_using_float_as_string[] ;
+extern const char e_cannot_edit_other_buf[] ;
+extern const char e_using_number_as_bool_nr[] ;
+extern const char e_not_callable_type_str[] ;
+extern const char e_auabort[] ;
+
+extern const char e_api_error[] ;
+
+extern const char e_fast_api_disabled[] ;
+
+extern const char e_floatonly[] ;
+extern const char e_floatexchange[] ;
+
+extern const char e_cant_find_directory_str_in_cdpath[] ;
+extern const char e_cant_find_file_str_in_path[] ;
+extern const char e_no_more_directory_str_found_in_cdpath[] ;
+extern const char e_no_more_file_str_found_in_path[] ;
+
+extern const char e_cannot_define_autocommands_for_all_events[] ;
+
+extern const char e_resulting_text_too_long[] ;
+
+extern const char e_line_number_out_of_range[] ;
+
+extern const char e_highlight_group_name_invalid_char[] ;
+
+extern const char e_highlight_group_name_too_long[] ;
+
+extern const char e_invalid_column_number_nr[] ;
+extern const char e_invalid_line_number_nr[] ;
+
+extern const char e_stray_closing_curly_str[]
+;
+extern const char e_missing_close_curly_str[]
+;
+
+extern const char e_val_too_large[] ;
+
+extern const char e_undobang_cannot_redo_or_move_branch[]
+;
+
+extern const char e_winfixbuf_cannot_go_to_buffer[]
+;
+extern const char e_invalid_return_type_from_findfunc[] ;
+extern const char e_cannot_switch_to_a_closing_buffer[] ;
+
+extern const char e_trustfile[] ;
+
+extern const char e_unknown_option2[] ;
+
+extern const char top_bot_msg[] ;
+extern const char bot_top_msg[] ;
+
+extern const char line_msg[] ;
+# 49 "/home/dweller/neovim/src/nvim/mbyte.c" 2
+# 1 "/home/dweller/neovim/src/nvim/eval/typval.h" 1
+       
+
+# 1 "/usr/include/assert.h" 1 3 4
+# 4 "/home/dweller/neovim/src/nvim/eval/typval.h" 2
+
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h" 1 3 4
+# 6 "/home/dweller/neovim/src/nvim/eval/typval.h" 2
+
+
+
+
+
+# 1 "/home/dweller/neovim/src/nvim/hashtab.h" 1
+       
+
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h" 1 3 4
+# 4 "/home/dweller/neovim/src/nvim/hashtab.h" 2
+
+
+
+
+
+
+extern char hash_removed;
+# 12 "/home/dweller/neovim/src/nvim/eval/typval.h" 2
+
+
+# 1 "/home/dweller/neovim/src/nvim/mbyte_defs.h" 1
+       
+
+
+
+
+
+# 1 "/home/dweller/neovim/src/nvim/iconv_defs.h" 1
+       
+# 8 "/home/dweller/neovim/src/nvim/mbyte_defs.h" 2
+
+enum {
+
+
+
+  MB_MAXBYTES = 21,
+
+  MB_MAXCHAR = 6,
+};
+
+
+enum {
+  ENC_8BIT = 0x01,
+  ENC_DBCS = 0x02,
+  ENC_UNICODE = 0x04,
+
+  ENC_ENDIAN_B = 0x10,
+  ENC_ENDIAN_L = 0x20,
+
+  ENC_2BYTE = 0x40,
+  ENC_4BYTE = 0x80,
+  ENC_2WORD = 0x100,
+
+  ENC_LATIN1 = 0x200,
+  ENC_LATIN9 = 0x400,
+  ENC_MACROMAN = 0x800,
+};
+
+
+typedef enum {
+  CONV_NONE = 0,
+  CONV_TO_UTF8 = 1,
+  CONV_9_TO_UTF8 = 2,
+  CONV_TO_LATIN1 = 3,
+  CONV_TO_LATIN9 = 4,
+  CONV_ICONV = 5,
+} ConvFlags;
+# 53 "/home/dweller/neovim/src/nvim/mbyte_defs.h"
+typedef struct {
+  int vc_type;
+  int vc_factor;
+  iconv_t vc_fd;
+  
+# 57 "/home/dweller/neovim/src/nvim/mbyte_defs.h" 3 4
+ _Bool 
+# 57 "/home/dweller/neovim/src/nvim/mbyte_defs.h"
+      vc_fail;
+
+} vimconv_T;
+
+typedef struct {
+  int32_t value;
+  int len;
+} CharInfo;
+
+typedef struct {
+  char *ptr;
+  CharInfo chr;
+} StrCharInfo;
+
+typedef struct {
+  int8_t begin_off;
+  int8_t end_off;
+} CharBoundsOff;
+
+typedef utf8proc_int32_t GraphemeState;
+
+enum { UNICODE_INVALID = 0xFFFD, };
+# 15 "/home/dweller/neovim/src/nvim/eval/typval.h" 2
+# 1 "/home/dweller/neovim/src/nvim/message.h" 1
+       
+
+
+
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h" 1 3 4
+# 6 "/home/dweller/neovim/src/nvim/message.h" 2
+
+# 1 "/home/dweller/neovim/src/nvim/ex_cmds_defs.h" 1
+       
+
+
+
+
+
+# 1 "/home/dweller/neovim/src/nvim/ex_eval_defs.h" 1
+       
+# 11 "/home/dweller/neovim/src/nvim/ex_eval_defs.h"
+typedef struct eslist_elem eslist_T;
+struct eslist_elem {
+  int saved_emsg_silent;
+  eslist_T *next;
+};
+
+enum {
+
+
+  CSTACK_LEN = 50,
+};
+
+typedef struct {
+  int cs_flags[CSTACK_LEN];
+  char cs_pending[CSTACK_LEN];
+  union {
+    void *csp_rv[CSTACK_LEN];
+    void *csp_ex[CSTACK_LEN];
+  } cs_pend;
+  void *cs_forinfo[CSTACK_LEN];
+  int cs_line[CSTACK_LEN];
+  int cs_idx;
+  int cs_looplevel;
+  int cs_trylevel;
+  eslist_T *cs_emsg_silent_list;
+  int cs_lflags;
+} cstack_T;
+
+
+
+
+
+enum {
+  CSF_TRUE = 0x0001,
+  CSF_ACTIVE = 0x0002,
+  CSF_ELSE = 0x0004,
+  CSF_WHILE = 0x0008,
+  CSF_FOR = 0x0010,
+
+  CSF_TRY = 0x0100,
+  CSF_FINALLY = 0x0200,
+  CSF_THROWN = 0x0800,
+  CSF_CAUGHT = 0x1000,
+  CSF_FINISHED = 0x2000,
+  CSF_SILENT = 0x4000,
+};
+
+
+
+
+
+enum {
+  CSTP_NONE = 0,
+  CSTP_ERROR = 1,
+  CSTP_INTERRUPT = 2,
+  CSTP_THROW = 4,
+  CSTP_BREAK = 8,
+  CSTP_CONTINUE = 16,
+  CSTP_RETURN = 24,
+  CSTP_FINISH = 32,
+};
+
+
+enum {
+  CSL_HAD_LOOP = 1,
+  CSL_HAD_ENDLOOP = 2,
+  CSL_HAD_CONT = 4,
+  CSL_HAD_FINA = 8,
+};
+
+
+
+
+
+typedef struct msglist msglist_T;
+struct msglist {
+  msglist_T *next;
+  char *msg;
+  char *throw_msg;
+  char *sfile;
+  linenr_T slnum;
+  
+# 92 "/home/dweller/neovim/src/nvim/ex_eval_defs.h" 3 4
+ _Bool 
+# 92 "/home/dweller/neovim/src/nvim/ex_eval_defs.h"
+      multiline;
+};
+
+
+typedef enum {
+  ET_USER,
+  ET_ERROR,
+  ET_INTERRUPT,
+} except_type_T;
+
+
+
+typedef struct vim_exception except_T;
+struct vim_exception {
+  except_type_T type;
+  char *value;
+  msglist_T *messages;
+  char *throw_name;
+  linenr_T throw_lnum;
+  list_T *stacktrace;
+  except_T *caught;
+};
+
+
+
+
+typedef struct cleanup_stuff cleanup_T;
+struct cleanup_stuff {
+  int pending;
+  except_T *exception;
+};
+
+
+
+typedef struct exception_state_S exception_state_T;
+struct exception_state_S {
+  except_T *estate_current_exception;
+  
+# 129 "/home/dweller/neovim/src/nvim/ex_eval_defs.h" 3 4
+ _Bool 
+# 129 "/home/dweller/neovim/src/nvim/ex_eval_defs.h"
+      estate_did_throw;
+  
+# 130 "/home/dweller/neovim/src/nvim/ex_eval_defs.h" 3 4
+ _Bool 
+# 130 "/home/dweller/neovim/src/nvim/ex_eval_defs.h"
+      estate_need_rethrow;
+  int estate_trylevel;
+  int estate_did_emsg;
+};
+# 8 "/home/dweller/neovim/src/nvim/ex_cmds_defs.h" 2
+# 72 "/home/dweller/neovim/src/nvim/ex_cmds_defs.h"
+typedef enum {
+  ADDR_LINES,
+  ADDR_WINDOWS,
+  ADDR_ARGUMENTS,
+  ADDR_LOADED_BUFFERS,
+  ADDR_BUFFERS,
+  ADDR_TABS,
+  ADDR_TABS_RELATIVE,
+  ADDR_QUICKFIX_VALID,
+  ADDR_QUICKFIX,
+  ADDR_UNSIGNED,
+  ADDR_OTHER,
+  ADDR_NONE,
+} cmd_addr_T;
+
+typedef struct exarg exarg_T;
+
+
+
+
+
+
+typedef void (*ex_func_T)(exarg_T *eap);
+typedef int (*ex_preview_func_T)(exarg_T *eap, int cmdpreview_ns, handle_T cmdpreview_bufnr);
+
+typedef char *(*LineGetter)(int, void *, int, 
+# 97 "/home/dweller/neovim/src/nvim/ex_cmds_defs.h" 3 4
+                                             _Bool
+# 97 "/home/dweller/neovim/src/nvim/ex_cmds_defs.h"
+                                                 );
+
+
+typedef struct {
+  char *cmd_name;
+  ex_func_T cmd_func;
+  ex_preview_func_T cmd_preview_func;
+  uint32_t cmd_argt;
+  cmd_addr_T cmd_addr_type;
+} CommandDefinition;
+
+
+struct exarg {
+  char *arg;
+  char **args;
+  size_t *arglens;
+  size_t argc;
+  char *nextcmd;
+  char *cmd;
+  char **cmdlinep;
+  char *cmdline_tofree;
+  cmdidx_T cmdidx;
+  uint32_t argt;
+  int skip;
+  int forceit;
+  int addr_count;
+  linenr_T line1;
+  linenr_T line2;
+  cmd_addr_T addr_type;
+  int flags;
+  char *do_ecmd_cmd;
+  linenr_T do_ecmd_lnum;
+  int append;
+  int usefilter;
+  int amount;
+  int regname;
+  int force_bin;
+  int read_edit;
+  int mkdir_p;
+  int force_ff;
+  int force_enc;
+  int bad_char;
+  int useridx;
+  char *errmsg;
+  LineGetter ea_getline;
+  void *cookie;
+  cstack_T *cstack;
+};
+# 154 "/home/dweller/neovim/src/nvim/ex_cmds_defs.h"
+enum {
+  CMOD_SANDBOX = 0x0001,
+  CMOD_SILENT = 0x0002,
+  CMOD_ERRSILENT = 0x0004,
+  CMOD_UNSILENT = 0x0008,
+  CMOD_NOAUTOCMD = 0x0010,
+  CMOD_HIDE = 0x0020,
+  CMOD_BROWSE = 0x0040,
+  CMOD_CONFIRM = 0x0080,
+  CMOD_KEEPALT = 0x0100,
+  CMOD_KEEPMARKS = 0x0200,
+  CMOD_KEEPJUMPS = 0x0400,
+  CMOD_LOCKMARKS = 0x0800,
+  CMOD_KEEPPATTERNS = 0x1000,
+  CMOD_NOSWAPFILE = 0x2000,
+};
+
+
+
+
+typedef struct {
+  int cmod_flags;
+
+  int cmod_split;
+  int cmod_tab;
+  char *cmod_filter_pat;
+  regmatch_T cmod_filter_regmatch;
+  
+# 181 "/home/dweller/neovim/src/nvim/ex_cmds_defs.h" 3 4
+ _Bool 
+# 181 "/home/dweller/neovim/src/nvim/ex_cmds_defs.h"
+      cmod_filter_force;
+
+  int cmod_verbose;
+
+
+  char *cmod_save_ei;
+  int cmod_did_sandbox;
+  OptInt cmod_verbose_save;
+  int cmod_save_msg_silent;
+  int cmod_save_msg_scroll;
+  int cmod_did_esilent;
+} cmdmod_T;
+
+
+typedef struct {
+  cmdmod_T cmdmod;
+  struct {
+    
+# 198 "/home/dweller/neovim/src/nvim/ex_cmds_defs.h" 3 4
+   _Bool 
+# 198 "/home/dweller/neovim/src/nvim/ex_cmds_defs.h"
+        file;
+    
+# 199 "/home/dweller/neovim/src/nvim/ex_cmds_defs.h" 3 4
+   _Bool 
+# 199 "/home/dweller/neovim/src/nvim/ex_cmds_defs.h"
+        bar;
+  } magic;
+} CmdParseInfo;
+
+
+typedef struct {
+  char *sub;
+  Timestamp timestamp;
+  AdditionalData *additional_data;
+} SubReplacementString;
+# 8 "/home/dweller/neovim/src/nvim/message.h" 2
+
+
+# 1 "/home/dweller/neovim/src/nvim/message_defs.h" 1
+       
+
+
+
+
+
+typedef struct {
+  String text;
+  int hl_id;
+} HlMessageChunk;
+
+typedef struct { size_t size; size_t capacity; HlMessageChunk *items; } HlMessage;
+
+
+typedef struct msg_hist {
+  struct msg_hist *next;
+  struct msg_hist *prev;
+  HlMessage msg;
+  const char *kind;
+  
+# 20 "/home/dweller/neovim/src/nvim/message_defs.h" 3 4
+ _Bool 
+# 20 "/home/dweller/neovim/src/nvim/message_defs.h"
+      temp;
+} MessageHistoryEntry;
+# 11 "/home/dweller/neovim/src/nvim/message.h" 2
+
+
+enum {
+  VIM_GENERIC = 0,
+  VIM_ERROR = 1,
+  VIM_WARNING = 2,
+  VIM_INFO = 3,
+  VIM_QUESTION = 4,
+  VIM_LAST_TYPE = 4,
+};
+
+
+enum {
+  VIM_YES = 2,
+  VIM_NO = 3,
+  VIM_CANCEL = 4,
+  VIM_ALL = 5,
+  VIM_DISCARDALL = 6,
+};
+
+extern MessageHistoryEntry *msg_hist_last;
+
+extern 
+# 33 "/home/dweller/neovim/src/nvim/message.h" 3 4
+      _Bool 
+# 33 "/home/dweller/neovim/src/nvim/message.h"
+           msg_ext_need_clear ;
+
+extern 
+# 35 "/home/dweller/neovim/src/nvim/message.h" 3 4
+      _Bool 
+# 35 "/home/dweller/neovim/src/nvim/message.h"
+           msg_ext_skip_flush ;
+
+extern 
+# 37 "/home/dweller/neovim/src/nvim/message.h" 3 4
+      _Bool 
+# 37 "/home/dweller/neovim/src/nvim/message.h"
+           msg_ext_append ;
+
+
+
+extern ScreenGrid msg_grid ;
+extern int msg_grid_pos ;
+
+
+
+
+
+
+
+extern GridView msg_grid_adj ;
+
+
+extern int msg_scrolled_at_flush ;
+
+extern int msg_grid_scroll_discount ;
+
+extern int msg_listdo_overwrite ;
+# 16 "/home/dweller/neovim/src/nvim/eval/typval.h" 2
+# 34 "/home/dweller/neovim/src/nvim/eval/typval.h"
+static inline void tv_list_ref(list_T *const l)
+  FUNC_ATTR_ALWAYS_INLINE
+{
+  if (l == 
+# 37 "/home/dweller/neovim/src/nvim/eval/typval.h" 3 4
+          ((void *)0)
+# 37 "/home/dweller/neovim/src/nvim/eval/typval.h"
+              ) {
+    return;
+  }
+  l->lv_refcount++;
+}
+
+
+
+
+
+static inline void tv_list_set_ret(typval_T *const tv, list_T *const l)
+  FUNC_ATTR_ALWAYS_INLINE FUNC_ATTR_NONNULL_ARG(1)
+{
+  tv->v_type = VAR_LIST;
+  tv->vval.v_list = l;
+  tv_list_ref(l);
+}
+
+
+
+
+
+
+static inline VarLockStatus tv_list_locked(const list_T *const l)
+  FUNC_ATTR_PURE FUNC_ATTR_WARN_UNUSED_RESULT
+{
+  if (l == 
+# 63 "/home/dweller/neovim/src/nvim/eval/typval.h" 3 4
+          ((void *)0)
+# 63 "/home/dweller/neovim/src/nvim/eval/typval.h"
+              ) {
+    return VAR_FIXED;
+  }
+  return l->lv_lock;
+}
+
+
+
+
+
+
+
+static inline void tv_list_set_lock(list_T *const l, const VarLockStatus lock)
+{
+  if (l == 
+# 77 "/home/dweller/neovim/src/nvim/eval/typval.h" 3 4
+          ((void *)0)
+# 77 "/home/dweller/neovim/src/nvim/eval/typval.h"
+              ) {
+    
+# 78 "/home/dweller/neovim/src/nvim/eval/typval.h" 3 4
+   ((void) sizeof ((
+# 78 "/home/dweller/neovim/src/nvim/eval/typval.h"
+   lock == VAR_FIXED
+# 78 "/home/dweller/neovim/src/nvim/eval/typval.h" 3 4
+   ) ? 1 : 0), __extension__ ({ if (
+# 78 "/home/dweller/neovim/src/nvim/eval/typval.h"
+   lock == VAR_FIXED
+# 78 "/home/dweller/neovim/src/nvim/eval/typval.h" 3 4
+   ) ; else __assert_fail (
+# 78 "/home/dweller/neovim/src/nvim/eval/typval.h"
+   "lock == VAR_FIXED"
+# 78 "/home/dweller/neovim/src/nvim/eval/typval.h" 3 4
+   , "/home/dweller/neovim/src/nvim/eval/typval.h", 78, __extension__ __PRETTY_FUNCTION__); }))
+# 78 "/home/dweller/neovim/src/nvim/eval/typval.h"
+                            ;
+    return;
+  }
+  l->lv_lock = lock;
+}
+
+
+
+
+
+
+
+static inline void tv_list_set_copyid(list_T *const l, const int copyid)
+  FUNC_ATTR_NONNULL_ALL
+{
+  l->lv_copyID = copyid;
+}
+
+
+
+
+static inline int tv_list_len(const list_T *const l)
+  FUNC_ATTR_PURE FUNC_ATTR_WARN_UNUSED_RESULT
+{
+  if (l == 
+# 102 "/home/dweller/neovim/src/nvim/eval/typval.h" 3 4
+          ((void *)0)
+# 102 "/home/dweller/neovim/src/nvim/eval/typval.h"
+              ) {
+    return 0;
+  }
+  return l->lv_len;
+}
+
+
+
+
+
+
+static inline int tv_list_copyid(const list_T *const l)
+  FUNC_ATTR_PURE FUNC_ATTR_WARN_UNUSED_RESULT FUNC_ATTR_NONNULL_ALL
+{
+  return l->lv_copyID;
+}
+# 126 "/home/dweller/neovim/src/nvim/eval/typval.h"
+static inline list_T *tv_list_latest_copy(const list_T *const l)
+  FUNC_ATTR_PURE FUNC_ATTR_WARN_UNUSED_RESULT FUNC_ATTR_NONNULL_ALL
+{
+  return l->lv_copylist;
+}
+
+
+
+
+
+
+
+static inline int tv_list_uidx(const list_T *const l, int n)
+  FUNC_ATTR_PURE FUNC_ATTR_WARN_UNUSED_RESULT
+{
+
+  if (n < 0) {
+    n += tv_list_len(l);
+  }
+
+
+  if (n < 0 || n >= tv_list_len(l)) {
+    return -1;
+  }
+  return n;
+}
+# 160 "/home/dweller/neovim/src/nvim/eval/typval.h"
+static inline 
+# 160 "/home/dweller/neovim/src/nvim/eval/typval.h" 3 4
+             _Bool 
+# 160 "/home/dweller/neovim/src/nvim/eval/typval.h"
+                  tv_list_has_watchers(const list_T *const l)
+  FUNC_ATTR_PURE FUNC_ATTR_WARN_UNUSED_RESULT
+{
+  return l && l->lv_watch;
+}
+
+
+
+
+
+
+static inline listitem_T *tv_list_first(const list_T *const l)
+  FUNC_ATTR_PURE FUNC_ATTR_WARN_UNUSED_RESULT
+{
+  if (l == 
+# 174 "/home/dweller/neovim/src/nvim/eval/typval.h" 3 4
+          ((void *)0)
+# 174 "/home/dweller/neovim/src/nvim/eval/typval.h"
+              ) {
+    return 
+# 175 "/home/dweller/neovim/src/nvim/eval/typval.h" 3 4
+          ((void *)0)
+# 175 "/home/dweller/neovim/src/nvim/eval/typval.h"
+              ;
+  }
+  return l->lv_first;
+}
+
+
+
+
+
+
+static inline listitem_T *tv_list_last(const list_T *const l)
+  FUNC_ATTR_PURE FUNC_ATTR_WARN_UNUSED_RESULT
+{
+  if (l == 
+# 188 "/home/dweller/neovim/src/nvim/eval/typval.h" 3 4
+          ((void *)0)
+# 188 "/home/dweller/neovim/src/nvim/eval/typval.h"
+              ) {
+    return 
+# 189 "/home/dweller/neovim/src/nvim/eval/typval.h" 3 4
+          ((void *)0)
+# 189 "/home/dweller/neovim/src/nvim/eval/typval.h"
+              ;
+  }
+  return l->lv_last;
+}
+
+
+
+
+
+static inline void tv_dict_set_ret(typval_T *const tv, dict_T *const d)
+  FUNC_ATTR_ALWAYS_INLINE FUNC_ATTR_NONNULL_ARG(1)
+{
+  tv->v_type = VAR_DICT;
+  tv->vval.v_dict = d;
+  if (d != 
+# 203 "/home/dweller/neovim/src/nvim/eval/typval.h" 3 4
+          ((void *)0)
+# 203 "/home/dweller/neovim/src/nvim/eval/typval.h"
+              ) {
+    d->dv_refcount++;
+  }
+}
+
+
+
+
+static inline long tv_dict_len(const dict_T *const d)
+  FUNC_ATTR_PURE FUNC_ATTR_WARN_UNUSED_RESULT
+{
+  if (d == 
+# 214 "/home/dweller/neovim/src/nvim/eval/typval.h" 3 4
+          ((void *)0)
+# 214 "/home/dweller/neovim/src/nvim/eval/typval.h"
+              ) {
+    return 0;
+  }
+  return (long)d->dv_hashtab.ht_used;
+}
+
+
+
+
+
+
+static inline 
+# 225 "/home/dweller/neovim/src/nvim/eval/typval.h" 3 4
+             _Bool 
+# 225 "/home/dweller/neovim/src/nvim/eval/typval.h"
+                  tv_dict_is_watched(const dict_T *const d)
+  FUNC_ATTR_PURE FUNC_ATTR_WARN_UNUSED_RESULT
+{
+  return d && !QUEUE_EMPTY(&d->watchers);
+}
+
+
+
+
+
+
+
+static inline void tv_blob_set_ret(typval_T *const tv, blob_T *const b)
+  FUNC_ATTR_ALWAYS_INLINE FUNC_ATTR_NONNULL_ARG(1)
+{
+  tv->v_type = VAR_BLOB;
+  tv->vval.v_blob = b;
+  if (b != 
+# 242 "/home/dweller/neovim/src/nvim/eval/typval.h" 3 4
+          ((void *)0)
+# 242 "/home/dweller/neovim/src/nvim/eval/typval.h"
+              ) {
+    b->bv_refcount++;
+  }
+}
+
+
+
+
+static inline int tv_blob_len(const blob_T *const b)
+  FUNC_ATTR_PURE FUNC_ATTR_WARN_UNUSED_RESULT
+{
+  if (b == 
+# 253 "/home/dweller/neovim/src/nvim/eval/typval.h" 3 4
+          ((void *)0)
+# 253 "/home/dweller/neovim/src/nvim/eval/typval.h"
+              ) {
+    return 0;
+  }
+  return b->bv_ga.ga_len;
+}
+
+
+
+
+
+
+
+static inline uint8_t tv_blob_get(const blob_T *const b, int idx)
+  FUNC_ATTR_ALWAYS_INLINE FUNC_ATTR_NONNULL_ALL FUNC_ATTR_WARN_UNUSED_RESULT
+{
+  return ((uint8_t *)b->bv_ga.ga_data)[idx];
+}
+
+
+
+
+
+
+static inline void tv_blob_set(blob_T *const blob, int idx, uint8_t c)
+  FUNC_ATTR_ALWAYS_INLINE FUNC_ATTR_NONNULL_ALL
+{
+  ((uint8_t *)blob->bv_ga.ga_data)[idx] = c;
+}
+
+
+
+
+
+
+static inline void tv_init(typval_T *const tv)
+{
+  if (tv != 
+# 289 "/home/dweller/neovim/src/nvim/eval/typval.h" 3 4
+           ((void *)0)
+# 289 "/home/dweller/neovim/src/nvim/eval/typval.h"
+               ) {
+    memset(tv, 0, sizeof(*tv));
+  }
+}
+
+
+
+
+
+extern const char *const tv_empty_string;
+
+
+extern 
+# 301 "/home/dweller/neovim/src/nvim/eval/typval.h" 3 4
+      _Bool 
+# 301 "/home/dweller/neovim/src/nvim/eval/typval.h"
+           tv_in_free_unref_items;
+# 395 "/home/dweller/neovim/src/nvim/eval/typval.h"
+static inline 
+# 395 "/home/dweller/neovim/src/nvim/eval/typval.h" 3 4
+             _Bool 
+# 395 "/home/dweller/neovim/src/nvim/eval/typval.h"
+                  tv_get_float_chk(const typval_T *const tv, float_T *const ret_f)
+  FUNC_ATTR_NONNULL_ALL FUNC_ATTR_WARN_UNUSED_RESULT
+{
+  if (tv->v_type == VAR_FLOAT) {
+    *ret_f = tv->vval.v_float;
+    return 
+# 400 "/home/dweller/neovim/src/nvim/eval/typval.h" 3 4
+          1
+# 400 "/home/dweller/neovim/src/nvim/eval/typval.h"
+              ;
+  }
+  if (tv->v_type == VAR_NUMBER) {
+    *ret_f = (float_T)tv->vval.v_number;
+    return 
+# 404 "/home/dweller/neovim/src/nvim/eval/typval.h" 3 4
+          1
+# 404 "/home/dweller/neovim/src/nvim/eval/typval.h"
+              ;
+  }
+  semsg("%s", gettext("E808: Number or Float required"));
+  return 
+# 407 "/home/dweller/neovim/src/nvim/eval/typval.h" 3 4
+        0
+# 407 "/home/dweller/neovim/src/nvim/eval/typval.h"
+             ;
+}
+
+
+
+
+
+static inline DictWatcher *tv_dict_watcher_node_data(QUEUE *q)
+  FUNC_ATTR_ALWAYS_INLINE FUNC_ATTR_NONNULL_ALL FUNC_ATTR_NONNULL_RET
+    FUNC_ATTR_NO_SANITIZE_ADDRESS FUNC_ATTR_PURE FUNC_ATTR_WARN_UNUSED_RESULT
+{
+  return ((DictWatcher *)((char *)(q) - 
+# 418 "/home/dweller/neovim/src/nvim/eval/typval.h" 3 4
+        __builtin_offsetof (
+# 418 "/home/dweller/neovim/src/nvim/eval/typval.h"
+        DictWatcher
+# 418 "/home/dweller/neovim/src/nvim/eval/typval.h" 3 4
+        , 
+# 418 "/home/dweller/neovim/src/nvim/eval/typval.h"
+        node
+# 418 "/home/dweller/neovim/src/nvim/eval/typval.h" 3 4
+        )
+# 418 "/home/dweller/neovim/src/nvim/eval/typval.h"
+        ));
+}
+# 428 "/home/dweller/neovim/src/nvim/eval/typval.h"
+static inline 
+# 428 "/home/dweller/neovim/src/nvim/eval/typval.h" 3 4
+             _Bool 
+# 428 "/home/dweller/neovim/src/nvim/eval/typval.h"
+                  tv_is_func(const typval_T tv)
+  FUNC_ATTR_WARN_UNUSED_RESULT FUNC_ATTR_ALWAYS_INLINE FUNC_ATTR_CONST
+{
+  return tv.v_type == VAR_FUNC || tv.v_type == VAR_PARTIAL;
+}
+# 50 "/home/dweller/neovim/src/nvim/mbyte.c" 2
+
+# 1 "/home/dweller/neovim/src/nvim/getchar.h" 1
+       
+
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h" 1 3 4
+# 4 "/home/dweller/neovim/src/nvim/getchar.h" 2
+
+
+
+
+# 1 "/home/dweller/neovim/src/nvim/getchar_defs.h" 1
+       
+
+
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h" 1 3 4
+# 5 "/home/dweller/neovim/src/nvim/getchar_defs.h" 2
+
+
+
+
+
+typedef struct buffblock {
+  struct buffblock *b_next;
+  size_t b_strlen;
+  char b_str[1];
+} buffblock_T;
+
+
+typedef struct {
+  buffblock_T bh_first;
+  buffblock_T *bh_curr;
+  size_t bh_index;
+  size_t bh_space;
+  
+# 22 "/home/dweller/neovim/src/nvim/getchar_defs.h" 3 4
+ _Bool 
+# 22 "/home/dweller/neovim/src/nvim/getchar_defs.h"
+      bh_create_newblock;
+} buffheader_T;
+
+typedef struct {
+  buffheader_T sr_redobuff;
+  buffheader_T sr_old_redobuff;
+} save_redo_T;
+
+
+typedef struct {
+  uint8_t *tb_buf;
+  uint8_t *tb_noremap;
+  int tb_buflen;
+  int tb_off;
+  int tb_len;
+  int tb_maplen;
+  int tb_silent;
+  int tb_no_abbr_cnt;
+  int tb_change_cnt;
+} typebuf_T;
+
+
+typedef struct {
+  typebuf_T save_typebuf;
+  
+# 46 "/home/dweller/neovim/src/nvim/getchar_defs.h" 3 4
+ _Bool 
+# 46 "/home/dweller/neovim/src/nvim/getchar_defs.h"
+      typebuf_valid;
+  int old_char;
+  int old_mod_mask;
+  buffheader_T save_readbuf1;
+  buffheader_T save_readbuf2;
+  String save_inputbuf;
+} tasave_T;
+
+
+
+
+enum RemapValues {
+  REMAP_YES = 0,
+  REMAP_NONE = -1,
+  REMAP_SCRIPT = -2,
+  REMAP_SKIP = -3,
+};
+# 9 "/home/dweller/neovim/src/nvim/getchar.h" 2
+
+
+
+typedef enum {
+  FLUSH_MINIMAL,
+  FLUSH_TYPEAHEAD,
+  FLUSH_INPUT,
+} flush_buffers_T;
+
+enum { NSCRIPT = 15, };
+# 52 "/home/dweller/neovim/src/nvim/mbyte.c" 2
+
+# 1 "/home/dweller/neovim/src/nvim/globals.h" 1
+       
+
+
+
+
+
+
+# 1 "/home/dweller/neovim/src/nvim/event/loop.h" 1
+       
+
+
+
+
+
+# 1 "/home/dweller/neovim/src/nvim/event/defs.h" 1
+       
+
+# 1 "/usr/include/assert.h" 1 3 4
+# 4 "/home/dweller/neovim/src/nvim/event/defs.h" 2
+
+
+
+
+
+
+
+enum { EVENT_HANDLER_MAX_ARGC = 10, };
+
+typedef void (*argv_callback)(void **argv);
+typedef struct {
+  argv_callback handler;
+  void *argv[EVENT_HANDLER_MAX_ARGC];
+} Event;
+
+
+
+typedef struct multiqueue MultiQueue;
+typedef void (*PutCallback)(MultiQueue *multiq, void *data);
+
+typedef struct signal_watcher SignalWatcher;
+typedef void (*signal_cb)(SignalWatcher *watcher, int signum, void *data);
+typedef void (*signal_close_cb)(SignalWatcher *watcher, void *data);
+
+struct signal_watcher {
+  uv_signal_t uv;
+  void *data;
+  signal_cb cb;
+  signal_close_cb close_cb;
+  MultiQueue *events;
+};
+
+typedef struct time_watcher TimeWatcher;
+typedef void (*time_cb)(TimeWatcher *watcher, void *data);
+
+struct time_watcher {
+  uv_timer_t uv;
+  void *data;
+  time_cb cb, close_cb;
+  MultiQueue *events;
+  
+# 44 "/home/dweller/neovim/src/nvim/event/defs.h" 3 4
+ _Bool 
+# 44 "/home/dweller/neovim/src/nvim/event/defs.h"
+      blockable;
+};
+
+typedef struct wbuffer WBuffer;
+typedef void (*wbuffer_data_finalizer)(void *data);
+
+struct wbuffer {
+  size_t size, refcount;
+  char *data;
+  wbuffer_data_finalizer cb;
+};
+
+typedef struct stream Stream;
+typedef struct rstream RStream;
+# 66 "/home/dweller/neovim/src/nvim/event/defs.h"
+typedef size_t (*stream_read_cb)(RStream *stream, const char *read_data, size_t count, void *data,
+                                 
+# 67 "/home/dweller/neovim/src/nvim/event/defs.h" 3 4
+                                _Bool 
+# 67 "/home/dweller/neovim/src/nvim/event/defs.h"
+                                     eof);
+
+
+
+
+
+
+
+typedef void (*stream_write_cb)(Stream *stream, void *data, int status);
+
+typedef void (*stream_close_cb)(Stream *stream, void *data);
+
+struct stream {
+  
+# 80 "/home/dweller/neovim/src/nvim/event/defs.h" 3 4
+ _Bool 
+# 80 "/home/dweller/neovim/src/nvim/event/defs.h"
+      closed;
+  union {
+    uv_pipe_t pipe;
+    uv_tcp_t tcp;
+    uv_idle_t idle;
+
+
+
+  } uv;
+  uv_stream_t *uvstream;
+  uv_file fd;
+  int64_t fpos;
+  void *cb_data;
+  stream_close_cb close_cb, internal_close_cb;
+  void *close_cb_data, *internal_data;
+  size_t pending_reqs;
+  MultiQueue *events;
+
+
+  stream_write_cb write_cb;
+  size_t curmem;
+  size_t maxmem;
+};
+
+struct rstream {
+  Stream s;
+  
+# 106 "/home/dweller/neovim/src/nvim/event/defs.h" 3 4
+ _Bool 
+# 106 "/home/dweller/neovim/src/nvim/event/defs.h"
+      did_eof;
+  
+# 107 "/home/dweller/neovim/src/nvim/event/defs.h" 3 4
+ _Bool 
+# 107 "/home/dweller/neovim/src/nvim/event/defs.h"
+      want_read;
+  
+# 108 "/home/dweller/neovim/src/nvim/event/defs.h" 3 4
+ _Bool 
+# 108 "/home/dweller/neovim/src/nvim/event/defs.h"
+      pending_read;
+  
+# 109 "/home/dweller/neovim/src/nvim/event/defs.h" 3 4
+ _Bool 
+# 109 "/home/dweller/neovim/src/nvim/event/defs.h"
+      paused_full;
+  char *buffer;
+  char *read_pos;
+  char *write_pos;
+  uv_buf_t uvbuf;
+  stream_read_cb read_cb;
+  size_t num_bytes;
+};
+
+
+
+typedef struct socket_watcher SocketWatcher;
+typedef void (*socket_cb)(SocketWatcher *watcher, int result, void *data);
+typedef void (*socket_close_cb)(SocketWatcher *watcher, void *data);
+
+struct socket_watcher {
+
+  char addr[256];
+
+  union {
+    struct {
+      uv_tcp_t handle;
+      struct addrinfo *addrinfo;
+    } tcp;
+    struct {
+      uv_pipe_t handle;
+    } pipe;
+  } uv;
+  uv_stream_t *stream;
+  void *data;
+  socket_cb cb;
+  socket_close_cb close_cb;
+  MultiQueue *events;
+};
+
+typedef enum {
+  kProcTypeUv,
+  kProcTypePty,
+} ProcType;
+
+
+typedef struct proc Proc;
+typedef void (*proc_exit_cb)(Proc *proc, int status, void *data);
+typedef void (*internal_proc_cb)(Proc *proc);
+
+struct proc {
+  ProcType type;
+  Loop *loop;
+  void *data;
+  int pid, status, refcount;
+  uint8_t exit_signal;
+  uint64_t stopped_time;
+  const char *cwd;
+  char **argv;
+  const char *exepath;
+  dict_T *env;
+  Stream in;
+  RStream out, err;
+
+  proc_exit_cb cb;
+  internal_proc_cb internal_exit_cb, internal_close_cb;
+  
+# 170 "/home/dweller/neovim/src/nvim/event/defs.h" 3 4
+ _Bool 
+# 170 "/home/dweller/neovim/src/nvim/event/defs.h"
+      closed, detach, overlapped, fwd_err;
+  MultiQueue *events;
+};
+# 8 "/home/dweller/neovim/src/nvim/event/loop.h" 2
+
+
+struct loop {
+  uv_loop_t uv;
+  MultiQueue *events;
+  MultiQueue *thread_events;
+# 22 "/home/dweller/neovim/src/nvim/event/loop.h"
+  MultiQueue *fast_events;
+
+
+  struct { size_t size; size_t capacity; Proc * *items; } children;
+  uv_signal_t children_watcher;
+  uv_timer_t children_kill_timer;
+
+
+  uv_timer_t poll_timer;
+
+  uv_timer_t exit_delay_timer;
+
+  uv_async_t async;
+  uv_mutex_t mutex;
+  int recursive;
+  
+# 37 "/home/dweller/neovim/src/nvim/event/loop.h" 3 4
+ _Bool 
+# 37 "/home/dweller/neovim/src/nvim/event/loop.h"
+      closing;
+};
+# 9 "/home/dweller/neovim/src/nvim/globals.h" 2
+
+
+
+
+
+# 1 "/home/dweller/neovim/src/nvim/menu_defs.h" 1
+       
+
+
+
+
+
+
+enum {
+  MENU_INDEX_INVALID = -1,
+  MENU_INDEX_NORMAL = 0,
+  MENU_INDEX_VISUAL = 1,
+  MENU_INDEX_SELECT = 2,
+  MENU_INDEX_OP_PENDING = 3,
+  MENU_INDEX_INSERT = 4,
+  MENU_INDEX_CMDLINE = 5,
+  MENU_INDEX_TERMINAL = 6,
+  MENU_INDEX_TIP = 7,
+  MENU_MODES = 8,
+};
+
+
+
+
+
+enum {
+  MENU_NORMAL_MODE = 1 << MENU_INDEX_NORMAL,
+  MENU_VISUAL_MODE = 1 << MENU_INDEX_VISUAL,
+  MENU_SELECT_MODE = 1 << MENU_INDEX_SELECT,
+  MENU_OP_PENDING_MODE = 1 << MENU_INDEX_OP_PENDING,
+  MENU_INSERT_MODE = 1 << MENU_INDEX_INSERT,
+  MENU_CMDLINE_MODE = 1 << MENU_INDEX_CMDLINE,
+  MENU_TERMINAL_MODE = 1 << MENU_INDEX_TERMINAL,
+  MENU_TIP_MODE = 1 << MENU_INDEX_TIP,
+  MENU_ALL_MODES = (1 << MENU_INDEX_TIP) - 1,
+};
+
+
+
+
+
+
+typedef struct VimMenu vimmenu_T;
+
+struct VimMenu {
+  int modes;
+  int enabled;
+  char *name;
+  char *dname;
+  char *en_name;
+
+  char *en_dname;
+  int mnemonic;
+  char *actext;
+  int priority;
+  char *strings[MENU_MODES];
+  int noremap[MENU_MODES];
+  
+# 57 "/home/dweller/neovim/src/nvim/menu_defs.h" 3 4
+ _Bool 
+# 57 "/home/dweller/neovim/src/nvim/menu_defs.h"
+      silent[MENU_MODES];
+  vimmenu_T *children;
+  vimmenu_T *parent;
+  vimmenu_T *next;
+};
+# 15 "/home/dweller/neovim/src/nvim/globals.h" 2
+
+# 1 "/home/dweller/neovim/src/nvim/runtime_defs.h" 1
+       
+
+
+
+# 1 "/home/dweller/neovim/src/nvim/autocmd_defs.h" 1
+       
+
+
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h" 1 3 4
+# 5 "/home/dweller/neovim/src/nvim/autocmd_defs.h" 2
+# 16 "/home/dweller/neovim/src/nvim/autocmd_defs.h"
+typedef struct {
+  int use_aucmd_win_idx;
+  handle_T save_curwin_handle;
+  handle_T new_curwin_handle;
+  handle_T save_prevwin_handle;
+  bufref_T new_curbuf;
+  char *tp_localdir;
+  char *globaldir;
+  
+# 24 "/home/dweller/neovim/src/nvim/autocmd_defs.h" 3 4
+ _Bool 
+# 24 "/home/dweller/neovim/src/nvim/autocmd_defs.h"
+      save_VIsual_active;
+  int save_State;
+  int save_prompt_insert;
+} aco_save_T;
+
+typedef struct {
+  size_t refcount;
+  char *pat;
+  regprog_T *reg_prog;
+  int group;
+  int patlen;
+  int buflocal_nr;
+  char allow_dirs;
+} AutoPat;
+
+typedef struct {
+  AutoPat *pat;
+  int64_t id;
+  char *desc;
+  char *handler_cmd;
+  Callback handler_fn;
+  sctx_T script_ctx;
+  
+# 46 "/home/dweller/neovim/src/nvim/autocmd_defs.h" 3 4
+ _Bool 
+# 46 "/home/dweller/neovim/src/nvim/autocmd_defs.h"
+      once;
+  
+# 47 "/home/dweller/neovim/src/nvim/autocmd_defs.h" 3 4
+ _Bool 
+# 47 "/home/dweller/neovim/src/nvim/autocmd_defs.h"
+      nested;
+} AutoCmd;
+
+
+typedef struct AutoPatCmd_S AutoPatCmd;
+struct AutoPatCmd_S {
+  AutoPat *lastpat;
+  size_t auidx;
+  size_t ausize;
+  char *afile_orig;
+  char *fname;
+  char *sfname;
+  char *tail;
+  int group;
+  event_T event;
+  sctx_T script_ctx;
+  int arg_bufnr;
+  Object *data;
+  AutoPatCmd *next;
+};
+
+typedef struct { size_t size; size_t capacity; AutoCmd *items; } AutoCmdVec;
+# 6 "/home/dweller/neovim/src/nvim/runtime_defs.h" 2
+
+typedef enum {
+  ETYPE_TOP,
+  ETYPE_SCRIPT,
+  ETYPE_UFUNC,
+  ETYPE_AUCMD,
+  ETYPE_MODELINE,
+  ETYPE_EXCEPT,
+  ETYPE_ARGS,
+  ETYPE_ENV,
+  ETYPE_INTERNAL,
+  ETYPE_SPELL,
+} etype_T;
+
+
+typedef struct {
+  linenr_T es_lnum;
+  char *es_name;
+  etype_T es_type;
+  union {
+    sctx_T *sctx;
+    ufunc_T *ufunc;
+    AutoPatCmd *aucmd;
+    except_T *except;
+  } es_info;
+} estack_T;
+
+
+typedef enum {
+  ESTACK_NONE,
+  ESTACK_SFILE,
+  ESTACK_STACK,
+  ESTACK_SCRIPT,
+} estack_arg_T;
+
+
+
+typedef struct {
+  ScopeDictDictItem sv_var;
+  dict_T sv_dict;
+} scriptvar_T;
+
+typedef struct {
+  scriptvar_T *sn_vars;
+
+  char *sn_name;
+  
+# 52 "/home/dweller/neovim/src/nvim/runtime_defs.h" 3 4
+ _Bool 
+# 52 "/home/dweller/neovim/src/nvim/runtime_defs.h"
+      sn_lua;
+  
+# 53 "/home/dweller/neovim/src/nvim/runtime_defs.h" 3 4
+ _Bool 
+# 53 "/home/dweller/neovim/src/nvim/runtime_defs.h"
+      sn_prof_on;
+  
+# 54 "/home/dweller/neovim/src/nvim/runtime_defs.h" 3 4
+ _Bool 
+# 54 "/home/dweller/neovim/src/nvim/runtime_defs.h"
+      sn_pr_force;
+  proftime_T sn_pr_child;
+  int sn_pr_nest;
+
+  int sn_pr_count;
+  proftime_T sn_pr_total;
+  proftime_T sn_pr_self;
+  proftime_T sn_pr_start;
+  proftime_T sn_pr_children;
+
+  garray_T sn_prl_ga;
+  proftime_T sn_prl_start;
+  proftime_T sn_prl_children;
+  proftime_T sn_prl_wait;
+  linenr_T sn_prl_idx;
+  int sn_prl_execed;
+} scriptitem_T;
+
+typedef 
+# 72 "/home/dweller/neovim/src/nvim/runtime_defs.h" 3 4
+       _Bool 
+# 72 "/home/dweller/neovim/src/nvim/runtime_defs.h"
+            (*DoInRuntimepathCB)(int, char **, 
+# 72 "/home/dweller/neovim/src/nvim/runtime_defs.h" 3 4
+                                               _Bool
+# 72 "/home/dweller/neovim/src/nvim/runtime_defs.h"
+                                                   , void *);
+# 17 "/home/dweller/neovim/src/nvim/globals.h" 2
+# 1 "/home/dweller/neovim/src/nvim/state_defs.h" 1
+       
+
+typedef struct vim_state VimState;
+
+typedef int (*state_check_callback)(VimState *state);
+typedef int (*state_execute_callback)(VimState *state, int key);
+
+struct vim_state {
+  state_check_callback check;
+  state_execute_callback execute;
+};
+# 20 "/home/dweller/neovim/src/nvim/state_defs.h"
+enum {
+  MODE_NORMAL = 0x01,
+  MODE_VISUAL = 0x02,
+  MODE_OP_PENDING = 0x04,
+  MODE_CMDLINE = 0x08,
+  MODE_INSERT = 0x10,
+  MODE_LANGMAP = 0x20,
+  MODE_SELECT = 0x40,
+  MODE_TERMINAL = 0x80,
+
+  MAP_ALL_MODES = 0xff,
+
+  REPLACE_FLAG = 0x100,
+  MODE_REPLACE = REPLACE_FLAG | MODE_INSERT,
+  VREPLACE_FLAG = 0x200,
+  MODE_VREPLACE = REPLACE_FLAG | VREPLACE_FLAG | MODE_INSERT,
+  MODE_LREPLACE = REPLACE_FLAG | MODE_LANGMAP,
+
+  MODE_NORMAL_BUSY = 0x1000 | MODE_NORMAL,
+  MODE_HITRETURN = 0x2000 | MODE_NORMAL,
+  MODE_ASKMORE = 0x3000,
+  MODE_SETWSIZE = 0x4000,
+  MODE_EXTERNCMD = 0x5000,
+  MODE_SHOWMATCH = 0x6000 | MODE_INSERT,
+  MODE_CONFIRM = 0x7000,
+};
+# 18 "/home/dweller/neovim/src/nvim/globals.h" 2
+# 1 "/home/dweller/neovim/src/nvim/syntax_defs.h" 1
+       
+# 12 "/home/dweller/neovim/src/nvim/syntax_defs.h"
+struct sp_syn {
+  int inc_tag;
+  int16_t id;
+  int16_t *cont_in_list;
+};
+
+
+typedef struct keyentry keyentry_T;
+
+struct keyentry {
+  keyentry_T *ke_next;
+  struct sp_syn k_syn;
+  int16_t *next_list;
+  int flags;
+  int k_char;
+  char keyword[];
+};
+
+
+typedef struct {
+  int bs_idx;
+  int bs_flags;
+  int bs_seqnr;
+  int bs_cchar;
+  reg_extmatch_T *bs_extmatch;
+} bufstate_T;
+
+
+
+struct syn_state {
+  synstate_T *sst_next;
+  linenr_T sst_lnum;
+  union {
+    bufstate_T sst_stack[7];
+    garray_T sst_ga;
+  } sst_union;
+  int sst_next_flags;
+  int sst_stacksize;
+  int16_t *sst_next_list;
+
+  disptick_T sst_tick;
+  linenr_T sst_change_lnum;
+
+};
+# 19 "/home/dweller/neovim/src/nvim/globals.h" 2
+# 84 "/home/dweller/neovim/src/nvim/globals.h"
+extern struct nvim_stats_s {
+  int64_t fsync;
+  int64_t redraw;
+  int16_t log_skip;
+} g_stats ;
+# 102 "/home/dweller/neovim/src/nvim/globals.h"
+extern int Rows ;
+extern int Columns ;
+
+
+
+extern int mod_mask ;
+
+
+
+extern int vgetc_mod_mask ;
+extern int vgetc_char ;
+# 121 "/home/dweller/neovim/src/nvim/globals.h"
+extern int cmdline_row;
+
+extern 
+# 123 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 123 "/home/dweller/neovim/src/nvim/globals.h"
+           redraw_cmdline ;
+extern 
+# 124 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 124 "/home/dweller/neovim/src/nvim/globals.h"
+           redraw_mode ;
+extern 
+# 125 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 125 "/home/dweller/neovim/src/nvim/globals.h"
+           clear_cmdline ;
+extern 
+# 126 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 126 "/home/dweller/neovim/src/nvim/globals.h"
+           mode_displayed ;
+extern int cmdline_star ;
+extern 
+# 128 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 128 "/home/dweller/neovim/src/nvim/globals.h"
+           redrawing_cmdline ;
+extern 
+# 129 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 129 "/home/dweller/neovim/src/nvim/globals.h"
+           cmdline_was_last_drawn ;
+
+extern 
+# 131 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 131 "/home/dweller/neovim/src/nvim/globals.h"
+           exec_from_reg ;
+
+
+
+
+
+extern colnr_T dollar_vcol ;
+
+
+
+extern char *edit_submode ;
+extern char *edit_submode_pre ;
+extern char *edit_submode_extra ;
+extern hlf_T edit_submode_highl;
+
+
+extern 
+# 147 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 147 "/home/dweller/neovim/src/nvim/globals.h"
+           cmdmsg_rl ;
+extern int msg_col;
+extern int msg_row;
+extern int msg_scrolled;
+
+
+extern 
+# 153 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 153 "/home/dweller/neovim/src/nvim/globals.h"
+           msg_scrolled_ign ;
+
+
+extern 
+# 156 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 156 "/home/dweller/neovim/src/nvim/globals.h"
+           msg_did_scroll ;
+
+extern char *keep_msg ;
+extern int keep_msg_hl_id ;
+extern 
+# 160 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 160 "/home/dweller/neovim/src/nvim/globals.h"
+           need_fileinfo ;
+extern int msg_scroll ;
+extern 
+# 162 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 162 "/home/dweller/neovim/src/nvim/globals.h"
+           msg_didout ;
+extern 
+# 163 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 163 "/home/dweller/neovim/src/nvim/globals.h"
+           msg_didany ;
+extern 
+# 164 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 164 "/home/dweller/neovim/src/nvim/globals.h"
+           msg_nowait ;
+extern int emsg_off ;
+
+extern 
+# 167 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 167 "/home/dweller/neovim/src/nvim/globals.h"
+           info_message ;
+extern 
+# 168 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 168 "/home/dweller/neovim/src/nvim/globals.h"
+           msg_hist_off ;
+extern 
+# 169 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 169 "/home/dweller/neovim/src/nvim/globals.h"
+           need_clr_eos ;
+
+extern int emsg_skip ;
+
+extern 
+# 173 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 173 "/home/dweller/neovim/src/nvim/globals.h"
+           emsg_severe ;
+
+
+extern char *emsg_assert_fails_msg ;
+extern long emsg_assert_fails_lnum ;
+extern char *emsg_assert_fails_context ;
+
+extern 
+# 180 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 180 "/home/dweller/neovim/src/nvim/globals.h"
+           did_endif ;
+extern dict_T vimvardict;
+extern dict_T globvardict;
+
+
+extern int did_emsg;
+
+extern 
+# 187 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 187 "/home/dweller/neovim/src/nvim/globals.h"
+           called_vim_beep;
+extern 
+# 188 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 188 "/home/dweller/neovim/src/nvim/globals.h"
+           did_emsg_syntax;
+
+extern int called_emsg;
+extern int ex_exitval ;
+extern 
+# 192 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 192 "/home/dweller/neovim/src/nvim/globals.h"
+           emsg_on_display ;
+extern 
+# 193 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 193 "/home/dweller/neovim/src/nvim/globals.h"
+           rc_did_emsg ;
+
+extern int no_wait_return ;
+extern 
+# 196 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 196 "/home/dweller/neovim/src/nvim/globals.h"
+           need_wait_return ;
+extern 
+# 197 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 197 "/home/dweller/neovim/src/nvim/globals.h"
+           did_wait_return ;
+
+extern 
+# 199 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 199 "/home/dweller/neovim/src/nvim/globals.h"
+           need_maketitle ;
+
+extern 
+# 201 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 201 "/home/dweller/neovim/src/nvim/globals.h"
+           quit_more ;
+extern int vgetc_busy ;
+
+extern 
+# 204 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 204 "/home/dweller/neovim/src/nvim/globals.h"
+           didset_vim ;
+extern 
+# 205 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 205 "/home/dweller/neovim/src/nvim/globals.h"
+           didset_vimruntime ;
+
+
+
+extern int lines_left ;
+extern 
+# 210 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 210 "/home/dweller/neovim/src/nvim/globals.h"
+           msg_no_more ;
+
+
+extern int ex_nesting_level ;
+extern int debug_break_level ;
+extern 
+# 215 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 215 "/home/dweller/neovim/src/nvim/globals.h"
+           debug_did_msg ;
+extern int debug_tick ;
+extern int debug_backtrace_level ;
+
+
+
+
+
+extern int do_profiling ;
+
+
+
+
+extern except_T *current_exception;
+
+
+
+extern 
+# 232 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 232 "/home/dweller/neovim/src/nvim/globals.h"
+           did_throw ;
+
+
+
+extern 
+# 236 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 236 "/home/dweller/neovim/src/nvim/globals.h"
+           need_rethrow ;
+
+
+
+extern 
+# 240 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 240 "/home/dweller/neovim/src/nvim/globals.h"
+           check_cstack ;
+
+
+
+extern int trylevel ;
+
+
+
+
+
+
+
+extern 
+# 252 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 252 "/home/dweller/neovim/src/nvim/globals.h"
+           force_abort ;
+# 262 "/home/dweller/neovim/src/nvim/globals.h"
+extern msglist_T **msg_list ;
+
+
+
+
+
+extern 
+# 268 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 268 "/home/dweller/neovim/src/nvim/globals.h"
+           suppress_errthrow ;
+
+
+
+
+
+extern except_T *caught_stack ;
+# 284 "/home/dweller/neovim/src/nvim/globals.h"
+extern 
+# 284 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 284 "/home/dweller/neovim/src/nvim/globals.h"
+           may_garbage_collect ;
+extern 
+# 285 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 285 "/home/dweller/neovim/src/nvim/globals.h"
+           want_garbage_collect ;
+extern 
+# 286 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 286 "/home/dweller/neovim/src/nvim/globals.h"
+           garbage_collect_at_exit ;
+# 301 "/home/dweller/neovim/src/nvim/globals.h"
+extern sctx_T current_sctx ;
+
+extern uint64_t current_ui ;
+
+extern 
+# 305 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 305 "/home/dweller/neovim/src/nvim/globals.h"
+           did_source_packages ;
+
+
+
+extern struct caller_scope {
+  sctx_T script_ctx;
+  estack_T es_entry;
+  char *autocmd_fname, *autocmd_match;
+  
+# 313 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+ _Bool 
+# 313 "/home/dweller/neovim/src/nvim/globals.h"
+      autocmd_fname_full;
+  int autocmd_bufnr;
+  void *funccalp;
+} provider_caller_scope;
+extern int provider_call_nesting ;
+
+extern int t_colors ;
+
+
+extern int include_none ;
+extern int include_default ;
+extern int include_link ;
+
+
+
+
+
+extern 
+# 330 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 330 "/home/dweller/neovim/src/nvim/globals.h"
+           highlight_match ;
+extern linenr_T search_match_lines;
+extern colnr_T search_match_endcol;
+extern linenr_T search_first_line ;
+extern linenr_T search_last_line ;
+
+extern 
+# 336 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 336 "/home/dweller/neovim/src/nvim/globals.h"
+           no_smartcase ;
+
+extern 
+# 338 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 338 "/home/dweller/neovim/src/nvim/globals.h"
+           need_check_timestamps ;
+
+extern 
+# 340 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 340 "/home/dweller/neovim/src/nvim/globals.h"
+           did_check_timestamps ;
+
+extern int no_check_timestamps ;
+
+
+extern int mouse_grid;
+extern int mouse_row;
+extern int mouse_col;
+extern 
+# 348 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 348 "/home/dweller/neovim/src/nvim/globals.h"
+           mouse_past_bottom ;
+extern 
+# 349 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 349 "/home/dweller/neovim/src/nvim/globals.h"
+           mouse_past_eol ;
+extern int mouse_dragging ;
+
+
+
+extern vimmenu_T *root_menu ;
+
+
+extern 
+# 357 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 357 "/home/dweller/neovim/src/nvim/globals.h"
+           sys_menu ;
+
+
+
+
+extern win_T *firstwin;
+extern win_T *lastwin;
+extern win_T *prevwin ;
+# 379 "/home/dweller/neovim/src/nvim/globals.h"
+extern win_T *curwin;
+
+
+
+extern frame_T *topframe;
+
+
+
+
+extern tabpage_T *first_tabpage;
+extern tabpage_T *curtab;
+extern tabpage_T *lastused_tabpage;
+extern 
+# 391 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 391 "/home/dweller/neovim/src/nvim/globals.h"
+           redraw_tabline ;
+
+
+
+
+
+
+extern buf_T *firstbuf ;
+extern buf_T *lastbuf ;
+extern buf_T *curbuf ;
+# 410 "/home/dweller/neovim/src/nvim/globals.h"
+extern alist_T global_alist;
+extern int max_alist_id ;
+extern 
+# 412 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 412 "/home/dweller/neovim/src/nvim/globals.h"
+           arg_had_last ;
+
+
+extern int ru_col;
+extern int ru_wid;
+extern int sc_col;
+
+
+
+
+
+extern int starting ;
+
+extern 
+# 425 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 425 "/home/dweller/neovim/src/nvim/globals.h"
+           exiting ;
+
+extern int v_dying ;
+
+extern 
+# 429 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 429 "/home/dweller/neovim/src/nvim/globals.h"
+           stdin_isatty ;
+
+extern 
+# 431 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 431 "/home/dweller/neovim/src/nvim/globals.h"
+           stdout_isatty ;
+
+extern 
+# 433 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 433 "/home/dweller/neovim/src/nvim/globals.h"
+           stderr_isatty ;
+
+
+extern int stdin_fd ;
+
+
+extern 
+# 439 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 439 "/home/dweller/neovim/src/nvim/globals.h"
+           full_screen ;
+
+
+extern int secure ;
+
+
+
+extern int textlock ;
+
+
+
+extern int allbuf_lock ;
+
+
+
+extern int sandbox ;
+
+
+extern 
+# 457 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 457 "/home/dweller/neovim/src/nvim/globals.h"
+           silent_mode ;
+
+
+extern pos_T VIsual;
+
+extern 
+# 462 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 462 "/home/dweller/neovim/src/nvim/globals.h"
+           VIsual_active ;
+
+extern 
+# 464 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 464 "/home/dweller/neovim/src/nvim/globals.h"
+           VIsual_select ;
+
+extern int VIsual_select_reg ;
+
+extern 
+# 468 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 468 "/home/dweller/neovim/src/nvim/globals.h"
+           VIsual_select_exclu_adj ;
+
+extern int restart_VIsual_select ;
+
+extern int VIsual_reselect;
+
+extern int VIsual_mode ;
+
+extern 
+# 476 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 476 "/home/dweller/neovim/src/nvim/globals.h"
+           redo_VIsual_busy ;
+
+
+extern int resel_VIsual_mode ;
+extern linenr_T resel_VIsual_line_count;
+extern colnr_T resel_VIsual_vcol;
+
+
+
+extern pos_T where_paste_started;
+
+
+
+
+
+extern 
+# 491 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 491 "/home/dweller/neovim/src/nvim/globals.h"
+           did_ai ;
+
+
+
+extern colnr_T ai_col ;
+
+
+
+
+
+extern int end_comment_pending ;
+
+
+
+
+
+extern 
+# 507 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 507 "/home/dweller/neovim/src/nvim/globals.h"
+           did_syncbind ;
+
+
+
+extern 
+# 511 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 511 "/home/dweller/neovim/src/nvim/globals.h"
+           did_si ;
+
+
+
+extern 
+# 515 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 515 "/home/dweller/neovim/src/nvim/globals.h"
+           can_si ;
+
+
+
+extern 
+# 519 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 519 "/home/dweller/neovim/src/nvim/globals.h"
+           can_si_back ;
+
+extern int old_indent ;
+
+
+extern pos_T saved_cursor ;
+
+
+extern pos_T Insstart;
+
+
+
+
+
+extern pos_T Insstart_orig;
+
+
+extern linenr_T orig_line_count ;
+extern int vr_lines_changed ;
+
+
+extern int inhibit_delete_count ;
+# 557 "/home/dweller/neovim/src/nvim/globals.h"
+extern char *fenc_default ;
+# 566 "/home/dweller/neovim/src/nvim/globals.h"
+extern int State ;
+
+extern 
+# 568 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 568 "/home/dweller/neovim/src/nvim/globals.h"
+           debug_mode ;
+extern 
+# 569 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 569 "/home/dweller/neovim/src/nvim/globals.h"
+           finish_op ;
+extern int opcount ;
+extern int motion_force ;
+
+
+extern 
+# 574 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 574 "/home/dweller/neovim/src/nvim/globals.h"
+           exmode_active ;
+
+
+extern 
+# 577 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 577 "/home/dweller/neovim/src/nvim/globals.h"
+           pending_exmode_active ;
+
+extern 
+# 579 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 579 "/home/dweller/neovim/src/nvim/globals.h"
+           ex_no_reprint ;
+
+
+extern 
+# 582 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 582 "/home/dweller/neovim/src/nvim/globals.h"
+           cmdpreview ;
+
+extern int reg_recording ;
+extern int reg_executing ;
+
+extern 
+# 587 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 587 "/home/dweller/neovim/src/nvim/globals.h"
+           pending_end_reg_executing ;
+extern int reg_recorded ;
+
+extern int no_mapping ;
+extern int no_zero_mapping ;
+extern int allow_keys ;
+extern int no_u_sync ;
+extern int u_sync_once ;
+
+
+extern 
+# 597 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 597 "/home/dweller/neovim/src/nvim/globals.h"
+           force_restart_edit ;
+
+extern int restart_edit ;
+extern 
+# 600 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 600 "/home/dweller/neovim/src/nvim/globals.h"
+           arrow_used;
+
+
+
+extern 
+# 604 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 604 "/home/dweller/neovim/src/nvim/globals.h"
+           ins_at_eol ;
+
+
+extern 
+# 607 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 607 "/home/dweller/neovim/src/nvim/globals.h"
+           no_abbr ;
+
+extern int mapped_ctrl_c ;
+extern 
+# 610 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 610 "/home/dweller/neovim/src/nvim/globals.h"
+           ctrl_c_interrupts ;
+
+extern cmdmod_T cmdmod;
+
+extern int msg_silent ;
+extern int emsg_silent ;
+extern 
+# 616 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 616 "/home/dweller/neovim/src/nvim/globals.h"
+           emsg_noredir ;
+extern 
+# 617 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 617 "/home/dweller/neovim/src/nvim/globals.h"
+           cmd_silent ;
+
+extern 
+# 619 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 619 "/home/dweller/neovim/src/nvim/globals.h"
+           in_assert_fails ;
+# 628 "/home/dweller/neovim/src/nvim/globals.h"
+extern int swap_exists_action ;
+extern 
+# 629 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 629 "/home/dweller/neovim/src/nvim/globals.h"
+           swap_exists_did_quit ;
+
+extern char IObuff[(1024 + 1)];
+extern char NameBuff[4096];
+extern char msg_buf[480];
+extern char os_buf[
+
+                                            4096
+
+
+
+];
+
+
+extern int RedrawingDisabled ;
+
+extern 
+# 645 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 645 "/home/dweller/neovim/src/nvim/globals.h"
+           readonlymode ;
+extern 
+# 646 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 646 "/home/dweller/neovim/src/nvim/globals.h"
+           recoverymode ;
+
+
+extern typebuf_T typebuf ;
+
+
+
+extern 
+# 653 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 653 "/home/dweller/neovim/src/nvim/globals.h"
+           typebuf_was_empty ;
+
+extern int ex_normal_busy ;
+extern int expr_map_lock ;
+extern 
+# 657 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 657 "/home/dweller/neovim/src/nvim/globals.h"
+           ignore_script ;
+extern 
+# 658 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 658 "/home/dweller/neovim/src/nvim/globals.h"
+           stop_insert_mode;
+extern 
+# 659 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 659 "/home/dweller/neovim/src/nvim/globals.h"
+           KeyTyped;
+extern int KeyStuffed;
+extern int maptick ;
+
+extern int must_redraw ;
+extern 
+# 664 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 664 "/home/dweller/neovim/src/nvim/globals.h"
+           skip_redraw ;
+extern 
+# 665 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 665 "/home/dweller/neovim/src/nvim/globals.h"
+           do_redraw ;
+extern 
+# 666 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 666 "/home/dweller/neovim/src/nvim/globals.h"
+           must_redraw_pum ;
+
+
+extern 
+# 669 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 669 "/home/dweller/neovim/src/nvim/globals.h"
+           need_highlight_changed ;
+
+extern FILE *scriptout ;
+
+
+
+extern 
+# 675 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 675 "/home/dweller/neovim/src/nvim/globals.h"
+           got_int ;
+extern 
+# 676 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 676 "/home/dweller/neovim/src/nvim/globals.h"
+           bangredo ;
+extern int searchcmdlen;
+extern int reg_do_extmatch ;
+
+
+
+extern reg_extmatch_T *re_extmatch_in ;
+
+extern reg_extmatch_T *re_extmatch_out ;
+
+extern 
+# 686 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 686 "/home/dweller/neovim/src/nvim/globals.h"
+           did_outofmem_msg ;
+extern 
+# 687 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 687 "/home/dweller/neovim/src/nvim/globals.h"
+           did_swapwrite_msg ;
+extern int global_busy ;
+extern 
+# 689 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 689 "/home/dweller/neovim/src/nvim/globals.h"
+           listcmd_busy ;
+extern 
+# 690 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 690 "/home/dweller/neovim/src/nvim/globals.h"
+           need_start_insertmode ;
+
+
+
+
+extern char last_mode[4] ;
+extern char *last_cmdline ;
+extern char *repeat_cmdline ;
+extern char *new_last_cmdline ;
+
+extern int postponed_split ;
+extern int postponed_split_flags ;
+extern int postponed_split_tab ;
+extern int g_do_tagpreview ;
+
+extern 
+# 705 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 705 "/home/dweller/neovim/src/nvim/globals.h"
+           g_tag_at_cursor ;
+
+
+
+extern int replace_offset ;
+
+extern char *escape_chars ;
+
+extern 
+# 713 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 713 "/home/dweller/neovim/src/nvim/globals.h"
+           keep_help_flag ;
+
+extern 
+# 715 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 715 "/home/dweller/neovim/src/nvim/globals.h"
+           redir_off ;
+extern FILE *redir_fd ;
+extern int redir_reg ;
+extern 
+# 718 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 718 "/home/dweller/neovim/src/nvim/globals.h"
+           redir_vname ;
+extern garray_T *capture_ga ;
+
+extern uint8_t langmap_mapchar[256];
+
+extern int save_p_ls ;
+extern int save_p_wmh ;
+extern int wild_menu_showing ;
+enum {
+  WM_SHOWN = 1,
+  WM_SCROLLED = 2,
+  WM_LIST = 3,
+};
+
+
+
+
+extern char *globaldir ;
+
+extern char *last_chdir_reason ;
+
+
+extern 
+# 740 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 740 "/home/dweller/neovim/src/nvim/globals.h"
+           km_stopsel ;
+extern 
+# 741 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 741 "/home/dweller/neovim/src/nvim/globals.h"
+           km_startsel ;
+
+extern int cmdwin_type ;
+extern int cmdwin_result ;
+extern int cmdwin_level ;
+extern buf_T *cmdwin_buf ;
+extern win_T *cmdwin_win ;
+extern win_T *cmdwin_old_curwin ;
+extern win_T *cmdline_win ;
+
+extern char no_lines_msg[] ;
+
+
+
+
+extern int sub_nsubs;
+extern linenr_T sub_nlines;
+
+
+extern uint8_t wim_flags[4];
+
+
+
+
+extern int stl_syntax ;
+
+
+extern 
+# 768 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 768 "/home/dweller/neovim/src/nvim/globals.h"
+           no_hlsearch ;
+
+extern 
+# 770 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 770 "/home/dweller/neovim/src/nvim/globals.h"
+           typebuf_was_filled ;
+# 781 "/home/dweller/neovim/src/nvim/globals.h"
+extern TriState virtual_op ;
+
+
+extern disptick_T display_tick ;
+
+
+
+extern linenr_T spell_redraw_lnum ;
+
+extern FILE *time_fd ;
+
+
+
+
+extern int vim_ignored;
+
+
+extern 
+# 798 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 798 "/home/dweller/neovim/src/nvim/globals.h"
+           embedded_mode ;
+
+extern 
+# 800 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 800 "/home/dweller/neovim/src/nvim/globals.h"
+           headless_mode ;
+
+
+extern char windowsVersion[20] ;
+
+
+
+extern optmagic_T magic_overruled ;
+
+
+extern 
+# 810 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 810 "/home/dweller/neovim/src/nvim/globals.h"
+           skip_win_fix_cursor ;
+
+extern 
+# 812 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 812 "/home/dweller/neovim/src/nvim/globals.h"
+           skip_win_fix_scroll ;
+
+extern 
+# 814 "/home/dweller/neovim/src/nvim/globals.h" 3 4
+      _Bool 
+# 814 "/home/dweller/neovim/src/nvim/globals.h"
+           skip_update_topline ;
+# 54 "/home/dweller/neovim/src/nvim/mbyte.c" 2
+# 1 "/home/dweller/neovim/src/nvim/grid.h" 1
+       
+
+
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h" 1 3 4
+# 5 "/home/dweller/neovim/src/nvim/grid.h" 2
+# 18 "/home/dweller/neovim/src/nvim/grid.h"
+extern ScreenGrid default_grid ;
+extern GridView default_gridview ;
+
+
+
+
+extern 
+# 24 "/home/dweller/neovim/src/nvim/grid.h" 3 4
+      _Bool 
+# 24 "/home/dweller/neovim/src/nvim/grid.h"
+           resizing_screen ;
+
+extern schar_T *linebuf_char ;
+extern sattr_T *linebuf_attr ;
+extern colnr_T *linebuf_vcol ;
+extern char *linebuf_scratch ;
+
+
+enum {
+  SLF_RIGHTLEFT = 1,
+  SLF_WRAP = 2,
+  SLF_INC_VCOL = 4,
+};
+# 55 "/home/dweller/neovim/src/nvim/mbyte.c" 2
+
+# 1 "/home/dweller/neovim/src/nvim/keycodes.h" 1
+       
+# 97 "/home/dweller/neovim/src/nvim/keycodes.h"
+enum key_extra {
+  KE_S_UP = 4,
+  KE_S_DOWN = 5,
+
+
+  KE_S_F1 = 6,
+  KE_S_F2 = 7,
+  KE_S_F3 = 8,
+  KE_S_F4 = 9,
+  KE_S_F5 = 10,
+  KE_S_F6 = 11,
+  KE_S_F7 = 12,
+  KE_S_F8 = 13,
+  KE_S_F9 = 14,
+  KE_S_F10 = 15,
+
+  KE_S_F11 = 16,
+  KE_S_F12 = 17,
+  KE_S_F13 = 18,
+  KE_S_F14 = 19,
+  KE_S_F15 = 20,
+  KE_S_F16 = 21,
+  KE_S_F17 = 22,
+  KE_S_F18 = 23,
+  KE_S_F19 = 24,
+  KE_S_F20 = 25,
+
+  KE_S_F21 = 26,
+  KE_S_F22 = 27,
+  KE_S_F23 = 28,
+  KE_S_F24 = 29,
+  KE_S_F25 = 30,
+  KE_S_F26 = 31,
+  KE_S_F27 = 32,
+  KE_S_F28 = 33,
+  KE_S_F29 = 34,
+  KE_S_F30 = 35,
+
+  KE_S_F31 = 36,
+  KE_S_F32 = 37,
+  KE_S_F33 = 38,
+  KE_S_F34 = 39,
+  KE_S_F35 = 40,
+  KE_S_F36 = 41,
+  KE_S_F37 = 42,
+
+  KE_MOUSE = 43,
+
+
+
+  KE_LEFTMOUSE = 44,
+  KE_LEFTDRAG = 45,
+  KE_LEFTRELEASE = 46,
+  KE_MIDDLEMOUSE = 47,
+  KE_MIDDLEDRAG = 48,
+  KE_MIDDLERELEASE = 49,
+  KE_RIGHTMOUSE = 50,
+  KE_RIGHTDRAG = 51,
+  KE_RIGHTRELEASE = 52,
+
+  KE_IGNORE = 53,
+
+  KE_TAB = 54,
+  KE_S_TAB_OLD = 55,
+
+
+  KE_XF1 = 57,
+  KE_XF2 = 58,
+  KE_XF3 = 59,
+  KE_XF4 = 60,
+  KE_XEND = 61,
+  KE_ZEND = 62,
+  KE_XHOME = 63,
+  KE_ZHOME = 64,
+  KE_XUP = 65,
+  KE_XDOWN = 66,
+  KE_XLEFT = 67,
+  KE_XRIGHT = 68,
+
+  KE_LEFTMOUSE_NM = 69,
+  KE_LEFTRELEASE_NM = 70,
+
+  KE_S_XF1 = 71,
+  KE_S_XF2 = 72,
+  KE_S_XF3 = 73,
+  KE_S_XF4 = 74,
+
+
+
+
+  KE_MOUSEDOWN = 75,
+  KE_MOUSEUP = 76,
+  KE_MOUSELEFT = 77,
+  KE_MOUSERIGHT = 78,
+
+  KE_KINS = 79,
+  KE_KDEL = 80,
+
+
+  KE_SNR = 82,
+  KE_PLUG = 83,
+  KE_CMDWIN = 84,
+
+  KE_C_LEFT = 85,
+  KE_C_RIGHT = 86,
+  KE_C_HOME = 87,
+  KE_C_END = 88,
+
+  KE_X1MOUSE = 89,
+  KE_X1DRAG = 90,
+  KE_X1RELEASE = 91,
+  KE_X2MOUSE = 92,
+  KE_X2DRAG = 93,
+  KE_X2RELEASE = 94,
+
+  KE_DROP = 95,
+
+  KE_NOP = 97,
+
+
+  KE_MOUSEMOVE = 100,
+
+  KE_EVENT = 102,
+  KE_LUA = 103,
+  KE_COMMAND = 104,
+};
+# 482 "/home/dweller/neovim/src/nvim/keycodes.h"
+enum {
+  REPTERM_FROM_PART = 1,
+  REPTERM_DO_LT = 2,
+  REPTERM_NO_SPECIAL = 4,
+  REPTERM_NO_SIMPLIFY = 8,
+};
+
+
+enum {
+  FSK_KEYCODE = 0x01,
+  FSK_KEEP_X_KEY = 0x02,
+  FSK_IN_STRING = 0x04,
+  FSK_SIMPLIFY = 0x08,
+};
+# 57 "/home/dweller/neovim/src/nvim/mbyte.c" 2
+
+# 1 "/home/dweller/neovim/src/nvim/mark.h" 1
+       
+# 10 "/home/dweller/neovim/src/nvim/mark.h"
+# 1 "/home/dweller/neovim/src/nvim/os/time.h" 1
+       
+
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h" 1 3 4
+# 4 "/home/dweller/neovim/src/nvim/os/time.h" 2
+# 11 "/home/dweller/neovim/src/nvim/mark.h" 2
+
+
+
+
+
+
+
+static inline int mark_global_index(const char name)
+  FUNC_ATTR_CONST
+{
+  return (((unsigned)(name) >= 'A' && (unsigned)(name) <= 'Z')
+          ? (name - 'A')
+          : (ascii_isdigit(name)
+             ? (('z' - 'a' + 1) + (name - '0'))
+             : -1));
+}
+
+
+static inline int mark_local_index(const char name)
+  FUNC_ATTR_CONST
+{
+  return (((unsigned)(name) >= 'a' && (unsigned)(name) <= 'z')
+          ? (name - 'a')
+          : (name == '"'
+             ? ('z' - 'a' + 1)
+             : (name == '^'
+                ? ('z' - 'a' + 1) + 1
+                : (name == '.'
+                   ? ('z' - 'a' + 1) + 2
+                   : -1))));
+}
+
+
+extern xfmark_T namedfm[(('z' - 'a' + 1) + ('9' - '0' + 1))] ;
+# 59 "/home/dweller/neovim/src/nvim/mbyte.c" 2
+# 1 "/home/dweller/neovim/src/nvim/mbyte.h" 1
+       
+# 22 "/home/dweller/neovim/src/nvim/mbyte.h"
+enum {
+  kInvalidByteCells = 4,
+};
+# 33 "/home/dweller/neovim/src/nvim/mbyte.h"
+extern const uint8_t utf8len_tab_zero[256];
+
+extern const uint8_t utf8len_tab[256];
+# 60 "/home/dweller/neovim/src/nvim/mbyte.h"
+static inline 
+# 60 "/home/dweller/neovim/src/nvim/mbyte.h" 3 4
+             _Bool 
+# 60 "/home/dweller/neovim/src/nvim/mbyte.h"
+                  utf_is_trail_byte(uint8_t const byte)
+  FUNC_ATTR_CONST FUNC_ATTR_ALWAYS_INLINE
+{
+
+  return (uint8_t)(byte & 0xC0U) == 0x80U;
+}
+# 74 "/home/dweller/neovim/src/nvim/mbyte.h"
+static inline CharInfo utf_ptr2CharInfo(char const *const p_in)
+  FUNC_ATTR_NONNULL_ALL FUNC_ATTR_PURE FUNC_ATTR_WARN_UNUSED_RESULT FUNC_ATTR_ALWAYS_INLINE
+{
+  uint8_t const *const p = (uint8_t const *)p_in;
+  uint8_t const first = *p;
+  if (first < 0x80) {
+    return (CharInfo){ .value = first, .len = 1 };
+  } else {
+    int len = utf8len_tab[first];
+    int32_t const code_point = utf_ptr2CharInfo_impl(p, (uintptr_t)len);
+    if (code_point < 0) {
+      len = 1;
+    }
+    return (CharInfo){ .value = code_point, .len = len };
+  }
+}
+
+
+
+
+
+static inline StrCharInfo utfc_next(StrCharInfo cur)
+  FUNC_ATTR_NONNULL_ALL FUNC_ATTR_ALWAYS_INLINE FUNC_ATTR_PURE
+{
+
+  uint8_t *next = (uint8_t *)(cur.ptr + cur.chr.len);
+  if (__builtin_expect((*next < 0x80U), (
+# 100 "/home/dweller/neovim/src/nvim/mbyte.h" 3 4
+     1
+# 100 "/home/dweller/neovim/src/nvim/mbyte.h"
+     ))) {
+    return (StrCharInfo){
+      .ptr = (char *)next,
+      .chr = (CharInfo){ .value = *next, .len = 1 },
+    };
+  }
+
+  return utfc_next_impl(cur);
+}
+
+static inline StrCharInfo utf_ptr2StrCharInfo(char *ptr)
+  FUNC_ATTR_NONNULL_ALL FUNC_ATTR_ALWAYS_INLINE FUNC_ATTR_PURE
+{
+  return (StrCharInfo){ .ptr = ptr, .chr = utf_ptr2CharInfo(ptr) };
+}
+# 60 "/home/dweller/neovim/src/nvim/mbyte.c" 2
+
+# 1 "/home/dweller/neovim/src/nvim/memline.h" 1
+       
+# 62 "/home/dweller/neovim/src/nvim/mbyte.c" 2
+
+
+# 1 "/home/dweller/neovim/src/nvim/move.h" 1
+       
+
+
+
+# 1 "/home/dweller/neovim/src/nvim/vim_defs.h" 1
+       
+
+
+
+
+
+
+enum {
+
+  NUMBUFLEN = 65,
+};
+
+
+
+
+typedef enum {
+  kDirectionNotSet = 0,
+  FORWARD = 1,
+  BACKWARD = -1,
+  FORWARD_FILE = 3,
+  BACKWARD_FILE = -3,
+} Direction;
+
+
+
+typedef enum {
+  kUnknown,
+  kWorking,
+  kBroken,
+} WorkingStatus;
+
+
+
+
+
+
+
+typedef enum {
+  kCdScopeInvalid = -1,
+  kCdScopeWindow,
+  kCdScopeTabpage,
+  kCdScopeGlobal,
+} CdScope;
+
+
+
+
+
+typedef enum {
+  kCdCauseOther = -1,
+  kCdCauseManual,
+  kCdCauseWindow,
+  kCdCauseAuto,
+} CdCause;
+# 6 "/home/dweller/neovim/src/nvim/move.h" 2
+# 65 "/home/dweller/neovim/src/nvim/mbyte.c" 2
+
+# 1 "/home/dweller/neovim/src/nvim/optionstr.h" 1
+       
+
+
+
+
+
+
+
+typedef enum {
+  kFillchars,
+  kListchars,
+} CharsOption;
+# 67 "/home/dweller/neovim/src/nvim/mbyte.c" 2
+# 1 "/home/dweller/neovim/src/nvim/os/os.h" 1
+       
+
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h" 1 3 4
+# 4 "/home/dweller/neovim/src/nvim/os/os.h" 2
+
+
+
+
+
+
+# 1 "/home/dweller/neovim/src/nvim/os/stdpaths_defs.h" 1
+       
+
+
+typedef enum {
+  kXDGNone = -1,
+  kXDGConfigHome,
+  kXDGDataHome,
+  kXDGCacheHome,
+  kXDGStateHome,
+  kXDGRuntimeDir,
+  kXDGConfigDirs,
+  kXDGDataDirs,
+} XDGVarType;
+# 11 "/home/dweller/neovim/src/nvim/os/os.h" 2
+
+
+extern char *default_vim_dir;
+extern char *default_vimruntime_dir;
+extern char *default_lib_dir;
+# 68 "/home/dweller/neovim/src/nvim/mbyte.c" 2
+
+
+
+
+
+typedef struct {
+  int rangeStart;
+  int rangeEnd;
+  int step;
+  int offset;
+} convertStruct;
+
+struct interval {
+  int first;
+  int last;
+};
+
+
+
+
+
+
+
+static const char e_list_item_nr_is_not_list[]
+  = "E1109: List item %d is not a List";
+static const char e_list_item_nr_does_not_contain_3_numbers[]
+  = "E1110: List item %d does not contain 3 numbers";
+static const char e_list_item_nr_range_invalid[]
+  = "E1111: List item %d range invalid";
+static const char e_list_item_nr_cell_width_invalid[]
+  = "E1112: List item %d cell width invalid";
+static const char e_overlapping_ranges_for_nr[]
+  = "E1113: Overlapping ranges for 0x%lx";
+static const char e_only_values_of_0x80_and_higher_supported[]
+  = "E1114: Only values of 0x80 and higher supported";
+
+
+
+
+
+const uint8_t utf8len_tab[] = {
+
+  1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+  1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+  1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+  1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+  1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+  1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+  1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+  1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+  1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+  1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+  1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+  1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+  2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
+  2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
+  3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3,
+  4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 1, 1,
+};
+
+
+const uint8_t utf8len_tab_zero[] = {
+
+  1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+  1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+  1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+  1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+  1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+  1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+  1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+  1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+  0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+  2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
+  2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
+  3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3,
+  4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 0, 0,
+};
+
+
+
+static struct
+{ const char *name; int prop; int codepage; }
+enc_canon_table[] = {
+
+  { "latin1", ENC_8BIT + ENC_LATIN1, 1252 },
+
+  { "iso-8859-2", ENC_8BIT, 0 },
+
+  { "iso-8859-3", ENC_8BIT, 0 },
+
+  { "iso-8859-4", ENC_8BIT, 0 },
+
+  { "iso-8859-5", ENC_8BIT, 0 },
+
+  { "iso-8859-6", ENC_8BIT, 0 },
+
+  { "iso-8859-7", ENC_8BIT, 0 },
+
+  { "iso-8859-8", ENC_8BIT, 0 },
+
+  { "iso-8859-9", ENC_8BIT, 0 },
+
+  { "iso-8859-10", ENC_8BIT, 0 },
+
+  { "iso-8859-11", ENC_8BIT, 0 },
+
+  { "iso-8859-13", ENC_8BIT, 0 },
+
+  { "iso-8859-14", ENC_8BIT, 0 },
+
+  { "iso-8859-15", ENC_8BIT + ENC_LATIN9, 0 },
+
+  { "koi8-r", ENC_8BIT, 0 },
+
+  { "koi8-u", ENC_8BIT, 0 },
+
+  { "utf-8", ENC_UNICODE, 0 },
+
+  { "ucs-2", ENC_UNICODE + ENC_ENDIAN_B + ENC_2BYTE, 0 },
+
+  { "ucs-2le", ENC_UNICODE + ENC_ENDIAN_L + ENC_2BYTE, 0 },
+
+  { "utf-16", ENC_UNICODE + ENC_ENDIAN_B + ENC_2WORD, 0 },
+
+  { "utf-16le", ENC_UNICODE + ENC_ENDIAN_L + ENC_2WORD, 0 },
+
+  { "ucs-4", ENC_UNICODE + ENC_ENDIAN_B + ENC_4BYTE, 0 },
+
+  { "ucs-4le", ENC_UNICODE + ENC_ENDIAN_L + ENC_4BYTE, 0 },
+
+
+
+  { "debug", ENC_DBCS, (-1) },
+
+  { "euc-jp", ENC_DBCS, 9932 },
+
+  { "sjis", ENC_DBCS, 932 },
+
+  { "euc-kr", ENC_DBCS, 9949 },
+
+  { "euc-cn", ENC_DBCS, 9936 },
+
+  { "euc-tw", ENC_DBCS, 9950 },
+
+  { "big5", ENC_DBCS, 950 },
+
+
+
+
+
+  { "cp437", ENC_8BIT, 437 },
+
+  { "cp737", ENC_8BIT, 737 },
+
+  { "cp775", ENC_8BIT, 775 },
+
+  { "cp850", ENC_8BIT, 850 },
+
+  { "cp852", ENC_8BIT, 852 },
+
+  { "cp855", ENC_8BIT, 855 },
+
+  { "cp857", ENC_8BIT, 857 },
+
+  { "cp860", ENC_8BIT, 860 },
+
+  { "cp861", ENC_8BIT, 861 },
+
+  { "cp862", ENC_8BIT, 862 },
+
+  { "cp863", ENC_8BIT, 863 },
+
+  { "cp865", ENC_8BIT, 865 },
+
+  { "cp866", ENC_8BIT, 866 },
+
+  { "cp869", ENC_8BIT, 869 },
+
+  { "cp874", ENC_8BIT, 874 },
+
+  { "cp932", ENC_DBCS, 932 },
+
+  { "cp936", ENC_DBCS, 936 },
+
+  { "cp949", ENC_DBCS, 949 },
+
+  { "cp950", ENC_DBCS, 950 },
+
+  { "cp1250", ENC_8BIT, 1250 },
+
+  { "cp1251", ENC_8BIT, 1251 },
+
+
+  { "cp1253", ENC_8BIT, 1253 },
+
+  { "cp1254", ENC_8BIT, 1254 },
+
+  { "cp1255", ENC_8BIT, 1255 },
+
+  { "cp1256", ENC_8BIT, 1256 },
+
+  { "cp1257", ENC_8BIT, 1257 },
+
+  { "cp1258", ENC_8BIT, 1258 },
+
+
+  { "macroman", ENC_8BIT + ENC_MACROMAN, 0 },
+
+  { "hp-roman8", ENC_8BIT, 0 },
+
+};
+
+
+static struct
+{ const char *name; int canon; }
+enc_alias_table[] = {
+  { "ansi", 0 },
+  { "iso-8859-1", 0 },
+  { "latin2", 1 },
+  { "latin3", 2 },
+  { "latin4", 3 },
+  { "cyrillic", 4 },
+  { "arabic", 5 },
+  { "greek", 6 },
+  { "hebrew", 7 },
+  { "latin5", 8 },
+  { "turkish", 8 },
+  { "latin6", 9 },
+  { "nordic", 9 },
+  { "thai", 10 },
+  { "latin7", 11 },
+  { "latin8", 12 },
+  { "latin9", 13 },
+  { "utf8", 16 },
+  { "unicode", 17 },
+  { "ucs2", 17 },
+  { "ucs2be", 17 },
+  { "ucs-2be", 17 },
+  { "ucs2le", 18 },
+  { "utf16", 19 },
+  { "utf16be", 19 },
+  { "utf-16be", 19 },
+  { "utf16le", 20 },
+  { "ucs4", 21 },
+  { "ucs4be", 21 },
+  { "ucs-4be", 21 },
+  { "ucs4le", 22 },
+  { "utf32", 21 },
+  { "utf-32", 21 },
+  { "utf32be", 21 },
+  { "utf-32be", 21 },
+  { "utf32le", 22 },
+  { "utf-32le", 22 },
+  { "932", 45 },
+  { "949", 47 },
+  { "936", 46 },
+  { "gbk", 46 },
+  { "950", 48 },
+  { "eucjp", 24 },
+  { "unix-jis", 24 },
+  { "ujis", 24 },
+  { "shift-jis", 25 },
+  { "pck", 25 },
+  { "euckr", 26 },
+  { "5601", 26 },
+  { "euccn", 27 },
+  { "gb2312", 27 },
+  { "euctw", 28 },
+  { "japan", 24 },
+  { "korea", 26 },
+  { "prc", 27 },
+  { "zh-cn", 27 },
+  { "chinese", 27 },
+  { "zh-tw", 28 },
+  { "taiwan", 28 },
+  { "cp950", 29 },
+  { "950", 29 },
+  { "mac", 57 },
+  { "mac-roman", 57 },
+  { 
+# 350 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+   ((void *)0)
+# 350 "/home/dweller/neovim/src/nvim/mbyte.c"
+       , 0 }
+};
+
+
+
+static int enc_canon_search(const char *name)
+  FUNC_ATTR_PURE
+{
+  for (int i = 0; i < 59; i++) {
+    if (strcmp(name, enc_canon_table[i].name) == 0) {
+      return i;
+    }
+  }
+  return -1;
+}
+
+
+
+int enc_canon_props(const char *name)
+  FUNC_ATTR_PURE
+{
+  int i = enc_canon_search(name);
+  if (i >= 0) {
+    return enc_canon_table[i].prop;
+  } else if (strncmp(name, "2byte-", 6) == 0) {
+    return ENC_DBCS;
+  } else if (strncmp(name, "8bit-", 5) == 0 || strncmp(name, "iso-8859-", 9) == 0) {
+    return ENC_8BIT;
+  }
+  return 0;
+}
+
+
+
+
+
+
+int bomb_size(void)
+  FUNC_ATTR_PURE
+{
+  int n = 0;
+
+  if (curbuf->b_p_bomb && !curbuf->b_p_bin) {
+    if (*curbuf->b_p_fenc == '\000'
+        || strcmp(curbuf->b_p_fenc, "utf-8") == 0) {
+      n = 3;
+    } else if (strncmp(curbuf->b_p_fenc, "ucs-2", 5) == 0
+               || strncmp(curbuf->b_p_fenc, "utf-16", 6) == 0) {
+      n = 2;
+    } else if (strncmp(curbuf->b_p_fenc, "ucs-4", 5) == 0) {
+      n = 4;
+    }
+  }
+  return n;
+}
+
+
+void remove_bom(char *s)
+{
+  char *p = s;
+
+  while ((p = strchr(p, 0xef)) != 
+# 411 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+                                 ((void *)0)
+# 411 "/home/dweller/neovim/src/nvim/mbyte.c"
+                                     ) {
+    if ((uint8_t)p[1] == 0xbb && (uint8_t)p[2] == 0xbf) {
+      memmove((p), (p + 3), strlen(p + 3) + 1);
+    } else {
+      p++;
+    }
+  }
+}
+
+
+
+
+
+
+int mb_get_class(const char *p)
+  FUNC_ATTR_PURE
+{
+  return mb_get_class_tab(p, curbuf->b_chartab);
+}
+
+int mb_get_class_tab(const char *p, const uint64_t *const chartab)
+  FUNC_ATTR_PURE
+{
+  if (utf8len_tab[(uint8_t)p[0]] == 1) {
+    if (p[0] == '\000' || ascii_iswhite(p[0])) {
+      return 0;
+    }
+    if (vim_iswordc_tab((uint8_t)p[0], chartab)) {
+      return 2;
+    }
+    return 1;
+  }
+  return utf_class_tab(utf_ptr2char(p), chartab);
+}
+
+static 
+# 446 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+      _Bool 
+# 446 "/home/dweller/neovim/src/nvim/mbyte.c"
+           prop_is_emojilike(const utf8proc_property_t *prop)
+{
+  return prop->boundclass == UTF8PROC_BOUNDCLASS_EXTENDED_PICTOGRAPHIC
+         || prop->boundclass == UTF8PROC_BOUNDCLASS_REGIONAL_INDICATOR;
+}
+
+
+
+
+
+
+int utf_char2cells(int c)
+{
+  if (c < 0x80) {
+    return 1;
+  }
+
+  if (!vim_isprintc(c)) {
+    
+# 464 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+   ((void) sizeof ((
+# 464 "/home/dweller/neovim/src/nvim/mbyte.c"
+   c <= 0xFFFF
+# 464 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+   ) ? 1 : 0), __extension__ ({ if (
+# 464 "/home/dweller/neovim/src/nvim/mbyte.c"
+   c <= 0xFFFF
+# 464 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+   ) ; else __assert_fail (
+# 464 "/home/dweller/neovim/src/nvim/mbyte.c"
+   "c <= 0xFFFF"
+# 464 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+   , "/home/dweller/neovim/src/nvim/mbyte.c", 464, __extension__ __PRETTY_FUNCTION__); }))
+# 464 "/home/dweller/neovim/src/nvim/mbyte.c"
+                      ;
+
+    return c > 0xFF ? 6 : 4;
+  }
+
+  int n = cw_value(c);
+  if (n != 0) {
+    return n;
+  }
+
+  const utf8proc_property_t *prop = utf8proc_get_property(c);
+
+  if (prop->charwidth == 2) {
+    return 2;
+  }
+  if (*p_ambw == 'd' && prop->ambiguous_width) {
+    return 2;
+  }
+
+
+
+  if (p_emoji && c >= 0x1f000 && !prop->ambiguous_width && prop_is_emojilike(prop)) {
+    return 2;
+  }
+
+  return 1;
+}
+
+
+
+int utf_ptr2cells(const char *p_in)
+{
+  const uint8_t *p = (const uint8_t *)p_in;
+
+  if ((*p) >= 0x80) {
+    int len = utf8len_tab[*p];
+    int32_t c = utf_ptr2CharInfo_impl(p, (uintptr_t)len);
+
+    if (c <= 0) {
+      return 4;
+    }
+
+    if (c < 0x80) {
+      return char2cells(c);
+    }
+    int cells = utf_char2cells(c);
+    if (cells == 1 && p_emoji
+        && prop_is_emojilike(utf8proc_get_property(c))) {
+      int c2 = utf_ptr2char(p_in + len);
+      if (c2 == 0xFE0F) {
+        return 2;
+      }
+    }
+    return cells;
+  }
+  return 1;
+}
+# 531 "/home/dweller/neovim/src/nvim/mbyte.c"
+int32_t utf_ptr2CharInfo_impl(uint8_t const *p, uintptr_t const len)
+  FUNC_ATTR_PURE FUNC_ATTR_NONNULL_ALL FUNC_ATTR_WARN_UNUSED_RESULT
+{
+# 542 "/home/dweller/neovim/src/nvim/mbyte.c"
+  static uint32_t const corrections[] = {
+    (1U << 31),
+    (1U << 31),
+    -(0x80U + (0xC0U << 6)),
+    -(0x80U + (0x80U << 6) + (0xE0U << 12)),
+    -(0x80U + (0x80U << 6) + (0x80U << 12) + (0xF0U << 18)),
+    -(0x80U + (0x80U << 6) + (0x80U << 12) + (0x80U << 18) + (0xF8U << 24)),
+    -(0x80U + (0x80U << 6) + (0x80U << 12) + (0x80U << 18) + (0x80U << 24)),
+  };
+
+
+  uint32_t const corr = corrections[len];
+  uint8_t cur;
+
+
+
+  uint32_t code_point = ((uint32_t)p[0] << 6) + (cur = p[1]);
+  do { if (__builtin_expect(((uint8_t)(cur & 0xC0U) != 0x80U), (
+# 559 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+ 0
+# 559 "/home/dweller/neovim/src/nvim/mbyte.c"
+ ))) { return -1; } } while (0);
+  if ((uint32_t)len < 3) {
+    goto ret;
+  }
+
+  code_point = (code_point << 6) + (cur = p[2]);
+  do { if (__builtin_expect(((uint8_t)(cur & 0xC0U) != 0x80U), (
+# 565 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+ 0
+# 565 "/home/dweller/neovim/src/nvim/mbyte.c"
+ ))) { return -1; } } while (0);
+  if ((uint32_t)len == 3) {
+    goto ret;
+  }
+
+  code_point = (code_point << 6) + (cur = p[3]);
+  do { if (__builtin_expect(((uint8_t)(cur & 0xC0U) != 0x80U), (
+# 571 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+ 0
+# 571 "/home/dweller/neovim/src/nvim/mbyte.c"
+ ))) { return -1; } } while (0);
+  if ((uint32_t)len == 4) {
+    goto ret;
+  }
+
+  code_point = (code_point << 6) + (cur = p[4]);
+  do { if (__builtin_expect(((uint8_t)(cur & 0xC0U) != 0x80U), (
+# 577 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+ 0
+# 577 "/home/dweller/neovim/src/nvim/mbyte.c"
+ ))) { return -1; } } while (0);
+  if ((uint32_t)len == 5) {
+    goto ret;
+  }
+
+  code_point = (code_point << 6) + (cur = p[5]);
+  do { if (__builtin_expect(((uint8_t)(cur & 0xC0U) != 0x80U), (
+# 583 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+ 0
+# 583 "/home/dweller/neovim/src/nvim/mbyte.c"
+ ))) { return -1; } } while (0);
+
+
+ret:
+  return (int32_t)(code_point + corr);
+
+
+}
+
+
+
+int utf_ptr2cells_len(const char *p, int size)
+{
+
+  if (size > 0 && (uint8_t)(*p) >= 0x80) {
+    int len = utf_ptr2len_len(p, size);
+    if (len < utf8len_tab[(uint8_t)(*p)]) {
+      return 1;
+    }
+    int c = utf_ptr2char(p);
+
+    if (utf_ptr2len(p) == 1 || c == '\000') {
+      return 4;
+    }
+
+    if (c < 0x80) {
+      return char2cells(c);
+    }
+    int cells = utf_char2cells(c);
+    if (cells == 1 && p_emoji && size > len
+        && prop_is_emojilike(utf8proc_get_property(c))
+        && utf_ptr2len_len(p + len, size - len) == utf8len_tab[(uint8_t)p[len]]) {
+      int c2 = utf_ptr2char(p + len);
+      if (c2 == 0xFE0F) {
+        return 2;
+      }
+    }
+    return cells;
+  }
+  return 1;
+}
+
+
+
+
+
+
+size_t mb_string2cells(const char *str)
+{
+  size_t clen = 0;
+
+  for (const char *p = str; *p != '\000'; p += utfc_ptr2len(p)) {
+    clen += (size_t)utf_ptr2cells(p);
+  }
+
+  return clen;
+}
+
+
+
+
+
+
+
+size_t mb_string2cells_len(const char *str, size_t size)
+  FUNC_ATTR_NONNULL_ARG(1)
+{
+  size_t clen = 0;
+
+  for (const char *p = str; *p != '\000' && p < str + size;
+       p += utfc_ptr2len_len(p, (int)size - (int)(p - str))) {
+    clen += (size_t)utf_ptr2cells_len(p, (int)size - (int)(p - str));
+  }
+
+  return clen;
+}
+# 670 "/home/dweller/neovim/src/nvim/mbyte.c"
+int utf_ptr2char(const char *const p_in)
+  FUNC_ATTR_PURE FUNC_ATTR_WARN_UNUSED_RESULT FUNC_ATTR_NONNULL_ALL
+{
+  uint8_t *p = (uint8_t *)p_in;
+
+  uint32_t const v0 = p[0];
+  if (__builtin_expect((v0 < 0x80U), (
+# 676 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+     1
+# 676 "/home/dweller/neovim/src/nvim/mbyte.c"
+     ))) {
+    return (int)v0;
+  }
+
+  const uint8_t len = utf8len_tab[v0];
+  if (__builtin_expect((len < 2), (
+# 681 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+     0
+# 681 "/home/dweller/neovim/src/nvim/mbyte.c"
+     ))) {
+    return (int)v0;
+  }
+# 699 "/home/dweller/neovim/src/nvim/mbyte.c"
+  uint32_t const v1 = p[1];
+  do { if (__builtin_expect(((uint8_t)((v1) & 0xC0U) != 0x80U), (
+# 700 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+ 0
+# 700 "/home/dweller/neovim/src/nvim/mbyte.c"
+ ))) { return (int)v0; } } while (0);
+  do { if (len == (2)) { return (int)((v0 << 6) + v1 - ((0xC0U << 6) + ((uint32_t)0x80U << (0)))); } } while (0);
+
+  uint32_t const v2 = p[2];
+  do { if (__builtin_expect(((uint8_t)((v2) & 0xC0U) != 0x80U), (
+# 704 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+ 0
+# 704 "/home/dweller/neovim/src/nvim/mbyte.c"
+ ))) { return (int)v0; } } while (0);
+  do { if (len == (3)) { return (int)((v0 << 12) + (v1 << 6) + v2 - ((0xE0U << 12) + ((uint32_t)0x80U << (6)) + ((uint32_t)0x80U << (0)))); } } while (0);
+
+  uint32_t const v3 = p[3];
+  do { if (__builtin_expect(((uint8_t)((v3) & 0xC0U) != 0x80U), (
+# 708 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+ 0
+# 708 "/home/dweller/neovim/src/nvim/mbyte.c"
+ ))) { return (int)v0; } } while (0);
+  do { if (len == (4)) { return (int)((v0 << 18) + (v1 << 12) + (v2 << 6) + v3 - ((0xF0U << 18) + ((uint32_t)0x80U << (12)) + ((uint32_t)0x80U << (6)) + ((uint32_t)0x80U << (0)))); } } while (0)
+                                                     ;
+
+  uint32_t const v4 = p[4];
+  do { if (__builtin_expect(((uint8_t)((v4) & 0xC0U) != 0x80U), (
+# 713 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+ 0
+# 713 "/home/dweller/neovim/src/nvim/mbyte.c"
+ ))) { return (int)v0; } } while (0);
+  do { if (len == (5)) { return (int)((v0 << 24) + (v1 << 18) + (v2 << 12) + (v3 << 6) + v4 - ((0xF8U << 24) + ((uint32_t)0x80U << (18)) + ((uint32_t)0x80U << (12)) + ((uint32_t)0x80U << (6)) + ((uint32_t)0x80U << (0)))); } } while (0)
+                                                             ;
+
+  uint32_t const v5 = p[5];
+  do { if (__builtin_expect(((uint8_t)((v5) & 0xC0U) != 0x80U), (
+# 718 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+ 0
+# 718 "/home/dweller/neovim/src/nvim/mbyte.c"
+ ))) { return (int)v0; } } while (0);
+
+  return (int)((v0 << 30) + (v1 << 24) + (v2 << 18) + (v3 << 12) + (v4 << 6) + v5
+
+               - (((uint32_t)0x80U << (24)) + ((uint32_t)0x80U << (18)) + ((uint32_t)0x80U << (12)) + ((uint32_t)0x80U << (6)) + ((uint32_t)0x80U << (0))));
+
+
+
+
+}
+# 743 "/home/dweller/neovim/src/nvim/mbyte.c"
+static int utf_safe_read_char_adv(const char **s, size_t *n)
+{
+  if (*n == 0) {
+    return 0;
+  }
+
+  uint8_t k = utf8len_tab_zero[(uint8_t)(**s)];
+
+  if (k == 1) {
+
+    (*n)--;
+    return (uint8_t)(*(*s)++);
+  }
+
+  if (k <= *n) {
+
+
+
+    int c = utf_ptr2char(*s);
+
+
+
+
+
+
+    if (c != (int)((uint8_t)(**s)) || (c == 0xC3 && (uint8_t)(*s)[1] == 0x83)) {
+
+      *s += k;
+      *n -= k;
+      return c;
+    }
+  }
+
+
+  return -1;
+}
+
+
+
+int mb_ptr2char_adv(const char **const pp)
+{
+  int c = utf_ptr2char(*pp);
+  *pp += utfc_ptr2len(*pp);
+  return c;
+}
+
+
+
+int mb_cptr2char_adv(const char **pp)
+{
+  int c = utf_ptr2char(*pp);
+  *pp += utf_ptr2len(*pp);
+  return c;
+}
+
+
+
+
+
+# 801 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+_Bool 
+# 801 "/home/dweller/neovim/src/nvim/mbyte.c"
+    utf_iscomposing_first(int c)
+{
+  return c >= 128 && !utf8proc_grapheme_break(' ', c);
+}
+# 825 "/home/dweller/neovim/src/nvim/mbyte.c"
+
+# 825 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+_Bool 
+# 825 "/home/dweller/neovim/src/nvim/mbyte.c"
+    utf_composinglike(const char *p1, const char *p2, GraphemeState *state)
+  FUNC_ATTR_NONNULL_ARG(1, 2)
+{
+  if ((uint8_t)(*p2) < 128) {
+    return 
+# 829 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+          0
+# 829 "/home/dweller/neovim/src/nvim/mbyte.c"
+               ;
+  }
+
+  int first = utf_ptr2char(p1);
+  int second = utf_ptr2char(p2);
+
+  if (!utf8proc_grapheme_break_stateful(first, second, state)) {
+    return 
+# 836 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+          1
+# 836 "/home/dweller/neovim/src/nvim/mbyte.c"
+              ;
+  }
+
+  return arabic_combine(first, second);
+}
+
+
+
+# 843 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+_Bool 
+# 843 "/home/dweller/neovim/src/nvim/mbyte.c"
+    utf_iscomposing(int c1, int c2, GraphemeState *state)
+{
+  return (!utf8proc_grapheme_break_stateful(c1, c2, state)
+          || arabic_combine(c1, c2));
+}
+# 860 "/home/dweller/neovim/src/nvim/mbyte.c"
+schar_T utfc_ptr2schar(const char *p, int *firstc)
+  FUNC_ATTR_NONNULL_ALL
+{
+  int c = utf_ptr2char(p);
+  *firstc = c;
+  
+# 865 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+ _Bool 
+# 865 "/home/dweller/neovim/src/nvim/mbyte.c"
+      first_compose = utf_iscomposing_first(c);
+  size_t maxlen = 32 - 1 - first_compose;
+  size_t len = (size_t)utfc_ptr2len_len(p, (int)maxlen);
+
+  if (len == 1 && (uint8_t)(*p) >= 0x80) {
+    return 0;
+  }
+
+  return schar_from_buf_first(p, len, first_compose);
+}
+
+
+
+
+schar_T utfc_ptrlen2schar(const char *p, int len, int *firstc)
+  FUNC_ATTR_NONNULL_ALL
+{
+  if ((len == 1 && (uint8_t)(*p) >= 0x80) || len == 0) {
+
+    *firstc = (uint8_t)(*p);
+    return 0;
+  }
+
+  int c = utf_ptr2char(p);
+  *firstc = c;
+  
+# 890 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+ _Bool 
+# 890 "/home/dweller/neovim/src/nvim/mbyte.c"
+      first_compose = utf_iscomposing_first(c);
+  int maxlen = 32 - 1 - first_compose;
+  if (len > maxlen) {
+    len = utfc_ptr2len_len(p, maxlen);
+  }
+
+  return schar_from_buf_first(p, (size_t)len, first_compose);
+}
+
+
+static schar_T schar_from_buf_first(const char *buf, size_t len, 
+# 900 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+                                                                _Bool 
+# 900 "/home/dweller/neovim/src/nvim/mbyte.c"
+                                                                     first_compose)
+{
+  if (first_compose) {
+    char cbuf[32];
+    cbuf[0] = ' ';
+    memcpy(cbuf + 1, buf, len);
+    return schar_from_buf(cbuf, len + 1);
+  } else {
+    return schar_from_buf(buf, len);
+  }
+}
+
+
+
+
+
+
+
+int utf_ptr2len(const char *const p_in)
+  FUNC_ATTR_PURE FUNC_ATTR_WARN_UNUSED_RESULT FUNC_ATTR_NONNULL_ALL
+{
+  uint8_t *p = (uint8_t *)p_in;
+  if (*p == '\000') {
+    return 0;
+  }
+  const int len = utf8len_tab[*p];
+  for (int i = 1; i < len; i++) {
+    if ((p[i] & 0xc0) != 0x80) {
+      return 1;
+    }
+  }
+  return len;
+}
+
+
+
+
+int utf_byte2len(int b)
+{
+  return utf8len_tab[b];
+}
+
+
+
+
+
+
+
+int utf_ptr2len_len(const char *p, int size)
+{
+  int m;
+
+  int len = utf8len_tab[(uint8_t)(*p)];
+  if (len == 1) {
+    return 1;
+  }
+  if (len > size) {
+    m = size;
+  } else {
+    m = len;
+  }
+  for (int i = 1; i < m; i++) {
+    if ((p[i] & 0xc0) != 0x80) {
+      return 1;
+    }
+  }
+  return len;
+}
+
+
+
+
+int utfc_ptr2len(const char *const p)
+  FUNC_ATTR_PURE FUNC_ATTR_WARN_UNUSED_RESULT FUNC_ATTR_NONNULL_ALL
+{
+  uint8_t b0 = (uint8_t)(*p);
+
+  if (b0 == '\000') {
+    return 0;
+  }
+  if (b0 < 0x80 && (uint8_t)p[1] < 0x80) {
+    return 1;
+  }
+
+
+  int len = utf_ptr2len(p);
+
+
+  if (len == 1 && b0 >= 0x80) {
+    return 1;
+  }
+
+
+  int prevlen = 0;
+  GraphemeState state = 0;
+  while (
+# 995 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+        1
+# 995 "/home/dweller/neovim/src/nvim/mbyte.c"
+            ) {
+    if ((uint8_t)p[len] < 0x80 || !utf_composinglike(p + prevlen, p + len, &state)) {
+      return len;
+    }
+
+
+    prevlen = len;
+    len += utf_ptr2len(p + len);
+  }
+}
+
+
+
+
+
+int utfc_ptr2len_len(const char *p, int size)
+{
+  if (size < 1 || *p == '\000') {
+    return 0;
+  }
+  if ((uint8_t)p[0] < 0x80 && (size == 1 || (uint8_t)p[1] < 0x80)) {
+    return 1;
+  }
+
+
+  int len = utf_ptr2len_len(p, size);
+
+
+  if ((len == 1 && (uint8_t)p[0] >= 0x80) || len > size) {
+    return 1;
+  }
+
+
+
+  int prevlen = 0;
+  GraphemeState state = 0;
+  while (len < size) {
+    if ((uint8_t)p[len] < 0x80) {
+      break;
+    }
+
+
+
+    int len_next_char = utf_ptr2len_len(p + len, size - len);
+    if (len_next_char > size - len) {
+      break;
+    }
+
+    if (!utf_composinglike(p + prevlen, p + len, &state)) {
+      break;
+    }
+
+
+    prevlen = len;
+    len += len_next_char;
+  }
+  return len;
+}
+
+
+int utf_char2len(const int c)
+{
+  if (c < 0x80) {
+    return 1;
+  } else if (c < 0x800) {
+    return 2;
+  } else if (c < 0x10000) {
+    return 3;
+  } else if (c < 0x200000) {
+    return 4;
+  } else if (c < 0x4000000) {
+    return 5;
+  } else {
+    return 6;
+  }
+}
+
+
+
+
+
+
+
+int utf_char2bytes(const int c, char *const buf)
+{
+  if (c < 0x80) {
+    buf[0] = (char)c;
+    return 1;
+  } else if (c < 0x800) {
+    buf[0] = (char)(0xc0 + ((unsigned)c >> 6));
+    buf[1] = (char)(0x80 + ((unsigned)c & 0x3f));
+    return 2;
+  } else if (c < 0x10000) {
+    buf[0] = (char)(0xe0 + ((unsigned)c >> 12));
+    buf[1] = (char)(0x80 + (((unsigned)c >> 6) & 0x3f));
+    buf[2] = (char)(0x80 + ((unsigned)c & 0x3f));
+    return 3;
+  } else if (c < 0x200000) {
+    buf[0] = (char)(0xf0 + ((unsigned)c >> 18));
+    buf[1] = (char)(0x80 + (((unsigned)c >> 12) & 0x3f));
+    buf[2] = (char)(0x80 + (((unsigned)c >> 6) & 0x3f));
+    buf[3] = (char)(0x80 + ((unsigned)c & 0x3f));
+    return 4;
+  } else if (c < 0x4000000) {
+    buf[0] = (char)(0xf8 + ((unsigned)c >> 24));
+    buf[1] = (char)(0x80 + (((unsigned)c >> 18) & 0x3f));
+    buf[2] = (char)(0x80 + (((unsigned)c >> 12) & 0x3f));
+    buf[3] = (char)(0x80 + (((unsigned)c >> 6) & 0x3f));
+    buf[4] = (char)(0x80 + ((unsigned)c & 0x3f));
+    return 5;
+  } else {
+    buf[0] = (char)(0xfc + ((unsigned)c >> 30));
+    buf[1] = (char)(0x80 + (((unsigned)c >> 24) & 0x3f));
+    buf[2] = (char)(0x80 + (((unsigned)c >> 18) & 0x3f));
+    buf[3] = (char)(0x80 + (((unsigned)c >> 12) & 0x3f));
+    buf[4] = (char)(0x80 + (((unsigned)c >> 6) & 0x3f));
+    buf[5] = (char)(0x80 + ((unsigned)c & 0x3f));
+    return 6;
+  }
+}
+# 1127 "/home/dweller/neovim/src/nvim/mbyte.c"
+
+# 1127 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+_Bool 
+# 1127 "/home/dweller/neovim/src/nvim/mbyte.c"
+    utf_iscomposing_legacy(int c)
+{
+  const utf8proc_property_t *prop = utf8proc_get_property(c);
+  return prop->category == UTF8PROC_CATEGORY_MN || prop->category == UTF8PROC_CATEGORY_ME;
+}
+
+
+
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/11/include/emmintrin.h" 1 3 4
+# 31 "/usr/lib/gcc/x86_64-linux-gnu/11/include/emmintrin.h" 3 4
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/11/include/xmmintrin.h" 1 3 4
+# 31 "/usr/lib/gcc/x86_64-linux-gnu/11/include/xmmintrin.h" 3 4
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/11/include/mmintrin.h" 1 3 4
+# 44 "/usr/lib/gcc/x86_64-linux-gnu/11/include/mmintrin.h" 3 4
+
+# 44 "/usr/lib/gcc/x86_64-linux-gnu/11/include/mmintrin.h" 3 4
+typedef int __m64 __attribute__ ((__vector_size__ (8), __may_alias__));
+typedef int __m32 __attribute__ ((__vector_size__ (4), __may_alias__));
+typedef short __m16 __attribute__ ((__vector_size__ (2), __may_alias__));
+
+
+typedef int __m64_u __attribute__ ((__vector_size__ (8), __may_alias__, __aligned__ (1)));
+typedef int __m32_u __attribute__ ((__vector_size__ (4),
+        __may_alias__, __aligned__ (1)));
+typedef short __m16_u __attribute__ ((__vector_size__ (2),
+          __may_alias__, __aligned__ (1)));
+
+
+typedef int __v2si __attribute__ ((__vector_size__ (8)));
+typedef short __v4hi __attribute__ ((__vector_size__ (8)));
+typedef char __v8qi __attribute__ ((__vector_size__ (8)));
+typedef long long __v1di __attribute__ ((__vector_size__ (8)));
+typedef float __v2sf __attribute__ ((__vector_size__ (8)));
+
+
+extern __inline void __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_empty (void)
+{
+  __builtin_ia32_emms ();
+}
+
+extern __inline void __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_m_empty (void)
+{
+  _mm_empty ();
+}
+
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cvtsi32_si64 (int __i)
+{
+  return (__m64) __builtin_ia32_vec_init_v2si (__i, 0);
+}
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_m_from_int (int __i)
+{
+  return _mm_cvtsi32_si64 (__i);
+}
+
+
+
+
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_m_from_int64 (long long __i)
+{
+  return (__m64) __i;
+}
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cvtsi64_m64 (long long __i)
+{
+  return (__m64) __i;
+}
+
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cvtsi64x_si64 (long long __i)
+{
+  return (__m64) __i;
+}
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_set_pi64x (long long __i)
+{
+  return (__m64) __i;
+}
+
+
+
+extern __inline int __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cvtsi64_si32 (__m64 __i)
+{
+  return __builtin_ia32_vec_ext_v2si ((__v2si)__i, 0);
+}
+
+extern __inline int __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_m_to_int (__m64 __i)
+{
+  return _mm_cvtsi64_si32 (__i);
+}
+
+
+
+
+
+extern __inline long long __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_m_to_int64 (__m64 __i)
+{
+  return (long long)__i;
+}
+
+extern __inline long long __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cvtm64_si64 (__m64 __i)
+{
+  return (long long)__i;
+}
+
+
+extern __inline long long __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cvtsi64_si64x (__m64 __i)
+{
+  return (long long)__i;
+}
+
+
+
+
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_packs_pi16 (__m64 __m1, __m64 __m2)
+{
+  return (__m64) __builtin_ia32_packsswb ((__v4hi)__m1, (__v4hi)__m2);
+}
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_m_packsswb (__m64 __m1, __m64 __m2)
+{
+  return _mm_packs_pi16 (__m1, __m2);
+}
+
+
+
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_packs_pi32 (__m64 __m1, __m64 __m2)
+{
+  return (__m64) __builtin_ia32_packssdw ((__v2si)__m1, (__v2si)__m2);
+}
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_m_packssdw (__m64 __m1, __m64 __m2)
+{
+  return _mm_packs_pi32 (__m1, __m2);
+}
+
+
+
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_packs_pu16 (__m64 __m1, __m64 __m2)
+{
+  return (__m64) __builtin_ia32_packuswb ((__v4hi)__m1, (__v4hi)__m2);
+}
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_m_packuswb (__m64 __m1, __m64 __m2)
+{
+  return _mm_packs_pu16 (__m1, __m2);
+}
+
+
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_unpackhi_pi8 (__m64 __m1, __m64 __m2)
+{
+  return (__m64) __builtin_ia32_punpckhbw ((__v8qi)__m1, (__v8qi)__m2);
+}
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_m_punpckhbw (__m64 __m1, __m64 __m2)
+{
+  return _mm_unpackhi_pi8 (__m1, __m2);
+}
+
+
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_unpackhi_pi16 (__m64 __m1, __m64 __m2)
+{
+  return (__m64) __builtin_ia32_punpckhwd ((__v4hi)__m1, (__v4hi)__m2);
+}
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_m_punpckhwd (__m64 __m1, __m64 __m2)
+{
+  return _mm_unpackhi_pi16 (__m1, __m2);
+}
+
+
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_unpackhi_pi32 (__m64 __m1, __m64 __m2)
+{
+  return (__m64) __builtin_ia32_punpckhdq ((__v2si)__m1, (__v2si)__m2);
+}
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_m_punpckhdq (__m64 __m1, __m64 __m2)
+{
+  return _mm_unpackhi_pi32 (__m1, __m2);
+}
+
+
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_unpacklo_pi8 (__m64 __m1, __m64 __m2)
+{
+  return (__m64) __builtin_ia32_punpcklbw ((__v8qi)__m1, (__v8qi)__m2);
+}
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_m_punpcklbw (__m64 __m1, __m64 __m2)
+{
+  return _mm_unpacklo_pi8 (__m1, __m2);
+}
+
+
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_unpacklo_pi16 (__m64 __m1, __m64 __m2)
+{
+  return (__m64) __builtin_ia32_punpcklwd ((__v4hi)__m1, (__v4hi)__m2);
+}
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_m_punpcklwd (__m64 __m1, __m64 __m2)
+{
+  return _mm_unpacklo_pi16 (__m1, __m2);
+}
+
+
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_unpacklo_pi32 (__m64 __m1, __m64 __m2)
+{
+  return (__m64) __builtin_ia32_punpckldq ((__v2si)__m1, (__v2si)__m2);
+}
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_m_punpckldq (__m64 __m1, __m64 __m2)
+{
+  return _mm_unpacklo_pi32 (__m1, __m2);
+}
+
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_add_pi8 (__m64 __m1, __m64 __m2)
+{
+  return (__m64) __builtin_ia32_paddb ((__v8qi)__m1, (__v8qi)__m2);
+}
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_m_paddb (__m64 __m1, __m64 __m2)
+{
+  return _mm_add_pi8 (__m1, __m2);
+}
+
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_add_pi16 (__m64 __m1, __m64 __m2)
+{
+  return (__m64) __builtin_ia32_paddw ((__v4hi)__m1, (__v4hi)__m2);
+}
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_m_paddw (__m64 __m1, __m64 __m2)
+{
+  return _mm_add_pi16 (__m1, __m2);
+}
+
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_add_pi32 (__m64 __m1, __m64 __m2)
+{
+  return (__m64) __builtin_ia32_paddd ((__v2si)__m1, (__v2si)__m2);
+}
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_m_paddd (__m64 __m1, __m64 __m2)
+{
+  return _mm_add_pi32 (__m1, __m2);
+}
+# 334 "/usr/lib/gcc/x86_64-linux-gnu/11/include/mmintrin.h" 3 4
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_add_si64 (__m64 __m1, __m64 __m2)
+{
+  return (__m64) __builtin_ia32_paddq ((__v1di)__m1, (__v1di)__m2);
+}
+
+
+
+
+
+
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_adds_pi8 (__m64 __m1, __m64 __m2)
+{
+  return (__m64) __builtin_ia32_paddsb ((__v8qi)__m1, (__v8qi)__m2);
+}
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_m_paddsb (__m64 __m1, __m64 __m2)
+{
+  return _mm_adds_pi8 (__m1, __m2);
+}
+
+
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_adds_pi16 (__m64 __m1, __m64 __m2)
+{
+  return (__m64) __builtin_ia32_paddsw ((__v4hi)__m1, (__v4hi)__m2);
+}
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_m_paddsw (__m64 __m1, __m64 __m2)
+{
+  return _mm_adds_pi16 (__m1, __m2);
+}
+
+
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_adds_pu8 (__m64 __m1, __m64 __m2)
+{
+  return (__m64) __builtin_ia32_paddusb ((__v8qi)__m1, (__v8qi)__m2);
+}
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_m_paddusb (__m64 __m1, __m64 __m2)
+{
+  return _mm_adds_pu8 (__m1, __m2);
+}
+
+
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_adds_pu16 (__m64 __m1, __m64 __m2)
+{
+  return (__m64) __builtin_ia32_paddusw ((__v4hi)__m1, (__v4hi)__m2);
+}
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_m_paddusw (__m64 __m1, __m64 __m2)
+{
+  return _mm_adds_pu16 (__m1, __m2);
+}
+
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_sub_pi8 (__m64 __m1, __m64 __m2)
+{
+  return (__m64) __builtin_ia32_psubb ((__v8qi)__m1, (__v8qi)__m2);
+}
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_m_psubb (__m64 __m1, __m64 __m2)
+{
+  return _mm_sub_pi8 (__m1, __m2);
+}
+
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_sub_pi16 (__m64 __m1, __m64 __m2)
+{
+  return (__m64) __builtin_ia32_psubw ((__v4hi)__m1, (__v4hi)__m2);
+}
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_m_psubw (__m64 __m1, __m64 __m2)
+{
+  return _mm_sub_pi16 (__m1, __m2);
+}
+
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_sub_pi32 (__m64 __m1, __m64 __m2)
+{
+  return (__m64) __builtin_ia32_psubd ((__v2si)__m1, (__v2si)__m2);
+}
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_m_psubd (__m64 __m1, __m64 __m2)
+{
+  return _mm_sub_pi32 (__m1, __m2);
+}
+# 450 "/usr/lib/gcc/x86_64-linux-gnu/11/include/mmintrin.h" 3 4
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_sub_si64 (__m64 __m1, __m64 __m2)
+{
+  return (__m64) __builtin_ia32_psubq ((__v1di)__m1, (__v1di)__m2);
+}
+
+
+
+
+
+
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_subs_pi8 (__m64 __m1, __m64 __m2)
+{
+  return (__m64) __builtin_ia32_psubsb ((__v8qi)__m1, (__v8qi)__m2);
+}
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_m_psubsb (__m64 __m1, __m64 __m2)
+{
+  return _mm_subs_pi8 (__m1, __m2);
+}
+
+
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_subs_pi16 (__m64 __m1, __m64 __m2)
+{
+  return (__m64) __builtin_ia32_psubsw ((__v4hi)__m1, (__v4hi)__m2);
+}
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_m_psubsw (__m64 __m1, __m64 __m2)
+{
+  return _mm_subs_pi16 (__m1, __m2);
+}
+
+
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_subs_pu8 (__m64 __m1, __m64 __m2)
+{
+  return (__m64) __builtin_ia32_psubusb ((__v8qi)__m1, (__v8qi)__m2);
+}
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_m_psubusb (__m64 __m1, __m64 __m2)
+{
+  return _mm_subs_pu8 (__m1, __m2);
+}
+
+
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_subs_pu16 (__m64 __m1, __m64 __m2)
+{
+  return (__m64) __builtin_ia32_psubusw ((__v4hi)__m1, (__v4hi)__m2);
+}
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_m_psubusw (__m64 __m1, __m64 __m2)
+{
+  return _mm_subs_pu16 (__m1, __m2);
+}
+
+
+
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_madd_pi16 (__m64 __m1, __m64 __m2)
+{
+  return (__m64) __builtin_ia32_pmaddwd ((__v4hi)__m1, (__v4hi)__m2);
+}
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_m_pmaddwd (__m64 __m1, __m64 __m2)
+{
+  return _mm_madd_pi16 (__m1, __m2);
+}
+
+
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_mulhi_pi16 (__m64 __m1, __m64 __m2)
+{
+  return (__m64) __builtin_ia32_pmulhw ((__v4hi)__m1, (__v4hi)__m2);
+}
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_m_pmulhw (__m64 __m1, __m64 __m2)
+{
+  return _mm_mulhi_pi16 (__m1, __m2);
+}
+
+
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_mullo_pi16 (__m64 __m1, __m64 __m2)
+{
+  return (__m64) __builtin_ia32_pmullw ((__v4hi)__m1, (__v4hi)__m2);
+}
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_m_pmullw (__m64 __m1, __m64 __m2)
+{
+  return _mm_mullo_pi16 (__m1, __m2);
+}
+
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_sll_pi16 (__m64 __m, __m64 __count)
+{
+  return (__m64) __builtin_ia32_psllw ((__v4hi)__m, (__v4hi)__count);
+}
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_m_psllw (__m64 __m, __m64 __count)
+{
+  return _mm_sll_pi16 (__m, __count);
+}
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_slli_pi16 (__m64 __m, int __count)
+{
+  return (__m64) __builtin_ia32_psllwi ((__v4hi)__m, __count);
+}
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_m_psllwi (__m64 __m, int __count)
+{
+  return _mm_slli_pi16 (__m, __count);
+}
+
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_sll_pi32 (__m64 __m, __m64 __count)
+{
+  return (__m64) __builtin_ia32_pslld ((__v2si)__m, (__v2si)__count);
+}
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_m_pslld (__m64 __m, __m64 __count)
+{
+  return _mm_sll_pi32 (__m, __count);
+}
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_slli_pi32 (__m64 __m, int __count)
+{
+  return (__m64) __builtin_ia32_pslldi ((__v2si)__m, __count);
+}
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_m_pslldi (__m64 __m, int __count)
+{
+  return _mm_slli_pi32 (__m, __count);
+}
+
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_sll_si64 (__m64 __m, __m64 __count)
+{
+  return (__m64) __builtin_ia32_psllq ((__v1di)__m, (__v1di)__count);
+}
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_m_psllq (__m64 __m, __m64 __count)
+{
+  return _mm_sll_si64 (__m, __count);
+}
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_slli_si64 (__m64 __m, int __count)
+{
+  return (__m64) __builtin_ia32_psllqi ((__v1di)__m, __count);
+}
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_m_psllqi (__m64 __m, int __count)
+{
+  return _mm_slli_si64 (__m, __count);
+}
+
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_sra_pi16 (__m64 __m, __m64 __count)
+{
+  return (__m64) __builtin_ia32_psraw ((__v4hi)__m, (__v4hi)__count);
+}
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_m_psraw (__m64 __m, __m64 __count)
+{
+  return _mm_sra_pi16 (__m, __count);
+}
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_srai_pi16 (__m64 __m, int __count)
+{
+  return (__m64) __builtin_ia32_psrawi ((__v4hi)__m, __count);
+}
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_m_psrawi (__m64 __m, int __count)
+{
+  return _mm_srai_pi16 (__m, __count);
+}
+
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_sra_pi32 (__m64 __m, __m64 __count)
+{
+  return (__m64) __builtin_ia32_psrad ((__v2si)__m, (__v2si)__count);
+}
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_m_psrad (__m64 __m, __m64 __count)
+{
+  return _mm_sra_pi32 (__m, __count);
+}
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_srai_pi32 (__m64 __m, int __count)
+{
+  return (__m64) __builtin_ia32_psradi ((__v2si)__m, __count);
+}
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_m_psradi (__m64 __m, int __count)
+{
+  return _mm_srai_pi32 (__m, __count);
+}
+
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_srl_pi16 (__m64 __m, __m64 __count)
+{
+  return (__m64) __builtin_ia32_psrlw ((__v4hi)__m, (__v4hi)__count);
+}
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_m_psrlw (__m64 __m, __m64 __count)
+{
+  return _mm_srl_pi16 (__m, __count);
+}
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_srli_pi16 (__m64 __m, int __count)
+{
+  return (__m64) __builtin_ia32_psrlwi ((__v4hi)__m, __count);
+}
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_m_psrlwi (__m64 __m, int __count)
+{
+  return _mm_srli_pi16 (__m, __count);
+}
+
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_srl_pi32 (__m64 __m, __m64 __count)
+{
+  return (__m64) __builtin_ia32_psrld ((__v2si)__m, (__v2si)__count);
+}
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_m_psrld (__m64 __m, __m64 __count)
+{
+  return _mm_srl_pi32 (__m, __count);
+}
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_srli_pi32 (__m64 __m, int __count)
+{
+  return (__m64) __builtin_ia32_psrldi ((__v2si)__m, __count);
+}
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_m_psrldi (__m64 __m, int __count)
+{
+  return _mm_srli_pi32 (__m, __count);
+}
+
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_srl_si64 (__m64 __m, __m64 __count)
+{
+  return (__m64) __builtin_ia32_psrlq ((__v1di)__m, (__v1di)__count);
+}
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_m_psrlq (__m64 __m, __m64 __count)
+{
+  return _mm_srl_si64 (__m, __count);
+}
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_srli_si64 (__m64 __m, int __count)
+{
+  return (__m64) __builtin_ia32_psrlqi ((__v1di)__m, __count);
+}
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_m_psrlqi (__m64 __m, int __count)
+{
+  return _mm_srli_si64 (__m, __count);
+}
+
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_and_si64 (__m64 __m1, __m64 __m2)
+{
+  return __builtin_ia32_pand (__m1, __m2);
+}
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_m_pand (__m64 __m1, __m64 __m2)
+{
+  return _mm_and_si64 (__m1, __m2);
+}
+
+
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_andnot_si64 (__m64 __m1, __m64 __m2)
+{
+  return __builtin_ia32_pandn (__m1, __m2);
+}
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_m_pandn (__m64 __m1, __m64 __m2)
+{
+  return _mm_andnot_si64 (__m1, __m2);
+}
+
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_or_si64 (__m64 __m1, __m64 __m2)
+{
+  return __builtin_ia32_por (__m1, __m2);
+}
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_m_por (__m64 __m1, __m64 __m2)
+{
+  return _mm_or_si64 (__m1, __m2);
+}
+
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_xor_si64 (__m64 __m1, __m64 __m2)
+{
+  return __builtin_ia32_pxor (__m1, __m2);
+}
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_m_pxor (__m64 __m1, __m64 __m2)
+{
+  return _mm_xor_si64 (__m1, __m2);
+}
+
+
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cmpeq_pi8 (__m64 __m1, __m64 __m2)
+{
+  return (__m64) __builtin_ia32_pcmpeqb ((__v8qi)__m1, (__v8qi)__m2);
+}
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_m_pcmpeqb (__m64 __m1, __m64 __m2)
+{
+  return _mm_cmpeq_pi8 (__m1, __m2);
+}
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cmpgt_pi8 (__m64 __m1, __m64 __m2)
+{
+  return (__m64) __builtin_ia32_pcmpgtb ((__v8qi)__m1, (__v8qi)__m2);
+}
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_m_pcmpgtb (__m64 __m1, __m64 __m2)
+{
+  return _mm_cmpgt_pi8 (__m1, __m2);
+}
+
+
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cmpeq_pi16 (__m64 __m1, __m64 __m2)
+{
+  return (__m64) __builtin_ia32_pcmpeqw ((__v4hi)__m1, (__v4hi)__m2);
+}
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_m_pcmpeqw (__m64 __m1, __m64 __m2)
+{
+  return _mm_cmpeq_pi16 (__m1, __m2);
+}
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cmpgt_pi16 (__m64 __m1, __m64 __m2)
+{
+  return (__m64) __builtin_ia32_pcmpgtw ((__v4hi)__m1, (__v4hi)__m2);
+}
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_m_pcmpgtw (__m64 __m1, __m64 __m2)
+{
+  return _mm_cmpgt_pi16 (__m1, __m2);
+}
+
+
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cmpeq_pi32 (__m64 __m1, __m64 __m2)
+{
+  return (__m64) __builtin_ia32_pcmpeqd ((__v2si)__m1, (__v2si)__m2);
+}
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_m_pcmpeqd (__m64 __m1, __m64 __m2)
+{
+  return _mm_cmpeq_pi32 (__m1, __m2);
+}
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cmpgt_pi32 (__m64 __m1, __m64 __m2)
+{
+  return (__m64) __builtin_ia32_pcmpgtd ((__v2si)__m1, (__v2si)__m2);
+}
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_m_pcmpgtd (__m64 __m1, __m64 __m2)
+{
+  return _mm_cmpgt_pi32 (__m1, __m2);
+}
+
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_setzero_si64 (void)
+{
+  return (__m64)0LL;
+}
+
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_set_pi32 (int __i1, int __i0)
+{
+  return (__m64) __builtin_ia32_vec_init_v2si (__i0, __i1);
+}
+
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_set_pi16 (short __w3, short __w2, short __w1, short __w0)
+{
+  return (__m64) __builtin_ia32_vec_init_v4hi (__w0, __w1, __w2, __w3);
+}
+
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_set_pi8 (char __b7, char __b6, char __b5, char __b4,
+      char __b3, char __b2, char __b1, char __b0)
+{
+  return (__m64) __builtin_ia32_vec_init_v8qi (__b0, __b1, __b2, __b3,
+            __b4, __b5, __b6, __b7);
+}
+
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_setr_pi32 (int __i0, int __i1)
+{
+  return _mm_set_pi32 (__i1, __i0);
+}
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_setr_pi16 (short __w0, short __w1, short __w2, short __w3)
+{
+  return _mm_set_pi16 (__w3, __w2, __w1, __w0);
+}
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_setr_pi8 (char __b0, char __b1, char __b2, char __b3,
+       char __b4, char __b5, char __b6, char __b7)
+{
+  return _mm_set_pi8 (__b7, __b6, __b5, __b4, __b3, __b2, __b1, __b0);
+}
+
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_set1_pi32 (int __i)
+{
+  return _mm_set_pi32 (__i, __i);
+}
+
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_set1_pi16 (short __w)
+{
+  return _mm_set_pi16 (__w, __w, __w, __w);
+}
+
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_set1_pi8 (char __b)
+{
+  return _mm_set_pi8 (__b, __b, __b, __b, __b, __b, __b, __b);
+}
+# 32 "/usr/lib/gcc/x86_64-linux-gnu/11/include/xmmintrin.h" 2 3 4
+
+
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/11/include/mm_malloc.h" 1 3 4
+# 32 "/usr/lib/gcc/x86_64-linux-gnu/11/include/mm_malloc.h" 3 4
+extern int posix_memalign (void **, size_t, size_t);
+
+
+
+
+static __inline void *
+_mm_malloc (size_t __size, size_t __alignment)
+{
+  void *__ptr;
+  if (__alignment == 1)
+    return malloc (__size);
+  if (__alignment == 2 || (sizeof (void *) == 8 && __alignment == 4))
+    __alignment = sizeof (void *);
+  if (posix_memalign (&__ptr, __alignment, __size) == 0)
+    return __ptr;
+  else
+    return ((void *)0);
+}
+
+static __inline void
+_mm_free (void *__ptr)
+{
+  free (__ptr);
+}
+# 35 "/usr/lib/gcc/x86_64-linux-gnu/11/include/xmmintrin.h" 2 3 4
+
+
+enum _mm_hint
+{
+
+  _MM_HINT_ET0 = 7,
+  _MM_HINT_ET1 = 6,
+  _MM_HINT_T0 = 3,
+  _MM_HINT_T1 = 2,
+  _MM_HINT_T2 = 1,
+  _MM_HINT_NTA = 0
+};
+# 69 "/usr/lib/gcc/x86_64-linux-gnu/11/include/xmmintrin.h" 3 4
+typedef float __m128 __attribute__ ((__vector_size__ (16), __may_alias__));
+
+
+typedef float __m128_u __attribute__ ((__vector_size__ (16), __may_alias__, __aligned__ (1)));
+
+
+typedef float __v4sf __attribute__ ((__vector_size__ (16)));
+# 109 "/usr/lib/gcc/x86_64-linux-gnu/11/include/xmmintrin.h" 3 4
+extern __inline __m128 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_undefined_ps (void)
+{
+  __m128 __Y = __Y;
+  return __Y;
+}
+
+
+extern __inline __m128 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_setzero_ps (void)
+{
+  return __extension__ (__m128){ 0.0f, 0.0f, 0.0f, 0.0f };
+}
+
+
+
+
+
+extern __inline __m128 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_add_ss (__m128 __A, __m128 __B)
+{
+  return (__m128) __builtin_ia32_addss ((__v4sf)__A, (__v4sf)__B);
+}
+
+extern __inline __m128 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_sub_ss (__m128 __A, __m128 __B)
+{
+  return (__m128) __builtin_ia32_subss ((__v4sf)__A, (__v4sf)__B);
+}
+
+extern __inline __m128 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_mul_ss (__m128 __A, __m128 __B)
+{
+  return (__m128) __builtin_ia32_mulss ((__v4sf)__A, (__v4sf)__B);
+}
+
+extern __inline __m128 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_div_ss (__m128 __A, __m128 __B)
+{
+  return (__m128) __builtin_ia32_divss ((__v4sf)__A, (__v4sf)__B);
+}
+
+extern __inline __m128 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_sqrt_ss (__m128 __A)
+{
+  return (__m128) __builtin_ia32_sqrtss ((__v4sf)__A);
+}
+
+extern __inline __m128 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_rcp_ss (__m128 __A)
+{
+  return (__m128) __builtin_ia32_rcpss ((__v4sf)__A);
+}
+
+extern __inline __m128 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_rsqrt_ss (__m128 __A)
+{
+  return (__m128) __builtin_ia32_rsqrtss ((__v4sf)__A);
+}
+
+extern __inline __m128 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_min_ss (__m128 __A, __m128 __B)
+{
+  return (__m128) __builtin_ia32_minss ((__v4sf)__A, (__v4sf)__B);
+}
+
+extern __inline __m128 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_max_ss (__m128 __A, __m128 __B)
+{
+  return (__m128) __builtin_ia32_maxss ((__v4sf)__A, (__v4sf)__B);
+}
+
+
+
+extern __inline __m128 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_add_ps (__m128 __A, __m128 __B)
+{
+  return (__m128) ((__v4sf)__A + (__v4sf)__B);
+}
+
+extern __inline __m128 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_sub_ps (__m128 __A, __m128 __B)
+{
+  return (__m128) ((__v4sf)__A - (__v4sf)__B);
+}
+
+extern __inline __m128 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_mul_ps (__m128 __A, __m128 __B)
+{
+  return (__m128) ((__v4sf)__A * (__v4sf)__B);
+}
+
+extern __inline __m128 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_div_ps (__m128 __A, __m128 __B)
+{
+  return (__m128) ((__v4sf)__A / (__v4sf)__B);
+}
+
+extern __inline __m128 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_sqrt_ps (__m128 __A)
+{
+  return (__m128) __builtin_ia32_sqrtps ((__v4sf)__A);
+}
+
+extern __inline __m128 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_rcp_ps (__m128 __A)
+{
+  return (__m128) __builtin_ia32_rcpps ((__v4sf)__A);
+}
+
+extern __inline __m128 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_rsqrt_ps (__m128 __A)
+{
+  return (__m128) __builtin_ia32_rsqrtps ((__v4sf)__A);
+}
+
+extern __inline __m128 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_min_ps (__m128 __A, __m128 __B)
+{
+  return (__m128) __builtin_ia32_minps ((__v4sf)__A, (__v4sf)__B);
+}
+
+extern __inline __m128 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_max_ps (__m128 __A, __m128 __B)
+{
+  return (__m128) __builtin_ia32_maxps ((__v4sf)__A, (__v4sf)__B);
+}
+
+
+
+extern __inline __m128 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_and_ps (__m128 __A, __m128 __B)
+{
+  return __builtin_ia32_andps (__A, __B);
+}
+
+extern __inline __m128 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_andnot_ps (__m128 __A, __m128 __B)
+{
+  return __builtin_ia32_andnps (__A, __B);
+}
+
+extern __inline __m128 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_or_ps (__m128 __A, __m128 __B)
+{
+  return __builtin_ia32_orps (__A, __B);
+}
+
+extern __inline __m128 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_xor_ps (__m128 __A, __m128 __B)
+{
+  return __builtin_ia32_xorps (__A, __B);
+}
+
+
+
+
+
+extern __inline __m128 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cmpeq_ss (__m128 __A, __m128 __B)
+{
+  return (__m128) __builtin_ia32_cmpeqss ((__v4sf)__A, (__v4sf)__B);
+}
+
+extern __inline __m128 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cmplt_ss (__m128 __A, __m128 __B)
+{
+  return (__m128) __builtin_ia32_cmpltss ((__v4sf)__A, (__v4sf)__B);
+}
+
+extern __inline __m128 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cmple_ss (__m128 __A, __m128 __B)
+{
+  return (__m128) __builtin_ia32_cmpless ((__v4sf)__A, (__v4sf)__B);
+}
+
+extern __inline __m128 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cmpgt_ss (__m128 __A, __m128 __B)
+{
+  return (__m128) __builtin_ia32_movss ((__v4sf) __A,
+     (__v4sf)
+     __builtin_ia32_cmpltss ((__v4sf) __B,
+        (__v4sf)
+        __A));
+}
+
+extern __inline __m128 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cmpge_ss (__m128 __A, __m128 __B)
+{
+  return (__m128) __builtin_ia32_movss ((__v4sf) __A,
+     (__v4sf)
+     __builtin_ia32_cmpless ((__v4sf) __B,
+        (__v4sf)
+        __A));
+}
+
+extern __inline __m128 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cmpneq_ss (__m128 __A, __m128 __B)
+{
+  return (__m128) __builtin_ia32_cmpneqss ((__v4sf)__A, (__v4sf)__B);
+}
+
+extern __inline __m128 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cmpnlt_ss (__m128 __A, __m128 __B)
+{
+  return (__m128) __builtin_ia32_cmpnltss ((__v4sf)__A, (__v4sf)__B);
+}
+
+extern __inline __m128 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cmpnle_ss (__m128 __A, __m128 __B)
+{
+  return (__m128) __builtin_ia32_cmpnless ((__v4sf)__A, (__v4sf)__B);
+}
+
+extern __inline __m128 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cmpngt_ss (__m128 __A, __m128 __B)
+{
+  return (__m128) __builtin_ia32_movss ((__v4sf) __A,
+     (__v4sf)
+     __builtin_ia32_cmpnltss ((__v4sf) __B,
+         (__v4sf)
+         __A));
+}
+
+extern __inline __m128 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cmpnge_ss (__m128 __A, __m128 __B)
+{
+  return (__m128) __builtin_ia32_movss ((__v4sf) __A,
+     (__v4sf)
+     __builtin_ia32_cmpnless ((__v4sf) __B,
+         (__v4sf)
+         __A));
+}
+
+extern __inline __m128 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cmpord_ss (__m128 __A, __m128 __B)
+{
+  return (__m128) __builtin_ia32_cmpordss ((__v4sf)__A, (__v4sf)__B);
+}
+
+extern __inline __m128 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cmpunord_ss (__m128 __A, __m128 __B)
+{
+  return (__m128) __builtin_ia32_cmpunordss ((__v4sf)__A, (__v4sf)__B);
+}
+
+
+
+
+
+extern __inline __m128 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cmpeq_ps (__m128 __A, __m128 __B)
+{
+  return (__m128) __builtin_ia32_cmpeqps ((__v4sf)__A, (__v4sf)__B);
+}
+
+extern __inline __m128 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cmplt_ps (__m128 __A, __m128 __B)
+{
+  return (__m128) __builtin_ia32_cmpltps ((__v4sf)__A, (__v4sf)__B);
+}
+
+extern __inline __m128 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cmple_ps (__m128 __A, __m128 __B)
+{
+  return (__m128) __builtin_ia32_cmpleps ((__v4sf)__A, (__v4sf)__B);
+}
+
+extern __inline __m128 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cmpgt_ps (__m128 __A, __m128 __B)
+{
+  return (__m128) __builtin_ia32_cmpgtps ((__v4sf)__A, (__v4sf)__B);
+}
+
+extern __inline __m128 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cmpge_ps (__m128 __A, __m128 __B)
+{
+  return (__m128) __builtin_ia32_cmpgeps ((__v4sf)__A, (__v4sf)__B);
+}
+
+extern __inline __m128 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cmpneq_ps (__m128 __A, __m128 __B)
+{
+  return (__m128) __builtin_ia32_cmpneqps ((__v4sf)__A, (__v4sf)__B);
+}
+
+extern __inline __m128 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cmpnlt_ps (__m128 __A, __m128 __B)
+{
+  return (__m128) __builtin_ia32_cmpnltps ((__v4sf)__A, (__v4sf)__B);
+}
+
+extern __inline __m128 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cmpnle_ps (__m128 __A, __m128 __B)
+{
+  return (__m128) __builtin_ia32_cmpnleps ((__v4sf)__A, (__v4sf)__B);
+}
+
+extern __inline __m128 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cmpngt_ps (__m128 __A, __m128 __B)
+{
+  return (__m128) __builtin_ia32_cmpngtps ((__v4sf)__A, (__v4sf)__B);
+}
+
+extern __inline __m128 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cmpnge_ps (__m128 __A, __m128 __B)
+{
+  return (__m128) __builtin_ia32_cmpngeps ((__v4sf)__A, (__v4sf)__B);
+}
+
+extern __inline __m128 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cmpord_ps (__m128 __A, __m128 __B)
+{
+  return (__m128) __builtin_ia32_cmpordps ((__v4sf)__A, (__v4sf)__B);
+}
+
+extern __inline __m128 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cmpunord_ps (__m128 __A, __m128 __B)
+{
+  return (__m128) __builtin_ia32_cmpunordps ((__v4sf)__A, (__v4sf)__B);
+}
+
+
+
+
+extern __inline int __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_comieq_ss (__m128 __A, __m128 __B)
+{
+  return __builtin_ia32_comieq ((__v4sf)__A, (__v4sf)__B);
+}
+
+extern __inline int __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_comilt_ss (__m128 __A, __m128 __B)
+{
+  return __builtin_ia32_comilt ((__v4sf)__A, (__v4sf)__B);
+}
+
+extern __inline int __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_comile_ss (__m128 __A, __m128 __B)
+{
+  return __builtin_ia32_comile ((__v4sf)__A, (__v4sf)__B);
+}
+
+extern __inline int __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_comigt_ss (__m128 __A, __m128 __B)
+{
+  return __builtin_ia32_comigt ((__v4sf)__A, (__v4sf)__B);
+}
+
+extern __inline int __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_comige_ss (__m128 __A, __m128 __B)
+{
+  return __builtin_ia32_comige ((__v4sf)__A, (__v4sf)__B);
+}
+
+extern __inline int __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_comineq_ss (__m128 __A, __m128 __B)
+{
+  return __builtin_ia32_comineq ((__v4sf)__A, (__v4sf)__B);
+}
+
+extern __inline int __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_ucomieq_ss (__m128 __A, __m128 __B)
+{
+  return __builtin_ia32_ucomieq ((__v4sf)__A, (__v4sf)__B);
+}
+
+extern __inline int __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_ucomilt_ss (__m128 __A, __m128 __B)
+{
+  return __builtin_ia32_ucomilt ((__v4sf)__A, (__v4sf)__B);
+}
+
+extern __inline int __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_ucomile_ss (__m128 __A, __m128 __B)
+{
+  return __builtin_ia32_ucomile ((__v4sf)__A, (__v4sf)__B);
+}
+
+extern __inline int __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_ucomigt_ss (__m128 __A, __m128 __B)
+{
+  return __builtin_ia32_ucomigt ((__v4sf)__A, (__v4sf)__B);
+}
+
+extern __inline int __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_ucomige_ss (__m128 __A, __m128 __B)
+{
+  return __builtin_ia32_ucomige ((__v4sf)__A, (__v4sf)__B);
+}
+
+extern __inline int __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_ucomineq_ss (__m128 __A, __m128 __B)
+{
+  return __builtin_ia32_ucomineq ((__v4sf)__A, (__v4sf)__B);
+}
+
+
+
+extern __inline int __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cvtss_si32 (__m128 __A)
+{
+  return __builtin_ia32_cvtss2si ((__v4sf) __A);
+}
+
+extern __inline int __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cvt_ss2si (__m128 __A)
+{
+  return _mm_cvtss_si32 (__A);
+}
+
+
+
+
+
+
+extern __inline long long __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cvtss_si64 (__m128 __A)
+{
+  return __builtin_ia32_cvtss2si64 ((__v4sf) __A);
+}
+
+
+extern __inline long long __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cvtss_si64x (__m128 __A)
+{
+  return __builtin_ia32_cvtss2si64 ((__v4sf) __A);
+}
+
+
+
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cvtps_pi32 (__m128 __A)
+{
+  return (__m64) __builtin_ia32_cvtps2pi ((__v4sf) __A);
+}
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cvt_ps2pi (__m128 __A)
+{
+  return _mm_cvtps_pi32 (__A);
+}
+
+
+extern __inline int __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cvttss_si32 (__m128 __A)
+{
+  return __builtin_ia32_cvttss2si ((__v4sf) __A);
+}
+
+extern __inline int __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cvtt_ss2si (__m128 __A)
+{
+  return _mm_cvttss_si32 (__A);
+}
+
+
+
+
+
+extern __inline long long __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cvttss_si64 (__m128 __A)
+{
+  return __builtin_ia32_cvttss2si64 ((__v4sf) __A);
+}
+
+
+extern __inline long long __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cvttss_si64x (__m128 __A)
+{
+  return __builtin_ia32_cvttss2si64 ((__v4sf) __A);
+}
+
+
+
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cvttps_pi32 (__m128 __A)
+{
+  return (__m64) __builtin_ia32_cvttps2pi ((__v4sf) __A);
+}
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cvtt_ps2pi (__m128 __A)
+{
+  return _mm_cvttps_pi32 (__A);
+}
+
+
+extern __inline __m128 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cvtsi32_ss (__m128 __A, int __B)
+{
+  return (__m128) __builtin_ia32_cvtsi2ss ((__v4sf) __A, __B);
+}
+
+extern __inline __m128 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cvt_si2ss (__m128 __A, int __B)
+{
+  return _mm_cvtsi32_ss (__A, __B);
+}
+
+
+
+
+
+extern __inline __m128 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cvtsi64_ss (__m128 __A, long long __B)
+{
+  return (__m128) __builtin_ia32_cvtsi642ss ((__v4sf) __A, __B);
+}
+
+
+extern __inline __m128 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cvtsi64x_ss (__m128 __A, long long __B)
+{
+  return (__m128) __builtin_ia32_cvtsi642ss ((__v4sf) __A, __B);
+}
+
+
+
+
+extern __inline __m128 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cvtpi32_ps (__m128 __A, __m64 __B)
+{
+  return (__m128) __builtin_ia32_cvtpi2ps ((__v4sf) __A, (__v2si)__B);
+}
+
+extern __inline __m128 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cvt_pi2ps (__m128 __A, __m64 __B)
+{
+  return _mm_cvtpi32_ps (__A, __B);
+}
+
+
+extern __inline __m128 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cvtpi16_ps (__m64 __A)
+{
+  __v4hi __sign;
+  __v2si __hisi, __losi;
+  __v4sf __zero, __ra, __rb;
+
+
+
+
+  __sign = __builtin_ia32_pcmpgtw ((__v4hi)0LL, (__v4hi)__A);
+
+
+  __losi = (__v2si) __builtin_ia32_punpcklwd ((__v4hi)__A, __sign);
+  __hisi = (__v2si) __builtin_ia32_punpckhwd ((__v4hi)__A, __sign);
+
+
+  __zero = (__v4sf) _mm_setzero_ps ();
+  __ra = __builtin_ia32_cvtpi2ps (__zero, __losi);
+  __rb = __builtin_ia32_cvtpi2ps (__ra, __hisi);
+
+  return (__m128) __builtin_ia32_movlhps (__ra, __rb);
+}
+
+
+extern __inline __m128 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cvtpu16_ps (__m64 __A)
+{
+  __v2si __hisi, __losi;
+  __v4sf __zero, __ra, __rb;
+
+
+  __losi = (__v2si) __builtin_ia32_punpcklwd ((__v4hi)__A, (__v4hi)0LL);
+  __hisi = (__v2si) __builtin_ia32_punpckhwd ((__v4hi)__A, (__v4hi)0LL);
+
+
+  __zero = (__v4sf) _mm_setzero_ps ();
+  __ra = __builtin_ia32_cvtpi2ps (__zero, __losi);
+  __rb = __builtin_ia32_cvtpi2ps (__ra, __hisi);
+
+  return (__m128) __builtin_ia32_movlhps (__ra, __rb);
+}
+
+
+extern __inline __m128 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cvtpi8_ps (__m64 __A)
+{
+  __v8qi __sign;
+
+
+
+
+  __sign = __builtin_ia32_pcmpgtb ((__v8qi)0LL, (__v8qi)__A);
+
+
+  __A = (__m64) __builtin_ia32_punpcklbw ((__v8qi)__A, __sign);
+
+  return _mm_cvtpi16_ps(__A);
+}
+
+
+extern __inline __m128 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cvtpu8_ps(__m64 __A)
+{
+  __A = (__m64) __builtin_ia32_punpcklbw ((__v8qi)__A, (__v8qi)0LL);
+  return _mm_cvtpu16_ps(__A);
+}
+
+
+extern __inline __m128 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cvtpi32x2_ps(__m64 __A, __m64 __B)
+{
+  __v4sf __zero = (__v4sf) _mm_setzero_ps ();
+  __v4sf __sfa = __builtin_ia32_cvtpi2ps (__zero, (__v2si)__A);
+  __v4sf __sfb = __builtin_ia32_cvtpi2ps (__sfa, (__v2si)__B);
+  return (__m128) __builtin_ia32_movlhps (__sfa, __sfb);
+}
+
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cvtps_pi16(__m128 __A)
+{
+  __v4sf __hisf = (__v4sf)__A;
+  __v4sf __losf = __builtin_ia32_movhlps (__hisf, __hisf);
+  __v2si __hisi = __builtin_ia32_cvtps2pi (__hisf);
+  __v2si __losi = __builtin_ia32_cvtps2pi (__losf);
+  return (__m64) __builtin_ia32_packssdw (__hisi, __losi);
+}
+
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cvtps_pi8(__m128 __A)
+{
+  __v4hi __tmp = (__v4hi) _mm_cvtps_pi16 (__A);
+  return (__m64) __builtin_ia32_packsswb (__tmp, (__v4hi)0LL);
+}
+# 755 "/usr/lib/gcc/x86_64-linux-gnu/11/include/xmmintrin.h" 3 4
+extern __inline __m128 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_unpackhi_ps (__m128 __A, __m128 __B)
+{
+  return (__m128) __builtin_ia32_unpckhps ((__v4sf)__A, (__v4sf)__B);
+}
+
+
+extern __inline __m128 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_unpacklo_ps (__m128 __A, __m128 __B)
+{
+  return (__m128) __builtin_ia32_unpcklps ((__v4sf)__A, (__v4sf)__B);
+}
+
+
+
+extern __inline __m128 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_loadh_pi (__m128 __A, __m64 const *__P)
+{
+  return (__m128) __builtin_ia32_loadhps ((__v4sf)__A, (const __v2sf *)__P);
+}
+
+
+extern __inline void __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_storeh_pi (__m64 *__P, __m128 __A)
+{
+  __builtin_ia32_storehps ((__v2sf *)__P, (__v4sf)__A);
+}
+
+
+extern __inline __m128 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_movehl_ps (__m128 __A, __m128 __B)
+{
+  return (__m128) __builtin_ia32_movhlps ((__v4sf)__A, (__v4sf)__B);
+}
+
+
+extern __inline __m128 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_movelh_ps (__m128 __A, __m128 __B)
+{
+  return (__m128) __builtin_ia32_movlhps ((__v4sf)__A, (__v4sf)__B);
+}
+
+
+
+extern __inline __m128 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_loadl_pi (__m128 __A, __m64 const *__P)
+{
+  return (__m128) __builtin_ia32_loadlps ((__v4sf)__A, (const __v2sf *)__P);
+}
+
+
+extern __inline void __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_storel_pi (__m64 *__P, __m128 __A)
+{
+  __builtin_ia32_storelps ((__v2sf *)__P, (__v4sf)__A);
+}
+
+
+extern __inline int __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_movemask_ps (__m128 __A)
+{
+  return __builtin_ia32_movmskps ((__v4sf)__A);
+}
+
+
+extern __inline unsigned int __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_getcsr (void)
+{
+  return __builtin_ia32_stmxcsr ();
+}
+
+
+extern __inline unsigned int __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_MM_GET_EXCEPTION_STATE (void)
+{
+  return _mm_getcsr() & 0x003f;
+}
+
+extern __inline unsigned int __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_MM_GET_EXCEPTION_MASK (void)
+{
+  return _mm_getcsr() & 0x1f80;
+}
+
+extern __inline unsigned int __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_MM_GET_ROUNDING_MODE (void)
+{
+  return _mm_getcsr() & 0x6000;
+}
+
+extern __inline unsigned int __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_MM_GET_FLUSH_ZERO_MODE (void)
+{
+  return _mm_getcsr() & 0x8000;
+}
+
+
+extern __inline void __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_setcsr (unsigned int __I)
+{
+  __builtin_ia32_ldmxcsr (__I);
+}
+
+
+extern __inline void __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_MM_SET_EXCEPTION_STATE(unsigned int __mask)
+{
+  _mm_setcsr((_mm_getcsr() & ~0x003f) | __mask);
+}
+
+extern __inline void __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_MM_SET_EXCEPTION_MASK (unsigned int __mask)
+{
+  _mm_setcsr((_mm_getcsr() & ~0x1f80) | __mask);
+}
+
+extern __inline void __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_MM_SET_ROUNDING_MODE (unsigned int __mode)
+{
+  _mm_setcsr((_mm_getcsr() & ~0x6000) | __mode);
+}
+
+extern __inline void __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_MM_SET_FLUSH_ZERO_MODE (unsigned int __mode)
+{
+  _mm_setcsr((_mm_getcsr() & ~0x8000) | __mode);
+}
+
+
+extern __inline __m128 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_set_ss (float __F)
+{
+  return __extension__ (__m128)(__v4sf){ __F, 0.0f, 0.0f, 0.0f };
+}
+
+
+extern __inline __m128 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_set1_ps (float __F)
+{
+  return __extension__ (__m128)(__v4sf){ __F, __F, __F, __F };
+}
+
+extern __inline __m128 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_set_ps1 (float __F)
+{
+  return _mm_set1_ps (__F);
+}
+
+
+extern __inline __m128 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_load_ss (float const *__P)
+{
+  return _mm_set_ss (*__P);
+}
+
+
+extern __inline __m128 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_load1_ps (float const *__P)
+{
+  return _mm_set1_ps (*__P);
+}
+
+extern __inline __m128 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_load_ps1 (float const *__P)
+{
+  return _mm_load1_ps (__P);
+}
+
+
+extern __inline __m128 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_load_ps (float const *__P)
+{
+  return *(__m128 *)__P;
+}
+
+
+extern __inline __m128 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_loadu_ps (float const *__P)
+{
+  return *(__m128_u *)__P;
+}
+
+
+extern __inline __m128 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_loadr_ps (float const *__P)
+{
+  __v4sf __tmp = *(__v4sf *)__P;
+  return (__m128) __builtin_ia32_shufps (__tmp, __tmp, (((0) << 6) | ((1) << 4) | ((2) << 2) | (3)));
+}
+
+
+extern __inline __m128 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_set_ps (const float __Z, const float __Y, const float __X, const float __W)
+{
+  return __extension__ (__m128)(__v4sf){ __W, __X, __Y, __Z };
+}
+
+
+extern __inline __m128 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_setr_ps (float __Z, float __Y, float __X, float __W)
+{
+  return __extension__ (__m128)(__v4sf){ __Z, __Y, __X, __W };
+}
+
+
+extern __inline void __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_store_ss (float *__P, __m128 __A)
+{
+  *__P = ((__v4sf)__A)[0];
+}
+
+extern __inline float __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cvtss_f32 (__m128 __A)
+{
+  return ((__v4sf)__A)[0];
+}
+
+
+extern __inline void __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_store_ps (float *__P, __m128 __A)
+{
+  *(__m128 *)__P = __A;
+}
+
+
+extern __inline void __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_storeu_ps (float *__P, __m128 __A)
+{
+  *(__m128_u *)__P = __A;
+}
+
+
+extern __inline void __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_store1_ps (float *__P, __m128 __A)
+{
+  __v4sf __va = (__v4sf)__A;
+  __v4sf __tmp = __builtin_ia32_shufps (__va, __va, (((0) << 6) | ((0) << 4) | ((0) << 2) | (0)));
+  _mm_storeu_ps (__P, __tmp);
+}
+
+extern __inline void __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_store_ps1 (float *__P, __m128 __A)
+{
+  _mm_store1_ps (__P, __A);
+}
+
+
+extern __inline void __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_storer_ps (float *__P, __m128 __A)
+{
+  __v4sf __va = (__v4sf)__A;
+  __v4sf __tmp = __builtin_ia32_shufps (__va, __va, (((0) << 6) | ((1) << 4) | ((2) << 2) | (3)));
+  _mm_store_ps (__P, __tmp);
+}
+
+
+extern __inline __m128 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_move_ss (__m128 __A, __m128 __B)
+{
+  return (__m128) __builtin_shuffle ((__v4sf)__A, (__v4sf)__B,
+                                     __extension__
+                                     (__attribute__((__vector_size__ (16))) int)
+                                     {4,1,2,3});
+}
+# 1063 "/usr/lib/gcc/x86_64-linux-gnu/11/include/xmmintrin.h" 3 4
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_max_pi16 (__m64 __A, __m64 __B)
+{
+  return (__m64) __builtin_ia32_pmaxsw ((__v4hi)__A, (__v4hi)__B);
+}
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_m_pmaxsw (__m64 __A, __m64 __B)
+{
+  return _mm_max_pi16 (__A, __B);
+}
+
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_max_pu8 (__m64 __A, __m64 __B)
+{
+  return (__m64) __builtin_ia32_pmaxub ((__v8qi)__A, (__v8qi)__B);
+}
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_m_pmaxub (__m64 __A, __m64 __B)
+{
+  return _mm_max_pu8 (__A, __B);
+}
+
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_min_pi16 (__m64 __A, __m64 __B)
+{
+  return (__m64) __builtin_ia32_pminsw ((__v4hi)__A, (__v4hi)__B);
+}
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_m_pminsw (__m64 __A, __m64 __B)
+{
+  return _mm_min_pi16 (__A, __B);
+}
+
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_min_pu8 (__m64 __A, __m64 __B)
+{
+  return (__m64) __builtin_ia32_pminub ((__v8qi)__A, (__v8qi)__B);
+}
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_m_pminub (__m64 __A, __m64 __B)
+{
+  return _mm_min_pu8 (__A, __B);
+}
+
+
+extern __inline int __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_movemask_pi8 (__m64 __A)
+{
+  return __builtin_ia32_pmovmskb ((__v8qi)__A);
+}
+
+extern __inline int __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_m_pmovmskb (__m64 __A)
+{
+  return _mm_movemask_pi8 (__A);
+}
+
+
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_mulhi_pu16 (__m64 __A, __m64 __B)
+{
+  return (__m64) __builtin_ia32_pmulhuw ((__v4hi)__A, (__v4hi)__B);
+}
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_m_pmulhuw (__m64 __A, __m64 __B)
+{
+  return _mm_mulhi_pu16 (__A, __B);
+}
+# 1165 "/usr/lib/gcc/x86_64-linux-gnu/11/include/xmmintrin.h" 3 4
+extern __inline void __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_maskmove_si64 (__m64 __A, __m64 __N, char *__P)
+{
+
+
+
+  typedef long long __v2di __attribute__ ((__vector_size__ (16)));
+  typedef char __v16qi __attribute__ ((__vector_size__ (16)));
+
+  __v2di __A128 = __extension__ (__v2di) { ((__v1di) __A)[0], 0 };
+  __v2di __N128 = __extension__ (__v2di) { ((__v1di) __N)[0], 0 };
+
+
+  long unsigned int offset = ((long unsigned int) __P) & 0xf;
+  if (offset)
+    {
+
+
+      if (offset > 8)
+ offset = 8;
+      __P = (char *) (((long unsigned int) __P) - offset);
+
+
+      switch (offset)
+ {
+ case 1:
+   __A128 = __builtin_ia32_pslldqi128 (__A128, 8);
+   __N128 = __builtin_ia32_pslldqi128 (__N128, 8);
+   break;
+ case 2:
+   __A128 = __builtin_ia32_pslldqi128 (__A128, 2 * 8);
+   __N128 = __builtin_ia32_pslldqi128 (__N128, 2 * 8);
+   break;
+ case 3:
+   __A128 = __builtin_ia32_pslldqi128 (__A128, 3 * 8);
+   __N128 = __builtin_ia32_pslldqi128 (__N128, 3 * 8);
+   break;
+ case 4:
+   __A128 = __builtin_ia32_pslldqi128 (__A128, 4 * 8);
+   __N128 = __builtin_ia32_pslldqi128 (__N128, 4 * 8);
+   break;
+ case 5:
+   __A128 = __builtin_ia32_pslldqi128 (__A128, 5 * 8);
+   __N128 = __builtin_ia32_pslldqi128 (__N128, 5 * 8);
+   break;
+ case 6:
+   __A128 = __builtin_ia32_pslldqi128 (__A128, 6 * 8);
+   __N128 = __builtin_ia32_pslldqi128 (__N128, 6 * 8);
+   break;
+ case 7:
+   __A128 = __builtin_ia32_pslldqi128 (__A128, 7 * 8);
+   __N128 = __builtin_ia32_pslldqi128 (__N128, 7 * 8);
+   break;
+ case 8:
+   __A128 = __builtin_ia32_pslldqi128 (__A128, 8 * 8);
+   __N128 = __builtin_ia32_pslldqi128 (__N128, 8 * 8);
+   break;
+ default:
+   break;
+ }
+    }
+  __builtin_ia32_maskmovdqu ((__v16qi)__A128, (__v16qi)__N128, __P);
+
+
+
+}
+
+extern __inline void __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_m_maskmovq (__m64 __A, __m64 __N, char *__P)
+{
+  _mm_maskmove_si64 (__A, __N, __P);
+}
+
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_avg_pu8 (__m64 __A, __m64 __B)
+{
+  return (__m64) __builtin_ia32_pavgb ((__v8qi)__A, (__v8qi)__B);
+}
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_m_pavgb (__m64 __A, __m64 __B)
+{
+  return _mm_avg_pu8 (__A, __B);
+}
+
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_avg_pu16 (__m64 __A, __m64 __B)
+{
+  return (__m64) __builtin_ia32_pavgw ((__v4hi)__A, (__v4hi)__B);
+}
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_m_pavgw (__m64 __A, __m64 __B)
+{
+  return _mm_avg_pu16 (__A, __B);
+}
+
+
+
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_sad_pu8 (__m64 __A, __m64 __B)
+{
+  return (__m64) __builtin_ia32_psadbw ((__v8qi)__A, (__v8qi)__B);
+}
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_m_psadbw (__m64 __A, __m64 __B)
+{
+  return _mm_sad_pu8 (__A, __B);
+}
+
+
+extern __inline void __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_stream_pi (__m64 *__P, __m64 __A)
+{
+  __builtin_ia32_movntq ((unsigned long long *)__P, (unsigned long long)__A);
+}
+
+
+extern __inline void __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_stream_ps (float *__P, __m128 __A)
+{
+  __builtin_ia32_movntps (__P, (__v4sf)__A);
+}
+
+
+
+extern __inline void __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_sfence (void)
+{
+  __builtin_ia32_sfence ();
+}
+# 1316 "/usr/lib/gcc/x86_64-linux-gnu/11/include/xmmintrin.h" 3 4
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/11/include/emmintrin.h" 1 3 4
+# 1317 "/usr/lib/gcc/x86_64-linux-gnu/11/include/xmmintrin.h" 2 3 4
+# 1328 "/usr/lib/gcc/x86_64-linux-gnu/11/include/xmmintrin.h" 3 4
+extern __inline void __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_pause (void)
+{
+  __builtin_ia32_pause ();
+}
+# 32 "/usr/lib/gcc/x86_64-linux-gnu/11/include/emmintrin.h" 2 3 4
+# 40 "/usr/lib/gcc/x86_64-linux-gnu/11/include/emmintrin.h" 3 4
+typedef double __v2df __attribute__ ((__vector_size__ (16)));
+typedef long long __v2di __attribute__ ((__vector_size__ (16)));
+typedef unsigned long long __v2du __attribute__ ((__vector_size__ (16)));
+typedef int __v4si __attribute__ ((__vector_size__ (16)));
+typedef unsigned int __v4su __attribute__ ((__vector_size__ (16)));
+typedef short __v8hi __attribute__ ((__vector_size__ (16)));
+typedef unsigned short __v8hu __attribute__ ((__vector_size__ (16)));
+typedef char __v16qi __attribute__ ((__vector_size__ (16)));
+typedef signed char __v16qs __attribute__ ((__vector_size__ (16)));
+typedef unsigned char __v16qu __attribute__ ((__vector_size__ (16)));
+
+
+
+typedef long long __m128i __attribute__ ((__vector_size__ (16), __may_alias__));
+typedef double __m128d __attribute__ ((__vector_size__ (16), __may_alias__));
+
+
+typedef long long __m128i_u __attribute__ ((__vector_size__ (16), __may_alias__, __aligned__ (1)));
+typedef double __m128d_u __attribute__ ((__vector_size__ (16), __may_alias__, __aligned__ (1)));
+
+
+
+
+
+
+extern __inline __m128d __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_set_sd (double __F)
+{
+  return __extension__ (__m128d){ __F, 0.0 };
+}
+
+
+extern __inline __m128d __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_set1_pd (double __F)
+{
+  return __extension__ (__m128d){ __F, __F };
+}
+
+extern __inline __m128d __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_set_pd1 (double __F)
+{
+  return _mm_set1_pd (__F);
+}
+
+
+extern __inline __m128d __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_set_pd (double __W, double __X)
+{
+  return __extension__ (__m128d){ __X, __W };
+}
+
+
+extern __inline __m128d __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_setr_pd (double __W, double __X)
+{
+  return __extension__ (__m128d){ __W, __X };
+}
+
+
+extern __inline __m128d __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_undefined_pd (void)
+{
+  __m128d __Y = __Y;
+  return __Y;
+}
+
+
+extern __inline __m128d __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_setzero_pd (void)
+{
+  return __extension__ (__m128d){ 0.0, 0.0 };
+}
+
+
+extern __inline __m128d __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_move_sd (__m128d __A, __m128d __B)
+{
+  return __extension__ (__m128d) __builtin_shuffle ((__v2df)__A, (__v2df)__B, (__v2di){2, 1});
+}
+
+
+extern __inline __m128d __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_load_pd (double const *__P)
+{
+  return *(__m128d *)__P;
+}
+
+
+extern __inline __m128d __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_loadu_pd (double const *__P)
+{
+  return *(__m128d_u *)__P;
+}
+
+
+extern __inline __m128d __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_load1_pd (double const *__P)
+{
+  return _mm_set1_pd (*__P);
+}
+
+
+extern __inline __m128d __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_load_sd (double const *__P)
+{
+  return _mm_set_sd (*__P);
+}
+
+extern __inline __m128d __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_load_pd1 (double const *__P)
+{
+  return _mm_load1_pd (__P);
+}
+
+
+extern __inline __m128d __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_loadr_pd (double const *__P)
+{
+  __m128d __tmp = _mm_load_pd (__P);
+  return __builtin_ia32_shufpd (__tmp, __tmp, (((0) << 1) | (1)));
+}
+
+
+extern __inline void __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_store_pd (double *__P, __m128d __A)
+{
+  *(__m128d *)__P = __A;
+}
+
+
+extern __inline void __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_storeu_pd (double *__P, __m128d __A)
+{
+  *(__m128d_u *)__P = __A;
+}
+
+
+extern __inline void __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_store_sd (double *__P, __m128d __A)
+{
+  *__P = ((__v2df)__A)[0];
+}
+
+extern __inline double __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cvtsd_f64 (__m128d __A)
+{
+  return ((__v2df)__A)[0];
+}
+
+extern __inline void __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_storel_pd (double *__P, __m128d __A)
+{
+  _mm_store_sd (__P, __A);
+}
+
+
+extern __inline void __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_storeh_pd (double *__P, __m128d __A)
+{
+  *__P = ((__v2df)__A)[1];
+}
+
+
+
+extern __inline void __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_store1_pd (double *__P, __m128d __A)
+{
+  _mm_store_pd (__P, __builtin_ia32_shufpd (__A, __A, (((0) << 1) | (0))));
+}
+
+extern __inline void __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_store_pd1 (double *__P, __m128d __A)
+{
+  _mm_store1_pd (__P, __A);
+}
+
+
+extern __inline void __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_storer_pd (double *__P, __m128d __A)
+{
+  _mm_store_pd (__P, __builtin_ia32_shufpd (__A, __A, (((0) << 1) | (1))));
+}
+
+extern __inline int __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cvtsi128_si32 (__m128i __A)
+{
+  return __builtin_ia32_vec_ext_v4si ((__v4si)__A, 0);
+}
+
+
+
+extern __inline long long __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cvtsi128_si64 (__m128i __A)
+{
+  return ((__v2di)__A)[0];
+}
+
+
+extern __inline long long __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cvtsi128_si64x (__m128i __A)
+{
+  return ((__v2di)__A)[0];
+}
+
+
+extern __inline __m128d __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_add_pd (__m128d __A, __m128d __B)
+{
+  return (__m128d) ((__v2df)__A + (__v2df)__B);
+}
+
+extern __inline __m128d __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_add_sd (__m128d __A, __m128d __B)
+{
+  return (__m128d)__builtin_ia32_addsd ((__v2df)__A, (__v2df)__B);
+}
+
+extern __inline __m128d __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_sub_pd (__m128d __A, __m128d __B)
+{
+  return (__m128d) ((__v2df)__A - (__v2df)__B);
+}
+
+extern __inline __m128d __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_sub_sd (__m128d __A, __m128d __B)
+{
+  return (__m128d)__builtin_ia32_subsd ((__v2df)__A, (__v2df)__B);
+}
+
+extern __inline __m128d __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_mul_pd (__m128d __A, __m128d __B)
+{
+  return (__m128d) ((__v2df)__A * (__v2df)__B);
+}
+
+extern __inline __m128d __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_mul_sd (__m128d __A, __m128d __B)
+{
+  return (__m128d)__builtin_ia32_mulsd ((__v2df)__A, (__v2df)__B);
+}
+
+extern __inline __m128d __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_div_pd (__m128d __A, __m128d __B)
+{
+  return (__m128d) ((__v2df)__A / (__v2df)__B);
+}
+
+extern __inline __m128d __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_div_sd (__m128d __A, __m128d __B)
+{
+  return (__m128d)__builtin_ia32_divsd ((__v2df)__A, (__v2df)__B);
+}
+
+extern __inline __m128d __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_sqrt_pd (__m128d __A)
+{
+  return (__m128d)__builtin_ia32_sqrtpd ((__v2df)__A);
+}
+
+
+extern __inline __m128d __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_sqrt_sd (__m128d __A, __m128d __B)
+{
+  __v2df __tmp = __builtin_ia32_movsd ((__v2df)__A, (__v2df)__B);
+  return (__m128d)__builtin_ia32_sqrtsd ((__v2df)__tmp);
+}
+
+extern __inline __m128d __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_min_pd (__m128d __A, __m128d __B)
+{
+  return (__m128d)__builtin_ia32_minpd ((__v2df)__A, (__v2df)__B);
+}
+
+extern __inline __m128d __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_min_sd (__m128d __A, __m128d __B)
+{
+  return (__m128d)__builtin_ia32_minsd ((__v2df)__A, (__v2df)__B);
+}
+
+extern __inline __m128d __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_max_pd (__m128d __A, __m128d __B)
+{
+  return (__m128d)__builtin_ia32_maxpd ((__v2df)__A, (__v2df)__B);
+}
+
+extern __inline __m128d __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_max_sd (__m128d __A, __m128d __B)
+{
+  return (__m128d)__builtin_ia32_maxsd ((__v2df)__A, (__v2df)__B);
+}
+
+extern __inline __m128d __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_and_pd (__m128d __A, __m128d __B)
+{
+  return (__m128d)__builtin_ia32_andpd ((__v2df)__A, (__v2df)__B);
+}
+
+extern __inline __m128d __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_andnot_pd (__m128d __A, __m128d __B)
+{
+  return (__m128d)__builtin_ia32_andnpd ((__v2df)__A, (__v2df)__B);
+}
+
+extern __inline __m128d __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_or_pd (__m128d __A, __m128d __B)
+{
+  return (__m128d)__builtin_ia32_orpd ((__v2df)__A, (__v2df)__B);
+}
+
+extern __inline __m128d __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_xor_pd (__m128d __A, __m128d __B)
+{
+  return (__m128d)__builtin_ia32_xorpd ((__v2df)__A, (__v2df)__B);
+}
+
+extern __inline __m128d __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cmpeq_pd (__m128d __A, __m128d __B)
+{
+  return (__m128d)__builtin_ia32_cmpeqpd ((__v2df)__A, (__v2df)__B);
+}
+
+extern __inline __m128d __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cmplt_pd (__m128d __A, __m128d __B)
+{
+  return (__m128d)__builtin_ia32_cmpltpd ((__v2df)__A, (__v2df)__B);
+}
+
+extern __inline __m128d __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cmple_pd (__m128d __A, __m128d __B)
+{
+  return (__m128d)__builtin_ia32_cmplepd ((__v2df)__A, (__v2df)__B);
+}
+
+extern __inline __m128d __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cmpgt_pd (__m128d __A, __m128d __B)
+{
+  return (__m128d)__builtin_ia32_cmpgtpd ((__v2df)__A, (__v2df)__B);
+}
+
+extern __inline __m128d __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cmpge_pd (__m128d __A, __m128d __B)
+{
+  return (__m128d)__builtin_ia32_cmpgepd ((__v2df)__A, (__v2df)__B);
+}
+
+extern __inline __m128d __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cmpneq_pd (__m128d __A, __m128d __B)
+{
+  return (__m128d)__builtin_ia32_cmpneqpd ((__v2df)__A, (__v2df)__B);
+}
+
+extern __inline __m128d __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cmpnlt_pd (__m128d __A, __m128d __B)
+{
+  return (__m128d)__builtin_ia32_cmpnltpd ((__v2df)__A, (__v2df)__B);
+}
+
+extern __inline __m128d __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cmpnle_pd (__m128d __A, __m128d __B)
+{
+  return (__m128d)__builtin_ia32_cmpnlepd ((__v2df)__A, (__v2df)__B);
+}
+
+extern __inline __m128d __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cmpngt_pd (__m128d __A, __m128d __B)
+{
+  return (__m128d)__builtin_ia32_cmpngtpd ((__v2df)__A, (__v2df)__B);
+}
+
+extern __inline __m128d __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cmpnge_pd (__m128d __A, __m128d __B)
+{
+  return (__m128d)__builtin_ia32_cmpngepd ((__v2df)__A, (__v2df)__B);
+}
+
+extern __inline __m128d __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cmpord_pd (__m128d __A, __m128d __B)
+{
+  return (__m128d)__builtin_ia32_cmpordpd ((__v2df)__A, (__v2df)__B);
+}
+
+extern __inline __m128d __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cmpunord_pd (__m128d __A, __m128d __B)
+{
+  return (__m128d)__builtin_ia32_cmpunordpd ((__v2df)__A, (__v2df)__B);
+}
+
+extern __inline __m128d __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cmpeq_sd (__m128d __A, __m128d __B)
+{
+  return (__m128d)__builtin_ia32_cmpeqsd ((__v2df)__A, (__v2df)__B);
+}
+
+extern __inline __m128d __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cmplt_sd (__m128d __A, __m128d __B)
+{
+  return (__m128d)__builtin_ia32_cmpltsd ((__v2df)__A, (__v2df)__B);
+}
+
+extern __inline __m128d __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cmple_sd (__m128d __A, __m128d __B)
+{
+  return (__m128d)__builtin_ia32_cmplesd ((__v2df)__A, (__v2df)__B);
+}
+
+extern __inline __m128d __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cmpgt_sd (__m128d __A, __m128d __B)
+{
+  return (__m128d) __builtin_ia32_movsd ((__v2df) __A,
+      (__v2df)
+      __builtin_ia32_cmpltsd ((__v2df) __B,
+         (__v2df)
+         __A));
+}
+
+extern __inline __m128d __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cmpge_sd (__m128d __A, __m128d __B)
+{
+  return (__m128d) __builtin_ia32_movsd ((__v2df) __A,
+      (__v2df)
+      __builtin_ia32_cmplesd ((__v2df) __B,
+         (__v2df)
+         __A));
+}
+
+extern __inline __m128d __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cmpneq_sd (__m128d __A, __m128d __B)
+{
+  return (__m128d)__builtin_ia32_cmpneqsd ((__v2df)__A, (__v2df)__B);
+}
+
+extern __inline __m128d __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cmpnlt_sd (__m128d __A, __m128d __B)
+{
+  return (__m128d)__builtin_ia32_cmpnltsd ((__v2df)__A, (__v2df)__B);
+}
+
+extern __inline __m128d __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cmpnle_sd (__m128d __A, __m128d __B)
+{
+  return (__m128d)__builtin_ia32_cmpnlesd ((__v2df)__A, (__v2df)__B);
+}
+
+extern __inline __m128d __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cmpngt_sd (__m128d __A, __m128d __B)
+{
+  return (__m128d) __builtin_ia32_movsd ((__v2df) __A,
+      (__v2df)
+      __builtin_ia32_cmpnltsd ((__v2df) __B,
+          (__v2df)
+          __A));
+}
+
+extern __inline __m128d __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cmpnge_sd (__m128d __A, __m128d __B)
+{
+  return (__m128d) __builtin_ia32_movsd ((__v2df) __A,
+      (__v2df)
+      __builtin_ia32_cmpnlesd ((__v2df) __B,
+          (__v2df)
+          __A));
+}
+
+extern __inline __m128d __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cmpord_sd (__m128d __A, __m128d __B)
+{
+  return (__m128d)__builtin_ia32_cmpordsd ((__v2df)__A, (__v2df)__B);
+}
+
+extern __inline __m128d __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cmpunord_sd (__m128d __A, __m128d __B)
+{
+  return (__m128d)__builtin_ia32_cmpunordsd ((__v2df)__A, (__v2df)__B);
+}
+
+extern __inline int __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_comieq_sd (__m128d __A, __m128d __B)
+{
+  return __builtin_ia32_comisdeq ((__v2df)__A, (__v2df)__B);
+}
+
+extern __inline int __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_comilt_sd (__m128d __A, __m128d __B)
+{
+  return __builtin_ia32_comisdlt ((__v2df)__A, (__v2df)__B);
+}
+
+extern __inline int __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_comile_sd (__m128d __A, __m128d __B)
+{
+  return __builtin_ia32_comisdle ((__v2df)__A, (__v2df)__B);
+}
+
+extern __inline int __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_comigt_sd (__m128d __A, __m128d __B)
+{
+  return __builtin_ia32_comisdgt ((__v2df)__A, (__v2df)__B);
+}
+
+extern __inline int __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_comige_sd (__m128d __A, __m128d __B)
+{
+  return __builtin_ia32_comisdge ((__v2df)__A, (__v2df)__B);
+}
+
+extern __inline int __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_comineq_sd (__m128d __A, __m128d __B)
+{
+  return __builtin_ia32_comisdneq ((__v2df)__A, (__v2df)__B);
+}
+
+extern __inline int __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_ucomieq_sd (__m128d __A, __m128d __B)
+{
+  return __builtin_ia32_ucomisdeq ((__v2df)__A, (__v2df)__B);
+}
+
+extern __inline int __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_ucomilt_sd (__m128d __A, __m128d __B)
+{
+  return __builtin_ia32_ucomisdlt ((__v2df)__A, (__v2df)__B);
+}
+
+extern __inline int __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_ucomile_sd (__m128d __A, __m128d __B)
+{
+  return __builtin_ia32_ucomisdle ((__v2df)__A, (__v2df)__B);
+}
+
+extern __inline int __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_ucomigt_sd (__m128d __A, __m128d __B)
+{
+  return __builtin_ia32_ucomisdgt ((__v2df)__A, (__v2df)__B);
+}
+
+extern __inline int __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_ucomige_sd (__m128d __A, __m128d __B)
+{
+  return __builtin_ia32_ucomisdge ((__v2df)__A, (__v2df)__B);
+}
+
+extern __inline int __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_ucomineq_sd (__m128d __A, __m128d __B)
+{
+  return __builtin_ia32_ucomisdneq ((__v2df)__A, (__v2df)__B);
+}
+
+
+
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_set_epi64x (long long __q1, long long __q0)
+{
+  return __extension__ (__m128i)(__v2di){ __q0, __q1 };
+}
+
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_set_epi64 (__m64 __q1, __m64 __q0)
+{
+  return _mm_set_epi64x ((long long)__q1, (long long)__q0);
+}
+
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_set_epi32 (int __q3, int __q2, int __q1, int __q0)
+{
+  return __extension__ (__m128i)(__v4si){ __q0, __q1, __q2, __q3 };
+}
+
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_set_epi16 (short __q7, short __q6, short __q5, short __q4,
+        short __q3, short __q2, short __q1, short __q0)
+{
+  return __extension__ (__m128i)(__v8hi){
+    __q0, __q1, __q2, __q3, __q4, __q5, __q6, __q7 };
+}
+
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_set_epi8 (char __q15, char __q14, char __q13, char __q12,
+       char __q11, char __q10, char __q09, char __q08,
+       char __q07, char __q06, char __q05, char __q04,
+       char __q03, char __q02, char __q01, char __q00)
+{
+  return __extension__ (__m128i)(__v16qi){
+    __q00, __q01, __q02, __q03, __q04, __q05, __q06, __q07,
+    __q08, __q09, __q10, __q11, __q12, __q13, __q14, __q15
+  };
+}
+
+
+
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_set1_epi64x (long long __A)
+{
+  return _mm_set_epi64x (__A, __A);
+}
+
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_set1_epi64 (__m64 __A)
+{
+  return _mm_set_epi64 (__A, __A);
+}
+
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_set1_epi32 (int __A)
+{
+  return _mm_set_epi32 (__A, __A, __A, __A);
+}
+
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_set1_epi16 (short __A)
+{
+  return _mm_set_epi16 (__A, __A, __A, __A, __A, __A, __A, __A);
+}
+
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_set1_epi8 (char __A)
+{
+  return _mm_set_epi8 (__A, __A, __A, __A, __A, __A, __A, __A,
+         __A, __A, __A, __A, __A, __A, __A, __A);
+}
+
+
+
+
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_setr_epi64 (__m64 __q0, __m64 __q1)
+{
+  return _mm_set_epi64 (__q1, __q0);
+}
+
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_setr_epi32 (int __q0, int __q1, int __q2, int __q3)
+{
+  return _mm_set_epi32 (__q3, __q2, __q1, __q0);
+}
+
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_setr_epi16 (short __q0, short __q1, short __q2, short __q3,
+         short __q4, short __q5, short __q6, short __q7)
+{
+  return _mm_set_epi16 (__q7, __q6, __q5, __q4, __q3, __q2, __q1, __q0);
+}
+
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_setr_epi8 (char __q00, char __q01, char __q02, char __q03,
+        char __q04, char __q05, char __q06, char __q07,
+        char __q08, char __q09, char __q10, char __q11,
+        char __q12, char __q13, char __q14, char __q15)
+{
+  return _mm_set_epi8 (__q15, __q14, __q13, __q12, __q11, __q10, __q09, __q08,
+         __q07, __q06, __q05, __q04, __q03, __q02, __q01, __q00);
+}
+
+
+
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_load_si128 (__m128i const *__P)
+{
+  return *__P;
+}
+
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_loadu_si128 (__m128i_u const *__P)
+{
+  return *__P;
+}
+
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_loadl_epi64 (__m128i_u const *__P)
+{
+  return _mm_set_epi64 ((__m64)0LL, *(__m64_u *)__P);
+}
+
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_loadu_si64 (void const *__P)
+{
+  return _mm_loadl_epi64 ((__m128i_u *)__P);
+}
+
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_loadu_si32 (void const *__P)
+{
+  return _mm_set_epi32 (0, 0, 0, (*(__m32_u *)__P)[0]);
+}
+
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_loadu_si16 (void const *__P)
+{
+  return _mm_set_epi16 (0, 0, 0, 0, 0, 0, 0, (*(__m16_u *)__P)[0]);
+}
+
+extern __inline void __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_store_si128 (__m128i *__P, __m128i __B)
+{
+  *__P = __B;
+}
+
+extern __inline void __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_storeu_si128 (__m128i_u *__P, __m128i __B)
+{
+  *__P = __B;
+}
+
+extern __inline void __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_storel_epi64 (__m128i_u *__P, __m128i __B)
+{
+  *(__m64_u *)__P = (__m64) ((__v2di)__B)[0];
+}
+
+extern __inline void __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_storeu_si64 (void *__P, __m128i __B)
+{
+  _mm_storel_epi64 ((__m128i_u *)__P, __B);
+}
+
+extern __inline void __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_storeu_si32 (void *__P, __m128i __B)
+{
+  *(__m32_u *)__P = (__m32) ((__v4si)__B)[0];
+}
+
+extern __inline void __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_storeu_si16 (void *__P, __m128i __B)
+{
+  *(__m16_u *)__P = (__m16) ((__v8hi)__B)[0];
+}
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_movepi64_pi64 (__m128i __B)
+{
+  return (__m64) ((__v2di)__B)[0];
+}
+
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_movpi64_epi64 (__m64 __A)
+{
+  return _mm_set_epi64 ((__m64)0LL, __A);
+}
+
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_move_epi64 (__m128i __A)
+{
+  return (__m128i)__builtin_ia32_movq128 ((__v2di) __A);
+}
+
+
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_undefined_si128 (void)
+{
+  __m128i __Y = __Y;
+  return __Y;
+}
+
+
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_setzero_si128 (void)
+{
+  return __extension__ (__m128i)(__v4si){ 0, 0, 0, 0 };
+}
+
+extern __inline __m128d __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cvtepi32_pd (__m128i __A)
+{
+  return (__m128d)__builtin_ia32_cvtdq2pd ((__v4si) __A);
+}
+
+extern __inline __m128 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cvtepi32_ps (__m128i __A)
+{
+  return (__m128)__builtin_ia32_cvtdq2ps ((__v4si) __A);
+}
+
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cvtpd_epi32 (__m128d __A)
+{
+  return (__m128i)__builtin_ia32_cvtpd2dq ((__v2df) __A);
+}
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cvtpd_pi32 (__m128d __A)
+{
+  return (__m64)__builtin_ia32_cvtpd2pi ((__v2df) __A);
+}
+
+extern __inline __m128 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cvtpd_ps (__m128d __A)
+{
+  return (__m128)__builtin_ia32_cvtpd2ps ((__v2df) __A);
+}
+
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cvttpd_epi32 (__m128d __A)
+{
+  return (__m128i)__builtin_ia32_cvttpd2dq ((__v2df) __A);
+}
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cvttpd_pi32 (__m128d __A)
+{
+  return (__m64)__builtin_ia32_cvttpd2pi ((__v2df) __A);
+}
+
+extern __inline __m128d __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cvtpi32_pd (__m64 __A)
+{
+  return (__m128d)__builtin_ia32_cvtpi2pd ((__v2si) __A);
+}
+
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cvtps_epi32 (__m128 __A)
+{
+  return (__m128i)__builtin_ia32_cvtps2dq ((__v4sf) __A);
+}
+
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cvttps_epi32 (__m128 __A)
+{
+  return (__m128i)__builtin_ia32_cvttps2dq ((__v4sf) __A);
+}
+
+extern __inline __m128d __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cvtps_pd (__m128 __A)
+{
+  return (__m128d)__builtin_ia32_cvtps2pd ((__v4sf) __A);
+}
+
+extern __inline int __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cvtsd_si32 (__m128d __A)
+{
+  return __builtin_ia32_cvtsd2si ((__v2df) __A);
+}
+
+
+
+extern __inline long long __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cvtsd_si64 (__m128d __A)
+{
+  return __builtin_ia32_cvtsd2si64 ((__v2df) __A);
+}
+
+
+extern __inline long long __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cvtsd_si64x (__m128d __A)
+{
+  return __builtin_ia32_cvtsd2si64 ((__v2df) __A);
+}
+
+
+extern __inline int __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cvttsd_si32 (__m128d __A)
+{
+  return __builtin_ia32_cvttsd2si ((__v2df) __A);
+}
+
+
+
+extern __inline long long __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cvttsd_si64 (__m128d __A)
+{
+  return __builtin_ia32_cvttsd2si64 ((__v2df) __A);
+}
+
+
+extern __inline long long __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cvttsd_si64x (__m128d __A)
+{
+  return __builtin_ia32_cvttsd2si64 ((__v2df) __A);
+}
+
+
+extern __inline __m128 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cvtsd_ss (__m128 __A, __m128d __B)
+{
+  return (__m128)__builtin_ia32_cvtsd2ss ((__v4sf) __A, (__v2df) __B);
+}
+
+extern __inline __m128d __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cvtsi32_sd (__m128d __A, int __B)
+{
+  return (__m128d)__builtin_ia32_cvtsi2sd ((__v2df) __A, __B);
+}
+
+
+
+extern __inline __m128d __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cvtsi64_sd (__m128d __A, long long __B)
+{
+  return (__m128d)__builtin_ia32_cvtsi642sd ((__v2df) __A, __B);
+}
+
+
+extern __inline __m128d __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cvtsi64x_sd (__m128d __A, long long __B)
+{
+  return (__m128d)__builtin_ia32_cvtsi642sd ((__v2df) __A, __B);
+}
+
+
+extern __inline __m128d __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cvtss_sd (__m128d __A, __m128 __B)
+{
+  return (__m128d)__builtin_ia32_cvtss2sd ((__v2df) __A, (__v4sf)__B);
+}
+# 955 "/usr/lib/gcc/x86_64-linux-gnu/11/include/emmintrin.h" 3 4
+extern __inline __m128d __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_unpackhi_pd (__m128d __A, __m128d __B)
+{
+  return (__m128d)__builtin_ia32_unpckhpd ((__v2df)__A, (__v2df)__B);
+}
+
+extern __inline __m128d __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_unpacklo_pd (__m128d __A, __m128d __B)
+{
+  return (__m128d)__builtin_ia32_unpcklpd ((__v2df)__A, (__v2df)__B);
+}
+
+extern __inline __m128d __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_loadh_pd (__m128d __A, double const *__B)
+{
+  return (__m128d)__builtin_ia32_loadhpd ((__v2df)__A, __B);
+}
+
+extern __inline __m128d __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_loadl_pd (__m128d __A, double const *__B)
+{
+  return (__m128d)__builtin_ia32_loadlpd ((__v2df)__A, __B);
+}
+
+extern __inline int __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_movemask_pd (__m128d __A)
+{
+  return __builtin_ia32_movmskpd ((__v2df)__A);
+}
+
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_packs_epi16 (__m128i __A, __m128i __B)
+{
+  return (__m128i)__builtin_ia32_packsswb128 ((__v8hi)__A, (__v8hi)__B);
+}
+
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_packs_epi32 (__m128i __A, __m128i __B)
+{
+  return (__m128i)__builtin_ia32_packssdw128 ((__v4si)__A, (__v4si)__B);
+}
+
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_packus_epi16 (__m128i __A, __m128i __B)
+{
+  return (__m128i)__builtin_ia32_packuswb128 ((__v8hi)__A, (__v8hi)__B);
+}
+
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_unpackhi_epi8 (__m128i __A, __m128i __B)
+{
+  return (__m128i)__builtin_ia32_punpckhbw128 ((__v16qi)__A, (__v16qi)__B);
+}
+
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_unpackhi_epi16 (__m128i __A, __m128i __B)
+{
+  return (__m128i)__builtin_ia32_punpckhwd128 ((__v8hi)__A, (__v8hi)__B);
+}
+
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_unpackhi_epi32 (__m128i __A, __m128i __B)
+{
+  return (__m128i)__builtin_ia32_punpckhdq128 ((__v4si)__A, (__v4si)__B);
+}
+
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_unpackhi_epi64 (__m128i __A, __m128i __B)
+{
+  return (__m128i)__builtin_ia32_punpckhqdq128 ((__v2di)__A, (__v2di)__B);
+}
+
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_unpacklo_epi8 (__m128i __A, __m128i __B)
+{
+  return (__m128i)__builtin_ia32_punpcklbw128 ((__v16qi)__A, (__v16qi)__B);
+}
+
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_unpacklo_epi16 (__m128i __A, __m128i __B)
+{
+  return (__m128i)__builtin_ia32_punpcklwd128 ((__v8hi)__A, (__v8hi)__B);
+}
+
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_unpacklo_epi32 (__m128i __A, __m128i __B)
+{
+  return (__m128i)__builtin_ia32_punpckldq128 ((__v4si)__A, (__v4si)__B);
+}
+
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_unpacklo_epi64 (__m128i __A, __m128i __B)
+{
+  return (__m128i)__builtin_ia32_punpcklqdq128 ((__v2di)__A, (__v2di)__B);
+}
+
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_add_epi8 (__m128i __A, __m128i __B)
+{
+  return (__m128i) ((__v16qu)__A + (__v16qu)__B);
+}
+
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_add_epi16 (__m128i __A, __m128i __B)
+{
+  return (__m128i) ((__v8hu)__A + (__v8hu)__B);
+}
+
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_add_epi32 (__m128i __A, __m128i __B)
+{
+  return (__m128i) ((__v4su)__A + (__v4su)__B);
+}
+
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_add_epi64 (__m128i __A, __m128i __B)
+{
+  return (__m128i) ((__v2du)__A + (__v2du)__B);
+}
+
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_adds_epi8 (__m128i __A, __m128i __B)
+{
+  return (__m128i)__builtin_ia32_paddsb128 ((__v16qi)__A, (__v16qi)__B);
+}
+
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_adds_epi16 (__m128i __A, __m128i __B)
+{
+  return (__m128i)__builtin_ia32_paddsw128 ((__v8hi)__A, (__v8hi)__B);
+}
+
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_adds_epu8 (__m128i __A, __m128i __B)
+{
+  return (__m128i)__builtin_ia32_paddusb128 ((__v16qi)__A, (__v16qi)__B);
+}
+
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_adds_epu16 (__m128i __A, __m128i __B)
+{
+  return (__m128i)__builtin_ia32_paddusw128 ((__v8hi)__A, (__v8hi)__B);
+}
+
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_sub_epi8 (__m128i __A, __m128i __B)
+{
+  return (__m128i) ((__v16qu)__A - (__v16qu)__B);
+}
+
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_sub_epi16 (__m128i __A, __m128i __B)
+{
+  return (__m128i) ((__v8hu)__A - (__v8hu)__B);
+}
+
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_sub_epi32 (__m128i __A, __m128i __B)
+{
+  return (__m128i) ((__v4su)__A - (__v4su)__B);
+}
+
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_sub_epi64 (__m128i __A, __m128i __B)
+{
+  return (__m128i) ((__v2du)__A - (__v2du)__B);
+}
+
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_subs_epi8 (__m128i __A, __m128i __B)
+{
+  return (__m128i)__builtin_ia32_psubsb128 ((__v16qi)__A, (__v16qi)__B);
+}
+
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_subs_epi16 (__m128i __A, __m128i __B)
+{
+  return (__m128i)__builtin_ia32_psubsw128 ((__v8hi)__A, (__v8hi)__B);
+}
+
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_subs_epu8 (__m128i __A, __m128i __B)
+{
+  return (__m128i)__builtin_ia32_psubusb128 ((__v16qi)__A, (__v16qi)__B);
+}
+
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_subs_epu16 (__m128i __A, __m128i __B)
+{
+  return (__m128i)__builtin_ia32_psubusw128 ((__v8hi)__A, (__v8hi)__B);
+}
+
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_madd_epi16 (__m128i __A, __m128i __B)
+{
+  return (__m128i)__builtin_ia32_pmaddwd128 ((__v8hi)__A, (__v8hi)__B);
+}
+
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_mulhi_epi16 (__m128i __A, __m128i __B)
+{
+  return (__m128i)__builtin_ia32_pmulhw128 ((__v8hi)__A, (__v8hi)__B);
+}
+
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_mullo_epi16 (__m128i __A, __m128i __B)
+{
+  return (__m128i) ((__v8hu)__A * (__v8hu)__B);
+}
+
+extern __inline __m64 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_mul_su32 (__m64 __A, __m64 __B)
+{
+  return (__m64)__builtin_ia32_pmuludq ((__v2si)__A, (__v2si)__B);
+}
+
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_mul_epu32 (__m128i __A, __m128i __B)
+{
+  return (__m128i)__builtin_ia32_pmuludq128 ((__v4si)__A, (__v4si)__B);
+}
+
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_slli_epi16 (__m128i __A, int __B)
+{
+  return (__m128i)__builtin_ia32_psllwi128 ((__v8hi)__A, __B);
+}
+
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_slli_epi32 (__m128i __A, int __B)
+{
+  return (__m128i)__builtin_ia32_pslldi128 ((__v4si)__A, __B);
+}
+
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_slli_epi64 (__m128i __A, int __B)
+{
+  return (__m128i)__builtin_ia32_psllqi128 ((__v2di)__A, __B);
+}
+
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_srai_epi16 (__m128i __A, int __B)
+{
+  return (__m128i)__builtin_ia32_psrawi128 ((__v8hi)__A, __B);
+}
+
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_srai_epi32 (__m128i __A, int __B)
+{
+  return (__m128i)__builtin_ia32_psradi128 ((__v4si)__A, __B);
+}
+# 1242 "/usr/lib/gcc/x86_64-linux-gnu/11/include/emmintrin.h" 3 4
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_srli_epi16 (__m128i __A, int __B)
+{
+  return (__m128i)__builtin_ia32_psrlwi128 ((__v8hi)__A, __B);
+}
+
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_srli_epi32 (__m128i __A, int __B)
+{
+  return (__m128i)__builtin_ia32_psrldi128 ((__v4si)__A, __B);
+}
+
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_srli_epi64 (__m128i __A, int __B)
+{
+  return (__m128i)__builtin_ia32_psrlqi128 ((__v2di)__A, __B);
+}
+
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_sll_epi16 (__m128i __A, __m128i __B)
+{
+  return (__m128i)__builtin_ia32_psllw128((__v8hi)__A, (__v8hi)__B);
+}
+
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_sll_epi32 (__m128i __A, __m128i __B)
+{
+  return (__m128i)__builtin_ia32_pslld128((__v4si)__A, (__v4si)__B);
+}
+
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_sll_epi64 (__m128i __A, __m128i __B)
+{
+  return (__m128i)__builtin_ia32_psllq128((__v2di)__A, (__v2di)__B);
+}
+
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_sra_epi16 (__m128i __A, __m128i __B)
+{
+  return (__m128i)__builtin_ia32_psraw128 ((__v8hi)__A, (__v8hi)__B);
+}
+
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_sra_epi32 (__m128i __A, __m128i __B)
+{
+  return (__m128i)__builtin_ia32_psrad128 ((__v4si)__A, (__v4si)__B);
+}
+
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_srl_epi16 (__m128i __A, __m128i __B)
+{
+  return (__m128i)__builtin_ia32_psrlw128 ((__v8hi)__A, (__v8hi)__B);
+}
+
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_srl_epi32 (__m128i __A, __m128i __B)
+{
+  return (__m128i)__builtin_ia32_psrld128 ((__v4si)__A, (__v4si)__B);
+}
+
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_srl_epi64 (__m128i __A, __m128i __B)
+{
+  return (__m128i)__builtin_ia32_psrlq128 ((__v2di)__A, (__v2di)__B);
+}
+
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_and_si128 (__m128i __A, __m128i __B)
+{
+  return (__m128i) ((__v2du)__A & (__v2du)__B);
+}
+
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_andnot_si128 (__m128i __A, __m128i __B)
+{
+  return (__m128i)__builtin_ia32_pandn128 ((__v2di)__A, (__v2di)__B);
+}
+
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_or_si128 (__m128i __A, __m128i __B)
+{
+  return (__m128i) ((__v2du)__A | (__v2du)__B);
+}
+
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_xor_si128 (__m128i __A, __m128i __B)
+{
+  return (__m128i) ((__v2du)__A ^ (__v2du)__B);
+}
+
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cmpeq_epi8 (__m128i __A, __m128i __B)
+{
+  return (__m128i) ((__v16qi)__A == (__v16qi)__B);
+}
+
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cmpeq_epi16 (__m128i __A, __m128i __B)
+{
+  return (__m128i) ((__v8hi)__A == (__v8hi)__B);
+}
+
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cmpeq_epi32 (__m128i __A, __m128i __B)
+{
+  return (__m128i) ((__v4si)__A == (__v4si)__B);
+}
+
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cmplt_epi8 (__m128i __A, __m128i __B)
+{
+  return (__m128i) ((__v16qs)__A < (__v16qs)__B);
+}
+
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cmplt_epi16 (__m128i __A, __m128i __B)
+{
+  return (__m128i) ((__v8hi)__A < (__v8hi)__B);
+}
+
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cmplt_epi32 (__m128i __A, __m128i __B)
+{
+  return (__m128i) ((__v4si)__A < (__v4si)__B);
+}
+
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cmpgt_epi8 (__m128i __A, __m128i __B)
+{
+  return (__m128i) ((__v16qs)__A > (__v16qs)__B);
+}
+
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cmpgt_epi16 (__m128i __A, __m128i __B)
+{
+  return (__m128i) ((__v8hi)__A > (__v8hi)__B);
+}
+
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cmpgt_epi32 (__m128i __A, __m128i __B)
+{
+  return (__m128i) ((__v4si)__A > (__v4si)__B);
+}
+# 1406 "/usr/lib/gcc/x86_64-linux-gnu/11/include/emmintrin.h" 3 4
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_max_epi16 (__m128i __A, __m128i __B)
+{
+  return (__m128i)__builtin_ia32_pmaxsw128 ((__v8hi)__A, (__v8hi)__B);
+}
+
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_max_epu8 (__m128i __A, __m128i __B)
+{
+  return (__m128i)__builtin_ia32_pmaxub128 ((__v16qi)__A, (__v16qi)__B);
+}
+
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_min_epi16 (__m128i __A, __m128i __B)
+{
+  return (__m128i)__builtin_ia32_pminsw128 ((__v8hi)__A, (__v8hi)__B);
+}
+
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_min_epu8 (__m128i __A, __m128i __B)
+{
+  return (__m128i)__builtin_ia32_pminub128 ((__v16qi)__A, (__v16qi)__B);
+}
+
+extern __inline int __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_movemask_epi8 (__m128i __A)
+{
+  return __builtin_ia32_pmovmskb128 ((__v16qi)__A);
+}
+
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_mulhi_epu16 (__m128i __A, __m128i __B)
+{
+  return (__m128i)__builtin_ia32_pmulhuw128 ((__v8hi)__A, (__v8hi)__B);
+}
+# 1469 "/usr/lib/gcc/x86_64-linux-gnu/11/include/emmintrin.h" 3 4
+extern __inline void __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_maskmoveu_si128 (__m128i __A, __m128i __B, char *__C)
+{
+  __builtin_ia32_maskmovdqu ((__v16qi)__A, (__v16qi)__B, __C);
+}
+
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_avg_epu8 (__m128i __A, __m128i __B)
+{
+  return (__m128i)__builtin_ia32_pavgb128 ((__v16qi)__A, (__v16qi)__B);
+}
+
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_avg_epu16 (__m128i __A, __m128i __B)
+{
+  return (__m128i)__builtin_ia32_pavgw128 ((__v8hi)__A, (__v8hi)__B);
+}
+
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_sad_epu8 (__m128i __A, __m128i __B)
+{
+  return (__m128i)__builtin_ia32_psadbw128 ((__v16qi)__A, (__v16qi)__B);
+}
+
+extern __inline void __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_stream_si32 (int *__A, int __B)
+{
+  __builtin_ia32_movnti (__A, __B);
+}
+
+
+extern __inline void __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_stream_si64 (long long int *__A, long long int __B)
+{
+  __builtin_ia32_movnti64 (__A, __B);
+}
+
+
+extern __inline void __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_stream_si128 (__m128i *__A, __m128i __B)
+{
+  __builtin_ia32_movntdq ((__v2di *)__A, (__v2di)__B);
+}
+
+extern __inline void __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_stream_pd (double *__A, __m128d __B)
+{
+  __builtin_ia32_movntpd (__A, (__v2df)__B);
+}
+
+extern __inline void __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_clflush (void const *__A)
+{
+  __builtin_ia32_clflush (__A);
+}
+
+extern __inline void __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_lfence (void)
+{
+  __builtin_ia32_lfence ();
+}
+
+extern __inline void __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_mfence (void)
+{
+  __builtin_ia32_mfence ();
+}
+
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cvtsi32_si128 (int __A)
+{
+  return _mm_set_epi32 (0, 0, 0, __A);
+}
+
+
+
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cvtsi64_si128 (long long __A)
+{
+  return _mm_set_epi64x (0, __A);
+}
+
+
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cvtsi64x_si128 (long long __A)
+{
+  return _mm_set_epi64x (0, __A);
+}
+
+
+
+
+extern __inline __m128 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_castpd_ps(__m128d __A)
+{
+  return (__m128) __A;
+}
+
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_castpd_si128(__m128d __A)
+{
+  return (__m128i) __A;
+}
+
+extern __inline __m128d __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_castps_pd(__m128 __A)
+{
+  return (__m128d) __A;
+}
+
+extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_castps_si128(__m128 __A)
+{
+  return (__m128i) __A;
+}
+
+extern __inline __m128 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_castsi128_ps(__m128i __A)
+{
+  return (__m128) __A;
+}
+
+extern __inline __m128d __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_castsi128_pd(__m128i __A)
+{
+  return (__m128d) __A;
+}
+# 1136 "/home/dweller/neovim/src/nvim/mbyte.c" 2
+
+
+
+_Bool 
+# 1139 "/home/dweller/neovim/src/nvim/mbyte.c"
+    utf_printable(int c)
+  FUNC_ATTR_CONST
+{
+  if (c < 0x180B || c > 0xFFFF) {
+    return c != 0x70F;
+  }
+
+
+
+
+
+
+
+  __m128i const lo = _mm_setr_epi16(((int16_t)((0x180b) - 1)), ((int16_t)((0x200b) - 1)), ((int16_t)((0x202a) - 1)), ((int16_t)((0x2060) - 1)),
+                                    ((int16_t)((0xd800) - 1)), ((int16_t)((0xfeff) - 1)), ((int16_t)((0xfff9) - 1)), ((int16_t)((0xfffe) - 1)));
+
+  __m128i const hi = _mm_setr_epi16(((int16_t)(0x180e)), ((int16_t)(0x200f)), ((int16_t)(0x202e)), ((int16_t)(0x206f)),
+                                    ((int16_t)(0xdfff)), ((int16_t)(0xfeff)), ((int16_t)(0xfffb)), ((int16_t)(0xffff)));
+
+
+
+
+  __m128i value = _mm_set1_epi16((int16_t)c);
+
+
+
+
+
+
+
+  return _mm_movemask_epi8(_mm_cmpgt_epi16(value, lo))
+         == _mm_movemask_epi8(_mm_cmpgt_epi16(value, hi));
+}
+# 1224 "/home/dweller/neovim/src/nvim/mbyte.c"
+int utf_class(const int c)
+{
+  return utf_class_tab(c, curbuf->b_chartab);
+}
+
+int utf_class_tab(const int c, const uint64_t *const chartab)
+  FUNC_ATTR_PURE
+{
+
+  static struct clinterval {
+    unsigned first;
+    unsigned last;
+    unsigned cls;
+  } classes[] = {
+    { 0x037e, 0x037e, 1 },
+    { 0x0387, 0x0387, 1 },
+    { 0x055a, 0x055f, 1 },
+    { 0x0589, 0x0589, 1 },
+    { 0x05be, 0x05be, 1 },
+    { 0x05c0, 0x05c0, 1 },
+    { 0x05c3, 0x05c3, 1 },
+    { 0x05f3, 0x05f4, 1 },
+    { 0x060c, 0x060c, 1 },
+    { 0x061b, 0x061b, 1 },
+    { 0x061f, 0x061f, 1 },
+    { 0x066a, 0x066d, 1 },
+    { 0x06d4, 0x06d4, 1 },
+    { 0x0700, 0x070d, 1 },
+    { 0x0964, 0x0965, 1 },
+    { 0x0970, 0x0970, 1 },
+    { 0x0df4, 0x0df4, 1 },
+    { 0x0e4f, 0x0e4f, 1 },
+    { 0x0e5a, 0x0e5b, 1 },
+    { 0x0f04, 0x0f12, 1 },
+    { 0x0f3a, 0x0f3d, 1 },
+    { 0x0f85, 0x0f85, 1 },
+    { 0x104a, 0x104f, 1 },
+    { 0x10fb, 0x10fb, 1 },
+    { 0x1361, 0x1368, 1 },
+    { 0x166d, 0x166e, 1 },
+    { 0x1680, 0x1680, 0 },
+    { 0x169b, 0x169c, 1 },
+    { 0x16eb, 0x16ed, 1 },
+    { 0x1735, 0x1736, 1 },
+    { 0x17d4, 0x17dc, 1 },
+    { 0x1800, 0x180a, 1 },
+    { 0x2000, 0x200b, 0 },
+    { 0x200c, 0x2027, 1 },
+    { 0x2028, 0x2029, 0 },
+    { 0x202a, 0x202e, 1 },
+    { 0x202f, 0x202f, 0 },
+    { 0x2030, 0x205e, 1 },
+    { 0x205f, 0x205f, 0 },
+    { 0x2060, 0x27ff, 1 },
+    { 0x2070, 0x207f, 0x2070 },
+    { 0x2080, 0x2094, 0x2080 },
+    { 0x20a0, 0x27ff, 1 },
+    { 0x2800, 0x28ff, 0x2800 },
+    { 0x2900, 0x2998, 1 },
+    { 0x29d8, 0x29db, 1 },
+    { 0x29fc, 0x29fd, 1 },
+    { 0x2e00, 0x2e7f, 1 },
+    { 0x3000, 0x3000, 0 },
+    { 0x3001, 0x3020, 1 },
+    { 0x3030, 0x3030, 1 },
+    { 0x303d, 0x303d, 1 },
+    { 0x3040, 0x309f, 0x3040 },
+    { 0x30a0, 0x30ff, 0x30a0 },
+    { 0x3300, 0x9fff, 0x4e00 },
+    { 0xac00, 0xd7a3, 0xac00 },
+    { 0xf900, 0xfaff, 0x4e00 },
+    { 0xfd3e, 0xfd3f, 1 },
+    { 0xfe30, 0xfe6b, 1 },
+    { 0xff00, 0xff0f, 1 },
+    { 0xff1a, 0xff20, 1 },
+    { 0xff3b, 0xff40, 1 },
+    { 0xff5b, 0xff65, 1 },
+    { 0x1d000, 0x1d24f, 1 },
+    { 0x1d400, 0x1d7ff, 1 },
+    { 0x1f000, 0x1f2ff, 1 },
+    { 0x1f300, 0x1f9ff, 1 },
+    { 0x20000, 0x2a6df, 0x4e00 },
+    { 0x2a700, 0x2b73f, 0x4e00 },
+    { 0x2b740, 0x2b81f, 0x4e00 },
+    { 0x2f800, 0x2fa1f, 0x4e00 },
+  };
+  int bot = 0;
+  int top = ((sizeof(classes)/sizeof((classes)[0])) / ((size_t)(!(sizeof(classes) % sizeof((classes)[0]))))) - 1;
+
+
+  if (c < 0x100) {
+    if (c == ' ' || c == '\t' || c == '\000' || c == 0xa0) {
+      return 0;
+    }
+    if (vim_iswordc_tab(c, chartab)) {
+      return 2;
+    }
+    return 1;
+  }
+
+  const utf8proc_property_t *prop = utf8proc_get_property(c);
+
+  if (prop_is_emojilike(prop)) {
+    return 3;
+  }
+
+
+  while (top >= bot) {
+    int mid = (bot + top) / 2;
+    if (classes[mid].last < (unsigned)c) {
+      bot = mid + 1;
+    } else if (classes[mid].first > (unsigned)c) {
+      top = mid - 1;
+    } else {
+      return (int)classes[mid].cls;
+    }
+  }
+
+
+  return 2;
+}
+
+
+# 1346 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+_Bool 
+# 1346 "/home/dweller/neovim/src/nvim/mbyte.c"
+    utf_ambiguous_width(const char *p)
+{
+
+  if (p[0] == '\000' || p[1] == '\000') {
+    return 
+# 1350 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+          0
+# 1350 "/home/dweller/neovim/src/nvim/mbyte.c"
+               ;
+  }
+
+  CharInfo info = utf_ptr2CharInfo(p);
+  if (info.value >= 0x80) {
+    const utf8proc_property_t *prop = utf8proc_get_property(info.value);
+    if (prop->ambiguous_width || prop_is_emojilike(prop)) {
+      return 
+# 1357 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+            1
+# 1357 "/home/dweller/neovim/src/nvim/mbyte.c"
+                ;
+    }
+  }
+
+
+
+  return memcmp(p + info.len, "\xef\xb8\x8f", 3) == 0;
+}
+
+
+
+int utf_fold(int a)
+{
+  if (a < 0x80) {
+
+    return a >= 0x41 && a <= 0x5a ? a + 32 : a;
+  }
+# 1382 "/home/dweller/neovim/src/nvim/mbyte.c"
+  if (a == 0xdf || a == 0x130) {
+    return a;
+  }
+
+  utf8proc_int32_t result[1];
+
+  utf8proc_ssize_t res = utf8proc_decompose_char(a, result, 1, UTF8PROC_CASEFOLD, 
+# 1388 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+                                                                                 ((void *)0)
+# 1388 "/home/dweller/neovim/src/nvim/mbyte.c"
+                                                                                     );
+
+  return (res == 1) ? result[0] : a;
+}
+# 1400 "/home/dweller/neovim/src/nvim/mbyte.c"
+int mb_toupper(int a)
+{
+
+  if (a < 128 && (cmp_flags & kOptCmpFlagKeepascii)) {
+    return (((a) < 'a' || (a) > 'z') ? (a) : (a) - ('a' - 'A'));
+  }
+
+  if (!(cmp_flags & kOptCmpFlagInternal)) {
+    return (int)towupper((wint_t)a);
+  }
+
+
+  if (a < 128) {
+    return toupper(a);
+  }
+
+  return utf8proc_toupper(a);
+}
+
+
+# 1419 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+_Bool 
+# 1419 "/home/dweller/neovim/src/nvim/mbyte.c"
+    mb_islower(int a)
+{
+  return mb_toupper(a) != a;
+}
+
+
+
+int mb_tolower(int a)
+{
+
+  if (a < 128 && (cmp_flags & kOptCmpFlagKeepascii)) {
+    return (((a) < 'A' || (a) > 'Z') ? (a) : (a) + ('a' - 'A'));
+  }
+
+  if (!(cmp_flags & kOptCmpFlagInternal)) {
+    return (int)towlower((wint_t)a);
+  }
+
+
+  if (a < 128) {
+    return tolower(a);
+  }
+
+  return utf8proc_tolower(a);
+}
+
+
+# 1445 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+_Bool 
+# 1445 "/home/dweller/neovim/src/nvim/mbyte.c"
+    mb_isupper(int a)
+{
+  return mb_tolower(a) != a;
+}
+
+
+# 1450 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+_Bool 
+# 1450 "/home/dweller/neovim/src/nvim/mbyte.c"
+    mb_isalpha(int a)
+  FUNC_ATTR_WARN_UNUSED_RESULT
+{
+  return mb_islower(a) || mb_isupper(a);
+}
+
+int utf_strnicmp(const char *s1, const char *s2, size_t n1, size_t n2)
+{
+  int c1, c2;
+  char buffer[6];
+
+  while (
+# 1461 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+        1
+# 1461 "/home/dweller/neovim/src/nvim/mbyte.c"
+            ) {
+    c1 = utf_safe_read_char_adv(&s1, &n1);
+    c2 = utf_safe_read_char_adv(&s2, &n2);
+
+    if (c1 <= 0 || c2 <= 0) {
+      break;
+    }
+
+    if (c1 == c2) {
+      continue;
+    }
+
+    int cdiff = utf_fold(c1) - utf_fold(c2);
+    if (cdiff != 0) {
+      return cdiff;
+    }
+  }
+
+
+
+  if (c1 == 0 || c2 == 0) {
+
+    if (c1 == 0 && c2 == 0) {
+      return 0;
+    }
+    return c1 == 0 ? -1 : 1;
+  }
+# 1496 "/home/dweller/neovim/src/nvim/mbyte.c"
+  if (c1 != -1 && c2 == -1) {
+    n1 = (size_t)utf_char2bytes(utf_fold(c1), buffer);
+    s1 = buffer;
+  } else if (c2 != -1 && c1 == -1) {
+    n2 = (size_t)utf_char2bytes(utf_fold(c2), buffer);
+    s2 = buffer;
+  }
+
+  while (n1 > 0 && n2 > 0 && *s1 != '\000' && *s2 != '\000') {
+    int cdiff = (int)((uint8_t)(*s1)) - (int)((uint8_t)(*s2));
+    if (cdiff != 0) {
+      return cdiff;
+    }
+
+    s1++;
+    s2++;
+    n1--;
+    n2--;
+  }
+
+  if (n1 > 0 && *s1 == '\000') {
+    n1 = 0;
+  }
+  if (n2 > 0 && *s2 == '\000') {
+    n2 = 0;
+  }
+
+  if (n1 == 0 && n2 == 0) {
+    return 0;
+  }
+  return n1 == 0 ? -1 : 1;
+}
+# 1631 "/home/dweller/neovim/src/nvim/mbyte.c"
+void mb_utflen(const char *s, size_t len, size_t *codepoints, size_t *codeunits)
+  FUNC_ATTR_NONNULL_ALL
+{
+  size_t count = 0;
+  size_t extra = 0;
+  size_t clen;
+  for (size_t i = 0; i < len; i += clen) {
+    clen = (size_t)utf_ptr2len_len(s + i, (int)(len - i));
+
+
+    int c = (clen > 1) ? utf_ptr2char(s + i) : (uint8_t)s[i];
+    count++;
+    if (c > 0xFFFF) {
+      extra++;
+    }
+  }
+  *codepoints += count;
+  *codeunits += count + extra;
+}
+
+ssize_t mb_utf_index_to_bytes(const char *s, size_t len, size_t index, 
+# 1651 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+                                                                      _Bool 
+# 1651 "/home/dweller/neovim/src/nvim/mbyte.c"
+                                                                           use_utf16_units)
+  FUNC_ATTR_NONNULL_ALL
+{
+  size_t count = 0;
+  size_t clen;
+  if (index == 0) {
+    return 0;
+  }
+  for (size_t i = 0; i < len; i += clen) {
+    clen = (size_t)utf_ptr2len_len(s + i, (int)(len - i));
+
+
+    int c = (clen > 1) ? utf_ptr2char(s + i) : (uint8_t)s[i];
+    count++;
+    if (use_utf16_units && c > 0xFFFF) {
+      count++;
+    }
+    if (count >= index) {
+      return (ssize_t)(i + clen);
+    }
+  }
+  return -1;
+}
+# 1682 "/home/dweller/neovim/src/nvim/mbyte.c"
+int mb_strnicmp(const char *s1, const char *s2, const size_t nn)
+{
+  return utf_strnicmp(s1, s2, nn, nn);
+}
+# 1699 "/home/dweller/neovim/src/nvim/mbyte.c"
+int mb_stricmp(const char *s1, const char *s2)
+{
+  return mb_strnicmp(s1, s2, MAXCOL);
+}
+
+
+
+void show_utf8(void)
+{
+
+
+  char *line = get_cursor_pos_ptr();
+  int len = utfc_ptr2len(line);
+  if (len == 0) {
+    msg("NUL", 0);
+    return;
+  }
+
+  size_t rlen = 0;
+  int clen = 0;
+  for (int i = 0; i < len; i++) {
+    if (clen == 0) {
+
+      if (i > 0) {
+        strcpy((char *)(IObuff + rlen), (char *)("+ "));
+        rlen += 2;
+      }
+      clen = utf_ptr2len(line + i);
+    }
+    
+# 1728 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+   ((void) sizeof ((
+# 1728 "/home/dweller/neovim/src/nvim/mbyte.c"
+   (1024 + 1) > rlen
+# 1728 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+   ) ? 1 : 0), __extension__ ({ if (
+# 1728 "/home/dweller/neovim/src/nvim/mbyte.c"
+   (1024 + 1) > rlen
+# 1728 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+   ) ; else __assert_fail (
+# 1728 "/home/dweller/neovim/src/nvim/mbyte.c"
+   "IOSIZE > rlen"
+# 1728 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+   , "/home/dweller/neovim/src/nvim/mbyte.c", 1728, __extension__ __PRETTY_FUNCTION__); }))
+# 1728 "/home/dweller/neovim/src/nvim/mbyte.c"
+                        ;
+    snprintf(IObuff + rlen, (1024 + 1) - rlen, "%02x ",
+             (line[i] == '\012') ? '\000' : (uint8_t)line[i]);
+    clen--;
+    rlen += strlen(IObuff + rlen);
+    if (rlen > (1024 + 1) - 20) {
+      break;
+    }
+  }
+
+  msg(IObuff, 0);
+}
+
+
+
+static 
+# 1743 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+      _Bool 
+# 1743 "/home/dweller/neovim/src/nvim/mbyte.c"
+           always_break(int bc)
+{
+  return (bc == UTF8PROC_BOUNDCLASS_CONTROL);
+}
+
+
+
+static 
+# 1750 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+      _Bool 
+# 1750 "/home/dweller/neovim/src/nvim/mbyte.c"
+           always_break_two(int bc1, int bc2)
+{
+
+
+  return ((bc1 != UTF8PROC_BOUNDCLASS_PREPEND && bc2 == UTF8PROC_BOUNDCLASS_OTHER)
+          || (bc1 >= UTF8PROC_BOUNDCLASS_CR && bc1 <= UTF8PROC_BOUNDCLASS_CONTROL)
+          || (bc2 == UTF8PROC_BOUNDCLASS_EXTENDED_PICTOGRAPHIC
+              && (bc1 == UTF8PROC_BOUNDCLASS_OTHER
+                  || bc1 == UTF8PROC_BOUNDCLASS_EXTENDED_PICTOGRAPHIC)));
+}
+
+
+
+
+
+int utf_head_off(const char *base_in, const char *p_in)
+{
+  if ((uint8_t)(*p_in) < 0x80) {
+    return 0;
+  }
+
+  const uint8_t *base = (uint8_t *)base_in;
+  const uint8_t *p = (uint8_t *)p_in;
+
+  const uint8_t *start = p;
+
+
+
+  while (start > base && (*start & 0xc0) == 0x80 && (p - start) < 6) {
+    start--;
+  }
+
+  const uint8_t last_len = utf8len_tab[*start];
+  int32_t cur_code = utf_ptr2CharInfo_impl(start, (uintptr_t)last_len);
+  if (cur_code < 0 || p - start >= last_len) {
+    return 0;
+  }
+  const uint8_t * const safe_end = start + last_len;
+
+  int cur_bc = utf8proc_get_property(cur_code)->boundclass;
+  if (always_break(cur_bc) || start == base) {
+    return (int)(p - start);
+  }
+
+
+  const uint8_t *cur_pos = start;
+  const uint8_t *const p_start = start;
+
+  while (
+# 1798 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+        1
+# 1798 "/home/dweller/neovim/src/nvim/mbyte.c"
+            ) {
+    if (start[-1] == '\000') {
+      break;
+    }
+
+    start--;
+    if (*start < 0x80) {
+      break;
+    }
+
+    while (start > base && (*start & 0xc0) == 0x80 && (cur_pos - start) < 6) {
+      start--;
+    }
+
+    int prev_len = utf8len_tab[*start];
+    int32_t prev_code = utf_ptr2CharInfo_impl(start, (uintptr_t)prev_len);
+    if (prev_code < 0 || prev_len < cur_pos - start) {
+      start = cur_pos;
+      break;
+    }
+
+    int prev_bc = utf8proc_get_property(prev_code)->boundclass;
+    if (always_break_two(prev_bc, cur_bc) && !arabic_combine(prev_code, cur_code)) {
+      start = cur_pos;
+      break;
+    } else if (start == base) {
+      break;
+    }
+    cur_pos = start;
+    cur_bc = prev_bc;
+    cur_code = prev_code;
+  }
+
+
+  if (start == p_start && last_len > p - start) {
+    return (int)(p - start);
+  }
+
+  const uint8_t *q = start;
+  while (q < p) {
+
+    int len = utfc_ptr2len_len((const char *)q, (int)(safe_end - q));
+
+    if (q + len > p) {
+      return (int)(p - q);
+    }
+
+    q += len;
+  }
+
+  return 0;
+}
+
+
+StrCharInfo utfc_next_impl(StrCharInfo cur)
+{
+  int32_t prev_code = cur.chr.value;
+  uint8_t *next = (uint8_t *)(cur.ptr + cur.chr.len);
+  GraphemeState state = 0;
+  
+# 1857 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+ ((void) sizeof ((
+# 1857 "/home/dweller/neovim/src/nvim/mbyte.c"
+ *next >= 0x80
+# 1857 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+ ) ? 1 : 0), __extension__ ({ if (
+# 1857 "/home/dweller/neovim/src/nvim/mbyte.c"
+ *next >= 0x80
+# 1857 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+ ) ; else __assert_fail (
+# 1857 "/home/dweller/neovim/src/nvim/mbyte.c"
+ "*next >= 0x80"
+# 1857 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+ , "/home/dweller/neovim/src/nvim/mbyte.c", 1857, __extension__ __PRETTY_FUNCTION__); }))
+# 1857 "/home/dweller/neovim/src/nvim/mbyte.c"
+                      ;
+
+  while (
+# 1859 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+        1
+# 1859 "/home/dweller/neovim/src/nvim/mbyte.c"
+            ) {
+    uint8_t const next_len = utf8len_tab[*next];
+    int32_t const next_code = utf_ptr2CharInfo_impl(next, (uintptr_t)next_len);
+    if (!utf_iscomposing(prev_code, next_code, &state)) {
+      return (StrCharInfo){
+        .ptr = (char *)next,
+        .chr = (CharInfo){ .value = next_code, .len = (next_code < 0 ? 1 : next_len) },
+      };
+    }
+
+    prev_code = next_code;
+    next += next_len;
+    if (__builtin_expect((*next < 0x80U), (
+# 1871 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+       1
+# 1871 "/home/dweller/neovim/src/nvim/mbyte.c"
+       ))) {
+      return (StrCharInfo){
+        .ptr = (char *)next,
+        .chr = (CharInfo){ .value = *next, .len = 1 },
+      };
+    }
+  }
+}
+
+
+
+# 1881 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+_Bool 
+# 1881 "/home/dweller/neovim/src/nvim/mbyte.c"
+    utf_eat_space(int cc)
+  FUNC_ATTR_CONST FUNC_ATTR_WARN_UNUSED_RESULT
+{
+  return (cc >= 0x2000 && cc <= 0x206F)
+         || (cc >= 0x2e00 && cc <= 0x2e7f)
+         || (cc >= 0x3000 && cc <= 0x303f)
+         || (cc >= 0xff01 && cc <= 0xff0f)
+         || (cc >= 0xff1a && cc <= 0xff20)
+         || (cc >= 0xff3b && cc <= 0xff40)
+         || (cc >= 0xff5b && cc <= 0xff65);
+}
+
+
+
+# 1894 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+_Bool 
+# 1894 "/home/dweller/neovim/src/nvim/mbyte.c"
+    utf_allow_break_before(int cc)
+  FUNC_ATTR_CONST FUNC_ATTR_WARN_UNUSED_RESULT
+{
+  static const int BOL_prohibition_punct[] = {
+    '!',
+    '%',
+    ')',
+    ',',
+    ':',
+    ';',
+    '>',
+    '?',
+    ']',
+    '}',
+    0x2019,
+    0x201d,
+    0x2020,
+    0x2021,
+    0x2026,
+    0x2030,
+    0x2031,
+    0x203c,
+    0x2047,
+    0x2048,
+    0x2049,
+    0x2103,
+    0x2109,
+    0x3001,
+    0x3002,
+    0x3009,
+    0x300b,
+    0x300d,
+    0x300f,
+    0x3011,
+    0x3015,
+    0x3017,
+    0x3019,
+    0x301b,
+    0xff01,
+    0xff09,
+    0xff0c,
+    0xff0e,
+    0xff1a,
+    0xff1b,
+    0xff1f,
+    0xff3d,
+    0xff5d,
+  };
+
+  int first = 0;
+  int last = ((sizeof(BOL_prohibition_punct)/sizeof((BOL_prohibition_punct)[0])) / ((size_t)(!(sizeof(BOL_prohibition_punct) % sizeof((BOL_prohibition_punct)[0]))))) - 1;
+
+  while (first < last) {
+    const int mid = (first + last) / 2;
+
+    if (cc == BOL_prohibition_punct[mid]) {
+      return 
+# 1950 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+            0
+# 1950 "/home/dweller/neovim/src/nvim/mbyte.c"
+                 ;
+    } else if (cc > BOL_prohibition_punct[mid]) {
+      first = mid + 1;
+    } else {
+      last = mid - 1;
+    }
+  }
+
+  return cc != BOL_prohibition_punct[first];
+}
+
+
+
+# 1962 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+_Bool 
+# 1962 "/home/dweller/neovim/src/nvim/mbyte.c"
+    utf_allow_break_after(int cc)
+  FUNC_ATTR_CONST FUNC_ATTR_WARN_UNUSED_RESULT
+{
+  static const int EOL_prohibition_punct[] = {
+    '(',
+    '<',
+    '[',
+    '`',
+    '{',
+
+    0x2018,
+    0x201c,
+
+    0x3008,
+    0x300a,
+    0x300c,
+    0x300e,
+    0x3010,
+    0x3014,
+    0x3016,
+    0x3018,
+    0x301a,
+    0xff08,
+    0xff3b,
+    0xff5b,
+  };
+
+  int first = 0;
+  int last = ((sizeof(EOL_prohibition_punct)/sizeof((EOL_prohibition_punct)[0])) / ((size_t)(!(sizeof(EOL_prohibition_punct) % sizeof((EOL_prohibition_punct)[0]))))) - 1;
+
+  while (first < last) {
+    const int mid = (first + last)/2;
+
+    if (cc == EOL_prohibition_punct[mid]) {
+      return 
+# 1996 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+            0
+# 1996 "/home/dweller/neovim/src/nvim/mbyte.c"
+                 ;
+    } else if (cc > EOL_prohibition_punct[mid]) {
+      first = mid + 1;
+    } else {
+      last = mid - 1;
+    }
+  }
+
+  return cc != EOL_prohibition_punct[first];
+}
+
+
+
+# 2008 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+_Bool 
+# 2008 "/home/dweller/neovim/src/nvim/mbyte.c"
+    utf_allow_break(int cc, int ncc)
+  FUNC_ATTR_CONST FUNC_ATTR_WARN_UNUSED_RESULT
+{
+
+  if (cc == ncc
+      && (cc == 0x2014
+          || cc == 0x2026)) {
+    return 
+# 2015 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+          0
+# 2015 "/home/dweller/neovim/src/nvim/mbyte.c"
+               ;
+  }
+  return utf_allow_break_after(cc) && utf_allow_break_before(ncc);
+}
+
+
+
+
+
+void mb_copy_char(const char **const fp, char **const tp)
+{
+  const size_t l = (size_t)utfc_ptr2len(*fp);
+
+  memmove(*tp, *fp, l);
+  *tp += l;
+  *fp += l;
+}
+
+
+
+
+int mb_off_next(const char *base, const char *p)
+{
+  int head_off = utf_head_off(base, p);
+
+  if (head_off == 0) {
+    return 0;
+  }
+
+  return utfc_ptr2len(p - head_off) - head_off;
+}
+
+
+
+
+
+
+CharBoundsOff utf_cp_bounds_len(char const *base, char const *p_in, int p_len)
+  FUNC_ATTR_PURE FUNC_ATTR_NONNULL_ALL
+{
+  
+# 2055 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+ ((void) sizeof ((
+# 2055 "/home/dweller/neovim/src/nvim/mbyte.c"
+ base <= p_in && p_len > 0
+# 2055 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+ ) ? 1 : 0), __extension__ ({ if (
+# 2055 "/home/dweller/neovim/src/nvim/mbyte.c"
+ base <= p_in && p_len > 0
+# 2055 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+ ) ; else __assert_fail (
+# 2055 "/home/dweller/neovim/src/nvim/mbyte.c"
+ "base <= p_in && p_len > 0"
+# 2055 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+ , "/home/dweller/neovim/src/nvim/mbyte.c", 2055, __extension__ __PRETTY_FUNCTION__); }))
+# 2055 "/home/dweller/neovim/src/nvim/mbyte.c"
+                                  ;
+  uint8_t const *const b = (uint8_t *)base;
+  uint8_t const *const p = (uint8_t *)p_in;
+  if (*p < 0x80U) {
+    return (CharBoundsOff){ 0, 1 };
+  }
+
+  int const max_first_off = -
+# 2062 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+                            (((
+# 2062 "/home/dweller/neovim/src/nvim/mbyte.c"
+                            (int)(p - b)
+# 2062 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+                            )<(
+# 2062 "/home/dweller/neovim/src/nvim/mbyte.c"
+                            MB_MAXCHAR - 1
+# 2062 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+                            ))?(
+# 2062 "/home/dweller/neovim/src/nvim/mbyte.c"
+                            (int)(p - b)
+# 2062 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+                            ):(
+# 2062 "/home/dweller/neovim/src/nvim/mbyte.c"
+                            MB_MAXCHAR - 1
+# 2062 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+                            ))
+# 2062 "/home/dweller/neovim/src/nvim/mbyte.c"
+                                                             ;
+  int first_off = 0;
+  for (; utf_is_trail_byte(p[first_off]); first_off--) {
+    if (first_off == max_first_off) {
+      return (CharBoundsOff){ 0, 1 };
+    }
+  }
+
+  int const max_end_off = utf8len_tab[p[first_off]] + first_off;
+  if (max_end_off <= 0 || max_end_off > p_len) {
+    return (CharBoundsOff){ 0, 1 };
+  }
+
+  for (int end_off = 1; end_off < max_end_off; end_off++) {
+    if (!utf_is_trail_byte(p[end_off])) {
+      return (CharBoundsOff){ 0, 1 };
+    }
+  }
+
+  return (CharBoundsOff){ .begin_off = (int8_t)-first_off, .end_off = (int8_t)max_end_off };
+}
+
+
+
+
+
+
+CharBoundsOff utf_cp_bounds(char const *base, char const *p_in)
+  FUNC_ATTR_PURE FUNC_ATTR_NONNULL_ALL
+{
+  return utf_cp_bounds_len(base, p_in, 0x7fffffff);
+}
+
+
+void utf_find_illegal(void)
+{
+  pos_T pos = curwin->w_cursor;
+  vimconv_T vimconv;
+  char *tofree = 
+# 2100 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+                ((void *)0)
+# 2100 "/home/dweller/neovim/src/nvim/mbyte.c"
+                    ;
+
+  vimconv.vc_type = CONV_NONE;
+  if (enc_canon_props(curbuf->b_p_fenc) & ENC_8BIT) {
+
+
+
+    convert_setup(&vimconv, p_enc, curbuf->b_p_fenc);
+  }
+
+  curwin->w_cursor.coladd = 0;
+  while (
+# 2111 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+        1
+# 2111 "/home/dweller/neovim/src/nvim/mbyte.c"
+            ) {
+    char *p = get_cursor_pos_ptr();
+    if (vimconv.vc_type != CONV_NONE) {
+      xfree(tofree);
+      tofree = string_convert(&vimconv, p, 
+# 2115 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+                                          ((void *)0)
+# 2115 "/home/dweller/neovim/src/nvim/mbyte.c"
+                                              );
+      if (tofree == 
+# 2116 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+                   ((void *)0)
+# 2116 "/home/dweller/neovim/src/nvim/mbyte.c"
+                       ) {
+        break;
+      }
+      p = tofree;
+    }
+
+    while (*p != '\000') {
+
+
+      int len = utf_ptr2len(p);
+      if ((uint8_t)(*p) >= 0x80 && (len == 1 || utf_char2len(utf_ptr2char(p)) != len)) {
+        if (vimconv.vc_type == CONV_NONE) {
+          curwin->w_cursor.col += (colnr_T)(p - get_cursor_pos_ptr());
+        } else {
+          int l;
+
+          len = (int)(p - tofree);
+          for (p = get_cursor_pos_ptr(); *p != '\000' && len-- > 0; p += l) {
+            l = utf_ptr2len(p);
+            curwin->w_cursor.col += l;
+          }
+        }
+        goto theend;
+      }
+      p += len;
+    }
+    if (curwin->w_cursor.lnum == curbuf->b_ml.ml_line_count) {
+      break;
+    }
+    curwin->w_cursor.lnum++;
+    curwin->w_cursor.col = 0;
+  }
+
+
+  curwin->w_cursor = pos;
+  beep_flush();
+
+theend:
+  xfree(tofree);
+  convert_setup(&vimconv, 
+# 2155 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+                         ((void *)0)
+# 2155 "/home/dweller/neovim/src/nvim/mbyte.c"
+                             , 
+# 2155 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+                               ((void *)0)
+# 2155 "/home/dweller/neovim/src/nvim/mbyte.c"
+                                   );
+}
+
+
+
+
+# 2160 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+_Bool 
+# 2160 "/home/dweller/neovim/src/nvim/mbyte.c"
+    utf_valid_string(const char *s, const char *end)
+{
+  const uint8_t *p = (uint8_t *)s;
+
+  while (end == 
+# 2164 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+               ((void *)0) 
+# 2164 "/home/dweller/neovim/src/nvim/mbyte.c"
+                    ? *p != '\000' : p < (uint8_t *)end) {
+    int l = utf8len_tab_zero[*p];
+    if (l == 0) {
+      return 
+# 2167 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+            0
+# 2167 "/home/dweller/neovim/src/nvim/mbyte.c"
+                 ;
+    }
+    if (end != 
+# 2169 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+              ((void *)0) 
+# 2169 "/home/dweller/neovim/src/nvim/mbyte.c"
+                   && p + l > (uint8_t *)end) {
+      return 
+# 2170 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+            0
+# 2170 "/home/dweller/neovim/src/nvim/mbyte.c"
+                 ;
+    }
+    p++;
+    while (--l > 0) {
+      if ((*p++ & 0xc0) != 0x80) {
+        return 
+# 2175 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+              0
+# 2175 "/home/dweller/neovim/src/nvim/mbyte.c"
+                   ;
+      }
+    }
+  }
+  return 
+# 2179 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+        1
+# 2179 "/home/dweller/neovim/src/nvim/mbyte.c"
+            ;
+}
+
+
+
+void mb_adjust_cursor(void)
+{
+  mark_mb_adjustpos(curbuf, &curwin->w_cursor);
+}
+
+
+
+
+
+void mb_check_adjust_col(void *win_)
+{
+  win_T *win = (win_T *)win_;
+  colnr_T oldcol = win->w_cursor.col;
+
+
+  if (oldcol != 0) {
+    char *p = ml_get_buf(win->w_buffer, win->w_cursor.lnum);
+    colnr_T len = (colnr_T)strlen(p);
+
+
+    if (len == 0 || oldcol < 0) {
+      win->w_cursor.col = 0;
+    } else {
+
+      if (oldcol > len) {
+        win->w_cursor.col = len - 1;
+      }
+
+      win->w_cursor.col -= utf_head_off(p, p + win->w_cursor.col);
+    }
+
+
+
+    if (win->w_cursor.coladd == 1 && p[win->w_cursor.col] != '\011'
+        && vim_isprintc(utf_ptr2char(p + win->w_cursor.col))
+        && ptr2cells(p + win->w_cursor.col) > 1) {
+      win->w_cursor.coladd = 0;
+    }
+  }
+}
+
+
+
+
+char *mb_prevptr(char *line, char *p)
+{
+  if (p > line) {
+    (p -= utf_head_off((char *)(line), (char *)(p) - 1) + 1);
+  }
+  return p;
+}
+
+
+
+int mb_charlen(const char *str)
+{
+  const char *p = str;
+  int count;
+
+  if (p == 
+# 2243 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+          ((void *)0)
+# 2243 "/home/dweller/neovim/src/nvim/mbyte.c"
+              ) {
+    return 0;
+  }
+
+  for (count = 0; *p != '\000'; count++) {
+    p += utfc_ptr2len(p);
+  }
+
+  return count;
+}
+
+
+int mb_charlen_len(const char *str, int len)
+{
+  const char *p = str;
+  int count;
+
+  for (count = 0; *p != '\000' && p < str + len; count++) {
+    p += utfc_ptr2len(p);
+  }
+
+  return count;
+}
+# 2277 "/home/dweller/neovim/src/nvim/mbyte.c"
+const char *mb_unescape(const char **const pp)
+  FUNC_ATTR_WARN_UNUSED_RESULT FUNC_ATTR_NONNULL_ALL
+{
+  static char buf[6];
+  size_t buf_idx = 0;
+  uint8_t *str = (uint8_t *)(*pp);
+
+
+
+  for (size_t str_idx = 0; str[str_idx] != '\000' && buf_idx < 4; str_idx++) {
+    if (str[str_idx] == (0x80)
+        && str[str_idx + 1] == 254
+        && str[str_idx + 2] == ('X')) {
+      buf[buf_idx++] = (char)(0x80);
+      str_idx += 2;
+    } else if (str[str_idx] == (0x80)) {
+      break;
+    } else {
+      buf[buf_idx++] = (char)str[str_idx];
+    }
+    buf[buf_idx] = '\000';
+
+
+
+    if (utf_ptr2len(buf) > 1) {
+      *pp = (const char *)str + str_idx + 1;
+      return buf;
+    }
+
+
+    if ((uint8_t)buf[0] < 128) {
+      break;
+    }
+  }
+  return 
+# 2311 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+        ((void *)0)
+# 2311 "/home/dweller/neovim/src/nvim/mbyte.c"
+            ;
+}
+
+
+char *enc_skip(char *p)
+{
+  if (strncmp(p, "2byte-", 6) == 0) {
+    return p + 6;
+  }
+  if (strncmp(p, "8bit-", 5) == 0) {
+    return p + 5;
+  }
+  return p;
+}
+
+
+
+
+
+
+char *enc_canonize(char *enc)
+  FUNC_ATTR_NONNULL_RET
+{
+  if (strcmp(enc, "default") == 0) {
+
+    return xstrdup(fenc_default);
+  }
+
+
+  char *r = xmalloc(strlen(enc) + 3);
+
+  char *p = r;
+  for (char *s = enc; *s != '\000'; s++) {
+    if (*s == '_') {
+      *p++ = '-';
+    } else {
+      *p++ = (char)(((*s) < 'A' || (*s) > 'Z') ? (*s) : (*s) + ('a' - 'A'));
+    }
+  }
+  *p = '\000';
+
+
+  p = enc_skip(r);
+
+
+  if (strncmp(p, "microsoft-cp", 12) == 0) {
+    memmove((p), (p + 10), strlen(p + 10) + 1);
+  }
+
+
+  if (strncmp(p, "iso8859", 7) == 0) {
+    memmove((p + 4), (p + 3), strlen(p + 3) + 1);
+    p[3] = '-';
+  }
+
+
+  if (strncmp(p, "iso-8859", 8) == 0 && p[8] != '-') {
+    memmove((p + 9), (p + 8), strlen(p + 8) + 1);
+    p[8] = '-';
+  }
+
+
+  if (strncmp(p, "latin-", 6) == 0) {
+    memmove((p + 5), (p + 6), strlen(p + 6) + 1);
+  }
+
+  int i;
+  if (enc_canon_search(p) >= 0) {
+
+    if (p != r) {
+      memmove((r), (p), strlen(p) + 1);
+    }
+  } else if ((i = enc_alias_search(p)) >= 0) {
+
+    xfree(r);
+    r = xstrdup(enc_canon_table[i].name);
+  }
+  return r;
+}
+
+
+
+static int enc_alias_search(const char *name)
+{
+  for (int i = 0; enc_alias_table[i].name != 
+# 2395 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+                                            ((void *)0)
+# 2395 "/home/dweller/neovim/src/nvim/mbyte.c"
+                                                ; i++) {
+    if (strcmp(name, enc_alias_table[i].name) == 0) {
+      return enc_alias_table[i].canon;
+    }
+  }
+  return -1;
+}
+
+
+# 1 "/usr/include/langinfo.h" 1 3 4
+# 23 "/usr/include/langinfo.h" 3 4
+# 1 "/usr/include/nl_types.h" 1 3 4
+# 30 "/usr/include/nl_types.h" 3 4
+
+
+
+
+# 33 "/usr/include/nl_types.h" 3 4
+typedef void *nl_catd;
+
+
+typedef int nl_item;
+
+
+
+
+
+extern nl_catd catopen (const char *__cat_name, int __flag) __attribute__ ((__nonnull__ (1)));
+
+
+
+extern char *catgets (nl_catd __catalog, int __set, int __number,
+        const char *__string) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+extern int catclose (nl_catd __catalog) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+# 24 "/usr/include/langinfo.h" 2 3 4
+
+# 1 "/usr/include/x86_64-linux-gnu/bits/locale.h" 1 3 4
+# 26 "/usr/include/langinfo.h" 2 3 4
+
+
+
+# 41 "/usr/include/langinfo.h" 3 4
+enum
+{
+
+
+
+  ABDAY_1 = (((2) << 16) | (0)),
+
+  ABDAY_2,
+
+  ABDAY_3,
+
+  ABDAY_4,
+
+  ABDAY_5,
+
+  ABDAY_6,
+
+  ABDAY_7,
+
+
+
+  DAY_1,
+
+  DAY_2,
+
+  DAY_3,
+
+  DAY_4,
+
+  DAY_5,
+
+  DAY_6,
+
+  DAY_7,
+
+
+
+
+  ABMON_1,
+
+  ABMON_2,
+
+  ABMON_3,
+
+  ABMON_4,
+
+  ABMON_5,
+
+  ABMON_6,
+
+  ABMON_7,
+
+  ABMON_8,
+
+  ABMON_9,
+
+  ABMON_10,
+
+  ABMON_11,
+
+  ABMON_12,
+
+
+
+
+  MON_1,
+
+  MON_2,
+
+  MON_3,
+
+  MON_4,
+
+  MON_5,
+
+  MON_6,
+
+  MON_7,
+
+  MON_8,
+
+  MON_9,
+
+  MON_10,
+
+  MON_11,
+
+  MON_12,
+
+
+  AM_STR,
+
+  PM_STR,
+
+
+  D_T_FMT,
+
+  D_FMT,
+
+  T_FMT,
+
+  T_FMT_AMPM,
+
+
+  ERA,
+
+  __ERA_YEAR,
+
+
+
+  ERA_D_FMT,
+
+  ALT_DIGITS,
+
+  ERA_D_T_FMT,
+
+  ERA_T_FMT,
+
+
+  _NL_TIME_ERA_NUM_ENTRIES,
+  _NL_TIME_ERA_ENTRIES,
+
+  _NL_WABDAY_1,
+  _NL_WABDAY_2,
+  _NL_WABDAY_3,
+  _NL_WABDAY_4,
+  _NL_WABDAY_5,
+  _NL_WABDAY_6,
+  _NL_WABDAY_7,
+
+
+  _NL_WDAY_1,
+  _NL_WDAY_2,
+  _NL_WDAY_3,
+  _NL_WDAY_4,
+  _NL_WDAY_5,
+  _NL_WDAY_6,
+  _NL_WDAY_7,
+
+
+
+  _NL_WABMON_1,
+  _NL_WABMON_2,
+  _NL_WABMON_3,
+  _NL_WABMON_4,
+  _NL_WABMON_5,
+  _NL_WABMON_6,
+  _NL_WABMON_7,
+  _NL_WABMON_8,
+  _NL_WABMON_9,
+  _NL_WABMON_10,
+  _NL_WABMON_11,
+  _NL_WABMON_12,
+
+
+
+  _NL_WMON_1,
+  _NL_WMON_2,
+  _NL_WMON_3,
+  _NL_WMON_4,
+  _NL_WMON_5,
+  _NL_WMON_6,
+  _NL_WMON_7,
+  _NL_WMON_8,
+  _NL_WMON_9,
+  _NL_WMON_10,
+  _NL_WMON_11,
+  _NL_WMON_12,
+
+  _NL_WAM_STR,
+  _NL_WPM_STR,
+
+  _NL_WD_T_FMT,
+  _NL_WD_FMT,
+  _NL_WT_FMT,
+  _NL_WT_FMT_AMPM,
+
+  _NL_WERA_YEAR,
+  _NL_WERA_D_FMT,
+  _NL_WALT_DIGITS,
+  _NL_WERA_D_T_FMT,
+  _NL_WERA_T_FMT,
+
+  _NL_TIME_WEEK_NDAYS,
+  _NL_TIME_WEEK_1STDAY,
+  _NL_TIME_WEEK_1STWEEK,
+  _NL_TIME_FIRST_WEEKDAY,
+  _NL_TIME_FIRST_WORKDAY,
+  _NL_TIME_CAL_DIRECTION,
+  _NL_TIME_TIMEZONE,
+
+  _DATE_FMT,
+
+  _NL_W_DATE_FMT,
+
+  _NL_TIME_CODESET,
+
+
+
+  __ALTMON_1,
+  __ALTMON_2,
+  __ALTMON_3,
+  __ALTMON_4,
+  __ALTMON_5,
+  __ALTMON_6,
+  __ALTMON_7,
+  __ALTMON_8,
+  __ALTMON_9,
+  __ALTMON_10,
+  __ALTMON_11,
+  __ALTMON_12,
+# 269 "/usr/include/langinfo.h" 3 4
+  _NL_WALTMON_1,
+  _NL_WALTMON_2,
+  _NL_WALTMON_3,
+  _NL_WALTMON_4,
+  _NL_WALTMON_5,
+  _NL_WALTMON_6,
+  _NL_WALTMON_7,
+  _NL_WALTMON_8,
+  _NL_WALTMON_9,
+  _NL_WALTMON_10,
+  _NL_WALTMON_11,
+  _NL_WALTMON_12,
+
+
+
+  _NL_ABALTMON_1,
+  _NL_ABALTMON_2,
+  _NL_ABALTMON_3,
+  _NL_ABALTMON_4,
+  _NL_ABALTMON_5,
+  _NL_ABALTMON_6,
+  _NL_ABALTMON_7,
+  _NL_ABALTMON_8,
+  _NL_ABALTMON_9,
+  _NL_ABALTMON_10,
+  _NL_ABALTMON_11,
+  _NL_ABALTMON_12,
+
+
+
+  _NL_WABALTMON_1,
+  _NL_WABALTMON_2,
+  _NL_WABALTMON_3,
+  _NL_WABALTMON_4,
+  _NL_WABALTMON_5,
+  _NL_WABALTMON_6,
+  _NL_WABALTMON_7,
+  _NL_WABALTMON_8,
+  _NL_WABALTMON_9,
+  _NL_WABALTMON_10,
+  _NL_WABALTMON_11,
+  _NL_WABALTMON_12,
+
+  _NL_NUM_LC_TIME,
+
+
+
+
+  _NL_COLLATE_NRULES = (((3) << 16) | (0)),
+  _NL_COLLATE_RULESETS,
+  _NL_COLLATE_TABLEMB,
+  _NL_COLLATE_WEIGHTMB,
+  _NL_COLLATE_EXTRAMB,
+  _NL_COLLATE_INDIRECTMB,
+  _NL_COLLATE_GAP1,
+  _NL_COLLATE_GAP2,
+  _NL_COLLATE_GAP3,
+  _NL_COLLATE_TABLEWC,
+  _NL_COLLATE_WEIGHTWC,
+  _NL_COLLATE_EXTRAWC,
+  _NL_COLLATE_INDIRECTWC,
+  _NL_COLLATE_SYMB_HASH_SIZEMB,
+  _NL_COLLATE_SYMB_TABLEMB,
+  _NL_COLLATE_SYMB_EXTRAMB,
+  _NL_COLLATE_COLLSEQMB,
+  _NL_COLLATE_COLLSEQWC,
+  _NL_COLLATE_CODESET,
+  _NL_NUM_LC_COLLATE,
+
+
+
+
+  _NL_CTYPE_CLASS = (((0) << 16) | (0)),
+  _NL_CTYPE_TOUPPER,
+  _NL_CTYPE_GAP1,
+  _NL_CTYPE_TOLOWER,
+  _NL_CTYPE_GAP2,
+  _NL_CTYPE_CLASS32,
+  _NL_CTYPE_GAP3,
+  _NL_CTYPE_GAP4,
+  _NL_CTYPE_GAP5,
+  _NL_CTYPE_GAP6,
+  _NL_CTYPE_CLASS_NAMES,
+  _NL_CTYPE_MAP_NAMES,
+  _NL_CTYPE_WIDTH,
+  _NL_CTYPE_MB_CUR_MAX,
+  _NL_CTYPE_CODESET_NAME,
+  CODESET = _NL_CTYPE_CODESET_NAME,
+
+  _NL_CTYPE_TOUPPER32,
+  _NL_CTYPE_TOLOWER32,
+  _NL_CTYPE_CLASS_OFFSET,
+  _NL_CTYPE_MAP_OFFSET,
+  _NL_CTYPE_INDIGITS_MB_LEN,
+  _NL_CTYPE_INDIGITS0_MB,
+  _NL_CTYPE_INDIGITS1_MB,
+  _NL_CTYPE_INDIGITS2_MB,
+  _NL_CTYPE_INDIGITS3_MB,
+  _NL_CTYPE_INDIGITS4_MB,
+  _NL_CTYPE_INDIGITS5_MB,
+  _NL_CTYPE_INDIGITS6_MB,
+  _NL_CTYPE_INDIGITS7_MB,
+  _NL_CTYPE_INDIGITS8_MB,
+  _NL_CTYPE_INDIGITS9_MB,
+  _NL_CTYPE_INDIGITS_WC_LEN,
+  _NL_CTYPE_INDIGITS0_WC,
+  _NL_CTYPE_INDIGITS1_WC,
+  _NL_CTYPE_INDIGITS2_WC,
+  _NL_CTYPE_INDIGITS3_WC,
+  _NL_CTYPE_INDIGITS4_WC,
+  _NL_CTYPE_INDIGITS5_WC,
+  _NL_CTYPE_INDIGITS6_WC,
+  _NL_CTYPE_INDIGITS7_WC,
+  _NL_CTYPE_INDIGITS8_WC,
+  _NL_CTYPE_INDIGITS9_WC,
+  _NL_CTYPE_OUTDIGIT0_MB,
+  _NL_CTYPE_OUTDIGIT1_MB,
+  _NL_CTYPE_OUTDIGIT2_MB,
+  _NL_CTYPE_OUTDIGIT3_MB,
+  _NL_CTYPE_OUTDIGIT4_MB,
+  _NL_CTYPE_OUTDIGIT5_MB,
+  _NL_CTYPE_OUTDIGIT6_MB,
+  _NL_CTYPE_OUTDIGIT7_MB,
+  _NL_CTYPE_OUTDIGIT8_MB,
+  _NL_CTYPE_OUTDIGIT9_MB,
+  _NL_CTYPE_OUTDIGIT0_WC,
+  _NL_CTYPE_OUTDIGIT1_WC,
+  _NL_CTYPE_OUTDIGIT2_WC,
+  _NL_CTYPE_OUTDIGIT3_WC,
+  _NL_CTYPE_OUTDIGIT4_WC,
+  _NL_CTYPE_OUTDIGIT5_WC,
+  _NL_CTYPE_OUTDIGIT6_WC,
+  _NL_CTYPE_OUTDIGIT7_WC,
+  _NL_CTYPE_OUTDIGIT8_WC,
+  _NL_CTYPE_OUTDIGIT9_WC,
+  _NL_CTYPE_TRANSLIT_TAB_SIZE,
+  _NL_CTYPE_TRANSLIT_FROM_IDX,
+  _NL_CTYPE_TRANSLIT_FROM_TBL,
+  _NL_CTYPE_TRANSLIT_TO_IDX,
+  _NL_CTYPE_TRANSLIT_TO_TBL,
+  _NL_CTYPE_TRANSLIT_DEFAULT_MISSING_LEN,
+  _NL_CTYPE_TRANSLIT_DEFAULT_MISSING,
+  _NL_CTYPE_TRANSLIT_IGNORE_LEN,
+  _NL_CTYPE_TRANSLIT_IGNORE,
+  _NL_CTYPE_MAP_TO_NONASCII,
+  _NL_CTYPE_NONASCII_CASE,
+  _NL_CTYPE_EXTRA_MAP_1,
+  _NL_CTYPE_EXTRA_MAP_2,
+  _NL_CTYPE_EXTRA_MAP_3,
+  _NL_CTYPE_EXTRA_MAP_4,
+  _NL_CTYPE_EXTRA_MAP_5,
+  _NL_CTYPE_EXTRA_MAP_6,
+  _NL_CTYPE_EXTRA_MAP_7,
+  _NL_CTYPE_EXTRA_MAP_8,
+  _NL_CTYPE_EXTRA_MAP_9,
+  _NL_CTYPE_EXTRA_MAP_10,
+  _NL_CTYPE_EXTRA_MAP_11,
+  _NL_CTYPE_EXTRA_MAP_12,
+  _NL_CTYPE_EXTRA_MAP_13,
+  _NL_CTYPE_EXTRA_MAP_14,
+  _NL_NUM_LC_CTYPE,
+
+
+
+
+  __INT_CURR_SYMBOL = (((4) << 16) | (0)),
+
+
+
+  __CURRENCY_SYMBOL,
+
+
+
+  __MON_DECIMAL_POINT,
+
+
+
+  __MON_THOUSANDS_SEP,
+
+
+
+  __MON_GROUPING,
+
+
+
+  __POSITIVE_SIGN,
+
+
+
+  __NEGATIVE_SIGN,
+
+
+
+  __INT_FRAC_DIGITS,
+
+
+
+  __FRAC_DIGITS,
+
+
+
+  __P_CS_PRECEDES,
+
+
+
+  __P_SEP_BY_SPACE,
+
+
+
+  __N_CS_PRECEDES,
+
+
+
+  __N_SEP_BY_SPACE,
+
+
+
+  __P_SIGN_POSN,
+
+
+
+  __N_SIGN_POSN,
+
+
+
+  _NL_MONETARY_CRNCYSTR,
+
+  __INT_P_CS_PRECEDES,
+
+
+
+  __INT_P_SEP_BY_SPACE,
+
+
+
+  __INT_N_CS_PRECEDES,
+
+
+
+  __INT_N_SEP_BY_SPACE,
+
+
+
+  __INT_P_SIGN_POSN,
+
+
+
+  __INT_N_SIGN_POSN,
+
+
+
+  _NL_MONETARY_DUO_INT_CURR_SYMBOL,
+  _NL_MONETARY_DUO_CURRENCY_SYMBOL,
+  _NL_MONETARY_DUO_INT_FRAC_DIGITS,
+  _NL_MONETARY_DUO_FRAC_DIGITS,
+  _NL_MONETARY_DUO_P_CS_PRECEDES,
+  _NL_MONETARY_DUO_P_SEP_BY_SPACE,
+  _NL_MONETARY_DUO_N_CS_PRECEDES,
+  _NL_MONETARY_DUO_N_SEP_BY_SPACE,
+  _NL_MONETARY_DUO_INT_P_CS_PRECEDES,
+  _NL_MONETARY_DUO_INT_P_SEP_BY_SPACE,
+  _NL_MONETARY_DUO_INT_N_CS_PRECEDES,
+  _NL_MONETARY_DUO_INT_N_SEP_BY_SPACE,
+  _NL_MONETARY_DUO_P_SIGN_POSN,
+  _NL_MONETARY_DUO_N_SIGN_POSN,
+  _NL_MONETARY_DUO_INT_P_SIGN_POSN,
+  _NL_MONETARY_DUO_INT_N_SIGN_POSN,
+  _NL_MONETARY_UNO_VALID_FROM,
+  _NL_MONETARY_UNO_VALID_TO,
+  _NL_MONETARY_DUO_VALID_FROM,
+  _NL_MONETARY_DUO_VALID_TO,
+  _NL_MONETARY_CONVERSION_RATE,
+  _NL_MONETARY_DECIMAL_POINT_WC,
+  _NL_MONETARY_THOUSANDS_SEP_WC,
+  _NL_MONETARY_CODESET,
+  _NL_NUM_LC_MONETARY,
+
+
+
+  __DECIMAL_POINT = (((1) << 16) | (0)),
+
+
+
+  RADIXCHAR = __DECIMAL_POINT,
+
+  __THOUSANDS_SEP,
+
+
+
+  THOUSEP = __THOUSANDS_SEP,
+
+  __GROUPING,
+
+
+
+  _NL_NUMERIC_DECIMAL_POINT_WC,
+  _NL_NUMERIC_THOUSANDS_SEP_WC,
+  _NL_NUMERIC_CODESET,
+  _NL_NUM_LC_NUMERIC,
+
+  __YESEXPR = (((5) << 16) | (0)),
+
+  __NOEXPR,
+
+  __YESSTR,
+
+
+
+  __NOSTR,
+
+
+
+  _NL_MESSAGES_CODESET,
+  _NL_NUM_LC_MESSAGES,
+
+  _NL_PAPER_HEIGHT = (((7) << 16) | (0)),
+  _NL_PAPER_WIDTH,
+  _NL_PAPER_CODESET,
+  _NL_NUM_LC_PAPER,
+
+  _NL_NAME_NAME_FMT = (((8) << 16) | (0)),
+  _NL_NAME_NAME_GEN,
+  _NL_NAME_NAME_MR,
+  _NL_NAME_NAME_MRS,
+  _NL_NAME_NAME_MISS,
+  _NL_NAME_NAME_MS,
+  _NL_NAME_CODESET,
+  _NL_NUM_LC_NAME,
+
+  _NL_ADDRESS_POSTAL_FMT = (((9) << 16) | (0)),
+  _NL_ADDRESS_COUNTRY_NAME,
+  _NL_ADDRESS_COUNTRY_POST,
+  _NL_ADDRESS_COUNTRY_AB2,
+  _NL_ADDRESS_COUNTRY_AB3,
+  _NL_ADDRESS_COUNTRY_CAR,
+  _NL_ADDRESS_COUNTRY_NUM,
+  _NL_ADDRESS_COUNTRY_ISBN,
+  _NL_ADDRESS_LANG_NAME,
+  _NL_ADDRESS_LANG_AB,
+  _NL_ADDRESS_LANG_TERM,
+  _NL_ADDRESS_LANG_LIB,
+  _NL_ADDRESS_CODESET,
+  _NL_NUM_LC_ADDRESS,
+
+  _NL_TELEPHONE_TEL_INT_FMT = (((10) << 16) | (0)),
+  _NL_TELEPHONE_TEL_DOM_FMT,
+  _NL_TELEPHONE_INT_SELECT,
+  _NL_TELEPHONE_INT_PREFIX,
+  _NL_TELEPHONE_CODESET,
+  _NL_NUM_LC_TELEPHONE,
+
+  _NL_MEASUREMENT_MEASUREMENT = (((11) << 16) | (0)),
+  _NL_MEASUREMENT_CODESET,
+  _NL_NUM_LC_MEASUREMENT,
+
+  _NL_IDENTIFICATION_TITLE = (((12) << 16) | (0)),
+  _NL_IDENTIFICATION_SOURCE,
+  _NL_IDENTIFICATION_ADDRESS,
+  _NL_IDENTIFICATION_CONTACT,
+  _NL_IDENTIFICATION_EMAIL,
+  _NL_IDENTIFICATION_TEL,
+  _NL_IDENTIFICATION_FAX,
+  _NL_IDENTIFICATION_LANGUAGE,
+  _NL_IDENTIFICATION_TERRITORY,
+  _NL_IDENTIFICATION_AUDIENCE,
+  _NL_IDENTIFICATION_APPLICATION,
+  _NL_IDENTIFICATION_ABBREVIATION,
+  _NL_IDENTIFICATION_REVISION,
+  _NL_IDENTIFICATION_DATE,
+  _NL_IDENTIFICATION_CATEGORY,
+  _NL_IDENTIFICATION_CODESET,
+  _NL_NUM_LC_IDENTIFICATION,
+
+
+  _NL_NUM
+};
+# 661 "/usr/include/langinfo.h" 3 4
+extern char *nl_langinfo (nl_item __item) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+
+
+extern char *nl_langinfo_l (nl_item __item, locale_t __l);
+
+
+
+# 2405 "/home/dweller/neovim/src/nvim/mbyte.c" 2
+
+
+
+
+
+# 2409 "/home/dweller/neovim/src/nvim/mbyte.c"
+char *enc_locale(void)
+{
+  int i;
+  char buf[50];
+
+  const char *s;
+
+
+  if (!(s = nl_langinfo(
+# 2417 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+                       CODESET
+# 2417 "/home/dweller/neovim/src/nvim/mbyte.c"
+                              )) || *s == '\000')
+
+  {
+    if (!(s = setlocale(
+# 2420 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+                       0
+# 2420 "/home/dweller/neovim/src/nvim/mbyte.c"
+                               , 
+# 2420 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+                                 ((void *)0)
+# 2420 "/home/dweller/neovim/src/nvim/mbyte.c"
+                                     )) || *s == '\000') {
+      if ((s = os_getenv_noalloc("LC_ALL"))) {
+        if ((s = os_getenv_noalloc("LC_CTYPE"))) {
+          s = os_getenv_noalloc("LANG");
+        }
+      }
+    }
+  }
+
+  if (!s) {
+    return 
+# 2430 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+          ((void *)0)
+# 2430 "/home/dweller/neovim/src/nvim/mbyte.c"
+              ;
+  }
+# 2440 "/home/dweller/neovim/src/nvim/mbyte.c"
+  const char *p = vim_strchr(s, '.');
+  if (p != 
+# 2441 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+          ((void *)0)
+# 2441 "/home/dweller/neovim/src/nvim/mbyte.c"
+              ) {
+    if (p > s + 2 && !strncasecmp((char *)(p + 1), (char *)("EUC"), (size_t)(3))
+        && !
+# 2443 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+           ((*__ctype_b_loc ())[(int) ((
+# 2443 "/home/dweller/neovim/src/nvim/mbyte.c"
+           (uint8_t)p[4]
+# 2443 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+           ))] & (unsigned short int) _ISalnum) 
+# 2443 "/home/dweller/neovim/src/nvim/mbyte.c"
+                                  && p[4] != '-' && p[-3] == '_') {
+
+      memmove(buf, "euc-", 4);
+      buf[4] = (char)(((((unsigned)(p[-2]) >= 'A' && (unsigned)(p[-2]) <= 'Z') || ((unsigned)(p[-2]) >= 'a' && (unsigned)(p[-2]) <= 'z')) || ascii_isdigit(p[-2])) ? (((p[-2]) < 'A' || (p[-2]) > 'Z') ? (p[-2]) : (p[-2]) + ('a' - 'A')) : 0);
+      buf[5] = (char)(((((unsigned)(p[-1]) >= 'A' && (unsigned)(p[-1]) <= 'Z') || ((unsigned)(p[-1]) >= 'a' && (unsigned)(p[-1]) <= 'z')) || ascii_isdigit(p[-1])) ? (((p[-1]) < 'A' || (p[-1]) > 'Z') ? (p[-1]) : (p[-1]) + ('a' - 'A')) : 0);
+      buf[6] = '\000';
+    } else {
+      s = p + 1;
+      goto enc_locale_copy_enc;
+    }
+  } else {
+enc_locale_copy_enc:
+    for (i = 0; i < (int)sizeof(buf) - 1 && s[i] != '\000'; i++) {
+      if (s[i] == '_' || s[i] == '-') {
+        buf[i] = '-';
+      } else if (((((unsigned)((uint8_t)s[i]) >= 'A' && (unsigned)((uint8_t)s[i]) <= 'Z') || ((unsigned)((uint8_t)s[i]) >= 'a' && (unsigned)((uint8_t)s[i]) <= 'z')) || ascii_isdigit((uint8_t)s[i]))) {
+        buf[i] = (char)(((s[i]) < 'A' || (s[i]) > 'Z') ? (s[i]) : (s[i]) + ('a' - 'A'));
+      } else {
+        break;
+      }
+    }
+    buf[i] = '\000';
+  }
+
+  return enc_canonize(buf);
+}
+
+
+
+
+
+void *my_iconv_open(char *to, char *from)
+{
+
+  char tobuf[400];
+  static WorkingStatus iconv_working = kUnknown;
+
+  if (iconv_working == kBroken) {
+    return (void *)-1;
+  }
+  iconv_t fd = iconv_open(enc_skip(to), enc_skip(from));
+
+  if (fd != (iconv_t)-1 && iconv_working == kUnknown) {
+
+
+
+
+
+    char *p = tobuf;
+    size_t tolen = 400;
+    iconv(fd, 
+# 2493 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+             ((void *)0)
+# 2493 "/home/dweller/neovim/src/nvim/mbyte.c"
+                 , 
+# 2493 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+                   ((void *)0)
+# 2493 "/home/dweller/neovim/src/nvim/mbyte.c"
+                       , &p, &tolen);
+    if (p == 
+# 2494 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+            ((void *)0)
+# 2494 "/home/dweller/neovim/src/nvim/mbyte.c"
+                ) {
+      iconv_working = kBroken;
+      iconv_close(fd);
+      fd = (iconv_t)-1;
+    } else {
+      iconv_working = kWorking;
+    }
+  }
+
+  return (void *)fd;
+}
+
+
+
+
+
+
+static char *iconv_string(const vimconv_T *const vcp, const char *str, size_t slen,
+                          size_t *unconvlenp, size_t *resultlenp)
+{
+  char *to;
+  size_t len = 0;
+  size_t done = 0;
+  char *result = 
+# 2517 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+                ((void *)0)
+# 2517 "/home/dweller/neovim/src/nvim/mbyte.c"
+                    ;
+
+  const char *from = str;
+  size_t fromlen = slen;
+  while (
+# 2521 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+        1
+# 2521 "/home/dweller/neovim/src/nvim/mbyte.c"
+            ) {
+    if (len == 0 || 
+# 2522 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+                   (*__errno_location ()) 
+# 2522 "/home/dweller/neovim/src/nvim/mbyte.c"
+                               == 
+# 2522 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+                                  7
+# 2522 "/home/dweller/neovim/src/nvim/mbyte.c"
+                                             ) {
+
+
+      len = len + fromlen * 2 + 40;
+      char *p = xmalloc(len);
+      if (done > 0) {
+        memmove(p, result, done);
+      }
+      xfree(result);
+      result = p;
+    }
+
+    to = result + done;
+    size_t tolen = len - done - 2;
+
+
+    if (iconv(vcp->vc_fd, (void *)&from, &fromlen, &to, &tolen) != 
+# 2538 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+                                                                  (18446744073709551615UL)
+# 2538 "/home/dweller/neovim/src/nvim/mbyte.c"
+                                                                          ) {
+
+      *to = '\000';
+      break;
+    }
+
+
+
+    if (!vcp->vc_fail && unconvlenp != 
+# 2546 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+                                      ((void *)0)
+        
+# 2547 "/home/dweller/neovim/src/nvim/mbyte.c"
+       && (
+# 2547 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+           (*__errno_location ()) 
+# 2547 "/home/dweller/neovim/src/nvim/mbyte.c"
+                       == 
+# 2547 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+                          22 
+# 2547 "/home/dweller/neovim/src/nvim/mbyte.c"
+                                       || 
+# 2547 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+                                          (*__errno_location ()) 
+# 2547 "/home/dweller/neovim/src/nvim/mbyte.c"
+                                                      == 
+# 2547 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+                                                         22
+# 2547 "/home/dweller/neovim/src/nvim/mbyte.c"
+                                                               )) {
+
+      *to = '\000';
+      *unconvlenp = fromlen;
+      break;
+    } else if (!vcp->vc_fail
+               && (
+# 2553 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+                  (*__errno_location ()) 
+# 2553 "/home/dweller/neovim/src/nvim/mbyte.c"
+                              == 
+# 2553 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+                                 84 
+# 2553 "/home/dweller/neovim/src/nvim/mbyte.c"
+                                              || 
+# 2553 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+                                                 (*__errno_location ()) 
+# 2553 "/home/dweller/neovim/src/nvim/mbyte.c"
+                                                             == 
+# 2553 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+                                                                84
+                   
+# 2554 "/home/dweller/neovim/src/nvim/mbyte.c"
+                  || 
+# 2554 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+                     (*__errno_location ()) 
+# 2554 "/home/dweller/neovim/src/nvim/mbyte.c"
+                                 == 
+# 2554 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+                                    22 
+# 2554 "/home/dweller/neovim/src/nvim/mbyte.c"
+                                                 || 
+# 2554 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+                                                    (*__errno_location ()) 
+# 2554 "/home/dweller/neovim/src/nvim/mbyte.c"
+                                                                == 
+# 2554 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+                                                                   22
+# 2554 "/home/dweller/neovim/src/nvim/mbyte.c"
+                                                                         )) {
+
+
+
+
+
+
+      *to++ = '?';
+      if (utf_ptr2cells(from) > 1) {
+        *to++ = '?';
+      }
+      int l = utfc_ptr2len_len(from, (int)fromlen);
+      from += l;
+      fromlen -= (size_t)l;
+    } else if (
+# 2568 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+              (*__errno_location ()) 
+# 2568 "/home/dweller/neovim/src/nvim/mbyte.c"
+                          != 
+# 2568 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+                             7
+# 2568 "/home/dweller/neovim/src/nvim/mbyte.c"
+                                        ) {
+
+      do { void **ptr_ = (void **)&(result); xfree(*ptr_); *ptr_ = 
+# 2570 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+     ((void *)0)
+# 2570 "/home/dweller/neovim/src/nvim/mbyte.c"
+     ; (void)(*ptr_); } while (0);
+      break;
+    }
+
+    done = (size_t)(to - result);
+  }
+
+  if (resultlenp != 
+# 2577 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+                   ((void *)0) 
+# 2577 "/home/dweller/neovim/src/nvim/mbyte.c"
+                        && result != 
+# 2577 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+                                     ((void *)0)
+# 2577 "/home/dweller/neovim/src/nvim/mbyte.c"
+                                         ) {
+    *resultlenp = (size_t)(to - result);
+  }
+  return result;
+}
+
+
+void f_iconv(typval_T *argvars, typval_T *rettv, EvalFuncData fptr)
+{
+  vimconv_T vimconv;
+
+  rettv->v_type = VAR_STRING;
+  rettv->vval.v_string = 
+# 2589 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+                        ((void *)0)
+# 2589 "/home/dweller/neovim/src/nvim/mbyte.c"
+                            ;
+
+  const char *const str = tv_get_string(&argvars[0]);
+  char buf1[NUMBUFLEN];
+  char *const from = enc_canonize(enc_skip((char *)tv_get_string_buf(&argvars[1], buf1)));
+  char buf2[NUMBUFLEN];
+  char *const to = enc_canonize(enc_skip((char *)tv_get_string_buf(&argvars[2], buf2)));
+  vimconv.vc_type = CONV_NONE;
+  convert_setup(&vimconv, from, to);
+
+
+  if (vimconv.vc_type == CONV_NONE) {
+    rettv->vval.v_string = xstrdup(str);
+  } else {
+    rettv->vval.v_string = string_convert(&vimconv, (char *)str, 
+# 2603 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+                                                                ((void *)0)
+# 2603 "/home/dweller/neovim/src/nvim/mbyte.c"
+                                                                    );
+  }
+
+  convert_setup(&vimconv, 
+# 2606 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+                         ((void *)0)
+# 2606 "/home/dweller/neovim/src/nvim/mbyte.c"
+                             , 
+# 2606 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+                               ((void *)0)
+# 2606 "/home/dweller/neovim/src/nvim/mbyte.c"
+                                   );
+  xfree(from);
+  xfree(to);
+}
+# 2619 "/home/dweller/neovim/src/nvim/mbyte.c"
+int convert_setup(vimconv_T *vcp, char *from, char *to)
+{
+  return convert_setup_ext(vcp, from, 
+# 2621 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+                                     1
+# 2621 "/home/dweller/neovim/src/nvim/mbyte.c"
+                                         , to, 
+# 2621 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+                                               1
+# 2621 "/home/dweller/neovim/src/nvim/mbyte.c"
+                                                   );
+}
+
+
+
+int convert_setup_ext(vimconv_T *vcp, char *from, 
+# 2626 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+                                                 _Bool 
+# 2626 "/home/dweller/neovim/src/nvim/mbyte.c"
+                                                      from_unicode_is_utf8, char *to,
+                      
+# 2627 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+                     _Bool 
+# 2627 "/home/dweller/neovim/src/nvim/mbyte.c"
+                          to_unicode_is_utf8)
+{
+  int from_is_utf8;
+  int to_is_utf8;
+
+
+  if (vcp->vc_type == CONV_ICONV && vcp->vc_fd != (iconv_t)-1) {
+    iconv_close(vcp->vc_fd);
+  }
+  *vcp = (vimconv_T){ .vc_type = CONV_NONE, .vc_factor = 1, .vc_fail = 
+# 2636 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+                   0
+# 2636 "/home/dweller/neovim/src/nvim/mbyte.c"
+                   , };
+
+
+  if (from == 
+# 2639 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+             ((void *)0) 
+# 2639 "/home/dweller/neovim/src/nvim/mbyte.c"
+                  || *from == '\000' || to == 
+# 2639 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+                                           ((void *)0) 
+# 2639 "/home/dweller/neovim/src/nvim/mbyte.c"
+                                                || *to == '\000'
+      || strcmp(from, to) == 0) {
+    return 1;
+  }
+
+  int from_prop = enc_canon_props(from);
+  int to_prop = enc_canon_props(to);
+  if (from_unicode_is_utf8) {
+    from_is_utf8 = from_prop & ENC_UNICODE;
+  } else {
+    from_is_utf8 = from_prop == ENC_UNICODE;
+  }
+  if (to_unicode_is_utf8) {
+    to_is_utf8 = to_prop & ENC_UNICODE;
+  } else {
+    to_is_utf8 = to_prop == ENC_UNICODE;
+  }
+
+  if ((from_prop & ENC_LATIN1) && to_is_utf8) {
+
+    vcp->vc_type = CONV_TO_UTF8;
+    vcp->vc_factor = 2;
+  } else if ((from_prop & ENC_LATIN9) && to_is_utf8) {
+
+    vcp->vc_type = CONV_9_TO_UTF8;
+    vcp->vc_factor = 3;
+  } else if (from_is_utf8 && (to_prop & ENC_LATIN1)) {
+
+    vcp->vc_type = CONV_TO_LATIN1;
+  } else if (from_is_utf8 && (to_prop & ENC_LATIN9)) {
+
+    vcp->vc_type = CONV_TO_LATIN9;
+  } else {
+
+    vcp->vc_fd = (iconv_t)my_iconv_open(to_is_utf8 ? "utf-8" : to,
+                                        from_is_utf8 ? "utf-8" : from);
+    if (vcp->vc_fd != (iconv_t)-1) {
+      vcp->vc_type = CONV_ICONV;
+      vcp->vc_factor = 4;
+    }
+  }
+  if (vcp->vc_type == CONV_NONE) {
+    return 0;
+  }
+
+  return 1;
+}
+
+
+
+
+
+
+char *string_convert(const vimconv_T *const vcp, char *ptr, size_t *lenp)
+{
+  return string_convert_ext(vcp, ptr, lenp, 
+# 2694 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+                                           ((void *)0)
+# 2694 "/home/dweller/neovim/src/nvim/mbyte.c"
+                                               );
+}
+
+
+
+
+char *string_convert_ext(const vimconv_T *const vcp, char *ptr, size_t *lenp, size_t *unconvlenp)
+{
+  uint8_t *retval = 
+# 2702 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+                   ((void *)0)
+# 2702 "/home/dweller/neovim/src/nvim/mbyte.c"
+                       ;
+  uint8_t *d;
+  int c;
+
+  size_t len;
+  if (lenp == 
+# 2707 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+             ((void *)0)
+# 2707 "/home/dweller/neovim/src/nvim/mbyte.c"
+                 ) {
+    len = strlen(ptr);
+  } else {
+    len = *lenp;
+  }
+  if (len == 0) {
+    return xstrdup("");
+  }
+
+  switch (vcp->vc_type) {
+  case CONV_TO_UTF8:
+    retval = xmalloc(len * 2 + 1);
+    d = retval;
+    for (size_t i = 0; i < len; i++) {
+      c = (uint8_t)ptr[i];
+      if (c < 0x80) {
+        *d++ = (uint8_t)c;
+      } else {
+        *d++ = (uint8_t)(0xc0 + (uint8_t)((unsigned)c >> 6));
+        *d++ = (uint8_t)(0x80 + (c & 0x3f));
+      }
+    }
+    *d = '\000';
+    if (lenp != 
+# 2730 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+               ((void *)0)
+# 2730 "/home/dweller/neovim/src/nvim/mbyte.c"
+                   ) {
+      *lenp = (size_t)(d - retval);
+    }
+    break;
+
+  case CONV_9_TO_UTF8:
+    retval = xmalloc(len * 3 + 1);
+    d = retval;
+    for (size_t i = 0; i < len; i++) {
+      c = (uint8_t)ptr[i];
+      switch (c) {
+      case 0xa4:
+        c = 0x20ac; break;
+      case 0xa6:
+        c = 0x0160; break;
+      case 0xa8:
+        c = 0x0161; break;
+      case 0xb4:
+        c = 0x017d; break;
+      case 0xb8:
+        c = 0x017e; break;
+      case 0xbc:
+        c = 0x0152; break;
+      case 0xbd:
+        c = 0x0153; break;
+      case 0xbe:
+        c = 0x0178; break;
+      }
+      d += utf_char2bytes(c, (char *)d);
+    }
+    *d = '\000';
+    if (lenp != 
+# 2761 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+               ((void *)0)
+# 2761 "/home/dweller/neovim/src/nvim/mbyte.c"
+                   ) {
+      *lenp = (size_t)(d - retval);
+    }
+    break;
+
+  case CONV_TO_LATIN1:
+  case CONV_TO_LATIN9:
+    retval = xmalloc(len + 1);
+    d = retval;
+    for (size_t i = 0; i < len; i++) {
+      int l = utf_ptr2len_len(ptr + i, (int)(len - i));
+      if (l == 0) {
+        *d++ = '\000';
+      } else if (l == 1) {
+        uint8_t l_w = utf8len_tab_zero[(uint8_t)ptr[i]];
+
+        if (l_w == 0) {
+
+          xfree(retval);
+          return 
+# 2780 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+                ((void *)0)
+# 2780 "/home/dweller/neovim/src/nvim/mbyte.c"
+                    ;
+        }
+        if (unconvlenp != 
+# 2782 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+                         ((void *)0) 
+# 2782 "/home/dweller/neovim/src/nvim/mbyte.c"
+                              && l_w > len - i) {
+
+          *unconvlenp = len - i;
+          break;
+        }
+        *d++ = (uint8_t)ptr[i];
+      } else {
+        c = utf_ptr2char(ptr + i);
+        if (vcp->vc_type == CONV_TO_LATIN9) {
+          switch (c) {
+          case 0x20ac:
+            c = 0xa4; break;
+          case 0x0160:
+            c = 0xa6; break;
+          case 0x0161:
+            c = 0xa8; break;
+          case 0x017d:
+            c = 0xb4; break;
+          case 0x017e:
+            c = 0xb8; break;
+          case 0x0152:
+            c = 0xbc; break;
+          case 0x0153:
+            c = 0xbd; break;
+          case 0x0178:
+            c = 0xbe; break;
+          case 0xa4:
+          case 0xa6:
+          case 0xa8:
+          case 0xb4:
+          case 0xb8:
+          case 0xbc:
+          case 0xbd:
+          case 0xbe:
+            c = 0x100; break;
+          }
+        }
+        if (!utf_iscomposing_legacy(c)) {
+          if (c < 0x100) {
+            *d++ = (uint8_t)c;
+          } else if (vcp->vc_fail) {
+            xfree(retval);
+            return 
+# 2824 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+                  ((void *)0)
+# 2824 "/home/dweller/neovim/src/nvim/mbyte.c"
+                      ;
+          } else {
+            *d++ = 0xbf;
+            if (utf_char2cells(c) > 1) {
+              *d++ = '?';
+            }
+          }
+        }
+        i += (size_t)l - 1;
+      }
+    }
+    *d = '\000';
+    if (lenp != 
+# 2836 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+               ((void *)0)
+# 2836 "/home/dweller/neovim/src/nvim/mbyte.c"
+                   ) {
+      *lenp = (size_t)(d - retval);
+    }
+    break;
+
+  case CONV_ICONV:
+    retval = (uint8_t *)iconv_string(vcp, ptr, len, unconvlenp, lenp);
+    break;
+  }
+
+  return (char *)retval;
+}
+
+
+typedef struct {
+  int64_t first;
+  int64_t last;
+  char width;
+} cw_interval_T;
+
+static cw_interval_T *cw_table = 
+# 2856 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+                                ((void *)0)
+# 2856 "/home/dweller/neovim/src/nvim/mbyte.c"
+                                    ;
+static size_t cw_table_size = 0;
+
+
+
+
+
+static int cw_value(int c)
+{
+  if (cw_table == 
+# 2865 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+                 ((void *)0)
+# 2865 "/home/dweller/neovim/src/nvim/mbyte.c"
+                     ) {
+    return 0;
+  }
+
+
+  if (c < cw_table[0].first) {
+    return 0;
+  }
+
+
+  int bot = 0;
+  int top = (int)cw_table_size - 1;
+  while (top >= bot) {
+    int mid = (bot + top) / 2;
+    if (cw_table[mid].last < c) {
+      bot = mid + 1;
+    } else if (cw_table[mid].first > c) {
+      top = mid - 1;
+    } else {
+      return cw_table[mid].width;
+    }
+  }
+  return 0;
+}
+
+static int tv_nr_compare(const void *a1, const void *a2)
+{
+  const listitem_T *const li1 = tv_list_first(*(const list_T **)a1);
+  const listitem_T *const li2 = tv_list_first(*(const list_T **)a2);
+  const varnumber_T n1 = (&(li1)->li_tv)->vval.v_number;
+  const varnumber_T n2 = (&(li2)->li_tv)->vval.v_number;
+
+  return n1 == n2 ? 0 : n1 > n2 ? 1 : -1;
+}
+
+
+void f_setcellwidths(typval_T *argvars, typval_T *rettv, EvalFuncData fptr)
+{
+  if (argvars[0].v_type != VAR_LIST || argvars[0].vval.v_list == 
+# 2903 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+                                                                ((void *)0)
+# 2903 "/home/dweller/neovim/src/nvim/mbyte.c"
+                                                                    ) {
+    emsg(gettext(e_listreq));
+    return;
+  }
+
+  const list_T *const l = argvars[0].vval.v_list;
+  cw_interval_T *table = 
+# 2909 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+                        ((void *)0)
+# 2909 "/home/dweller/neovim/src/nvim/mbyte.c"
+                            ;
+  const size_t table_size = (size_t)tv_list_len(l);
+  if (table_size == 0) {
+
+    goto update;
+  }
+
+
+  const list_T **ptrs = xmalloc(sizeof(const list_T *) * table_size);
+
+
+
+  int item = 0;
+  do { const list_T *const l_ = (l); if (l_ != 
+# 2922 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+ ((void *)0)
+# 2922 "/home/dweller/neovim/src/nvim/mbyte.c"
+ ) { for (const listitem_T *li = l_->lv_first; li != 
+# 2922 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+ ((void *)0)
+# 2922 "/home/dweller/neovim/src/nvim/mbyte.c"
+ ; li = li->li_next) { { const typval_T *const li_tv = (&(li)->li_tv); if (li_tv->v_type != VAR_LIST || li_tv->vval.v_list == 
+# 2922 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+ ((void *)0)
+# 2922 "/home/dweller/neovim/src/nvim/mbyte.c"
+ ) { semsg(gettext(e_list_item_nr_is_not_list), item); xfree((void *)ptrs); return; } const list_T *const li_l = li_tv->vval.v_list; ptrs[item] = li_l; const listitem_T *lili = tv_list_first(li_l); int i; varnumber_T n1; for (i = 0; lili != 
+# 2922 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+ ((void *)0)
+# 2922 "/home/dweller/neovim/src/nvim/mbyte.c"
+ ; lili = ((lili)->li_next), i++) { const typval_T *const lili_tv = (&(lili)->li_tv); if (lili_tv->v_type != VAR_NUMBER) { break; } if (i == 0) { n1 = lili_tv->vval.v_number; if (n1 < 0x80) { emsg(gettext(e_only_values_of_0x80_and_higher_supported)); xfree((void *)ptrs); return; } } else if (i == 1 && lili_tv->vval.v_number < n1) { semsg(gettext(e_list_item_nr_range_invalid), item); xfree((void *)ptrs); return; } else if (i == 2 && (lili_tv->vval.v_number < 1 || lili_tv->vval.v_number > 2)) { semsg(gettext(e_list_item_nr_cell_width_invalid), item); xfree((void *)ptrs); return; } } if (i != 3) { semsg(gettext(e_list_item_nr_does_not_contain_3_numbers), item); xfree((void *)ptrs); return; } item++; } } } } while (0)
+# 2966 "/home/dweller/neovim/src/nvim/mbyte.c"
+    ;
+
+
+  qsort((void *)ptrs, table_size, sizeof(const list_T *), tv_nr_compare);
+
+  table = xmalloc(sizeof(cw_interval_T) * table_size);
+
+
+  for (item = 0; (size_t)item < table_size; item++) {
+    const list_T *const li_l = ptrs[item];
+    const listitem_T *lili = tv_list_first(li_l);
+    const varnumber_T n1 = (&(lili)->li_tv)->vval.v_number;
+    if (item > 0 && n1 <= table[item - 1].last) {
+      semsg(gettext(e_overlapping_ranges_for_nr), (size_t)n1);
+      xfree((void *)ptrs);
+      xfree(table);
+      return;
+    }
+    table[item].first = n1;
+    lili = ((lili)->li_next);
+    table[item].last = (&(lili)->li_tv)->vval.v_number;
+    lili = ((lili)->li_next);
+    table[item].width = (char)(&(lili)->li_tv)->vval.v_number;
+  }
+
+  xfree((void *)ptrs);
+
+update:
+  ;
+  cw_interval_T *const cw_table_save = cw_table;
+  const size_t cw_table_size_save = cw_table_size;
+  cw_table = table;
+  cw_table_size = table_size;
+
+
+
+  const char *const error = check_chars_options();
+  if (error != 
+# 3003 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+              ((void *)0)
+# 3003 "/home/dweller/neovim/src/nvim/mbyte.c"
+                  ) {
+    emsg(gettext(error));
+    cw_table = cw_table_save;
+    cw_table_size = cw_table_size_save;
+    xfree(table);
+    return;
+  }
+
+  xfree(cw_table_save);
+  changed_window_setting_all();
+  redraw_all_later(UPD_NOT_VALID);
+}
+
+
+void f_getcellwidths(typval_T *argvars, typval_T *rettv, EvalFuncData fptr)
+{
+  tv_list_alloc_ret(rettv, (ptrdiff_t)cw_table_size);
+
+  for (size_t i = 0; i < cw_table_size; i++) {
+    list_T *entry = tv_list_alloc(3);
+    tv_list_append_number(entry, (varnumber_T)cw_table[i].first);
+    tv_list_append_number(entry, (varnumber_T)cw_table[i].last);
+    tv_list_append_number(entry, (varnumber_T)cw_table[i].width);
+
+    tv_list_append_list(rettv->vval.v_list, entry);
+  }
+}
+
+void f_charclass(typval_T *argvars, typval_T *rettv, EvalFuncData fptr)
+{
+  if (tv_check_for_string_arg(argvars, 0) == 0
+      || argvars[0].vval.v_string == 
+# 3034 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+                                    ((void *)0)
+# 3034 "/home/dweller/neovim/src/nvim/mbyte.c"
+                                        ) {
+    return;
+  }
+  rettv->vval.v_number = mb_get_class(argvars[0].vval.v_string);
+}
+
+
+
+char *get_encoding_name(expand_T *xp FUNC_ATTR_UNUSED, int idx)
+{
+  if (idx >= (int)((sizeof(enc_canon_table)/sizeof((enc_canon_table)[0])) / ((size_t)(!(sizeof(enc_canon_table) % sizeof((enc_canon_table)[0])))))) {
+    return 
+# 3045 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+          ((void *)0)
+# 3045 "/home/dweller/neovim/src/nvim/mbyte.c"
+              ;
+  }
+
+  return (char *)enc_canon_table[idx].name;
+}
+
+
+
+
+
+
+int mb_strcmp_ic(
+# 3056 "/home/dweller/neovim/src/nvim/mbyte.c" 3 4
+                _Bool 
+# 3056 "/home/dweller/neovim/src/nvim/mbyte.c"
+                     ic, const char *s1, const char *s2)
+  FUNC_ATTR_NONNULL_ALL FUNC_ATTR_PURE FUNC_ATTR_WARN_UNUSED_RESULT
+{
+  return (ic ? mb_stricmp(s1, s2) : strcmp(s1, s2));
+}

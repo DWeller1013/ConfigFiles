@@ -1,0 +1,13 @@
+# Target labels
+ lua_dev_deps
+# Source files and their labels
+/home/dweller/neovim/build/CMakeFiles/lua_dev_deps
+/home/dweller/neovim/build/CMakeFiles/lua_dev_deps.rule
+/home/dweller/neovim/build/CMakeFiles/lua_dev_deps-complete.rule
+/home/dweller/neovim/build/build/src/lua_dev_deps-stamp/lua_dev_deps-build.rule
+/home/dweller/neovim/build/build/src/lua_dev_deps-stamp/lua_dev_deps-configure.rule
+/home/dweller/neovim/build/build/src/lua_dev_deps-stamp/lua_dev_deps-download.rule
+/home/dweller/neovim/build/build/src/lua_dev_deps-stamp/lua_dev_deps-install.rule
+/home/dweller/neovim/build/build/src/lua_dev_deps-stamp/lua_dev_deps-mkdir.rule
+/home/dweller/neovim/build/build/src/lua_dev_deps-stamp/lua_dev_deps-patch.rule
+/home/dweller/neovim/build/build/src/lua_dev_deps-stamp/lua_dev_deps-update.rule

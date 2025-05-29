@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/dweller/neovim/.deps/CMakeFiles/luv"
+		},
+		{
+			"file" : "/home/dweller/neovim/.deps/CMakeFiles/luv.rule"
+		},
+		{
+			"file" : "/home/dweller/neovim/.deps/CMakeFiles/luv-complete.rule"
+		},
+		{
+			"file" : "/home/dweller/neovim/.deps/build/src/luv-stamp/luv-build.rule"
+		},
+		{
+			"file" : "/home/dweller/neovim/.deps/build/src/luv-stamp/luv-configure.rule"
+		},
+		{
+			"file" : "/home/dweller/neovim/.deps/build/src/luv-stamp/luv-download.rule"
+		},
+		{
+			"file" : "/home/dweller/neovim/.deps/build/src/luv-stamp/luv-install.rule"
+		},
+		{
+			"file" : "/home/dweller/neovim/.deps/build/src/luv-stamp/luv-mkdir.rule"
+		},
+		{
+			"file" : "/home/dweller/neovim/.deps/build/src/luv-stamp/luv-patch.rule"
+		},
+		{
+			"file" : "/home/dweller/neovim/.deps/build/src/luv-stamp/luv-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"luv"
+		],
+		"name" : "luv"
+	}
+}

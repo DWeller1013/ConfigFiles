@@ -1,0 +1,167 @@
+Determining if the function kstat_lookup exists in the kstat failed with the following output:
+Change Dir: /home/dweller/neovim/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_5ba01/fast && gmake[1]: Entering directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_5ba01.dir/build.make CMakeFiles/cmTC_5ba01.dir/build
+gmake[2]: Entering directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_5ba01.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=kstat_lookup -o CMakeFiles/cmTC_5ba01.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.22/Modules/CheckFunctionExists.c
+Linking C executable cmTC_5ba01
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5ba01.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=kstat_lookup CMakeFiles/cmTC_5ba01.dir/CheckFunctionExists.c.o -o cmTC_5ba01   -L/home/dweller/neovim/build/CMakeFiles/CMakeTmp/kstat.h  -Wl,-rpath,/home/dweller/neovim/build/CMakeFiles/CMakeTmp/kstat.h -lkstat 
+/usr/bin/ld: cannot find -lkstat: No such file or directory
+collect2: error: ld returned 1 exit status
+gmake[2]: *** [CMakeFiles/cmTC_5ba01.dir/build.make:99: cmTC_5ba01] Error 1
+gmake[2]: Leaving directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+gmake[1]: *** [Makefile:127: cmTC_5ba01/fast] Error 2
+gmake[1]: Leaving directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function kvm_open exists in the kvm failed with the following output:
+Change Dir: /home/dweller/neovim/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_8a454/fast && gmake[1]: Entering directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_8a454.dir/build.make CMakeFiles/cmTC_8a454.dir/build
+gmake[2]: Entering directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_8a454.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=kvm_open -o CMakeFiles/cmTC_8a454.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.22/Modules/CheckFunctionExists.c
+Linking C executable cmTC_8a454
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8a454.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=kvm_open CMakeFiles/cmTC_8a454.dir/CheckFunctionExists.c.o -o cmTC_8a454   -L/home/dweller/neovim/build/CMakeFiles/CMakeTmp/kvm.h  -Wl,-rpath,/home/dweller/neovim/build/CMakeFiles/CMakeTmp/kvm.h -lkvm 
+/usr/bin/ld: cannot find -lkvm: No such file or directory
+collect2: error: ld returned 1 exit status
+gmake[2]: *** [CMakeFiles/cmTC_8a454.dir/build.make:99: cmTC_8a454] Error 1
+gmake[2]: Leaving directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+gmake[1]: *** [Makefile:127: cmTC_8a454/fast] Error 2
+gmake[1]: Leaving directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function perfstat_cpu exists in the perfstat failed with the following output:
+Change Dir: /home/dweller/neovim/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_dca61/fast && gmake[1]: Entering directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_dca61.dir/build.make CMakeFiles/cmTC_dca61.dir/build
+gmake[2]: Entering directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_dca61.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=perfstat_cpu -o CMakeFiles/cmTC_dca61.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.22/Modules/CheckFunctionExists.c
+Linking C executable cmTC_dca61
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_dca61.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=perfstat_cpu CMakeFiles/cmTC_dca61.dir/CheckFunctionExists.c.o -o cmTC_dca61   -L/home/dweller/neovim/build/CMakeFiles/CMakeTmp/libperfstat.h  -Wl,-rpath,/home/dweller/neovim/build/CMakeFiles/CMakeTmp/libperfstat.h -lperfstat 
+/usr/bin/ld: cannot find -lperfstat: No such file or directory
+collect2: error: ld returned 1 exit status
+gmake[2]: *** [CMakeFiles/cmTC_dca61.dir/build.make:99: cmTC_dca61] Error 1
+gmake[2]: Leaving directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+gmake[1]: *** [Makefile:127: cmTC_dca61/fast] Error 2
+gmake[1]: Leaving directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function sendfile exists in the sendfile failed with the following output:
+Change Dir: /home/dweller/neovim/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_87d1e/fast && gmake[1]: Entering directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_87d1e.dir/build.make CMakeFiles/cmTC_87d1e.dir/build
+gmake[2]: Entering directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_87d1e.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=sendfile -o CMakeFiles/cmTC_87d1e.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.22/Modules/CheckFunctionExists.c
+Linking C executable cmTC_87d1e
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_87d1e.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=sendfile CMakeFiles/cmTC_87d1e.dir/CheckFunctionExists.c.o -o cmTC_87d1e  -lsendfile 
+/usr/bin/ld: cannot find -lsendfile: No such file or directory
+collect2: error: ld returned 1 exit status
+gmake[2]: *** [CMakeFiles/cmTC_87d1e.dir/build.make:99: cmTC_87d1e] Error 1
+gmake[2]: Leaving directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+gmake[1]: *** [Makefile:127: cmTC_87d1e/fast] Error 2
+gmake[1]: Leaving directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the _NSGetEnviron exist failed with the following output:
+Change Dir: /home/dweller/neovim/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_86338/fast && gmake[1]: Entering directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_86338.dir/build.make CMakeFiles/cmTC_86338.dir/build
+gmake[2]: Entering directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_86338.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_86338.dir/CheckSymbolExists.c.o -c /home/dweller/neovim/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/dweller/neovim/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:2:10: fatal error: crt_externs.h: No such file or directory
+    2 | #include <crt_externs.h>
+      |          ^~~~~~~~~~~~~~~
+compilation terminated.
+gmake[2]: *** [CMakeFiles/cmTC_86338.dir/build.make:78: CMakeFiles/cmTC_86338.dir/CheckSymbolExists.c.o] Error 1
+gmake[2]: Leaving directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+gmake[1]: *** [Makefile:127: cmTC_86338/fast] Error 2
+gmake[1]: Leaving directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+
+
+File /home/dweller/neovim/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <crt_externs.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef _NSGetEnviron
+  return ((int*)(&_NSGetEnviron))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if files sys/sdt.h exist failed with the following output:
+Change Dir: /home/dweller/neovim/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_09db3/fast && gmake[1]: Entering directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_09db3.dir/build.make CMakeFiles/cmTC_09db3.dir/build
+gmake[2]: Entering directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_09db3.dir/HAVE_SYS_SDT_H.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_09db3.dir/HAVE_SYS_SDT_H.c.o -c /home/dweller/neovim/build/CMakeFiles/CheckIncludeFiles/HAVE_SYS_SDT_H.c
+/home/dweller/neovim/build/CMakeFiles/CheckIncludeFiles/HAVE_SYS_SDT_H.c:2:10: fatal error: sys/sdt.h: No such file or directory
+    2 | #include <sys/sdt.h>
+      |          ^~~~~~~~~~~
+compilation terminated.
+gmake[2]: *** [CMakeFiles/cmTC_09db3.dir/build.make:78: CMakeFiles/cmTC_09db3.dir/HAVE_SYS_SDT_H.c.o] Error 1
+gmake[2]: Leaving directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+gmake[1]: *** [Makefile:127: cmTC_09db3/fast] Error 2
+gmake[1]: Leaving directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+
+
+Source:
+/* */
+#include <sys/sdt.h>
+
+
+int main(void){return 0;}
+
+Performing C SOURCE FILE Test HAVE_BITSCANFORWARD64 failed with the following output:
+Change Dir: /home/dweller/neovim/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_00bf3/fast && gmake[1]: Entering directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_00bf3.dir/build.make CMakeFiles/cmTC_00bf3.dir/build
+gmake[2]: Entering directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_00bf3.dir/src.c.o
+/usr/bin/cc -DHAVE_BITSCANFORWARD64   -o CMakeFiles/cmTC_00bf3.dir/src.c.o -c /home/dweller/neovim/build/CMakeFiles/CMakeTmp/src.c
+/home/dweller/neovim/build/CMakeFiles/CMakeTmp/src.c:2:10: fatal error: intrin.h: No such file or directory
+    2 | #include <intrin.h>
+      |          ^~~~~~~~~~
+compilation terminated.
+gmake[2]: *** [CMakeFiles/cmTC_00bf3.dir/build.make:78: CMakeFiles/cmTC_00bf3.dir/src.c.o] Error 1
+gmake[2]: Leaving directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+gmake[1]: *** [Makefile:127: cmTC_00bf3/fast] Error 2
+gmake[1]: Leaving directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+
+#include <intrin.h>
+
+int main(void)
+{
+  unsigned long index;
+  unsigned char mask = 0x8000;
+  _BitScanForward64(&index, mask);
+  return 0;
+}
+

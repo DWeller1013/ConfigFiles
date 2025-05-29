@@ -1,0 +1,3 @@
+repository='external project URL'
+module='https://github.com/LuaLS/lua-language-server/releases/download/3.14.0/lua-language-server-3.14.0-Linux-x64.tar.gz'
+tag=''

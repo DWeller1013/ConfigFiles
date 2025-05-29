@@ -1,0 +1,17 @@
+[
+{
+  "directory": "/home/dweller/neovim/.deps/build/src/luv-build",
+  "command": "/usr/bin/cc  -I/home/dweller/neovim/.deps/build/src/lua_compat53/c-api -I/home/dweller/neovim/.deps/usr/include -I/home/dweller/neovim/.deps/usr/include/luajit-2.1 -w -O2 -g -DNDEBUG -fPIC -std=gnu99 -o CMakeFiles/libluv_a.dir/src/luv.c.o -c /home/dweller/neovim/.deps/build/src/luv/src/luv.c",
+  "file": "/home/dweller/neovim/.deps/build/src/luv/src/luv.c"
+},
+{
+  "directory": "/home/dweller/neovim/.deps/build/src/luv-build",
+  "command": "/usr/bin/cc  -I/home/dweller/neovim/.deps/build/src/lua_compat53/c-api -I/home/dweller/neovim/.deps/usr/include -I/home/dweller/neovim/.deps/usr/include/luajit-2.1 -w -O2 -g -DNDEBUG -fPIE -std=gnu99 -o CMakeFiles/test.dir/src/test.c.o -c /home/dweller/neovim/.deps/build/src/luv/src/test.c",
+  "file": "/home/dweller/neovim/.deps/build/src/luv/src/test.c"
+},
+{
+  "directory": "/home/dweller/neovim/.deps/build/src/luv-build",
+  "command": "/usr/bin/cc  -I/home/dweller/neovim/.deps/build/src/lua_compat53/c-api -I/home/dweller/neovim/.deps/usr/include -I/home/dweller/neovim/.deps/usr/include/luajit-2.1 -w -O2 -g -DNDEBUG -fPIE -std=gnu99 -o CMakeFiles/test.dir/src/luv.c.o -c /home/dweller/neovim/.deps/build/src/luv/src/luv.c",
+  "file": "/home/dweller/neovim/.deps/build/src/luv/src/luv.c"
+}
+]

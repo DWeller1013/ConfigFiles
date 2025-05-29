@@ -1,0 +1,1 @@
+/usr/bin/cc -fPIC -O2 -g -DNDEBUG -shared  -o markdown.so CMakeFiles/markdown.dir/tree-sitter-markdown/src/parser.c.o CMakeFiles/markdown.dir/tree-sitter-markdown/src/scanner.c.o 

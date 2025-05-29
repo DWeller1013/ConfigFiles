@@ -1,0 +1,3 @@
+/home/dweller/neovim/.deps/usr/include/tree_sitter/api.h
+/home/dweller/neovim/.deps/usr/share/pkgconfig/tree-sitter.pc
+/home/dweller/neovim/.deps/usr/lib/libtree-sitter.a

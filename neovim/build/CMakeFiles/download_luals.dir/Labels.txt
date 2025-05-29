@@ -1,0 +1,13 @@
+# Target labels
+ download_luals
+# Source files and their labels
+/home/dweller/neovim/build/CMakeFiles/download_luals
+/home/dweller/neovim/build/CMakeFiles/download_luals.rule
+/home/dweller/neovim/build/CMakeFiles/download_luals-complete.rule
+/home/dweller/neovim/build/build/src/download_luals-stamp/download_luals-build.rule
+/home/dweller/neovim/build/build/src/download_luals-stamp/download_luals-configure.rule
+/home/dweller/neovim/build/build/src/download_luals-stamp/download_luals-download.rule
+/home/dweller/neovim/build/build/src/download_luals-stamp/download_luals-install.rule
+/home/dweller/neovim/build/build/src/download_luals-stamp/download_luals-mkdir.rule
+/home/dweller/neovim/build/build/src/download_luals-stamp/download_luals-patch.rule
+/home/dweller/neovim/build/build/src/download_luals-stamp/download_luals-update.rule

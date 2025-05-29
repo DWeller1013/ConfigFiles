@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/dweller/neovim/build/CMakeFiles/uncrustify"
+		},
+		{
+			"file" : "/home/dweller/neovim/build/CMakeFiles/uncrustify.rule"
+		},
+		{
+			"file" : "/home/dweller/neovim/build/CMakeFiles/uncrustify-complete.rule"
+		},
+		{
+			"file" : "/home/dweller/neovim/build/build/src/uncrustify-stamp/uncrustify-build.rule"
+		},
+		{
+			"file" : "/home/dweller/neovim/build/build/src/uncrustify-stamp/uncrustify-configure.rule"
+		},
+		{
+			"file" : "/home/dweller/neovim/build/build/src/uncrustify-stamp/uncrustify-download.rule"
+		},
+		{
+			"file" : "/home/dweller/neovim/build/build/src/uncrustify-stamp/uncrustify-install.rule"
+		},
+		{
+			"file" : "/home/dweller/neovim/build/build/src/uncrustify-stamp/uncrustify-mkdir.rule"
+		},
+		{
+			"file" : "/home/dweller/neovim/build/build/src/uncrustify-stamp/uncrustify-patch.rule"
+		},
+		{
+			"file" : "/home/dweller/neovim/build/build/src/uncrustify-stamp/uncrustify-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"uncrustify"
+		],
+		"name" : "uncrustify"
+	}
+}

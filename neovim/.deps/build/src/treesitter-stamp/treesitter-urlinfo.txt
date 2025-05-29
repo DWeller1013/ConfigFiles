@@ -1,0 +1,3 @@
+repository='external project URL'
+module='https://github.com/tree-sitter/tree-sitter/archive/v0.25.4.tar.gz'
+tag='SHA256=87eadc505905c70a692917c821958a819903f808f8d244068b1d273a033dc728'

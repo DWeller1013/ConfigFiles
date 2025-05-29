@@ -1,0 +1,5 @@
+/home/dweller/neovim/.deps/usr/lib/libluv.a
+/home/dweller/neovim/.deps/usr/include/luv/luv.h
+/home/dweller/neovim/.deps/usr/include/luv/util.h
+/home/dweller/neovim/.deps/usr/include/luv/lhandle.h
+/home/dweller/neovim/.deps/usr/include/luv/lreq.h

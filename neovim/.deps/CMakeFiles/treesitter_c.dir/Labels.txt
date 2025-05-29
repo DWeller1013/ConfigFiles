@@ -1,0 +1,13 @@
+# Target labels
+ treesitter_c
+# Source files and their labels
+/home/dweller/neovim/.deps/CMakeFiles/treesitter_c
+/home/dweller/neovim/.deps/CMakeFiles/treesitter_c.rule
+/home/dweller/neovim/.deps/CMakeFiles/treesitter_c-complete.rule
+/home/dweller/neovim/.deps/build/src/treesitter_c-stamp/treesitter_c-build.rule
+/home/dweller/neovim/.deps/build/src/treesitter_c-stamp/treesitter_c-configure.rule
+/home/dweller/neovim/.deps/build/src/treesitter_c-stamp/treesitter_c-download.rule
+/home/dweller/neovim/.deps/build/src/treesitter_c-stamp/treesitter_c-install.rule
+/home/dweller/neovim/.deps/build/src/treesitter_c-stamp/treesitter_c-mkdir.rule
+/home/dweller/neovim/.deps/build/src/treesitter_c-stamp/treesitter_c-patch.rule
+/home/dweller/neovim/.deps/build/src/treesitter_c-stamp/treesitter_c-update.rule

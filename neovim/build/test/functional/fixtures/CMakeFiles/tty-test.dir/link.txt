@@ -1,0 +1,1 @@
+/usr/bin/cc -O2 -g  CMakeFiles/tty-test.dir/tty-test.c.o -o ../../../bin/tty-test  ../../../../.deps/usr/lib/libuv.a -ldl -lnsl -lrt 

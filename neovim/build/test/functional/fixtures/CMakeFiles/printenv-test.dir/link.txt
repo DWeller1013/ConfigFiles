@@ -1,0 +1,1 @@
+/usr/bin/cc -O2 -g  CMakeFiles/printenv-test.dir/printenv-test.c.o -o ../../../bin/printenv-test  ../../../../.deps/usr/lib/libuv.a -ldl -lnsl -lrt 

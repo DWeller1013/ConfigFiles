@@ -1,0 +1,1 @@
+/usr/bin/cc -O2 -g  CMakeFiles/printargs-test.dir/printargs-test.c.o -o ../../../bin/printargs-test  ../../../../.deps/usr/lib/libuv.a -ldl -lnsl -lrt 

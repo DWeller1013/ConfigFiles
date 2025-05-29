@@ -1,0 +1,10 @@
+prefix=/home/dweller/neovim/.deps/usr
+exec_prefix=/home/dweller/neovim/.deps/usr/bin
+libdir=/home/dweller/neovim/.deps/usr/lib
+includedir=/home/dweller/neovim/.deps/usr/include
+
+Name: libutf8proc
+Description: UTF8 processing
+Version: 2.10.0
+Libs: -L${libdir} -lutf8proc
+Cflags: -I${includedir} -DUTF8PROC_EXPORTS

@@ -1,0 +1,2 @@
+/home/dweller/neovim/.deps/usr/lib/libunibilium.a
+/home/dweller/neovim/.deps/usr/include/unibilium.h

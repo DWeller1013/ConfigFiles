@@ -1,0 +1,969 @@
+The system is: Linux - 5.15.167.4-microsoft-standard-WSL2 - x86_64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: /usr/bin/cc 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+
+The C compiler identification is GNU, found in "/home/dweller/neovim/build/CMakeFiles/3.22.1/CompilerIdC/a.out"
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: /home/dweller/neovim/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_cbc07/fast && gmake[1]: Entering directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_cbc07.dir/build.make CMakeFiles/cmTC_cbc07.dir/build
+gmake[2]: Entering directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_cbc07.dir/CMakeCCompilerABI.c.o
+/usr/bin/cc   -v -o CMakeFiles/cmTC_cbc07.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.22/Modules/CMakeCCompilerABI.c
+Using built-in specs.
+COLLECT_GCC=/usr/bin/cc
+OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
+OFFLOAD_TARGET_DEFAULT=1
+Target: x86_64-linux-gnu
+Configured with: ../src/configure -v --with-pkgversion='Ubuntu 11.4.0-1ubuntu1~22.04' --with-bugurl=file:///usr/share/doc/gcc-11/README.Bugs --enable-languages=c,ada,c++,go,brig,d,fortran,objc,obj-c++,m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-11 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-11-XeT9lY/gcc-11-11.4.0/debian/tmp-nvptx/usr,amdgcn-amdhsa=/build/gcc-11-XeT9lY/gcc-11-11.4.0/debian/tmp-gcn/usr --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=2
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 11.4.0 (Ubuntu 11.4.0-1ubuntu1~22.04) 
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_cbc07.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_cbc07.dir/'
+ /usr/lib/gcc/x86_64-linux-gnu/11/cc1 -quiet -v -imultiarch x86_64-linux-gnu /usr/share/cmake-3.22/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_cbc07.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccAV5lkn.s
+GNU C17 (Ubuntu 11.4.0-1ubuntu1~22.04) version 11.4.0 (x86_64-linux-gnu)
+	compiled by GNU C version 11.4.0, GMP version 6.2.1, MPFR version 4.1.0, MPC version 1.2.1, isl version isl-0.24-GMP
+
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"
+ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/11/include-fixed"
+ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /usr/lib/gcc/x86_64-linux-gnu/11/include
+ /usr/local/include
+ /usr/include/x86_64-linux-gnu
+ /usr/include
+End of search list.
+GNU C17 (Ubuntu 11.4.0-1ubuntu1~22.04) version 11.4.0 (x86_64-linux-gnu)
+	compiled by GNU C version 11.4.0, GMP version 6.2.1, MPFR version 4.1.0, MPC version 1.2.1, isl version isl-0.24-GMP
+
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Compiler executable checksum: 50eaa2331df977b8016186198deb2d18
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_cbc07.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_cbc07.dir/'
+ as -v --64 -o CMakeFiles/cmTC_cbc07.dir/CMakeCCompilerABI.c.o /tmp/ccAV5lkn.s
+GNU assembler version 2.38 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.38
+COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_cbc07.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_cbc07.dir/CMakeCCompilerABI.c.'
+Linking C executable cmTC_cbc07
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cbc07.dir/link.txt --verbose=1
+/usr/bin/cc  -v CMakeFiles/cmTC_cbc07.dir/CMakeCCompilerABI.c.o -o cmTC_cbc07 
+Using built-in specs.
+COLLECT_GCC=/usr/bin/cc
+COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper
+OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
+OFFLOAD_TARGET_DEFAULT=1
+Target: x86_64-linux-gnu
+Configured with: ../src/configure -v --with-pkgversion='Ubuntu 11.4.0-1ubuntu1~22.04' --with-bugurl=file:///usr/share/doc/gcc-11/README.Bugs --enable-languages=c,ada,c++,go,brig,d,fortran,objc,obj-c++,m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-11 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-11-XeT9lY/gcc-11-11.4.0/debian/tmp-nvptx/usr,amdgcn-amdhsa=/build/gcc-11-XeT9lY/gcc-11-11.4.0/debian/tmp-gcn/usr --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=2
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 11.4.0 (Ubuntu 11.4.0-1ubuntu1~22.04) 
+COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_cbc07' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_cbc07.'
+ /usr/lib/gcc/x86_64-linux-gnu/11/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/11/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper -plugin-opt=-fresolution=/tmp/ccsCLnDM.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_cbc07 /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/11/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/11 -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/11/../../.. CMakeFiles/cmTC_cbc07.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/11/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_cbc07' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_cbc07.'
+gmake[2]: Leaving directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+
+
+
+Parsed C implicit include dir info from above output: rv=done
+  found start of include info
+  found start of implicit include info
+    add: [/usr/lib/gcc/x86_64-linux-gnu/11/include]
+    add: [/usr/local/include]
+    add: [/usr/include/x86_64-linux-gnu]
+    add: [/usr/include]
+  end of search list found
+  collapse include dir [/usr/lib/gcc/x86_64-linux-gnu/11/include] ==> [/usr/lib/gcc/x86_64-linux-gnu/11/include]
+  collapse include dir [/usr/local/include] ==> [/usr/local/include]
+  collapse include dir [/usr/include/x86_64-linux-gnu] ==> [/usr/include/x86_64-linux-gnu]
+  collapse include dir [/usr/include] ==> [/usr/include]
+  implicit include dirs: [/usr/lib/gcc/x86_64-linux-gnu/11/include;/usr/local/include;/usr/include/x86_64-linux-gnu;/usr/include]
+
+
+Parsed C implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /home/dweller/neovim/build/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_cbc07/fast && gmake[1]: Entering directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp']
+  ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_cbc07.dir/build.make CMakeFiles/cmTC_cbc07.dir/build]
+  ignore line: [gmake[2]: Entering directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp']
+  ignore line: [Building C object CMakeFiles/cmTC_cbc07.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/usr/bin/cc   -v -o CMakeFiles/cmTC_cbc07.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.22/Modules/CMakeCCompilerABI.c]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/usr/bin/cc]
+  ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
+  ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+  ignore line: [Target: x86_64-linux-gnu]
+  ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu 11.4.0-1ubuntu1~22.04' --with-bugurl=file:///usr/share/doc/gcc-11/README.Bugs --enable-languages=c ada c++ go brig d fortran objc obj-c++ m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-11 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32 m64 mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-11-XeT9lY/gcc-11-11.4.0/debian/tmp-nvptx/usr amdgcn-amdhsa=/build/gcc-11-XeT9lY/gcc-11-11.4.0/debian/tmp-gcn/usr --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=2]
+  ignore line: [Thread model: posix]
+  ignore line: [Supported LTO compression algorithms: zlib zstd]
+  ignore line: [gcc version 11.4.0 (Ubuntu 11.4.0-1ubuntu1~22.04) ]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_cbc07.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_cbc07.dir/']
+  ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/11/cc1 -quiet -v -imultiarch x86_64-linux-gnu /usr/share/cmake-3.22/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_cbc07.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccAV5lkn.s]
+  ignore line: [GNU C17 (Ubuntu 11.4.0-1ubuntu1~22.04) version 11.4.0 (x86_64-linux-gnu)]
+  ignore line: [	compiled by GNU C version 11.4.0  GMP version 6.2.1  MPFR version 4.1.0  MPC version 1.2.1  isl version isl-0.24-GMP]
+  ignore line: []
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"]
+  ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/11/include-fixed"]
+  ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/include"]
+  ignore line: [#include "..." search starts here:]
+  ignore line: [#include <...> search starts here:]
+  ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/11/include]
+  ignore line: [ /usr/local/include]
+  ignore line: [ /usr/include/x86_64-linux-gnu]
+  ignore line: [ /usr/include]
+  ignore line: [End of search list.]
+  ignore line: [GNU C17 (Ubuntu 11.4.0-1ubuntu1~22.04) version 11.4.0 (x86_64-linux-gnu)]
+  ignore line: [	compiled by GNU C version 11.4.0  GMP version 6.2.1  MPFR version 4.1.0  MPC version 1.2.1  isl version isl-0.24-GMP]
+  ignore line: []
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [Compiler executable checksum: 50eaa2331df977b8016186198deb2d18]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_cbc07.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_cbc07.dir/']
+  ignore line: [ as -v --64 -o CMakeFiles/cmTC_cbc07.dir/CMakeCCompilerABI.c.o /tmp/ccAV5lkn.s]
+  ignore line: [GNU assembler version 2.38 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.38]
+  ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/]
+  ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_cbc07.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_cbc07.dir/CMakeCCompilerABI.c.']
+  ignore line: [Linking C executable cmTC_cbc07]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cbc07.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/cc  -v CMakeFiles/cmTC_cbc07.dir/CMakeCCompilerABI.c.o -o cmTC_cbc07 ]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/usr/bin/cc]
+  ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper]
+  ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
+  ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+  ignore line: [Target: x86_64-linux-gnu]
+  ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu 11.4.0-1ubuntu1~22.04' --with-bugurl=file:///usr/share/doc/gcc-11/README.Bugs --enable-languages=c ada c++ go brig d fortran objc obj-c++ m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-11 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32 m64 mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-11-XeT9lY/gcc-11-11.4.0/debian/tmp-nvptx/usr amdgcn-amdhsa=/build/gcc-11-XeT9lY/gcc-11-11.4.0/debian/tmp-gcn/usr --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=2]
+  ignore line: [Thread model: posix]
+  ignore line: [Supported LTO compression algorithms: zlib zstd]
+  ignore line: [gcc version 11.4.0 (Ubuntu 11.4.0-1ubuntu1~22.04) ]
+  ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/]
+  ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_cbc07' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_cbc07.']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/11/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/11/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper -plugin-opt=-fresolution=/tmp/ccsCLnDM.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_cbc07 /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/11/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/11 -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/11/../../.. CMakeFiles/cmTC_cbc07.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/11/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crtn.o]
+    arg [/usr/lib/gcc/x86_64-linux-gnu/11/collect2] ==> ignore
+    arg [-plugin] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/11/liblto_plugin.so] ==> ignore
+    arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccsCLnDM.res] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [-plugin-opt=-pass-through=-lc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [--build-id] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [-m] ==> ignore
+    arg [elf_x86_64] ==> ignore
+    arg [--hash-style=gnu] ==> ignore
+    arg [--as-needed] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+    arg [-pie] ==> ignore
+    arg [-znow] ==> ignore
+    arg [-zrelro] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_cbc07] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o]
+    arg [/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o]
+    arg [/usr/lib/gcc/x86_64-linux-gnu/11/crtbeginS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/11/crtbeginS.o]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/11] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/11]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib]
+    arg [-L/lib/x86_64-linux-gnu] ==> dir [/lib/x86_64-linux-gnu]
+    arg [-L/lib/../lib] ==> dir [/lib/../lib]
+    arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
+    arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/11/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/11/../../..]
+    arg [CMakeFiles/cmTC_cbc07.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [-lgcc] ==> lib [gcc]
+    arg [--push-state] ==> ignore
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--pop-state] ==> ignore
+    arg [-lc] ==> lib [c]
+    arg [-lgcc] ==> lib [gcc]
+    arg [--push-state] ==> ignore
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--pop-state] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/11/crtendS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/11/crtendS.o]
+    arg [/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crtn.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crtn.o]
+  collapse obj [/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o] ==> [/usr/lib/x86_64-linux-gnu/Scrt1.o]
+  collapse obj [/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o] ==> [/usr/lib/x86_64-linux-gnu/crti.o]
+  collapse obj [/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crtn.o] ==> [/usr/lib/x86_64-linux-gnu/crtn.o]
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/11] ==> [/usr/lib/gcc/x86_64-linux-gnu/11]
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib] ==> [/usr/lib]
+  collapse library dir [/lib/x86_64-linux-gnu] ==> [/lib/x86_64-linux-gnu]
+  collapse library dir [/lib/../lib] ==> [/lib]
+  collapse library dir [/usr/lib/x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+  collapse library dir [/usr/lib/../lib] ==> [/usr/lib]
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/11/../../..] ==> [/usr/lib]
+  implicit libs: [gcc;gcc_s;c;gcc;gcc_s]
+  implicit objs: [/usr/lib/x86_64-linux-gnu/Scrt1.o;/usr/lib/x86_64-linux-gnu/crti.o;/usr/lib/gcc/x86_64-linux-gnu/11/crtbeginS.o;/usr/lib/gcc/x86_64-linux-gnu/11/crtendS.o;/usr/lib/x86_64-linux-gnu/crtn.o]
+  implicit dirs: [/usr/lib/gcc/x86_64-linux-gnu/11;/usr/lib/x86_64-linux-gnu;/usr/lib;/lib/x86_64-linux-gnu;/lib]
+  implicit fwks: []
+
+
+Determining if the function dlopen exists in the dl passed with the following output:
+Change Dir: /home/dweller/neovim/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_89f92/fast && gmake[1]: Entering directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_89f92.dir/build.make CMakeFiles/cmTC_89f92.dir/build
+gmake[2]: Entering directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_89f92.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=dlopen -o CMakeFiles/cmTC_89f92.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.22/Modules/CheckFunctionExists.c
+Linking C executable cmTC_89f92
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_89f92.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=dlopen CMakeFiles/cmTC_89f92.dir/CheckFunctionExists.c.o -o cmTC_89f92   -L/home/dweller/neovim/build/CMakeFiles/CMakeTmp/dlfcn.h  -Wl,-rpath,/home/dweller/neovim/build/CMakeFiles/CMakeTmp/dlfcn.h -ldl 
+gmake[2]: Leaving directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function gethostbyname exists in the nsl passed with the following output:
+Change Dir: /home/dweller/neovim/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_740f5/fast && gmake[1]: Entering directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_740f5.dir/build.make CMakeFiles/cmTC_740f5.dir/build
+gmake[2]: Entering directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_740f5.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=gethostbyname -o CMakeFiles/cmTC_740f5.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.22/Modules/CheckFunctionExists.c
+Linking C executable cmTC_740f5
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_740f5.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=gethostbyname CMakeFiles/cmTC_740f5.dir/CheckFunctionExists.c.o -o cmTC_740f5   -L/home/dweller/neovim/build/CMakeFiles/CMakeTmp/nsl.h  -Wl,-rpath,/home/dweller/neovim/build/CMakeFiles/CMakeTmp/nsl.h -lnsl 
+gmake[2]: Leaving directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function clock_gettime exists in the rt passed with the following output:
+Change Dir: /home/dweller/neovim/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_66b22/fast && gmake[1]: Entering directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_66b22.dir/build.make CMakeFiles/cmTC_66b22.dir/build
+gmake[2]: Entering directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_66b22.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=clock_gettime -o CMakeFiles/cmTC_66b22.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.22/Modules/CheckFunctionExists.c
+Linking C executable cmTC_66b22
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_66b22.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=clock_gettime CMakeFiles/cmTC_66b22.dir/CheckFunctionExists.c.o -o cmTC_66b22   -L/home/dweller/neovim/build/CMakeFiles/CMakeTmp/time.h  -Wl,-rpath,/home/dweller/neovim/build/CMakeFiles/CMakeTmp/time.h -lrt 
+gmake[2]: Leaving directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the include file pthread.h exists passed with the following output:
+Change Dir: /home/dweller/neovim/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_d9bc7/fast && gmake[1]: Entering directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_d9bc7.dir/build.make CMakeFiles/cmTC_d9bc7.dir/build
+gmake[2]: Entering directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_d9bc7.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_d9bc7.dir/CheckIncludeFile.c.o -c /home/dweller/neovim/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_d9bc7
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d9bc7.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_d9bc7.dir/CheckIncludeFile.c.o -o cmTC_d9bc7 
+gmake[2]: Leaving directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+
+
+
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD succeeded with the following output:
+Change Dir: /home/dweller/neovim/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_a268f/fast && gmake[1]: Entering directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_a268f.dir/build.make CMakeFiles/cmTC_a268f.dir/build
+gmake[2]: Entering directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_a268f.dir/src.c.o
+/usr/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_a268f.dir/src.c.o -c /home/dweller/neovim/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_a268f
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a268f.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_a268f.dir/src.c.o -o cmTC_a268f 
+gmake[2]: Leaving directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+#include <pthread.h>
+
+static void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_cancel(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Performing C SOURCE FILE Test HAVE_WORKING_LIBINTL succeeded with the following output:
+Change Dir: /home/dweller/neovim/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_df96d/fast && gmake[1]: Entering directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_df96d.dir/build.make CMakeFiles/cmTC_df96d.dir/build
+gmake[2]: Entering directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_df96d.dir/src.c.o
+/usr/bin/cc -DHAVE_WORKING_LIBINTL   -o CMakeFiles/cmTC_df96d.dir/src.c.o -c /home/dweller/neovim/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_df96d
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_df96d.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_df96d.dir/src.c.o -o cmTC_df96d 
+gmake[2]: Leaving directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+
+#include <libintl.h>
+
+int main(int argc, char** argv) {
+  gettext("foo");
+  ngettext("foo", "bar", 1);
+  bindtextdomain("foo", "bar");
+  bind_textdomain_codeset("foo", "bar");
+  textdomain("foo");
+}
+Determining if the variable _nl_msg_cat_cntr exists passed with the following output:
+Change Dir: /home/dweller/neovim/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_c94ac/fast && gmake[1]: Entering directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_c94ac.dir/build.make CMakeFiles/cmTC_c94ac.dir/build
+gmake[2]: Entering directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_c94ac.dir/CheckVariableExists.c.o
+/usr/bin/cc   -DCHECK_VARIABLE_EXISTS=_nl_msg_cat_cntr -o CMakeFiles/cmTC_c94ac.dir/CheckVariableExists.c.o -c /usr/share/cmake-3.22/Modules/CheckVariableExists.c
+Linking C executable cmTC_c94ac
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c94ac.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_VARIABLE_EXISTS=_nl_msg_cat_cntr CMakeFiles/cmTC_c94ac.dir/CheckVariableExists.c.o -o cmTC_c94ac 
+gmake[2]: Leaving directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+
+
+
+Performing C SOURCE FILE Test HAS_FSTACK_PROTECTOR_STRONG_FLAG succeeded with the following output:
+Change Dir: /home/dweller/neovim/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_b10cc/fast && gmake[1]: Entering directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_b10cc.dir/build.make CMakeFiles/cmTC_b10cc.dir/build
+gmake[2]: Entering directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_b10cc.dir/src.c.o
+/usr/bin/cc -DHAS_FSTACK_PROTECTOR_STRONG_FLAG  -fstack-protector-strong -o CMakeFiles/cmTC_b10cc.dir/src.c.o -c /home/dweller/neovim/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_b10cc
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b10cc.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_b10cc.dir/src.c.o -o cmTC_b10cc 
+gmake[2]: Leaving directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test HAVE_WIMPLICIT_FALLTHROUGH_FLAG succeeded with the following output:
+Change Dir: /home/dweller/neovim/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_ab8c6/fast && gmake[1]: Entering directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_ab8c6.dir/build.make CMakeFiles/cmTC_ab8c6.dir/build
+gmake[2]: Entering directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_ab8c6.dir/src.c.o
+/usr/bin/cc -DHAVE_WIMPLICIT_FALLTHROUGH_FLAG  -Wimplicit-fallthrough -o CMakeFiles/cmTC_ab8c6.dir/src.c.o -c /home/dweller/neovim/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_ab8c6
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ab8c6.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_ab8c6.dir/src.c.o -o cmTC_ab8c6 
+gmake[2]: Leaving directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test HAS_DIAG_COLOR_FLAG succeeded with the following output:
+Change Dir: /home/dweller/neovim/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_3efe0/fast && gmake[1]: Entering directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_3efe0.dir/build.make CMakeFiles/cmTC_3efe0.dir/build
+gmake[2]: Entering directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_3efe0.dir/src.c.o
+/usr/bin/cc -DHAS_DIAG_COLOR_FLAG  -fdiagnostics-color=auto -o CMakeFiles/cmTC_3efe0.dir/src.c.o -c /home/dweller/neovim/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_3efe0
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3efe0.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_3efe0.dir/src.c.o -o cmTC_3efe0 
+gmake[2]: Leaving directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test HAVE_EXECINFO_BACKTRACE succeeded with the following output:
+Change Dir: /home/dweller/neovim/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_db822/fast && gmake[1]: Entering directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_db822.dir/build.make CMakeFiles/cmTC_db822.dir/build
+gmake[2]: Entering directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_db822.dir/src.c.o
+/usr/bin/cc -DHAVE_EXECINFO_BACKTRACE   -o CMakeFiles/cmTC_db822.dir/src.c.o -c /home/dweller/neovim/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_db822
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_db822.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_db822.dir/src.c.o -o cmTC_db822 
+gmake[2]: Leaving directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+
+#include <execinfo.h>
+int main(void)
+{
+  void *trace[1];
+  backtrace(trace, 1);
+  return 0;
+}
+
+Performing C SOURCE FILE Test HAVE_BUILTIN_ADD_OVERFLOW succeeded with the following output:
+Change Dir: /home/dweller/neovim/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_73981/fast && gmake[1]: Entering directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_73981.dir/build.make CMakeFiles/cmTC_73981.dir/build
+gmake[2]: Entering directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_73981.dir/src.c.o
+/usr/bin/cc -DHAVE_BUILTIN_ADD_OVERFLOW   -o CMakeFiles/cmTC_73981.dir/src.c.o -c /home/dweller/neovim/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_73981
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_73981.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_73981.dir/src.c.o -o cmTC_73981 
+gmake[2]: Leaving directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+
+int main(void)
+{
+  int a = 42;
+  __builtin_add_overflow(a, a, &a);
+  __builtin_sub_overflow(a, a, &a);
+  return 0;
+}
+
+Determining if the include file sys/types.h exists passed with the following output:
+Change Dir: /home/dweller/neovim/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_655e3/fast && gmake[1]: Entering directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_655e3.dir/build.make CMakeFiles/cmTC_655e3.dir/build
+gmake[2]: Entering directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_655e3.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_655e3.dir/CheckIncludeFile.c.o -c /home/dweller/neovim/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_655e3
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_655e3.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_655e3.dir/CheckIncludeFile.c.o -o cmTC_655e3 
+gmake[2]: Leaving directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the include file stdint.h exists passed with the following output:
+Change Dir: /home/dweller/neovim/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_4e599/fast && gmake[1]: Entering directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_4e599.dir/build.make CMakeFiles/cmTC_4e599.dir/build
+gmake[2]: Entering directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_4e599.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_4e599.dir/CheckIncludeFile.c.o -c /home/dweller/neovim/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_4e599
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4e599.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_4e599.dir/CheckIncludeFile.c.o -o cmTC_4e599 
+gmake[2]: Leaving directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the include file stddef.h exists passed with the following output:
+Change Dir: /home/dweller/neovim/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_6dcfb/fast && gmake[1]: Entering directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_6dcfb.dir/build.make CMakeFiles/cmTC_6dcfb.dir/build
+gmake[2]: Entering directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_6dcfb.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_6dcfb.dir/CheckIncludeFile.c.o -c /home/dweller/neovim/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_6dcfb
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6dcfb.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_6dcfb.dir/CheckIncludeFile.c.o -o cmTC_6dcfb 
+gmake[2]: Leaving directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining size of int passed with the following output:
+Change Dir: /home/dweller/neovim/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_147e0/fast && gmake[1]: Entering directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_147e0.dir/build.make CMakeFiles/cmTC_147e0.dir/build
+gmake[2]: Entering directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_147e0.dir/SIZEOF_INT.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_147e0.dir/SIZEOF_INT.c.o -c /home/dweller/neovim/build/CMakeFiles/CheckTypeSize/SIZEOF_INT.c
+Linking C executable cmTC_147e0
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_147e0.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_147e0.dir/SIZEOF_INT.c.o -o cmTC_147e0 
+gmake[2]: Leaving directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining size of long passed with the following output:
+Change Dir: /home/dweller/neovim/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_4f6ae/fast && gmake[1]: Entering directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_4f6ae.dir/build.make CMakeFiles/cmTC_4f6ae.dir/build
+gmake[2]: Entering directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_4f6ae.dir/SIZEOF_LONG.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_4f6ae.dir/SIZEOF_LONG.c.o -c /home/dweller/neovim/build/CMakeFiles/CheckTypeSize/SIZEOF_LONG.c
+Linking C executable cmTC_4f6ae
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4f6ae.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_4f6ae.dir/SIZEOF_LONG.c.o -o cmTC_4f6ae 
+gmake[2]: Leaving directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining size of intmax_t passed with the following output:
+Change Dir: /home/dweller/neovim/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_58e17/fast && gmake[1]: Entering directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_58e17.dir/build.make CMakeFiles/cmTC_58e17.dir/build
+gmake[2]: Entering directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_58e17.dir/SIZEOF_INTMAX_T.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_58e17.dir/SIZEOF_INTMAX_T.c.o -c /home/dweller/neovim/build/CMakeFiles/CheckTypeSize/SIZEOF_INTMAX_T.c
+Linking C executable cmTC_58e17
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_58e17.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_58e17.dir/SIZEOF_INTMAX_T.c.o -o cmTC_58e17 
+gmake[2]: Leaving directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining size of size_t passed with the following output:
+Change Dir: /home/dweller/neovim/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_45ac4/fast && gmake[1]: Entering directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_45ac4.dir/build.make CMakeFiles/cmTC_45ac4.dir/build
+gmake[2]: Entering directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_45ac4.dir/SIZEOF_SIZE_T.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_45ac4.dir/SIZEOF_SIZE_T.c.o -c /home/dweller/neovim/build/CMakeFiles/CheckTypeSize/SIZEOF_SIZE_T.c
+Linking C executable cmTC_45ac4
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_45ac4.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_45ac4.dir/SIZEOF_SIZE_T.c.o -o cmTC_45ac4 
+gmake[2]: Leaving directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining size of void * passed with the following output:
+Change Dir: /home/dweller/neovim/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_0c1d0/fast && gmake[1]: Entering directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_0c1d0.dir/build.make CMakeFiles/cmTC_0c1d0.dir/build
+gmake[2]: Entering directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_0c1d0.dir/SIZEOF_VOID_PTR.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_0c1d0.dir/SIZEOF_VOID_PTR.c.o -c /home/dweller/neovim/build/CMakeFiles/CheckTypeSize/SIZEOF_VOID_PTR.c
+Linking C executable cmTC_0c1d0
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0c1d0.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_0c1d0.dir/SIZEOF_VOID_PTR.c.o -o cmTC_0c1d0 
+gmake[2]: Leaving directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if files langinfo.h exist passed with the following output:
+Change Dir: /home/dweller/neovim/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_2a3db/fast && gmake[1]: Entering directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_2a3db.dir/build.make CMakeFiles/cmTC_2a3db.dir/build
+gmake[2]: Entering directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_2a3db.dir/HAVE_LANGINFO_H.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_2a3db.dir/HAVE_LANGINFO_H.c.o -c /home/dweller/neovim/build/CMakeFiles/CheckIncludeFiles/HAVE_LANGINFO_H.c
+Linking C executable cmTC_2a3db
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2a3db.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_2a3db.dir/HAVE_LANGINFO_H.c.o -o cmTC_2a3db 
+gmake[2]: Leaving directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if files strings.h exist passed with the following output:
+Change Dir: /home/dweller/neovim/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_c8ef3/fast && gmake[1]: Entering directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_c8ef3.dir/build.make CMakeFiles/cmTC_c8ef3.dir/build
+gmake[2]: Entering directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_c8ef3.dir/HAVE_STRINGS_H.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_c8ef3.dir/HAVE_STRINGS_H.c.o -c /home/dweller/neovim/build/CMakeFiles/CheckIncludeFiles/HAVE_STRINGS_H.c
+Linking C executable cmTC_c8ef3
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c8ef3.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_c8ef3.dir/HAVE_STRINGS_H.c.o -o cmTC_c8ef3 
+gmake[2]: Leaving directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if files sys/utsname.h exist passed with the following output:
+Change Dir: /home/dweller/neovim/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_c46f9/fast && gmake[1]: Entering directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_c46f9.dir/build.make CMakeFiles/cmTC_c46f9.dir/build
+gmake[2]: Entering directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_c46f9.dir/HAVE_SYS_UTSNAME_H.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_c46f9.dir/HAVE_SYS_UTSNAME_H.c.o -c /home/dweller/neovim/build/CMakeFiles/CheckIncludeFiles/HAVE_SYS_UTSNAME_H.c
+Linking C executable cmTC_c46f9
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c46f9.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_c46f9.dir/HAVE_SYS_UTSNAME_H.c.o -o cmTC_c46f9 
+gmake[2]: Leaving directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if files termios.h exist passed with the following output:
+Change Dir: /home/dweller/neovim/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_9b60a/fast && gmake[1]: Entering directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_9b60a.dir/build.make CMakeFiles/cmTC_9b60a.dir/build
+gmake[2]: Entering directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_9b60a.dir/HAVE_TERMIOS_H.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_9b60a.dir/HAVE_TERMIOS_H.c.o -c /home/dweller/neovim/build/CMakeFiles/CheckIncludeFiles/HAVE_TERMIOS_H.c
+Linking C executable cmTC_9b60a
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9b60a.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_9b60a.dir/HAVE_TERMIOS_H.c.o -o cmTC_9b60a 
+gmake[2]: Leaving directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if files sys/uio.h exist passed with the following output:
+Change Dir: /home/dweller/neovim/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_1331c/fast && gmake[1]: Entering directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_1331c.dir/build.make CMakeFiles/cmTC_1331c.dir/build
+gmake[2]: Entering directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_1331c.dir/HAVE_SYS_UIO_H.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_1331c.dir/HAVE_SYS_UIO_H.c.o -c /home/dweller/neovim/build/CMakeFiles/CheckIncludeFiles/HAVE_SYS_UIO_H.c
+Linking C executable cmTC_1331c
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1331c.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_1331c.dir/HAVE_SYS_UIO_H.c.o -o cmTC_1331c 
+gmake[2]: Leaving directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if files sys/xattr.h exist passed with the following output:
+Change Dir: /home/dweller/neovim/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_6e815/fast && gmake[1]: Entering directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_6e815.dir/build.make CMakeFiles/cmTC_6e815.dir/build
+gmake[2]: Entering directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_6e815.dir/HAVE_XATTR.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_6e815.dir/HAVE_XATTR.c.o -c /home/dweller/neovim/build/CMakeFiles/CheckIncludeFiles/HAVE_XATTR.c
+Linking C executable cmTC_6e815
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6e815.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_6e815.dir/HAVE_XATTR.c.o -o cmTC_6e815 
+gmake[2]: Leaving directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function fseeko exists passed with the following output:
+Change Dir: /home/dweller/neovim/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_298c8/fast && gmake[1]: Entering directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_298c8.dir/build.make CMakeFiles/cmTC_298c8.dir/build
+gmake[2]: Entering directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_298c8.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=fseeko -o CMakeFiles/cmTC_298c8.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.22/Modules/CheckFunctionExists.c
+Linking C executable cmTC_298c8
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_298c8.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=fseeko CMakeFiles/cmTC_298c8.dir/CheckFunctionExists.c.o -o cmTC_298c8 
+gmake[2]: Leaving directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function readv exists passed with the following output:
+Change Dir: /home/dweller/neovim/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_ba320/fast && gmake[1]: Entering directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_ba320.dir/build.make CMakeFiles/cmTC_ba320.dir/build
+gmake[2]: Entering directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_ba320.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=readv -o CMakeFiles/cmTC_ba320.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.22/Modules/CheckFunctionExists.c
+Linking C executable cmTC_ba320
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ba320.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=readv CMakeFiles/cmTC_ba320.dir/CheckFunctionExists.c.o -o cmTC_ba320 
+gmake[2]: Leaving directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function readlink exists passed with the following output:
+Change Dir: /home/dweller/neovim/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_9af3f/fast && gmake[1]: Entering directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_9af3f.dir/build.make CMakeFiles/cmTC_9af3f.dir/build
+gmake[2]: Entering directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_9af3f.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=readlink -o CMakeFiles/cmTC_9af3f.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.22/Modules/CheckFunctionExists.c
+Linking C executable cmTC_9af3f
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9af3f.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=readlink CMakeFiles/cmTC_9af3f.dir/CheckFunctionExists.c.o -o cmTC_9af3f 
+gmake[2]: Leaving directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function strnlen exists passed with the following output:
+Change Dir: /home/dweller/neovim/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_15096/fast && gmake[1]: Entering directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_15096.dir/build.make CMakeFiles/cmTC_15096.dir/build
+gmake[2]: Entering directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_15096.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=strnlen -o CMakeFiles/cmTC_15096.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.22/Modules/CheckFunctionExists.c
+<command-line>: warning: conflicting types for built-in function ‘strnlen’; expected ‘long unsigned int(const char *, long unsigned int)’ [-Wbuiltin-declaration-mismatch]
+/usr/share/cmake-3.22/Modules/CheckFunctionExists.c:7:3: note: in expansion of macro ‘CHECK_FUNCTION_EXISTS’
+    7 |   CHECK_FUNCTION_EXISTS(void);
+      |   ^~~~~~~~~~~~~~~~~~~~~
+Linking C executable cmTC_15096
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_15096.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=strnlen CMakeFiles/cmTC_15096.dir/CheckFunctionExists.c.o -o cmTC_15096 
+gmake[2]: Leaving directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function strcasecmp exists passed with the following output:
+Change Dir: /home/dweller/neovim/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_e1237/fast && gmake[1]: Entering directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_e1237.dir/build.make CMakeFiles/cmTC_e1237.dir/build
+gmake[2]: Entering directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_e1237.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=strcasecmp -o CMakeFiles/cmTC_e1237.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.22/Modules/CheckFunctionExists.c
+<command-line>: warning: conflicting types for built-in function ‘strcasecmp’; expected ‘int(const char *, const char *)’ [-Wbuiltin-declaration-mismatch]
+<command-line>: note: in definition of macro ‘CHECK_FUNCTION_EXISTS’
+Linking C executable cmTC_e1237
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e1237.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=strcasecmp CMakeFiles/cmTC_e1237.dir/CheckFunctionExists.c.o -o cmTC_e1237 
+gmake[2]: Leaving directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function strncasecmp exists passed with the following output:
+Change Dir: /home/dweller/neovim/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_91550/fast && gmake[1]: Entering directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_91550.dir/build.make CMakeFiles/cmTC_91550.dir/build
+gmake[2]: Entering directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_91550.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=strncasecmp -o CMakeFiles/cmTC_91550.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.22/Modules/CheckFunctionExists.c
+<command-line>: warning: conflicting types for built-in function ‘strncasecmp’; expected ‘int(const char *, const char *, long unsigned int)’ [-Wbuiltin-declaration-mismatch]
+<command-line>: note: in definition of macro ‘CHECK_FUNCTION_EXISTS’
+Linking C executable cmTC_91550
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_91550.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=strncasecmp CMakeFiles/cmTC_91550.dir/CheckFunctionExists.c.o -o cmTC_91550 
+gmake[2]: Leaving directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function strptime exists passed with the following output:
+Change Dir: /home/dweller/neovim/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_ca00a/fast && gmake[1]: Entering directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_ca00a.dir/build.make CMakeFiles/cmTC_ca00a.dir/build
+gmake[2]: Entering directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_ca00a.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=strptime -o CMakeFiles/cmTC_ca00a.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.22/Modules/CheckFunctionExists.c
+Linking C executable cmTC_ca00a
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ca00a.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=strptime CMakeFiles/cmTC_ca00a.dir/CheckFunctionExists.c.o -o cmTC_ca00a 
+gmake[2]: Leaving directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+
+
+
+Performing C SOURCE FILE Test HAVE_DIRFD_AND_FLOCK succeeded with the following output:
+Change Dir: /home/dweller/neovim/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_6f4ee/fast && gmake[1]: Entering directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_6f4ee.dir/build.make CMakeFiles/cmTC_6f4ee.dir/build
+gmake[2]: Entering directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_6f4ee.dir/src.c.o
+/usr/bin/cc -DHAVE_DIRFD_AND_FLOCK   -o CMakeFiles/cmTC_6f4ee.dir/src.c.o -c /home/dweller/neovim/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_6f4ee
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6f4ee.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_6f4ee.dir/src.c.o -o cmTC_6f4ee 
+gmake[2]: Leaving directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+
+#include <sys/types.h>
+#include <dirent.h>
+#include <sys/file.h>
+int main(void)
+{
+  DIR *dir = opendir("dirname");
+  dirfd(dir);
+  flock(10, LOCK_SH);
+  return 0;
+}
+
+Performing C SOURCE FILE Test HAVE_PWD_FUNCS succeeded with the following output:
+Change Dir: /home/dweller/neovim/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_9e199/fast && gmake[1]: Entering directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_9e199.dir/build.make CMakeFiles/cmTC_9e199.dir/build
+gmake[2]: Entering directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_9e199.dir/src.c.o
+/usr/bin/cc -DHAVE_PWD_FUNCS   -o CMakeFiles/cmTC_9e199.dir/src.c.o -c /home/dweller/neovim/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_9e199
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9e199.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_9e199.dir/src.c.o -o cmTC_9e199 
+gmake[2]: Leaving directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+
+#include <pwd.h>
+int main(void)
+{
+  getpwent();
+  getpwuid(0);
+  getpwnam("root");
+  return 0;
+}
+
+Determining if the FD_CLOEXEC exist passed with the following output:
+Change Dir: /home/dweller/neovim/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_a2fda/fast && gmake[1]: Entering directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_a2fda.dir/build.make CMakeFiles/cmTC_a2fda.dir/build
+gmake[2]: Entering directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_a2fda.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_a2fda.dir/CheckSymbolExists.c.o -c /home/dweller/neovim/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_a2fda
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a2fda.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_a2fda.dir/CheckSymbolExists.c.o -o cmTC_a2fda 
+gmake[2]: Leaving directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+
+
+File /home/dweller/neovim/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <fcntl.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef FD_CLOEXEC
+  return ((int*)(&FD_CLOEXEC))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the CODESET exist passed with the following output:
+Change Dir: /home/dweller/neovim/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_a7b7f/fast && gmake[1]: Entering directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_a7b7f.dir/build.make CMakeFiles/cmTC_a7b7f.dir/build
+gmake[2]: Entering directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_a7b7f.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_a7b7f.dir/CheckSymbolExists.c.o -c /home/dweller/neovim/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_a7b7f
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a7b7f.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_a7b7f.dir/CheckSymbolExists.c.o -o cmTC_a7b7f 
+gmake[2]: Leaving directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+
+
+File /home/dweller/neovim/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <langinfo.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef CODESET
+  return ((int*)(&CODESET))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if files endian.h exist passed with the following output:
+Change Dir: /home/dweller/neovim/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_de360/fast && gmake[1]: Entering directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_de360.dir/build.make CMakeFiles/cmTC_de360.dir/build
+gmake[2]: Entering directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_de360.dir/HAVE_ENDIAN_H.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_de360.dir/HAVE_ENDIAN_H.c.o -c /home/dweller/neovim/build/CMakeFiles/CheckIncludeFiles/HAVE_ENDIAN_H.c
+Linking C executable cmTC_de360
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_de360.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_de360.dir/HAVE_ENDIAN_H.c.o -o cmTC_de360 
+gmake[2]: Leaving directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+
+
+
+Performing C SOURCE FILE Test HAVE_BE64TOH_MACROS succeeded with the following output:
+Change Dir: /home/dweller/neovim/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_3acac/fast && gmake[1]: Entering directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_3acac.dir/build.make CMakeFiles/cmTC_3acac.dir/build
+gmake[2]: Entering directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_3acac.dir/src.c.o
+/usr/bin/cc -DHAVE_BE64TOH_MACROS   -o CMakeFiles/cmTC_3acac.dir/src.c.o -c /home/dweller/neovim/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_3acac
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3acac.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_3acac.dir/src.c.o -o cmTC_3acac 
+gmake[2]: Leaving directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory '/home/dweller/neovim/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+
+  #define _BSD_SOURCE 1
+  #define _DEFAULT_SOURCE 1
+  #include <stdint.h>
+
+  #include <endian.h>
+  #ifndef be64toh
+  # error No be64toh macros
+  #endif
+  int main(int argc,char**argv)
+{
+  uint64_t i=0x0102030405060708ULL;
+    uint64_t j = be64toh(i);
+    return (j == 0);  // j must not be zero
+  }

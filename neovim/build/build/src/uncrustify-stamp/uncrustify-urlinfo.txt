@@ -1,0 +1,3 @@
+repository='external project URL'
+module='https://github.com/uncrustify/uncrustify/archive/uncrustify-0.81.0.tar.gz'
+tag='SHA256=484623dc16b92206adc6ac0770077c6c67c6e441102148c2a121a19549330ff9'

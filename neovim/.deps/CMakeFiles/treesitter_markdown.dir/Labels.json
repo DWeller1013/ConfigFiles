@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/dweller/neovim/.deps/CMakeFiles/treesitter_markdown"
+		},
+		{
+			"file" : "/home/dweller/neovim/.deps/CMakeFiles/treesitter_markdown.rule"
+		},
+		{
+			"file" : "/home/dweller/neovim/.deps/CMakeFiles/treesitter_markdown-complete.rule"
+		},
+		{
+			"file" : "/home/dweller/neovim/.deps/build/src/treesitter_markdown-stamp/treesitter_markdown-build.rule"
+		},
+		{
+			"file" : "/home/dweller/neovim/.deps/build/src/treesitter_markdown-stamp/treesitter_markdown-configure.rule"
+		},
+		{
+			"file" : "/home/dweller/neovim/.deps/build/src/treesitter_markdown-stamp/treesitter_markdown-download.rule"
+		},
+		{
+			"file" : "/home/dweller/neovim/.deps/build/src/treesitter_markdown-stamp/treesitter_markdown-install.rule"
+		},
+		{
+			"file" : "/home/dweller/neovim/.deps/build/src/treesitter_markdown-stamp/treesitter_markdown-mkdir.rule"
+		},
+		{
+			"file" : "/home/dweller/neovim/.deps/build/src/treesitter_markdown-stamp/treesitter_markdown-patch.rule"
+		},
+		{
+			"file" : "/home/dweller/neovim/.deps/build/src/treesitter_markdown-stamp/treesitter_markdown-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"treesitter_markdown"
+		],
+		"name" : "treesitter_markdown"
+	}
+}

@@ -1,0 +1,1 @@
+/usr/bin/cc -I/home/dweller/neovim/.deps/usr/include -I/home/dweller/neovim/.deps/usr/include/luajit-2.1 -w -O2 -g -DNDEBUG CMakeFiles/test.dir/src/test.c.o CMakeFiles/test.dir/src/luv.c.o -o test  -Wl,-rpath,/home/dweller/neovim/.deps/usr/lib /home/dweller/neovim/.deps/usr/lib/libluajit-5.1.so /home/dweller/neovim/.deps/usr/lib/libuv.a -lrt 

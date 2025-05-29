@@ -1,0 +1,13 @@
+# Target labels
+ utf8proc
+# Source files and their labels
+/home/dweller/neovim/.deps/CMakeFiles/utf8proc
+/home/dweller/neovim/.deps/CMakeFiles/utf8proc.rule
+/home/dweller/neovim/.deps/CMakeFiles/utf8proc-complete.rule
+/home/dweller/neovim/.deps/build/src/utf8proc-stamp/utf8proc-build.rule
+/home/dweller/neovim/.deps/build/src/utf8proc-stamp/utf8proc-configure.rule
+/home/dweller/neovim/.deps/build/src/utf8proc-stamp/utf8proc-download.rule
+/home/dweller/neovim/.deps/build/src/utf8proc-stamp/utf8proc-install.rule
+/home/dweller/neovim/.deps/build/src/utf8proc-stamp/utf8proc-mkdir.rule
+/home/dweller/neovim/.deps/build/src/utf8proc-stamp/utf8proc-patch.rule
+/home/dweller/neovim/.deps/build/src/utf8proc-stamp/utf8proc-update.rule

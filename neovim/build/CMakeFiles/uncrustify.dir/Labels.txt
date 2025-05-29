@@ -1,0 +1,13 @@
+# Target labels
+ uncrustify
+# Source files and their labels
+/home/dweller/neovim/build/CMakeFiles/uncrustify
+/home/dweller/neovim/build/CMakeFiles/uncrustify.rule
+/home/dweller/neovim/build/CMakeFiles/uncrustify-complete.rule
+/home/dweller/neovim/build/build/src/uncrustify-stamp/uncrustify-build.rule
+/home/dweller/neovim/build/build/src/uncrustify-stamp/uncrustify-configure.rule
+/home/dweller/neovim/build/build/src/uncrustify-stamp/uncrustify-download.rule
+/home/dweller/neovim/build/build/src/uncrustify-stamp/uncrustify-install.rule
+/home/dweller/neovim/build/build/src/uncrustify-stamp/uncrustify-mkdir.rule
+/home/dweller/neovim/build/build/src/uncrustify-stamp/uncrustify-patch.rule
+/home/dweller/neovim/build/build/src/uncrustify-stamp/uncrustify-update.rule
